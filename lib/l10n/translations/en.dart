@@ -1,0 +1,140 @@
+const Map<String, String> enTranslations = {
+  // App
+  'appName': 'NutriGuide',
+
+  // Navigation
+  'navHome': 'Home',
+  'navPlanner': 'Planner',
+  'navShopping': 'Shopping',
+  'navMyRecipes': 'My Recipes',
+  'navProfile': 'Profile',
+
+  // Home
+  'homeGreeting': 'Good day',
+  'homeHowAreYou': 'How are you feeling today?',
+  'homeCheckIn': 'Daily Check-in',
+  'homeRecommendations': 'Recommended for you',
+  'homeNoCheckIn': 'Complete your daily check-in to get personalized meal recommendations.',
+  'homeStartCheckIn': 'Start Check-in',
+  'homeKitchenInventory': 'Kitchen Inventory',
+  'homeItemsInKitchen': 'items in your kitchen',
+  'homeManageInventory': 'Manage Inventory',
+
+  // Check-in
+  'checkInTitle': 'How are you feeling?',
+  'checkInSubtitle': 'Select what best describes how you feel today',
+  'checkInLowEnergy': 'Low Energy',
+  'checkInBloated': 'Bloated',
+  'checkInCravingSweets': 'Craving Sweets',
+  'checkInCantFocus': 'Can\'t Focus',
+  'checkInPms': 'PMS',
+  'checkInPostWorkout': 'Post-Workout',
+  'checkInFeelingBalanced': 'Feeling Balanced',
+  'checkInNoSpecificIssue': 'No Specific Issue',
+  'checkInDone': 'Get Recommendations',
+
+  // Recipes
+  'recipeBreakfast': 'Breakfast',
+  'recipeLunch': 'Lunch',
+  'recipeDinner': 'Dinner',
+  'recipeSnack': 'Snack',
+  'recipeIngredients': 'Ingredients',
+  'recipeSteps': 'Preparation',
+  'recipeNutrition': 'Nutrition',
+  'recipeProtein': 'Protein',
+  'recipeFiber': 'Fiber',
+  'recipeCarbs': 'Carbs',
+  'recipeCalories': 'Calories',
+  'recipeAddToPlanner': 'Add to Planner',
+  'recipeAddMissing': 'Add Missing to Shopping List',
+  'recipeCompatibility': 'match',
+  'recipeNoResults': 'No recipes match your current filters. Try adjusting your check-in or adding more ingredients to your kitchen.',
+
+  // Planner
+  'plannerTitle': 'Meal Planner',
+  'plannerEmpty': 'No meals planned for this day.',
+  'plannerAddMeal': 'Add Meal',
+  'plannerSelectRecipe': 'Select a Recipe',
+  'plannerSelectDate': 'Select Date',
+  'plannerSelectMealType': 'Select Meal Type',
+  'plannerWeekOf': 'Week of',
+  'plannerToday': 'Today',
+
+  // Shopping
+  'shoppingTitle': 'Shopping List',
+  'shoppingEmpty': 'Your shopping list is empty.',
+  'shoppingAddItem': 'Add Item',
+  'shoppingClearPurchased': 'Clear Purchased',
+  'shoppingMoveToKitchen': 'Move to Kitchen',
+  'shoppingItemHint': 'Item name...',
+
+  // My Recipes
+  'myRecipesTitle': 'My Recipes',
+  'myRecipesEmpty': 'You haven\'t created any recipes yet.',
+  'myRecipesCreate': 'Create Recipe',
+  'myRecipesName': 'Recipe Name',
+  'myRecipesDescription': 'Description',
+  'myRecipesMealType': 'Meal Type',
+  'myRecipesIngredients': 'Ingredients (one per line)',
+  'myRecipesSteps': 'Steps (one per line)',
+  'myRecipesTags': 'Tags',
+  'myRecipesSave': 'Save Recipe',
+
+  // Profile
+  'profileTitle': 'Profile',
+  'profileAge': 'Age',
+  'profileWeight': 'Weight (kg)',
+  'profileHeight': 'Height (cm)',
+  'profileGender': 'Gender',
+  'profileGenderMale': 'Male',
+  'profileGenderFemale': 'Female',
+  'profileGenderOther': 'Other',
+  'profileActivityLevel': 'Activity Level',
+  'profileAllergies': 'Allergies',
+  'profileDisliked': 'Disliked Ingredients',
+  'profileLanguage': 'Language',
+  'profileSave': 'Save Profile',
+  'profileSaved': 'Profile saved',
+
+  // Inventory
+  'inventoryTitle': 'Kitchen Inventory',
+  'inventoryEmpty': 'Your kitchen is empty. Add ingredients to get started.',
+  'inventoryAdd': 'Add to Kitchen',
+  'inventorySearch': 'Search ingredients...',
+  'inventoryCategories': 'Categories',
+
+  // Summary
+  'summaryTitle': 'Nutrition Summary',
+  'summaryDaily': 'Daily',
+  'summaryWeekly': 'Weekly',
+  'summaryMonthly': 'Monthly',
+  'summaryMealsLogged': 'Meals Logged',
+  'summaryMealDistribution': 'Meal Distribution',
+  'summaryProteinLevels': 'Protein Levels',
+  'summaryFiberLevels': 'Fiber Levels',
+  'summaryCarbBalance': 'Carb Balance',
+  'summaryTopIngredients': 'Top Ingredients',
+
+  // Nutrient levels
+  'levelLow': 'Low',
+  'levelMedium': 'Medium',
+  'levelHigh': 'High',
+
+  // Carb types
+  'carbSimple': 'Simple',
+  'carbComplex': 'Complex',
+  'carbMixed': 'Mixed',
+
+  // General
+  'save': 'Save',
+  'cancel': 'Cancel',
+  'delete': 'Delete',
+  'edit': 'Edit',
+  'add': 'Add',
+  'remove': 'Remove',
+  'search': 'Search',
+  'done': 'Done',
+  'close': 'Close',
+  'confirm': 'Confirm',
+  'noData': 'No data available',
+};
