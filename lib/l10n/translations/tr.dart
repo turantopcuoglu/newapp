@@ -1,0 +1,140 @@
+const Map<String, String> trTranslations = {
+  // App
+  'appName': 'NutriGuide',
+
+  // Navigation
+  'navHome': 'Ana Sayfa',
+  'navPlanner': 'Planlayıcı',
+  'navShopping': 'Alışveriş',
+  'navMyRecipes': 'Tariflerim',
+  'navProfile': 'Profil',
+
+  // Home
+  'homeGreeting': 'İyi günler',
+  'homeHowAreYou': 'Bugün nasıl hissediyorsunuz?',
+  'homeCheckIn': 'Günlük Durum',
+  'homeRecommendations': 'Size özel öneriler',
+  'homeNoCheckIn': 'Kişiselleştirilmiş öğün önerileri almak için günlük durumunuzu belirtin.',
+  'homeStartCheckIn': 'Durumu Belirle',
+  'homeKitchenInventory': 'Mutfak Envanteri',
+  'homeItemsInKitchen': 'malzeme mutfağınızda',
+  'homeManageInventory': 'Envanteri Yönet',
+
+  // Check-in
+  'checkInTitle': 'Nasıl hissediyorsunuz?',
+  'checkInSubtitle': 'Bugün kendinizi en iyi tanımlayan durumu seçin',
+  'checkInLowEnergy': 'Düşük Enerji',
+  'checkInBloated': 'Şişkinlik',
+  'checkInCravingSweets': 'Tatlı İsteği',
+  'checkInCantFocus': 'Odaklanamıyorum',
+  'checkInPms': 'PMS',
+  'checkInPostWorkout': 'Egzersiz Sonrası',
+  'checkInFeelingBalanced': 'Dengeli Hissediyorum',
+  'checkInNoSpecificIssue': 'Belirli Bir Sorun Yok',
+  'checkInDone': 'Önerileri Gör',
+
+  // Recipes
+  'recipeBreakfast': 'Kahvaltı',
+  'recipeLunch': 'Öğle Yemeği',
+  'recipeDinner': 'Akşam Yemeği',
+  'recipeSnack': 'Atıştırmalık',
+  'recipeIngredients': 'Malzemeler',
+  'recipeSteps': 'Hazırlanış',
+  'recipeNutrition': 'Besin Değerleri',
+  'recipeProtein': 'Protein',
+  'recipeFiber': 'Lif',
+  'recipeCarbs': 'Karbonhidrat',
+  'recipeCalories': 'Kalori',
+  'recipeAddToPlanner': 'Planlayıcıya Ekle',
+  'recipeAddMissing': 'Eksikleri Alışveriş Listesine Ekle',
+  'recipeCompatibility': 'uyum',
+  'recipeNoResults': 'Mevcut filtrelere uygun tarif bulunamadı. Durumunuzu değiştirmeyi veya mutfağınıza malzeme eklemeyi deneyin.',
+
+  // Planner
+  'plannerTitle': 'Öğün Planlayıcı',
+  'plannerEmpty': 'Bu gün için planlanmış öğün yok.',
+  'plannerAddMeal': 'Öğün Ekle',
+  'plannerSelectRecipe': 'Tarif Seçin',
+  'plannerSelectDate': 'Tarih Seçin',
+  'plannerSelectMealType': 'Öğün Tipi Seçin',
+  'plannerWeekOf': 'Hafta başlangıcı',
+  'plannerToday': 'Bugün',
+
+  // Shopping
+  'shoppingTitle': 'Alışveriş Listesi',
+  'shoppingEmpty': 'Alışveriş listeniz boş.',
+  'shoppingAddItem': 'Ürün Ekle',
+  'shoppingClearPurchased': 'Alınanları Temizle',
+  'shoppingMoveToKitchen': 'Mutfağa Taşı',
+  'shoppingItemHint': 'Ürün adı...',
+
+  // My Recipes
+  'myRecipesTitle': 'Tariflerim',
+  'myRecipesEmpty': 'Henüz tarif oluşturmadınız.',
+  'myRecipesCreate': 'Tarif Oluştur',
+  'myRecipesName': 'Tarif Adı',
+  'myRecipesDescription': 'Açıklama',
+  'myRecipesMealType': 'Öğün Tipi',
+  'myRecipesIngredients': 'Malzemeler (her satıra bir tane)',
+  'myRecipesSteps': 'Adımlar (her satıra bir tane)',
+  'myRecipesTags': 'Etiketler',
+  'myRecipesSave': 'Tarifi Kaydet',
+
+  // Profile
+  'profileTitle': 'Profil',
+  'profileAge': 'Yaş',
+  'profileWeight': 'Kilo (kg)',
+  'profileHeight': 'Boy (cm)',
+  'profileGender': 'Cinsiyet',
+  'profileGenderMale': 'Erkek',
+  'profileGenderFemale': 'Kadın',
+  'profileGenderOther': 'Diğer',
+  'profileActivityLevel': 'Aktivite Düzeyi',
+  'profileAllergies': 'Alerjiler',
+  'profileDisliked': 'Sevmediğim Malzemeler',
+  'profileLanguage': 'Dil',
+  'profileSave': 'Profili Kaydet',
+  'profileSaved': 'Profil kaydedildi',
+
+  // Inventory
+  'inventoryTitle': 'Mutfak Envanteri',
+  'inventoryEmpty': 'Mutfağınız boş. Başlamak için malzeme ekleyin.',
+  'inventoryAdd': 'Mutfağa Ekle',
+  'inventorySearch': 'Malzeme ara...',
+  'inventoryCategories': 'Kategoriler',
+
+  // Summary
+  'summaryTitle': 'Beslenme Özeti',
+  'summaryDaily': 'Günlük',
+  'summaryWeekly': 'Haftalık',
+  'summaryMonthly': 'Aylık',
+  'summaryMealsLogged': 'Kayıtlı Öğünler',
+  'summaryMealDistribution': 'Öğün Dağılımı',
+  'summaryProteinLevels': 'Protein Seviyeleri',
+  'summaryFiberLevels': 'Lif Seviyeleri',
+  'summaryCarbBalance': 'Karbonhidrat Dengesi',
+  'summaryTopIngredients': 'En Çok Kullanılan Malzemeler',
+
+  // Nutrient levels
+  'levelLow': 'Düşük',
+  'levelMedium': 'Orta',
+  'levelHigh': 'Yüksek',
+
+  // Carb types
+  'carbSimple': 'Basit',
+  'carbComplex': 'Kompleks',
+  'carbMixed': 'Karışık',
+
+  // General
+  'save': 'Kaydet',
+  'cancel': 'İptal',
+  'delete': 'Sil',
+  'edit': 'Düzenle',
+  'add': 'Ekle',
+  'remove': 'Kaldır',
+  'search': 'Ara',
+  'done': 'Tamam',
+  'close': 'Kapat',
+  'confirm': 'Onayla',
+  'noData': 'Veri bulunamadı',
+};

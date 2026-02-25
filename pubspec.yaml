@@ -1,5 +1,5 @@
-name: ai_recipe_app
-description: AI destekli yemek tarifi uygulamasi - Claude AI ile akilli tarif onerileri
+name: nutri_guide
+description: Daily Nutrition Guidance, Kitchen Inventory & Smart Meal Planning
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -10,9 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.2
-  shared_preferences: ^2.3.3
-  provider: ^6.1.2
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  hive_flutter: ^1.1.0
+  intl: ^0.19.0
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
@@ -21,3 +24,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
