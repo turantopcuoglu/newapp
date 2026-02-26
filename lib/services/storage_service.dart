@@ -19,6 +19,7 @@ class StorageService {
   static const String _inventoryKey = 'inventory';
   static const String _localeKey = 'locale';
   static const String _checkInKey = 'today_check_in';
+  static const String _onboardingKey = 'onboarding_completed';
 
   StorageService(this._prefs);
 
@@ -191,6 +192,13 @@ class StorageService {
 
   Future<void> saveTodayCheckIn(CheckInType type) async {
     await _prefs.setString(_checkInKey, type.name);
+  }
+
+  // --- Onboarding ---
+  bool isOnboardingCompleted() => _prefs.getBool(_onboardingKey) ?? false;
+
+  Future<void> setOnboardingCompleted() async {
+    await _prefs.setBool(_onboardingKey, true);
   }
 
   // --- Locale ---

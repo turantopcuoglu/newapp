@@ -38,11 +38,14 @@ const Map<String, String> trTranslations = {
   'checkInBloated': 'Şişkinlik',
   'checkInCravingSweets': 'Tatlı İsteği',
   'checkInCantFocus': 'Odaklanamıyorum',
-  'checkInPms': 'PMS',
+  'checkInPms': 'PMS / Adet Öncesi',
+  'checkInPeriodCramps': 'Regl Krampları',
+  'checkInPeriodFatigue': 'Regl Yorgunluğu',
   'checkInPostWorkout': 'Egzersiz Sonrası',
   'checkInFeelingBalanced': 'Dengeli Hissediyorum',
   'checkInNoSpecificIssue': 'Belirli Bir Sorun Yok',
   'checkInDone': 'Önerileri Gör',
+  'checkInPeriodSection': 'Regl Dönemi',
 
   // Recipes
   'recipeBreakfast': 'Kahvaltı',
@@ -135,6 +138,20 @@ const Map<String, String> trTranslations = {
   'carbSimple': 'Basit',
   'carbComplex': 'Kompleks',
   'carbMixed': 'Karışık',
+
+  // Onboarding
+  'onboardingWelcome': 'NutriGuide\'a Hoş Geldiniz!',
+  'onboardingWelcomeSubtitle': 'Sizi tanıyalım, size özel öneriler sunalım',
+  'onboardingNameHint': 'Adınız',
+  'onboardingNameLabel': 'Adınızı girin',
+  'onboardingGenderTitle': 'Cinsiyetiniz',
+  'onboardingGenderSubtitle': 'Size daha iyi öneriler sunmamıza yardımcı olur',
+  'onboardingMale': 'Erkek',
+  'onboardingFemale': 'Kadın',
+  'onboardingOther': 'Diğer',
+  'onboardingContinue': 'Başlayalım',
+  'onboardingNameRequired': 'Lütfen adınızı girin',
+  'onboardingGenderRequired': 'Lütfen cinsiyetinizi seçin',
 
   // General
   'save': 'Kaydet',

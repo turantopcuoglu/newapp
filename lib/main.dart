@@ -10,6 +10,7 @@ import 'providers/app_provider.dart';
 import 'providers/locale_provider.dart';
 import 'providers/storage_provider.dart';
 import 'screens/main_shell.dart';
+import 'screens/onboarding_screen.dart';
 import 'services/storage_service.dart';
 
 void main() async {
@@ -55,7 +56,9 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      home: const MainShell(),
+      home: ref.read(storageProvider).isOnboardingCompleted()
+          ? const MainShell()
+          : const OnboardingScreen(),
     );
   }
 }

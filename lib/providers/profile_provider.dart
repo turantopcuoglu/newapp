@@ -10,6 +10,11 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
   ProfileNotifier(this._storage)
       : super(_storage.getProfile() ?? const UserProfile());
 
+  void updateName(String? name) {
+    state = state.copyWith(name: name);
+    _save();
+  }
+
   void updateAge(int? age) {
     state = state.copyWith(age: age);
     _save();

@@ -2,6 +2,7 @@ import 'dart:convert';
 import '../core/enums.dart';
 
 class UserProfile {
+  final String? name;
   final int? age;
   final double? weight;
   final double? height;
@@ -11,6 +12,7 @@ class UserProfile {
   final List<String> dislikedIngredients;
 
   const UserProfile({
+    this.name,
     this.age,
     this.weight,
     this.height,
@@ -23,6 +25,7 @@ class UserProfile {
   bool get isFemale => gender == Gender.female;
 
   UserProfile copyWith({
+    String? name,
     int? age,
     double? weight,
     double? height,
@@ -32,6 +35,7 @@ class UserProfile {
     List<String>? dislikedIngredients,
   }) =>
       UserProfile(
+        name: name ?? this.name,
         age: age ?? this.age,
         weight: weight ?? this.weight,
         height: height ?? this.height,
@@ -42,6 +46,7 @@ class UserProfile {
       );
 
   Map<String, dynamic> toJson() => {
+        'name': name,
         'age': age,
         'weight': weight,
         'height': height,
@@ -52,6 +57,7 @@ class UserProfile {
       };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
+        name: json['name'] as String?,
         age: json['age'] as int?,
         weight: (json['weight'] as num?)?.toDouble(),
         height: (json['height'] as num?)?.toDouble(),
