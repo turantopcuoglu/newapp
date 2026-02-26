@@ -11,14 +11,25 @@ const Map<String, String> trTranslations = {
 
   // Home
   'homeGreeting': 'İyi günler',
+  'homeGreetingMorning': 'Günaydın',
+  'homeGreetingAfternoon': 'İyi günler',
+  'homeGreetingEvening': 'İyi akşamlar',
   'homeHowAreYou': 'Bugün nasıl hissediyorsunuz?',
   'homeCheckIn': 'Günlük Durum',
+  'homeChangeCheckIn': 'Durumu Değiştir',
   'homeRecommendations': 'Size özel öneriler',
   'homeNoCheckIn': 'Kişiselleştirilmiş öğün önerileri almak için günlük durumunuzu belirtin.',
   'homeStartCheckIn': 'Durumu Belirle',
   'homeKitchenInventory': 'Mutfak Envanteri',
+  'homeKitchenEmpty': 'Mutfağınız boş, malzeme ekleyin',
   'homeItemsInKitchen': 'malzeme mutfağınızda',
   'homeManageInventory': 'Envanteri Yönet',
+  'homeYesterdayNutrition': 'Dünün Beslenme Özeti',
+  'homeYesterdayMeals': 'öğün',
+  'homeNoMealsYesterday': 'Dün kayıtlı öğün bulunamadı',
+  'homeMealOfDay': 'Günün Yemeği',
+  'homeQuickActions': 'Hızlı İşlemler',
+  'homeFat': 'Yağ',
 
   // Check-in
   'checkInTitle': 'Nasıl hissediyorsunuz?',

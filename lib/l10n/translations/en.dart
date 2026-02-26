@@ -11,14 +11,25 @@ const Map<String, String> enTranslations = {
 
   // Home
   'homeGreeting': 'Good day',
+  'homeGreetingMorning': 'Good morning',
+  'homeGreetingAfternoon': 'Good afternoon',
+  'homeGreetingEvening': 'Good evening',
   'homeHowAreYou': 'How are you feeling today?',
   'homeCheckIn': 'Daily Check-in',
+  'homeChangeCheckIn': 'Change Status',
   'homeRecommendations': 'Recommended for you',
   'homeNoCheckIn': 'Complete your daily check-in to get personalized meal recommendations.',
   'homeStartCheckIn': 'Start Check-in',
   'homeKitchenInventory': 'Kitchen Inventory',
+  'homeKitchenEmpty': 'Your kitchen is empty, add ingredients',
   'homeItemsInKitchen': 'items in your kitchen',
   'homeManageInventory': 'Manage Inventory',
+  'homeYesterdayNutrition': 'Yesterday\'s Nutrition',
+  'homeYesterdayMeals': 'meals',
+  'homeNoMealsYesterday': 'No meals logged yesterday',
+  'homeMealOfDay': 'Meal of the Day',
+  'homeQuickActions': 'Quick Actions',
+  'homeFat': 'Fat',
 
   // Check-in
   'checkInTitle': 'How are you feeling?',

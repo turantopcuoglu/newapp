@@ -40,14 +40,25 @@ class AppLocalizations {
 
   // Home
   String get homeGreeting => _t('homeGreeting');
+  String get homeGreetingMorning => _t('homeGreetingMorning');
+  String get homeGreetingAfternoon => _t('homeGreetingAfternoon');
+  String get homeGreetingEvening => _t('homeGreetingEvening');
   String get homeHowAreYou => _t('homeHowAreYou');
   String get homeCheckIn => _t('homeCheckIn');
+  String get homeChangeCheckIn => _t('homeChangeCheckIn');
   String get homeRecommendations => _t('homeRecommendations');
   String get homeNoCheckIn => _t('homeNoCheckIn');
   String get homeStartCheckIn => _t('homeStartCheckIn');
   String get homeKitchenInventory => _t('homeKitchenInventory');
+  String get homeKitchenEmpty => _t('homeKitchenEmpty');
   String get homeItemsInKitchen => _t('homeItemsInKitchen');
   String get homeManageInventory => _t('homeManageInventory');
+  String get homeYesterdayNutrition => _t('homeYesterdayNutrition');
+  String get homeYesterdayMeals => _t('homeYesterdayMeals');
+  String get homeNoMealsYesterday => _t('homeNoMealsYesterday');
+  String get homeMealOfDay => _t('homeMealOfDay');
+  String get homeQuickActions => _t('homeQuickActions');
+  String get homeFat => _t('homeFat');
 
   // Check-in
   String get checkInTitle => _t('checkInTitle');
