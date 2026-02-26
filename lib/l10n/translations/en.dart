@@ -38,11 +38,14 @@ const Map<String, String> enTranslations = {
   'checkInBloated': 'Bloated',
   'checkInCravingSweets': 'Craving Sweets',
   'checkInCantFocus': 'Can\'t Focus',
-  'checkInPms': 'PMS',
+  'checkInPms': 'PMS / Pre-Period',
+  'checkInPeriodCramps': 'Period Cramps',
+  'checkInPeriodFatigue': 'Period Fatigue',
   'checkInPostWorkout': 'Post-Workout',
   'checkInFeelingBalanced': 'Feeling Balanced',
   'checkInNoSpecificIssue': 'No Specific Issue',
   'checkInDone': 'Get Recommendations',
+  'checkInPeriodSection': 'Period',
 
   // Recipes
   'recipeBreakfast': 'Breakfast',
@@ -135,6 +138,20 @@ const Map<String, String> enTranslations = {
   'carbSimple': 'Simple',
   'carbComplex': 'Complex',
   'carbMixed': 'Mixed',
+
+  // Onboarding
+  'onboardingWelcome': 'Welcome to NutriGuide!',
+  'onboardingWelcomeSubtitle': 'Let us get to know you for personalized recommendations',
+  'onboardingNameHint': 'Your name',
+  'onboardingNameLabel': 'Enter your name',
+  'onboardingGenderTitle': 'Your gender',
+  'onboardingGenderSubtitle': 'Helps us provide better recommendations for you',
+  'onboardingMale': 'Male',
+  'onboardingFemale': 'Female',
+  'onboardingOther': 'Other',
+  'onboardingContinue': 'Let\'s Start',
+  'onboardingNameRequired': 'Please enter your name',
+  'onboardingGenderRequired': 'Please select your gender',
 
   // General
   'save': 'Save',

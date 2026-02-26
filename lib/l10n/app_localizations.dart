@@ -71,6 +71,9 @@ class AppLocalizations {
   String get checkInPostWorkout => _t('checkInPostWorkout');
   String get checkInFeelingBalanced => _t('checkInFeelingBalanced');
   String get checkInNoSpecificIssue => _t('checkInNoSpecificIssue');
+  String get checkInPeriodCramps => _t('checkInPeriodCramps');
+  String get checkInPeriodFatigue => _t('checkInPeriodFatigue');
+  String get checkInPeriodSection => _t('checkInPeriodSection');
   String get checkInDone => _t('checkInDone');
 
   // Recipes
@@ -164,6 +167,20 @@ class AppLocalizations {
   String get carbSimple => _t('carbSimple');
   String get carbComplex => _t('carbComplex');
   String get carbMixed => _t('carbMixed');
+
+  // Onboarding
+  String get onboardingWelcome => _t('onboardingWelcome');
+  String get onboardingWelcomeSubtitle => _t('onboardingWelcomeSubtitle');
+  String get onboardingNameHint => _t('onboardingNameHint');
+  String get onboardingNameLabel => _t('onboardingNameLabel');
+  String get onboardingGenderTitle => _t('onboardingGenderTitle');
+  String get onboardingGenderSubtitle => _t('onboardingGenderSubtitle');
+  String get onboardingMale => _t('onboardingMale');
+  String get onboardingFemale => _t('onboardingFemale');
+  String get onboardingOther => _t('onboardingOther');
+  String get onboardingContinue => _t('onboardingContinue');
+  String get onboardingNameRequired => _t('onboardingNameRequired');
+  String get onboardingGenderRequired => _t('onboardingGenderRequired');
 
   // General
   String get save => _t('save');

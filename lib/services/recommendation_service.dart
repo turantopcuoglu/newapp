@@ -52,8 +52,15 @@ class RecommendationService {
     }).toList();
 
     // Step 2: Filter by check-in category
+    // Period-related types also match PMS-tagged recipes
+    final checkInTypes = <CheckInType>{checkIn};
+    if (checkIn == CheckInType.periodCramps ||
+        checkIn == CheckInType.periodFatigue) {
+      checkInTypes.add(CheckInType.pms);
+    }
     final matchingRecipes = safeRecipes
-        .where((recipe) => recipe.checkInTags.contains(checkIn))
+        .where((recipe) =>
+            recipe.checkInTags.any((tag) => checkInTypes.contains(tag)))
         .toList();
 
     // Step 3 & 4: Score by inventory compatibility

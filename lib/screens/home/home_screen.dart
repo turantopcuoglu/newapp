@@ -6,6 +6,7 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/check_in_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
+    final profile = ref.watch(profileProvider);
     final checkIn = ref.watch(checkInProvider);
     final inventoryCount = ref.watch(inventoryProvider).length;
     final mealPlans = ref.watch(mealPlanProvider);
@@ -74,6 +76,7 @@ class HomeScreen extends ConsumerWidget {
           SliverToBoxAdapter(
             child: _DashboardHeader(
               greeting: _getGreeting(l10n),
+              userName: profile.name,
               subtitle: l10n.homeHowAreYou,
               checkIn: checkIn,
               onCheckInTap: () => _showCheckIn(context),
@@ -164,6 +167,7 @@ class HomeScreen extends ConsumerWidget {
 
 class _DashboardHeader extends StatelessWidget {
   final String greeting;
+  final String? userName;
   final String subtitle;
   final CheckInType? checkIn;
   final VoidCallback onCheckInTap;
@@ -171,6 +175,7 @@ class _DashboardHeader extends StatelessWidget {
 
   const _DashboardHeader({
     required this.greeting,
+    this.userName,
     required this.subtitle,
     required this.checkIn,
     required this.onCheckInTap,
@@ -179,6 +184,10 @@ class _DashboardHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final displayGreeting = userName != null && userName!.isNotEmpty
+        ? '$greeting, $userName!'
+        : greeting;
+
     return Container(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).padding.top + 16,
@@ -199,27 +208,29 @@ class _DashboardHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    greeting,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: -0.3,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      displayGreeting,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: -0.3,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      color: Colors.white.withAlpha(180),
-                      fontSize: 14,
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: Colors.white.withAlpha(180),
+                        fontSize: 14,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               GestureDetector(
                 onTap: onCheckInTap,
@@ -285,6 +296,10 @@ class _DashboardHeader extends StatelessWidget {
         return l10n.checkInCantFocus;
       case CheckInType.pms:
         return l10n.checkInPms;
+      case CheckInType.periodCramps:
+        return l10n.checkInPeriodCramps;
+      case CheckInType.periodFatigue:
+        return l10n.checkInPeriodFatigue;
       case CheckInType.postWorkout:
         return l10n.checkInPostWorkout;
       case CheckInType.feelingBalanced:

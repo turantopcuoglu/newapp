@@ -10,6 +10,8 @@ enum CheckInType {
   cravingSweets,
   cantFocus,
   pms,
+  periodCramps,
+  periodFatigue,
   postWorkout,
   feelingBalanced,
   noSpecificIssue,
