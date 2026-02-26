@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import '../models/ingredient.dart';
 import '../models/recipe.dart';
+import '../models/shopping_item.dart';
 import '../services/claude_service.dart';
 import '../services/storage_service.dart';
 
