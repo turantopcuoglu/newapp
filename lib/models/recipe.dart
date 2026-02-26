@@ -47,6 +47,8 @@ class Recipe {
   final CarbType carbType;
   final MacroEstimation macros;
   final Map<String, List<String>> steps;
+  final String? imagePath;
+  final bool isUserCreated;
 
   const Recipe({
     required this.id,
@@ -61,6 +63,8 @@ class Recipe {
     this.carbType = CarbType.mixed,
     this.macros = const MacroEstimation(),
     this.steps = const {},
+    this.imagePath,
+    this.isUserCreated = false,
   });
 
   String localizedName(String locale) =>
@@ -88,6 +92,8 @@ class Recipe {
         'carbType': carbType.name,
         'macros': macros.toJson(),
         'steps': steps,
+        'imagePath': imagePath,
+        'isUserCreated': isUserCreated,
       };
 
   static Map<String, String> _parseLocalizedString(dynamic value) {
@@ -133,6 +139,8 @@ class Recipe {
             ? MacroEstimation.fromJson(json['macros'])
             : const MacroEstimation(),
         steps: _parseLocalizedSteps(json['steps']),
+        imagePath: json['imagePath'] as String?,
+        isUserCreated: json['isUserCreated'] as bool? ?? false,
       );
 
   String encode() => jsonEncode(toJson());

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/enums.dart';
 import '../models/ingredient.dart';
 import '../models/meal_plan.dart';
 import '../models/recipe.dart';
@@ -17,6 +18,7 @@ class StorageService {
   static const String _myRecipesKey = 'my_recipes';
   static const String _inventoryKey = 'inventory';
   static const String _localeKey = 'locale';
+  static const String _checkInKey = 'today_check_in';
 
   StorageService(this._prefs);
 
@@ -178,6 +180,17 @@ class StorageService {
 
   Future<void> clearInventory() async {
     await _prefs.remove(_inventoryKey);
+  }
+
+  // --- Check-In ---
+  CheckInType? getTodayCheckIn() {
+    final value = _prefs.getString(_checkInKey);
+    if (value == null) return null;
+    return CheckInType.values.where((e) => e.name == value).firstOrNull;
+  }
+
+  Future<void> saveTodayCheckIn(CheckInType type) async {
+    await _prefs.setString(_checkInKey, type.name);
   }
 
   // --- Locale ---
