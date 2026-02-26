@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../../core/enums.dart';
+import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../../models/recipe.dart';
 import '../../providers/locale_provider.dart';
@@ -32,6 +33,54 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
     super.dispose();
   }
 
+  Color _mealTypeColor(MealType type) {
+    switch (type) {
+      case MealType.breakfast:
+        return AppTheme.breakfastColor;
+      case MealType.lunch:
+        return AppTheme.lunchColor;
+      case MealType.dinner:
+        return AppTheme.dinnerColor;
+      case MealType.snack:
+        return AppTheme.snackColor;
+    }
+  }
+
+  String _mealTypeLabel(MealType type, AppLocalizations l10n) {
+    switch (type) {
+      case MealType.breakfast:
+        return l10n.recipeBreakfast;
+      case MealType.lunch:
+        return l10n.recipeLunch;
+      case MealType.dinner:
+        return l10n.recipeDinner;
+      case MealType.snack:
+        return l10n.recipeSnack;
+    }
+  }
+
+  String _nutrientLevelLabel(NutrientLevel level, AppLocalizations l10n) {
+    switch (level) {
+      case NutrientLevel.low:
+        return l10n.levelLow;
+      case NutrientLevel.medium:
+        return l10n.levelMedium;
+      case NutrientLevel.high:
+        return l10n.levelHigh;
+    }
+  }
+
+  Color _nutrientLevelColor(NutrientLevel level) {
+    switch (level) {
+      case NutrientLevel.low:
+        return const Color(0xFFE57373);
+      case NutrientLevel.medium:
+        return AppTheme.warningAmber;
+      case NutrientLevel.high:
+        return AppTheme.successGreen;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -44,94 +93,193 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Recipe name
+            _buildSectionLabel(l10n.myRecipesName, Icons.restaurant_menu, theme),
+            const SizedBox(height: 8),
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: l10n.myRecipesName),
+              decoration: InputDecoration(
+                hintText: l10n.myRecipesName,
+              ),
+              enableIMEPersonalizedLearning: true,
+              autocorrect: false,
+              enableSuggestions: true,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
+
+            // Description
+            _buildSectionLabel(l10n.myRecipesDescription, Icons.description_outlined, theme),
+            const SizedBox(height: 8),
             TextField(
               controller: _descController,
-              decoration: InputDecoration(labelText: l10n.myRecipesDescription),
+              decoration: InputDecoration(
+                hintText: l10n.myRecipesDescription,
+              ),
               maxLines: 2,
+              enableIMEPersonalizedLearning: true,
+              autocorrect: false,
+              enableSuggestions: true,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
             // Meal type
-            Text(l10n.myRecipesMealType, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 8),
+            _buildSectionLabel(l10n.myRecipesMealType, Icons.schedule, theme),
+            const SizedBox(height: 10),
             Wrap(
-              spacing: 8,
+              spacing: 10,
+              runSpacing: 8,
               children: MealType.values.map((type) {
+                final isSelected = _mealType == type;
+                final color = _mealTypeColor(type);
                 return ChoiceChip(
-                  label: Text(type.name[0].toUpperCase() + type.name.substring(1)),
-                  selected: _mealType == type,
+                  label: Text(_mealTypeLabel(type, l10n)),
+                  selected: isSelected,
                   onSelected: (_) => setState(() => _mealType = type),
+                  backgroundColor: color.withAlpha(30),
+                  selectedColor: color,
+                  labelStyle: TextStyle(
+                    color: isSelected ? Colors.white : color,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: isSelected ? color : color.withAlpha(100),
+                      width: 1.5,
+                    ),
+                  ),
+                  showCheckmark: false,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 );
               }).toList(),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
+            // Ingredients
+            _buildSectionLabel(l10n.myRecipesIngredients, Icons.kitchen, theme),
+            const SizedBox(height: 8),
             TextField(
               controller: _ingredientsController,
               decoration: InputDecoration(
-                labelText: l10n.myRecipesIngredients,
+                hintText: l10n.myRecipesIngredients,
               ),
               maxLines: 5,
               minLines: 3,
+              enableIMEPersonalizedLearning: true,
+              autocorrect: false,
+              enableSuggestions: true,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
+            // Steps
+            _buildSectionLabel(l10n.myRecipesSteps, Icons.format_list_numbered, theme),
+            const SizedBox(height: 8),
             TextField(
               controller: _stepsController,
-              decoration: InputDecoration(labelText: l10n.myRecipesSteps),
+              decoration: InputDecoration(
+                hintText: l10n.myRecipesSteps,
+              ),
               maxLines: 5,
               minLines: 3,
+              enableIMEPersonalizedLearning: true,
+              autocorrect: false,
+              enableSuggestions: true,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
             // Protein level
-            Text(l10n.recipeProtein, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 8),
+            _buildSectionLabel(l10n.recipeProtein, Icons.fitness_center, theme),
+            const SizedBox(height: 10),
             Wrap(
-              spacing: 8,
+              spacing: 10,
+              runSpacing: 8,
               children: NutrientLevel.values.map((level) {
+                final isSelected = _proteinLevel == level;
+                final color = _nutrientLevelColor(level);
                 return ChoiceChip(
-                  label: Text(level.name),
-                  selected: _proteinLevel == level,
+                  label: Text(_nutrientLevelLabel(level, l10n)),
+                  selected: isSelected,
                   onSelected: (_) =>
                       setState(() => _proteinLevel = level),
+                  backgroundColor: color.withAlpha(30),
+                  selectedColor: color,
+                  labelStyle: TextStyle(
+                    color: isSelected ? Colors.white : color,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: isSelected ? color : color.withAlpha(100),
+                      width: 1.5,
+                    ),
+                  ),
+                  showCheckmark: false,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 );
               }).toList(),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
 
             // Fiber level
-            Text(l10n.recipeFiber, style: theme.textTheme.titleMedium),
-            const SizedBox(height: 8),
+            _buildSectionLabel(l10n.recipeFiber, Icons.eco, theme),
+            const SizedBox(height: 10),
             Wrap(
-              spacing: 8,
+              spacing: 10,
+              runSpacing: 8,
               children: NutrientLevel.values.map((level) {
+                final isSelected = _fiberLevel == level;
+                final color = _nutrientLevelColor(level);
                 return ChoiceChip(
-                  label: Text(level.name),
-                  selected: _fiberLevel == level,
+                  label: Text(_nutrientLevelLabel(level, l10n)),
+                  selected: isSelected,
                   onSelected: (_) =>
                       setState(() => _fiberLevel = level),
+                  backgroundColor: color.withAlpha(30),
+                  selectedColor: color,
+                  labelStyle: TextStyle(
+                    color: isSelected ? Colors.white : color,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: isSelected ? color : color.withAlpha(100),
+                      width: 1.5,
+                    ),
+                  ),
+                  showCheckmark: false,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 );
               }).toList(),
             ),
 
-            const SizedBox(height: 32),
+            const SizedBox(height: 36),
             SizedBox(
               width: double.infinity,
-              child: FilledButton(
+              child: FilledButton.icon(
                 onPressed: _save,
-                child: Text(l10n.myRecipesSave),
+                icon: const Icon(Icons.save_rounded),
+                label: Text(l10n.myRecipesSave),
               ),
             ),
             const SizedBox(height: 40),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildSectionLabel(String title, IconData icon, ThemeData theme) {
+    return Row(
+      children: [
+        Icon(icon, size: 20, color: theme.colorScheme.primary),
+        const SizedBox(width: 8),
+        Text(title, style: theme.textTheme.titleMedium),
+      ],
     );
   }
 

@@ -71,16 +71,22 @@ abstract class AppTheme {
           margin: const EdgeInsets.symmetric(vertical: 6),
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: accentOrange.withAlpha(20),
-          selectedColor: accentOrange.withAlpha(40),
+          backgroundColor: accentOrange.withAlpha(50),
+          selectedColor: accentOrange.withAlpha(180),
           labelStyle: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w500,
+          ),
+          secondaryLabelStyle: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
           side: BorderSide.none,
+          showCheckmark: false,
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,

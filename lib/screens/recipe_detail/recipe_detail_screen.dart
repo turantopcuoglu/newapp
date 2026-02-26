@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/ingredient_chip.dart';
 import '../../components/meal_type_badge.dart';
-import '../../components/section_header.dart';
 import '../../core/enums.dart';
+import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/inventory_provider.dart';
@@ -35,7 +35,7 @@ class RecipeDetailScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
+            // Header badges
             Row(
               children: [
                 MealTypeBadge(mealType: recipe.mealType),
@@ -44,12 +44,15 @@ class RecipeDetailScreen extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.green.withAlpha(25),
+                    color: AppTheme.successGreen.withAlpha(30),
                     borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                        color: AppTheme.successGreen.withAlpha(80)),
                   ),
                   child: Text(
                     '${scoredRecipe.compatibilityPercent}% ${l10n.recipeCompatibility}',
-                    style: theme.textTheme.bodySmall?.copyWith(
+                    style: TextStyle(
+                      fontSize: 11,
                       color: Colors.green.shade700,
                       fontWeight: FontWeight.w600,
                     ),
@@ -57,72 +60,146 @@ class RecipeDetailScreen extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 14),
             Text(recipe.localizedDescription(locale),
-                style: theme.textTheme.bodyMedium),
+                style: theme.textTheme.bodyLarge),
 
-            // Nutrition
-            SectionHeader(title: l10n.recipeNutrition),
+            const SizedBox(height: 24),
+
+            // Nutrition card
+            _buildSectionTitle(
+                l10n.recipeNutrition, Icons.pie_chart_outline, theme),
+            const SizedBox(height: 10),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 12, vertical: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _NutritionItem(
-                        l10n.recipeCalories, '${recipe.macros.calories}', 'kcal'),
+                      l10n.recipeCalories,
+                      '${recipe.macros.calories}',
+                      'kcal',
+                      AppTheme.accentOrange,
+                    ),
+                    _divider(),
                     _NutritionItem(
-                        l10n.recipeProtein, '${recipe.macros.proteinG}', 'g'),
+                      l10n.recipeProtein,
+                      '${recipe.macros.proteinG}',
+                      'g',
+                      AppTheme.softLavender,
+                    ),
+                    _divider(),
                     _NutritionItem(
-                        l10n.recipeCarbs, '${recipe.macros.carbsG}', 'g'),
+                      l10n.recipeCarbs,
+                      '${recipe.macros.carbsG}',
+                      'g',
+                      AppTheme.accentTeal,
+                    ),
+                    _divider(),
                     _NutritionItem(
-                        l10n.recipeFiber, '${recipe.macros.fiberG}', 'g'),
+                      l10n.recipeFiber,
+                      '${recipe.macros.fiberG}',
+                      'g',
+                      AppTheme.successGreen,
+                    ),
                   ],
                 ),
               ),
             ),
 
+            const SizedBox(height: 24),
+
             // Ingredients
-            SectionHeader(title: l10n.recipeIngredients),
-            Wrap(
-              spacing: 6,
-              runSpacing: 4,
-              children: recipe.ingredientIds.map((id) {
-                final ingredient = ingredientMap[id];
-                final name =
-                    ingredient?.localizedName(locale) ?? id;
-                final inKitchen = inventoryIds.contains(id);
-                return IngredientChip(label: name, isAvailable: inKitchen);
-              }).toList(),
+            _buildSectionTitle(
+                l10n.recipeIngredients, Icons.kitchen, theme),
+            const SizedBox(height: 10),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 6,
+                  children: recipe.ingredientIds.map((id) {
+                    final ingredient = ingredientMap[id];
+                    final name =
+                        ingredient?.localizedName(locale) ?? id;
+                    final inKitchen = inventoryIds.contains(id);
+                    return IngredientChip(
+                        label: name, isAvailable: inKitchen);
+                  }).toList(),
+                ),
+              ),
             ),
 
+            const SizedBox(height: 24),
+
             // Steps
-            SectionHeader(title: l10n.recipeSteps),
-            ...recipe.localizedSteps(locale).asMap().entries.map((entry) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+            _buildSectionTitle(
+                l10n.recipeSteps, Icons.format_list_numbered, theme),
+            const SizedBox(height: 10),
+            ...recipe
+                .localizedSteps(locale)
+                .asMap()
+                .entries
+                .map((entry) {
+              return Container(
+                margin: const EdgeInsets.only(bottom: 12),
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.surface,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: AppTheme.dividerColor,
+                    width: 1,
+                  ),
+                ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 12,
-                      backgroundColor: theme.colorScheme.primary.withAlpha(25),
-                      child: Text('${entry.key + 1}',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: theme.colorScheme.primary)),
+                    Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        gradient: AppTheme.accentGradient,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        '${entry.key + 1}',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 14),
                     Expanded(
-                      child: Text(entry.value,
-                          style: theme.textTheme.bodyMedium),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: Text(
+                          entry.value,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: AppTheme.textPrimary,
+                            height: 1.5,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               );
             }),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 28),
 
             // Actions
             if (scoredRecipe.missingIngredients.isNotEmpty)
@@ -130,7 +207,9 @@ class RecipeDetailScreen extends ConsumerWidget {
                 width: double.infinity,
                 child: OutlinedButton.icon(
                   onPressed: () {
-                    ref.read(shoppingProvider.notifier).addMissingIngredients(
+                    ref
+                        .read(shoppingProvider.notifier)
+                        .addMissingIngredients(
                           scoredRecipe.missingIngredients,
                           forRecipeId: recipe.id,
                         );
@@ -160,6 +239,25 @@ class RecipeDetailScreen extends ConsumerWidget {
     );
   }
 
+  Widget _buildSectionTitle(
+      String title, IconData icon, ThemeData theme) {
+    return Row(
+      children: [
+        Icon(icon, size: 20, color: theme.colorScheme.primary),
+        const SizedBox(width: 8),
+        Text(title, style: theme.textTheme.titleMedium),
+      ],
+    );
+  }
+
+  Widget _divider() {
+    return Container(
+      width: 1,
+      height: 36,
+      color: AppTheme.dividerColor,
+    );
+  }
+
   void _showAddToPlanner(BuildContext context, WidgetRef ref) async {
     final date = await showDatePicker(
       context: context,
@@ -176,7 +274,8 @@ class RecipeDetailScreen extends ConsumerWidget {
         children: MealType.values
             .map((type) => SimpleDialogOption(
                   onPressed: () => Navigator.pop(ctx, type),
-                  child: Text(type.name[0].toUpperCase() + type.name.substring(1)),
+                  child:
+                      Text(type.name[0].toUpperCase() + type.name.substring(1)),
                 ))
             .toList(),
       ),
@@ -199,18 +298,19 @@ class _NutritionItem extends StatelessWidget {
   final String label;
   final String value;
   final String unit;
+  final Color color;
 
-  const _NutritionItem(this.label, this.value, this.unit);
+  const _NutritionItem(this.label, this.value, this.unit, this.color);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(value,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.w700)),
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  color: color,
+                )),
         Text(unit, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 2),
         Text(label,
