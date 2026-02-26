@@ -14,10 +14,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _obscureText = true;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     final apiKey = context.read<AppProvider>().apiKey;
-    if (apiKey != null) {
+    if (apiKey != null && _apiKeyController.text.isEmpty) {
       _apiKeyController.text = apiKey;
     }
   }
