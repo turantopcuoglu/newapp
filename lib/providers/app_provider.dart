@@ -31,7 +31,7 @@ class AppProvider extends ChangeNotifier {
   bool get hasApiKey => _apiKey != null && _apiKey!.isNotEmpty;
 
   List<String> get pantryNames =>
-      _pantry.map((i) => i.name).toList();
+      _pantry.map((i) => i.localizedName('tr')).toList();
 
   // --- Init ---
   void _loadData() {
@@ -61,11 +61,11 @@ class AppProvider extends ChangeNotifier {
 
     final ingredient = Ingredient(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
-      name: trimmed,
+      name: {'en': trimmed, 'tr': trimmed},
     );
 
-    // Don't add duplicates
-    if (_pantry.any((i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
+    if (_pantry.any((i) =>
+        i.localizedName('tr').toLowerCase() == trimmed.toLowerCase())) {
       return;
     }
 
@@ -78,12 +78,13 @@ class AppProvider extends ChangeNotifier {
     for (final name in names) {
       final trimmed = name.trim();
       if (trimmed.isEmpty) continue;
-      if (_pantry.any((i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
+      if (_pantry.any((i) =>
+          i.localizedName('tr').toLowerCase() == trimmed.toLowerCase())) {
         continue;
       }
       _pantry.add(Ingredient(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
-        name: trimmed,
+        name: {'en': trimmed, 'tr': trimmed},
       ));
     }
     await _storage.savePantryIngredients(_pantry);
@@ -172,30 +173,30 @@ class AppProvider extends ChangeNotifier {
   }
 
   // --- Shopping List ---
-  Future<void> addToShoppingList(String itemName, {String? forRecipe}) async {
+  Future<void> addToShoppingList(String itemName,
+      {String? forRecipeId}) async {
     final trimmed = itemName.trim();
     if (trimmed.isEmpty) return;
 
-    // Don't add duplicates
-    if (_shoppingList.any(
-        (i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
+    if (_shoppingList
+        .any((i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
       return;
     }
 
-    _shoppingList.add(ShoppingItem(name: trimmed, forRecipe: forRecipe));
+    _shoppingList.add(ShoppingItem(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      name: trimmed,
+      forRecipeId: forRecipeId,
+    ));
     await _storage.saveShoppingList(_shoppingList);
     notifyListeners();
   }
 
-  Future<void> addMissingToShoppingList(Recipe recipe) async {
-    for (final item in recipe.missingIngredients) {
-      await addToShoppingList(item, forRecipe: recipe.name);
-    }
-  }
-
   Future<void> toggleShoppingItem(int index) async {
     if (index < 0 || index >= _shoppingList.length) return;
-    _shoppingList[index].isChecked = !_shoppingList[index].isChecked;
+    _shoppingList[index] = _shoppingList[index].copyWith(
+      isPurchased: !_shoppingList[index].isPurchased,
+    );
     await _storage.saveShoppingList(_shoppingList);
     notifyListeners();
   }
@@ -214,7 +215,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   Future<void> clearCheckedItems() async {
-    _shoppingList.removeWhere((item) => item.isChecked);
+    _shoppingList.removeWhere((item) => item.isPurchased);
     await _storage.saveShoppingList(_shoppingList);
     notifyListeners();
   }
