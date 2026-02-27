@@ -85,6 +85,10 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
         return l10n.catLegume;
       case IngredientCategory.condiment:
         return l10n.catCondiment;
+      case IngredientCategory.snackFood:
+        return l10n.catSnackFood;
+      case IngredientCategory.beverage:
+        return l10n.catBeverage;
       case IngredientCategory.other:
         return l10n.catOther;
     }
@@ -112,6 +116,10 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
         return Icons.grass;
       case IngredientCategory.condiment:
         return Icons.kitchen;
+      case IngredientCategory.snackFood:
+        return Icons.cookie;
+      case IngredientCategory.beverage:
+        return Icons.local_cafe;
       case IngredientCategory.other:
         return Icons.more_horiz;
     }
