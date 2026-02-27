@@ -207,12 +207,17 @@ class RecipeDetailScreen extends ConsumerWidget {
                 width: double.infinity,
                 child: OutlinedButton.icon(
                   onPressed: () {
-                    ref
-                        .read(shoppingProvider.notifier)
-                        .addMissingIngredients(
-                          scoredRecipe.missingIngredients,
-                          forRecipeId: recipe.id,
-                        );
+                    final shoppingNotifier =
+                        ref.read(shoppingProvider.notifier);
+                    for (final id in scoredRecipe.missingIngredients) {
+                      final ingredient = ingredientMap[id];
+                      final displayName =
+                          ingredient?.localizedName(locale) ?? id;
+                      shoppingNotifier.addItem(
+                        displayName,
+                        forRecipeId: recipe.id,
+                      );
+                    }
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                           content: Text(

@@ -6,7 +6,7 @@ import 'storage_provider.dart';
 class MyRecipesNotifier extends StateNotifier<List<Recipe>> {
   final StorageService _storage;
 
-  MyRecipesNotifier(this._storage) : super(_storage.getMyRecipes());
+  MyRecipesNotifier(this._storage) : super(List.of(_storage.getMyRecipes()));
 
   void addRecipe(Recipe recipe) {
     state = [...state, recipe];

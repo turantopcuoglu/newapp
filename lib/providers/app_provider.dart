@@ -35,9 +35,21 @@ class AppProvider extends ChangeNotifier {
 
   // --- Init ---
   void _loadData() {
-    _pantry = _storage.getPantryIngredients();
-    _shoppingList = _storage.getShoppingList();
+    _pantry = List.of(_storage.getPantryIngredients());
+    _shoppingList = List.of(_storage.getShoppingList());
     _apiKey = _storage.getApiKey();
+    notifyListeners();
+  }
+
+  /// Reload shopping list from storage (call after external changes).
+  void reloadShoppingList() {
+    _shoppingList = List.of(_storage.getShoppingList());
+    notifyListeners();
+  }
+
+  /// Reload pantry from storage (call after external changes).
+  void reloadPantry() {
+    _pantry = List.of(_storage.getPantryIngredients());
     notifyListeners();
   }
 
@@ -218,6 +230,17 @@ class AppProvider extends ChangeNotifier {
     _shoppingList.removeWhere((item) => item.isPurchased);
     await _storage.saveShoppingList(_shoppingList);
     notifyListeners();
+  }
+
+  Future<void> addMissingToShoppingList(Recipe recipe) async {
+    final missing = recipe.ingredientIds.where((id) {
+      return !_pantry.any(
+          (p) => p.localizedName('tr').toLowerCase() == id.toLowerCase());
+    }).toList();
+
+    for (final name in missing) {
+      await addToShoppingList(name, forRecipeId: recipe.id);
+    }
   }
 
   void clearError() {
