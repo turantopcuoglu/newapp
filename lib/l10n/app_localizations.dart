@@ -59,6 +59,11 @@ class AppLocalizations {
   String get homeYesterday => _t('homeYesterday');
   String get homeNoMealsForDay => _t('homeNoMealsForDay');
   String get homeMealOfDay => _t('homeMealOfDay');
+  String get homeMealBreakfastTitle => _t('homeMealBreakfastTitle');
+  String get homeMealLunchTitle => _t('homeMealLunchTitle');
+  String get homeMealDinnerTitle => _t('homeMealDinnerTitle');
+  String get homeMealSnackTitle => _t('homeMealSnackTitle');
+  String get homeMealRecipeCount => _t('homeMealRecipeCount');
   String get homeQuickActions => _t('homeQuickActions');
   String get homeFat => _t('homeFat');
 

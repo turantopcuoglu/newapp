@@ -10,7 +10,7 @@ import '../../providers/meal_plan_provider.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
-import '../recipe_detail/recipe_detail_screen.dart';
+import 'meal_recommendations_screen.dart';
 import 'widgets/check_in_sheet.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -25,25 +25,22 @@ class HomeScreen extends ConsumerWidget {
     final inventoryCount = ref.watch(inventoryProvider).length;
     final theme = Theme.of(context);
 
-    // Meal of the day recommendation
+    // Meal recommendations grouped by meal type
     final recommendations = ref.watch(recommendationsProvider);
-    ScoredRecipe? mealOfTheDay;
-    if (recommendations != null) {
-      for (final mealType in MealType.values) {
-        final list = recommendations[mealType];
-        if (list != null && list.isNotEmpty) {
-          mealOfTheDay = list.first;
-          break;
-        }
-      }
-    }
+    final safeRecipes = ref.watch(safeScoredRecipesProvider);
 
-    // If no check-in based recommendation, get from safe recipes
-    if (mealOfTheDay == null) {
-      final safe = ref.watch(safeScoredRecipesProvider);
-      if (safe.isNotEmpty) {
-        mealOfTheDay = safe.first;
+    // Build grouped recommendations: check-in based or fallback to safe recipes
+    final Map<MealType, List<ScoredRecipe>> groupedRecommendations;
+    if (recommendations != null) {
+      groupedRecommendations = recommendations;
+    } else {
+      // Group safe recipes by meal type
+      final grouped = <MealType, List<ScoredRecipe>>{};
+      for (final mealType in MealType.values) {
+        grouped[mealType] =
+            safeRecipes.where((s) => s.recipe.mealType == mealType).toList();
       }
+      groupedRecommendations = grouped;
     }
 
     return Scaffold(
@@ -79,27 +76,35 @@ class HomeScreen extends ConsumerWidget {
                 _NutritionDayCard(l10n: l10n),
                 const SizedBox(height: 16),
 
-                // Meal of the Day
-                if (mealOfTheDay != null) ...[
-                  Text(
-                    l10n.homeMealOfDay,
-                    style: theme.textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 12),
-                  _MealOfDayCard(
-                    scoredRecipe: mealOfTheDay,
+                // Meal Recommendations by type
+                Text(
+                  l10n.homeMealOfDay,
+                  style: theme.textTheme.titleLarge,
+                ),
+                const SizedBox(height: 12),
+                ...MealType.values.map((mealType) {
+                  final recipes =
+                      groupedRecommendations[mealType] ?? [];
+                  final topRecipe =
+                      recipes.isNotEmpty ? recipes.first : null;
+                  return _MealTypeHeaderCard(
+                    mealType: mealType,
+                    topRecipe: topRecipe,
+                    recipeCount: recipes.length,
                     locale: locale,
                     l10n: l10n,
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) =>
-                            RecipeDetailScreen(scoredRecipe: mealOfTheDay!),
+                        builder: (_) => MealRecommendationsScreen(
+                          mealType: mealType,
+                          recipes: recipes,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                ],
+                  );
+                }),
+                const SizedBox(height: 16),
 
                 // Daily Health Tip
                 _HealthTipCard(l10n: l10n, locale: locale),
@@ -751,16 +756,20 @@ class _MacroItem extends StatelessWidget {
   }
 }
 
-// ─── Meal of the Day Card ───────────────────────────────────────────────────
+// ─── Meal Type Header Card ──────────────────────────────────────────────────
 
-class _MealOfDayCard extends StatelessWidget {
-  final ScoredRecipe scoredRecipe;
+class _MealTypeHeaderCard extends StatelessWidget {
+  final MealType mealType;
+  final ScoredRecipe? topRecipe;
+  final int recipeCount;
   final String locale;
   final AppLocalizations l10n;
   final VoidCallback onTap;
 
-  const _MealOfDayCard({
-    required this.scoredRecipe,
+  const _MealTypeHeaderCard({
+    required this.mealType,
+    required this.topRecipe,
+    required this.recipeCount,
     required this.locale,
     required this.l10n,
     required this.onTap,
@@ -768,164 +777,177 @@ class _MealOfDayCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recipe = scoredRecipe.recipe;
-    final macros = recipe.macros;
+    final color = _getMealColor();
+    final gradient = _getMealGradient();
 
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: AppTheme.accentGradient,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: AppTheme.accentOrange.withAlpha(60),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(40),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      _mealTypeLabel(recipe.mealType),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(30),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Icon(
-                      Icons.arrow_forward_rounded,
-                      color: Colors.white,
-                      size: 18,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Text(
-                recipe.localizedName(locale),
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: -0.3,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                recipe.localizedDescription(locale),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.white.withAlpha(200),
-                  fontSize: 13,
-                  height: 1.4,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  _MealChip(
-                    icon: Icons.local_fire_department_rounded,
-                    label: '${macros.calories} kcal',
-                  ),
-                  const SizedBox(width: 8),
-                  _MealChip(
-                    icon: Icons.fitness_center_rounded,
-                    label: '${macros.proteinG}g ${l10n.recipeProtein.toLowerCase()}',
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(40),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      '${scoredRecipe.compatibilityPercent}% ${l10n.recipeCompatibility}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: gradient,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: color.withAlpha(50),
+                blurRadius: 16,
+                offset: const Offset(0, 6),
               ),
             ],
           ),
+          child: Padding(
+            padding: const EdgeInsets.all(18),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withAlpha(30),
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  child: Icon(
+                    _getMealIcon(),
+                    color: Colors.white,
+                    size: 26,
+                  ),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _getMealTitle(),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: -0.2,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      if (topRecipe != null)
+                        Text(
+                          topRecipe!.recipe.localizedName(locale),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.white.withAlpha(200),
+                            fontSize: 13,
+                          ),
+                        )
+                      else
+                        Text(
+                          l10n.recipeNoResults,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.white.withAlpha(180),
+                            fontSize: 12,
+                          ),
+                        ),
+                      if (topRecipe != null) ...[
+                        const SizedBox(height: 4),
+                        Text(
+                          '${topRecipe!.compatibilityPercent}% ${l10n.recipeCompatibility} · $recipeCount ${l10n.homeMealRecipeCount}',
+                          style: TextStyle(
+                            color: Colors.white.withAlpha(160),
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withAlpha(25),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 
-  String _mealTypeLabel(MealType type) {
-    switch (type) {
+  String _getMealTitle() {
+    switch (mealType) {
       case MealType.breakfast:
-        return l10n.recipeBreakfast;
+        return l10n.homeMealBreakfastTitle;
       case MealType.lunch:
-        return l10n.recipeLunch;
+        return l10n.homeMealLunchTitle;
       case MealType.dinner:
-        return l10n.recipeDinner;
+        return l10n.homeMealDinnerTitle;
       case MealType.snack:
-        return l10n.recipeSnack;
+        return l10n.homeMealSnackTitle;
     }
   }
-}
 
-class _MealChip extends StatelessWidget {
-  final IconData icon;
-  final String label;
+  Color _getMealColor() {
+    switch (mealType) {
+      case MealType.breakfast:
+        return AppTheme.breakfastColor;
+      case MealType.lunch:
+        return AppTheme.lunchColor;
+      case MealType.dinner:
+        return AppTheme.dinnerColor;
+      case MealType.snack:
+        return AppTheme.snackColor;
+    }
+  }
 
-  const _MealChip({required this.icon, required this.label});
+  LinearGradient _getMealGradient() {
+    switch (mealType) {
+      case MealType.breakfast:
+        return const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFFFFB020), Color(0xFFF09819)],
+        );
+      case MealType.lunch:
+        return const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF2ECC71), Color(0xFF27AE60)],
+        );
+      case MealType.dinner:
+        return const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF5B6FE6), Color(0xFF4A5BD4)],
+        );
+      case MealType.snack:
+        return const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFFE84393), Color(0xFFD63384)],
+        );
+    }
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.white.withAlpha(25),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, color: Colors.white, size: 14),
-          const SizedBox(width: 4),
-          Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 11,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
+  IconData _getMealIcon() {
+    switch (mealType) {
+      case MealType.breakfast:
+        return Icons.free_breakfast_rounded;
+      case MealType.lunch:
+        return Icons.lunch_dining_rounded;
+      case MealType.dinner:
+        return Icons.dinner_dining_rounded;
+      case MealType.snack:
+        return Icons.cookie_rounded;
+    }
   }
 }
 
