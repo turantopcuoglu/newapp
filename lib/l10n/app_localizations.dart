@@ -182,6 +182,34 @@ class AppLocalizations {
   String get onboardingNameRequired => _t('onboardingNameRequired');
   String get onboardingGenderRequired => _t('onboardingGenderRequired');
 
+  // Ingredient categories
+  String get catAll => _t('catAll');
+  String get catDairy => _t('catDairy');
+  String get catGrain => _t('catGrain');
+  String get catVegetable => _t('catVegetable');
+  String get catFruit => _t('catFruit');
+  String get catSpice => _t('catSpice');
+  String get catOil => _t('catOil');
+  String get catNut => _t('catNut');
+  String get catLegume => _t('catLegume');
+  String get catCondiment => _t('catCondiment');
+  String get catOther => _t('catOther');
+
+  // Ingredient selector
+  String get ingredientSelect => _t('ingredientSelect');
+  String get ingredientAddBtn => _t('ingredientAddBtn');
+  String get ingredientSelected => _t('ingredientSelected');
+  String get ingredientServing => _t('ingredientServing');
+  String ingredientAddCount(int count) =>
+      _t('ingredientAddCount').replaceFirst('{count}', count.toString());
+  String get ingredientNone => _t('ingredientNone');
+  String get ingredientGram => _t('ingredientGram');
+
+  // Live nutrition
+  String get nutritionLive => _t('nutritionLive');
+  String get nutritionTotal => _t('nutritionTotal');
+  String get recipeFat => _t('recipeFat');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

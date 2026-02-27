@@ -153,6 +153,33 @@ const Map<String, String> trTranslations = {
   'onboardingNameRequired': 'Lütfen adınızı girin',
   'onboardingGenderRequired': 'Lütfen cinsiyetinizi seçin',
 
+  // Ingredient categories
+  'catAll': 'Tümü',
+  'catDairy': 'Süt Ürünleri',
+  'catGrain': 'Tahıl',
+  'catVegetable': 'Sebze',
+  'catFruit': 'Meyve',
+  'catSpice': 'Baharat',
+  'catOil': 'Yağ',
+  'catNut': 'Kuruyemiş',
+  'catLegume': 'Baklagil',
+  'catCondiment': 'Sos & Çeşni',
+  'catOther': 'Diğer',
+
+  // Ingredient selector
+  'ingredientSelect': 'Malzeme Seçin',
+  'ingredientAddBtn': 'Malzeme Ekle',
+  'ingredientSelected': 'Seçilen Malzemeler',
+  'ingredientServing': 'g',
+  'ingredientAddCount': '{count} Malzeme Ekle',
+  'ingredientNone': 'Henüz malzeme seçilmedi.\nYukarıdaki butona dokunarak ekleyin.',
+  'ingredientGram': 'gram',
+
+  // Live nutrition
+  'nutritionLive': 'Besin Değeri Tahmini',
+  'nutritionTotal': 'Toplam',
+  'recipeFat': 'Yağ',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',

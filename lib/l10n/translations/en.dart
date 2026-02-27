@@ -153,6 +153,33 @@ const Map<String, String> enTranslations = {
   'onboardingNameRequired': 'Please enter your name',
   'onboardingGenderRequired': 'Please select your gender',
 
+  // Ingredient categories
+  'catAll': 'All',
+  'catDairy': 'Dairy',
+  'catGrain': 'Grain',
+  'catVegetable': 'Vegetable',
+  'catFruit': 'Fruit',
+  'catSpice': 'Spice',
+  'catOil': 'Oil',
+  'catNut': 'Nut',
+  'catLegume': 'Legume',
+  'catCondiment': 'Condiment',
+  'catOther': 'Other',
+
+  // Ingredient selector
+  'ingredientSelect': 'Select Ingredients',
+  'ingredientAddBtn': 'Add Ingredient',
+  'ingredientSelected': 'Selected Ingredients',
+  'ingredientServing': 'g',
+  'ingredientAddCount': 'Add {count} Ingredients',
+  'ingredientNone': 'No ingredients selected yet.\nTap the button above to add.',
+  'ingredientGram': 'gram',
+
+  // Live nutrition
+  'nutritionLive': 'Nutrition Estimate',
+  'nutritionTotal': 'Total',
+  'recipeFat': 'Fat',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',
