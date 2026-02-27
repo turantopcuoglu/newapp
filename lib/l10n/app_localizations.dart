@@ -210,6 +210,64 @@ class AppLocalizations {
   String get nutritionTotal => _t('nutritionTotal');
   String get recipeFat => _t('recipeFat');
 
+  // Ingredient categories (new)
+  String get catSnackFood => _t('catSnackFood');
+  String get catBeverage => _t('catBeverage');
+
+  // Beverages
+  String get beverageTitle => _t('beverageTitle');
+  String get beverageWater => _t('beverageWater');
+  String get beverageTea => _t('beverageTea');
+  String get beverageCoffee => _t('beverageCoffee');
+  String get beverageJuice => _t('beverageJuice');
+  String get beverageSoda => _t('beverageSoda');
+  String get beverageMilk => _t('beverageMilk');
+  String get beverageSmoothie => _t('beverageSmoothie');
+  String get beverageOther => _t('beverageOther');
+  String get beverageAddDrink => _t('beverageAddDrink');
+  String get beverageTodayWater => _t('beverageTodayWater');
+  String get beverageTodayCalories => _t('beverageTodayCalories');
+  String get beverageTarget => _t('beverageTarget');
+  String get beverageSelectAmount => _t('beverageSelectAmount');
+  String get beverageCustomAmount => _t('beverageCustomAmount');
+  String get beverageMl => _t('beverageMl');
+  String get beverageGlasses => _t('beverageGlasses');
+  String get beverageNoEntries => _t('beverageNoEntries');
+  String get beverageLiters => _t('beverageLiters');
+  String get navBeverages => _t('navBeverages');
+
+  // Nutrition Stats
+  String get nutritionStatsTitle => _t('nutritionStatsTitle');
+  String get nutritionPeriodDaily => _t('nutritionPeriodDaily');
+  String get nutritionPeriodWeekly => _t('nutritionPeriodWeekly');
+  String get nutritionPeriodMonthly => _t('nutritionPeriodMonthly');
+  String get nutritionTotalCalories => _t('nutritionTotalCalories');
+  String get nutritionMacroBreakdown => _t('nutritionMacroBreakdown');
+  String get nutritionProteinRatio => _t('nutritionProteinRatio');
+  String get nutritionCarbsRatio => _t('nutritionCarbsRatio');
+  String get nutritionFatRatio => _t('nutritionFatRatio');
+  String get nutritionFiberTotal => _t('nutritionFiberTotal');
+  String get nutritionMealsCount => _t('nutritionMealsCount');
+  String get nutritionBeverageCals => _t('nutritionBeverageCals');
+  String get nutritionWaterIntake => _t('nutritionWaterIntake');
+  String get nutritionNoData => _t('nutritionNoData');
+
+  // Health Tips
+  String get healthTipTitle => _t('healthTipTitle');
+  String get healthTipMoodTitle => _t('healthTipMoodTitle');
+  String get healthTipReadMore => _t('healthTipReadMore');
+
+  // Time picker
+  String get plannerSelectTime => _t('plannerSelectTime');
+  String get plannerTimeOptional => _t('plannerTimeOptional');
+  String get plannerSkipTime => _t('plannerSkipTime');
+
+  // Recipes section
+  String get recipesBuiltIn => _t('recipesBuiltIn');
+  String get recipesExplore => _t('recipesExplore');
+  String get recipesAll => _t('recipesAll');
+  String get recipesFilterByType => _t('recipesFilterByType');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

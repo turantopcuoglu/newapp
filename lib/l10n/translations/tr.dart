@@ -180,6 +180,64 @@ const Map<String, String> trTranslations = {
   'nutritionTotal': 'Toplam',
   'recipeFat': 'Yağ',
 
+  // Ingredient categories (new)
+  'catSnackFood': 'Atıştırmalık',
+  'catBeverage': 'İçecek',
+
+  // Beverages
+  'beverageTitle': 'İçecekler',
+  'beverageWater': 'Su',
+  'beverageTea': 'Çay',
+  'beverageCoffee': 'Kahve',
+  'beverageJuice': 'Meyve Suyu',
+  'beverageSoda': 'Gazlı İçecek',
+  'beverageMilk': 'Süt',
+  'beverageSmoothie': 'Smoothie',
+  'beverageOther': 'Diğer',
+  'beverageAddDrink': 'İçecek Ekle',
+  'beverageTodayWater': 'Bugünkü Su Tüketimi',
+  'beverageTodayCalories': 'İçecek Kalorileri',
+  'beverageTarget': 'Hedef: 2000 ml',
+  'beverageSelectAmount': 'Miktar Seçin (ml)',
+  'beverageCustomAmount': 'Özel Miktar',
+  'beverageMl': 'ml',
+  'beverageGlasses': 'bardak',
+  'beverageNoEntries': 'Bugün henüz içecek kaydı yok.',
+  'beverageLiters': 'litre',
+  'navBeverages': 'İçecekler',
+
+  // Nutrition Stats
+  'nutritionStatsTitle': 'Besin Oranları',
+  'nutritionPeriodDaily': 'Günlük',
+  'nutritionPeriodWeekly': 'Haftalık',
+  'nutritionPeriodMonthly': 'Aylık',
+  'nutritionTotalCalories': 'Toplam Kalori',
+  'nutritionMacroBreakdown': 'Makro Besin Dağılımı',
+  'nutritionProteinRatio': 'Protein',
+  'nutritionCarbsRatio': 'Karbonhidrat',
+  'nutritionFatRatio': 'Yağ',
+  'nutritionFiberTotal': 'Lif',
+  'nutritionMealsCount': 'Kayıtlı Öğün',
+  'nutritionBeverageCals': 'İçecek Kalorileri',
+  'nutritionWaterIntake': 'Su Tüketimi',
+  'nutritionNoData': 'Bu dönem için veri bulunamadı.',
+
+  // Health Tips
+  'healthTipTitle': 'Günün Sağlık Notu',
+  'healthTipMoodTitle': 'Size Özel Beslenme Önerisi',
+  'healthTipReadMore': 'Devamını Oku',
+
+  // Time picker
+  'plannerSelectTime': 'Saat Seçin',
+  'plannerTimeOptional': 'Saat (İsteğe Bağlı)',
+  'plannerSkipTime': 'Atla',
+
+  // Recipes section
+  'recipesBuiltIn': 'Hazır Tarifler',
+  'recipesExplore': 'Tarifleri Keşfet',
+  'recipesAll': 'Tüm Tarifler',
+  'recipesFilterByType': 'Türe Göre Filtrele',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',

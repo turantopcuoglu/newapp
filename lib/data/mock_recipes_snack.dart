@@ -1317,4 +1317,407 @@ const List<Recipe> mockSnackRecipes = [
     imagePath: null,
     isUserCreated: false,
   ),
+
+  // ---------------------------------------------------------------------------
+  // s026 – Trail Mix with Nuts and Dried Fruits (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's026',
+    name: {
+      'en': 'Trail Mix with Nuts and Dried Fruits',
+      'tr': 'Kuruyemişli Karışım',
+    },
+    description: {
+      'en':
+          'A crunchy and chewy mix of mixed nuts, dried fruit, and dark chocolate chips — perfect grab-and-go junk-food-style snack.',
+      'tr':
+          'Karışık kuruyemiş, kuru meyve ve bitter çikolata parçalarından oluşan çıtır ve lezzetli bir abur cubur karışımı.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['mixed_nuts', 'dried_fruit', 'dark_chocolate', 'coconut_milk'],
+    allergenTags: ['tree_nuts'],
+    checkInTags: [
+      CheckInType.lowEnergy,
+      CheckInType.cantFocus,
+      CheckInType.noSpecificIssue,
+    ],
+    proteinLevel: NutrientLevel.medium,
+    fiberLevel: NutrientLevel.medium,
+    carbType: CarbType.mixed,
+    macros: MacroEstimation(
+      calories: 280,
+      proteinG: 7,
+      carbsG: 24,
+      fatG: 18,
+      fiberG: 4,
+    ),
+    steps: {
+      'en': [
+        'Combine mixed nuts, dried fruit, and dark chocolate chips in a large bowl.',
+        'Toss everything together until evenly distributed.',
+        'Divide into snack-sized portions and store in airtight bags or containers.',
+      ],
+      'tr': [
+        'Karışık kuruyemiş, kuru meyve ve bitter çikolata parçalarını büyük bir kasede birleştirin.',
+        'Her şeyi eşit dağılana kadar karıştırın.',
+        'Atıştırmalık porsiyonlara ayırın ve hava almayan poşet veya kaplarda saklayın.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s027 – Ice Cream Sundae (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's027',
+    name: {
+      'en': 'Ice Cream Sundae',
+      'tr': 'Dondurmalı Kase',
+    },
+    description: {
+      'en':
+          'A classic junk food treat — scoops of ice cream topped with chocolate, banana slices, and crushed cookies.',
+      'tr':
+          'Klasik bir abur cubur keyfi — çikolata sosu, muz dilimleri ve ufalanmış kurabiye ile süslenmiş dondurma kasesi.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['ice_cream', 'chocolate_bar', 'banana', 'cookies'],
+    allergenTags: ['dairy', 'gluten', 'eggs'],
+    checkInTags: [
+      CheckInType.cravingSweets,
+      CheckInType.pms,
+      CheckInType.noSpecificIssue,
+    ],
+    proteinLevel: NutrientLevel.low,
+    fiberLevel: NutrientLevel.low,
+    carbType: CarbType.simple,
+    macros: MacroEstimation(
+      calories: 420,
+      proteinG: 6,
+      carbsG: 58,
+      fatG: 19,
+      fiberG: 2,
+    ),
+    steps: {
+      'en': [
+        'Place two scoops of ice cream in a bowl.',
+        'Melt chocolate and drizzle it over the ice cream.',
+        'Add banana slices on the side and crush cookies over the top.',
+        'Serve immediately before melting.',
+      ],
+      'tr': [
+        'Bir kaseye iki top dondurma koyun.',
+        'Çikolatayı eritin ve dondurmanın üzerine gezdirin.',
+        'Kenarlara muz dilimleri ekleyin ve üzerine ufalanmış kurabiye serpin.',
+        'Erimeden hemen servis edin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s028 – Chips and Salsa (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's028',
+    name: {
+      'en': 'Chips and Salsa',
+      'tr': 'Cips ve Sos',
+    },
+    description: {
+      'en':
+          'Tortilla chips served with a quick homemade tomato salsa — the ultimate casual junk food snack.',
+      'tr':
+          'Ev yapımı domates sosu ile servis edilen tortilla cipsleri — en klasik abur cubur atıştırmalığı.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['tortilla_chips', 'potato_chips', 'crackers'],
+    allergenTags: ['gluten'],
+    checkInTags: [
+      CheckInType.cravingSweets,
+      CheckInType.noSpecificIssue,
+    ],
+    proteinLevel: NutrientLevel.low,
+    fiberLevel: NutrientLevel.low,
+    carbType: CarbType.simple,
+    macros: MacroEstimation(
+      calories: 320,
+      proteinG: 4,
+      carbsG: 42,
+      fatG: 16,
+      fiberG: 3,
+    ),
+    steps: {
+      'en': [
+        'Arrange tortilla chips on a large serving plate.',
+        'Dice tomatoes, onion, and cilantro; mix with lime juice and salt to make salsa.',
+        'Pour the salsa into a small bowl and place in the center of the plate.',
+        'Dip and enjoy!',
+      ],
+      'tr': [
+        'Tortilla cipslerini büyük bir servis tabağına dizin.',
+        'Domates, soğan ve maydanozu doğrayın; limon suyu ve tuzla karıştırarak salsa yapın.',
+        'Salsayı küçük bir kaseye koyun ve tabağın ortasına yerleştirin.',
+        'Banarak keyfini çıkarın!',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s029 – Chocolate Fondue with Fruit (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's029',
+    name: {
+      'en': 'Chocolate Fondue with Fruit',
+      'tr': 'Çikolata Fondüsü',
+    },
+    description: {
+      'en':
+          'Melted dark chocolate served as a dipping fondue with fresh banana slices, strawberries, and dried fruit.',
+      'tr':
+          'Taze muz dilimleri, çilek ve kuru meyve ile servis edilen eritilmiş bitter çikolata fondüsü.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['dark_chocolate', 'banana', 'blueberry', 'raspberry', 'dried_fruit'],
+    allergenTags: ['dairy'],
+    checkInTags: [
+      CheckInType.cravingSweets,
+      CheckInType.pms,
+      CheckInType.periodCramps,
+    ],
+    proteinLevel: NutrientLevel.low,
+    fiberLevel: NutrientLevel.medium,
+    carbType: CarbType.simple,
+    macros: MacroEstimation(
+      calories: 350,
+      proteinG: 4,
+      carbsG: 48,
+      fatG: 17,
+      fiberG: 5,
+    ),
+    steps: {
+      'en': [
+        'Break dark chocolate into pieces and melt in a heatproof bowl over simmering water.',
+        'Slice banana and wash berries; arrange on a plate alongside dried fruit.',
+        'Pour melted chocolate into a fondue pot or small bowl.',
+        'Dip fruit pieces into the warm chocolate and enjoy.',
+      ],
+      'tr': [
+        'Bitter çikolatayı parçalayın ve hafif kaynayan suyun üzerinde ısıya dayanıklı kasede eritin.',
+        'Muzu dilimleyin ve meyveleri yıkayın; kuru meyve ile birlikte bir tabağa dizin.',
+        'Eritilmiş çikolatayı fondü kabına veya küçük bir kaseye dökün.',
+        'Meyve parçalarını sıcak çikolataya batırarak keyfini çıkarın.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s030 – Popcorn Party Mix (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's030',
+    name: {
+      'en': 'Popcorn Party Mix',
+      'tr': 'Baharatlı Patlamış Mısır',
+    },
+    description: {
+      'en':
+          'Freshly popped popcorn tossed with mixed nuts and a sweet-savory seasoning for a fun party snack.',
+      'tr':
+          'Taze patlamış mısır, karışık kuruyemiş ve tatlı-tuzlu baharatlarla harmanlanmış eğlenceli parti atıştırmalığı.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['popcorn', 'mixed_nuts', 'honey', 'crackers'],
+    allergenTags: ['tree_nuts', 'gluten'],
+    checkInTags: [
+      CheckInType.cravingSweets,
+      CheckInType.noSpecificIssue,
+    ],
+    proteinLevel: NutrientLevel.low,
+    fiberLevel: NutrientLevel.medium,
+    carbType: CarbType.mixed,
+    macros: MacroEstimation(
+      calories: 260,
+      proteinG: 5,
+      carbsG: 34,
+      fatG: 13,
+      fiberG: 4,
+    ),
+    steps: {
+      'en': [
+        'Pop popcorn kernels in a large pot with a little oil over medium-high heat.',
+        'In a small saucepan, warm honey with a pinch of salt and a dash of paprika.',
+        'Toss the popcorn with mixed nuts and crushed crackers in a large bowl.',
+        'Drizzle the honey mixture over everything and toss until evenly coated.',
+      ],
+      'tr': [
+        'Mısır patlatma tanelerini büyük bir tencerede az yağ ile orta-yüksek ateşte patlatın.',
+        'Küçük bir tavada balı bir tutam tuz ve biraz kırmızı biberle ısıtın.',
+        'Patlamış mısırı karışık kuruyemiş ve ufalanmış krakerlerle büyük bir kasede karıştırın.',
+        'Bal karışımını her şeyin üzerine gezdirin ve eşit kaplanana kadar karıştırın.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s031 – Greek Yogurt Parfait with Berries (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's031',
+    name: {
+      'en': 'Greek Yogurt Parfait with Berries',
+      'tr': 'Meyveli Yoğurt Parfesi',
+    },
+    description: {
+      'en':
+          'Thick Greek yogurt layered with fresh blueberries, raspberries, granola, and a drizzle of honey.',
+      'tr':
+          'Taze yaban mersini, ahududu, granola ve bal ile katman katman hazırlanan koyu Yunan yoğurdu parfesi.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['greek_yogurt', 'blueberry', 'raspberry', 'granola_bar', 'honey'],
+    allergenTags: ['dairy', 'gluten'],
+    checkInTags: [
+      CheckInType.lowEnergy,
+      CheckInType.postWorkout,
+      CheckInType.feelingBalanced,
+    ],
+    proteinLevel: NutrientLevel.high,
+    fiberLevel: NutrientLevel.medium,
+    carbType: CarbType.mixed,
+    macros: MacroEstimation(
+      calories: 220,
+      proteinG: 14,
+      carbsG: 30,
+      fatG: 6,
+      fiberG: 3,
+    ),
+    steps: {
+      'en': [
+        'Spoon a thick layer of Greek yogurt into the bottom of a glass or jar.',
+        'Add a layer of fresh blueberries and raspberries.',
+        'Crumble granola bar pieces over the berries.',
+        'Repeat layers and finish with a drizzle of honey on top.',
+      ],
+      'tr': [
+        'Bir bardak veya kavanozun altına kalın bir katman Yunan yoğurdu koyun.',
+        'Üzerine taze yaban mersini ve ahududu katmanı ekleyin.',
+        'Meyvelerin üzerine ufalanmış granola bar parçaları serpin.',
+        'Katmanları tekrarlayın ve üzerine bal gezdirerek servis edin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s032 – Peanut Butter Rice Cakes (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's032',
+    name: {
+      'en': 'Peanut Butter Rice Cakes',
+      'tr': 'Fıstık Ezmeli Pirinç Patlağı',
+    },
+    description: {
+      'en':
+          'Light rice cakes spread with peanut butter, topped with banana slices and a drizzle of honey — a quick junk-food-style fix.',
+      'tr':
+          'Fıstık ezmesi sürülmüş pirinç patlağı, muz dilimleri ve bal ile — hızlı bir abur cubur alternatifi.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['rice_cake', 'peanut_butter', 'banana', 'honey'],
+    allergenTags: ['peanuts'],
+    checkInTags: [
+      CheckInType.lowEnergy,
+      CheckInType.cravingSweets,
+      CheckInType.postWorkout,
+    ],
+    proteinLevel: NutrientLevel.medium,
+    fiberLevel: NutrientLevel.low,
+    carbType: CarbType.mixed,
+    macros: MacroEstimation(
+      calories: 245,
+      proteinG: 8,
+      carbsG: 32,
+      fatG: 11,
+      fiberG: 2,
+    ),
+    steps: {
+      'en': [
+        'Spread a generous layer of peanut butter on each rice cake.',
+        'Top with thin banana slices arranged in a single layer.',
+        'Drizzle honey over the top and serve immediately.',
+      ],
+      'tr': [
+        'Her pirinç patlağının üzerine bol miktarda fıstık ezmesi sürün.',
+        'Üzerine ince muz dilimlerini tek sıra halinde dizin.',
+        'Bal gezdirin ve hemen servis edin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------------------
+  // s033 – Date and Nut Energy Bites (Abur cubur / Junk Food)
+  // ---------------------------------------------------------------------------
+  Recipe(
+    id: 's033',
+    name: {
+      'en': 'Date and Nut Energy Bites',
+      'tr': 'Hurmalı Enerji Topları',
+    },
+    description: {
+      'en':
+          'Chewy no-bake energy bites made from dates, mixed nuts, oats, and a touch of dark chocolate — naturally sweet junk food.',
+      'tr':
+          'Hurma, karışık kuruyemiş, yulaf ve bitter çikolata ile hazırlanan pişirme gerektirmeyen doğal tatlılıkta enerji topları.',
+    },
+    mealType: MealType.snack,
+    ingredientIds: ['dates', 'mixed_nuts', 'oats', 'dark_chocolate', 'honey'],
+    allergenTags: ['tree_nuts', 'gluten'],
+    checkInTags: [
+      CheckInType.lowEnergy,
+      CheckInType.periodFatigue,
+      CheckInType.cravingSweets,
+      CheckInType.postWorkout,
+    ],
+    proteinLevel: NutrientLevel.medium,
+    fiberLevel: NutrientLevel.high,
+    carbType: CarbType.complex,
+    macros: MacroEstimation(
+      calories: 210,
+      proteinG: 5,
+      carbsG: 32,
+      fatG: 9,
+      fiberG: 5,
+    ),
+    steps: {
+      'en': [
+        'Pit the dates and place them in a food processor with mixed nuts.',
+        'Pulse until a chunky, sticky dough forms.',
+        'Add oats, chopped dark chocolate, and a drizzle of honey; pulse a few more times.',
+        'Roll into bite-sized balls and refrigerate for at least 30 minutes before serving.',
+      ],
+      'tr': [
+        'Hurmaların çekirdeklerini çıkarın ve karışık kuruyemişle birlikte mutfak robotuna koyun.',
+        'Parçalı ve yapışkan bir hamur oluşana kadar çalıştırın.',
+        'Yulaf, doğranmış bitter çikolata ve bir miktar bal ekleyin; birkaç kez daha çalıştırın.',
+        'Lokma büyüklüğünde toplar halinde yuvarlayın ve servis öncesi en az 30 dakika buzdolabında bekletin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
 ];

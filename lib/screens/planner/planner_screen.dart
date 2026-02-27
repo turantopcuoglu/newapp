@@ -173,6 +173,24 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
       child: Row(
         children: [
           MealTypeBadge(mealType: entry.mealType),
+          if (entry.timeLabel.isNotEmpty) ...[
+            const SizedBox(width: 6),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primary.withAlpha(15),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(
+                entry.timeLabel,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+            ),
+          ],
           const SizedBox(width: 10),
           Expanded(
             child: Text(
@@ -231,13 +249,37 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
             .toList(),
       ),
     );
-    if (selected == null) return;
+    if (selected == null || !context.mounted) return;
+
+    // Select time (optional)
+    final timeOfDay = await showTimePicker(
+      context: context,
+      initialTime: _defaultTimeForMealType(mealType),
+      helpText: l10n.plannerSelectTime,
+      cancelText: l10n.plannerSkipTime,
+      confirmText: l10n.confirm,
+    );
 
     ref.read(mealPlanProvider.notifier).addEntry(
           recipeId: selected.recipe.id,
           date: date,
           mealType: mealType,
+          hour: timeOfDay?.hour,
+          minute: timeOfDay?.minute,
         );
+  }
+
+  TimeOfDay _defaultTimeForMealType(MealType type) {
+    switch (type) {
+      case MealType.breakfast:
+        return const TimeOfDay(hour: 8, minute: 0);
+      case MealType.lunch:
+        return const TimeOfDay(hour: 12, minute: 30);
+      case MealType.dinner:
+        return const TimeOfDay(hour: 19, minute: 0);
+      case MealType.snack:
+        return const TimeOfDay(hour: 15, minute: 0);
+    }
   }
 
   bool _isSameDay(DateTime a, DateTime b) =>
