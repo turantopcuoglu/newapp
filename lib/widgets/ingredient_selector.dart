@@ -42,7 +42,7 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
   }
 
   List<Ingredient> get _filteredIngredients {
-    var list = mockIngredients;
+    var list = List.of(mockIngredients);
     if (_selectedCategory != null) {
       list = list.where((i) => i.category == _selectedCategory).toList();
     }
