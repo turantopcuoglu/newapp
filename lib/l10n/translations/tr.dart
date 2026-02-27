@@ -27,6 +27,8 @@ const Map<String, String> trTranslations = {
   'homeYesterdayNutrition': 'Dünün Beslenme Özeti',
   'homeYesterdayMeals': 'öğün',
   'homeNoMealsYesterday': 'Dün kayıtlı öğün bulunamadı',
+  'homeYesterday': 'Dün',
+  'homeNoMealsForDay': 'Bu gün için kayıtlı öğün yok',
   'homeMealOfDay': 'Günün Yemeği',
   'homeQuickActions': 'Hızlı İşlemler',
   'homeFat': 'Yağ',

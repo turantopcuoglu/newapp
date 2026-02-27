@@ -23,30 +23,7 @@ class HomeScreen extends ConsumerWidget {
     final profile = ref.watch(profileProvider);
     final checkIn = ref.watch(checkInProvider);
     final inventoryCount = ref.watch(inventoryProvider).length;
-    final mealPlans = ref.watch(mealPlanProvider);
-    final recipeMap = ref.watch(recipeMapProvider);
     final theme = Theme.of(context);
-
-    // Yesterday's meals
-    final yesterday = DateTime.now().subtract(const Duration(days: 1));
-    final yesterdayKey =
-        '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
-    final yesterdayMeals =
-        mealPlans.where((e) => e.dateKey == yesterdayKey).toList();
-
-    int totalCalories = 0;
-    int totalProtein = 0;
-    int totalCarbs = 0;
-    int totalFat = 0;
-    for (final entry in yesterdayMeals) {
-      final recipe = recipeMap[entry.recipeId];
-      if (recipe != null) {
-        totalCalories += recipe.macros.calories;
-        totalProtein += recipe.macros.proteinG;
-        totalCarbs += recipe.macros.carbsG;
-        totalFat += recipe.macros.fatG;
-      }
-    }
 
     // Meal of the day recommendation
     final recommendations = ref.watch(recommendationsProvider);
@@ -98,15 +75,8 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 16),
 
-                // Yesterday's Nutrition
-                _YesterdayNutritionCard(
-                  mealCount: yesterdayMeals.length,
-                  totalCalories: totalCalories,
-                  totalProtein: totalProtein,
-                  totalCarbs: totalCarbs,
-                  totalFat: totalFat,
-                  l10n: l10n,
-                ),
+                // Nutrition Day Navigator
+                _NutritionDayCard(l10n: l10n),
                 const SizedBox(height: 16),
 
                 // Meal of the Day
@@ -418,28 +388,83 @@ class _KitchenStatusCard extends StatelessWidget {
   }
 }
 
-// ─── Yesterday's Nutrition Card ─────────────────────────────────────────────
+// ─── Nutrition Day Navigator Card ───────────────────────────────────────────
 
-class _YesterdayNutritionCard extends StatelessWidget {
-  final int mealCount;
-  final int totalCalories;
-  final int totalProtein;
-  final int totalCarbs;
-  final int totalFat;
+class _NutritionDayCard extends ConsumerStatefulWidget {
   final AppLocalizations l10n;
 
-  const _YesterdayNutritionCard({
-    required this.mealCount,
-    required this.totalCalories,
-    required this.totalProtein,
-    required this.totalCarbs,
-    required this.totalFat,
-    required this.l10n,
-  });
+  const _NutritionDayCard({required this.l10n});
+
+  @override
+  ConsumerState<_NutritionDayCard> createState() => _NutritionDayCardState();
+}
+
+class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
+  int _dayOffset = 1; // 1 = yesterday (default)
+  bool _slidingForward = true;
+
+  DateTime get _selectedDate =>
+      DateTime.now().subtract(Duration(days: _dayOffset));
+
+  String _getDateLabel() {
+    final l10n = widget.l10n;
+    if (_dayOffset == 0) return l10n.plannerToday;
+    if (_dayOffset == 1) return l10n.homeYesterday;
+    final date = _selectedDate;
+    final locale = l10n.locale.languageCode;
+    final months = locale == 'tr'
+        ? [
+            'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz',
+            'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara',
+          ]
+        : [
+            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+          ];
+    return '${date.day} ${months[date.month - 1]}';
+  }
+
+  void _goBack() {
+    setState(() {
+      _slidingForward = false;
+      _dayOffset++;
+    });
+  }
+
+  void _goForward() {
+    if (_dayOffset > 0) {
+      setState(() {
+        _slidingForward = true;
+        _dayOffset--;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = widget.l10n;
     final theme = Theme.of(context);
+    final mealPlans = ref.watch(mealPlanProvider);
+    final recipeMap = ref.watch(recipeMapProvider);
+
+    final date = _selectedDate;
+    final dateKey =
+        '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+    final meals = mealPlans.where((e) => e.dateKey == dateKey).toList();
+
+    int totalCalories = 0;
+    int totalProtein = 0;
+    int totalCarbs = 0;
+    int totalFat = 0;
+    for (final entry in meals) {
+      final recipe = recipeMap[entry.recipeId];
+      if (recipe != null) {
+        totalCalories += recipe.macros.calories;
+        totalProtein += recipe.macros.proteinG;
+        totalCarbs += recipe.macros.carbsG;
+        totalFat += recipe.macros.fatG;
+      }
+    }
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -457,6 +482,7 @@ class _YesterdayNutritionCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Header row
           Row(
             children: [
               Container(
@@ -473,7 +499,7 @@ class _YesterdayNutritionCard extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Text(
-                l10n.homeYesterdayNutrition,
+                l10n.summaryTitle,
                 style: theme.textTheme.titleMedium,
               ),
               const Spacer(),
@@ -485,7 +511,7 @@ class _YesterdayNutritionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
-                  '$mealCount ${l10n.homeYesterdayMeals}',
+                  '${meals.length} ${l10n.homeYesterdayMeals}',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
@@ -495,71 +521,182 @@ class _YesterdayNutritionCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
-          if (mealCount == 0)
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Text(
-                  l10n.homeNoMealsYesterday,
-                  style: theme.textTheme.bodyMedium,
-                ),
-              ),
-            )
-          else ...[
-            // Calorie center
-            Center(
-              child: Column(
-                children: [
-                  Text(
-                    '$totalCalories',
-                    style: const TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w800,
-                      color: AppTheme.accentOrange,
-                      letterSpacing: -1,
-                    ),
-                  ),
-                  Text(
-                    l10n.recipeCalories,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: AppTheme.textSecondary,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+          const SizedBox(height: 14),
+
+          // Date label
+          Center(
+            child: Text(
+              _getDateLabel(),
+              style: const TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: AppTheme.textSecondary,
               ),
             ),
-            const SizedBox(height: 20),
-            // Macro bars
-            Row(
-              children: [
-                _MacroItem(
-                  label: l10n.recipeProtein,
-                  value: '${totalProtein}g',
-                  color: AppTheme.accentTeal,
-                  icon: Icons.fitness_center_rounded,
+          ),
+          const SizedBox(height: 12),
+
+          // Content with side arrows
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Left arrow (go to older days)
+              GestureDetector(
+                onTap: _goBack,
+                child: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppTheme.softLavender.withAlpha(15),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.chevron_left_rounded,
+                    color: AppTheme.softLavender,
+                    size: 22,
+                  ),
                 ),
-                const SizedBox(width: 12),
-                _MacroItem(
-                  label: l10n.recipeCarbs,
-                  value: '${totalCarbs}g',
-                  color: AppTheme.warningAmber,
-                  icon: Icons.grain_rounded,
+              ),
+              const SizedBox(width: 8),
+
+              // Animated content
+              Expanded(
+                child: ClipRect(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 350),
+                    transitionBuilder:
+                        (Widget child, Animation<double> animation) {
+                      final slideBegin = _slidingForward
+                          ? const Offset(0.3, 0)
+                          : const Offset(-0.3, 0);
+                      return FadeTransition(
+                        opacity: animation,
+                        child: SlideTransition(
+                          position: Tween<Offset>(
+                            begin: slideBegin,
+                            end: Offset.zero,
+                          ).animate(CurvedAnimation(
+                            parent: animation,
+                            curve: Curves.easeOut,
+                          )),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: _buildNutritionContent(
+                      mealCount: meals.length,
+                      totalCalories: totalCalories,
+                      totalProtein: totalProtein,
+                      totalCarbs: totalCarbs,
+                      totalFat: totalFat,
+                    ),
+                  ),
                 ),
-                const SizedBox(width: 12),
-                _MacroItem(
-                  label: l10n.homeFat,
-                  value: '${totalFat}g',
-                  color: AppTheme.snackColor,
-                  icon: Icons.water_drop_rounded,
+              ),
+              const SizedBox(width: 8),
+
+              // Right arrow (go to newer days)
+              GestureDetector(
+                onTap: _dayOffset > 0 ? _goForward : null,
+                child: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: _dayOffset > 0
+                        ? AppTheme.softLavender.withAlpha(15)
+                        : Colors.transparent,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.chevron_right_rounded,
+                    color: _dayOffset > 0
+                        ? AppTheme.softLavender
+                        : AppTheme.textLight.withAlpha(80),
+                    size: 22,
+                  ),
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _buildNutritionContent({
+    required int mealCount,
+    required int totalCalories,
+    required int totalProtein,
+    required int totalCarbs,
+    required int totalFat,
+  }) {
+    final l10n = widget.l10n;
+
+    if (mealCount == 0) {
+      return Container(
+        key: ValueKey('empty_$_dayOffset'),
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Center(
+          child: Text(
+            l10n.homeNoMealsForDay,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ),
+      );
+    }
+
+    return Column(
+      key: ValueKey('data_$_dayOffset'),
+      children: [
+        // Calorie center
+        Center(
+          child: Column(
+            children: [
+              Text(
+                '$totalCalories',
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w800,
+                  color: AppTheme.accentOrange,
+                  letterSpacing: -1,
+                ),
+              ),
+              Text(
+                l10n.recipeCalories,
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: AppTheme.textSecondary,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+        // Macro bars
+        Row(
+          children: [
+            _MacroItem(
+              label: l10n.recipeProtein,
+              value: '${totalProtein}g',
+              color: AppTheme.accentTeal,
+              icon: Icons.fitness_center_rounded,
+            ),
+            const SizedBox(width: 12),
+            _MacroItem(
+              label: l10n.recipeCarbs,
+              value: '${totalCarbs}g',
+              color: AppTheme.warningAmber,
+              icon: Icons.grain_rounded,
+            ),
+            const SizedBox(width: 12),
+            _MacroItem(
+              label: l10n.homeFat,
+              value: '${totalFat}g',
+              color: AppTheme.snackColor,
+              icon: Icons.water_drop_rounded,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

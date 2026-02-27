@@ -27,6 +27,8 @@ const Map<String, String> enTranslations = {
   'homeYesterdayNutrition': 'Yesterday\'s Nutrition',
   'homeYesterdayMeals': 'meals',
   'homeNoMealsYesterday': 'No meals logged yesterday',
+  'homeYesterday': 'Yesterday',
+  'homeNoMealsForDay': 'No meals logged for this day',
   'homeMealOfDay': 'Meal of the Day',
   'homeQuickActions': 'Quick Actions',
   'homeFat': 'Fat',
