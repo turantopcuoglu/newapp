@@ -9,7 +9,7 @@ const _uuid = Uuid();
 class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
   final StorageService _storage;
 
-  ShoppingNotifier(this._storage) : super(_storage.getShoppingList());
+  ShoppingNotifier(this._storage) : super(List.of(_storage.getShoppingList()));
 
   void addItem(String name, {String? forRecipeId}) {
     final trimmed = name.trim();

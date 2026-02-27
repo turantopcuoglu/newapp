@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart' hide Provider;
 import '../providers/app_provider.dart';
+import '../providers/inventory_provider.dart';
+import '../providers/shopping_provider.dart';
 
-class SettingsScreen extends StatefulWidget {
+class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
 
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsScreenState extends ConsumerState<SettingsScreen> {
   final _apiKeyController = TextEditingController();
   bool _obscureText = true;
 
@@ -32,6 +35,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final provider = context.watch<AppProvider>();
     final theme = Theme.of(context);
+
+    // Use Riverpod providers for live data
+    final inventoryItems = ref.watch(inventoryProvider);
+    final shoppingItems = ref.watch(shoppingProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -176,15 +183,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ListTile(
                       leading: const Icon(Icons.kitchen),
                       title: const Text('Dolabimdaki Malzemeler'),
-                      subtitle: Text('${provider.pantry.length} malzeme'),
+                      subtitle:
+                          Text('${inventoryItems.length} malzeme'),
                       trailing: TextButton(
-                        onPressed: provider.pantry.isEmpty
+                        onPressed: inventoryItems.isEmpty
                             ? null
                             : () => _showClearDialog(
                                   context,
                                   'Dolabi Temizle',
                                   'Tum malzemeler silinecek.',
-                                  () => provider.clearPantry(),
+                                  () => ref
+                                      .read(inventoryProvider.notifier)
+                                      .clear(),
                                 ),
                         child: const Text('Temizle'),
                       ),
@@ -194,15 +204,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       leading: const Icon(Icons.shopping_cart),
                       title: const Text('Alisveris Listesi'),
                       subtitle:
-                          Text('${provider.shoppingList.length} urun'),
+                          Text('${shoppingItems.length} urun'),
                       trailing: TextButton(
-                        onPressed: provider.shoppingList.isEmpty
+                        onPressed: shoppingItems.isEmpty
                             ? null
                             : () => _showClearDialog(
                                   context,
                                   'Listeyi Temizle',
                                   'Tum alisveris listesi silinecek.',
-                                  () => provider.clearShoppingList(),
+                                  () => ref
+                                      .read(shoppingProvider.notifier)
+                                      .clearAll(),
                                 ),
                         child: const Text('Temizle'),
                       ),

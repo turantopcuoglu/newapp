@@ -10,7 +10,7 @@ const _uuid = Uuid();
 class MealPlanNotifier extends StateNotifier<List<MealPlanEntry>> {
   final StorageService _storage;
 
-  MealPlanNotifier(this._storage) : super(_storage.getMealPlans());
+  MealPlanNotifier(this._storage) : super(List.of(_storage.getMealPlans()));
 
   void addEntry({
     required String recipeId,

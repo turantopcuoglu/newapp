@@ -6,7 +6,7 @@ import 'storage_provider.dart';
 class InventoryNotifier extends StateNotifier<List<InventoryItem>> {
   final StorageService _storage;
 
-  InventoryNotifier(this._storage) : super(_storage.getInventory());
+  InventoryNotifier(this._storage) : super(List.of(_storage.getInventory()));
 
   void addItem(String ingredientId) {
     if (state.any((item) => item.ingredientId == ingredientId)) return;

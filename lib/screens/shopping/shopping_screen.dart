@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/shopping_provider.dart';
@@ -137,8 +138,20 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
                 icon: const Icon(Icons.kitchen_outlined, size: 20),
                 tooltip: l10n.shoppingMoveToKitchen,
                 onPressed: () {
-                  ref.read(inventoryProvider.notifier).addItem(name);
-                  ref.read(shoppingProvider.notifier).removeItem(id);
+                  // Try to find the matching ingredient ID from the
+                  // display name so inventory stores the correct ID.
+                  final ingredientId = _resolveIngredientId(name);
+                  ref
+                      .read(inventoryProvider.notifier)
+                      .addItem(ingredientId);
+                  ref
+                      .read(shoppingProvider.notifier)
+                      .removeItem(id);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text(
+                            '$name ${l10n.shoppingMoveToKitchen}')),
+                  );
                 },
               )
             : null,
@@ -151,5 +164,26 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
     if (text.isEmpty) return;
     ref.read(shoppingProvider.notifier).addItem(text);
     _controller.clear();
+  }
+
+  /// Resolve a display name or ingredient ID to a valid ingredient ID.
+  /// Checks both IDs and localized names in mockIngredients.
+  String _resolveIngredientId(String nameOrId) {
+    // Direct ID match
+    final directMatch = mockIngredients.where((i) => i.id == nameOrId);
+    if (directMatch.isNotEmpty) return directMatch.first.id;
+
+    // Localized name match (case-insensitive)
+    final lower = nameOrId.toLowerCase();
+    for (final ingredient in mockIngredients) {
+      for (final localizedName in ingredient.name.values) {
+        if (localizedName.toLowerCase() == lower) {
+          return ingredient.id;
+        }
+      }
+    }
+
+    // Fallback: use the name itself as the ID
+    return nameOrId;
   }
 }
