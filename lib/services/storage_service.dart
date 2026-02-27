@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../core/enums.dart';
+import '../models/beverage_entry.dart';
 import '../models/ingredient.dart';
 import '../models/meal_plan.dart';
 import '../models/recipe.dart';
@@ -20,6 +21,7 @@ class StorageService {
   static const String _localeKey = 'locale';
   static const String _checkInKey = 'today_check_in';
   static const String _onboardingKey = 'onboarding_completed';
+  static const String _beveragesKey = 'beverages';
 
   StorageService(this._prefs);
 
@@ -199,6 +201,33 @@ class StorageService {
 
   Future<void> setOnboardingCompleted() async {
     await _prefs.setBool(_onboardingKey, true);
+  }
+
+  // --- Beverages ---
+  List<BeverageEntry> getBeverages() {
+    final data = _prefs.getString(_beveragesKey);
+    if (data == null) return [];
+    final list = jsonDecode(data) as List<dynamic>;
+    return list
+        .map((e) => BeverageEntry.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
+  Future<void> _saveBeverages(List<BeverageEntry> items) async {
+    final data = jsonEncode(items.map((e) => e.toJson()).toList());
+    await _prefs.setString(_beveragesKey, data);
+  }
+
+  Future<void> addBeverage(BeverageEntry entry) async {
+    final items = getBeverages();
+    items.add(entry);
+    await _saveBeverages(items);
+  }
+
+  Future<void> removeBeverage(String id) async {
+    final items = getBeverages();
+    items.removeWhere((e) => e.id == id);
+    await _saveBeverages(items);
   }
 
   // --- Locale ---

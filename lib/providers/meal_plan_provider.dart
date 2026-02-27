@@ -16,12 +16,16 @@ class MealPlanNotifier extends StateNotifier<List<MealPlanEntry>> {
     required String recipeId,
     required DateTime date,
     required MealType mealType,
+    int? hour,
+    int? minute,
   }) {
     final entry = MealPlanEntry(
       id: _uuid.v4(),
       recipeId: recipeId,
       date: DateTime(date.year, date.month, date.day),
       mealType: mealType,
+      hour: hour,
+      minute: minute,
     );
     state = [...state, entry];
     _storage.addMealPlan(entry);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
+import '../../data/health_tips_data.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/check_in_provider.dart';
 import '../../providers/inventory_provider.dart';
@@ -126,6 +127,20 @@ class HomeScreen extends ConsumerWidget {
                             RecipeDetailScreen(scoredRecipe: mealOfTheDay!),
                       ),
                     ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                // Daily Health Tip
+                _HealthTipCard(l10n: l10n, locale: locale),
+                const SizedBox(height: 16),
+
+                // Mood-based Food Tip
+                if (checkIn != null) ...[
+                  _MoodFoodTipCard(
+                    checkInType: checkIn,
+                    l10n: l10n,
+                    locale: locale,
                   ),
                   const SizedBox(height: 16),
                 ],
@@ -880,6 +895,281 @@ class _QuickActionCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// ─── Daily Health Tip Card ──────────────────────────────────────────────────
+
+class _HealthTipCard extends StatefulWidget {
+  final AppLocalizations l10n;
+  final String locale;
+
+  const _HealthTipCard({required this.l10n, required this.locale});
+
+  @override
+  State<_HealthTipCard> createState() => _HealthTipCardState();
+}
+
+class _HealthTipCardState extends State<_HealthTipCard> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final tip = getTipOfTheDay();
+    final title = tip.title[widget.locale] ?? tip.title['en'] ?? '';
+    final body = tip.body[widget.locale] ?? tip.body['en'] ?? '';
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF00B4D8), Color(0xFF0096C7)],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppTheme.accentTeal.withAlpha(50),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(30),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(
+                  Icons.lightbulb_rounded,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  widget.l10n.healthTipTitle,
+                  style: TextStyle(
+                    color: Colors.white.withAlpha(200),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              letterSpacing: -0.3,
+            ),
+          ),
+          const SizedBox(height: 8),
+          AnimatedCrossFade(
+            firstChild: Text(
+              body,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Colors.white.withAlpha(200),
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+            secondChild: Text(
+              body,
+              style: TextStyle(
+                color: Colors.white.withAlpha(200),
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+            crossFadeState:
+                _expanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            duration: const Duration(milliseconds: 300),
+          ),
+          const SizedBox(height: 10),
+          GestureDetector(
+            onTap: () => setState(() => _expanded = !_expanded),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  _expanded ? widget.l10n.close : widget.l10n.healthTipReadMore,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Icon(
+                  _expanded
+                      ? Icons.keyboard_arrow_up_rounded
+                      : Icons.keyboard_arrow_down_rounded,
+                  color: Colors.white,
+                  size: 16,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─── Mood Food Tip Card ────────────────────────────────────────────────────
+
+class _MoodFoodTipCard extends StatefulWidget {
+  final CheckInType checkInType;
+  final AppLocalizations l10n;
+  final String locale;
+
+  const _MoodFoodTipCard({
+    required this.checkInType,
+    required this.l10n,
+    required this.locale,
+  });
+
+  @override
+  State<_MoodFoodTipCard> createState() => _MoodFoodTipCardState();
+}
+
+class _MoodFoodTipCardState extends State<_MoodFoodTipCard> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final tip = getMoodFoodTip(widget.checkInType);
+    if (tip == null) return const SizedBox.shrink();
+
+    final title = tip.title[widget.locale] ?? tip.title['en'] ?? '';
+    final body = tip.body[widget.locale] ?? tip.body['en'] ?? '';
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF7C5CFC), Color(0xFF9B7EFF)],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppTheme.softLavender.withAlpha(50),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(30),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(
+                  Icons.restaurant_rounded,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  widget.l10n.healthTipMoodTitle,
+                  style: TextStyle(
+                    color: Colors.white.withAlpha(200),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              letterSpacing: -0.3,
+            ),
+          ),
+          const SizedBox(height: 8),
+          AnimatedCrossFade(
+            firstChild: Text(
+              body,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Colors.white.withAlpha(200),
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+            secondChild: Text(
+              body,
+              style: TextStyle(
+                color: Colors.white.withAlpha(200),
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+            crossFadeState:
+                _expanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            duration: const Duration(milliseconds: 300),
+          ),
+          const SizedBox(height: 10),
+          GestureDetector(
+            onTap: () => setState(() => _expanded = !_expanded),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  _expanded ? widget.l10n.close : widget.l10n.healthTipReadMore,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Icon(
+                  _expanded
+                      ? Icons.keyboard_arrow_up_rounded
+                      : Icons.keyboard_arrow_down_rounded,
+                  color: Colors.white,
+                  size: 16,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

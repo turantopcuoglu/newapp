@@ -32,5 +32,18 @@ enum IngredientCategory {
   nut,
   legume,
   condiment,
+  snackFood,
+  beverage,
+  other,
+}
+
+enum BeverageType {
+  water,
+  tea,
+  coffee,
+  juice,
+  soda,
+  milk,
+  smoothie,
   other,
 }

@@ -180,6 +180,64 @@ const Map<String, String> enTranslations = {
   'nutritionTotal': 'Total',
   'recipeFat': 'Fat',
 
+  // Ingredient categories (new)
+  'catSnackFood': 'Snack Food',
+  'catBeverage': 'Beverage',
+
+  // Beverages
+  'beverageTitle': 'Beverages',
+  'beverageWater': 'Water',
+  'beverageTea': 'Tea',
+  'beverageCoffee': 'Coffee',
+  'beverageJuice': 'Fruit Juice',
+  'beverageSoda': 'Soda',
+  'beverageMilk': 'Milk',
+  'beverageSmoothie': 'Smoothie',
+  'beverageOther': 'Other',
+  'beverageAddDrink': 'Add Drink',
+  'beverageTodayWater': 'Today\'s Water Intake',
+  'beverageTodayCalories': 'Beverage Calories',
+  'beverageTarget': 'Target: 2000 ml',
+  'beverageSelectAmount': 'Select Amount (ml)',
+  'beverageCustomAmount': 'Custom Amount',
+  'beverageMl': 'ml',
+  'beverageGlasses': 'glasses',
+  'beverageNoEntries': 'No beverages logged today.',
+  'beverageLiters': 'liters',
+  'navBeverages': 'Beverages',
+
+  // Nutrition Stats
+  'nutritionStatsTitle': 'Nutrition Ratios',
+  'nutritionPeriodDaily': 'Daily',
+  'nutritionPeriodWeekly': 'Weekly',
+  'nutritionPeriodMonthly': 'Monthly',
+  'nutritionTotalCalories': 'Total Calories',
+  'nutritionMacroBreakdown': 'Macro Breakdown',
+  'nutritionProteinRatio': 'Protein',
+  'nutritionCarbsRatio': 'Carbs',
+  'nutritionFatRatio': 'Fat',
+  'nutritionFiberTotal': 'Fiber',
+  'nutritionMealsCount': 'Meals Logged',
+  'nutritionBeverageCals': 'Beverage Calories',
+  'nutritionWaterIntake': 'Water Intake',
+  'nutritionNoData': 'No data for this period.',
+
+  // Health Tips
+  'healthTipTitle': 'Health Tip of the Day',
+  'healthTipMoodTitle': 'Nutrition Tip for You',
+  'healthTipReadMore': 'Read More',
+
+  // Time picker
+  'plannerSelectTime': 'Select Time',
+  'plannerTimeOptional': 'Time (Optional)',
+  'plannerSkipTime': 'Skip',
+
+  // Recipes section
+  'recipesBuiltIn': 'Built-in Recipes',
+  'recipesExplore': 'Explore Recipes',
+  'recipesAll': 'All Recipes',
+  'recipesFilterByType': 'Filter by Type',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',
