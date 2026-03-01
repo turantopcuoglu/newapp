@@ -245,6 +245,16 @@ const Map<String, String> enTranslations = {
   'recipesAll': 'All Recipes',
   'recipesFilterByType': 'Filter by Type',
 
+  // Recipe Book
+  'recipeBookTitle': 'Recipe Book',
+  'recipeBookSearch': 'Search recipes...',
+  'recipeBookAll': 'All',
+  'recipeBookMyRecipes': 'My Recipes',
+  'recipeBookEmpty': 'No recipes found matching your search.',
+  'recipeBookTotalRecipes': 'recipes',
+  'recipeBookAddToPlanner': 'Add to Planner',
+  'recipeBookViewRecipe': 'View Recipe',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',
