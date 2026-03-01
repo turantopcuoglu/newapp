@@ -112,7 +112,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
     return Scaffold(
       backgroundColor: AppTheme.background,
       body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         slivers: [
           // Header with water progress
           SliverToBoxAdapter(
