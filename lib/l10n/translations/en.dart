@@ -266,6 +266,7 @@ const Map<String, String> enTranslations = {
   'recipeBookTitle': 'Recipe Book',
   'recipeBookSearch': 'Search recipes...',
   'recipeBookAll': 'All',
+  'recipeBookSnacks': 'Snacks',
   'recipeBookMyRecipes': 'My Recipes',
   'recipeBookEmpty': 'No recipes found matching your search.',
   'recipeBookMyRecipesEmpty': 'You haven\'t created any recipes yet.\nTap the button below to create your first recipe.',
