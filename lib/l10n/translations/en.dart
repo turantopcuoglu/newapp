@@ -255,6 +255,21 @@ const Map<String, String> enTranslations = {
   'recipeBookAddToPlanner': 'Add to Planner',
   'recipeBookViewRecipe': 'View Recipe',
 
+  // Mode Selection
+  'modeSelectionTitle': 'How Are You Today?',
+  'modeSelectionSubtitle': 'Select your daily mode and we\'ll prepare personalized meal recommendations',
+  'modeGeneralSection': 'General',
+  'modeDescLowEnergy': 'Energy-boosting foods recommended',
+  'modeDescBloated': 'Light and digestion-friendly recipes',
+  'modeDescCravingSweets': 'Healthy sweet alternatives',
+  'modeDescCantFocus': 'Brain-boosting nutrient-rich foods',
+  'modeDescPostWorkout': 'Protein-rich recovery meals',
+  'modeDescFeelingBalanced': 'Balanced and varied nutrition',
+  'modeDescNoSpecificIssue': 'General healthy eating suggestions',
+  'modeDescPms': 'Foods to ease PMS symptoms',
+  'modeDescPeriodCramps': 'Recipes to help reduce cramps',
+  'modeDescPeriodFatigue': 'Energizing foods for period fatigue',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',

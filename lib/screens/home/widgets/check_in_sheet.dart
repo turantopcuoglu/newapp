@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/enums.dart';
 import '../../../core/theme.dart';
 import '../../../l10n/app_localizations.dart';
-import '../../../providers/check_in_provider.dart';
+import '../../../providers/daily_mode_provider.dart';
 import '../../../providers/profile_provider.dart';
 
 class CheckInSheet extends ConsumerWidget {
@@ -13,7 +13,7 @@ class CheckInSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final profile = ref.watch(profileProvider);
-    final currentCheckIn = ref.watch(checkInProvider);
+    final currentCheckIn = ref.watch(dailyModeProvider);
     final theme = Theme.of(context);
 
     final generalOptions = <_CheckInOption>[
@@ -51,7 +51,7 @@ class CheckInSheet extends ConsumerWidget {
           color: isSelected ? Colors.white : theme.colorScheme.onSurface,
         ),
         onSelected: (_) {
-          ref.read(checkInProvider.notifier).setCheckIn(opt.type);
+          ref.read(dailyModeProvider.notifier).setMode(opt.type);
           Navigator.pop(context);
         },
       );
