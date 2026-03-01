@@ -36,6 +36,13 @@ void main() async {
   );
 }
 
+class _NoStretchScrollBehavior extends ScrollBehavior {
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    return const ClampingScrollPhysics();
+  }
+}
+
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
@@ -46,6 +53,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'NutriGuide',
       debugShowCheckedModeBanner: false,
+      scrollBehavior: _NoStretchScrollBehavior(),
       theme: AppTheme.light,
       themeMode: ThemeMode.light,
       locale: locale,
