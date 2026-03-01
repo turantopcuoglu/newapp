@@ -22,6 +22,8 @@ class StorageService {
   static const String _checkInKey = 'today_check_in';
   static const String _onboardingKey = 'onboarding_completed';
   static const String _beveragesKey = 'beverages';
+  static const String _dailyModeKey = 'daily_mode';
+  static const String _dailyModeDateKey = 'daily_mode_date';
 
   StorageService(this._prefs);
 
@@ -229,6 +231,34 @@ class StorageService {
     items.removeWhere((e) => e.id == id);
     await _saveBeverages(items);
   }
+
+  // --- Daily Mode ---
+  /// Returns the "mode day" string for a given DateTime.
+  /// The mode day resets at 6 AM, so 00:00-05:59 belongs to the previous day.
+  static String _modeDayKey(DateTime dt) {
+    final effective = dt.hour < 6 ? dt.subtract(const Duration(days: 1)) : dt;
+    return '${effective.year}-${effective.month.toString().padLeft(2, '0')}-${effective.day.toString().padLeft(2, '0')}';
+  }
+
+  /// Get today's daily mode, respecting the 6 AM reset boundary.
+  CheckInType? getDailyMode() {
+    final storedDate = _prefs.getString(_dailyModeDateKey);
+    final today = _modeDayKey(DateTime.now());
+    if (storedDate != today) return null;
+    final value = _prefs.getString(_dailyModeKey);
+    if (value == null) return null;
+    return CheckInType.values.where((e) => e.name == value).firstOrNull;
+  }
+
+  /// Save the daily mode with today's mode-day date.
+  Future<void> saveDailyMode(CheckInType type) async {
+    final today = _modeDayKey(DateTime.now());
+    await _prefs.setString(_dailyModeKey, type.name);
+    await _prefs.setString(_dailyModeDateKey, today);
+  }
+
+  /// Check if the daily mode has been selected for the current mode-day.
+  bool isDailyModeSet() => getDailyMode() != null;
 
   // --- Locale ---
   String getLocale() => _prefs.getString(_localeKey) ?? 'tr';

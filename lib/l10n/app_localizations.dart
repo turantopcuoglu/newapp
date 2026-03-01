@@ -285,6 +285,21 @@ class AppLocalizations {
   String get recipeBookAddToPlanner => _t('recipeBookAddToPlanner');
   String get recipeBookViewRecipe => _t('recipeBookViewRecipe');
 
+  // Mode Selection
+  String get modeSelectionTitle => _t('modeSelectionTitle');
+  String get modeSelectionSubtitle => _t('modeSelectionSubtitle');
+  String get modeGeneralSection => _t('modeGeneralSection');
+  String get modeDescLowEnergy => _t('modeDescLowEnergy');
+  String get modeDescBloated => _t('modeDescBloated');
+  String get modeDescCravingSweets => _t('modeDescCravingSweets');
+  String get modeDescCantFocus => _t('modeDescCantFocus');
+  String get modeDescPostWorkout => _t('modeDescPostWorkout');
+  String get modeDescFeelingBalanced => _t('modeDescFeelingBalanced');
+  String get modeDescNoSpecificIssue => _t('modeDescNoSpecificIssue');
+  String get modeDescPms => _t('modeDescPms');
+  String get modeDescPeriodCramps => _t('modeDescPeriodCramps');
+  String get modeDescPeriodFatigue => _t('modeDescPeriodFatigue');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

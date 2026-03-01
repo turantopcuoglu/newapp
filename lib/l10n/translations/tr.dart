@@ -255,6 +255,21 @@ const Map<String, String> trTranslations = {
   'recipeBookAddToPlanner': 'Planlayıcıya Ekle',
   'recipeBookViewRecipe': 'Tarifi Gör',
 
+  // Mode Selection
+  'modeSelectionTitle': 'Bugün Nasılsınız?',
+  'modeSelectionSubtitle': 'Günlük modunuzu seçin, size özel öğün önerileri hazırlayalım',
+  'modeGeneralSection': 'Genel Durumlar',
+  'modeDescLowEnergy': 'Enerji artırıcı besinler önerilir',
+  'modeDescBloated': 'Hafif ve sindirim dostu tarifler',
+  'modeDescCravingSweets': 'Sağlıklı tatlı alternatifleri',
+  'modeDescCantFocus': 'Beyin fonksiyonlarını destekleyen besinler',
+  'modeDescPostWorkout': 'Protein ağırlıklı toparlanma öğünleri',
+  'modeDescFeelingBalanced': 'Dengeli ve çeşitli beslenme önerileri',
+  'modeDescNoSpecificIssue': 'Genel sağlıklı beslenme önerileri',
+  'modeDescPms': 'PMS semptomlarını hafifletecek besinler',
+  'modeDescPeriodCramps': 'Krampları azaltmaya yardımcı tarifler',
+  'modeDescPeriodFatigue': 'Regl yorgunluğuna karşı enerji veren besinler',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',
