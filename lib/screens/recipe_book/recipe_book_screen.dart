@@ -175,18 +175,16 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                     _showOnlyMyRecipes = false;
                   }),
                 ),
-                if (myRecipes.isNotEmpty) ...[
-                  const SizedBox(width: 8),
-                  _FilterChip(
-                    label: l10n.recipeBookMyRecipes,
-                    isSelected: _showOnlyMyRecipes,
-                    color: AppTheme.softLavender,
-                    onTap: () => setState(() {
-                      _showOnlyMyRecipes = true;
-                      _selectedMealType = null;
-                    }),
-                  ),
-                ],
+                const SizedBox(width: 8),
+                _FilterChip(
+                  label: l10n.recipeBookMyRecipes,
+                  isSelected: _showOnlyMyRecipes,
+                  color: AppTheme.softLavender,
+                  onTap: () => setState(() {
+                    _showOnlyMyRecipes = true;
+                    _selectedMealType = null;
+                  }),
+                ),
               ],
             ),
           ),
@@ -239,6 +237,9 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                         ),
                         onAddToPlanner: () =>
                             _addToPlanner(context, scored),
+                        onDelete: scored.recipe.isUserCreated
+                            ? () => _deleteRecipe(context, scored)
+                            : null,
                       );
                     },
                   ),
@@ -246,6 +247,31 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
         ],
       ),
     );
+  }
+
+  void _deleteRecipe(BuildContext context, ScoredRecipe scored) async {
+    final l10n = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.delete),
+        content: Text(l10n.recipeBookDeleteConfirm),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.cancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
+            child: Text(l10n.delete),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      ref.read(myRecipesProvider.notifier).removeRecipe(scored.recipe.id);
+    }
   }
 
   void _addToPlanner(BuildContext context, ScoredRecipe scored) async {
@@ -361,6 +387,7 @@ class _RecipeBookCard extends StatelessWidget {
   final AppLocalizations l10n;
   final VoidCallback onTap;
   final VoidCallback onAddToPlanner;
+  final VoidCallback? onDelete;
 
   const _RecipeBookCard({
     required this.scoredRecipe,
@@ -368,6 +395,7 @@ class _RecipeBookCard extends StatelessWidget {
     required this.l10n,
     required this.onTap,
     required this.onAddToPlanner,
+    this.onDelete,
   });
 
   Color _mealTypeColor(MealType type) {
@@ -492,6 +520,18 @@ class _RecipeBookCard extends StatelessWidget {
                     ),
                   ],
                   const Spacer(),
+                  if (onDelete != null)
+                    SizedBox(
+                      height: 32,
+                      child: IconButton(
+                        onPressed: onDelete,
+                        icon: const Icon(Icons.delete_outline_rounded, size: 18),
+                        color: Colors.red.shade400,
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        constraints: const BoxConstraints(),
+                        tooltip: l10n.delete,
+                      ),
+                    ),
                   // Add to planner button
                   SizedBox(
                     height: 32,
