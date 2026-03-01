@@ -6,6 +6,7 @@ const Map<String, String> trTranslations = {
   'navHome': 'Ana Sayfa',
   'navPlanner': 'Planlayıcı',
   'navShopping': 'Alışveriş',
+  'navMyKitchen': 'Mutfağım',
   'navMyRecipes': 'Tariflerim',
   'navProfile': 'Profil',
 

@@ -6,6 +6,7 @@ const Map<String, String> enTranslations = {
   'navHome': 'Home',
   'navPlanner': 'Planner',
   'navShopping': 'Shopping',
+  'navMyKitchen': 'My Kitchen',
   'navMyRecipes': 'My Recipes',
   'navProfile': 'Profile',
 

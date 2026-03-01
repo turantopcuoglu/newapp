@@ -35,6 +35,7 @@ class AppLocalizations {
   String get navHome => _t('navHome');
   String get navPlanner => _t('navPlanner');
   String get navShopping => _t('navShopping');
+  String get navMyKitchen => _t('navMyKitchen');
   String get navMyRecipes => _t('navMyRecipes');
   String get navProfile => _t('navProfile');
 
