@@ -11,6 +11,7 @@ import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
 import 'meal_recommendations_screen.dart';
+import 'nutrition_detail_screen.dart';
 import 'widgets/check_in_sheet.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -72,8 +73,16 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 16),
 
-                // Nutrition Day Navigator
-                _NutritionDayCard(l10n: l10n),
+                // Nutrition Day Navigator (tappable → detail charts)
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const NutritionDetailScreen(),
+                    ),
+                  ),
+                  child: _NutritionDayCard(l10n: l10n),
+                ),
                 const SizedBox(height: 16),
 
                 // Meal Recommendations by type
@@ -612,7 +621,7 @@ class _NutritionDayCard extends ConsumerStatefulWidget {
 }
 
 class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
-  int _dayOffset = 1; // 1 = yesterday (default)
+  int _dayOffset = 0; // 0 = today (default)
   bool _slidingForward = true;
 
   DateTime get _selectedDate =>

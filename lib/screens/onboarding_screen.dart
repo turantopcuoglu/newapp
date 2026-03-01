@@ -4,8 +4,7 @@ import '../core/enums.dart';
 import '../core/theme.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
-import '../providers/storage_provider.dart';
-import 'main_shell.dart';
+import 'onboarding_ingredients_screen.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -57,18 +56,14 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
     notifier.updateName(name);
     notifier.updateGender(_selectedGender!);
 
-    final storage = ref.read(storageProvider);
-    await storage.setOnboardingCompleted();
-
     if (mounted) {
-      Navigator.of(context).pushAndRemoveUntil(
+      Navigator.of(context).push(
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const MainShell(),
+          pageBuilder: (_, __, ___) => const OnboardingIngredientsScreen(),
           transitionsBuilder: (_, anim, __, child) =>
               FadeTransition(opacity: anim, child: child),
           transitionDuration: const Duration(milliseconds: 500),
         ),
-        (_) => false,
       );
     }
   }

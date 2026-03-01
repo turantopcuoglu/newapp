@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart' hide Provider;
+import '../core/theme.dart';
+import '../data/mock_ingredients.dart';
+import '../l10n/app_localizations.dart';
+import '../models/ingredient.dart';
 import '../providers/app_provider.dart';
 import '../providers/inventory_provider.dart';
+import '../providers/profile_provider.dart';
 import '../providers/shopping_provider.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -226,6 +231,11 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
             const SizedBox(height: 16),
 
+            // Allergies & Avoided Foods
+            _AllergyDislikedSection(ref: ref),
+
+            const SizedBox(height: 16),
+
             // About
             Card(
               child: Padding(
@@ -283,6 +293,282 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               Navigator.pop(ctx);
             },
             child: const Text('Temizle'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─── Allergy & Disliked Ingredients Section ─────────────────────────────────
+
+/// All known allergen tags used in the ingredient database.
+const Map<String, Map<String, String>> _allergenLabels = {
+  'gluten': {'en': 'Gluten', 'tr': 'Gluten'},
+  'dairy': {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
+  'eggs': {'en': 'Eggs', 'tr': 'Yumurta'},
+  'nuts': {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
+  'peanuts': {'en': 'Peanuts', 'tr': 'Yer Fıstığı'},
+  'fish': {'en': 'Fish', 'tr': 'Balık'},
+  'shellfish': {'en': 'Shellfish', 'tr': 'Kabuklu Deniz Ürünleri'},
+  'soy': {'en': 'Soy', 'tr': 'Soya'},
+  'sesame': {'en': 'Sesame', 'tr': 'Susam'},
+};
+
+class _AllergyDislikedSection extends StatelessWidget {
+  final WidgetRef ref;
+
+  const _AllergyDislikedSection({required this.ref});
+
+  static final Map<String, Ingredient> _ingredientMap = {
+    for (final i in mockIngredients) i.id: i,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final locale = l10n.locale.languageCode;
+    final theme = Theme.of(context);
+    final profile = ref.watch(profileProvider);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Section title
+            Row(
+              children: [
+                Icon(Icons.health_and_safety_rounded,
+                    color: AppTheme.warmCoral),
+                const SizedBox(width: 8),
+                Text(l10n.profileAllergiesAndAvoided,
+                    style: theme.textTheme.titleMedium),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              l10n.profileAllergiesHint,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: AppTheme.textSecondary,
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            // Allergens sub-section
+            Text(
+              l10n.profileAllergies,
+              style: const TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: AppTheme.warmCoral,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: _allergenLabels.entries.map((entry) {
+                final isActive = profile.allergies.contains(entry.key);
+                return FilterChip(
+                  label: Text(
+                    entry.value[locale] ?? entry.value['en']!,
+                  ),
+                  selected: isActive,
+                  onSelected: (selected) {
+                    final notifier = ref.read(profileProvider.notifier);
+                    if (selected) {
+                      notifier.addAllergy(entry.key);
+                    } else {
+                      notifier.removeAllergy(entry.key);
+                    }
+                  },
+                  selectedColor: AppTheme.warmCoral.withAlpha(40),
+                  checkmarkColor: AppTheme.warmCoral,
+                  labelStyle: TextStyle(
+                    color: isActive
+                        ? AppTheme.warmCoral
+                        : AppTheme.textSecondary,
+                    fontWeight:
+                        isActive ? FontWeight.w600 : FontWeight.w400,
+                  ),
+                  side: BorderSide(
+                    color: isActive
+                        ? AppTheme.warmCoral.withAlpha(100)
+                        : AppTheme.dividerColor,
+                  ),
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 20),
+
+            // Disliked ingredients sub-section
+            Row(
+              children: [
+                Text(
+                  l10n.profileDisliked,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: AppTheme.softLavender,
+                  ),
+                ),
+                const Spacer(),
+                GestureDetector(
+                  onTap: () => _showAddDislikedSheet(context, locale),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.add_rounded,
+                          size: 16, color: AppTheme.softLavender),
+                      const SizedBox(width: 2),
+                      Text(
+                        l10n.add,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.softLavender,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            if (profile.dislikedIngredients.isEmpty)
+              Text(
+                l10n.profileNoDisliked,
+                style: theme.textTheme.bodySmall,
+              )
+            else
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: profile.dislikedIngredients.map((id) {
+                  final ingredient = _ingredientMap[id];
+                  final label = ingredient?.localizedName(locale) ?? id;
+                  return Chip(
+                    label: Text(label),
+                    deleteIcon: const Icon(Icons.close_rounded, size: 16),
+                    onDeleted: () {
+                      ref
+                          .read(profileProvider.notifier)
+                          .removeDislikedIngredient(id);
+                    },
+                    backgroundColor: AppTheme.softLavender.withAlpha(20),
+                    deleteIconColor: AppTheme.softLavender,
+                    labelStyle: const TextStyle(
+                      color: AppTheme.textPrimary,
+                      fontSize: 13,
+                    ),
+                    side: BorderSide(
+                      color: AppTheme.softLavender.withAlpha(60),
+                    ),
+                  );
+                }).toList(),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showAddDislikedSheet(BuildContext context, String locale) {
+    final l10n = AppLocalizations.of(context);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => _AddDislikedIngredientSheet(
+        ref: ref,
+        locale: locale,
+        l10n: l10n,
+      ),
+    );
+  }
+}
+
+class _AddDislikedIngredientSheet extends StatefulWidget {
+  final WidgetRef ref;
+  final String locale;
+  final AppLocalizations l10n;
+
+  const _AddDislikedIngredientSheet({
+    required this.ref,
+    required this.locale,
+    required this.l10n,
+  });
+
+  @override
+  State<_AddDislikedIngredientSheet> createState() =>
+      _AddDislikedIngredientSheetState();
+}
+
+class _AddDislikedIngredientSheetState
+    extends State<_AddDislikedIngredientSheet> {
+  String _search = '';
+
+  @override
+  Widget build(BuildContext context) {
+    final profile = widget.ref.watch(profileProvider);
+    final dislikedSet = profile.dislikedIngredients.toSet();
+
+    final filtered = mockIngredients.where((i) {
+      if (dislikedSet.contains(i.id)) return false;
+      if (_search.isEmpty) return true;
+      final name = i.localizedName(widget.locale).toLowerCase();
+      return name.contains(_search.toLowerCase());
+    }).toList();
+
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7,
+      decoration: const BoxDecoration(
+        color: AppTheme.surface,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(height: 12),
+          Container(
+            width: 40,
+            height: 4,
+            decoration: BoxDecoration(
+              color: AppTheme.dividerColor,
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(
+              onChanged: (v) => setState(() => _search = v),
+              decoration: InputDecoration(
+                hintText: widget.l10n.inventorySearch,
+                prefixIcon: const Icon(Icons.search_rounded),
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: filtered.length,
+              itemBuilder: (context, index) {
+                final ingredient = filtered[index];
+                return ListTile(
+                  title: Text(ingredient.localizedName(widget.locale)),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.add_circle_outline_rounded),
+                    color: AppTheme.softLavender,
+                    onPressed: () {
+                      widget.ref
+                          .read(profileProvider.notifier)
+                          .addDislikedIngredient(ingredient.id);
+                      Navigator.pop(context);
+                    },
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),
