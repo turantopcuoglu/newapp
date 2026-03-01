@@ -128,11 +128,10 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
               children: [
                 _FilterChip(
                   label: l10n.recipeBookAll,
-                  isSelected: _selectedMealType == null && !_showOnlyMyRecipes,
+                  isSelected: _selectedMealType == null,
                   color: AppTheme.accentOrange,
                   onTap: () => setState(() {
                     _selectedMealType = null;
-                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -142,7 +141,6 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.breakfastColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.breakfast;
-                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -152,7 +150,6 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.lunchColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.lunch;
-                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -162,7 +159,6 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.dinnerColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.dinner;
-                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -172,17 +168,25 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.snackColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.snack;
-                    _showOnlyMyRecipes = false;
                   }),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 6),
+                SizedBox(
+                  height: 28,
+                  child: VerticalDivider(
+                    color: AppTheme.dividerColor,
+                    thickness: 1,
+                    width: 12,
+                  ),
+                ),
+                const SizedBox(width: 6),
                 _FilterChip(
                   label: l10n.recipeBookMyRecipes,
+                  icon: Icons.person_outline_rounded,
                   isSelected: _showOnlyMyRecipes,
                   color: AppTheme.softLavender,
                   onTap: () => setState(() {
-                    _showOnlyMyRecipes = true;
-                    _selectedMealType = null;
+                    _showOnlyMyRecipes = !_showOnlyMyRecipes;
                   }),
                 ),
               ],
@@ -211,11 +215,33 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.search_off,
-                            size: 64, color: Colors.grey.shade300),
+                        Icon(
+                          _showOnlyMyRecipes
+                              ? Icons.restaurant_menu
+                              : Icons.search_off,
+                          size: 64,
+                          color: Colors.grey.shade300,
+                        ),
                         const SizedBox(height: 12),
-                        Text(l10n.recipeBookEmpty,
-                            style: theme.textTheme.bodyMedium),
+                        Text(
+                          _showOnlyMyRecipes
+                              ? l10n.recipeBookMyRecipesEmpty
+                              : l10n.recipeBookEmpty,
+                          style: theme.textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                        if (_showOnlyMyRecipes) ...[
+                          const SizedBox(height: 16),
+                          FilledButton.icon(
+                            onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const CreateRecipeScreen()),
+                            ),
+                            icon: const Icon(Icons.add, size: 18),
+                            label: Text(l10n.myRecipesCreate),
+                          ),
+                        ],
                       ],
                     ),
                   )
@@ -342,12 +368,14 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
 
 class _FilterChip extends StatelessWidget {
   final String label;
+  final IconData? icon;
   final bool isSelected;
   final Color color;
   final VoidCallback onTap;
 
   const _FilterChip({
     required this.label,
+    this.icon,
     required this.isSelected,
     required this.color,
     required this.onTap,
@@ -368,13 +396,26 @@ class _FilterChip extends StatelessWidget {
             width: 1.5,
           ),
         ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 13,
-            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-            color: isSelected ? color : AppTheme.textSecondary,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (icon != null) ...[
+              Icon(
+                icon,
+                size: 15,
+                color: isSelected ? color : AppTheme.textSecondary,
+              ),
+              const SizedBox(width: 5),
+            ],
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                color: isSelected ? color : AppTheme.textSecondary,
+              ),
+            ),
+          ],
         ),
       ),
     );

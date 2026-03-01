@@ -281,6 +281,7 @@ class AppLocalizations {
   String get recipeBookAll => _t('recipeBookAll');
   String get recipeBookMyRecipes => _t('recipeBookMyRecipes');
   String get recipeBookEmpty => _t('recipeBookEmpty');
+  String get recipeBookMyRecipesEmpty => _t('recipeBookMyRecipesEmpty');
   String get recipeBookTotalRecipes => _t('recipeBookTotalRecipes');
   String get recipeBookAddToPlanner => _t('recipeBookAddToPlanner');
   String get recipeBookViewRecipe => _t('recipeBookViewRecipe');
