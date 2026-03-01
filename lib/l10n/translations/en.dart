@@ -254,6 +254,7 @@ const Map<String, String> enTranslations = {
   'recipeBookTotalRecipes': 'recipes',
   'recipeBookAddToPlanner': 'Add to Planner',
   'recipeBookViewRecipe': 'View Recipe',
+  'recipeBookDeleteConfirm': 'Are you sure you want to delete this recipe? This action cannot be undone.',
 
   // Mode Selection
   'modeSelectionTitle': 'How Are You Today?',

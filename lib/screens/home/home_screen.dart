@@ -120,13 +120,6 @@ class HomeScreen extends ConsumerWidget {
                   const SizedBox(height: 16),
                 ],
 
-                // Quick Actions
-                _QuickActionsRow(
-                  checkIn: checkIn,
-                  onCheckInTap: () => _showCheckIn(context),
-                  l10n: l10n,
-                ),
-
                 const SizedBox(height: 100),
               ]),
             ),
@@ -222,56 +215,121 @@ class _DashboardHeader extends StatelessWidget {
                   ],
                 ),
               ),
-              GestureDetector(
-                onTap: onCheckInTap,
-                child: Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withAlpha(25),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Icon(
-                    checkIn != null
-                        ? Icons.check_circle_rounded
-                        : Icons.add_reaction_outlined,
-                    color: checkIn != null
-                        ? AppTheme.successGreen
-                        : Colors.white.withAlpha(200),
-                    size: 28,
-                  ),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(25),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Icon(
+                  checkIn != null
+                      ? _checkInIcon(checkIn!)
+                      : Icons.sunny_snowing,
+                  color: checkIn != null
+                      ? _checkInIconColor(checkIn!)
+                      : Colors.white.withAlpha(200),
+                  size: 28,
                 ),
               ),
             ],
           ),
-          if (checkIn != null) ...[
-            const SizedBox(height: 16),
-            Container(
+          const SizedBox(height: 16),
+          GestureDetector(
+            onTap: onCheckInTap,
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               decoration: BoxDecoration(
-                color: AppTheme.successGreen.withAlpha(40),
+                color: checkIn != null
+                    ? AppTheme.successGreen.withAlpha(40)
+                    : Colors.white.withAlpha(25),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.check_rounded,
-                      color: AppTheme.successGreen, size: 16),
+                  Icon(
+                    checkIn != null ? Icons.check_rounded : Icons.add_rounded,
+                    color: checkIn != null
+                        ? AppTheme.successGreen
+                        : Colors.white.withAlpha(200),
+                    size: 16,
+                  ),
                   const SizedBox(width: 6),
                   Text(
-                    '${l10n.homeCheckIn}: ${_checkInLabel(l10n, checkIn!)}',
-                    style: const TextStyle(
-                      color: AppTheme.successGreen,
+                    checkIn != null
+                        ? '${l10n.homeCheckIn}: ${_checkInLabel(l10n, checkIn!)}'
+                        : l10n.homeStartCheckIn,
+                    style: TextStyle(
+                      color: checkIn != null
+                          ? AppTheme.successGreen
+                          : Colors.white.withAlpha(200),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  const SizedBox(width: 4),
+                  Icon(
+                    Icons.edit_rounded,
+                    color: checkIn != null
+                        ? AppTheme.successGreen.withAlpha(180)
+                        : Colors.white.withAlpha(150),
+                    size: 14,
+                  ),
                 ],
               ),
             ),
-          ],
+          ),
         ],
       ),
     );
+  }
+
+  IconData _checkInIcon(CheckInType type) {
+    switch (type) {
+      case CheckInType.lowEnergy:
+        return Icons.battery_1_bar_rounded;
+      case CheckInType.bloated:
+        return Icons.water_drop_outlined;
+      case CheckInType.cravingSweets:
+        return Icons.cookie_outlined;
+      case CheckInType.cantFocus:
+        return Icons.psychology_outlined;
+      case CheckInType.pms:
+        return Icons.favorite_border_rounded;
+      case CheckInType.periodCramps:
+        return Icons.healing_rounded;
+      case CheckInType.periodFatigue:
+        return Icons.nightlight_round;
+      case CheckInType.postWorkout:
+        return Icons.fitness_center_rounded;
+      case CheckInType.feelingBalanced:
+        return Icons.balance_rounded;
+      case CheckInType.noSpecificIssue:
+        return Icons.check_circle_outline_rounded;
+    }
+  }
+
+  Color _checkInIconColor(CheckInType type) {
+    switch (type) {
+      case CheckInType.lowEnergy:
+        return const Color(0xFFFF9800);
+      case CheckInType.bloated:
+        return const Color(0xFF42A5F5);
+      case CheckInType.cravingSweets:
+        return const Color(0xFFE91E63);
+      case CheckInType.cantFocus:
+        return const Color(0xFF7C4DFF);
+      case CheckInType.pms:
+      case CheckInType.periodCramps:
+      case CheckInType.periodFatigue:
+        return AppTheme.snackColor;
+      case CheckInType.postWorkout:
+        return const Color(0xFF26A69A);
+      case CheckInType.feelingBalanced:
+        return AppTheme.successGreen;
+      case CheckInType.noSpecificIssue:
+        return Colors.white.withAlpha(200);
+    }
   }
 
   String _checkInLabel(AppLocalizations l10n, CheckInType type) {

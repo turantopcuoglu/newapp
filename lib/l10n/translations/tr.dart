@@ -254,6 +254,7 @@ const Map<String, String> trTranslations = {
   'recipeBookTotalRecipes': 'tarif',
   'recipeBookAddToPlanner': 'Planlayıcıya Ekle',
   'recipeBookViewRecipe': 'Tarifi Gör',
+  'recipeBookDeleteConfirm': 'Bu tarifi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.',
 
   // Mode Selection
   'modeSelectionTitle': 'Bugün Nasılsınız?',
