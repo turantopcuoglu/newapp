@@ -128,10 +128,11 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
               children: [
                 _FilterChip(
                   label: l10n.recipeBookAll,
-                  isSelected: _selectedMealType == null,
+                  isSelected: _selectedMealType == null && !_showOnlyMyRecipes,
                   color: AppTheme.accentOrange,
                   onTap: () => setState(() {
                     _selectedMealType = null;
+                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -141,6 +142,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.breakfastColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.breakfast;
+                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -150,6 +152,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.lunchColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.lunch;
+                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
@@ -159,27 +162,20 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.dinnerColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.dinner;
+                    _showOnlyMyRecipes = false;
                   }),
                 ),
                 const SizedBox(width: 8),
                 _FilterChip(
-                  label: l10n.recipeSnack,
+                  label: l10n.recipeBookSnacks,
                   isSelected: _selectedMealType == MealType.snack,
                   color: AppTheme.snackColor,
                   onTap: () => setState(() {
                     _selectedMealType = MealType.snack;
+                    _showOnlyMyRecipes = false;
                   }),
                 ),
-                const SizedBox(width: 6),
-                SizedBox(
-                  height: 28,
-                  child: VerticalDivider(
-                    color: AppTheme.dividerColor,
-                    thickness: 1,
-                    width: 12,
-                  ),
-                ),
-                const SizedBox(width: 6),
+                const SizedBox(width: 8),
                 _FilterChip(
                   label: l10n.recipeBookMyRecipes,
                   icon: Icons.person_outline_rounded,
@@ -187,6 +183,9 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   color: AppTheme.softLavender,
                   onTap: () => setState(() {
                     _showOnlyMyRecipes = !_showOnlyMyRecipes;
+                    if (_showOnlyMyRecipes) {
+                      _selectedMealType = null;
+                    }
                   }),
                 ),
               ],

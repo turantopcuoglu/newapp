@@ -266,6 +266,7 @@ const Map<String, String> trTranslations = {
   'recipeBookTitle': 'Tarif Defterim',
   'recipeBookSearch': 'Tarif ara...',
   'recipeBookAll': 'Tümü',
+  'recipeBookSnacks': 'Atıştırmalıklar',
   'recipeBookMyRecipes': 'Kendi Tariflerim',
   'recipeBookEmpty': 'Aramanıza uygun tarif bulunamadı.',
   'recipeBookMyRecipesEmpty': 'Henüz kendi tarifinizi eklemediniz.\nİlk tarifinizi oluşturmak için aşağıdaki butona dokunun.',

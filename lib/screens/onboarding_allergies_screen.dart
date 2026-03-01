@@ -5,6 +5,7 @@ import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
 import '../providers/storage_provider.dart';
 import 'main_shell.dart';
+import 'mode_selection_screen.dart';
 
 /// Common allergens mapped to their allergenTag keys used in the system.
 class _AllergenItem {
@@ -229,15 +230,7 @@ class _OnboardingAllergiesScreenState
     await storage.setOnboardingCompleted();
 
     if (mounted) {
-      Navigator.of(context).pushAndRemoveUntil(
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const MainShell(),
-          transitionsBuilder: (_, anim, __, child) =>
-              FadeTransition(opacity: anim, child: child),
-          transitionDuration: const Duration(milliseconds: 500),
-        ),
-        (_) => false,
-      );
+      _navigateToMoodCheck();
     }
   }
 
@@ -246,16 +239,20 @@ class _OnboardingAllergiesScreenState
     await storage.setOnboardingCompleted();
 
     if (mounted) {
-      Navigator.of(context).pushAndRemoveUntil(
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const MainShell(),
-          transitionsBuilder: (_, anim, __, child) =>
-              FadeTransition(opacity: anim, child: child),
-          transitionDuration: const Duration(milliseconds: 500),
-        ),
-        (_) => false,
-      );
+      _navigateToMoodCheck();
     }
+  }
+
+  void _navigateToMoodCheck() {
+    Navigator.of(context).pushAndRemoveUntil(
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => const _OnboardingMoodGate(),
+        transitionsBuilder: (_, anim, __, child) =>
+            FadeTransition(opacity: anim, child: child),
+        transitionDuration: const Duration(milliseconds: 500),
+      ),
+      (_) => false,
+    );
   }
 
   @override
@@ -636,6 +633,33 @@ class _OnboardingAllergiesScreenState
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Wrapper that shows ModeSelectionScreen after onboarding completes,
+/// then navigates to MainShell once the user selects their mood.
+class _OnboardingMoodGate extends ConsumerStatefulWidget {
+  const _OnboardingMoodGate();
+
+  @override
+  ConsumerState<_OnboardingMoodGate> createState() =>
+      _OnboardingMoodGateState();
+}
+
+class _OnboardingMoodGateState extends ConsumerState<_OnboardingMoodGate> {
+  bool _modeSelected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (_modeSelected) {
+      return const MainShell();
+    }
+
+    return ModeSelectionScreen(
+      onModeSelected: () {
+        setState(() => _modeSelected = true);
+      },
     );
   }
 }
