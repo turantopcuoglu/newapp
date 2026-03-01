@@ -143,6 +143,9 @@ class AppLocalizations {
   String get profileActivityLevel => _t('profileActivityLevel');
   String get profileAllergies => _t('profileAllergies');
   String get profileDisliked => _t('profileDisliked');
+  String get profileAllergiesAndAvoided => _t('profileAllergiesAndAvoided');
+  String get profileAllergiesHint => _t('profileAllergiesHint');
+  String get profileNoDisliked => _t('profileNoDisliked');
   String get profileLanguage => _t('profileLanguage');
   String get profileSave => _t('profileSave');
   String get profileSaved => _t('profileSaved');
@@ -189,8 +192,19 @@ class AppLocalizations {
   String get onboardingContinue => _t('onboardingContinue');
   String get onboardingNameRequired => _t('onboardingNameRequired');
   String get onboardingGenderRequired => _t('onboardingGenderRequired');
+  String get onboardingSkip => _t('onboardingSkip');
+  String get onboardingIngredientsTitle => _t('onboardingIngredientsTitle');
+  String get onboardingIngredientsSubtitle => _t('onboardingIngredientsSubtitle');
+  String get onboardingIngredientsAdd => _t('onboardingIngredientsAdd');
+  String get onboardingIngredientsAddLater => _t('onboardingIngredientsAddLater');
+  String get onboardingAllergiesTitle => _t('onboardingAllergiesTitle');
+  String get onboardingAllergiesSubtitle => _t('onboardingAllergiesSubtitle');
+  String get onboardingAllergensSection => _t('onboardingAllergensSection');
+  String get onboardingAvoidedSection => _t('onboardingAvoidedSection');
+  String get onboardingAllergiesEditLater => _t('onboardingAllergiesEditLater');
 
   // Ingredient categories
+  String get catProtein => _t('catProtein');
   String get catAll => _t('catAll');
   String get catDairy => _t('catDairy');
   String get catGrain => _t('catGrain');
@@ -259,6 +273,8 @@ class AppLocalizations {
   String get nutritionBeverageCals => _t('nutritionBeverageCals');
   String get nutritionWaterIntake => _t('nutritionWaterIntake');
   String get nutritionNoData => _t('nutritionNoData');
+  String get nutritionPeriodYearly => _t('nutritionPeriodYearly');
+  String get nutritionStatsAvg => _t('nutritionStatsAvg');
 
   // Health Tips
   String get healthTipTitle => _t('healthTipTitle');
