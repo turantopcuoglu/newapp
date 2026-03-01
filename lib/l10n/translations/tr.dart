@@ -245,6 +245,16 @@ const Map<String, String> trTranslations = {
   'recipesAll': 'Tüm Tarifler',
   'recipesFilterByType': 'Türe Göre Filtrele',
 
+  // Recipe Book
+  'recipeBookTitle': 'Tarif Defterim',
+  'recipeBookSearch': 'Tarif ara...',
+  'recipeBookAll': 'Tümü',
+  'recipeBookMyRecipes': 'Kendi Tariflerim',
+  'recipeBookEmpty': 'Aramanıza uygun tarif bulunamadı.',
+  'recipeBookTotalRecipes': 'tarif',
+  'recipeBookAddToPlanner': 'Planlayıcıya Ekle',
+  'recipeBookViewRecipe': 'Tarifi Gör',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',

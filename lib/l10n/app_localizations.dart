@@ -275,6 +275,16 @@ class AppLocalizations {
   String get recipesAll => _t('recipesAll');
   String get recipesFilterByType => _t('recipesFilterByType');
 
+  // Recipe Book
+  String get recipeBookTitle => _t('recipeBookTitle');
+  String get recipeBookSearch => _t('recipeBookSearch');
+  String get recipeBookAll => _t('recipeBookAll');
+  String get recipeBookMyRecipes => _t('recipeBookMyRecipes');
+  String get recipeBookEmpty => _t('recipeBookEmpty');
+  String get recipeBookTotalRecipes => _t('recipeBookTotalRecipes');
+  String get recipeBookAddToPlanner => _t('recipeBookAddToPlanner');
+  String get recipeBookViewRecipe => _t('recipeBookViewRecipe');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

@@ -4,7 +4,7 @@ import '../l10n/app_localizations.dart';
 import 'home/home_screen.dart' as home;
 import 'planner/planner_screen.dart';
 import 'shopping/shopping_screen.dart';
-import 'my_recipes/my_recipes_screen.dart';
+import 'recipe_book/recipe_book_screen.dart';
 import 'settings_screen.dart';
 
 class MainShell extends StatefulWidget {
@@ -21,7 +21,7 @@ class _MainShellState extends State<MainShell> {
     home.HomeScreen(),
     PlannerScreen(),
     ShoppingScreen(),
-    MyRecipesScreen(),
+    RecipeBookScreen(),
     SettingsScreen(),
   ];
 
@@ -84,9 +84,9 @@ class _MainShellState extends State<MainShell> {
                   onTap: () => setState(() => _currentIndex = 2),
                 ),
                 _NavItem(
-                  icon: Icons.menu_book_outlined,
-                  activeIcon: Icons.menu_book_rounded,
-                  label: l10n.navMyRecipes,
+                  icon: Icons.auto_stories_outlined,
+                  activeIcon: Icons.auto_stories_rounded,
+                  label: l10n.recipeBookTitle,
                   isSelected: _currentIndex == 3,
                   color: _navColors[3],
                   onTap: () => setState(() => _currentIndex = 3),
