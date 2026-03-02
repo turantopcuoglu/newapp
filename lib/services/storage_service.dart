@@ -24,6 +24,7 @@ class StorageService {
   static const String _beveragesKey = 'beverages';
   static const String _dailyModeKey = 'daily_mode';
   static const String _dailyModeDateKey = 'daily_mode_date';
+  static const String _disclaimerAcceptedKey = 'disclaimer_accepted';
 
   StorageService(this._prefs);
 
@@ -259,6 +260,14 @@ class StorageService {
 
   /// Check if the daily mode has been selected for the current mode-day.
   bool isDailyModeSet() => getDailyMode() != null;
+
+  // --- Disclaimer ---
+  bool isDisclaimerAccepted() =>
+      _prefs.getBool(_disclaimerAcceptedKey) ?? false;
+
+  Future<void> setDisclaimerAccepted() async {
+    await _prefs.setBool(_disclaimerAcceptedKey, true);
+  }
 
   // --- Locale ---
   String getLocale() => _prefs.getString(_localeKey) ?? 'tr';
