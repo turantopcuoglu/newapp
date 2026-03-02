@@ -34,6 +34,7 @@ class AppLocalizations {
   // Navigation
   String get navHome => _t('navHome');
   String get navPlanner => _t('navPlanner');
+  String get navExplore => _t('navExplore');
   String get navShopping => _t('navShopping');
   String get navMyKitchen => _t('navMyKitchen');
   String get navMyRecipes => _t('navMyRecipes');
@@ -67,6 +68,10 @@ class AppLocalizations {
   String get homeMealRecipeCount => _t('homeMealRecipeCount');
   String get homeQuickActions => _t('homeQuickActions');
   String get homeFat => _t('homeFat');
+  String get homeMealListTitle => _t('homeMealListTitle');
+  String get homeTomorrow => _t('homeTomorrow');
+  String get homeMealListEmpty => _t('homeMealListEmpty');
+  String get homeMealListSeeAll => _t('homeMealListSeeAll');
 
   // Check-in
   String get checkInTitle => _t('checkInTitle');
