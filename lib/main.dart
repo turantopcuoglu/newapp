@@ -10,6 +10,7 @@ import 'providers/app_provider.dart';
 import 'providers/daily_mode_provider.dart';
 import 'providers/locale_provider.dart';
 import 'providers/storage_provider.dart';
+import 'screens/disclaimer_screen.dart';
 import 'screens/main_shell.dart';
 import 'screens/mode_selection_screen.dart';
 import 'screens/onboarding_screen.dart';
@@ -66,10 +67,46 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      home: ref.read(storageProvider).isOnboardingCompleted()
-          ? const _AppGate()
-          : const OnboardingScreen(),
+      home: const _DisclaimerGate(),
     );
+  }
+}
+
+/// Gates the app behind the legal disclaimer.
+/// Shows DisclaimerScreen if the user hasn't accepted the disclaimer yet.
+class _DisclaimerGate extends ConsumerStatefulWidget {
+  const _DisclaimerGate();
+
+  @override
+  ConsumerState<_DisclaimerGate> createState() => _DisclaimerGateState();
+}
+
+class _DisclaimerGateState extends ConsumerState<_DisclaimerGate> {
+  bool _disclaimerAccepted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _disclaimerAccepted = ref.read(storageProvider).isDisclaimerAccepted();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_disclaimerAccepted) {
+      return DisclaimerScreen(
+        onAccepted: () {
+          setState(() {
+            _disclaimerAccepted = true;
+          });
+        },
+      );
+    }
+
+    final storage = ref.read(storageProvider);
+    if (storage.isOnboardingCompleted()) {
+      return const _AppGate();
+    }
+    return const OnboardingScreen();
   }
 }
 
