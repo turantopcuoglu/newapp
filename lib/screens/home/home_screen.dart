@@ -9,7 +9,10 @@ import '../../providers/check_in_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../models/meal_plan.dart';
+import '../../models/recipe.dart';
 import '../../services/recommendation_service.dart';
+import '../planner/planner_screen.dart';
 import 'meal_recommendations_screen.dart';
 import 'nutrition_detail_screen.dart';
 import 'widgets/check_in_sheet.dart';
@@ -71,6 +74,10 @@ class HomeScreen extends ConsumerWidget {
                   l10n: l10n,
                   locale: locale,
                 ),
+                const SizedBox(height: 16),
+
+                // 2-Day Meal Plan Card
+                _TwoDayMealPlanCard(l10n: l10n, locale: locale),
                 const SizedBox(height: 16),
 
                 // Nutrition Day Navigator (tappable → detail charts)
@@ -968,6 +975,339 @@ class _MacroItem extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+// ─── Two-Day Meal Plan Card ─────────────────────────────────────────────────
+
+class _TwoDayMealPlanCard extends ConsumerWidget {
+  final AppLocalizations l10n;
+  final String locale;
+
+  const _TwoDayMealPlanCard({required this.l10n, required this.locale});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final mealPlans = ref.watch(mealPlanProvider);
+    final recipeMap = ref.watch(recipeMapProvider);
+
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final tomorrow = today.add(const Duration(days: 1));
+
+    final todayKey =
+        '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+    final tomorrowKey =
+        '${tomorrow.year}-${tomorrow.month.toString().padLeft(2, '0')}-${tomorrow.day.toString().padLeft(2, '0')}';
+
+    final todayMeals = mealPlans.where((e) => e.dateKey == todayKey).toList()
+      ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
+    final tomorrowMeals =
+        mealPlans.where((e) => e.dateKey == tomorrowKey).toList()
+          ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
+
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const PlannerScreen()),
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: AppTheme.surface,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(8),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: AppTheme.accentOrange.withAlpha(25),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.restaurant_menu_rounded,
+                    color: AppTheme.accentOrange,
+                    size: 22,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    l10n.homeMealListTitle,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: AppTheme.accentOrange.withAlpha(20),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        l10n.homeMealListSeeAll,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.accentOrange,
+                        ),
+                      ),
+                      const SizedBox(width: 2),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: AppTheme.accentOrange,
+                        size: 10,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // Today
+            _DayMealSection(
+              label: l10n.plannerToday,
+              meals: todayMeals,
+              recipeMap: recipeMap,
+              locale: locale,
+              l10n: l10n,
+              isToday: true,
+            ),
+
+            const SizedBox(height: 12),
+
+            // Divider
+            Container(
+              height: 1,
+              color: AppTheme.divider,
+            ),
+
+            const SizedBox(height: 12),
+
+            // Tomorrow
+            _DayMealSection(
+              label: l10n.homeTomorrow,
+              meals: tomorrowMeals,
+              recipeMap: recipeMap,
+              locale: locale,
+              l10n: l10n,
+              isToday: false,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DayMealSection extends StatelessWidget {
+  final String label;
+  final List<MealPlanEntry> meals;
+  final Map<String, Recipe> recipeMap;
+  final String locale;
+  final AppLocalizations l10n;
+  final bool isToday;
+
+  const _DayMealSection({
+    required this.label,
+    required this.meals,
+    required this.recipeMap,
+    required this.locale,
+    required this.l10n,
+    required this.isToday,
+  });
+
+  String _mealTypeLabel(MealType type) {
+    switch (type) {
+      case MealType.breakfast:
+        return l10n.recipeBreakfast;
+      case MealType.lunch:
+        return l10n.recipeLunch;
+      case MealType.dinner:
+        return l10n.recipeDinner;
+      case MealType.snack:
+        return l10n.recipeSnack;
+    }
+  }
+
+  Color _mealTypeColor(MealType type) {
+    switch (type) {
+      case MealType.breakfast:
+        return AppTheme.breakfastColor;
+      case MealType.lunch:
+        return AppTheme.lunchColor;
+      case MealType.dinner:
+        return AppTheme.dinnerColor;
+      case MealType.snack:
+        return AppTheme.snackColor;
+    }
+  }
+
+  IconData _mealTypeIcon(MealType type) {
+    switch (type) {
+      case MealType.breakfast:
+        return Icons.free_breakfast_rounded;
+      case MealType.lunch:
+        return Icons.lunch_dining_rounded;
+      case MealType.dinner:
+        return Icons.dinner_dining_rounded;
+      case MealType.snack:
+        return Icons.cookie_rounded;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Day label
+        Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: isToday
+                    ? AppTheme.accentOrange.withAlpha(20)
+                    : AppTheme.accentTeal.withAlpha(20),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color:
+                      isToday ? AppTheme.accentOrange : AppTheme.accentTeal,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              '${meals.length} ${l10n.homeYesterdayMeals}',
+              style: const TextStyle(
+                fontSize: 12,
+                color: AppTheme.textLight,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+
+        if (meals.isEmpty)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.info_outline_rounded,
+                  color: AppTheme.textLight.withAlpha(150),
+                  size: 16,
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  l10n.homeMealListEmpty,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.textLight,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            ),
+          )
+        else
+          ...meals.map((entry) {
+            final recipe = recipeMap[entry.recipeId];
+            final recipeName = recipe != null
+                ? recipe.localizedName(locale)
+                : '—';
+            final color = _mealTypeColor(entry.mealType);
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                children: [
+                  // Meal type icon
+                  Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: color.withAlpha(20),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Icon(
+                      _mealTypeIcon(entry.mealType),
+                      color: color,
+                      size: 16,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  // Meal type label
+                  SizedBox(
+                    width: 80,
+                    child: Text(
+                      _mealTypeLabel(entry.mealType),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: color,
+                      ),
+                    ),
+                  ),
+                  // Recipe name
+                  Expanded(
+                    child: Text(
+                      recipeName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: AppTheme.textPrimary,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  // Time label
+                  if (entry.timeLabel.isNotEmpty)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: AppTheme.textLight.withAlpha(20),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        entry.timeLabel,
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: AppTheme.textSecondary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            );
+          }),
+      ],
     );
   }
 }

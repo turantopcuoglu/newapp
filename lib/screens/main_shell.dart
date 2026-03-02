@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../core/theme.dart';
 import '../l10n/app_localizations.dart';
 import 'home/home_screen.dart' as home;
-import 'planner/planner_screen.dart';
+import 'explore/explore_screen.dart';
 import 'shopping/shopping_screen.dart';
 import 'recipe_book/recipe_book_screen.dart';
 import 'settings_screen.dart';
@@ -19,16 +19,16 @@ class _MainShellState extends State<MainShell> {
 
   final _screens = const [
     home.HomeScreen(),
-    PlannerScreen(),
     ShoppingScreen(),
+    ExploreScreen(),
     RecipeBookScreen(),
     SettingsScreen(),
   ];
 
   static const _navColors = [
     AppTheme.accentOrange,
-    AppTheme.accentTeal,
     AppTheme.successGreen,
+    AppTheme.accentTeal,
     AppTheme.softLavender,
     AppTheme.warmCoral,
   ];
@@ -60,7 +60,7 @@ class _MainShellState extends State<MainShell> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _NavItem(
-                  icon: Icons.home_rounded,
+                  icon: Icons.home_outlined,
                   activeIcon: Icons.home_rounded,
                   label: l10n.navHome,
                   isSelected: _currentIndex == 0,
@@ -68,17 +68,17 @@ class _MainShellState extends State<MainShell> {
                   onTap: () => setState(() => _currentIndex = 0),
                 ),
                 _NavItem(
-                  icon: Icons.calendar_month_outlined,
-                  activeIcon: Icons.calendar_month_rounded,
-                  label: l10n.navPlanner,
+                  icon: Icons.kitchen_outlined,
+                  activeIcon: Icons.kitchen_rounded,
+                  label: l10n.navMyKitchen,
                   isSelected: _currentIndex == 1,
                   color: _navColors[1],
                   onTap: () => setState(() => _currentIndex = 1),
                 ),
                 _NavItem(
-                  icon: Icons.kitchen_outlined,
-                  activeIcon: Icons.kitchen_rounded,
-                  label: l10n.navMyKitchen,
+                  icon: Icons.explore_outlined,
+                  activeIcon: Icons.explore_rounded,
+                  label: l10n.navExplore,
                   isSelected: _currentIndex == 2,
                   color: _navColors[2],
                   onTap: () => setState(() => _currentIndex = 2),

@@ -5,6 +5,7 @@ const Map<String, String> enTranslations = {
   // Navigation
   'navHome': 'Home',
   'navPlanner': 'Planner',
+  'navExplore': 'Explore',
   'navShopping': 'Shopping',
   'navMyKitchen': 'My Kitchen',
   'navMyRecipes': 'My Recipes',
@@ -38,6 +39,10 @@ const Map<String, String> enTranslations = {
   'homeMealRecipeCount': 'recipes',
   'homeQuickActions': 'Quick Actions',
   'homeFat': 'Fat',
+  'homeMealListTitle': 'My Meal List',
+  'homeTomorrow': 'Tomorrow',
+  'homeMealListEmpty': 'No meals planned',
+  'homeMealListSeeAll': 'See All',
 
   // Check-in
   'checkInTitle': 'How are you feeling?',

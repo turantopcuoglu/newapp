@@ -5,6 +5,7 @@ const Map<String, String> trTranslations = {
   // Navigation
   'navHome': 'Ana Sayfa',
   'navPlanner': 'Planlayıcı',
+  'navExplore': 'Keşfet',
   'navShopping': 'Alışveriş',
   'navMyKitchen': 'Mutfağım',
   'navMyRecipes': 'Tariflerim',
@@ -38,6 +39,10 @@ const Map<String, String> trTranslations = {
   'homeMealRecipeCount': 'tarif',
   'homeQuickActions': 'Hızlı İşlemler',
   'homeFat': 'Yağ',
+  'homeMealListTitle': 'Yemek Listem',
+  'homeTomorrow': 'Yarın',
+  'homeMealListEmpty': 'Planlanmış öğün yok',
+  'homeMealListSeeAll': 'Tümünü Gör',
 
   // Check-in
   'checkInTitle': 'Nasıl hissediyorsunuz?',
