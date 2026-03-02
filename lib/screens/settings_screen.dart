@@ -127,6 +127,7 @@ class SettingsScreen extends ConsumerWidget {
       ),
     );
   }
+}
 
 // ─── Allergy & Disliked Ingredients Section ─────────────────────────────────
 
