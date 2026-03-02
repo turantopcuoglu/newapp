@@ -58,6 +58,11 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
     _save();
   }
 
+  void updateShowBmi(bool show) {
+    state = state.copyWith(showBmi: show);
+    _save();
+  }
+
   void updateDislikedIngredients(List<String> disliked) {
     state = state.copyWith(dislikedIngredients: disliked);
     _save();

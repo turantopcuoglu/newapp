@@ -149,6 +149,16 @@ class AppLocalizations {
   String get profileLanguage => _t('profileLanguage');
   String get profileSave => _t('profileSave');
   String get profileSaved => _t('profileSaved');
+  String get profileBodyMetrics => _t('profileBodyMetrics');
+  String get profileBodyMetricsHint => _t('profileBodyMetricsHint');
+  String get profileShowBmi => _t('profileShowBmi');
+  String get profileBmi => _t('profileBmi');
+  String get profileBmiCategory => _t('profileBmiCategory');
+  String get profileBmiUnderweight => _t('profileBmiUnderweight');
+  String get profileBmiNormal => _t('profileBmiNormal');
+  String get profileBmiOverweight => _t('profileBmiOverweight');
+  String get profileBmiObese => _t('profileBmiObese');
+  String get profileBmiNeedData => _t('profileBmiNeedData');
 
   // Inventory
   String get inventoryTitle => _t('inventoryTitle');
