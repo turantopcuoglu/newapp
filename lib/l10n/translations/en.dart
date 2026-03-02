@@ -120,6 +120,16 @@ const Map<String, String> enTranslations = {
   'profileLanguage': 'Language',
   'profileSave': 'Save Profile',
   'profileSaved': 'Profile saved',
+  'profileBodyMetrics': 'Body Metrics',
+  'profileBodyMetricsHint': 'Enter your height and weight to calculate your BMI',
+  'profileShowBmi': 'Show BMI',
+  'profileBmi': 'BMI',
+  'profileBmiCategory': 'Category',
+  'profileBmiUnderweight': 'Underweight',
+  'profileBmiNormal': 'Normal range',
+  'profileBmiOverweight': 'Overweight',
+  'profileBmiObese': 'Obese',
+  'profileBmiNeedData': 'Enter height and weight to calculate BMI',
 
   // Inventory
   'inventoryTitle': 'Kitchen Inventory',

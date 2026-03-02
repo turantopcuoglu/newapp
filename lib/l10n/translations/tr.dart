@@ -120,6 +120,16 @@ const Map<String, String> trTranslations = {
   'profileLanguage': 'Dil',
   'profileSave': 'Profili Kaydet',
   'profileSaved': 'Profil kaydedildi',
+  'profileBodyMetrics': 'Vücut Ölçüleri',
+  'profileBodyMetricsHint': 'Boy ve kilo bilgilerinizi girerek VKİ hesaplaması yapabilirsiniz',
+  'profileShowBmi': 'VKİ\'yi göster',
+  'profileBmi': 'VKİ',
+  'profileBmiCategory': 'Kategori',
+  'profileBmiUnderweight': 'Zayıf',
+  'profileBmiNormal': 'Normal aralık',
+  'profileBmiOverweight': 'Fazla kilolu',
+  'profileBmiObese': 'Obez',
+  'profileBmiNeedData': 'VKİ hesaplamak için boy ve kilo bilgilerini girin',
 
   // Inventory
   'inventoryTitle': 'Mutfak Envanteri',

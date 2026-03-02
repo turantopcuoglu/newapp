@@ -10,6 +10,7 @@ class UserProfile {
   final ActivityLevel activityLevel;
   final List<String> allergies;
   final List<String> dislikedIngredients;
+  final bool showBmi;
 
   const UserProfile({
     this.name,
@@ -20,9 +21,16 @@ class UserProfile {
     this.activityLevel = ActivityLevel.moderate,
     this.allergies = const [],
     this.dislikedIngredients = const [],
+    this.showBmi = false,
   });
 
   bool get isFemale => gender == Gender.female;
+
+  double? get bmi {
+    if (weight == null || height == null || height == 0) return null;
+    final heightInMeters = height! / 100;
+    return weight! / (heightInMeters * heightInMeters);
+  }
 
   UserProfile copyWith({
     String? name,
@@ -33,6 +41,7 @@ class UserProfile {
     ActivityLevel? activityLevel,
     List<String>? allergies,
     List<String>? dislikedIngredients,
+    bool? showBmi,
   }) =>
       UserProfile(
         name: name ?? this.name,
@@ -43,6 +52,7 @@ class UserProfile {
         activityLevel: activityLevel ?? this.activityLevel,
         allergies: allergies ?? this.allergies,
         dislikedIngredients: dislikedIngredients ?? this.dislikedIngredients,
+        showBmi: showBmi ?? this.showBmi,
       );
 
   Map<String, dynamic> toJson() => {
@@ -54,6 +64,7 @@ class UserProfile {
         'activityLevel': activityLevel.name,
         'allergies': allergies,
         'dislikedIngredients': dislikedIngredients,
+        'showBmi': showBmi,
       };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
@@ -71,6 +82,7 @@ class UserProfile {
         allergies: List<String>.from(json['allergies'] ?? []),
         dislikedIngredients:
             List<String>.from(json['dislikedIngredients'] ?? []),
+        showBmi: json['showBmi'] as bool? ?? false,
       );
 
   String encode() => jsonEncode(toJson());
