@@ -618,7 +618,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       macros: macros,
       steps: {locale: steps},
       isUserCreated: true,
-      checkInTags: [CheckInType.feelingBalanced, CheckInType.noSpecificIssue],
+      checkInTags: [CheckInType.noSpecificIssue],
     );
 
     ref.read(myRecipesProvider.notifier).addRecipe(recipe);

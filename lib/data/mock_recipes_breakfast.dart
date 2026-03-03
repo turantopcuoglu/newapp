@@ -75,7 +75,7 @@ const List<Recipe> mockBreakfastRecipes = [
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.lowEnergy,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
     fiberLevel: NutrientLevel.low,
@@ -177,7 +177,7 @@ const List<Recipe> mockBreakfastRecipes = [
     ],
     allergenTags: ['gluten', 'eggs'],
     checkInTags: [
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
       CheckInType.cantFocus,
       CheckInType.postWorkout,
     ],
@@ -226,7 +226,6 @@ const List<Recipe> mockBreakfastRecipes = [
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
-      CheckInType.feelingBalanced,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.medium,
@@ -379,7 +378,7 @@ const List<Recipe> mockBreakfastRecipes = [
       CheckInType.bloated,
       CheckInType.pms,
       CheckInType.cravingSweets,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.high,
@@ -597,7 +596,7 @@ const List<Recipe> mockBreakfastRecipes = [
     checkInTags: [
       CheckInType.cantFocus,
       CheckInType.pms,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
     fiberLevel: NutrientLevel.low,
@@ -756,7 +755,6 @@ const List<Recipe> mockBreakfastRecipes = [
     allergenTags: ['gluten', 'eggs', 'dairy'],
     checkInTags: [
       CheckInType.cantFocus,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
@@ -855,7 +853,6 @@ const List<Recipe> mockBreakfastRecipes = [
     ],
     allergenTags: ['gluten', 'dairy'],
     checkInTags: [
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
       CheckInType.bloated,
     ],
@@ -1130,7 +1127,7 @@ const List<Recipe> mockBreakfastRecipes = [
     allergenTags: ['eggs'],
     checkInTags: [
       CheckInType.lowEnergy,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
       CheckInType.postWorkout,
     ],
     proteinLevel: NutrientLevel.high,
@@ -1290,7 +1287,6 @@ const List<Recipe> mockBreakfastRecipes = [
     allergenTags: ['eggs', 'dairy'],
     checkInTags: [
       CheckInType.postWorkout,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
       CheckInType.cantFocus,
     ],

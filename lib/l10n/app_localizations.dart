@@ -82,7 +82,6 @@ class AppLocalizations {
   String get checkInCantFocus => _t('checkInCantFocus');
   String get checkInPms => _t('checkInPms');
   String get checkInPostWorkout => _t('checkInPostWorkout');
-  String get checkInFeelingBalanced => _t('checkInFeelingBalanced');
   String get checkInNoSpecificIssue => _t('checkInNoSpecificIssue');
   String get checkInPeriodCramps => _t('checkInPeriodCramps');
   String get checkInPeriodFatigue => _t('checkInPeriodFatigue');
@@ -329,7 +328,6 @@ class AppLocalizations {
   String get modeDescCravingSweets => _t('modeDescCravingSweets');
   String get modeDescCantFocus => _t('modeDescCantFocus');
   String get modeDescPostWorkout => _t('modeDescPostWorkout');
-  String get modeDescFeelingBalanced => _t('modeDescFeelingBalanced');
   String get modeDescNoSpecificIssue => _t('modeDescNoSpecificIssue');
   String get modeDescPms => _t('modeDescPms');
   String get modeDescPeriodCramps => _t('modeDescPeriodCramps');

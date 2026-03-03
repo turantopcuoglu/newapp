@@ -2,7 +2,7 @@ import '../models/ingredient.dart';
 import '../core/enums.dart';
 
 const List<Ingredient> mockIngredients = [
-  // ── Protein (15) ──────────────────────────────────────────────────────
+  // ── Protein (25) ──────────────────────────────────────────────────────
   Ingredient(
     id: 'chicken_breast',
     name: {'en': 'Chicken Breast', 'tr': 'Tavuk Göğsü'},
@@ -93,8 +93,68 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.protein,
     allergenTags: ['fish'],
   ),
+  Ingredient(
+    id: 'veal',
+    name: {'en': 'Veal', 'tr': 'Dana Eti'},
+    category: IngredientCategory.protein,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'ground_turkey',
+    name: {'en': 'Ground Turkey', 'tr': 'Hindi Kıyması'},
+    category: IngredientCategory.protein,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'sea_bass',
+    name: {'en': 'Sea Bass', 'tr': 'Levrek'},
+    category: IngredientCategory.protein,
+    allergenTags: ['fish'],
+  ),
+  Ingredient(
+    id: 'sardine',
+    name: {'en': 'Sardine', 'tr': 'Sardalya'},
+    category: IngredientCategory.protein,
+    allergenTags: ['fish'],
+  ),
+  Ingredient(
+    id: 'squid',
+    name: {'en': 'Squid', 'tr': 'Kalamar'},
+    category: IngredientCategory.protein,
+    allergenTags: ['shellfish'],
+  ),
+  Ingredient(
+    id: 'mussel',
+    name: {'en': 'Mussel', 'tr': 'Midye'},
+    category: IngredientCategory.protein,
+    allergenTags: ['shellfish'],
+  ),
+  Ingredient(
+    id: 'octopus',
+    name: {'en': 'Octopus', 'tr': 'Ahtapot'},
+    category: IngredientCategory.protein,
+    allergenTags: ['shellfish'],
+  ),
+  Ingredient(
+    id: 'liver',
+    name: {'en': 'Liver', 'tr': 'Ciğer'},
+    category: IngredientCategory.protein,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'chicken_wing',
+    name: {'en': 'Chicken Wing', 'tr': 'Tavuk Kanadı'},
+    category: IngredientCategory.protein,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'sea_bream',
+    name: {'en': 'Sea Bream', 'tr': 'Çipura'},
+    category: IngredientCategory.protein,
+    allergenTags: ['fish'],
+  ),
 
-  // ── Dairy (8) ─────────────────────────────────────────────────────────
+  // ── Dairy (18) ────────────────────────────────────────────────────────
   Ingredient(
     id: 'milk',
     name: {'en': 'Milk', 'tr': 'Süt'},
@@ -143,8 +203,68 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.dairy,
     allergenTags: ['dairy'],
   ),
+  Ingredient(
+    id: 'cottage_cheese',
+    name: {'en': 'Cottage Cheese', 'tr': 'Lor Peyniri'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'kefir',
+    name: {'en': 'Kefir', 'tr': 'Kefir'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'greek_yogurt',
+    name: {'en': 'Greek Yogurt', 'tr': 'Süzme Yoğurt'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'cream_cheese',
+    name: {'en': 'Cream Cheese', 'tr': 'Krem Peynir'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'ricotta',
+    name: {'en': 'Ricotta', 'tr': 'Ricotta'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'goat_cheese',
+    name: {'en': 'Goat Cheese', 'tr': 'Keçi Peyniri'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'labne',
+    name: {'en': 'Labne', 'tr': 'Labne'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'sour_cream',
+    name: {'en': 'Sour Cream', 'tr': 'Ekşi Krema'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'condensed_milk',
+    name: {'en': 'Condensed Milk', 'tr': 'Yoğunlaştırılmış Süt'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'whipped_cream',
+    name: {'en': 'Whipped Cream', 'tr': 'Çırpılmış Krema'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
 
-  // ── Grain (10) ────────────────────────────────────────────────────────
+  // ── Grain (20) ───────────────────────────────────────────────────────
   Ingredient(
     id: 'white_rice',
     name: {'en': 'White Rice', 'tr': 'Pirinç'},
@@ -205,8 +325,68 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.grain,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'whole_wheat_flour',
+    name: {'en': 'Whole Wheat Flour', 'tr': 'Tam Buğday Unu'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'semolina',
+    name: {'en': 'Semolina', 'tr': 'İrmik'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'tortilla_wrap',
+    name: {'en': 'Tortilla Wrap', 'tr': 'Tortilla Lavaş'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'noodle',
+    name: {'en': 'Noodle', 'tr': 'Erişte'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'pita_bread',
+    name: {'en': 'Pita Bread', 'tr': 'Pide Ekmeği'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'basmati_rice',
+    name: {'en': 'Basmati Rice', 'tr': 'Basmati Pirinç'},
+    category: IngredientCategory.grain,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'buckwheat',
+    name: {'en': 'Buckwheat', 'tr': 'Karabuğday'},
+    category: IngredientCategory.grain,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'barley',
+    name: {'en': 'Barley', 'tr': 'Arpa'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'phyllo_dough',
+    name: {'en': 'Phyllo Dough', 'tr': 'Yufka'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'puff_pastry',
+    name: {'en': 'Puff Pastry', 'tr': 'Milföy'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten', 'dairy'],
+  ),
 
-  // ── Vegetable (20) ────────────────────────────────────────────────────
+  // ── Vegetable (40) ──────────────────────────────────────────────────
   Ingredient(
     id: 'tomato',
     name: {'en': 'Tomato', 'tr': 'Domates'},
@@ -327,8 +507,128 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.vegetable,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'corn',
+    name: {'en': 'Corn', 'tr': 'Mısır'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'peas',
+    name: {'en': 'Green Peas', 'tr': 'Bezelye'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'asparagus',
+    name: {'en': 'Asparagus', 'tr': 'Kuşkonmaz'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'radish',
+    name: {'en': 'Radish', 'tr': 'Turp'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'beet',
+    name: {'en': 'Beetroot', 'tr': 'Pancar'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'okra',
+    name: {'en': 'Okra', 'tr': 'Bamya'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'spring_onion',
+    name: {'en': 'Spring Onion', 'tr': 'Yeşil Soğan'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'red_cabbage',
+    name: {'en': 'Red Cabbage', 'tr': 'Kırmızı Lahana'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'kale',
+    name: {'en': 'Kale', 'tr': 'Kara Lahana'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'arugula',
+    name: {'en': 'Arugula', 'tr': 'Roka'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'swiss_chard',
+    name: {'en': 'Swiss Chard', 'tr': 'Pazı'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'turnip',
+    name: {'en': 'Turnip', 'tr': 'Şalgam'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'ginger',
+    name: {'en': 'Fresh Ginger', 'tr': 'Taze Zencefil'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'hot_pepper',
+    name: {'en': 'Hot Pepper', 'tr': 'Acı Biber'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'brussels_sprouts',
+    name: {'en': 'Brussels Sprouts', 'tr': 'Brüksel Lahanası'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'red_onion',
+    name: {'en': 'Red Onion', 'tr': 'Kırmızı Soğan'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'fennel_bulb',
+    name: {'en': 'Fennel', 'tr': 'Rezene'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'celeriac',
+    name: {'en': 'Celeriac', 'tr': 'Kereviz Kökü'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'watercress',
+    name: {'en': 'Watercress', 'tr': 'Tere'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'purslane',
+    name: {'en': 'Purslane', 'tr': 'Semizotu'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
 
-  // ── Fruit (12) ────────────────────────────────────────────────────────
+  // ── Fruit (28) ───────────────────────────────────────────────────────
   Ingredient(
     id: 'apple',
     name: {'en': 'Apple', 'tr': 'Elma'},
@@ -401,8 +701,104 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.fruit,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'mango',
+    name: {'en': 'Mango', 'tr': 'Mango'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'pineapple',
+    name: {'en': 'Pineapple', 'tr': 'Ananas'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'kiwi',
+    name: {'en': 'Kiwi', 'tr': 'Kivi'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'pear',
+    name: {'en': 'Pear', 'tr': 'Armut'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'blueberry',
+    name: {'en': 'Blueberry', 'tr': 'Yaban Mersini'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'raspberry',
+    name: {'en': 'Raspberry', 'tr': 'Ahududu'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'dates',
+    name: {'en': 'Dates', 'tr': 'Hurma'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'apricot',
+    name: {'en': 'Apricot', 'tr': 'Kayısı'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'plum',
+    name: {'en': 'Plum', 'tr': 'Erik'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'melon',
+    name: {'en': 'Melon', 'tr': 'Kavun'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'tangerine',
+    name: {'en': 'Tangerine', 'tr': 'Mandalina'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'grapefruit',
+    name: {'en': 'Grapefruit', 'tr': 'Greyfurt'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'coconut',
+    name: {'en': 'Coconut', 'tr': 'Hindistancevizi'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'blackberry',
+    name: {'en': 'Blackberry', 'tr': 'Böğürtlen'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'lime',
+    name: {'en': 'Lime', 'tr': 'Misket Limonu'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'quince',
+    name: {'en': 'Quince', 'tr': 'Ayva'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
 
-  // ── Spice (10) ────────────────────────────────────────────────────────
+  // ── Spice (25) ───────────────────────────────────────────────────────
   Ingredient(
     id: 'black_pepper',
     name: {'en': 'Black Pepper', 'tr': 'Karabiber'},
@@ -463,8 +859,98 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.spice,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'dill',
+    name: {'en': 'Dill', 'tr': 'Dereotu'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'thyme',
+    name: {'en': 'Thyme', 'tr': 'Kekik Dalı'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'rosemary',
+    name: {'en': 'Rosemary', 'tr': 'Biberiye'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'basil',
+    name: {'en': 'Basil', 'tr': 'Fesleğen'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'coriander',
+    name: {'en': 'Coriander', 'tr': 'Kişniş'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'nutmeg',
+    name: {'en': 'Nutmeg', 'tr': 'Muskat'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'clove',
+    name: {'en': 'Clove', 'tr': 'Karanfil'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'cardamom',
+    name: {'en': 'Cardamom', 'tr': 'Kakule'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'sumac',
+    name: {'en': 'Sumac', 'tr': 'Sumak'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'curry_powder',
+    name: {'en': 'Curry Powder', 'tr': 'Köri'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'ginger_powder',
+    name: {'en': 'Ginger Powder', 'tr': 'Zencefil Tozu'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'garlic_powder',
+    name: {'en': 'Garlic Powder', 'tr': 'Sarımsak Tozu'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'onion_powder',
+    name: {'en': 'Onion Powder', 'tr': 'Soğan Tozu'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'white_pepper',
+    name: {'en': 'White Pepper', 'tr': 'Beyaz Biber'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'vanilla',
+    name: {'en': 'Vanilla', 'tr': 'Vanilya'},
+    category: IngredientCategory.spice,
+    allergenTags: [],
+  ),
 
-  // ── Oil (5) ───────────────────────────────────────────────────────────
+  // ── Oil (8) ──────────────────────────────────────────────────────────
   Ingredient(
     id: 'olive_oil',
     name: {'en': 'Olive Oil', 'tr': 'Zeytinyağı'},
@@ -487,7 +973,7 @@ const List<Ingredient> mockIngredients = [
     id: 'sesame_oil',
     name: {'en': 'Sesame Oil', 'tr': 'Susam Yağı'},
     category: IngredientCategory.oil,
-    allergenTags: [],
+    allergenTags: ['sesame'],
   ),
   Ingredient(
     id: 'canola_oil',
@@ -495,8 +981,26 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.oil,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'avocado_oil',
+    name: {'en': 'Avocado Oil', 'tr': 'Avokado Yağı'},
+    category: IngredientCategory.oil,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'grape_seed_oil',
+    name: {'en': 'Grape Seed Oil', 'tr': 'Üzüm Çekirdeği Yağı'},
+    category: IngredientCategory.oil,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'ghee',
+    name: {'en': 'Ghee', 'tr': 'Sadeyağ'},
+    category: IngredientCategory.oil,
+    allergenTags: ['dairy'],
+  ),
 
-  // ── Nut (6) ───────────────────────────────────────────────────────────
+  // ── Nut & Seed (14) ─────────────────────────────────────────────────
   Ingredient(
     id: 'walnut',
     name: {'en': 'Walnut', 'tr': 'Ceviz'},
@@ -533,8 +1037,56 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.nut,
     allergenTags: ['nuts'],
   ),
+  Ingredient(
+    id: 'pine_nut',
+    name: {'en': 'Pine Nut', 'tr': 'Çam Fıstığı'},
+    category: IngredientCategory.nut,
+    allergenTags: ['nuts'],
+  ),
+  Ingredient(
+    id: 'chestnut',
+    name: {'en': 'Chestnut', 'tr': 'Kestane'},
+    category: IngredientCategory.nut,
+    allergenTags: ['nuts'],
+  ),
+  Ingredient(
+    id: 'sesame_seeds',
+    name: {'en': 'Sesame Seeds', 'tr': 'Susam'},
+    category: IngredientCategory.nut,
+    allergenTags: ['sesame'],
+  ),
+  Ingredient(
+    id: 'sunflower_seeds',
+    name: {'en': 'Sunflower Seeds', 'tr': 'Ayçiçeği Çekirdeği'},
+    category: IngredientCategory.nut,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'pumpkin_seeds',
+    name: {'en': 'Pumpkin Seeds', 'tr': 'Kabak Çekirdeği'},
+    category: IngredientCategory.nut,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'flax_seeds',
+    name: {'en': 'Flax Seeds', 'tr': 'Keten Tohumu'},
+    category: IngredientCategory.nut,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'chia_seeds',
+    name: {'en': 'Chia Seeds', 'tr': 'Chia Tohumu'},
+    category: IngredientCategory.nut,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'poppy_seeds',
+    name: {'en': 'Poppy Seeds', 'tr': 'Haşhaş'},
+    category: IngredientCategory.nut,
+    allergenTags: [],
+  ),
 
-  // ── Legume (5) ────────────────────────────────────────────────────────
+  // ── Legume (10) ──────────────────────────────────────────────────────
   Ingredient(
     id: 'red_lentil',
     name: {'en': 'Red Lentil', 'tr': 'Kırmızı Mercimek'},
@@ -565,8 +1117,38 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.legume,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'black_bean',
+    name: {'en': 'Black Bean', 'tr': 'Siyah Fasulye'},
+    category: IngredientCategory.legume,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'kidney_bean',
+    name: {'en': 'Kidney Bean', 'tr': 'Barbunya'},
+    category: IngredientCategory.legume,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'fava_bean',
+    name: {'en': 'Fava Bean', 'tr': 'Bakla'},
+    category: IngredientCategory.legume,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'edamame',
+    name: {'en': 'Edamame', 'tr': 'Soya Fasulyesi'},
+    category: IngredientCategory.legume,
+    allergenTags: ['soy'],
+  ),
+  Ingredient(
+    id: 'split_pea',
+    name: {'en': 'Split Pea', 'tr': 'Sarı Mercimek'},
+    category: IngredientCategory.legume,
+    allergenTags: [],
+  ),
 
-  // ── Condiment (7) ─────────────────────────────────────────────────────
+  // ── Condiment (22) ──────────────────────────────────────────────────
   Ingredient(
     id: 'salt',
     name: {'en': 'Salt', 'tr': 'Tuz'},
@@ -609,8 +1191,98 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.condiment,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'tahini',
+    name: {'en': 'Tahini', 'tr': 'Tahin'},
+    category: IngredientCategory.condiment,
+    allergenTags: ['sesame'],
+  ),
+  Ingredient(
+    id: 'pomegranate_molasses',
+    name: {'en': 'Pomegranate Molasses', 'tr': 'Nar Ekşisi'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'peanut_butter',
+    name: {'en': 'Peanut Butter', 'tr': 'Fıstık Ezmesi'},
+    category: IngredientCategory.condiment,
+    allergenTags: ['peanuts'],
+  ),
+  Ingredient(
+    id: 'coconut_milk',
+    name: {'en': 'Coconut Milk', 'tr': 'Hindistancevizi Sütü'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'ketchup',
+    name: {'en': 'Ketchup', 'tr': 'Ketçap'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'mayonnaise',
+    name: {'en': 'Mayonnaise', 'tr': 'Mayonez'},
+    category: IngredientCategory.condiment,
+    allergenTags: ['eggs'],
+  ),
+  Ingredient(
+    id: 'balsamic_vinegar',
+    name: {'en': 'Balsamic Vinegar', 'tr': 'Balsamik Sirke'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'white_vinegar',
+    name: {'en': 'White Vinegar', 'tr': 'Beyaz Sirke'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'hot_sauce',
+    name: {'en': 'Hot Sauce', 'tr': 'Acı Sos'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'maple_syrup',
+    name: {'en': 'Maple Syrup', 'tr': 'Akçaağaç Şurubu'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'brown_sugar',
+    name: {'en': 'Brown Sugar', 'tr': 'Esmer Şeker'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'olives',
+    name: {'en': 'Olives', 'tr': 'Zeytin'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'pickles',
+    name: {'en': 'Pickles', 'tr': 'Turşu'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'dried_tomatoes',
+    name: {'en': 'Sun-Dried Tomatoes', 'tr': 'Kuru Domates'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'almond_butter',
+    name: {'en': 'Almond Butter', 'tr': 'Badem Ezmesi'},
+    category: IngredientCategory.condiment,
+    allergenTags: ['nuts'],
+  ),
 
-  // ── Snack Food (12) ──────────────────────────────────────────────────
+  // ── Snack Food (12) ─────────────────────────────────────────────────
   Ingredient(
     id: 'potato_chips',
     name: {'en': 'Potato Chips', 'tr': 'Patates Cipsi'},
@@ -684,147 +1356,7 @@ const List<Ingredient> mockIngredients = [
     allergenTags: [],
   ),
 
-  // ── Additional Vegetables (8) ────────────────────────────────────────
-  Ingredient(
-    id: 'corn',
-    name: {'en': 'Corn', 'tr': 'Mısır'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'peas',
-    name: {'en': 'Green Peas', 'tr': 'Bezelye'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'asparagus',
-    name: {'en': 'Asparagus', 'tr': 'Kuşkonmaz'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'radish',
-    name: {'en': 'Radish', 'tr': 'Turp'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'beet',
-    name: {'en': 'Beetroot', 'tr': 'Pancar'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'okra',
-    name: {'en': 'Okra', 'tr': 'Bamya'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'dill',
-    name: {'en': 'Dill', 'tr': 'Dereotu'},
-    category: IngredientCategory.spice,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'spring_onion',
-    name: {'en': 'Spring Onion', 'tr': 'Yeşil Soğan'},
-    category: IngredientCategory.vegetable,
-    allergenTags: [],
-  ),
-
-  // ── Additional Fruits (7) ───────────────────────────────────────────
-  Ingredient(
-    id: 'mango',
-    name: {'en': 'Mango', 'tr': 'Mango'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'pineapple',
-    name: {'en': 'Pineapple', 'tr': 'Ananas'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'kiwi',
-    name: {'en': 'Kiwi', 'tr': 'Kivi'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'pear',
-    name: {'en': 'Pear', 'tr': 'Armut'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'blueberry',
-    name: {'en': 'Blueberry', 'tr': 'Yaban Mersini'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'raspberry',
-    name: {'en': 'Raspberry', 'tr': 'Ahududu'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'dates',
-    name: {'en': 'Dates', 'tr': 'Hurma'},
-    category: IngredientCategory.fruit,
-    allergenTags: [],
-  ),
-
-  // ── Additional Condiments (4) ───────────────────────────────────────
-  Ingredient(
-    id: 'tahini',
-    name: {'en': 'Tahini', 'tr': 'Tahin'},
-    category: IngredientCategory.condiment,
-    allergenTags: ['sesame'],
-  ),
-  Ingredient(
-    id: 'pomegranate_molasses',
-    name: {'en': 'Pomegranate Molasses', 'tr': 'Nar Ekşisi'},
-    category: IngredientCategory.condiment,
-    allergenTags: [],
-  ),
-  Ingredient(
-    id: 'peanut_butter',
-    name: {'en': 'Peanut Butter', 'tr': 'Fıstık Ezmesi'},
-    category: IngredientCategory.condiment,
-    allergenTags: ['peanuts'],
-  ),
-  Ingredient(
-    id: 'coconut_milk',
-    name: {'en': 'Coconut Milk', 'tr': 'Hindistancevizi Sütü'},
-    category: IngredientCategory.condiment,
-    allergenTags: [],
-  ),
-
-  // ── Additional Dairy (3) ────────────────────────────────────────────
-  Ingredient(
-    id: 'cottage_cheese',
-    name: {'en': 'Cottage Cheese', 'tr': 'Lor Peyniri'},
-    category: IngredientCategory.dairy,
-    allergenTags: ['dairy'],
-  ),
-  Ingredient(
-    id: 'kefir',
-    name: {'en': 'Kefir', 'tr': 'Kefir'},
-    category: IngredientCategory.dairy,
-    allergenTags: ['dairy'],
-  ),
-  Ingredient(
-    id: 'greek_yogurt',
-    name: {'en': 'Greek Yogurt', 'tr': 'Süzme Yoğurt'},
-    category: IngredientCategory.dairy,
-    allergenTags: ['dairy'],
-  ),
-
-  // ── Other (2) ─────────────────────────────────────────────────────────
+  // ── Other (10) ──────────────────────────────────────────────────────
   Ingredient(
     id: 'baking_powder',
     name: {'en': 'Baking Powder', 'tr': 'Kabartma Tozu'},
@@ -834,6 +1366,54 @@ const List<Ingredient> mockIngredients = [
   Ingredient(
     id: 'yeast',
     name: {'en': 'Yeast', 'tr': 'Maya'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'baking_soda',
+    name: {'en': 'Baking Soda', 'tr': 'Karbonat'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'cornstarch',
+    name: {'en': 'Cornstarch', 'tr': 'Mısır Nişastası'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'gelatin',
+    name: {'en': 'Gelatin', 'tr': 'Jelatin'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'breadcrumbs',
+    name: {'en': 'Breadcrumbs', 'tr': 'Galeta Unu'},
+    category: IngredientCategory.other,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'cocoa_powder',
+    name: {'en': 'Cocoa Powder', 'tr': 'Kakao'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'coconut_flakes',
+    name: {'en': 'Coconut Flakes', 'tr': 'Hindistancevizi Rendesi'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'powdered_sugar',
+    name: {'en': 'Powdered Sugar', 'tr': 'Pudra Şekeri'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'rose_water',
+    name: {'en': 'Rose Water', 'tr': 'Gül Suyu'},
     category: IngredientCategory.other,
     allergenTags: [],
   ),

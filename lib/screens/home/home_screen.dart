@@ -303,8 +303,6 @@ class _DashboardHeader extends StatelessWidget {
         return Icons.nightlight_round;
       case CheckInType.postWorkout:
         return Icons.fitness_center_rounded;
-      case CheckInType.feelingBalanced:
-        return Icons.balance_rounded;
       case CheckInType.noSpecificIssue:
         return Icons.check_circle_outline_rounded;
     }
@@ -326,8 +324,6 @@ class _DashboardHeader extends StatelessWidget {
         return AppTheme.snackColor;
       case CheckInType.postWorkout:
         return const Color(0xFF26A69A);
-      case CheckInType.feelingBalanced:
-        return AppTheme.successGreen;
       case CheckInType.noSpecificIssue:
         return Colors.white.withAlpha(200);
     }
@@ -351,8 +347,6 @@ class _DashboardHeader extends StatelessWidget {
         return l10n.checkInPeriodFatigue;
       case CheckInType.postWorkout:
         return l10n.checkInPostWorkout;
-      case CheckInType.feelingBalanced:
-        return l10n.checkInFeelingBalanced;
       case CheckInType.noSpecificIssue:
         return l10n.checkInNoSpecificIssue;
     }
