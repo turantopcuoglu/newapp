@@ -47,8 +47,8 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Claude API anahtari ayarlanmadi. '
-                          'Ayarlar\'dan API anahtarinizi girin.',
+                          'Claude API anahtarı ayarlanmadı. '
+                          'Ayarlar\'dan API anahtarınızı girin.',
                           style: TextStyle(
                             color: theme.colorScheme.onErrorContainer,
                           ),
@@ -74,11 +74,11 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Dolabim',
+                          Text('Dolabım',
                               style: theme.textTheme.titleMedium),
                           Text(
                             provider.pantry.isEmpty
-                                ? 'Henuz malzeme eklenmedi'
+                                ? 'Henüz malzeme eklenmedi'
                                 : '${provider.pantry.length} malzeme mevcut',
                             style: theme.textTheme.bodySmall,
                           ),
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
             _MenuCard(
               icon: Icons.kitchen,
               title: 'Dolabim',
-              subtitle: 'Evdeki malzemeleri yonet',
+              subtitle: 'Evdeki malzemeleri yönet',
               color: Colors.green,
               onTap: () => Navigator.push(
                 context,
@@ -113,7 +113,7 @@ class HomeScreen extends StatelessWidget {
 
             _MenuCard(
               icon: Icons.auto_awesome,
-              title: 'Tarif Oner',
+              title: 'Tarif Öner',
               subtitle: 'Eldeki malzemelerle ne yapabilirim?',
               color: Colors.orange,
               onTap: () => Navigator.push(
@@ -141,10 +141,10 @@ class HomeScreen extends StatelessWidget {
 
             _MenuCard(
               icon: Icons.shopping_cart,
-              title: 'Alisveris Listesi',
+              title: 'Alışveriş Listesi',
               subtitle: provider.shoppingList.isEmpty
-                  ? 'Liste bos'
-                  : '${provider.shoppingList.length} urun',
+                  ? 'Liste boş'
+                  : '${provider.shoppingList.length} ürün',
               color: Colors.purple,
               badge: provider.shoppingList.isEmpty
                   ? null

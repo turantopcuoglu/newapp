@@ -45,12 +45,12 @@ class _PantryScreenState extends State<PantryScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dolabim'),
+        title: const Text('Dolabım'),
         actions: [
           if (provider.pantry.isNotEmpty)
             IconButton(
               icon: const Icon(Icons.delete_sweep),
-              tooltip: 'Tumunu temizle',
+              tooltip: 'Tümünü temizle',
               onPressed: () => _showClearDialog(context),
             ),
         ],
@@ -79,7 +79,7 @@ class _PantryScreenState extends State<PantryScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Virgul ile ayirarak birden fazla ekleyebilirsiniz',
+                  'Virgülle ayırarak birden fazla ekleyebilirsiniz',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -92,7 +92,7 @@ class _PantryScreenState extends State<PantryScreen> {
                         controller: _controller,
                         focusNode: _focusNode,
                         decoration: const InputDecoration(
-                          hintText: 'ornek: domates, sogan, biber',
+                          hintText: 'örnek: domates, soğan, biber',
                           border: OutlineInputBorder(),
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 12,
@@ -122,16 +122,16 @@ class _PantryScreenState extends State<PantryScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Hizli Ekle:', style: theme.textTheme.titleSmall),
+                  Text('Hızlı Ekle:', style: theme.textTheme.titleSmall),
                   const SizedBox(height: 8),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
                     children: [
-                      'Tuz', 'Seker', 'Un', 'Yag', 'Sut',
-                      'Yumurta', 'Pirinc', 'Makarna', 'Sogan',
-                      'Sarimsak', 'Domates', 'Biber', 'Patates',
-                      'Tereyagi', 'Peynir',
+                      'Tuz', 'Şeker', 'Un', 'Yağ', 'Süt',
+                      'Yumurta', 'Pirinç', 'Makarna', 'Soğan',
+                      'Sarımsak', 'Domates', 'Biber', 'Patates',
+                      'Tereyağı', 'Peynir',
                     ].map((name) => ActionChip(
                           label: Text(name),
                           onPressed: () => provider.addIngredient(name),
@@ -155,14 +155,14 @@ class _PantryScreenState extends State<PantryScreen> {
                                 .withOpacity(0.3)),
                         const SizedBox(height: 16),
                         Text(
-                          'Dolabiniz bos',
+                          'Dolabınız boş',
                           style: theme.textTheme.titleMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Yukaridaki alandan malzeme ekleyin',
+                          'Yukarıdaki alandan malzeme ekleyin',
                           style: theme.textTheme.bodySmall,
                         ),
                       ],
@@ -195,7 +195,7 @@ class _PantryScreenState extends State<PantryScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               child: Text(
-                '${provider.pantry.length} malzeme dolabinizda',
+                '${provider.pantry.length} malzeme dolabınızda',
                 style: theme.textTheme.bodySmall,
                 textAlign: TextAlign.center,
               ),
@@ -209,13 +209,13 @@ class _PantryScreenState extends State<PantryScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Dolabi Temizle'),
+        title: const Text('Dolabı Temizle'),
         content: const Text(
-            'Tum malzemeler silinecek. Emin misiniz?'),
+            'Tüm malzemeler silinecek. Emin misiniz?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Iptal'),
+            child: const Text('İptal'),
           ),
           FilledButton(
             onPressed: () {
