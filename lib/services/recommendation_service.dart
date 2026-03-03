@@ -15,7 +15,11 @@ class ScoredRecipe {
     required this.missingIngredients,
   });
 
-  int get compatibilityPercent => (compatibilityScore * 100).round();
+  int get compatibilityPercent {
+    final total = availableIngredients.length + missingIngredients.length;
+    if (total == 0) return 0;
+    return ((availableIngredients.length / total) * 100).round();
+  }
 }
 
 class RecommendationService {
