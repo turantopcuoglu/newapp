@@ -24,6 +24,14 @@ class RecipeDetailScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     final inventoryIds = ref.watch(inventoryIdsProvider);
 
+    // Recalculate compatibility from current inventory
+    final currentAvailable =
+        recipe.ingredientIds.where((id) => inventoryIds.contains(id)).length;
+    final totalIngredients = recipe.ingredientIds.length;
+    final currentPercent = totalIngredients > 0
+        ? ((currentAvailable / totalIngredients) * 100).round()
+        : 0;
+
     final ingredientMap = {for (final i in mockIngredients) i.id: i};
 
     return Scaffold(
@@ -50,7 +58,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                         color: AppTheme.successGreen.withAlpha(80)),
                   ),
                   child: Text(
-                    '${scoredRecipe.compatibilityPercent}% ${l10n.recipeCompatibility}',
+                    '$currentPercent% ${l10n.recipeCompatibility}',
                     style: TextStyle(
                       fontSize: 11,
                       color: Colors.green.shade700,
@@ -202,32 +210,38 @@ class RecipeDetailScreen extends ConsumerWidget {
             const SizedBox(height: 28),
 
             // Actions
-            if (scoredRecipe.missingIngredients.isNotEmpty)
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    final shoppingNotifier =
-                        ref.read(shoppingProvider.notifier);
-                    for (final id in scoredRecipe.missingIngredients) {
-                      final ingredient = ingredientMap[id];
-                      final displayName =
-                          ingredient?.localizedName(locale) ?? id;
-                      shoppingNotifier.addItem(
-                        displayName,
-                        forRecipeId: recipe.id,
+            if (currentAvailable < totalIngredients) ...[
+              () {
+                final currentMissing = recipe.ingredientIds
+                    .where((id) => !inventoryIds.contains(id))
+                    .toList();
+                return SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    onPressed: () {
+                      final shoppingNotifier =
+                          ref.read(shoppingProvider.notifier);
+                      for (final id in currentMissing) {
+                        final ingredient = ingredientMap[id];
+                        final displayName =
+                            ingredient?.localizedName(locale) ?? id;
+                        shoppingNotifier.addItem(
+                          displayName,
+                          forRecipeId: recipe.id,
+                        );
+                      }
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: Text(
+                                '${currentMissing.length} items added')),
                       );
-                    }
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                          content: Text(
-                              '${scoredRecipe.missingIngredients.length} items added')),
-                    );
-                  },
-                  icon: const Icon(Icons.shopping_cart_outlined),
-                  label: Text(l10n.recipeAddMissing),
-                ),
-              ),
+                    },
+                    icon: const Icon(Icons.shopping_cart_outlined),
+                    label: Text(l10n.recipeAddMissing),
+                  ),
+                );
+              }(),
+            ],
             const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
