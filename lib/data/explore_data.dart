@@ -27,6 +27,7 @@ class SpecialCategory {
   final Map<String, String> subtitle;
   final String emoji;
   final String gradient;
+  final HealthCondition? healthCondition;
   final List<CheckInType> relatedCheckInTypes;
   final List<String> relatedAllergenExclusions;
 
@@ -36,6 +37,7 @@ class SpecialCategory {
     required this.subtitle,
     required this.emoji,
     required this.gradient,
+    this.healthCondition,
     this.relatedCheckInTypes = const [],
     this.relatedAllergenExclusions = const [],
   });
@@ -135,83 +137,74 @@ const List<CuisineCategory> worldCuisines = [
   ),
 ];
 
-// ── Special Needs Categories ──────────────────────────────────────────────
+// ── Health Condition Categories ──────────────────────────────────────────
 
 const List<SpecialCategory> specialCategories = [
   SpecialCategory(
-    id: 'diabetic',
-    name: {'en': 'Diabetic Friendly', 'tr': 'Şeker Dostu'},
+    id: 'pcos',
+    name: {'en': 'PCOS Friendly', 'tr': 'PCOS Dostu'},
     subtitle: {
-      'en': 'Low glycemic, balanced meals',
-      'tr': 'Düşük glisemik, dengeli öğünler',
+      'en': 'Low glycemic, anti-inflammatory meals',
+      'tr': 'Düşük glisemik, iltihap önleyici öğünler',
     },
     emoji: '🩺',
-    gradient: 'diabetic',
-    relatedCheckInTypes: [CheckInType.feelingBalanced],
+    gradient: 'pcos',
+    healthCondition: HealthCondition.pcos,
   ),
   SpecialCategory(
-    id: 'postWorkout',
-    name: {'en': 'Post-Workout', 'tr': 'Spor Sonrası'},
+    id: 'insulinResistance',
+    name: {'en': 'Insulin Resistance', 'tr': 'İnsülin Direnci'},
     subtitle: {
-      'en': 'High protein recovery meals',
-      'tr': 'Yüksek proteinli toparlanma öğünleri',
+      'en': 'Blood sugar balancing recipes',
+      'tr': 'Kan şekerini dengeleyen tarifler',
     },
-    emoji: '💪',
-    gradient: 'postWorkout',
-    relatedCheckInTypes: [CheckInType.postWorkout],
+    emoji: '🔬',
+    gradient: 'insulinResistance',
+    healthCondition: HealthCondition.insulinResistance,
   ),
   SpecialCategory(
-    id: 'fatigue',
-    name: {'en': 'Energy Boost', 'tr': 'Enerji Artırıcı'},
+    id: 'ironDeficiency',
+    name: {'en': 'Iron Deficiency', 'tr': 'Demir Eksikliği'},
     subtitle: {
-      'en': 'Combat fatigue with right nutrition',
-      'tr': 'Doğru beslenmeyle yorgunluğu yen',
+      'en': 'Iron-rich nutritious recipes',
+      'tr': 'Demir açısından zengin tarifler',
     },
-    emoji: '⚡',
-    gradient: 'fatigue',
-    relatedCheckInTypes: [
-      CheckInType.lowEnergy,
-      CheckInType.periodFatigue,
-    ],
+    emoji: '🥩',
+    gradient: 'ironDeficiency',
+    healthCondition: HealthCondition.ironDeficiency,
   ),
   SpecialCategory(
-    id: 'bloating',
-    name: {'en': 'Anti-Bloating', 'tr': 'Şişkinlik Giderici'},
+    id: 'vitaminB12',
+    name: {'en': 'Vitamin B12 Deficiency', 'tr': 'B12 Vitamini Eksikliği'},
     subtitle: {
-      'en': 'Light, digestion-friendly recipes',
-      'tr': 'Hafif, sindirim dostu tarifler',
+      'en': 'B12-rich meals for energy',
+      'tr': 'Enerji için B12 açısından zengin öğünler',
     },
-    emoji: '🍃',
-    gradient: 'bloating',
-    relatedCheckInTypes: [CheckInType.bloated],
+    emoji: '💊',
+    gradient: 'vitaminB12',
+    healthCondition: HealthCondition.vitaminB12Deficiency,
   ),
   SpecialCategory(
-    id: 'allergyFree',
-    name: {'en': 'Allergy Friendly', 'tr': 'Alerji Dostu'},
+    id: 'magnesiumDeficiency',
+    name: {'en': 'Magnesium Deficiency', 'tr': 'Magnezyum Eksikliği'},
     subtitle: {
-      'en': 'Free from common allergens',
-      'tr': 'Yaygın alerjenlerden arındırılmış',
+      'en': 'Magnesium-rich calming recipes',
+      'tr': 'Magnezyum açısından zengin tarifler',
     },
-    emoji: '🛡️',
-    gradient: 'allergyFree',
-    relatedAllergenExclusions: [
-      'gluten', 'dairy', 'eggs', 'nuts', 'tree_nuts', 'soy', 'fish',
-    ],
+    emoji: '🥬',
+    gradient: 'magnesiumDeficiency',
+    healthCondition: HealthCondition.magnesiumDeficiency,
   ),
   SpecialCategory(
-    id: 'pms',
-    name: {'en': 'PMS Relief', 'tr': 'PMS Rahatlatıcı'},
+    id: 'anemia',
+    name: {'en': 'Anemia', 'tr': 'Kansızlık'},
     subtitle: {
-      'en': 'Ease symptoms with comfort food',
-      'tr': 'Semptomları hafifletecek tarifler',
+      'en': 'Blood-building nutritious meals',
+      'tr': 'Kan yapıcı besleyici öğünler',
     },
-    emoji: '🌸',
-    gradient: 'pms',
-    relatedCheckInTypes: [
-      CheckInType.pms,
-      CheckInType.periodCramps,
-      CheckInType.periodFatigue,
-    ],
+    emoji: '❤️‍🩹',
+    gradient: 'anemia',
+    healthCondition: HealthCondition.anemia,
   ),
 ];
 
@@ -226,11 +219,39 @@ const Map<String, List<int>> cuisineGradients = {
   'american': [0xFF1565C0, 0xFFEF5350],
   'mexican': [0xFFE65100, 0xFFFFB74D],
   'healthy': [0xFF2E7D32, 0xFF81C784],
-  // Special categories
-  'diabetic': [0xFF5C6BC0, 0xFF7986CB],
-  'postWorkout': [0xFFE64A19, 0xFFFF8A65],
-  'fatigue': [0xFFFFB300, 0xFFFFD54F],
-  'bloating': [0xFF00897B, 0xFF4DB6AC],
-  'allergyFree': [0xFF7B1FA2, 0xFFBA68C8],
-  'pms': [0xFFEC407A, 0xFFF48FB1],
+  // Health condition categories
+  'pcos': [0xFF7B1FA2, 0xFFBA68C8],
+  'insulinResistance': [0xFF5C6BC0, 0xFF7986CB],
+  'ironDeficiency': [0xFFE64A19, 0xFFFF8A65],
+  'vitaminB12': [0xFFEC407A, 0xFFF48FB1],
+  'magnesiumDeficiency': [0xFF00897B, 0xFF4DB6AC],
+  'anemia': [0xFFC62828, 0xFFEF5350],
+};
+
+// ── Health Condition Ingredient Filters ───────────────────────────────────
+// Ingredients considered beneficial for each health condition.
+
+const Map<HealthCondition, List<String>> healthConditionIngredients = {
+  HealthCondition.ironDeficiency: [
+    'beef', 'lamb', 'ground_beef', 'red_meat', 'spinach', 'lentils',
+    'red_lentils', 'chickpeas', 'eggs', 'liver', 'kidney_beans',
+    'dark_chocolate', 'quinoa', 'tofu', 'pumpkin_seeds',
+  ],
+  HealthCondition.vitaminB12Deficiency: [
+    'beef', 'lamb', 'ground_beef', 'red_meat', 'chicken', 'chicken_breast',
+    'chicken_thigh', 'fish', 'salmon', 'tuna', 'sardine', 'eggs',
+    'milk', 'yogurt', 'cheese', 'feta_cheese', 'liver',
+  ],
+  HealthCondition.magnesiumDeficiency: [
+    'spinach', 'almonds', 'walnuts', 'cashews', 'pumpkin_seeds',
+    'sunflower_seeds', 'chia_seeds', 'flaxseeds', 'banana', 'avocado',
+    'dark_chocolate', 'black_beans', 'kidney_beans', 'lentils',
+    'chickpeas', 'oats', 'quinoa', 'tofu', 'edamame',
+  ],
+  HealthCondition.anemia: [
+    'beef', 'lamb', 'ground_beef', 'red_meat', 'spinach', 'lentils',
+    'red_lentils', 'chickpeas', 'eggs', 'liver', 'kidney_beans',
+    'dark_chocolate', 'quinoa', 'tofu', 'pumpkin_seeds',
+    'lemon', 'orange', 'tomato', 'bell_pepper', 'broccoli',
+  ],
 };

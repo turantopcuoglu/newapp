@@ -11,6 +11,7 @@ class UserProfile {
   final List<String> allergies;
   final List<String> dislikedIngredients;
   final bool showBmi;
+  final List<HealthCondition> healthConditions;
 
   const UserProfile({
     this.name,
@@ -22,6 +23,7 @@ class UserProfile {
     this.allergies = const [],
     this.dislikedIngredients = const [],
     this.showBmi = false,
+    this.healthConditions = const [],
   });
 
   bool get isFemale => gender == Gender.female;
@@ -42,6 +44,7 @@ class UserProfile {
     List<String>? allergies,
     List<String>? dislikedIngredients,
     bool? showBmi,
+    List<HealthCondition>? healthConditions,
   }) =>
       UserProfile(
         name: name ?? this.name,
@@ -53,6 +56,7 @@ class UserProfile {
         allergies: allergies ?? this.allergies,
         dislikedIngredients: dislikedIngredients ?? this.dislikedIngredients,
         showBmi: showBmi ?? this.showBmi,
+        healthConditions: healthConditions ?? this.healthConditions,
       );
 
   Map<String, dynamic> toJson() => {
@@ -65,6 +69,7 @@ class UserProfile {
         'allergies': allergies,
         'dislikedIngredients': dislikedIngredients,
         'showBmi': showBmi,
+        'healthConditions': healthConditions.map((e) => e.name).toList(),
       };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
@@ -83,6 +88,12 @@ class UserProfile {
         dislikedIngredients:
             List<String>.from(json['dislikedIngredients'] ?? []),
         showBmi: json['showBmi'] as bool? ?? false,
+        healthConditions: (json['healthConditions'] as List?)
+                ?.map((e) => HealthCondition.values
+                    .firstWhere((v) => v.name == e,
+                        orElse: () => HealthCondition.pcos))
+                .toList() ??
+            [],
       );
 
   String encode() => jsonEncode(toJson());

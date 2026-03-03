@@ -343,6 +343,11 @@ class AppLocalizations {
   String get exploreSavedEmpty => _t('exploreSavedEmpty');
   String get exploreAllergenFree => _t('exploreAllergenFree');
 
+  // Health Conditions
+  String get healthConditionSelectTitle => _t('healthConditionSelectTitle');
+  String get healthConditionSelectSubtitle => _t('healthConditionSelectSubtitle');
+  String get healthConditionClearAll => _t('healthConditionClearAll');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

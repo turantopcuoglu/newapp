@@ -313,6 +313,11 @@ const Map<String, String> trTranslations = {
   'exploreSavedEmpty': 'Henüz kayıtlı tarifiniz yok.\nBeğendiğiniz tarifleri kaydetmek için yer imi simgesine dokunun.',
   'exploreAllergenFree': 'Alerjen Yok',
 
+  // Health Conditions
+  'healthConditionSelectTitle': 'Sağlık Durumlarınız',
+  'healthConditionSelectSubtitle': 'Sahip olduğunuz durumları seçin, size uygun tarifler listelensin',
+  'healthConditionClearAll': 'Tümünü Temizle',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',
