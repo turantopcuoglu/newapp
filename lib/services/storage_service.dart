@@ -25,6 +25,7 @@ class StorageService {
   static const String _dailyModeKey = 'daily_mode';
   static const String _dailyModeDateKey = 'daily_mode_date';
   static const String _disclaimerAcceptedKey = 'disclaimer_accepted';
+  static const String _favoriteRecipesKey = 'favorite_recipes';
 
   StorageService(this._prefs);
 
@@ -267,6 +268,16 @@ class StorageService {
 
   Future<void> setDisclaimerAccepted() async {
     await _prefs.setBool(_disclaimerAcceptedKey, true);
+  }
+
+  // --- Favorite Recipes ---
+  List<String> getFavoriteRecipeIds() {
+    final data = _prefs.getStringList(_favoriteRecipesKey);
+    return data ?? [];
+  }
+
+  Future<void> saveFavoriteRecipeIds(List<String> ids) async {
+    await _prefs.setStringList(_favoriteRecipesKey, ids);
   }
 
   // --- Locale ---

@@ -4,9 +4,11 @@ import '../core/theme.dart';
 import '../data/mock_ingredients.dart';
 import '../l10n/app_localizations.dart';
 import '../models/ingredient.dart';
+import '../providers/favorites_provider.dart';
 import '../providers/inventory_provider.dart';
 import '../providers/profile_provider.dart';
 import '../providers/shopping_provider.dart';
+import 'explore/saved_recipes_screen.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -91,6 +93,11 @@ class SettingsScreen extends ConsumerWidget {
 
             const SizedBox(height: 16),
 
+            // Saved Recipes
+            _SavedRecipesCard(ref: ref),
+
+            const SizedBox(height: 16),
+
             // Body metrics & BMI
             _BodyMetricsSection(ref: ref),
 
@@ -129,6 +136,78 @@ class SettingsScreen extends ConsumerWidget {
             child: const Text('Temizle'),
           ),
         ],
+      ),
+    );
+  }
+}
+
+// ─── Saved Recipes Card ─────────────────────────────────────────────────────
+
+class _SavedRecipesCard extends StatelessWidget {
+  final WidgetRef ref;
+
+  const _SavedRecipesCard({required this.ref});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final favoriteIds = ref.watch(favoritesProvider);
+
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const SavedRecipesScreen()),
+      ),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: AppTheme.warmCoral.withAlpha(20),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: const Icon(
+                  Icons.bookmark_rounded,
+                  color: AppTheme.warmCoral,
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.exploreSavedRecipes,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: AppTheme.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      '${favoriteIds.length} ${l10n.recipeBookTotalRecipes}',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: AppTheme.textSecondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(
+                Icons.chevron_right_rounded,
+                color: AppTheme.textLight,
+                size: 24,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

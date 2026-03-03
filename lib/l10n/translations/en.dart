@@ -305,6 +305,14 @@ const Map<String, String> enTranslations = {
   'modeDescPeriodCramps': 'Recipes to help reduce cramps',
   'modeDescPeriodFatigue': 'Energizing foods for period fatigue',
 
+  // Explore
+  'exploreSubtitle': 'Discover flavors, get inspired',
+  'exploreWorldCuisine': 'World Cuisine',
+  'exploreSpecialForYou': 'Just For You',
+  'exploreSavedRecipes': 'Saved Recipes',
+  'exploreSavedEmpty': 'No saved recipes yet.\nTap the bookmark icon on recipes you like to save them.',
+  'exploreAllergenFree': 'Allergen Free',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',

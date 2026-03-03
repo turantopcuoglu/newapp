@@ -17,12 +17,12 @@ class MainShell extends StatefulWidget {
 class _MainShellState extends State<MainShell> {
   int _currentIndex = 0;
 
-  final _screens = const [
-    home.HomeScreen(),
-    ShoppingScreen(),
-    ExploreScreen(),
-    RecipeBookScreen(),
-    SettingsScreen(),
+  final _screens = [
+    const home.HomeScreen(),
+    const ShoppingScreen(),
+    const ExploreScreen(),
+    const RecipeBookScreen(),
+    const SettingsScreen(),
   ];
 
   static const _navColors = [
