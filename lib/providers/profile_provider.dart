@@ -83,6 +83,22 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
     _save();
   }
 
+  void updateHealthConditions(List<HealthCondition> conditions) {
+    state = state.copyWith(healthConditions: conditions);
+    _save();
+  }
+
+  void toggleHealthCondition(HealthCondition condition) {
+    final current = List<HealthCondition>.from(state.healthConditions);
+    if (current.contains(condition)) {
+      current.remove(condition);
+    } else {
+      current.add(condition);
+    }
+    state = state.copyWith(healthConditions: current);
+    _save();
+  }
+
   void saveProfile(UserProfile profile) {
     state = profile;
     _save();

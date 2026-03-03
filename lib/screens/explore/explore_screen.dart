@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
+import '../../providers/profile_provider.dart';
 import 'cuisine_detail_screen.dart';
 import 'special_detail_screen.dart';
 
@@ -276,35 +278,185 @@ class _CuisineTile extends StatelessWidget {
 
 // ── Special Category Grid ─────────────────────────────────────────────────
 
-class _SpecialCategoryGrid extends StatelessWidget {
+class _SpecialCategoryGrid extends ConsumerWidget {
   final String locale;
 
   const _SpecialCategoryGrid({required this.locale});
 
   @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 100),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-        childAspectRatio: 0.85,
-      ),
-      itemCount: specialCategories.length,
-      itemBuilder: (context, index) {
-        final category = specialCategories[index];
-        return _SpecialTile(
-          category: category,
-          locale: locale,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => SpecialDetailScreen(category: category),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final profile = ref.watch(profileProvider);
+    final selectedConditions = profile.healthConditions;
+
+    // Show categories matching user's selected conditions, or all if none selected
+    final visibleCategories = selectedConditions.isEmpty
+        ? specialCategories
+        : specialCategories
+            .where((c) =>
+                c.healthCondition != null &&
+                selectedConditions.contains(c.healthCondition))
+            .toList();
+
+    return CustomScrollView(
+      slivers: [
+        // Health condition selection header
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 20, 16, 4),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.medical_information_outlined,
+                      color: AppTheme.textSecondary,
+                      size: 18,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      l10n.healthConditionSelectTitle,
+                      style: const TextStyle(
+                        color: AppTheme.textPrimary,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  l10n.healthConditionSelectSubtitle,
+                  style: const TextStyle(
+                    color: AppTheme.textSecondary,
+                    fontSize: 12,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: HealthCondition.values.map((condition) {
+                    final isSelected = selectedConditions.contains(condition);
+                    final cat = specialCategories.firstWhere(
+                      (c) => c.healthCondition == condition,
+                    );
+                    final colors =
+                        cuisineGradients[cat.gradient] ??
+                        cuisineGradients['healthy']!;
+                    return GestureDetector(
+                      onTap: () => ref
+                          .read(profileProvider.notifier)
+                          .toggleHealthCondition(condition),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isSelected
+                              ? Color(colors[0]).withAlpha(25)
+                              : AppTheme.surface,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: isSelected
+                                ? Color(colors[0])
+                                : AppTheme.dividerColor,
+                            width: isSelected ? 1.5 : 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(cat.emoji, style: const TextStyle(fontSize: 14)),
+                            const SizedBox(width: 6),
+                            Text(
+                              cat.localizedName(locale),
+                              style: TextStyle(
+                                color: isSelected
+                                    ? Color(colors[0])
+                                    : AppTheme.textSecondary,
+                                fontSize: 12,
+                                fontWeight: isSelected
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                              ),
+                            ),
+                            if (isSelected) ...[
+                              const SizedBox(width: 4),
+                              Icon(
+                                Icons.check_circle_rounded,
+                                color: Color(colors[0]),
+                                size: 16,
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+                if (selectedConditions.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  GestureDetector(
+                    onTap: () => ref
+                        .read(profileProvider.notifier)
+                        .updateHealthConditions([]),
+                    child: Text(
+                      l10n.healthConditionClearAll,
+                      style: TextStyle(
+                        color: AppTheme.accentTeal,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
             ),
           ),
-        );
-      },
+        ),
+
+        // Divider
+        const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Divider(color: AppTheme.dividerColor, height: 1),
+          ),
+        ),
+
+        // Category grid
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
+          sliver: SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              childAspectRatio: 0.85,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final category = visibleCategories[index];
+                return _SpecialTile(
+                  category: category,
+                  locale: locale,
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          SpecialDetailScreen(category: category),
+                    ),
+                  ),
+                );
+              },
+              childCount: visibleCategories.length,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

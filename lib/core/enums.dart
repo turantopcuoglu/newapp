@@ -21,6 +21,15 @@ enum NutrientLevel { low, medium, high }
 
 enum CarbType { simple, complex, mixed }
 
+enum HealthCondition {
+  pcos,
+  insulinResistance,
+  ironDeficiency,
+  vitaminB12Deficiency,
+  magnesiumDeficiency,
+  anemia,
+}
+
 enum IngredientCategory {
   protein,
   dairy,

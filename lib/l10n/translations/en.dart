@@ -313,6 +313,11 @@ const Map<String, String> enTranslations = {
   'exploreSavedEmpty': 'No saved recipes yet.\nTap the bookmark icon on recipes you like to save them.',
   'exploreAllergenFree': 'Allergen Free',
 
+  // Health Conditions
+  'healthConditionSelectTitle': 'Your Health Conditions',
+  'healthConditionSelectSubtitle': 'Select your conditions to see recipes tailored for you',
+  'healthConditionClearAll': 'Clear All',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',
