@@ -29,7 +29,7 @@ const List<Recipe> mockDinnerRecipes = [
     allergenTags: ['fish'],
     checkInTags: [
       CheckInType.postWorkout,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
       CheckInType.cantFocus,
     ],
     proteinLevel: NutrientLevel.high,
@@ -89,7 +89,6 @@ const List<Recipe> mockDinnerRecipes = [
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.bloated,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
@@ -327,7 +326,6 @@ const List<Recipe> mockDinnerRecipes = [
     allergenTags: [],
     checkInTags: [
       CheckInType.lowEnergy,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
@@ -443,7 +441,6 @@ const List<Recipe> mockDinnerRecipes = [
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
@@ -563,7 +560,6 @@ const List<Recipe> mockDinnerRecipes = [
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
-      CheckInType.feelingBalanced,
     ],
     proteinLevel: NutrientLevel.high,
     fiberLevel: NutrientLevel.low,
@@ -620,7 +616,6 @@ const List<Recipe> mockDinnerRecipes = [
     ],
     allergenTags: [],
     checkInTags: [
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
       CheckInType.pms,
     ],
@@ -679,9 +674,8 @@ const List<Recipe> mockDinnerRecipes = [
     allergenTags: ['dairy'],
     checkInTags: [
       CheckInType.cravingSweets,
-      CheckInType.feelingBalanced,
-      CheckInType.cantFocus,
       CheckInType.noSpecificIssue,
+      CheckInType.cantFocus,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.low,
@@ -738,9 +732,8 @@ const List<Recipe> mockDinnerRecipes = [
     allergenTags: [],
     checkInTags: [
       CheckInType.bloated,
-      CheckInType.feelingBalanced,
-      CheckInType.pms,
       CheckInType.noSpecificIssue,
+      CheckInType.pms,
     ],
     proteinLevel: NutrientLevel.low,
     fiberLevel: NutrientLevel.high,

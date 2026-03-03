@@ -303,19 +303,6 @@ const List<MoodFoodTip> moodFoodTips = [
     },
   ),
   MoodFoodTip(
-    checkInType: CheckInType.feelingBalanced,
-    title: {
-      'en': 'Maintain Your Balance',
-      'tr': 'Dengenizi Koruyun',
-    },
-    body: {
-      'en':
-          'When you\'re feeling balanced, it\'s a great time to maintain your routine! Focus on variety: try a new vegetable, experiment with different spices, or cook a recipe from a different cuisine. A diverse diet ensures you get a wide range of nutrients.',
-      'tr':
-          'Kendinizi dengeli hissettiğinizde, rutininizi sürdürmek için harika bir zaman! Çeşitliliğe odaklanın: yeni bir sebze deneyin, farklı baharatlar keşfedin veya farklı bir mutfaktan tarif yapın. Çeşitli bir diyet, geniş bir besin yelpazesi almanızı sağlar.',
-    },
-  ),
-  MoodFoodTip(
     checkInType: CheckInType.noSpecificIssue,
     title: {
       'en': 'Daily Nutrition Wisdom',

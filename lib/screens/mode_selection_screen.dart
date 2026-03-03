@@ -53,13 +53,6 @@ class ModeSelectionScreen extends ConsumerWidget {
         l10n.modeDescPostWorkout,
       ),
       _ModeOption(
-        CheckInType.feelingBalanced,
-        l10n.checkInFeelingBalanced,
-        Icons.balance_rounded,
-        AppTheme.successGreen,
-        l10n.modeDescFeelingBalanced,
-      ),
-      _ModeOption(
         CheckInType.noSpecificIssue,
         l10n.checkInNoSpecificIssue,
         Icons.check_circle_outline_rounded,

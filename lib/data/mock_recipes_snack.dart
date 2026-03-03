@@ -129,7 +129,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.high,
@@ -290,7 +290,6 @@ const List<Recipe> mockSnackRecipes = [
     allergenTags: ['dairy'],
     checkInTags: [
       CheckInType.bloated,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
@@ -486,7 +485,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.medium,
@@ -593,7 +592,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.bloated,
       CheckInType.postWorkout,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
     fiberLevel: NutrientLevel.medium,
@@ -707,7 +706,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.high,
@@ -755,7 +754,6 @@ const List<Recipe> mockSnackRecipes = [
     allergenTags: ['dairy', 'gluten'],
     checkInTags: [
       CheckInType.pms,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
@@ -918,7 +916,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.high,
@@ -1086,7 +1084,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.pms,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
     fiberLevel: NutrientLevel.high,
@@ -1190,7 +1188,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.pms,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.low,
     fiberLevel: NutrientLevel.medium,
@@ -1287,7 +1285,6 @@ const List<Recipe> mockSnackRecipes = [
     allergenTags: ['tree_nuts'],
     checkInTags: [
       CheckInType.cantFocus,
-      CheckInType.feelingBalanced,
       CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.medium,
@@ -1590,7 +1587,7 @@ const List<Recipe> mockSnackRecipes = [
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.postWorkout,
-      CheckInType.feelingBalanced,
+      CheckInType.noSpecificIssue,
     ],
     proteinLevel: NutrientLevel.high,
     fiberLevel: NutrientLevel.medium,

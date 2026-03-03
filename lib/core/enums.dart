@@ -13,7 +13,6 @@ enum CheckInType {
   periodCramps,
   periodFatigue,
   postWorkout,
-  feelingBalanced,
   noSpecificIssue,
 }
 

@@ -22,7 +22,6 @@ class CheckInSheet extends ConsumerWidget {
       _CheckInOption(CheckInType.cravingSweets, l10n.checkInCravingSweets, Icons.cookie_outlined),
       _CheckInOption(CheckInType.cantFocus, l10n.checkInCantFocus, Icons.psychology_outlined),
       _CheckInOption(CheckInType.postWorkout, l10n.checkInPostWorkout, Icons.fitness_center),
-      _CheckInOption(CheckInType.feelingBalanced, l10n.checkInFeelingBalanced, Icons.balance),
       _CheckInOption(CheckInType.noSpecificIssue, l10n.checkInNoSpecificIssue, Icons.check_circle_outline),
     ];
 
