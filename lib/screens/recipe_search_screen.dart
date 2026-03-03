@@ -55,7 +55,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hangi yemegi yapmak istiyorsunuz?',
+                  'Hangi yemeği yapmak istiyorsunuz?',
                   style: theme.textTheme.titleSmall,
                 ),
                 const SizedBox(height: 4),
@@ -72,7 +72,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
                       child: TextField(
                         controller: _controller,
                         decoration: const InputDecoration(
-                          hintText: 'ornek: Karniyarik, Mercimek Corbasi...',
+                          hintText: 'örnek: Karnıyarık, Mercimek Çorbası...',
                           border: OutlineInputBorder(),
                           prefixIcon: Icon(Icons.search),
                           contentPadding: EdgeInsets.symmetric(
@@ -106,9 +106,9 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
                   runSpacing: 8,
                   children: [
                     'Menemen',
-                    'Karniyarik',
-                    'Mercimek Corbasi',
-                    'Mantarli Makarna',
+                    'Karnıyarık',
+                    'Mercimek Çorbası',
+                    'Mantarlı Makarna',
                     'Omlet',
                     'Pilav',
                   ].map((dish) => ActionChip(
@@ -131,7 +131,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               color: theme.colorScheme.secondaryContainer.withOpacity(0.3),
               child: Text(
-                'Dolabinizda ${provider.pantry.length} malzeme var. '
+                'Dolabınızda ${provider.pantry.length} malzeme var. '
                 'Eksik malzemeler otomatik belirlenecek.',
                 style: theme.textTheme.bodySmall,
               ),
@@ -182,7 +182,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
                                 .withOpacity(0.3)),
                         const SizedBox(height: 16),
                         Text(
-                          'Aramak istediginiz yemegi yazin',
+                          'Aramak istediğiniz yemeği yazın',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
@@ -201,7 +201,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
-                                'Eksik malzemeler alisveris listesine eklendi'),
+                                'Eksik malzemeler alışveriş listesine eklendi'),
                           ),
                         );
                       },

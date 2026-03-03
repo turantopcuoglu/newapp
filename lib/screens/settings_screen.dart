@@ -42,14 +42,14 @@ class SettingsScreen extends ConsumerWidget {
                         Icon(Icons.storage,
                             color: theme.colorScheme.primary),
                         const SizedBox(width: 8),
-                        Text('Veri Yonetimi',
+                        Text('Veri Yönetimi',
                             style: theme.textTheme.titleMedium),
                       ],
                     ),
                     const SizedBox(height: 16),
                     ListTile(
                       leading: const Icon(Icons.kitchen),
-                      title: const Text('Dolabimdaki Malzemeler'),
+                      title: const Text('Dolabımdaki Malzemeler'),
                       subtitle:
                           Text('${inventoryItems.length} malzeme'),
                       trailing: TextButton(
@@ -57,8 +57,8 @@ class SettingsScreen extends ConsumerWidget {
                             ? null
                             : () => _showClearDialog(
                                   context,
-                                  'Dolabi Temizle',
-                                  'Tum malzemeler silinecek.',
+                                  'Dolabı Temizle',
+                                  'Tüm malzemeler silinecek.',
                                   () => ref
                                       .read(inventoryProvider.notifier)
                                       .clear(),
@@ -69,16 +69,16 @@ class SettingsScreen extends ConsumerWidget {
                     const Divider(),
                     ListTile(
                       leading: const Icon(Icons.shopping_cart),
-                      title: const Text('Alisveris Listesi'),
+                      title: const Text('Alışveriş Listesi'),
                       subtitle:
-                          Text('${shoppingItems.length} urun'),
+                          Text('${shoppingItems.length} ürün'),
                       trailing: TextButton(
                         onPressed: shoppingItems.isEmpty
                             ? null
                             : () => _showClearDialog(
                                   context,
                                   'Listeyi Temizle',
-                                  'Tum alisveris listesi silinecek.',
+                                  'Tüm alışveriş listesi silinecek.',
                                   () => ref
                                       .read(shoppingProvider.notifier)
                                       .clearAll(),
@@ -126,7 +126,7 @@ class SettingsScreen extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Iptal'),
+            child: const Text('İptal'),
           ),
           FilledButton(
             onPressed: () {

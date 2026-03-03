@@ -13,7 +13,7 @@ class RecipeSuggestionsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tarif Oner'),
+        title: const Text('Tarif Öner'),
       ),
       body: Column(
         children: [
@@ -26,13 +26,13 @@ class RecipeSuggestionsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Dolabinizdaki Malzemeler',
+                  'Dolabınızdaki Malzemeler',
                   style: theme.textTheme.titleSmall,
                 ),
                 const SizedBox(height: 8),
                 if (provider.pantry.isEmpty)
                   Text(
-                    'Dolabinizda malzeme yok. Once Dolabim\'dan malzeme ekleyin.',
+                    'Dolabınızda malzeme yok. Önce Dolabım\'dan malzeme ekleyin.',
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: theme.colorScheme.error,
                     ),
@@ -70,8 +70,8 @@ class RecipeSuggestionsScreen extends StatelessWidget {
                       )
                     : const Icon(Icons.auto_awesome),
                 label: Text(provider.isLoading
-                    ? 'Tarifler hazirlaniyor...'
-                    : 'Yapay Zeka ile Tarif Oner'),
+                    ? 'Tarifler hazırlanıyor...'
+                    : 'Yapay Zeka ile Tarif Öner'),
               ),
             ),
           ),
@@ -121,7 +121,7 @@ class RecipeSuggestionsScreen extends StatelessWidget {
                                 .withOpacity(0.3)),
                         const SizedBox(height: 16),
                         Text(
-                          'Tarif onerileri burada gorunecek',
+                          'Tarif önerileri burada görünecek',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
@@ -141,7 +141,7 @@ class RecipeSuggestionsScreen extends StatelessWidget {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text(
-                                  'Eksik malzemeler alisveris listesine eklendi'),
+                                  'Eksik malzemeler alışveriş listesine eklendi'),
                             ),
                           );
                         },

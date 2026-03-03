@@ -35,13 +35,13 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Alisveris Listesi'),
+        title: const Text('Alışveriş Listesi'),
         actions: [
           if (checkedCount > 0)
             TextButton.icon(
               onPressed: () => provider.clearCheckedItems(),
               icon: const Icon(Icons.done_all, size: 18),
-              label: Text('Secilenleri Sil ($checkedCount)'),
+              label: Text('Seçilenleri Sil ($checkedCount)'),
             ),
           if (provider.shoppingList.isNotEmpty)
             PopupMenuButton<String>(
@@ -53,7 +53,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
               itemBuilder: (_) => [
                 const PopupMenuItem(
                   value: 'clear',
-                  child: Text('Tumunu Temizle'),
+                  child: Text('Tümünü Temizle'),
                 ),
               ],
             ),
@@ -70,7 +70,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
                   child: TextField(
                     controller: _controller,
                     decoration: const InputDecoration(
-                      hintText: 'Urun ekle...',
+                      hintText: 'Ürün ekle...',
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: 12,
@@ -104,14 +104,14 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
                                 .withOpacity(0.3)),
                         const SizedBox(height: 16),
                         Text(
-                          'Alisveris listeniz bos',
+                          'Alışveriş listeniz boş',
                           style: theme.textTheme.titleMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Tarif aradiginizda eksik malzemeler\n'
+                          'Tarif aradığınızda eksik malzemeler\n'
                           'otomatik olarak buraya eklenebilir',
                           style: theme.textTheme.bodySmall,
                           textAlign: TextAlign.center,
@@ -192,12 +192,12 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Toplam: ${provider.shoppingList.length} urun',
+                    'Toplam: ${provider.shoppingList.length} ürün',
                     style: theme.textTheme.bodyMedium,
                   ),
                   if (checkedCount > 0)
                     Text(
-                      '$checkedCount / ${provider.shoppingList.length} alindi',
+                      '$checkedCount / ${provider.shoppingList.length} alındı',
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
@@ -217,11 +217,11 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
       builder: (ctx) => AlertDialog(
         title: const Text('Listeyi Temizle'),
         content: const Text(
-            'Tum alisveris listesi silinecek. Emin misiniz?'),
+            'Tüm alışveriş listesi silinecek. Emin misiniz?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Iptal'),
+            child: const Text('İptal'),
           ),
           FilledButton(
             onPressed: () {

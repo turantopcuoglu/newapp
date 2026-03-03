@@ -87,7 +87,7 @@ class _RecipeCardState extends State<RecipeCard> {
                         Icon(Icons.people_outline, size: 16,
                             color: theme.colorScheme.onSurfaceVariant),
                         const SizedBox(width: 4),
-                        Text('${recipe.servings} kisi',
+                        Text('${recipe.servings} kişi',
                             style: theme.textTheme.bodySmall),
                       ],
                       const Spacer(),
@@ -117,7 +117,7 @@ class _RecipeCardState extends State<RecipeCard> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Text(
-                            'Tum malzemeler var',
+                            'Tüm malzemeler var',
                             style: TextStyle(
                               fontSize: 11,
                               color: Colors.green,
@@ -225,14 +225,14 @@ class _RecipeCardState extends State<RecipeCard> {
                         onPressed: widget.onAddToShoppingList,
                         icon: const Icon(Icons.add_shopping_cart, size: 18),
                         label: const Text(
-                            'Eksikleri Alisveris Listesine Ekle'),
+                            'Eksikleri Alışveriş Listesine Ekle'),
                       ),
                     ),
                   ],
 
                   // Steps
                   const SizedBox(height: 16),
-                  Text('Yapilis',
+                  Text('Yapılış',
                       style: theme.textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       )),
