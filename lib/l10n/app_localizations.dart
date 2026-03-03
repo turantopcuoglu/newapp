@@ -335,6 +335,14 @@ class AppLocalizations {
   String get modeDescPeriodCramps => _t('modeDescPeriodCramps');
   String get modeDescPeriodFatigue => _t('modeDescPeriodFatigue');
 
+  // Explore
+  String get exploreSubtitle => _t('exploreSubtitle');
+  String get exploreWorldCuisine => _t('exploreWorldCuisine');
+  String get exploreSpecialForYou => _t('exploreSpecialForYou');
+  String get exploreSavedRecipes => _t('exploreSavedRecipes');
+  String get exploreSavedEmpty => _t('exploreSavedEmpty');
+  String get exploreAllergenFree => _t('exploreAllergenFree');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

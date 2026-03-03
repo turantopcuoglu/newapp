@@ -305,6 +305,14 @@ const Map<String, String> trTranslations = {
   'modeDescPeriodCramps': 'Krampları azaltmaya yardımcı tarifler',
   'modeDescPeriodFatigue': 'Regl yorgunluğuna karşı enerji veren besinler',
 
+  // Explore
+  'exploreSubtitle': 'Lezzetleri keşfet, ilham al',
+  'exploreWorldCuisine': 'Dünya Mutfağı',
+  'exploreSpecialForYou': 'Sana Özel',
+  'exploreSavedRecipes': 'Kayıtlı Tarifler',
+  'exploreSavedEmpty': 'Henüz kayıtlı tarifiniz yok.\nBeğendiğiniz tarifleri kaydetmek için yer imi simgesine dokunun.',
+  'exploreAllergenFree': 'Alerjen Yok',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',
