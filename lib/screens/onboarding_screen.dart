@@ -4,6 +4,7 @@ import '../core/enums.dart';
 import '../core/theme.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
+import '../widgets/turkish_text_field.dart';
 import 'onboarding_ingredients_screen.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
@@ -183,7 +184,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                           ],
                         ),
                         const SizedBox(height: 16),
-                        TextField(
+                        TurkishTextField(
                           controller: _nameController,
                           style: const TextStyle(
                             color: Colors.white,

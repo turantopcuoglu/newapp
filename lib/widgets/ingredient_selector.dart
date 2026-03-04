@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
+import '../core/turkish_string_helper.dart';
 import '../data/ingredient_nutrition_data.dart';
 import '../data/mock_ingredients.dart';
 import '../l10n/app_localizations.dart';
 import '../models/ingredient.dart';
+import 'turkish_text_field.dart';
 
 /// Bottom-sheet that lets users search, filter by category, and pick
 /// ingredients from the pre-populated database.
@@ -47,11 +49,12 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
       list = list.where((i) => i.category == _selectedCategory).toList();
     }
     if (_query.isNotEmpty) {
-      final q = _query.toLowerCase();
       list = list.where((i) {
-        final en = (i.name['en'] ?? '').toLowerCase();
-        final tr = (i.name['tr'] ?? '').toLowerCase();
-        return en.contains(q) || tr.contains(q) || i.id.contains(q);
+        final en = i.name['en'] ?? '';
+        final tr = i.name['tr'] ?? '';
+        return TurkishStringHelper.containsTr(en, _query) ||
+            TurkishStringHelper.containsTr(tr, _query) ||
+            i.id.contains(_query);
       }).toList();
     }
     // Show selected items first
@@ -195,7 +198,7 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                child: TextField(
+                child: TurkishTextField(
                   controller: _searchController,
                   decoration: InputDecoration(
                     hintText: l10n.inventorySearch,

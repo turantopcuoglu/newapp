@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
+import '../widgets/turkish_text_field.dart';
 
 class PantryScreen extends StatefulWidget {
   const PantryScreen({super.key});
@@ -88,7 +89,7 @@ class _PantryScreenState extends State<PantryScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: TextField(
+                      child: TurkishTextField(
                         controller: _controller,
                         focusNode: _focusNode,
                         decoration: const InputDecoration(

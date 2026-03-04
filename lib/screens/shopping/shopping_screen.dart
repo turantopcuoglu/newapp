@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
+import '../../core/turkish_string_helper.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../widgets/turkish_text_field.dart';
 import '../../models/ingredient.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/shopping_provider.dart';
@@ -94,10 +96,9 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
     }
 
     if (_searchQuery.isNotEmpty) {
-      final query = _searchQuery.toLowerCase();
       results = results.where((i) {
         return i.name.values
-            .any((name) => name.toLowerCase().contains(query));
+            .any((name) => TurkishStringHelper.containsTr(name, _searchQuery));
       }).toList();
     }
 
@@ -126,7 +127,7 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
         // Search bar
         Padding(
           padding: const EdgeInsets.all(16),
-          child: TextField(
+          child: TurkishTextField(
             controller: _searchController,
             decoration: InputDecoration(
               hintText: l10n.inventorySearch,
@@ -397,7 +398,7 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
           child: Row(
             children: [
               Expanded(
-                child: TextField(
+                child: TurkishTextField(
                   controller: _controller,
                   decoration: InputDecoration(
                     hintText: l10n.shoppingItemHint,
@@ -528,10 +529,10 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
     final directMatch = mockIngredients.where((i) => i.id == nameOrId);
     if (directMatch.isNotEmpty) return directMatch.first.id;
 
-    final lower = nameOrId.toLowerCase();
+    final lower = TurkishStringHelper.toLowerCaseTr(nameOrId);
     for (final ingredient in mockIngredients) {
       for (final localizedName in ingredient.name.values) {
-        if (localizedName.toLowerCase() == lower) {
+        if (TurkishStringHelper.toLowerCaseTr(localizedName) == lower) {
           return ingredient.id;
         }
       }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
 import '../widgets/recipe_card.dart';
+import '../widgets/turkish_text_field.dart';
 
 class RecipeSearchScreen extends StatefulWidget {
   const RecipeSearchScreen({super.key});
@@ -69,7 +70,7 @@ class _RecipeSearchScreenState extends State<RecipeSearchScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: TextField(
+                      child: TurkishTextField(
                         controller: _controller,
                         decoration: const InputDecoration(
                           hintText: 'örnek: Karnıyarık, Mercimek Çorbası...',
