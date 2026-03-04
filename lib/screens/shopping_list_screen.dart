@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
+import '../widgets/turkish_text_field.dart';
 
 class ShoppingListScreen extends StatefulWidget {
   const ShoppingListScreen({super.key});
@@ -67,7 +68,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: TextField(
+                  child: TurkishTextField(
                     controller: _controller,
                     decoration: const InputDecoration(
                       hintText: 'Ürün ekle...',

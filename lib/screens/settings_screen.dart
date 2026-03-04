@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/theme.dart';
+import '../core/turkish_string_helper.dart';
 import '../data/mock_ingredients.dart';
+import '../widgets/turkish_text_field.dart';
 import '../l10n/app_localizations.dart';
 import '../models/ingredient.dart';
 import '../providers/favorites_provider.dart';
@@ -692,8 +694,8 @@ class _AddDislikedIngredientSheetState
     final filtered = mockIngredients.where((i) {
       if (dislikedSet.contains(i.id)) return false;
       if (_search.isEmpty) return true;
-      final name = i.localizedName(widget.locale).toLowerCase();
-      return name.contains(_search.toLowerCase());
+      final name = i.localizedName(widget.locale);
+      return TurkishStringHelper.containsTr(name, _search);
     }).toList();
 
     return Container(
@@ -715,7 +717,7 @@ class _AddDislikedIngredientSheetState
           ),
           Padding(
             padding: const EdgeInsets.all(16),
-            child: TextField(
+            child: TurkishTextField(
               onChanged: (v) => setState(() => _search = v),
               decoration: InputDecoration(
                 hintText: widget.l10n.inventorySearch,

@@ -12,6 +12,7 @@ import '../../providers/locale_provider.dart';
 import '../../providers/my_recipes_provider.dart';
 import '../../widgets/ingredient_selector.dart';
 import '../../widgets/nutrition_live_card.dart';
+import '../../widgets/turkish_text_field.dart';
 
 class CreateRecipeScreen extends ConsumerStatefulWidget {
   const CreateRecipeScreen({super.key});
@@ -191,7 +192,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             _buildSectionLabel(
                 l10n.myRecipesName, Icons.restaurant_menu, theme),
             const SizedBox(height: 8),
-            TextField(
+            TurkishTextField(
               controller: _nameController,
               decoration: InputDecoration(hintText: l10n.myRecipesName),
               textInputAction: TextInputAction.next,
@@ -202,7 +203,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             _buildSectionLabel(
                 l10n.myRecipesDescription, Icons.description_outlined, theme),
             const SizedBox(height: 8),
-            TextField(
+            TurkishTextField(
               controller: _descController,
               decoration: InputDecoration(hintText: l10n.myRecipesDescription),
               maxLines: 2,
@@ -301,7 +302,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             _buildSectionLabel(
                 l10n.myRecipesSteps, Icons.format_list_numbered, theme),
             const SizedBox(height: 8),
-            TextField(
+            TurkishTextField(
               controller: _stepsController,
               decoration: InputDecoration(hintText: l10n.myRecipesSteps),
               maxLines: 5,

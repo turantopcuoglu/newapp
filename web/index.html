@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -31,6 +31,19 @@
 
   <title>AI Yemek Tarifi</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Preload Roboto with Turkish/Latin Extended character support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,latin-ext&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ensure Turkish characters render correctly in all input fields */
+    input, textarea, [contenteditable] {
+      font-family: 'Roboto', sans-serif;
+      unicode-bidi: plaintext;
+    }
+  </style>
 </head>
 <body>
   <!--
@@ -41,6 +54,11 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+  <script>
+    // Configure Flutter to use HTML renderer for better text input support
+    // (especially for Turkish and other non-ASCII characters)
+    window.flutterWebRenderer = "html";
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

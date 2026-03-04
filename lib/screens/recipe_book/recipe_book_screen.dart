@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/meal_type_badge.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
+import '../../core/turkish_string_helper.dart';
 import '../../l10n/app_localizations.dart';
+import '../../widgets/turkish_text_field.dart';
 import '../../models/recipe.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
@@ -51,11 +53,11 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
     }
 
     if (_searchQuery.isNotEmpty) {
-      final query = _searchQuery.toLowerCase();
       filteredRecipes = filteredRecipes.where((r) {
-        final name = r.localizedName(locale).toLowerCase();
-        final desc = r.localizedDescription(locale).toLowerCase();
-        return name.contains(query) || desc.contains(query);
+        final name = r.localizedName(locale);
+        final desc = r.localizedDescription(locale);
+        return TurkishStringHelper.containsTr(name, _searchQuery) ||
+            TurkishStringHelper.containsTr(desc, _searchQuery);
       }).toList();
     }
 
@@ -100,7 +102,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
           // Search bar
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-            child: TextField(
+            child: TurkishTextField(
               controller: _searchController,
               onChanged: (value) => setState(() => _searchQuery = value),
               decoration: InputDecoration(
