@@ -91,13 +91,6 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
         appBar: AppBar(
           title: Text(l10n.recipeBookTitle),
           actions: [
-            Builder(
-              builder: (tabContext) => TextButton.icon(
-                onPressed: () => DefaultTabController.of(tabContext).animateTo(1),
-                icon: const Icon(Icons.bookmark_rounded, size: 18),
-                label: Text(l10n.exploreSavedRecipes),
-              ),
-            ),
             IconButton(
               icon: const Icon(Icons.add),
               onPressed: () => Navigator.push(
@@ -107,6 +100,10 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
             ),
           ],
           bottom: TabBar(
+            labelColor: theme.colorScheme.primary,
+            unselectedLabelColor: AppTheme.textLight,
+            indicatorColor: theme.colorScheme.primary,
+            dividerColor: Colors.transparent,
             tabs: [
               Tab(text: l10n.recipeBookAll),
               Tab(text: l10n.exploreSavedRecipes),
