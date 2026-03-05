@@ -6,6 +6,7 @@ import '../data/mock_ingredients.dart';
 import '../widgets/turkish_text_field.dart';
 import '../l10n/app_localizations.dart';
 import '../models/ingredient.dart';
+import '../models/shopping_item.dart';
 import '../providers/inventory_provider.dart';
 import '../providers/profile_provider.dart';
 import '../providers/shopping_provider.dart';
@@ -50,8 +51,11 @@ class SettingsScreen extends ConsumerWidget {
                     ListTile(
                       leading: const Icon(Icons.kitchen),
                       title: const Text('Dolabımdaki Malzemeler'),
-                      subtitle:
-                          Text('${inventoryItems.length} malzeme'),
+                      subtitle: Text('${inventoryItems.length} malzeme'),
+                      onTap: () => _showInventoryItemsSheet(
+                        context,
+                        inventoryItems,
+                      ),
                       trailing: TextButton(
                         onPressed: inventoryItems.isEmpty
                             ? null
@@ -70,8 +74,11 @@ class SettingsScreen extends ConsumerWidget {
                     ListTile(
                       leading: const Icon(Icons.shopping_cart),
                       title: const Text('Alışveriş Listesi'),
-                      subtitle:
-                          Text('${shoppingItems.length} ürün'),
+                      subtitle: Text('${shoppingItems.length} ürün'),
+                      onTap: () => _showShoppingItemsSheet(
+                        context,
+                        shoppingItems,
+                      ),
                       trailing: TextButton(
                         onPressed: shoppingItems.isEmpty
                             ? null
@@ -131,6 +138,118 @@ class SettingsScreen extends ConsumerWidget {
             child: const Text('Temizle'),
           ),
         ],
+      ),
+    );
+  }
+
+  void _showInventoryItemsSheet(
+    BuildContext context,
+    List<InventoryItem> inventoryItems,
+  ) {
+    final locale = Localizations.localeOf(context).languageCode;
+    final ingredientMap = {
+      for (final ingredient in mockIngredients) ingredient.id: ingredient,
+    };
+
+    showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (ctx) => SafeArea(
+        child: FractionallySizedBox(
+          heightFactor: 0.7,
+          child: Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.kitchen),
+                title: const Text('Dolabımdaki Malzemeler'),
+                subtitle: Text('${inventoryItems.length} malzeme'),
+              ),
+              const Divider(height: 1),
+              Expanded(
+                child: inventoryItems.isEmpty
+                    ? const Center(
+                        child: Text('Dolabınızda malzeme bulunmuyor.'),
+                      )
+                    : ListView.separated(
+                        itemCount: inventoryItems.length,
+                        separatorBuilder: (_, __) => const Divider(height: 1),
+                        itemBuilder: (ctx, index) {
+                          final ingredientId =
+                              inventoryItems[index].ingredientId;
+                          final ingredient = ingredientMap[ingredientId];
+                          final ingredientName =
+                              ingredient?.localizedName(locale) ?? ingredientId;
+
+                          return ListTile(
+                            leading: const Icon(Icons.check_circle_outline),
+                            title: Text(turkishTitleCase(ingredientName)),
+                          );
+                        },
+                      ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showShoppingItemsSheet(
+    BuildContext context,
+    List<ShoppingItem> shoppingItems,
+  ) {
+    showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (ctx) => SafeArea(
+        child: FractionallySizedBox(
+          heightFactor: 0.7,
+          child: Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.shopping_cart),
+                title: const Text('Alışveriş Listesi'),
+                subtitle: Text('${shoppingItems.length} ürün'),
+              ),
+              const Divider(height: 1),
+              Expanded(
+                child: shoppingItems.isEmpty
+                    ? const Center(
+                        child: Text('Alışveriş listenizde ürün bulunmuyor.'),
+                      )
+                    : ListView.separated(
+                        itemCount: shoppingItems.length,
+                        separatorBuilder: (_, __) => const Divider(height: 1),
+                        itemBuilder: (ctx, index) {
+                          final item = shoppingItems[index];
+                          return ListTile(
+                            leading: Icon(
+                              item.isPurchased
+                                  ? Icons.check_circle
+                                  : Icons.radio_button_unchecked,
+                              color: item.isPurchased
+                                  ? Colors.green
+                                  : Theme.of(context)
+                                      .colorScheme
+                                      .onSurfaceVariant,
+                            ),
+                            title: Text(
+                              turkishTitleCase(item.name),
+                              style: TextStyle(
+                                decoration: item.isPurchased
+                                    ? TextDecoration.lineThrough
+                                    : null,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
