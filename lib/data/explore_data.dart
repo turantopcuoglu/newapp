@@ -58,10 +58,9 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🇹🇷',
     gradient: 'turkish',
     recipeIds: [
-      'd002', 'd005', 'd006', 'd007', 'd008', 'd009', 'd010', 'd011',
-      'd013', 'd015', // dinner
-      'b003', 'b006', 'b010', // breakfast (menemen, simit, gözleme)
-      'l002', 'l005', 'l008', 'l013', // lunch
+      'b006', 'b017',
+      'd002', 'd006', 'd007', 'd008', 'd010', 'd011', 'd013', 'd015',
+      'l002', 'l005', 'l008', 'l010', 'l013', 'l015', 'l025',
     ],
   ),
   CuisineCategory(
@@ -70,8 +69,8 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🇮🇹',
     gradient: 'italian',
     recipeIds: [
-      'd004', 'd012', // pasta, risotto
-      'l003', // lunch
+      'd004', 'd012',
+      'l017', 'l026',
     ],
   ),
   CuisineCategory(
@@ -80,8 +79,8 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🥢',
     gradient: 'asian',
     recipeIds: [
-      'd003', // stir-fry
-      'l004', 'l007', 'l010', // lunch
+      'd003',
+      'l009', 'l014',
     ],
   ),
   CuisineCategory(
@@ -90,8 +89,9 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🧆',
     gradient: 'middleEastern',
     recipeIds: [
-      'd014', // shawarma
-      'l006', 'l009', // lunch
+      'd014',
+      'l006',
+      's004', 's016',
     ],
   ),
   CuisineCategory(
@@ -100,9 +100,10 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🫒',
     gradient: 'mediterranean',
     recipeIds: [
-      'd001', 'd013', // salmon, imam bayildi
-      'l001', 'l002', // salad, wrap
-      'b002', 'b007', // breakfast
+      'b002', 'b012',
+      'd001',
+      'l001', 'l011', 'l016', 'l018', 'l021',
+      's006', 's022',
     ],
   ),
   CuisineCategory(
@@ -111,8 +112,9 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🍔',
     gradient: 'american',
     recipeIds: [
-      'b001', 'b004', 'b005', 'b008', // breakfast (oatmeal, pancake, smoothie, avocado toast)
-      'l011', 'l012', // lunch
+      'b004', 'b010', 'b020', 'b025',
+      'd009',
+      'l012', 'l019',
     ],
   ),
   CuisineCategory(
@@ -121,7 +123,8 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🌮',
     gradient: 'mexican',
     recipeIds: [
-      'l014', 'l015', // lunch
+      'l024', 'l027',
+      's028',
     ],
   ),
   CuisineCategory(
@@ -130,9 +133,10 @@ const List<CuisineCategory> worldCuisines = [
     emoji: '🥗',
     gradient: 'healthy',
     recipeIds: [
-      's001', 's002', 's003', 's004', 's005', 's006', 's007', 's008',
-      's009', 's010', 's011', 's012', 's013', 's014', 's015', // snacks
-      'b009', // chia pudding
+      'b001', 'b008', 'b011', 'b014', 'b016', 'b019', 'b021', 'b023', 'b024',
+      's001', 's002', 's003', 's005', 's006', 's007', 's008', 's009', 's010',
+      's011', 's012', 's013', 's014', 's015', 's017', 's018', 's019', 's020',
+      's021', 's022', 's023', 's024', 's025', 's026', 's031', 's032', 's033',
     ],
   ),
 ];

@@ -16,6 +16,21 @@ class RecipeDetailScreen extends ConsumerWidget {
 
   const RecipeDetailScreen({super.key, required this.scoredRecipe});
 
+  String _unitLabel(IngredientUnit unit) {
+    switch (unit) {
+      case IngredientUnit.gram:
+        return 'g';
+      case IngredientUnit.kilogram:
+        return 'kg';
+      case IngredientUnit.milliliter:
+        return 'ml';
+      case IngredientUnit.liter:
+        return 'L';
+      case IngredientUnit.piece:
+        return 'adet';
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
@@ -139,9 +154,13 @@ class RecipeDetailScreen extends ConsumerWidget {
                     final ingredient = ingredientMap[id];
                     final name =
                         ingredient?.localizedName(locale) ?? id;
+                    final ingredientAmount = recipe.ingredientAmounts[id];
                     final inKitchen = inventoryIds.contains(id);
+                    final label = ingredientAmount == null
+                        ? name
+                        : '$name (${ingredientAmount.value % 1 == 0 ? ingredientAmount.value.toInt() : ingredientAmount.value} ${_unitLabel(ingredientAmount.unit)})';
                     return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                        label: label, isAvailable: inKitchen);
                   }).toList(),
                 ),
               ),

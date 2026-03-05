@@ -1629,4 +1629,149 @@ const List<Recipe> mockLunchRecipes = [
     imagePath: null,
     isUserCreated: false,
   ),
+
+  // ---------------------------------------------------------------
+  // l026 – Caprese Pasta Salad
+  // ---------------------------------------------------------------
+  Recipe(
+    id: 'l026',
+    name: {
+      'en': 'Caprese Pasta Salad',
+      'tr': 'Caprese Makarna Salatası',
+    },
+    description: {
+      'en':
+          'An Italian-inspired cold pasta salad with cherry tomatoes, mozzarella, basil, and olive oil.',
+      'tr':
+          'Cherry domates, mozzarella, fesleğen ve zeytinyağı ile hazırlanan İtalyan esintili soğuk makarna salatası.',
+    },
+    mealType: MealType.lunch,
+    ingredientIds: [
+      'pasta',
+      'tomato',
+      'mozzarella',
+      'olive_oil',
+      'basil',
+      'lemon',
+      'salt',
+      'black_pepper',
+    ],
+    ingredientAmounts: {
+      'pasta': IngredientAmount(value: 180, unit: IngredientUnit.gram),
+      'tomato': IngredientAmount(value: 200, unit: IngredientUnit.gram),
+      'mozzarella': IngredientAmount(value: 100, unit: IngredientUnit.gram),
+      'olive_oil': IngredientAmount(value: 2, unit: IngredientUnit.piece),
+      'basil': IngredientAmount(value: 10, unit: IngredientUnit.gram),
+      'lemon': IngredientAmount(value: 0.5, unit: IngredientUnit.piece),
+    },
+    cuisineId: 'italian',
+    allergenTags: ['gluten', 'dairy'],
+    checkInTags: [
+      CheckInType.noSpecificIssue,
+      CheckInType.lowEnergy,
+    ],
+    proteinLevel: NutrientLevel.medium,
+    fiberLevel: NutrientLevel.medium,
+    carbType: CarbType.complex,
+    macros: MacroEstimation(
+      calories: 520,
+      proteinG: 20,
+      carbsG: 62,
+      fatG: 20,
+      fiberG: 5,
+    ),
+    steps: {
+      'en': [
+        'Cook pasta until al dente and let it cool.',
+        'Halve tomatoes and tear mozzarella into bite-size pieces.',
+        'Whisk olive oil, lemon juice, salt, and black pepper.',
+        'Combine pasta, tomatoes, mozzarella, and basil with dressing.',
+        'Chill for 10 minutes before serving.',
+      ],
+      'tr': [
+        'Makarnayı al dente haşlayıp soğumaya bırakın.',
+        'Domatesleri ikiye bölün, mozzarellayı küçük parçalara ayırın.',
+        'Zeytinyağı, limon suyu, tuz ve karabiberi çırpın.',
+        'Makarna, domates, mozzarella ve fesleğeni sosla karıştırın.',
+        'Servisten önce 10 dakika buzdolabında dinlendirin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
+
+  // ---------------------------------------------------------------
+  // l027 – Chicken Burrito Bowl
+  // ---------------------------------------------------------------
+  Recipe(
+    id: 'l027',
+    name: {
+      'en': 'Chicken Burrito Bowl',
+      'tr': 'Tavuklu Burrito Bowl',
+    },
+    description: {
+      'en':
+          'A Mexican-style bowl with rice, chicken, beans, corn, avocado, and a squeeze of lime.',
+      'tr':
+          'Pirinç, tavuk, fasulye, mısır ve avokado ile hazırlanan, limonla tamamlanan Meksika usulü kase.',
+    },
+    mealType: MealType.lunch,
+    ingredientIds: [
+      'chicken_breast',
+      'rice',
+      'black_beans',
+      'corn',
+      'avocado',
+      'tomato',
+      'onion',
+      'lemon',
+      'paprika',
+      'cumin',
+      'olive_oil',
+      'salt',
+      'black_pepper',
+    ],
+    ingredientAmounts: {
+      'chicken_breast': IngredientAmount(value: 160, unit: IngredientUnit.gram),
+      'rice': IngredientAmount(value: 150, unit: IngredientUnit.gram),
+      'black_beans': IngredientAmount(value: 120, unit: IngredientUnit.gram),
+      'corn': IngredientAmount(value: 80, unit: IngredientUnit.gram),
+      'avocado': IngredientAmount(value: 1, unit: IngredientUnit.piece),
+      'tomato': IngredientAmount(value: 1, unit: IngredientUnit.piece),
+    },
+    cuisineId: 'mexican',
+    allergenTags: [],
+    checkInTags: [
+      CheckInType.lowEnergy,
+      CheckInType.postWorkout,
+    ],
+    proteinLevel: NutrientLevel.high,
+    fiberLevel: NutrientLevel.high,
+    carbType: CarbType.complex,
+    macros: MacroEstimation(
+      calories: 610,
+      proteinG: 39,
+      carbsG: 63,
+      fatG: 22,
+      fiberG: 11,
+    ),
+    steps: {
+      'en': [
+        'Season chicken with paprika, cumin, salt, and pepper; cook in a pan with olive oil.',
+        'Cook rice and warm black beans and corn.',
+        'Dice tomato, onion, and avocado.',
+        'Assemble bowl with rice, sliced chicken, beans, corn, and fresh toppings.',
+        'Finish with lemon juice and serve.',
+      ],
+      'tr': [
+        'Tavuğu toz biber, kimyon, tuz ve karabiberle tatlandırıp zeytinyağında pişirin.',
+        'Pirinci pişirin, siyah fasulye ve mısırı ısıtın.',
+        'Domates, soğan ve avokadoyu doğrayın.',
+        'Kaseye pirinç, dilimlenmiş tavuk, fasulye, mısır ve taze malzemeleri yerleştirin.',
+        'Limon suyu ekleyip servis edin.',
+      ],
+    },
+    imagePath: null,
+    isUserCreated: false,
+  ),
 ];
