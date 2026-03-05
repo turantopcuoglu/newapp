@@ -12,6 +12,7 @@ import '../../providers/meal_plan_provider.dart';
 import '../../providers/my_recipes_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
+import '../explore/saved_recipes_screen.dart';
 import '../my_recipes/create_recipe_screen.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
@@ -84,50 +85,64 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
     }).toList()
       ..sort((a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.recipeBookTitle),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const CreateRecipeScreen()),
-            ),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          // Search bar
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-            child: TurkishTextField(
-              controller: _searchController,
-              onChanged: (value) => setState(() => _searchQuery = value),
-              decoration: InputDecoration(
-                hintText: l10n.recipeBookSearch,
-                prefixIcon:
-                    const Icon(Icons.search, color: AppTheme.textLight),
-                suffixIcon: _searchQuery.isNotEmpty
-                    ? IconButton(
-                        icon: const Icon(Icons.clear, size: 20),
-                        onPressed: () {
-                          _searchController.clear();
-                          setState(() => _searchQuery = '');
-                        },
-                      )
-                    : null,
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l10n.recipeBookTitle),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const CreateRecipeScreen()),
               ),
             ),
+          ],
+          bottom: TabBar(
+            labelColor: theme.colorScheme.primary,
+            unselectedLabelColor: AppTheme.textLight,
+            indicatorColor: theme.colorScheme.primary,
+            dividerColor: Colors.transparent,
+            tabs: [
+              Tab(text: l10n.recipeBookAll),
+              Tab(text: l10n.exploreSavedRecipes),
+            ],
           ),
-
-          // Filter chips
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
+        ),
+        body: TabBarView(
+          children: [
+            Column(
               children: [
+                // Search bar
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  child: TurkishTextField(
+                    controller: _searchController,
+                    onChanged: (value) => setState(() => _searchQuery = value),
+                    decoration: InputDecoration(
+                      hintText: l10n.recipeBookSearch,
+                      prefixIcon:
+                          const Icon(Icons.search, color: AppTheme.textLight),
+                      suffixIcon: _searchQuery.isNotEmpty
+                          ? IconButton(
+                              icon: const Icon(Icons.clear, size: 20),
+                              onPressed: () {
+                                _searchController.clear();
+                                setState(() => _searchQuery = '');
+                              },
+                            )
+                          : null,
+                    ),
+                  ),
+                ),
+
+                // Filter chips
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
                 _FilterChip(
                   label: l10n.recipeBookAll,
                   isSelected: _selectedMealType == null && !_showOnlyMyRecipes,
@@ -209,69 +224,73 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
             ),
           ),
 
-          // Recipe list
-          Expanded(
-            child: scoredRecipes.isEmpty
-                ? Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          _showOnlyMyRecipes
-                              ? Icons.restaurant_menu
-                              : Icons.search_off,
-                          size: 64,
-                          color: Colors.grey.shade300,
-                        ),
-                        const SizedBox(height: 12),
-                        Text(
-                          _showOnlyMyRecipes
-                              ? l10n.recipeBookMyRecipesEmpty
-                              : l10n.recipeBookEmpty,
-                          style: theme.textTheme.bodyMedium,
-                          textAlign: TextAlign.center,
-                        ),
-                        if (_showOnlyMyRecipes) ...[
-                          const SizedBox(height: 16),
-                          FilledButton.icon(
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const CreateRecipeScreen()),
-                            ),
-                            icon: const Icon(Icons.add, size: 18),
-                            label: Text(l10n.myRecipesCreate),
+                // Recipe list
+                Expanded(
+                  child: scoredRecipes.isEmpty
+                      ? Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                _showOnlyMyRecipes
+                                    ? Icons.restaurant_menu
+                                    : Icons.search_off,
+                                size: 64,
+                                color: Colors.grey.shade300,
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                _showOnlyMyRecipes
+                                    ? l10n.recipeBookMyRecipesEmpty
+                                    : l10n.recipeBookEmpty,
+                                style: theme.textTheme.bodyMedium,
+                                textAlign: TextAlign.center,
+                              ),
+                              if (_showOnlyMyRecipes) ...[
+                                const SizedBox(height: 16),
+                                FilledButton.icon(
+                                  onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => const CreateRecipeScreen()),
+                                  ),
+                                  icon: const Icon(Icons.add, size: 18),
+                                  label: Text(l10n.myRecipesCreate),
+                                ),
+                              ],
+                            ],
                           ),
-                        ],
-                      ],
-                    ),
-                  )
-                : ListView.builder(
-                    padding: const EdgeInsets.fromLTRB(16, 4, 16, 80),
-                    itemCount: scoredRecipes.length,
-                    itemBuilder: (context, index) {
-                      final scored = scoredRecipes[index];
-                      return _RecipeBookCard(
-                        scoredRecipe: scored,
-                        locale: locale,
-                        l10n: l10n,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) =>
-                                RecipeDetailScreen(scoredRecipe: scored),
-                          ),
+                        )
+                      : ListView.builder(
+                          padding: const EdgeInsets.fromLTRB(16, 4, 16, 80),
+                          itemCount: scoredRecipes.length,
+                          itemBuilder: (context, index) {
+                            final scored = scoredRecipes[index];
+                            return _RecipeBookCard(
+                              scoredRecipe: scored,
+                              locale: locale,
+                              l10n: l10n,
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      RecipeDetailScreen(scoredRecipe: scored),
+                                ),
+                              ),
+                              onAddToPlanner: () =>
+                                  _addToPlanner(context, scored),
+                              onDelete: scored.recipe.isUserCreated
+                                  ? () => _deleteRecipe(context, scored)
+                                  : null,
+                            );
+                          },
                         ),
-                        onAddToPlanner: () =>
-                            _addToPlanner(context, scored),
-                        onDelete: scored.recipe.isUserCreated
-                            ? () => _deleteRecipe(context, scored)
-                            : null,
-                      );
-                    },
-                  ),
-          ),
-        ],
+                ),
+              ],
+            ),
+            const SavedRecipesScreen(showAppBar: false),
+          ],
+        ),
       ),
     );
   }
