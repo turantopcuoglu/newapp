@@ -17,7 +17,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['oats', 'banana', 'honey', 'milk', 'cinnamon'],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cantFocus,
@@ -71,7 +71,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['eggs', 'dairy'],
+    allergenTags: ['eggs', 'milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.lowEnergy,
@@ -120,7 +120,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['strawberry', 'banana', 'yogurt', 'honey', 'chia_seeds'],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -222,7 +222,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['yogurt', 'walnuts', 'blueberry', 'honey', 'oats'],
-    allergenTags: ['dairy', 'nuts', 'gluten'],
+    allergenTags: ['milk', 'nuts_tree', 'gluten'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
@@ -373,7 +373,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['chia_seeds', 'milk', 'mango', 'honey', 'vanilla_extract'],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.pms,
@@ -428,7 +428,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['eggs', 'dairy'],
+    allergenTags: ['eggs', 'milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.noSpecificIssue,
@@ -482,7 +482,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'maple_syrup',
       'vanilla_extract',
     ],
-    allergenTags: ['gluten', 'eggs', 'dairy'],
+    allergenTags: ['gluten', 'eggs', 'milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.lowEnergy,
@@ -538,7 +538,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'milk',
       'cinnamon',
     ],
-    allergenTags: ['nuts', 'dairy'],
+    allergenTags: ['nuts_tree', 'milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.bloated,
@@ -592,7 +592,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'fish', 'dairy'],
+    allergenTags: ['gluten', 'fish', 'milk'],
     checkInTags: [
       CheckInType.cantFocus,
       CheckInType.pms,
@@ -697,7 +697,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['oats', 'yogurt', 'blueberry', 'flaxseeds', 'honey'],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.pms,
@@ -752,7 +752,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'olive_oil',
       'salt',
     ],
-    allergenTags: ['gluten', 'eggs', 'dairy'],
+    allergenTags: ['gluten', 'eggs', 'milk'],
     checkInTags: [
       CheckInType.cantFocus,
       CheckInType.noSpecificIssue,
@@ -798,7 +798,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['banana', 'oats', 'almonds', 'milk', 'honey', 'cinnamon'],
-    allergenTags: ['gluten', 'nuts', 'dairy'],
+    allergenTags: ['gluten', 'nuts_tree', 'milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,
@@ -851,7 +851,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'cucumber',
       'olive_oil',
     ],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.noSpecificIssue,
       CheckInType.bloated,
@@ -955,7 +955,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['oats', 'apple', 'cinnamon', 'maple_syrup', 'milk'],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.cantFocus,
@@ -1012,7 +1012,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'eggs', 'dairy'],
+    allergenTags: ['gluten', 'eggs', 'milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.lowEnergy,
@@ -1173,7 +1173,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: ['yogurt', 'walnuts', 'honey', 'flaxseeds', 'banana'],
-    allergenTags: ['dairy', 'nuts'],
+    allergenTags: ['milk', 'nuts_tree'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -1228,7 +1228,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'honey',
       'butter',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.bloated,
@@ -1284,7 +1284,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['eggs', 'dairy'],
+    allergenTags: ['eggs', 'milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.noSpecificIssue,

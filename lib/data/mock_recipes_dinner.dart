@@ -203,7 +203,7 @@ const List<Recipe> mockDinnerRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -437,7 +437,7 @@ const List<Recipe> mockDinnerRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'dairy', 'eggs'],
+    allergenTags: ['gluten', 'milk', 'eggs'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -671,7 +671,7 @@ const List<Recipe> mockDinnerRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
@@ -791,7 +791,7 @@ const List<Recipe> mockDinnerRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.lowEnergy,
@@ -848,7 +848,7 @@ const List<Recipe> mockDinnerRecipes = [
       'black_pepper',
       'cumin',
     ],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,

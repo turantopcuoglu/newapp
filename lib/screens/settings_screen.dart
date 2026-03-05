@@ -481,14 +481,19 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
 /// All known allergen tags used in the ingredient database.
 const Map<String, Map<String, String>> _allergenLabels = {
   'gluten': {'en': 'Gluten', 'tr': 'Gluten'},
-  'dairy': {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
+  'crustaceans': {'en': 'Crustaceans', 'tr': 'Kabuklular'},
   'eggs': {'en': 'Eggs', 'tr': 'Yumurta'},
-  'nuts': {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
-  'peanuts': {'en': 'Peanuts', 'tr': 'Yer Fıstığı'},
   'fish': {'en': 'Fish', 'tr': 'Balık'},
-  'shellfish': {'en': 'Shellfish', 'tr': 'Kabuklu Deniz Ürünleri'},
+  'peanuts': {'en': 'Peanuts', 'tr': 'Yer Fıstığı'},
   'soy': {'en': 'Soy', 'tr': 'Soya'},
+  'milk': {'en': 'Milk / Lactose', 'tr': 'Süt / Laktoz'},
+  'nuts_tree': {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
+  'celery': {'en': 'Celery', 'tr': 'Kereviz'},
+  'mustard': {'en': 'Mustard', 'tr': 'Hardal'},
   'sesame': {'en': 'Sesame', 'tr': 'Susam'},
+  'sulfites': {'en': 'Sulfites', 'tr': 'Sülfitler'},
+  'lupin': {'en': 'Lupin', 'tr': 'Lupin'},
+  'molluscs': {'en': 'Molluscs', 'tr': 'Yumuşakçalar'},
 };
 
 class _AllergyDislikedSection extends StatelessWidget {

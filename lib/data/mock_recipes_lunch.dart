@@ -290,7 +290,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.noSpecificIssue,
       CheckInType.postWorkout,
@@ -481,7 +481,7 @@ const List<Recipe> mockLunchRecipes = [
       'black_pepper',
       'chili_flakes',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.bloated,
@@ -548,7 +548,7 @@ const List<Recipe> mockLunchRecipes = [
       'vegetable_oil',
       'salt',
     ],
-    allergenTags: ['shellfish', 'soy', 'sesame'],
+    allergenTags: ['crustaceans', 'soy', 'sesame'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.pms,
@@ -678,7 +678,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.noSpecificIssue,
@@ -740,7 +740,7 @@ const List<Recipe> mockLunchRecipes = [
       'black_pepper',
       'butter',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.lowEnergy,
@@ -804,7 +804,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['gluten', 'dairy', 'eggs'],
+    allergenTags: ['gluten', 'milk', 'eggs'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
@@ -938,7 +938,7 @@ const List<Recipe> mockLunchRecipes = [
       'black_pepper',
       'oregano',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.postWorkout,
@@ -1070,7 +1070,7 @@ const List<Recipe> mockLunchRecipes = [
       'black_pepper',
       'oregano',
     ],
-    allergenTags: ['gluten', 'dairy'],
+    allergenTags: ['gluten', 'milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.lowEnergy,
@@ -1134,7 +1134,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.pms,
       CheckInType.bloated,
@@ -1260,7 +1260,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['eggs', 'dairy'],
+    allergenTags: ['eggs', 'milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
@@ -1391,7 +1391,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.postWorkout,
       CheckInType.noSpecificIssue,
@@ -1525,7 +1525,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['fish', 'gluten', 'dairy'],
+    allergenTags: ['fish', 'gluten', 'milk'],
     checkInTags: [
       CheckInType.noSpecificIssue,
       CheckInType.postWorkout,
@@ -1591,7 +1591,7 @@ const List<Recipe> mockLunchRecipes = [
       'salt',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cravingSweets,

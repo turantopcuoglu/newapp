@@ -30,8 +30,8 @@ const List<_AllergenItem> _commonAllergens = [
     color: Color(0xFFE67E22),
   ),
   _AllergenItem(
-    tag: 'dairy',
-    label: {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
+    tag: 'milk',
+    label: {'en': 'Milk / Lactose', 'tr': 'Süt / Laktoz'},
     icon: Icons.water_drop_rounded,
     color: Color(0xFF3498DB),
   ),
@@ -42,7 +42,7 @@ const List<_AllergenItem> _commonAllergens = [
     color: Color(0xFFF39C12),
   ),
   _AllergenItem(
-    tag: 'nuts',
+    tag: 'nuts_tree',
     label: {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
     icon: Icons.park_rounded,
     color: Color(0xFF8E44AD),
@@ -60,8 +60,8 @@ const List<_AllergenItem> _commonAllergens = [
     color: Color(0xFF2980B9),
   ),
   _AllergenItem(
-    tag: 'shellfish',
-    label: {'en': 'Shellfish', 'tr': 'Kabuklu Deniz Ürünleri'},
+    tag: 'crustaceans',
+    label: {'en': 'Crustaceans', 'tr': 'Kabuklular'},
     icon: Icons.water_rounded,
     color: Color(0xFF1ABC9C),
   ),
@@ -76,6 +76,36 @@ const List<_AllergenItem> _commonAllergens = [
     label: {'en': 'Sesame', 'tr': 'Susam'},
     icon: Icons.scatter_plot_rounded,
     color: Color(0xFFBDC3C7),
+  ),
+  _AllergenItem(
+    tag: 'celery',
+    label: {'en': 'Celery', 'tr': 'Kereviz'},
+    icon: Icons.grass_rounded,
+    color: Color(0xFF2ECC71),
+  ),
+  _AllergenItem(
+    tag: 'mustard',
+    label: {'en': 'Mustard', 'tr': 'Hardal'},
+    icon: Icons.local_fire_department_rounded,
+    color: Color(0xFFF39C12),
+  ),
+  _AllergenItem(
+    tag: 'sulfites',
+    label: {'en': 'Sulfites', 'tr': 'Sülfitler'},
+    icon: Icons.science_rounded,
+    color: Color(0xFF7F8C8D),
+  ),
+  _AllergenItem(
+    tag: 'lupin',
+    label: {'en': 'Lupin', 'tr': 'Lupin'},
+    icon: Icons.spa_rounded,
+    color: Color(0xFF9B59B6),
+  ),
+  _AllergenItem(
+    tag: 'molluscs',
+    label: {'en': 'Molluscs', 'tr': 'Yumuşakçalar'},
+    icon: Icons.waves_rounded,
+    color: Color(0xFF16A085),
   ),
 ];
 

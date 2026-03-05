@@ -19,7 +19,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['oats', 'banana', 'almonds', 'honey', 'cinnamon'],
-    allergenTags: ['gluten', 'tree_nuts'],
+    allergenTags: ['gluten', 'nuts_tree'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,
@@ -69,7 +69,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['spinach', 'banana', 'yogurt', 'honey', 'milk'],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.bloated,
@@ -125,7 +125,7 @@ const List<Recipe> mockSnackRecipes = [
       'blueberry',
       'honey',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -287,7 +287,7 @@ const List<Recipe> mockSnackRecipes = [
       'oregano',
       'black_pepper',
     ],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.noSpecificIssue,
@@ -335,7 +335,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['oats', 'walnuts', 'peanuts', 'honey', 'vanilla_extract'],
-    allergenTags: ['gluten', 'tree_nuts', 'peanuts'],
+    allergenTags: ['gluten', 'nuts_tree', 'peanuts'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,
@@ -384,7 +384,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['yogurt', 'honey', 'walnuts'],
-    allergenTags: ['dairy', 'tree_nuts'],
+    allergenTags: ['milk', 'nuts_tree'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
@@ -432,7 +432,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['mango', 'coconut', 'yogurt', 'honey'],
-    allergenTags: ['dairy', 'tree_nuts'],
+    allergenTags: ['milk', 'nuts_tree'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,
@@ -481,7 +481,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['almonds', 'walnuts', 'cocoa_powder', 'honey'],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
@@ -702,7 +702,7 @@ const List<Recipe> mockSnackRecipes = [
       'carrot',
       'bell_pepper',
     ],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.bloated,
       CheckInType.cantFocus,
@@ -751,7 +751,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['yogurt', 'strawberry', 'oats', 'honey'],
-    allergenTags: ['dairy', 'gluten'],
+    allergenTags: ['milk', 'gluten'],
     checkInTags: [
       CheckInType.pms,
       CheckInType.noSpecificIssue,
@@ -854,7 +854,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['blueberry', 'flaxseeds', 'banana', 'milk'],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cravingSweets,
@@ -1080,7 +1080,7 @@ const List<Recipe> mockSnackRecipes = [
       'celery',
       'cucumber',
     ],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.pms,
@@ -1282,7 +1282,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['cashews', 'coconut', 'honey', 'vanilla_extract'],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.cantFocus,
       CheckInType.noSpecificIssue,
@@ -1332,7 +1332,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['mixed_nuts', 'dried_fruit', 'dark_chocolate', 'coconut_milk'],
-    allergenTags: ['tree_nuts'],
+    allergenTags: ['nuts_tree'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.cantFocus,
@@ -1381,7 +1381,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['ice_cream', 'chocolate_bar', 'banana', 'cookies'],
-    allergenTags: ['dairy', 'gluten', 'eggs'],
+    allergenTags: ['milk', 'gluten', 'eggs'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -1482,7 +1482,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['dark_chocolate', 'banana', 'blueberry', 'raspberry', 'dried_fruit'],
-    allergenTags: ['dairy'],
+    allergenTags: ['milk'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.pms,
@@ -1533,7 +1533,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['popcorn', 'mixed_nuts', 'honey', 'crackers'],
-    allergenTags: ['tree_nuts', 'gluten'],
+    allergenTags: ['nuts_tree', 'gluten'],
     checkInTags: [
       CheckInType.cravingSweets,
       CheckInType.noSpecificIssue,
@@ -1583,7 +1583,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['greek_yogurt', 'blueberry', 'raspberry', 'granola_bar', 'honey'],
-    allergenTags: ['dairy', 'gluten'],
+    allergenTags: ['milk', 'gluten'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.postWorkout,
@@ -1683,7 +1683,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: ['dates', 'mixed_nuts', 'oats', 'dark_chocolate', 'honey'],
-    allergenTags: ['tree_nuts', 'gluten'],
+    allergenTags: ['nuts_tree', 'gluten'],
     checkInTags: [
       CheckInType.lowEnergy,
       CheckInType.periodFatigue,
