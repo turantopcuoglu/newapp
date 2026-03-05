@@ -22,8 +22,15 @@ class CuisineDetailScreen extends ConsumerWidget {
     final favorites = ref.watch(favoritesProvider);
     final scoredRecipes = ref.watch(safeScoredRecipesProvider);
 
+    final cuisineRecipeIds = {
+      ...cuisine.recipeIds,
+      ...allRecipes.values
+          .where((recipe) => recipe.cuisineId == cuisine.id)
+          .map((recipe) => recipe.id),
+    };
+
     // Get recipes matching this cuisine's recipe IDs
-    final cuisineRecipes = cuisine.recipeIds
+    final cuisineRecipes = cuisineRecipeIds
         .where((id) => allRecipes.containsKey(id))
         .map((id) {
       // Find scored version if available

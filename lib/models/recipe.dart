@@ -1,6 +1,32 @@
 import 'dart:convert';
 import '../core/enums.dart';
 
+class IngredientAmount {
+  final double value;
+  final IngredientUnit unit;
+
+  const IngredientAmount({
+    required this.value,
+    this.unit = IngredientUnit.gram,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'value': value,
+        'unit': unit.name,
+      };
+
+  factory IngredientAmount.fromJson(Map<String, dynamic> json) {
+    final rawUnit = json['unit'] as String?;
+    return IngredientAmount(
+      value: (json['value'] as num?)?.toDouble() ?? 0,
+      unit: IngredientUnit.values.firstWhere(
+        (u) => u.name == rawUnit,
+        orElse: () => IngredientUnit.gram,
+      ),
+    );
+  }
+}
+
 class MacroEstimation {
   final int calories;
   final int proteinG;
@@ -40,6 +66,7 @@ class Recipe {
   final Map<String, String> description;
   final MealType mealType;
   final List<String> ingredientIds;
+  final Map<String, IngredientAmount> ingredientAmounts;
   final List<String> allergenTags;
   final List<CheckInType> checkInTags;
   final NutrientLevel proteinLevel;
@@ -48,6 +75,7 @@ class Recipe {
   final MacroEstimation macros;
   final Map<String, List<String>> steps;
   final String? imagePath;
+  final String? cuisineId;
   final bool isUserCreated;
 
   const Recipe({
@@ -56,6 +84,7 @@ class Recipe {
     required this.description,
     this.mealType = MealType.lunch,
     this.ingredientIds = const [],
+    this.ingredientAmounts = const {},
     this.allergenTags = const [],
     this.checkInTags = const [],
     this.proteinLevel = NutrientLevel.medium,
@@ -64,6 +93,7 @@ class Recipe {
     this.macros = const MacroEstimation(),
     this.steps = const {},
     this.imagePath,
+    this.cuisineId,
     this.isUserCreated = false,
   });
 
@@ -85,6 +115,8 @@ class Recipe {
         'description': description,
         'mealType': mealType.name,
         'ingredientIds': ingredientIds,
+        'ingredientAmounts': ingredientAmounts
+            .map((key, value) => MapEntry(key, value.toJson())),
         'allergenTags': allergenTags,
         'checkInTags': checkInTags.map((e) => e.name).toList(),
         'proteinLevel': proteinLevel.name,
@@ -93,8 +125,20 @@ class Recipe {
         'macros': macros.toJson(),
         'steps': steps,
         'imagePath': imagePath,
+        'cuisineId': cuisineId,
         'isUserCreated': isUserCreated,
       };
+
+  static Map<String, IngredientAmount> _parseIngredientAmounts(
+      dynamic value) {
+    if (value is! Map) return {};
+    return value.map(
+      (k, v) => MapEntry(
+        k as String,
+        IngredientAmount.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+    );
+  }
 
   static Map<String, String> _parseLocalizedString(dynamic value) {
     if (value is Map) return Map<String, String>.from(value);
@@ -120,6 +164,7 @@ class Recipe {
             orElse: () => MealType.lunch),
         ingredientIds: List<String>.from(
             json['ingredientIds'] ?? json['ingredients'] ?? []),
+        ingredientAmounts: _parseIngredientAmounts(json['ingredientAmounts']),
         allergenTags: List<String>.from(json['allergenTags'] ?? []),
         checkInTags: (json['checkInTags'] as List?)
                 ?.map((e) =>
@@ -140,6 +185,7 @@ class Recipe {
             : const MacroEstimation(),
         steps: _parseLocalizedSteps(json['steps']),
         imagePath: json['imagePath'] as String?,
+        cuisineId: json['cuisineId'] as String?,
         isUserCreated: json['isUserCreated'] as bool? ?? false,
       );
 

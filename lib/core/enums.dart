@@ -55,3 +55,11 @@ enum BeverageType {
   smoothie,
   other,
 }
+
+enum IngredientUnit {
+  gram,
+  kilogram,
+  milliliter,
+  liter,
+  piece,
+}

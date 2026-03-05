@@ -28,12 +28,14 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   MealType _mealType = MealType.lunch;
   NutrientLevel _proteinLevel = NutrientLevel.medium;
   NutrientLevel _fiberLevel = NutrientLevel.medium;
+  String? _cuisineId;
 
   /// ingredient id → serving weight in grams
   final Map<String, double> _selectedIngredients = {};
 
   /// Controllers for gram inputs keyed by ingredient id.
   final Map<String, TextEditingController> _gramControllers = {};
+  final Map<String, IngredientUnit> _selectedUnits = {};
 
   @override
   void dispose() {
@@ -96,6 +98,37 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
     }
   }
 
+  String _unitLabel(IngredientUnit unit) {
+    switch (unit) {
+      case IngredientUnit.gram:
+        return 'g';
+      case IngredientUnit.kilogram:
+        return 'kg';
+      case IngredientUnit.milliliter:
+        return 'ml';
+      case IngredientUnit.liter:
+        return 'L';
+      case IngredientUnit.piece:
+        return 'adet';
+    }
+  }
+
+  double _toGrams(String ingredientId, double value, IngredientUnit unit) {
+    switch (unit) {
+      case IngredientUnit.gram:
+        return value;
+      case IngredientUnit.kilogram:
+        return value * 1000;
+      case IngredientUnit.milliliter:
+        return value;
+      case IngredientUnit.liter:
+        return value * 1000;
+      case IngredientUnit.piece:
+        final serving = ingredientNutritionData[ingredientId]?.defaultServingG ?? 100;
+        return value * serving;
+    }
+  }
+
   // ── ingredient selection ─────────────────────────────────────────────
 
   Future<void> _openIngredientSelector() async {
@@ -118,6 +151,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
           .toList()
           .forEach((id) {
         _selectedIngredients.remove(id);
+        _selectedUnits.remove(id);
         _gramControllers[id]?.dispose();
         _gramControllers.remove(id);
       });
@@ -128,6 +162,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
           final defaultG =
               ingredientNutritionData[id]?.defaultServingG ?? 100;
           _selectedIngredients[id] = defaultG;
+          _selectedUnits[id] = IngredientUnit.gram;
           _gramControllers[id] =
               TextEditingController(text: defaultG.round().toString());
         }
@@ -138,6 +173,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   void _removeIngredient(String id) {
     setState(() {
       _selectedIngredients.remove(id);
+      _selectedUnits.remove(id);
       _gramControllers[id]?.dispose();
       _gramControllers.remove(id);
     });
@@ -157,7 +193,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
     for (final entry in _selectedIngredients.entries) {
       final n = ingredientNutritionData[entry.key];
       if (n == null) continue;
-      final f = entry.value / 100.0;
+      final unit = _selectedUnits[entry.key] ?? IngredientUnit.gram;
+      final grams = _toGrams(entry.key, entry.value, unit);
+      final f = grams / 100.0;
       cal += n.caloriesPer100g * f;
       prot += n.proteinPer100g * f;
       carbs += n.carbsPer100g * f;
@@ -208,6 +246,36 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
               decoration: InputDecoration(hintText: l10n.myRecipesDescription),
               maxLines: 2,
               textInputAction: TextInputAction.next,
+            ),
+            const SizedBox(height: 24),
+
+            _buildSectionLabel('Mutfak (opsiyonel)', Icons.public, theme),
+            const SizedBox(height: 8),
+            DropdownButtonFormField<String?>(
+              value: _cuisineId,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+              ),
+              items: const [
+                DropdownMenuItem<String?>(value: null, child: Text('Seçilmedi')),
+                DropdownMenuItem<String?>(
+                    value: 'turkish', child: Text('Türk Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'italian', child: Text('İtalyan Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'asian', child: Text('Asya Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'middleEastern', child: Text('Ortadoğu Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'mediterranean', child: Text('Akdeniz Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'american', child: Text('Amerikan Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'mexican', child: Text('Meksika Mutfağı')),
+                DropdownMenuItem<String?>(
+                    value: 'healthy', child: Text('Sağlıklı & Hafif')),
+              ],
+              onChanged: (v) => setState(() => _cuisineId = v),
             ),
             const SizedBox(height: 24),
 
@@ -455,7 +523,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
               orElse: () => mockIngredients.first,
             );
             final name = ingredient.localizedName(locale);
-            final grams = _selectedIngredients[id]!;
+            final amount = _selectedIngredients[id]!;
+            final unit = _selectedUnits[id] ?? IngredientUnit.gram;
+            final grams = _toGrams(id, amount, unit);
             final nutrition = ingredientNutritionData[id];
             final cals = nutrition != null
                 ? (nutrition.caloriesPer100g * grams / 100).round()
@@ -549,12 +619,27 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
-                      'g',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: AppTheme.textSecondary,
-                        fontWeight: FontWeight.w500,
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton<IngredientUnit>(
+                        value: unit,
+                        isDense: true,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: AppTheme.textSecondary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        items: IngredientUnit.values
+                            .map(
+                              (u) => DropdownMenuItem(
+                                value: u,
+                                child: Text(_unitLabel(u)),
+                              ),
+                            )
+                            .toList(),
+                        onChanged: (newUnit) {
+                          if (newUnit == null) return;
+                          setState(() => _selectedUnits[id] = newUnit);
+                        },
                       ),
                     ),
 
@@ -606,6 +691,13 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
     }
 
     final macros = _computedMacros;
+    final ingredientAmounts = {
+      for (final entry in _selectedIngredients.entries)
+        entry.key: IngredientAmount(
+          value: entry.value,
+          unit: _selectedUnits[entry.key] ?? IngredientUnit.gram,
+        )
+    };
 
     final recipe = Recipe(
       id: 'user_${const Uuid().v4()}',
@@ -613,11 +705,13 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       description: {locale: _descController.text.trim()},
       mealType: _mealType,
       ingredientIds: _selectedIngredients.keys.toList(),
+      ingredientAmounts: ingredientAmounts,
       allergenTags: allergens.toList(),
       proteinLevel: _proteinLevel,
       fiberLevel: _fiberLevel,
       macros: macros,
       steps: {locale: steps},
+      cuisineId: _cuisineId,
       isUserCreated: true,
       checkInTags: [CheckInType.noSpecificIssue],
     );
