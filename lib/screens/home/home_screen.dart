@@ -1090,7 +1090,7 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
             // Divider
             Container(
               height: 1,
-              color: AppTheme.divider,
+              color: AppTheme.dividerColor,
             ),
 
             const SizedBox(height: 12),
