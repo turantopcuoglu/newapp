@@ -5,7 +5,8 @@ import 'package:flutter/services.dart';
 ///
 /// This widget ensures that Turkish special characters (ş, ı, ç, ğ, ö, ü, İ,
 /// Ş, Ç, Ğ, Ö, Ü) are properly accepted in text input fields by:
-/// - Using [FilteringTextInputFormatter.allow] with a Unicode-aware pattern
+/// - NOT applying any [FilteringTextInputFormatter] that would interfere with
+///   IME composing sequences for non-Latin characters
 /// - Enabling IME personalized learning
 /// - Setting proper keyboard type for text input
 class TurkishTextField extends StatelessWidget {
@@ -55,11 +56,7 @@ class TurkishTextField extends StatelessWidget {
       minLines: minLines,
       autofocus: autofocus,
       focusNode: focusNode,
-      inputFormatters: inputFormatters ??
-          [
-            // Explicitly allow all Unicode characters including Turkish
-            FilteringTextInputFormatter.allow(RegExp(r'[\s\S]', unicode: true)),
-          ],
+      inputFormatters: inputFormatters,
     );
   }
 }
