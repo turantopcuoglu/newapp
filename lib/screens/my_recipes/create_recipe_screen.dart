@@ -31,18 +31,18 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   NutrientLevel _fiberLevel = NutrientLevel.medium;
   String? _selectedCuisineId;
 
-  /// ingredient id → serving weight in grams
-  final Map<String, double> _selectedIngredients = {};
+  /// ingredient id → amount+unit
+  final Map<String, IngredientQuantity> _selectedIngredients = {};
 
-  /// Controllers for gram inputs keyed by ingredient id.
-  final Map<String, TextEditingController> _gramControllers = {};
+  /// Controllers for amount inputs keyed by ingredient id.
+  final Map<String, TextEditingController> _amountControllers = {};
 
   @override
   void dispose() {
     _nameController.dispose();
     _descController.dispose();
     _stepsController.dispose();
-    for (final c in _gramControllers.values) {
+    for (final c in _amountControllers.values) {
       c.dispose();
     }
     super.dispose();
@@ -114,42 +114,326 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
     if (result == null) return;
 
     setState(() {
-      // Remove deselected
       _selectedIngredients.keys
           .where((id) => !result.contains(id))
           .toList()
           .forEach((id) {
         _selectedIngredients.remove(id);
-        _gramControllers[id]?.dispose();
-        _gramControllers.remove(id);
+        _amountControllers[id]?.dispose();
+        _amountControllers.remove(id);
       });
 
-      // Add newly selected
       for (final id in result) {
-        if (!_selectedIngredients.containsKey(id)) {
-          final defaultG =
-              ingredientNutritionData[id]?.defaultServingG ?? 100;
-          _selectedIngredients[id] = defaultG;
-          _gramControllers[id] =
-              TextEditingController(text: defaultG.round().toString());
-        }
+        if (_selectedIngredients.containsKey(id)) continue;
+
+        final ingredient = mockIngredients.firstWhere(
+          (i) => i.id == id,
+          orElse: () => mockIngredients.first,
+        );
+        final nutrition = _nutritionFor(id, ingredient.category);
+        final unit = _suggestUnit(id, ingredient.category);
+        final quantity = _defaultQuantityForUnit(
+          unit,
+          nutrition?.defaultServingG ?? 100,
+        );
+
+        _selectedIngredients[id] = quantity;
+        _amountControllers[id] = TextEditingController(
+          text: _formatAmountForInput(quantity.amount),
+        );
       }
     });
+  }
+
+  IngredientNutrition? _nutritionFor(
+    String ingredientId,
+    IngredientCategory category,
+  ) {
+    final direct = ingredientNutritionData[ingredientId];
+    if (direct != null) return direct;
+
+    const aliasMap = {
+      'rice': 'white_rice',
+      'vanilla_extract': 'vanilla',
+      'sardines': 'sardine',
+      'kidney_beans': 'kidney_bean',
+      'black_beans': 'black_bean',
+      'flaxseeds': 'flax_seeds',
+      'vinegar': 'white_vinegar',
+      'vegetable_oil': 'olive_oil',
+      'tortilla_wrap': 'tortilla',
+    };
+
+    final aliased = aliasMap[ingredientId];
+    if (aliased != null && ingredientNutritionData.containsKey(aliased)) {
+      return ingredientNutritionData[aliased];
+    }
+
+    switch (category) {
+      case IngredientCategory.protein:
+        return const IngredientNutrition(
+          caloriesPer100g: 190,
+          proteinPer100g: 22,
+          carbsPer100g: 1,
+          fatPer100g: 9,
+          fiberPer100g: 0,
+          defaultServingG: 150,
+        );
+      case IngredientCategory.dairy:
+        return const IngredientNutrition(
+          caloriesPer100g: 110,
+          proteinPer100g: 6,
+          carbsPer100g: 4,
+          fatPer100g: 7,
+          fiberPer100g: 0,
+          defaultServingG: 150,
+        );
+      case IngredientCategory.grain:
+        return const IngredientNutrition(
+          caloriesPer100g: 330,
+          proteinPer100g: 10,
+          carbsPer100g: 65,
+          fatPer100g: 3,
+          fiberPer100g: 6,
+          defaultServingG: 80,
+        );
+      case IngredientCategory.vegetable:
+        return const IngredientNutrition(
+          caloriesPer100g: 35,
+          proteinPer100g: 2,
+          carbsPer100g: 6,
+          fatPer100g: 0.4,
+          fiberPer100g: 2,
+          defaultServingG: 100,
+        );
+      case IngredientCategory.fruit:
+        return const IngredientNutrition(
+          caloriesPer100g: 55,
+          proteinPer100g: 0.8,
+          carbsPer100g: 14,
+          fatPer100g: 0.3,
+          fiberPer100g: 2,
+          defaultServingG: 120,
+        );
+      case IngredientCategory.spice:
+        return const IngredientNutrition(
+          caloriesPer100g: 260,
+          proteinPer100g: 9,
+          carbsPer100g: 52,
+          fatPer100g: 4,
+          fiberPer100g: 26,
+          defaultServingG: 5,
+        );
+      case IngredientCategory.oil:
+        return const IngredientNutrition(
+          caloriesPer100g: 884,
+          proteinPer100g: 0,
+          carbsPer100g: 0,
+          fatPer100g: 100,
+          fiberPer100g: 0,
+          defaultServingG: 10,
+        );
+      case IngredientCategory.nut:
+        return const IngredientNutrition(
+          caloriesPer100g: 590,
+          proteinPer100g: 20,
+          carbsPer100g: 18,
+          fatPer100g: 50,
+          fiberPer100g: 9,
+          defaultServingG: 30,
+        );
+      case IngredientCategory.legume:
+        return const IngredientNutrition(
+          caloriesPer100g: 330,
+          proteinPer100g: 22,
+          carbsPer100g: 53,
+          fatPer100g: 2,
+          fiberPer100g: 15,
+          defaultServingG: 80,
+        );
+      case IngredientCategory.condiment:
+        return const IngredientNutrition(
+          caloriesPer100g: 120,
+          proteinPer100g: 1,
+          carbsPer100g: 24,
+          fatPer100g: 1,
+          fiberPer100g: 1,
+          defaultServingG: 15,
+        );
+      case IngredientCategory.snackFood:
+        return const IngredientNutrition(
+          caloriesPer100g: 420,
+          proteinPer100g: 8,
+          carbsPer100g: 50,
+          fatPer100g: 20,
+          fiberPer100g: 4,
+          defaultServingG: 40,
+        );
+      case IngredientCategory.beverage:
+        return const IngredientNutrition(
+          caloriesPer100g: 40,
+          proteinPer100g: 0,
+          carbsPer100g: 10,
+          fatPer100g: 0,
+          fiberPer100g: 0,
+          defaultServingG: 200,
+        );
+      case IngredientCategory.other:
+        return const IngredientNutrition(
+          caloriesPer100g: 120,
+          proteinPer100g: 4,
+          carbsPer100g: 18,
+          fatPer100g: 3,
+          fiberPer100g: 2,
+          defaultServingG: 30,
+        );
+    }
+  }
+
+  QuantityUnit _suggestUnit(String ingredientId, IngredientCategory category) {
+    const pieceIds = {
+      'eggs',
+      'banana',
+      'apple',
+      'orange',
+      'pear',
+      'peach',
+      'plum',
+      'tangerine',
+      'lemon',
+      'lime',
+      'avocado',
+      'onion',
+      'red_onion',
+      'garlic',
+      'tomato',
+      'potato',
+      'sweet_potato',
+      'bread',
+      'tortilla',
+      'rice_cake',
+      'granola_bar',
+    };
+    const literIds = {'milk', 'water', 'juice', 'lemonade'};
+    const mlIds = {
+      'olive_oil',
+      'vegetable_oil',
+      'avocado_oil',
+      'grape_seed_oil',
+      'vinegar',
+      'white_vinegar',
+      'balsamic_vinegar',
+      'soy_sauce',
+      'hot_sauce',
+      'ketchup',
+      'mayonnaise',
+      'mustard',
+      'maple_syrup',
+      'honey',
+      'vanilla_extract',
+      'rose_water',
+    };
+
+    if (pieceIds.contains(ingredientId)) return QuantityUnit.piece;
+    if (literIds.contains(ingredientId)) return QuantityUnit.L;
+    if (mlIds.contains(ingredientId)) return QuantityUnit.ml;
+
+    if (category == IngredientCategory.oil ||
+        category == IngredientCategory.condiment ||
+        category == IngredientCategory.beverage) {
+      return QuantityUnit.ml;
+    }
+
+    return QuantityUnit.g;
+  }
+
+  IngredientQuantity _defaultQuantityForUnit(QuantityUnit unit, double defaultG) {
+    switch (unit) {
+      case QuantityUnit.piece:
+        return const IngredientQuantity(amount: 1, unit: QuantityUnit.piece);
+      case QuantityUnit.L:
+        return IngredientQuantity(
+          amount: (defaultG / 1000).clamp(0.1, 1.5).toDouble(),
+          unit: QuantityUnit.L,
+        );
+      case QuantityUnit.ml:
+        return IngredientQuantity(
+          amount: defaultG.clamp(5, 300).toDouble(),
+          unit: QuantityUnit.ml,
+        );
+      default:
+        return IngredientQuantity(amount: defaultG, unit: QuantityUnit.g);
+    }
+  }
+
+  String _formatAmountForInput(double amount) {
+    if (amount == amount.roundToDouble()) {
+      return amount.toInt().toString();
+    }
+    return amount.toStringAsFixed(1);
   }
 
   void _removeIngredient(String id) {
     setState(() {
       _selectedIngredients.remove(id);
-      _gramControllers[id]?.dispose();
-      _gramControllers.remove(id);
+      _amountControllers[id]?.dispose();
+      _amountControllers.remove(id);
     });
   }
 
-  void _updateGrams(String id, String text) {
-    final value = double.tryParse(text);
-    if (value != null && value > 0) {
-      setState(() => _selectedIngredients[id] = value);
+  void _updateAmount(String id, String text) {
+    final value = double.tryParse(text.replaceAll(',', '.'));
+    if (value == null || value <= 0) return;
+    final prev = _selectedIngredients[id];
+    if (prev == null) return;
+
+    setState(() {
+      _selectedIngredients[id] = IngredientQuantity(
+        amount: value,
+        unit: prev.unit,
+      );
+    });
+  }
+
+  double _quantityToGrams(IngredientQuantity quantity, double defaultServingG) {
+    switch (quantity.unit) {
+      case QuantityUnit.g:
+        return quantity.amount;
+      case QuantityUnit.ml:
+        return quantity.amount;
+      case QuantityUnit.L:
+        return quantity.amount * 1000;
+      case QuantityUnit.piece:
+        return quantity.amount * defaultServingG;
+      case QuantityUnit.tablespoon:
+        return quantity.amount * 15;
+      case QuantityUnit.teaspoon:
+        return quantity.amount * 5;
+      case QuantityUnit.cup:
+        return quantity.amount * 240;
+      case QuantityUnit.bunch:
+        return quantity.amount * 50;
+      case QuantityUnit.slice:
+        return quantity.amount * 30;
+      case QuantityUnit.pinch:
+        return quantity.amount * 0.5;
+      case QuantityUnit.clove:
+        return quantity.amount * 5;
     }
+  }
+
+  Map<String, double> get _servingsInGrams {
+    final map = <String, double>{};
+    for (final entry in _selectedIngredients.entries) {
+      final ingredient = mockIngredients.firstWhere(
+        (i) => i.id == entry.key,
+        orElse: () => mockIngredients.first,
+      );
+      final nutrition = _nutritionFor(entry.key, ingredient.category);
+      final defaultServingG = nutrition?.defaultServingG ?? 100;
+      map[entry.key] = _quantityToGrams(entry.value, defaultServingG);
+    }
+    return map;
   }
 
   // ── computed macros ──────────────────────────────────────────────────
@@ -157,9 +441,14 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   MacroEstimation get _computedMacros {
     double cal = 0, prot = 0, carbs = 0, fat = 0, fiber = 0;
     for (final entry in _selectedIngredients.entries) {
-      final n = ingredientNutritionData[entry.key];
+      final ingredient = mockIngredients.firstWhere(
+        (i) => i.id == entry.key,
+        orElse: () => mockIngredients.first,
+      );
+      final n = _nutritionFor(entry.key, ingredient.category);
       if (n == null) continue;
-      final f = entry.value / 100.0;
+      final grams = _quantityToGrams(entry.value, n.defaultServingG);
+      final f = grams / 100.0;
       cal += n.caloriesPer100g * f;
       prot += n.proteinPer100g * f;
       carbs += n.carbsPer100g * f;
@@ -296,7 +585,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             const SizedBox(height: 20),
 
             // ── Nutrition live card ──
-            NutritionLiveCard(servings: _selectedIngredients),
+            NutritionLiveCard(servings: _servingsInGrams),
 
             const SizedBox(height: 24),
 
@@ -480,8 +769,12 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
               orElse: () => mockIngredients.first,
             );
             final name = ingredient.localizedName(locale);
-            final grams = _selectedIngredients[id]!;
-            final nutrition = ingredientNutritionData[id];
+            final quantity = _selectedIngredients[id]!;
+            final nutrition = _nutritionFor(id, ingredient.category);
+            final grams = _quantityToGrams(
+              quantity,
+              nutrition?.defaultServingG ?? 100,
+            );
             final cals = nutrition != null
                 ? (nutrition.caloriesPer100g * grams / 100).round()
                 : 0;
@@ -539,10 +832,11 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                       width: 70,
                       height: 36,
                       child: TextField(
-                        controller: _gramControllers[id],
-                        keyboardType: TextInputType.number,
+                        controller: _amountControllers[id],
+                        keyboardType:
+                            const TextInputType.numberWithOptions(decimal: true),
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.allow(RegExp(r"[0-9,.]"))
                         ],
                         textAlign: TextAlign.center,
                         style: const TextStyle(
@@ -570,13 +864,14 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                                 color: AppTheme.accentOrange, width: 1.5),
                           ),
                         ),
-                        onChanged: (v) => _updateGrams(id, v),
+                        onChanged: (v) => _updateAmount(id, v),
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
-                      'g',
-                      style: TextStyle(
+                    Text(
+                      AppLocalizations.of(context)
+                          .localizedUnit(quantity.unit.name),
+                      style: const TextStyle(
                         fontSize: 13,
                         color: AppTheme.textSecondary,
                         fontWeight: FontWeight.w500,
@@ -632,19 +927,14 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
 
     final macros = _computedMacros;
 
-    final quantities = _selectedIngredients.map(
-      (id, grams) => MapEntry(
-        id,
-        IngredientQuantity(amount: grams, unit: QuantityUnit.g),
-      ),
-    );
+    final quantities = Map<String, IngredientQuantity>.from(_selectedIngredients);
 
     final recipe = Recipe(
       id: 'user_${const Uuid().v4()}',
       name: {locale: name},
       description: {locale: _descController.text.trim()},
       mealType: _mealType,
-      ingredientIds: _selectedIngredients.keys.toList(),
+      ingredientIds: quantities.keys.toList(),
       allergenTags: allergens.toList(),
       proteinLevel: _proteinLevel,
       fiberLevel: _fiberLevel,
