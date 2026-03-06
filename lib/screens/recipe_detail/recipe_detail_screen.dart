@@ -142,7 +142,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                     final quantity = recipe.quantities[id];
                     final label = quantity == null
                         ? name
-                        : '$name (${quantity.formatted()})';
+                        : '$name (${_formatQuantity(quantity, l10n)})';
                     return IngredientChip(label: label, isAvailable: inKitchen);
                   }).toList(),
                 ),
@@ -258,6 +258,14 @@ class RecipeDetailScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+
+  String _formatQuantity(IngredientQuantity quantity, AppLocalizations l10n) {
+    final amount = quantity.amount == quantity.amount.roundToDouble()
+        ? quantity.amount.toInt().toString()
+        : quantity.amount.toStringAsFixed(1);
+    return '$amount ${l10n.localizedUnitFull(quantity.unit.name)}';
   }
 
   Widget _buildSectionTitle(
