@@ -6,6 +6,7 @@ import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/recipe.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/shopping_provider.dart';
