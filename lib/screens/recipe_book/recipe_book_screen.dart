@@ -7,6 +7,7 @@ import '../../core/turkish_string_helper.dart';
 import '../../l10n/app_localizations.dart';
 import '../../widgets/turkish_text_field.dart';
 import '../../models/recipe.dart';
+import '../../providers/favorites_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/my_recipes_provider.dart';
@@ -270,6 +271,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                               scoredRecipe: scored,
                               locale: locale,
                               l10n: l10n,
+                              ref: ref,
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -446,6 +448,7 @@ class _RecipeBookCard extends StatelessWidget {
   final ScoredRecipe scoredRecipe;
   final String locale;
   final AppLocalizations l10n;
+  final WidgetRef ref;
   final VoidCallback onTap;
   final VoidCallback onAddToPlanner;
   final VoidCallback? onDelete;
@@ -454,6 +457,7 @@ class _RecipeBookCard extends StatelessWidget {
     required this.scoredRecipe,
     required this.locale,
     required this.l10n,
+    required this.ref,
     required this.onTap,
     required this.onAddToPlanner,
     this.onDelete,
@@ -490,6 +494,7 @@ class _RecipeBookCard extends StatelessWidget {
     final recipe = scoredRecipe.recipe;
     final theme = Theme.of(context);
     final mealColor = _mealTypeColor(recipe.mealType);
+    final isFavorite = ref.watch(favoritesProvider).contains(recipe.id);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
@@ -538,6 +543,25 @@ class _RecipeBookCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  // Save/bookmark button
+                  GestureDetector(
+                    onTap: () => ref.read(favoritesProvider.notifier).toggleFavorite(recipe.id),
+                    child: Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        color: isFavorite
+                            ? AppTheme.warmCoral.withAlpha(20)
+                            : Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Icon(
+                        isFavorite ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
+                        color: isFavorite ? AppTheme.warmCoral : AppTheme.textLight,
+                        size: 20,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 10),
@@ -576,6 +600,24 @@ class _RecipeBookCard extends StatelessWidget {
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.softLavender,
+                        ),
+                      ),
+                    ),
+                  ] else if (recipe.isExplore) ...[
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: AppTheme.accentTeal.withAlpha(30),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        l10n.navExplore,
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.accentTeal,
                         ),
                       ),
                     ),

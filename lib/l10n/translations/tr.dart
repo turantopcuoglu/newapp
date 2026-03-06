@@ -362,6 +362,18 @@ const Map<String, String> trTranslations = {
   'quantityUnit': 'Birim',
   'quantityAmount': 'Miktar',
 
+  // Cuisine types
+  'cuisineTypeLabel': 'Mutfak Türü',
+  'cuisineTypeOptional': 'İsteğe bağlı',
+  'cuisineTurkish': 'Türk Mutfağı',
+  'cuisineItalian': 'İtalyan Mutfağı',
+  'cuisineAsian': 'Asya Mutfağı',
+  'cuisineMiddleEastern': 'Ortadoğu Mutfağı',
+  'cuisineMediterranean': 'Akdeniz Mutfağı',
+  'cuisineAmerican': 'Amerikan Mutfağı',
+  'cuisineMexican': 'Meksika Mutfağı',
+  'cuisineHealthy': 'Sağlıklı & Hafif',
+
   // General
   'save': 'Kaydet',
   'cancel': 'İptal',

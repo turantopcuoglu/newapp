@@ -22,11 +22,20 @@ class CuisineDetailScreen extends ConsumerWidget {
     final favorites = ref.watch(favoritesProvider);
     final scoredRecipes = ref.watch(safeScoredRecipesProvider);
 
-    // Get recipes matching this cuisine's recipe IDs
-    final cuisineRecipes = cuisine.recipeIds
+    // Get recipes matching this cuisine's recipe IDs or cuisineType
+    final recipeIdSet = cuisine.recipeIds.toSet();
+    // Also include recipes whose cuisineType matches this cuisine id
+    final cuisineTypeMatch = CuisineType.values
+        .where((ct) => ct.name == cuisine.id)
+        .firstOrNull;
+    for (final r in allRecipes.values) {
+      if (cuisineTypeMatch != null && r.cuisineType == cuisineTypeMatch) {
+        recipeIdSet.add(r.id);
+      }
+    }
+    final cuisineRecipes = recipeIdSet
         .where((id) => allRecipes.containsKey(id))
         .map((id) {
-      // Find scored version if available
       final scored = scoredRecipes
           .where((sr) => sr.recipe.id == id)
           .firstOrNull;

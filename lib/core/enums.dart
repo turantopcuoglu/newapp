@@ -56,6 +56,17 @@ enum BeverageType {
   other,
 }
 
+enum CuisineType {
+  turkish,
+  italian,
+  asian,
+  middleEastern,
+  mediterranean,
+  american,
+  mexican,
+  healthy,
+}
+
 enum QuantityUnit {
   g,          // gram
   ml,         // milliliter

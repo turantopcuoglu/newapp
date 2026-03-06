@@ -26,6 +26,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   final _descController = TextEditingController();
   final _stepsController = TextEditingController();
   MealType _mealType = MealType.lunch;
+  CuisineType? _cuisineType;
   NutrientLevel _proteinLevel = NutrientLevel.medium;
   NutrientLevel _fiberLevel = NutrientLevel.medium;
 
@@ -82,6 +83,27 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
         return l10n.levelMedium;
       case NutrientLevel.high:
         return l10n.levelHigh;
+    }
+  }
+
+  String _cuisineTypeLabel(CuisineType type, AppLocalizations l10n) {
+    switch (type) {
+      case CuisineType.turkish:
+        return l10n.cuisineTurkish;
+      case CuisineType.italian:
+        return l10n.cuisineItalian;
+      case CuisineType.asian:
+        return l10n.cuisineAsian;
+      case CuisineType.middleEastern:
+        return l10n.cuisineMiddleEastern;
+      case CuisineType.mediterranean:
+        return l10n.cuisineMediterranean;
+      case CuisineType.american:
+        return l10n.cuisineAmerican;
+      case CuisineType.mexican:
+        return l10n.cuisineMexican;
+      case CuisineType.healthy:
+        return l10n.cuisineHealthy;
     }
   }
 
@@ -243,6 +265,67 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 );
               }).toList(),
+            ),
+            const SizedBox(height: 24),
+
+            // ── Cuisine type (optional) ──
+            _buildSectionLabel(
+                '${l10n.cuisineTypeLabel} (${l10n.cuisineTypeOptional})',
+                Icons.public,
+                theme),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 10,
+              runSpacing: 8,
+              children: [
+                // "None" chip
+                ChoiceChip(
+                  label: const Text('—'),
+                  selected: _cuisineType == null,
+                  onSelected: (_) => setState(() => _cuisineType = null),
+                  backgroundColor: Colors.grey.withAlpha(30),
+                  selectedColor: Colors.grey,
+                  labelStyle: TextStyle(
+                    color: _cuisineType == null ? Colors.white : Colors.grey,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: _cuisineType == null ? Colors.grey : Colors.grey.withAlpha(100),
+                      width: 1.5,
+                    ),
+                  ),
+                  showCheckmark: false,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                ),
+                ...CuisineType.values.map((type) {
+                  final isSelected = _cuisineType == type;
+                  final color = AppTheme.accentTeal;
+                  return ChoiceChip(
+                    label: Text(_cuisineTypeLabel(type, l10n)),
+                    selected: isSelected,
+                    onSelected: (_) => setState(() => _cuisineType = type),
+                    backgroundColor: color.withAlpha(30),
+                    selectedColor: color,
+                    labelStyle: TextStyle(
+                      color: isSelected ? Colors.white : color,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 13,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        color: isSelected ? color : color.withAlpha(100),
+                        width: 1.5,
+                      ),
+                    ),
+                    showCheckmark: false,
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  );
+                }),
+              ],
             ),
             const SizedBox(height: 28),
 
@@ -619,6 +702,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       macros: macros,
       steps: {locale: steps},
       isUserCreated: true,
+      cuisineType: _cuisineType,
       checkInTags: [CheckInType.noSpecificIssue],
     );
 

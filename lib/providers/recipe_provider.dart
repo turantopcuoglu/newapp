@@ -2,16 +2,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../data/mock_recipes.dart';
+import '../data/recipe_enrichment.dart';
 import '../services/recommendation_service.dart';
 import 'check_in_provider.dart';
 import 'inventory_provider.dart';
 import 'my_recipes_provider.dart';
 import 'profile_provider.dart';
 
-/// All recipes: mock + user-created.
+/// All recipes: mock + user-created, with auto-populated quantities.
 final allRecipesProvider = Provider<List<Recipe>>((ref) {
   final myRecipes = ref.watch(myRecipesProvider);
-  return [...allMockRecipes, ...myRecipes];
+  return enrichRecipes([...allMockRecipes, ...myRecipes]);
 });
 
 /// Map of recipe ID -> Recipe for quick lookup.

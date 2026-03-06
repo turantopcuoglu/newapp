@@ -362,6 +362,18 @@ const Map<String, String> enTranslations = {
   'quantityUnit': 'Unit',
   'quantityAmount': 'Amount',
 
+  // Cuisine types
+  'cuisineTypeLabel': 'Cuisine Type',
+  'cuisineTypeOptional': 'Optional',
+  'cuisineTurkish': 'Turkish',
+  'cuisineItalian': 'Italian',
+  'cuisineAsian': 'Asian',
+  'cuisineMiddleEastern': 'Middle Eastern',
+  'cuisineMediterranean': 'Mediterranean',
+  'cuisineAmerican': 'American',
+  'cuisineMexican': 'Mexican',
+  'cuisineHealthy': 'Healthy & Light',
+
   // General
   'save': 'Save',
   'cancel': 'Cancel',

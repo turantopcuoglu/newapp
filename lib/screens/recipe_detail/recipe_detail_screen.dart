@@ -8,6 +8,7 @@ import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../../providers/recipe_provider.dart';
 import '../../providers/shopping_provider.dart';
 import '../../services/recommendation_service.dart';
 
@@ -33,6 +34,8 @@ class RecipeDetailScreen extends ConsumerWidget {
         : 0;
 
     final ingredientMap = {for (final i in mockIngredients) i.id: i};
+    // Use enriched recipe from provider for quantities
+    final enrichedRecipe = ref.watch(recipeMapProvider)[recipe.id] ?? recipe;
 
     return Scaffold(
       appBar: AppBar(
@@ -132,16 +135,55 @@ class RecipeDetailScreen extends ConsumerWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(14),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
+                child: Column(
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
                     final name =
                         ingredient?.localizedName(locale) ?? id;
                     final inKitchen = inventoryIds.contains(id);
-                    return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                    final qty = enrichedRecipe.quantities[id];
+                    final qtyText = qty != null
+                        ? '${qty.amount == qty.amount.roundToDouble() ? qty.amount.toInt() : qty.amount.toStringAsFixed(1)} ${l10n.localizedUnit(qty.unit.name)}'
+                        : '';
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          Icon(
+                            inKitchen ? Icons.check_circle : Icons.circle_outlined,
+                            size: 18,
+                            color: inKitchen ? AppTheme.successGreen : AppTheme.textLight,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              name,
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: inKitchen ? AppTheme.textPrimary : AppTheme.textSecondary,
+                              ),
+                            ),
+                          ),
+                          if (qtyText.isNotEmpty)
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: AppTheme.accentOrange.withAlpha(20),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                qtyText,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppTheme.accentOrange,
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    );
                   }).toList(),
                 ),
               ),

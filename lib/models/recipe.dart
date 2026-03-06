@@ -79,6 +79,8 @@ class Recipe {
   final Map<String, List<String>> steps;
   final String? imagePath;
   final bool isUserCreated;
+  final bool isExplore;
+  final CuisineType? cuisineType;
   final Map<String, IngredientQuantity> quantities;
 
   const Recipe({
@@ -96,6 +98,8 @@ class Recipe {
     this.steps = const {},
     this.imagePath,
     this.isUserCreated = false,
+    this.isExplore = false,
+    this.cuisineType,
     this.quantities = const {},
   });
 
@@ -126,6 +130,8 @@ class Recipe {
         'steps': steps,
         'imagePath': imagePath,
         'isUserCreated': isUserCreated,
+        'isExplore': isExplore,
+        'cuisineType': cuisineType?.name,
         'quantities': quantities
             .map((k, v) => MapEntry(k, v.toJson())),
       };
@@ -175,6 +181,12 @@ class Recipe {
         steps: _parseLocalizedSteps(json['steps']),
         imagePath: json['imagePath'] as String?,
         isUserCreated: json['isUserCreated'] as bool? ?? false,
+        isExplore: json['isExplore'] as bool? ?? false,
+        cuisineType: json['cuisineType'] != null
+            ? CuisineType.values.firstWhere(
+                (e) => e.name == json['cuisineType'],
+                orElse: () => CuisineType.turkish)
+            : null,
         quantities: _parseQuantities(json['quantities']),
       );
 

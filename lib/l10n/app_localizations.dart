@@ -386,6 +386,18 @@ class AppLocalizations {
   String localizedUnit(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
   String localizedUnitFull(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
 
+  // Cuisine types
+  String get cuisineTypeLabel => _t('cuisineTypeLabel');
+  String get cuisineTypeOptional => _t('cuisineTypeOptional');
+  String get cuisineTurkish => _t('cuisineTurkish');
+  String get cuisineItalian => _t('cuisineItalian');
+  String get cuisineAsian => _t('cuisineAsian');
+  String get cuisineMiddleEastern => _t('cuisineMiddleEastern');
+  String get cuisineMediterranean => _t('cuisineMediterranean');
+  String get cuisineAmerican => _t('cuisineAmerican');
+  String get cuisineMexican => _t('cuisineMexican');
+  String get cuisineHealthy => _t('cuisineHealthy');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');
