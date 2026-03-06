@@ -1,6 +1,36 @@
 import 'dart:convert';
 import '../core/enums.dart';
 
+class IngredientQuantity {
+  final double amount;
+  final QuantityUnit unit;
+
+  const IngredientQuantity({
+    required this.amount,
+    this.unit = QuantityUnit.g,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'amount': amount,
+        'unit': unit.name,
+      };
+
+  factory IngredientQuantity.fromJson(Map<String, dynamic> json) =>
+      IngredientQuantity(
+        amount: (json['amount'] as num?)?.toDouble() ?? 0,
+        unit: QuantityUnit.values.firstWhere(
+          (e) => e.name == json['unit'],
+          orElse: () => QuantityUnit.g,
+        ),
+      );
+
+  String formatted() {
+    final displayAmount =
+        amount == amount.roundToDouble() ? amount.toInt().toString() : amount.toStringAsFixed(1);
+    return '$displayAmount ${unit.name}';
+  }
+}
+
 class MacroEstimation {
   final int calories;
   final int proteinG;
@@ -49,6 +79,7 @@ class Recipe {
   final Map<String, List<String>> steps;
   final String? imagePath;
   final bool isUserCreated;
+  final Map<String, IngredientQuantity> quantities;
 
   const Recipe({
     required this.id,
@@ -65,6 +96,7 @@ class Recipe {
     this.steps = const {},
     this.imagePath,
     this.isUserCreated = false,
+    this.quantities = const {},
   });
 
   String localizedName(String locale) =>
@@ -94,6 +126,8 @@ class Recipe {
         'steps': steps,
         'imagePath': imagePath,
         'isUserCreated': isUserCreated,
+        'quantities': quantities
+            .map((k, v) => MapEntry(k, v.toJson())),
       };
 
   static Map<String, String> _parseLocalizedString(dynamic value) {
@@ -141,7 +175,20 @@ class Recipe {
         steps: _parseLocalizedSteps(json['steps']),
         imagePath: json['imagePath'] as String?,
         isUserCreated: json['isUserCreated'] as bool? ?? false,
+        quantities: _parseQuantities(json['quantities']),
       );
+
+  static Map<String, IngredientQuantity> _parseQuantities(dynamic value) {
+    if (value is Map) {
+      return value.map((k, v) => MapEntry(
+            k as String,
+            v is Map<String, dynamic>
+                ? IngredientQuantity.fromJson(v)
+                : const IngredientQuantity(amount: 0),
+          ));
+    }
+    return {};
+  }
 
   String encode() => jsonEncode(toJson());
   factory Recipe.decode(String s) =>
