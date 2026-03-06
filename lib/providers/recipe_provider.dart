@@ -3,6 +3,7 @@ import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../data/mock_recipes.dart';
 import '../services/recommendation_service.dart';
+import '../services/recipe_enrichment_service.dart';
 import 'check_in_provider.dart';
 import 'inventory_provider.dart';
 import 'my_recipes_provider.dart';
@@ -11,7 +12,14 @@ import 'profile_provider.dart';
 /// All recipes: mock + user-created.
 final allRecipesProvider = Provider<List<Recipe>>((ref) {
   final myRecipes = ref.watch(myRecipesProvider);
-  return [...allMockRecipes, ...myRecipes];
+  final allRecipes = [...allMockRecipes, ...myRecipes];
+
+  return allRecipes
+      .map((recipe) => RecipeEnrichmentService.enrich(
+            recipe,
+            defaultExploreFlag: !recipe.isUserCreated,
+          ))
+      .toList();
 });
 
 /// Map of recipe ID -> Recipe for quick lookup.

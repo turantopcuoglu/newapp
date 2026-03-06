@@ -7,6 +7,7 @@ import '../../core/turkish_string_helper.dart';
 import '../../l10n/app_localizations.dart';
 import '../../widgets/turkish_text_field.dart';
 import '../../models/recipe.dart';
+import '../../providers/favorites_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/my_recipes_provider.dart';
@@ -42,6 +43,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
     final allRecipes = ref.watch(allRecipesProvider);
     final myRecipes = ref.watch(myRecipesProvider);
     final inventoryIds = ref.watch(inventoryIdsProvider);
+    final favorites = ref.watch(favoritesProvider);
     final theme = Theme.of(context);
 
     // Filter recipes
@@ -279,6 +281,10 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                               ),
                               onAddToPlanner: () =>
                                   _addToPlanner(context, scored),
+                              isFavorite: favorites.contains(scored.recipe.id),
+                              onToggleFavorite: () => ref
+                                  .read(favoritesProvider.notifier)
+                                  .toggleFavorite(scored.recipe.id),
                               onDelete: scored.recipe.isUserCreated
                                   ? () => _deleteRecipe(context, scored)
                                   : null,
@@ -448,6 +454,8 @@ class _RecipeBookCard extends StatelessWidget {
   final AppLocalizations l10n;
   final VoidCallback onTap;
   final VoidCallback onAddToPlanner;
+  final bool isFavorite;
+  final VoidCallback onToggleFavorite;
   final VoidCallback? onDelete;
 
   const _RecipeBookCard({
@@ -456,6 +464,8 @@ class _RecipeBookCard extends StatelessWidget {
     required this.l10n,
     required this.onTap,
     required this.onAddToPlanner,
+    required this.isFavorite,
+    required this.onToggleFavorite,
     this.onDelete,
   });
 
@@ -581,6 +591,22 @@ class _RecipeBookCard extends StatelessWidget {
                     ),
                   ],
                   const Spacer(),
+                  SizedBox(
+                    height: 32,
+                    child: IconButton(
+                      onPressed: onToggleFavorite,
+                      icon: Icon(
+                        isFavorite ? Icons.bookmark : Icons.bookmark_border,
+                        size: 18,
+                      ),
+                      color: isFavorite
+                          ? AppTheme.accentOrange
+                          : AppTheme.textSecondary,
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                      constraints: const BoxConstraints(),
+                      tooltip: l10n.save,
+                    ),
+                  ),
                   if (onDelete != null)
                     SizedBox(
                       height: 32,

@@ -268,8 +268,10 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                           final ingredient = filtered[index];
                           final isSelected =
                               _selected.contains(ingredient.id);
-                          final nutrition =
-                              ingredientNutritionData[ingredient.id];
+                          final nutrition = resolveIngredientNutrition(
+                            ingredientId: ingredient.id,
+                            category: ingredient.category,
+                          );
 
                           return _IngredientTile(
                             ingredient: ingredient,

@@ -6,6 +6,7 @@ import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/recipe.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/shopping_provider.dart';
@@ -137,11 +138,13 @@ class RecipeDetailScreen extends ConsumerWidget {
                   runSpacing: 6,
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
-                    final name =
-                        ingredient?.localizedName(locale) ?? id;
+                    final name = ingredient?.localizedName(locale) ?? id;
                     final inKitchen = inventoryIds.contains(id);
-                    return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                    final quantity = recipe.quantities[id];
+                    final label = quantity == null
+                        ? name
+                        : '$name (${_formatQuantity(quantity, l10n)})';
+                    return IngredientChip(label: label, isAvailable: inKitchen);
                   }).toList(),
                 ),
               ),
@@ -256,6 +259,14 @@ class RecipeDetailScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+
+  String _formatQuantity(IngredientQuantity quantity, AppLocalizations l10n) {
+    final amount = quantity.amount == quantity.amount.roundToDouble()
+        ? quantity.amount.toInt().toString()
+        : quantity.amount.toStringAsFixed(1);
+    return '$amount ${l10n.localizedUnitFull(quantity.unit.name)}';
   }
 
   Widget _buildSectionTitle(

@@ -346,37 +346,6 @@ class _PersonalInfoSection extends StatefulWidget {
 }
 
 class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
-  late TextEditingController _ageController;
-
-  @override
-  void initState() {
-    super.initState();
-    final profile = widget.ref.read(profileProvider);
-    _ageController = TextEditingController(
-      text: profile.age != null ? profile.age.toString() : '',
-    );
-  }
-
-  @override
-  void dispose() {
-    _ageController.dispose();
-    super.dispose();
-  }
-
-  String _bmiCategory(double bmi, AppLocalizations l10n) {
-    if (bmi < 18.5) return l10n.profileBmiUnderweight;
-    if (bmi < 25) return l10n.profileBmiNormal;
-    if (bmi < 30) return l10n.profileBmiOverweight;
-    return l10n.profileBmiObese;
-  }
-
-  Color _bmiColor(double bmi) {
-    if (bmi < 18.5) return AppTheme.accentTeal;
-    if (bmi < 25) return AppTheme.successGreen;
-    if (bmi < 30) return AppTheme.accentOrange;
-    return AppTheme.warmCoral;
-  }
-
   String _genderLabel(Gender gender, AppLocalizations l10n) {
     switch (gender) {
       case Gender.male:
@@ -401,7 +370,6 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Section title
             Row(
               children: [
                 Icon(Icons.person_rounded, color: AppTheme.accentOrange),
@@ -418,8 +386,6 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
               ),
             ),
             const SizedBox(height: 16),
-
-            // Gender selection
             Text(
               l10n.profileGender,
               style: const TextStyle(
@@ -459,28 +425,97 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                 );
               }).toList(),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-            const SizedBox(height: 16),
+class _BodyMetricsSection extends StatefulWidget {
+  final WidgetRef ref;
 
-            // Age input
+  const _BodyMetricsSection({required this.ref});
+
+  @override
+  State<_BodyMetricsSection> createState() => _BodyMetricsSectionState();
+}
+
+class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
+  late TextEditingController _heightController;
+  late TextEditingController _weightController;
+
+  @override
+  void initState() {
+    super.initState();
+    final profile = widget.ref.read(profileProvider);
+    _heightController = TextEditingController(
+      text: profile.height != null ? profile.height!.toStringAsFixed(0) : '',
+    );
+    _weightController = TextEditingController(
+      text: profile.weight != null ? profile.weight!.toStringAsFixed(1) : '',
+    );
+  }
+
+  @override
+  void dispose() {
+    _heightController.dispose();
+    _weightController.dispose();
+    super.dispose();
+  }
+
+  String _bmiCategory(double bmi, AppLocalizations l10n) {
+    if (bmi < 18.5) return l10n.profileBmiUnderweight;
+    if (bmi < 25) return l10n.profileBmiNormal;
+    if (bmi < 30) return l10n.profileBmiOverweight;
+    return l10n.profileBmiObese;
+  }
+
+  Color _bmiColor(double bmi) {
+    if (bmi < 18.5) return AppTheme.accentTeal;
+    if (bmi < 25) return AppTheme.successGreen;
+    if (bmi < 30) return AppTheme.accentOrange;
+    return AppTheme.warmCoral;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final profile = widget.ref.watch(profileProvider);
+    final notifier = widget.ref.read(profileProvider.notifier);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             Row(
               children: [
-                Text(
-                  l10n.profileAge,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: AppTheme.textPrimary,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                SizedBox(
-                  width: 80,
+                Icon(Icons.straighten_rounded, color: AppTheme.accentTeal),
+                const SizedBox(width: 8),
+                Text(l10n.profileBodyMetrics,
+                    style: theme.textTheme.titleMedium),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              l10n.profileBodyMetricsHint,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: AppTheme.textSecondary,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
                   child: TextField(
-                    controller: _ageController,
-                    keyboardType: TextInputType.number,
+                    controller: _heightController,
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: false),
                     decoration: InputDecoration(
-                      labelText: l10n.profileAge,
+                      labelText: l10n.profileHeight,
                       labelStyle: const TextStyle(
                           fontSize: 13, color: AppTheme.textSecondary),
                       border: OutlineInputBorder(
@@ -490,19 +525,40 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                           horizontal: 12, vertical: 12),
                     ),
                     onChanged: (value) {
-                      final parsed = int.tryParse(value);
+                      final parsed = double.tryParse(value);
                       if (parsed != null && parsed > 0) {
-                        notifier.updateAge(parsed);
+                        notifier.updateHeight(parsed);
+                      }
+                    },
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: TextField(
+                    controller: _weightController,
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
+                    decoration: InputDecoration(
+                      labelText: l10n.profileWeight,
+                      labelStyle: const TextStyle(
+                          fontSize: 13, color: AppTheme.textSecondary),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
+                    ),
+                    onChanged: (value) {
+                      final parsed = double.tryParse(value);
+                      if (parsed != null && parsed > 0) {
+                        notifier.updateWeight(parsed);
                       }
                     },
                   ),
                 ),
               ],
             ),
-
             const SizedBox(height: 16),
-
-            // Show BMI toggle
             Row(
               children: [
                 Text(
@@ -521,8 +577,6 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                 ),
               ],
             ),
-
-            // BMI display
             if (profile.showBmi) ...[
               const Divider(),
               const SizedBox(height: 8),
@@ -592,129 +646,6 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                   ),
                 ),
             ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ─── Body Metrics Section (Height, Weight) ──────────────────────────────────
-
-class _BodyMetricsSection extends StatefulWidget {
-  final WidgetRef ref;
-
-  const _BodyMetricsSection({required this.ref});
-
-  @override
-  State<_BodyMetricsSection> createState() => _BodyMetricsSectionState();
-}
-
-class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
-  late TextEditingController _heightController;
-  late TextEditingController _weightController;
-
-  @override
-  void initState() {
-    super.initState();
-    final profile = widget.ref.read(profileProvider);
-    _heightController = TextEditingController(
-      text: profile.height != null ? profile.height!.toStringAsFixed(0) : '',
-    );
-    _weightController = TextEditingController(
-      text: profile.weight != null ? profile.weight!.toStringAsFixed(1) : '',
-    );
-  }
-
-  @override
-  void dispose() {
-    _heightController.dispose();
-    _weightController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    final theme = Theme.of(context);
-    final notifier = widget.ref.read(profileProvider.notifier);
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Section title
-            Row(
-              children: [
-                Icon(Icons.straighten_rounded, color: AppTheme.accentTeal),
-                const SizedBox(width: 8),
-                Text(l10n.profileBodyMetrics,
-                    style: theme.textTheme.titleMedium),
-              ],
-            ),
-            const SizedBox(height: 6),
-            Text(
-              l10n.profileBodyMetricsHint,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            // Height and Weight inputs in a row
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _heightController,
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: false),
-                    decoration: InputDecoration(
-                      labelText: l10n.profileHeight,
-                      labelStyle: const TextStyle(
-                          fontSize: 13, color: AppTheme.textSecondary),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
-                    ),
-                    onChanged: (value) {
-                      final parsed = double.tryParse(value);
-                      if (parsed != null && parsed > 0) {
-                        notifier.updateHeight(parsed);
-                      }
-                    },
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: TextField(
-                    controller: _weightController,
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: true),
-                    decoration: InputDecoration(
-                      labelText: l10n.profileWeight,
-                      labelStyle: const TextStyle(
-                          fontSize: 13, color: AppTheme.textSecondary),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
-                    ),
-                    onChanged: (value) {
-                      final parsed = double.tryParse(value);
-                      if (parsed != null && parsed > 0) {
-                        notifier.updateWeight(parsed);
-                      }
-                    },
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       ),
