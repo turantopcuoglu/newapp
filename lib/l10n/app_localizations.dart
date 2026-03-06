@@ -346,6 +346,24 @@ class AppLocalizations {
   String get healthConditionSelectSubtitle => _t('healthConditionSelectSubtitle');
   String get healthConditionClearAll => _t('healthConditionClearAll');
 
+  // Quantity units
+  String get unitG => _t('unitG');
+  String get unitMl => _t('unitMl');
+  String get unitL => _t('unitL');
+  String get unitPiece => _t('unitPiece');
+  String get unitTablespoon => _t('unitTablespoon');
+  String get unitTeaspoon => _t('unitTeaspoon');
+  String get unitCup => _t('unitCup');
+  String get unitBunch => _t('unitBunch');
+  String get unitSlice => _t('unitSlice');
+  String get unitPinch => _t('unitPinch');
+  String get unitClove => _t('unitClove');
+  String get quantityUnit => _t('quantityUnit');
+  String get quantityAmount => _t('quantityAmount');
+
+  String localizedUnit(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
+  String localizedUnitFull(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
+
   // General
   String get save => _t('save');
   String get cancel => _t('cancel');

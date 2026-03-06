@@ -55,3 +55,17 @@ enum BeverageType {
   smoothie,
   other,
 }
+
+enum QuantityUnit {
+  g,          // gram
+  ml,         // milliliter
+  L,          // liter
+  piece,      // adet
+  tablespoon, // yemek kaşığı
+  teaspoon,   // çay kaşığı
+  cup,        // su bardağı
+  bunch,      // demet
+  slice,      // dilim
+  pinch,      // tutam
+  clove,      // diş (sarımsak vb.)
+}
