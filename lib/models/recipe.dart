@@ -80,6 +80,8 @@ class Recipe {
   final String? imagePath;
   final bool isUserCreated;
   final Map<String, IngredientQuantity> quantities;
+  final String? cuisineId;
+  final bool isExploreRecipe;
 
   const Recipe({
     required this.id,
@@ -97,6 +99,8 @@ class Recipe {
     this.imagePath,
     this.isUserCreated = false,
     this.quantities = const {},
+    this.cuisineId,
+    this.isExploreRecipe = false,
   });
 
   String localizedName(String locale) =>
@@ -128,6 +132,8 @@ class Recipe {
         'isUserCreated': isUserCreated,
         'quantities': quantities
             .map((k, v) => MapEntry(k, v.toJson())),
+        'cuisineId': cuisineId,
+        'isExploreRecipe': isExploreRecipe,
       };
 
   static Map<String, String> _parseLocalizedString(dynamic value) {
@@ -176,6 +182,8 @@ class Recipe {
         imagePath: json['imagePath'] as String?,
         isUserCreated: json['isUserCreated'] as bool? ?? false,
         quantities: _parseQuantities(json['quantities']),
+        cuisineId: json['cuisineId'] as String?,
+        isExploreRecipe: json['isExploreRecipe'] as bool? ?? false,
       );
 
   static Map<String, IngredientQuantity> _parseQuantities(dynamic value) {

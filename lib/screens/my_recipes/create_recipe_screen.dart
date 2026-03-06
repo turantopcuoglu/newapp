@@ -7,6 +7,7 @@ import '../../core/theme.dart';
 import '../../data/ingredient_nutrition_data.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../data/explore_data.dart';
 import '../../models/recipe.dart';
 import '../../providers/locale_provider.dart';
 import '../../providers/my_recipes_provider.dart';
@@ -28,6 +29,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   MealType _mealType = MealType.lunch;
   NutrientLevel _proteinLevel = NutrientLevel.medium;
   NutrientLevel _fiberLevel = NutrientLevel.medium;
+  String? _selectedCuisineId;
 
   /// ingredient id → serving weight in grams
   final Map<String, double> _selectedIngredients = {};
@@ -308,7 +310,30 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
               maxLines: 5,
               minLines: 3,
             ),
+
             const SizedBox(height: 24),
+
+            _buildSectionLabel('Mutfak', Icons.public_rounded, theme),
+            const SizedBox(height: 8),
+            DropdownButtonFormField<String?>(
+              value: _selectedCuisineId,
+              decoration: const InputDecoration(
+                hintText: 'Opsiyonel mutfak seçimi',
+              ),
+              items: [
+                const DropdownMenuItem<String?>(
+                  value: null,
+                  child: Text('Seçilmedi'),
+                ),
+                ...worldCuisines.map(
+                  (c) => DropdownMenuItem<String?>(
+                    value: c.id,
+                    child: Text(c.localizedName(locale)),
+                  ),
+                ),
+              ],
+              onChanged: (value) => setState(() => _selectedCuisineId = value),
+            ),
 
             // ── Protein level ──
             _buildSectionLabel(
@@ -607,6 +632,13 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
 
     final macros = _computedMacros;
 
+    final quantities = _selectedIngredients.map(
+      (id, grams) => MapEntry(
+        id,
+        IngredientQuantity(amount: grams, unit: QuantityUnit.g),
+      ),
+    );
+
     final recipe = Recipe(
       id: 'user_${const Uuid().v4()}',
       name: {locale: name},
@@ -620,6 +652,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       steps: {locale: steps},
       isUserCreated: true,
       checkInTags: [CheckInType.noSpecificIssue],
+      quantities: quantities,
+      cuisineId: _selectedCuisineId,
+      isExploreRecipe: false,
     );
 
     ref.read(myRecipesProvider.notifier).addRecipe(recipe);

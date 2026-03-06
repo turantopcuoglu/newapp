@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/recipe.dart';
 import '../services/storage_service.dart';
+import '../services/recipe_enrichment_service.dart';
 import 'storage_provider.dart';
 
 class MyRecipesNotifier extends StateNotifier<List<Recipe>> {
@@ -9,8 +10,12 @@ class MyRecipesNotifier extends StateNotifier<List<Recipe>> {
   MyRecipesNotifier(this._storage) : super(List.of(_storage.getMyRecipes()));
 
   void addRecipe(Recipe recipe) {
-    state = [...state, recipe];
-    _storage.addMyRecipe(recipe);
+    final enriched = RecipeEnrichmentService.enrich(
+      recipe,
+      defaultExploreFlag: false,
+    );
+    state = [...state, enriched];
+    _storage.addMyRecipe(enriched);
   }
 
   void removeRecipe(String id) {

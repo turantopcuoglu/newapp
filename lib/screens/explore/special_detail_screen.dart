@@ -197,13 +197,14 @@ class SpecialDetailScreen extends ConsumerWidget {
   }
 
   List<ScoredRecipe> _filterRecipes(List<ScoredRecipe> allScored) {
+    final exploreOnly = allScored.where((sr) => sr.recipe.isExploreRecipe).toList();
     final condition = category.healthCondition;
-    if (condition == null) return allScored;
+    if (condition == null) return exploreOnly;
 
     switch (condition) {
       case HealthCondition.pcos:
         // PCOS: complex carbs, medium-high fiber, medium-high protein, no simple carbs
-        return allScored.where((sr) {
+        return exploreOnly.where((sr) {
           final r = sr.recipe;
           return r.carbType != CarbType.simple &&
               (r.fiberLevel == NutrientLevel.medium ||
@@ -214,7 +215,7 @@ class SpecialDetailScreen extends ConsumerWidget {
 
       case HealthCondition.insulinResistance:
         // Insulin resistance: complex carbs, medium-high fiber, no simple carbs
-        return allScored.where((sr) {
+        return exploreOnly.where((sr) {
           final r = sr.recipe;
           return r.carbType != CarbType.simple &&
               (r.fiberLevel == NutrientLevel.medium ||
@@ -228,7 +229,7 @@ class SpecialDetailScreen extends ConsumerWidget {
         // Ingredient-based filtering
         final targetIngredients =
             healthConditionIngredients[condition] ?? [];
-        return allScored.where((sr) {
+        return exploreOnly.where((sr) {
           return sr.recipe.ingredientIds
               .any((id) => targetIngredients.contains(id));
         }).toList();

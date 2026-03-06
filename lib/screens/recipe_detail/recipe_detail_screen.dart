@@ -137,11 +137,13 @@ class RecipeDetailScreen extends ConsumerWidget {
                   runSpacing: 6,
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
-                    final name =
-                        ingredient?.localizedName(locale) ?? id;
+                    final name = ingredient?.localizedName(locale) ?? id;
                     final inKitchen = inventoryIds.contains(id);
-                    return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                    final quantity = recipe.quantities[id];
+                    final label = quantity == null
+                        ? name
+                        : '$name (${quantity.formatted()})';
+                    return IngredientChip(label: label, isAvailable: inKitchen);
                   }).toList(),
                 ),
               ),
