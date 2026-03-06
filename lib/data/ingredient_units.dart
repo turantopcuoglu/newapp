@@ -364,7 +364,6 @@ const Map<String, double> _ingredientSpecificAmounts = {
 
   // Oils (default 1 tablespoon is fine)
   'olive_oil': 2,
-  'butter': 1,
 
   // Nuts
   'walnut': 30,
