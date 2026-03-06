@@ -43,6 +43,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
     final allRecipes = ref.watch(allRecipesProvider);
     final myRecipes = ref.watch(myRecipesProvider);
     final inventoryIds = ref.watch(inventoryIdsProvider);
+    final favorites = ref.watch(favoritesProvider);
     final theme = Theme.of(context);
 
     // Filter recipes
