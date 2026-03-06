@@ -163,6 +163,28 @@ class AppLocalizations {
   String get profileBmiOverweight => _t('profileBmiOverweight');
   String get profileBmiObese => _t('profileBmiObese');
   String get profileBmiNeedData => _t('profileBmiNeedData');
+  String get profileSelectGender => _t('profileSelectGender');
+  String get profileNoAllergies => _t('profileNoAllergies');
+  String get profileLanguageTurkish => _t('profileLanguageTurkish');
+  String get profileLanguageEnglish => _t('profileLanguageEnglish');
+  String get profilePersonalInfo => _t('profilePersonalInfo');
+  String get profilePersonalInfoHint => _t('profilePersonalInfoHint');
+  String get profileDataManagement => _t('profileDataManagement');
+  String get profilePantryItems => _t('profilePantryItems');
+  String get profileShoppingList => _t('profileShoppingList');
+  String get profileClear => _t('profileClear');
+  String get profileClearPantryTitle => _t('profileClearPantryTitle');
+  String get profileClearPantryMsg => _t('profileClearPantryMsg');
+  String get profileClearShoppingTitle => _t('profileClearShoppingTitle');
+  String get profileClearShoppingMsg => _t('profileClearShoppingMsg');
+  String profileItemCount(int count) =>
+      _t('profileItemCount').replaceFirst('{count}', count.toString());
+  String profileProductCount(int count) =>
+      _t('profileProductCount').replaceFirst('{count}', count.toString());
+  String get profileEmptyPantry => _t('profileEmptyPantry');
+  String get profileEmptyShopping => _t('profileEmptyShopping');
+  String get profileSettings => _t('profileSettings');
+  String get profileSelectAllergen => _t('profileSelectAllergen');
 
   // Inventory
   String get inventoryTitle => _t('inventoryTitle');
