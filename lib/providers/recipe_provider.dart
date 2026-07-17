@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../models/recipe.dart';
-import '../data/mock_recipes.dart';
 import '../data/mock_ingredients.dart';
 import '../services/diet_classifier.dart';
 import '../services/nutrition_calculator.dart';
@@ -11,10 +10,18 @@ import 'inventory_provider.dart';
 import 'my_recipes_provider.dart';
 import 'profile_provider.dart';
 
-/// All recipes: mock + user-created.
+/// Bundled recipes loaded from assets/recipes/*.json at startup and provided
+/// via ProviderScope overrides in main.dart.
+final bundledRecipesProvider = Provider<List<Recipe>>((ref) {
+  throw UnimplementedError(
+      'bundledRecipesProvider must be overridden at startup');
+});
+
+/// All recipes: bundled + user-created.
 final allRecipesProvider = Provider<List<Recipe>>((ref) {
+  final bundled = ref.watch(bundledRecipesProvider);
   final myRecipes = ref.watch(myRecipesProvider);
-  return [...allMockRecipes, ...myRecipes];
+  return [...bundled, ...myRecipes];
 });
 
 /// Map of recipe ID -> Recipe for quick lookup.

@@ -1,12 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nutri_guide/data/explore_data.dart';
 import 'package:nutri_guide/data/ingredient_nutrition_data.dart';
 import 'package:nutri_guide/data/mock_ingredients.dart';
-import 'package:nutri_guide/data/mock_recipes.dart';
+import 'package:nutri_guide/data/recipe_repository.dart';
+import 'package:nutri_guide/models/recipe.dart';
 import 'package:nutri_guide/services/diet_classifier.dart';
 
 void main() {
-  final recipes = allMockRecipes;
+  // flutter test runs from the project root, so bundle files resolve directly.
+  final recipes = <Recipe>[
+    for (final path in RecipeRepository.bundleFiles)
+      ...RecipeRepository.decodeRecipeList(File(path).readAsStringSync()),
+  ];
   final ingredientIds = {for (final i in mockIngredients) i.id};
   final cuisineIds = {for (final c in worldCuisines) c.id};
 

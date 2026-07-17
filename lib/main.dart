@@ -4,9 +4,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme.dart';
+import 'data/recipe_repository.dart';
 import 'l10n/app_localizations.dart';
 import 'providers/daily_mode_provider.dart';
 import 'providers/locale_provider.dart';
+import 'providers/recipe_provider.dart';
 import 'providers/storage_provider.dart';
 import 'screens/disclaimer_screen.dart';
 import 'screens/main_shell.dart';
@@ -18,6 +20,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final storage = StorageService(prefs);
+  final bundledRecipes = await RecipeRepository.loadBundled();
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -28,6 +31,7 @@ void main() async {
     ProviderScope(
       overrides: [
         storageProvider.overrideWithValue(storage),
+        bundledRecipesProvider.overrideWithValue(bundledRecipes),
       ],
       child: const MyApp(),
     ),
