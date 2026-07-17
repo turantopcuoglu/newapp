@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:provider/provider.dart' as legacy;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme.dart';
 import 'l10n/app_localizations.dart';
-import 'providers/app_provider.dart';
 import 'providers/daily_mode_provider.dart';
 import 'providers/locale_provider.dart';
 import 'providers/storage_provider.dart';
@@ -31,10 +29,7 @@ void main() async {
       overrides: [
         storageProvider.overrideWithValue(storage),
       ],
-      child: legacy.ChangeNotifierProvider(
-        create: (_) => AppProvider(storage),
-        child: const MyApp(),
-      ),
+      child: const MyApp(),
     ),
   );
 }

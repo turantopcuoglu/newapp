@@ -13,7 +13,6 @@ class StorageService {
 
   static const String _pantryKey = 'pantry_ingredients';
   static const String _shoppingListKey = 'shopping_list';
-  static const String _apiKeyKey = 'api_key';
   static const String _mealPlansKey = 'meal_plans';
   static const String _profileKey = 'user_profile';
   static const String _myRecipesKey = 'my_recipes';
@@ -82,17 +81,6 @@ class StorageService {
 
   Future<void> clearShoppingList() async {
     await _prefs.remove(_shoppingListKey);
-  }
-
-  // --- API Key ---
-  String? getApiKey() => _prefs.getString(_apiKeyKey);
-
-  Future<void> saveApiKey(String key) async {
-    await _prefs.setString(_apiKeyKey, key);
-  }
-
-  Future<void> removeApiKey() async {
-    await _prefs.remove(_apiKeyKey);
   }
 
   // --- Meal Plans ---
