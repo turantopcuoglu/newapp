@@ -5,6 +5,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d001 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd001',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Baked Salmon with Vegetables',
       'tr': 'Fırında Sebzeli Somon',
@@ -63,6 +64,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d002 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd002',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Lentil Soup',
       'tr': 'Mercimek Çorbası',
@@ -122,6 +124,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d003 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd003',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Chicken Stir-Fry with Rice',
       'tr': 'Pirinçli Tavuk Sote',
@@ -181,6 +184,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d004 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd004',
+    cuisineIds: ['italian'],
     name: {
       'en': 'Vegetable Pasta',
       'tr': 'Sebzeli Makarna',
@@ -240,6 +244,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d005 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd005',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Stuffed Bell Peppers',
       'tr': 'Etli Biber Dolması',
@@ -300,6 +305,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d006 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd006',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Karnıyarık (Stuffed Eggplant)',
       'tr': 'Karnıyarık',
@@ -359,6 +365,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d007 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd007',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Grilled Meatballs (Köfte)',
       'tr': 'Izgara Köfte',
@@ -417,6 +424,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d008 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd008',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Spinach and Feta Börek',
       'tr': 'Ispanaklı Börek',
@@ -474,6 +482,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d009 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd009',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Shepherd\'s Stew (Güveç)',
       'tr': 'Sebzeli Güveç',
@@ -535,6 +544,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d010 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd010',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Pide (Meat Flatbread)',
       'tr': 'Kıymalı Pide',
@@ -592,6 +602,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d011 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd011',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Stuffed Grape Leaves (Sarma)',
       'tr': 'Etli Yaprak Sarması',
@@ -650,6 +661,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d012 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd012',
+    cuisineIds: ['italian'],
     name: {
       'en': 'Creamy Mushroom Risotto',
       'tr': 'Kremalı Mantar Risotto',
@@ -708,6 +720,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d013 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd013',
+    cuisineIds: ['turkish', 'mediterranean'],
     name: {
       'en': 'Turkish İmam Bayıldı',
       'tr': 'İmam Bayıldı',
@@ -766,6 +779,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d014 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd014',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Chicken Shawarma Bowl',
       'tr': 'Tavuk Döner Kasesi',
@@ -828,6 +842,7 @@ const List<Recipe> mockDinnerRecipes = [
   // ── d015 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'd015',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Mantı (Dumplings)',
       'tr': 'Mantı',

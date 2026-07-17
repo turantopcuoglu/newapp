@@ -69,6 +69,17 @@ class Recipe {
   final Map<String, String> name;
   final Map<String, String> description;
   final MealType mealType;
+
+  /// Cuisine category ids (see [worldCuisines] in explore_data.dart).
+  /// A recipe may belong to more than one cuisine.
+  final List<String> cuisineIds;
+
+  /// Diet suitability tags: 'vegetarian', 'vegan', 'glutenFree', 'dairyFree'.
+  /// Empty means "derive automatically from ingredients" (DietClassifier).
+  final List<String> dietTags;
+
+  final int servings;
+  final int? prepTimeMin;
   final List<String> ingredientIds;
   final List<String> allergenTags;
   final List<CheckInType> checkInTags;
@@ -86,6 +97,10 @@ class Recipe {
     required this.name,
     required this.description,
     this.mealType = MealType.lunch,
+    this.cuisineIds = const [],
+    this.dietTags = const [],
+    this.servings = 1,
+    this.prepTimeMin,
     this.ingredientIds = const [],
     this.allergenTags = const [],
     this.checkInTags = const [],
@@ -116,6 +131,10 @@ class Recipe {
         'name': name,
         'description': description,
         'mealType': mealType.name,
+        'cuisineIds': cuisineIds,
+        'dietTags': dietTags,
+        'servings': servings,
+        'prepTimeMin': prepTimeMin,
         'ingredientIds': ingredientIds,
         'allergenTags': allergenTags,
         'checkInTags': checkInTags.map((e) => e.name).toList(),
@@ -152,6 +171,10 @@ class Recipe {
         mealType: MealType.values.firstWhere(
             (e) => e.name == json['mealType'],
             orElse: () => MealType.lunch),
+        cuisineIds: List<String>.from(json['cuisineIds'] ?? []),
+        dietTags: List<String>.from(json['dietTags'] ?? []),
+        servings: json['servings'] as int? ?? 1,
+        prepTimeMin: json['prepTimeMin'] as int?,
         ingredientIds: List<String>.from(
             json['ingredientIds'] ?? json['ingredients'] ?? []),
         allergenTags: List<String>.from(json['allergenTags'] ?? []),

@@ -5,6 +5,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b001 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b001',
+    cuisineIds: ['american'],
     name: {
       'en': 'Oatmeal with Banana and Honey',
       'tr': 'Muzlu ve Balli Yulaf Lapasi',
@@ -52,6 +53,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b002 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b002',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Scrambled Eggs with Spinach and Feta',
       'tr': 'Ispanakli ve Peynirli Çırpılmış Yumurta',
@@ -108,6 +110,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b003 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b003',
+    cuisineIds: ['american'],
     name: {
       'en': 'Berry Banana Smoothie',
       'tr': 'Meyveli Muz Smoothie',
@@ -155,6 +158,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b004 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b004',
+    cuisineIds: ['american'],
     name: {
       'en': 'Avocado Toast with Egg',
       'tr': 'Yumurtalı Avokado Tost',
@@ -210,6 +214,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b005 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b005',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Greek Yogurt Parfait with Nuts and Berries',
       'tr': 'Meyveli ve Fındıklı Yoğurt Parfesi',
@@ -256,6 +261,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b006 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b006',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Menemen',
       'tr': 'Menemen',
@@ -314,6 +320,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b007 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b007',
+    cuisineIds: ['american'],
     name: {
       'en': 'Peanut Butter Banana Toast',
       'tr': 'Fıstık Ezmeli Muzlu Tost',
@@ -361,6 +368,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b008 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b008',
+    cuisineIds: ['international'],
     name: {
       'en': 'Chia Seed Pudding with Mango',
       'tr': 'Mangolu Chia Pudingi',
@@ -409,6 +417,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b009 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b009',
+    cuisineIds: ['international'],
     name: {
       'en': 'Mushroom and Cheese Omelette',
       'tr': 'Mantarlı ve Peynirli Omlet',
@@ -463,6 +472,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b010 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b010',
+    cuisineIds: ['american'],
     name: {
       'en': 'Fluffy Pancakes with Maple Syrup',
       'tr': 'Akçaağaç Şuruplu Pankek',
@@ -519,6 +529,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b011 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b011',
+    cuisineIds: ['international'],
     name: {
       'en': 'Quinoa Breakfast Bowl',
       'tr': 'Kinoa Kahvaltı Kasesi',
@@ -573,6 +584,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b012 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b012',
+    cuisineIds: ['international'],
     name: {
       'en': 'Smoked Salmon on Toast',
       'tr': 'Füme Somonlu Tost',
@@ -627,6 +639,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b013 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b013',
+    cuisineIds: ['american'],
     name: {
       'en': 'Sweet Potato and Egg Breakfast Hash',
       'tr': 'Tatlı Patatesli ve Yumurtalı Kahvaltı Kavurması',
@@ -685,6 +698,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b014 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b014',
+    cuisineIds: ['american'],
     name: {
       'en': 'Overnight Oats with Blueberries',
       'tr': 'Yaban Mersinli Gece Yulafı',
@@ -732,6 +746,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b015 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b015',
+    cuisineIds: ['american'],
     name: {
       'en': 'Veggie Breakfast Wrap',
       'tr': 'Sebzeli Kahvaltı Dürümü',
@@ -786,6 +801,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b016 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b016',
+    cuisineIds: ['american'],
     name: {
       'en': 'Banana Oat Smoothie',
       'tr': 'Muzlu Yulaf Smoothie',
@@ -833,6 +849,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b017 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b017',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Simit with Feta and Tomato',
       'tr': 'Beyaz Peynirli ve Domatesli Simit',
@@ -885,6 +902,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b018 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b018',
+    cuisineIds: ['international'],
     name: {
       'en': 'Tofu Scramble with Vegetables',
       'tr': 'Sebzeli Tofu Kavurması',
@@ -943,6 +961,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b019 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b019',
+    cuisineIds: ['american'],
     name: {
       'en': 'Apple Cinnamon Oatmeal',
       'tr': 'Tarçınlı Elmalı Yulaf Lapası',
@@ -992,6 +1011,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b020 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b020',
+    cuisineIds: ['american'],
     name: {
       'en': 'Egg and Cheese Breakfast Sandwich',
       'tr': 'Yumurtalı ve Peynirli Kahvaltı Sandviçi',
@@ -1048,6 +1068,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b021 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b021',
+    cuisineIds: ['international'],
     name: {
       'en': 'Tropical Green Smoothie',
       'tr': 'Tropikal Yeşil Smoothie',
@@ -1102,6 +1123,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b022 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b022',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Shakshuka',
       'tr': 'Şakşuka',
@@ -1161,6 +1183,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b023 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b023',
+    cuisineIds: ['international'],
     name: {
       'en': 'Cottage Cheese Bowl with Walnuts and Honey',
       'tr': 'Cevizli ve Ballı Lor Peyniri Kasesi',
@@ -1209,6 +1232,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b024 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b024',
+    cuisineIds: ['american'],
     name: {
       'en': 'Cornmeal Porridge with Berries',
       'tr': 'Meyveli Mısır Unu Lapası',
@@ -1265,6 +1289,7 @@ const List<Recipe> mockBreakfastRecipes = [
   // ── b025 ─────────────────────────────────────────────────────────────
   Recipe(
     id: 'b025',
+    cuisineIds: ['american'],
     name: {
       'en': 'Egg Muffin Cups with Broccoli and Cheese',
       'tr': 'Brokolili ve Peynirli Yumurta Muffini',

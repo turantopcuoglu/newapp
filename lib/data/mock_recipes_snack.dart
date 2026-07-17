@@ -7,6 +7,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's001',
+    cuisineIds: ['international'],
     name: {
       'en': 'Banana Almond Energy Balls',
       'tr': 'Muzlu Bademli Enerji Topları',
@@ -57,6 +58,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's002',
+    cuisineIds: ['international'],
     name: {
       'en': 'Spinach Banana Smoothie',
       'tr': 'Ispanaklı Muzlu Smoothie',
@@ -107,6 +109,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's003',
+    cuisineIds: ['international'],
     name: {
       'en': 'Mixed Berry Chia Pudding',
       'tr': 'Karışık Meyveli Chia Puding',
@@ -162,6 +165,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's004',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Classic Hummus with Veggie Sticks',
       'tr': 'Sebze Çubuklu Klasik Humus',
@@ -220,6 +224,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's005',
+    cuisineIds: ['american'],
     name: {
       'en': 'Apple Slices with Peanut Butter',
       'tr': 'Fıstık Ezmeli Elma Dilimleri',
@@ -269,6 +274,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's006',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Cucumber Feta Bites',
       'tr': 'Beyaz Peynirli Salatalık Dilimleri',
@@ -323,6 +329,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's007',
+    cuisineIds: ['international'],
     name: {
       'en': 'Oat and Walnut Protein Bars',
       'tr': 'Yulaflı Cevizli Protein Bar',
@@ -372,6 +379,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's008',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Yogurt with Honey and Walnuts',
       'tr': 'Ballı Cevizli Yoğurt',
@@ -420,6 +428,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's009',
+    cuisineIds: ['international'],
     name: {
       'en': 'Mango Coconut Smoothie',
       'tr': 'Mangolu Hindistancevizli Smoothie',
@@ -469,6 +478,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's010',
+    cuisineIds: ['american'],
     name: {
       'en': 'Trail Mix with Almonds and Dark Chocolate',
       'tr': 'Bademli ve Bitter Çikolatalı Karışık Kuruyemiş',
@@ -518,6 +528,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's011',
+    cuisineIds: ['american'],
     name: {
       'en': 'Oat Banana Pancake Bites',
       'tr': 'Yulaflı Muzlu Mini Pankekler',
@@ -568,6 +579,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's012',
+    cuisineIds: ['american'],
     name: {
       'en': 'Egg and Avocado Toast Bites',
       'tr': 'Yumurtalı Avokadolu Tost Lokmaları',
@@ -627,6 +639,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's013',
+    cuisineIds: ['international'],
     name: {
       'en': 'Chocolate Peanut Butter Energy Balls',
       'tr': 'Çikolatalı Fıstık Ezmeli Enerji Topları',
@@ -682,6 +695,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's014',
+    cuisineIds: ['international'],
     name: {
       'en': 'Kale Cashew Pesto Dip',
       'tr': 'Karalahanalı Kaju Pesto Dip',
@@ -739,6 +753,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's015',
+    cuisineIds: ['american'],
     name: {
       'en': 'Strawberry Yogurt Parfait',
       'tr': 'Çilekli Yoğurt Parfesi',
@@ -787,6 +802,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's016',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Sweet Potato Bites with Tahini',
       'tr': 'Tahinli Tatlı Patates Dilimleri',
@@ -842,6 +858,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's017',
+    cuisineIds: ['international'],
     name: {
       'en': 'Blueberry Flax Smoothie',
       'tr': 'Yaban Mersinli Keten Tohumlu Smoothie',
@@ -892,6 +909,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's018',
+    cuisineIds: ['italian'],
     name: {
       'en': 'Lentil Tomato Bruschetta',
       'tr': 'Mercimekli Domatesli Bruschetta',
@@ -951,6 +969,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's019',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Pomegranate Orange Fruit Bowl',
       'tr': 'Narlı Portakallı Meyve Kasesi',
@@ -1001,6 +1020,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's020',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Spiced Chickpea Crunch',
       'tr': 'Baharatlı Çıtır Nohut',
@@ -1059,6 +1079,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's021',
+    cuisineIds: ['mexican'],
     name: {
       'en': 'Avocado Almond Dip',
       'tr': 'Avokadolu Bademli Dip',
@@ -1117,6 +1138,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's022',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Tuna Cucumber Rolls',
       'tr': 'Ton Balıklı Salatalık Ruloları',
@@ -1172,6 +1194,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's023',
+    cuisineIds: ['american'],
     name: {
       'en': 'Cinnamon Baked Apple Chips',
       'tr': 'Tarçınlı Fırın Elma Cipsleri',
@@ -1221,6 +1244,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's024',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Edamame with Sea Salt and Lemon',
       'tr': 'Limonlu Tuzlu Soya Fasulyesi',
@@ -1270,6 +1294,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's025',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Cashew Date Bliss Balls',
       'tr': 'Kajulu Hurmalı Mutluluk Topları',
@@ -1320,6 +1345,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's026',
+    cuisineIds: ['american'],
     name: {
       'en': 'Trail Mix with Nuts and Dried Fruits',
       'tr': 'Kuruyemişli Karışım',
@@ -1369,6 +1395,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's027',
+    cuisineIds: ['american'],
     name: {
       'en': 'Ice Cream Sundae',
       'tr': 'Dondurmalı Kase',
@@ -1420,6 +1447,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's028',
+    cuisineIds: ['mexican'],
     name: {
       'en': 'Chips and Salsa',
       'tr': 'Cips ve Sos',
@@ -1470,6 +1498,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's029',
+    cuisineIds: ['international'],
     name: {
       'en': 'Chocolate Fondue with Fruit',
       'tr': 'Çikolata Fondüsü',
@@ -1521,6 +1550,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's030',
+    cuisineIds: ['american'],
     name: {
       'en': 'Popcorn Party Mix',
       'tr': 'Baharatlı Patlamış Mısır',
@@ -1571,6 +1601,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's031',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Greek Yogurt Parfait with Berries',
       'tr': 'Meyveli Yoğurt Parfesi',
@@ -1622,6 +1653,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's032',
+    cuisineIds: ['american'],
     name: {
       'en': 'Peanut Butter Rice Cakes',
       'tr': 'Fıstık Ezmeli Pirinç Patlağı',
@@ -1671,6 +1703,7 @@ const List<Recipe> mockSnackRecipes = [
   // ---------------------------------------------------------------------------
   Recipe(
     id: 's033',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Date and Nut Energy Bites',
       'tr': 'Hurmalı Enerji Topları',

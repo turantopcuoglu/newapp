@@ -25,8 +25,8 @@ class ScoredRecipe {
 class RecommendationService {
   /// Main recommendation algorithm.
   /// Filtering order:
-  /// 1. Exclude recipes with allergens or disliked ingredients
-  /// 2. Filter by check-in category
+  /// 1. Exclude recipes with allergens or disliked ingredients (hard filter)
+  /// 2. Score by check-in match (soft bonus, never excludes)
   /// 3. Compare with kitchen inventory
   /// 4. Calculate compatibility score
   /// 5. Sort by compatibility, meal type relevance, nutritional balance
@@ -55,20 +55,19 @@ class RecommendationService {
       return true;
     }).toList();
 
-    // Step 2: Filter by check-in category
-    // Period-related types also match PMS-tagged recipes
+    // Step 2: Check-in match as a soft bonus instead of a hard filter.
+    // With a hard filter, sparse (check-in x meal type) combinations produce
+    // empty recommendation lists; here non-matching recipes stay eligible but
+    // rank below matching ones.
+    // Period-related types also match PMS-tagged recipes.
     final checkInTypes = <CheckInType>{checkIn};
     if (checkIn == CheckInType.periodCramps ||
         checkIn == CheckInType.periodFatigue) {
       checkInTypes.add(CheckInType.pms);
     }
-    final matchingRecipes = safeRecipes
-        .where((recipe) =>
-            recipe.checkInTags.any((tag) => checkInTypes.contains(tag)))
-        .toList();
 
-    // Step 3 & 4: Score by inventory compatibility
-    final scored = matchingRecipes.map((recipe) {
+    // Step 3 & 4: Score by check-in match + inventory compatibility
+    final scored = safeRecipes.map((recipe) {
       final available = <String>[];
       final missing = <String>[];
 
@@ -84,13 +83,18 @@ class RecommendationService {
           ? 0.0
           : available.length / recipe.ingredientIds.length;
 
+      final checkInMatch = recipe.checkInTags
+          .any((tag) => checkInTypes.contains(tag));
+
       // Nutritional balance bonus (small weight)
       double nutritionBonus = 0;
       if (recipe.proteinLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.fiberLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.carbType == CarbType.complex) nutritionBonus += 0.03;
 
-      final score = (ingredientScore * 0.85) + (nutritionBonus * 0.15);
+      final score = (ingredientScore * 0.55) +
+          (checkInMatch ? 0.35 : 0.0) +
+          (nutritionBonus * 0.10);
 
       return ScoredRecipe(
         recipe: recipe,

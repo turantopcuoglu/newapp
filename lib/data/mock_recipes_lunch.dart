@@ -7,6 +7,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l001',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Grilled Chicken Salad',
       'tr': 'Izgara Tavuk Salatası',
@@ -69,6 +70,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l002',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Red Lentil Soup',
       'tr': 'Mercimek Çorbası',
@@ -136,6 +138,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l003',
+    cuisineIds: ['mexican'],
     name: {
       'en': 'Quinoa & Black Bean Bowl',
       'tr': 'Kinoa ve Siyah Fasulye Kasesi',
@@ -201,6 +204,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l004',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Salmon & Broccoli Rice Bowl',
       'tr': 'Somon ve Brokoli Pilav Kasesi',
@@ -266,6 +270,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l005',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Chicken Wrap',
       'tr': 'Tavuk Dürüm',
@@ -330,6 +335,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l006',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Eggplant Moussaka',
       'tr': 'Patlıcan Musakka',
@@ -397,6 +403,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l007',
+    cuisineIds: ['american'],
     name: {
       'en': 'Tuna & Avocado Sandwich',
       'tr': 'Ton Balıklı Avokadolu Sandviç',
@@ -460,6 +467,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l008',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Bulgur Pilaf with Chickpeas',
       'tr': 'Nohutlu Bulgur Pilavı',
@@ -525,6 +533,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l009',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Shrimp Stir-Fry with Rice Noodles',
       'tr': 'Karidesli Pirinç Noodle Sote',
@@ -591,6 +600,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l010',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Stuffed Eggplant',
       'tr': 'Karnıyarık',
@@ -655,6 +665,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l011',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Mediterranean Chickpea Salad',
       'tr': 'Akdeniz Nohut Salatası',
@@ -719,6 +730,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l012',
+    cuisineIds: ['american'],
     name: {
       'en': 'Beef Steak with Sweet Potato',
       'tr': 'Biftek ve Tatlı Patates',
@@ -781,6 +793,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l013',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Spinach & Feta Börek',
       'tr': 'Ispanaklı Börek',
@@ -847,6 +860,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l014',
+    cuisineIds: ['asian'],
     name: {
       'en': 'Tofu & Vegetable Stir-Fry',
       'tr': 'Tofu ve Sebze Sote',
@@ -914,6 +928,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l015',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Lamb Stew',
       'tr': 'Kuzu Haşlama',
@@ -981,6 +996,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l016',
+    cuisineIds: ['middleEastern'],
     name: {
       'en': 'Couscous with Grilled Vegetables',
       'tr': 'Izgara Sebzeli Kuskus',
@@ -1046,6 +1062,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l017',
+    cuisineIds: ['italian'],
     name: {
       'en': 'Turkey & Mushroom Pasta',
       'tr': 'Hindili Mantarlı Makarna',
@@ -1113,6 +1130,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l018',
+    cuisineIds: ['international'],
     name: {
       'en': 'Kale & Walnut Salad',
       'tr': 'Karalahana ve Cevizli Salata',
@@ -1175,6 +1193,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l019',
+    cuisineIds: ['american'],
     name: {
       'en': 'Grilled Pork Chop with Potato Salad',
       'tr': 'Izgara Domuz Pirzola ve Patates Salatası',
@@ -1238,6 +1257,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l020',
+    cuisineIds: ['italian'],
     name: {
       'en': 'Egg & Vegetable Frittata',
       'tr': 'Sebzeli Frittata',
@@ -1303,6 +1323,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l021',
+    cuisineIds: ['mediterranean'],
     name: {
       'en': 'Sardine & White Bean Salad',
       'tr': 'Sardalya ve Kuru Fasulye Salatası',
@@ -1366,6 +1387,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l022',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Chicken Thigh & Vegetable Kebab',
       'tr': 'Tavuk But Sebze Kebabı',
@@ -1432,6 +1454,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l023',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Lentil & Vegetable Stew',
       'tr': 'Mercimekli Sebze Yahnisi',
@@ -1500,6 +1523,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l024',
+    cuisineIds: ['mexican'],
     name: {
       'en': 'Cod Fish Tacos',
       'tr': 'Morina Balıklı Taco',
@@ -1566,6 +1590,7 @@ const List<Recipe> mockLunchRecipes = [
   // ---------------------------------------------------------------
   Recipe(
     id: 'l025',
+    cuisineIds: ['turkish'],
     name: {
       'en': 'Turkish Kidney Bean Stew with Rice',
       'tr': 'Kuru Fasulye Pilav',

@@ -5,6 +5,7 @@ import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/profile_provider.dart';
+import '../../providers/recipe_provider.dart';
 import 'cuisine_detail_screen.dart';
 import 'special_detail_screen.dart';
 
@@ -133,13 +134,14 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen>
 
 // ── World Cuisine Grid ────────────────────────────────────────────────────
 
-class _WorldCuisineGrid extends StatelessWidget {
+class _WorldCuisineGrid extends ConsumerWidget {
   final String locale;
 
   const _WorldCuisineGrid({required this.locale});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final allRecipes = ref.watch(recipeMapProvider);
     return GridView.builder(
       padding: const EdgeInsets.fromLTRB(16, 20, 16, 100),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -151,8 +153,12 @@ class _WorldCuisineGrid extends StatelessWidget {
       itemCount: worldCuisines.length,
       itemBuilder: (context, index) {
         final cuisine = worldCuisines[index];
+        final recipeCount = allRecipes.values
+            .where((r) => r.cuisineIds.contains(cuisine.id))
+            .length;
         return _CuisineTile(
           cuisine: cuisine,
+          recipeCount: recipeCount,
           locale: locale,
           onTap: () => Navigator.push(
             context,
@@ -168,11 +174,13 @@ class _WorldCuisineGrid extends StatelessWidget {
 
 class _CuisineTile extends StatelessWidget {
   final CuisineCategory cuisine;
+  final int recipeCount;
   final String locale;
   final VoidCallback onTap;
 
   const _CuisineTile({
     required this.cuisine,
+    required this.recipeCount,
     required this.locale,
     required this.onTap,
   });
@@ -258,7 +266,7 @@ class _CuisineTile extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      '${cuisine.recipeIds.length} ${AppLocalizations.of(context).recipeBookTotalRecipes}',
+                      '$recipeCount ${AppLocalizations.of(context).recipeBookTotalRecipes}',
                       style: TextStyle(
                         color: Colors.white.withAlpha(230),
                         fontSize: 11,
