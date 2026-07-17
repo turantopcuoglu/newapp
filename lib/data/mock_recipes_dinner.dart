@@ -77,7 +77,7 @@ const List<Recipe> mockDinnerRecipes = [
     },
     mealType: MealType.dinner,
     ingredientIds: [
-      'red_lentils',
+      'red_lentil',
       'onion',
       'carrot',
       'potato',
@@ -138,7 +138,7 @@ const List<Recipe> mockDinnerRecipes = [
     mealType: MealType.dinner,
     ingredientIds: [
       'chicken_breast',
-      'rice',
+      'white_rice',
       'bell_pepper',
       'onion',
       'garlic',
@@ -259,7 +259,7 @@ const List<Recipe> mockDinnerRecipes = [
     ingredientIds: [
       'bell_pepper',
       'ground_beef',
-      'rice',
+      'white_rice',
       'onion',
       'tomato',
       'parsley',
@@ -615,7 +615,7 @@ const List<Recipe> mockDinnerRecipes = [
     },
     mealType: MealType.dinner,
     ingredientIds: [
-      'rice',
+      'white_rice',
       'ground_beef',
       'onion',
       'tomato',
@@ -674,7 +674,7 @@ const List<Recipe> mockDinnerRecipes = [
     },
     mealType: MealType.dinner,
     ingredientIds: [
-      'rice',
+      'white_rice',
       'mushroom',
       'onion',
       'garlic',
@@ -793,7 +793,7 @@ const List<Recipe> mockDinnerRecipes = [
     mealType: MealType.dinner,
     ingredientIds: [
       'chicken_breast',
-      'rice',
+      'white_rice',
       'yogurt',
       'lettuce',
       'tomato',

@@ -19,7 +19,7 @@ const List<Recipe> mockSnackRecipes = [
           'Yulaf, muz ve bademle hazırlanan, pişirme gerektirmeyen besleyici enerji topları.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['oats', 'banana', 'almonds', 'honey', 'cinnamon'],
+    ingredientIds: ['oats', 'banana', 'almond', 'honey', 'cinnamon'],
     allergenTags: ['gluten', 'tree_nuts'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -178,7 +178,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: [
-      'chickpeas',
+      'chickpea',
       'tahini',
       'lemon',
       'garlic',
@@ -236,7 +236,7 @@ const List<Recipe> mockSnackRecipes = [
           'Tatlı ve tuzlu dengesinde, kremamsı fıstık ezmesiyle eşleştirilmiş çıtır elma dilimleri.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['apple', 'peanuts', 'cinnamon'],
+    ingredientIds: ['apple', 'peanut', 'cinnamon'],
     allergenTags: ['peanuts'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -341,7 +341,7 @@ const List<Recipe> mockSnackRecipes = [
           'Yulaf, ceviz, bal ve fıstık ezmesiyle hazırlanan pişirme gerektirmeyen protein barları.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['oats', 'walnuts', 'peanuts', 'honey', 'vanilla_extract'],
+    ingredientIds: ['oats', 'walnut', 'peanut', 'honey', 'vanilla'],
     allergenTags: ['gluten', 'tree_nuts', 'peanuts'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -391,7 +391,7 @@ const List<Recipe> mockSnackRecipes = [
           'Bal ve çıtır cevizle zenginleştirilmiş kremamsı yoğurt atıştırmalığı.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['yogurt', 'honey', 'walnuts'],
+    ingredientIds: ['yogurt', 'honey', 'walnut'],
     allergenTags: ['dairy', 'tree_nuts'],
     checkInTags: [
       CheckInType.bloated,
@@ -490,7 +490,7 @@ const List<Recipe> mockSnackRecipes = [
           'Badem, ceviz, kabak çekirdeği ve bitter çikolata parçalarından oluşan dengeli bir kuruyemiş karışımı.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['almonds', 'walnuts', 'cocoa_powder', 'honey'],
+    ingredientIds: ['almond', 'walnut', 'cocoa_powder', 'honey'],
     allergenTags: ['tree_nuts'],
     checkInTags: [
       CheckInType.bloated,
@@ -598,7 +598,7 @@ const List<Recipe> mockSnackRecipes = [
       'lemon',
       'salt',
       'black_pepper',
-      'chili_flakes',
+      'red_pepper_flakes',
     ],
     allergenTags: ['gluten', 'eggs'],
     checkInTags: [
@@ -653,10 +653,10 @@ const List<Recipe> mockSnackRecipes = [
     mealType: MealType.snack,
     ingredientIds: [
       'cocoa_powder',
-      'peanuts',
+      'peanut',
       'oats',
       'honey',
-      'flaxseeds',
+      'flax_seeds',
     ],
     allergenTags: ['gluten', 'peanuts'],
     checkInTags: [
@@ -709,7 +709,7 @@ const List<Recipe> mockSnackRecipes = [
     mealType: MealType.snack,
     ingredientIds: [
       'kale',
-      'cashews',
+      'cashew',
       'garlic',
       'olive_oil',
       'lemon',
@@ -870,7 +870,7 @@ const List<Recipe> mockSnackRecipes = [
           'Yaban mersini, keten tohumu, muz ve sütle hazırlanan antioksidan açısından zengin smoothie.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['blueberry', 'flaxseeds', 'banana', 'milk'],
+    ingredientIds: ['blueberry', 'flax_seeds', 'banana', 'milk'],
     allergenTags: ['dairy'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -923,7 +923,7 @@ const List<Recipe> mockSnackRecipes = [
     mealType: MealType.snack,
     ingredientIds: [
       'bread',
-      'lentils',
+      'green_lentil',
       'tomato',
       'onion',
       'olive_oil',
@@ -1033,7 +1033,7 @@ const List<Recipe> mockSnackRecipes = [
     },
     mealType: MealType.snack,
     ingredientIds: [
-      'chickpeas',
+      'chickpea',
       'olive_oil',
       'cumin',
       'paprika',
@@ -1093,7 +1093,7 @@ const List<Recipe> mockSnackRecipes = [
     mealType: MealType.snack,
     ingredientIds: [
       'avocado',
-      'almonds',
+      'almond',
       'lemon',
       'garlic',
       'olive_oil',
@@ -1306,7 +1306,7 @@ const List<Recipe> mockSnackRecipes = [
           'Kaju, hurma, hindistancevizi ve vanilya ile doğal tatlılıkta mutluluk topları.',
     },
     mealType: MealType.snack,
-    ingredientIds: ['cashews', 'coconut', 'honey', 'vanilla_extract'],
+    ingredientIds: ['cashew', 'coconut', 'honey', 'vanilla'],
     allergenTags: ['tree_nuts'],
     checkInTags: [
       CheckInType.cantFocus,

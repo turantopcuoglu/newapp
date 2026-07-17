@@ -175,7 +175,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'avocado',
       'eggs',
       'olive_oil',
-      'chili_flakes',
+      'red_pepper_flakes',
       'salt',
       'lemon',
     ],
@@ -226,7 +226,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Çıtır ceviz, taze yaban mersini ve bal ile katman katman hazırlanmış yoğurt parfesi.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['yogurt', 'walnuts', 'blueberry', 'honey', 'oats'],
+    ingredientIds: ['yogurt', 'walnut', 'blueberry', 'honey', 'oats'],
     allergenTags: ['dairy', 'nuts', 'gluten'],
     checkInTags: [
       CheckInType.cravingSweets,
@@ -281,7 +281,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'olive_oil',
       'salt',
       'black_pepper',
-      'chili_flakes',
+      'red_pepper_flakes',
     ],
     allergenTags: ['eggs'],
     checkInTags: [
@@ -332,7 +332,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Fıstık ezmesi sürülmüş tam tahıllı ekmek üzerine dilimlenmiş muz ve bir tutam tarçın.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['bread', 'peanuts', 'banana', 'cinnamon', 'honey'],
+    ingredientIds: ['bread', 'peanut', 'banana', 'cinnamon', 'honey'],
     allergenTags: ['gluten', 'peanuts'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -380,7 +380,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Taze mango parçaları ile süslenmiş kremali chia pudingi, pişirme gerektirmeyen mükemmel bir kahvaltı.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['chia_seeds', 'milk', 'mango', 'honey', 'vanilla_extract'],
+    ingredientIds: ['chia_seeds', 'milk', 'mango', 'honey', 'vanilla'],
     allergenTags: ['dairy'],
     checkInTags: [
       CheckInType.bloated,
@@ -490,7 +490,7 @@ const List<Recipe> mockBreakfastRecipes = [
       'milk',
       'butter',
       'maple_syrup',
-      'vanilla_extract',
+      'vanilla',
     ],
     allergenTags: ['gluten', 'eggs', 'dairy'],
     checkInTags: [
@@ -543,7 +543,7 @@ const List<Recipe> mockBreakfastRecipes = [
     mealType: MealType.breakfast,
     ingredientIds: [
       'quinoa',
-      'almonds',
+      'almond',
       'strawberry',
       'honey',
       'milk',
@@ -710,7 +710,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Yoğurt içinde bekletilmiş, taze yaban mersini ve keten tohumu ile hazırlanan pişirme gerektirmeyen yulaf.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['oats', 'yogurt', 'blueberry', 'flaxseeds', 'honey'],
+    ingredientIds: ['oats', 'yogurt', 'blueberry', 'flax_seeds', 'honey'],
     allergenTags: ['gluten', 'dairy'],
     checkInTags: [
       CheckInType.bloated,
@@ -759,7 +759,7 @@ const List<Recipe> mockBreakfastRecipes = [
     },
     mealType: MealType.breakfast,
     ingredientIds: [
-      'tortilla',
+      'tortilla_wrap',
       'eggs',
       'bell_pepper',
       'spinach',
@@ -813,7 +813,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Muz, yulaf ve badem ezmesi ile hazırlanan koyu ve doyurucu bir smoothie.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['banana', 'oats', 'almonds', 'milk', 'honey', 'cinnamon'],
+    ingredientIds: ['banana', 'oats', 'almond', 'milk', 'honey', 'cinnamon'],
     allergenTags: ['gluten', 'nuts', 'dairy'],
     checkInTags: [
       CheckInType.lowEnergy,
@@ -1195,7 +1195,7 @@ const List<Recipe> mockBreakfastRecipes = [
           'Çıtır ceviz, bal ve keten tohumu ile süslenmiş kremali lor peyniri kasesi.',
     },
     mealType: MealType.breakfast,
-    ingredientIds: ['yogurt', 'walnuts', 'honey', 'flaxseeds', 'banana'],
+    ingredientIds: ['yogurt', 'walnut', 'honey', 'flax_seeds', 'banana'],
     allergenTags: ['dairy', 'nuts'],
     checkInTags: [
       CheckInType.cravingSweets,

@@ -4,6 +4,7 @@ import '../models/recipe.dart';
 import '../data/mock_recipes.dart';
 import '../data/mock_ingredients.dart';
 import '../services/diet_classifier.dart';
+import '../services/nutrition_calculator.dart';
 import '../services/recommendation_service.dart';
 import 'check_in_provider.dart';
 import 'inventory_provider.dart';
@@ -26,6 +27,11 @@ final recipeMapProvider = Provider<Map<String, Recipe>>((ref) {
 /// for recipes that don't declare explicit dietTags.
 final dietClassifierProvider = Provider<DietClassifier>((ref) {
   return DietClassifier(mockIngredients);
+});
+
+/// Ingredient-data based nutrition computation (see NutritionCalculator).
+final nutritionCalculatorProvider = Provider<NutritionCalculator>((ref) {
+  return NutritionCalculator();
 });
 
 /// Recommendation service instance.
