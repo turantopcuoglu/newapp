@@ -1520,5 +1520,2034 @@
         "unit": "teaspoon"
       }
     }
+  },
+  {
+    "id": "d016",
+    "name": {
+      "en": "Baked Chicken with Vegetables",
+      "tr": "Fırında Sebzeli Tavuk"
+    },
+    "description": {
+      "en": "Juicy oven-baked chicken breast with potatoes, carrots and peppers.",
+      "tr": "Patates, havuç ve biberle fırında pişen sulu tavuk göğsü."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 45,
+    "ingredientIds": [
+      "chicken_breast",
+      "potato",
+      "carrot",
+      "bell_pepper",
+      "onion",
+      "olive_oil",
+      "thyme",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 612,
+      "proteinG": 53,
+      "carbsG": 52,
+      "fatG": 21,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Chop the vegetables into large chunks and place in a baking dish.",
+        "Season the chicken and vegetables with olive oil, thyme, salt and pepper.",
+        "Bake for 35-40 minutes until the chicken is cooked through.",
+        "Rest for 5 minutes and serve hot."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Sebzeleri iri parçalar halinde doğrayıp fırın kabına dizin.",
+        "Tavuğu ve sebzeleri zeytinyağı, kekik, tuz ve karabiberle harmanlayın.",
+        "Tavuk pişene kadar 35-40 dakika fırınlayın.",
+        "5 dakika dinlendirip sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "thyme": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d017",
+    "name": {
+      "en": "Green Beans in Olive Oil",
+      "tr": "Zeytinyağlı Taze Fasulye"
+    },
+    "description": {
+      "en": "A Turkish classic: green beans slowly cooked with tomatoes and onion.",
+      "tr": "Türk mutfağı klasiği: domates ve soğanla ağır ateşte pişen taze fasulye."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 40,
+    "ingredientIds": [
+      "green_beans",
+      "tomato",
+      "onion",
+      "garlic",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 258,
+      "proteinG": 6,
+      "carbsG": 28,
+      "fatG": 16,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Trim the beans and cut them in half.",
+        "Sauté the onion and garlic in olive oil until soft.",
+        "Add chopped tomato and cook for 5 minutes.",
+        "Add the beans and a little water, cover and simmer for 30 minutes.",
+        "Serve warm or at room temperature."
+      ],
+      "tr": [
+        "Fasulyelerin uçlarını alıp ikiye bölün.",
+        "Soğanı ve sarımsağı zeytinyağında yumuşayana kadar kavurun.",
+        "Doğranmış domatesi ekleyip 5 dakika pişirin.",
+        "Fasulyeleri ve az su ekleyin, kapağı kapatıp 30 dakika pişirin.",
+        "Ilık ya da oda sıcaklığında servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "green_beans": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d018",
+    "name": {
+      "en": "Chickpea Stew with Beef",
+      "tr": "Etli Nohut Yemeği"
+    },
+    "description": {
+      "en": "Hearty chickpea and beef stew, an iron-rich Anatolian staple.",
+      "tr": "Demir deposu, doyurucu bir Anadolu klasiği: etli nohut."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 35,
+    "ingredientIds": [
+      "chickpea",
+      "ground_beef",
+      "onion",
+      "tomato_paste",
+      "olive_oil",
+      "cumin",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "periodFatigue",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 681,
+      "proteinG": 42,
+      "carbsG": 51,
+      "fatG": 35,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Brown the ground beef with chopped onion in olive oil.",
+        "Stir in the tomato paste and cook for 2 minutes.",
+        "Add cooked chickpeas and enough water to cover.",
+        "Simmer for 20 minutes; season with cumin, salt and pepper.",
+        "Serve hot."
+      ],
+      "tr": [
+        "Kıymayı doğranmış soğanla zeytinyağında kavurun.",
+        "Salçayı ekleyip 2 dakika çevirin.",
+        "Haşlanmış nohutu ve üzerini geçecek kadar su ekleyin.",
+        "20 dakika kaynatın; kimyon, tuz ve karabiberle tatlandırın.",
+        "Sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "ground_beef": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d019",
+    "name": {
+      "en": "Bulgur Pilaf with Vegetables",
+      "tr": "Sebzeli Bulgur Pilavı"
+    },
+    "description": {
+      "en": "Fiber-rich bulgur pilaf with peppers and tomato.",
+      "tr": "Biber ve domatesle pişen lif deposu bulgur pilavı."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "bulgur",
+      "tomato",
+      "bell_pepper",
+      "onion",
+      "tomato_paste",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 417,
+      "proteinG": 10,
+      "carbsG": 63,
+      "fatG": 16,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Sauté the onion and pepper in olive oil.",
+        "Add tomato paste and chopped tomato; cook for 3 minutes.",
+        "Stir in the bulgur and 1.5 cups of hot water.",
+        "Cover and simmer on low heat for 15 minutes.",
+        "Rest for 10 minutes before fluffing and serving."
+      ],
+      "tr": [
+        "Soğanı ve biberi zeytinyağında kavurun.",
+        "Salçayı ve doğranmış domatesi ekleyip 3 dakika pişirin.",
+        "Bulguru ve 1,5 su bardağı sıcak suyu ekleyin.",
+        "Kapağı kapatıp kısık ateşte 15 dakika pişirin.",
+        "Karıştırmadan önce 10 dakika demlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bulgur": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d020",
+    "name": {
+      "en": "Chicken Skewers with Yogurt Sauce",
+      "tr": "Yoğurt Soslu Tavuk Şiş"
+    },
+    "description": {
+      "en": "Grilled marinated chicken skewers with a garlicky yogurt sauce.",
+      "tr": "Sarımsaklı yoğurt sosuyla marine edilmiş ızgara tavuk şiş."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "chicken_breast",
+      "yogurt",
+      "garlic",
+      "paprika",
+      "olive_oil",
+      "lemon",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "pms"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 474,
+      "proteinG": 58,
+      "carbsG": 11,
+      "fatG": 22,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Cube the chicken and marinate with olive oil, paprika, lemon and salt.",
+        "Thread onto skewers.",
+        "Grill for 12-15 minutes, turning occasionally.",
+        "Mix yogurt with crushed garlic and a pinch of salt.",
+        "Serve the skewers with the yogurt sauce."
+      ],
+      "tr": [
+        "Tavuğu kuşbaşı doğrayıp zeytinyağı, toz biber, limon ve tuzla marine edin.",
+        "Şişlere dizin.",
+        "Ara ara çevirerek 12-15 dakika ızgarada pişirin.",
+        "Yoğurdu ezilmiş sarımsak ve bir tutam tuzla karıştırın.",
+        "Şişleri yoğurt sosuyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d021",
+    "name": {
+      "en": "Turkish Spinach with Eggs",
+      "tr": "Yumurtalı Ispanak"
+    },
+    "description": {
+      "en": "Iron-rich spinach sautéed with onion, topped with eggs.",
+      "tr": "Demir açısından zengin, soğanla kavrulup yumurtayla buluşan ıspanak."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "spinach",
+      "eggs",
+      "onion",
+      "olive_oil",
+      "red_pepper_flakes",
+      "salt",
+      "black_pepper",
+      "yogurt"
+    ],
+    "allergenTags": [
+      "eggs",
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "periodFatigue",
+      "cantFocus"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 446,
+      "proteinG": 32,
+      "carbsG": 17,
+      "fatG": 30,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Sauté the chopped onion in olive oil until translucent.",
+        "Add washed, chopped spinach and cook until wilted.",
+        "Make two wells and crack the eggs into them.",
+        "Cover and cook until the eggs are set.",
+        "Season with chili flakes and serve with yogurt."
+      ],
+      "tr": [
+        "Doğranmış soğanı zeytinyağında pembeleşene kadar kavurun.",
+        "Yıkanmış, doğranmış ıspanağı ekleyip çekene kadar pişirin.",
+        "İki yuva açıp yumurtaları kırın.",
+        "Kapağı kapatıp yumurtalar pişene kadar bekleyin.",
+        "Pul biber serpin, yoğurtla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "spinach": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d022",
+    "name": {
+      "en": "Zucchini Fritters",
+      "tr": "Kabak Mücver"
+    },
+    "description": {
+      "en": "Crispy zucchini fritters with feta and fresh dill.",
+      "tr": "Beyaz peynirli, dereotlu çıtır kabak mücver."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "zucchini",
+      "eggs",
+      "flour",
+      "feta_cheese",
+      "dill",
+      "spring_onion",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten",
+      "dairy"
+    ],
+    "checkInTags": [
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 682,
+      "proteinG": 31,
+      "carbsG": 51,
+      "fatG": 40,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Grate the zucchini, salt it and squeeze out the excess water.",
+        "Mix with eggs, flour, crumbled feta, dill and spring onion.",
+        "Heat olive oil in a pan.",
+        "Drop spoonfuls of batter and fry 3-4 minutes per side.",
+        "Drain on paper towels and serve."
+      ],
+      "tr": [
+        "Kabakları rendeleyin, tuzlayıp suyunu iyice sıkın.",
+        "Yumurta, un, ufalanmış beyaz peynir, dereotu ve taze soğanla karıştırın.",
+        "Tavada zeytinyağını ısıtın.",
+        "Kaşıkla harç dökün, her yüzünü 3-4 dakika kızartın.",
+        "Kağıt havluya alıp servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "zucchini": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "flour": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d023",
+    "name": {
+      "en": "Steamed Sea Bass with Vegetables",
+      "tr": "Levrek Buğulama"
+    },
+    "description": {
+      "en": "Delicate steamed sea bass with tomato, lemon and parsley.",
+      "tr": "Domates, limon ve maydanozla hafif bir levrek buğulama."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "sea_bass",
+      "tomato",
+      "onion",
+      "garlic",
+      "lemon",
+      "parsley",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 427,
+      "proteinG": 46,
+      "carbsG": 16,
+      "fatG": 20,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Layer sliced onion and tomato in a wide pan.",
+        "Place the sea bass fillets on top with lemon slices.",
+        "Drizzle with olive oil and add half a glass of water.",
+        "Cover and steam on low heat for 20 minutes.",
+        "Garnish with parsley and serve."
+      ],
+      "tr": [
+        "Geniş bir tencereye soğan ve domates dilimlerini dizin.",
+        "Levrek filetolarını limon dilimleriyle üzerine yerleştirin.",
+        "Zeytinyağı gezdirip yarım bardak su ekleyin.",
+        "Kapağı kapatıp kısık ateşte 20 dakika buğulayın.",
+        "Maydanozla süsleyip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sea_bass": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d024",
+    "name": {
+      "en": "Penne Arrabbiata",
+      "tr": "Penne Arrabbiata"
+    },
+    "description": {
+      "en": "Spicy Italian tomato pasta with garlic and basil.",
+      "tr": "Sarımsak ve fesleğenli, acılı İtalyan domates soslu makarna."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "olive_oil",
+      "red_pepper_flakes",
+      "basil",
+      "parmesan",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten",
+      "dairy"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 526,
+      "proteinG": 20,
+      "carbsG": 61,
+      "fatG": 24,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cook the pasta in salted boiling water until al dente.",
+        "Sauté garlic and chili flakes in olive oil.",
+        "Add chopped tomatoes and simmer for 10 minutes.",
+        "Toss the pasta in the sauce.",
+        "Serve with basil and grated parmesan."
+      ],
+      "tr": [
+        "Makarnayı tuzlu kaynar suda al dente haşlayın.",
+        "Sarımsak ve pul biberi zeytinyağında kavurun.",
+        "Doğranmış domatesleri ekleyip 10 dakika pişirin.",
+        "Makarnayı sosla harmanlayın.",
+        "Fesleğen ve rendelenmiş parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pasta": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "basil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d025",
+    "name": {
+      "en": "Chicken Pesto Pasta",
+      "tr": "Pestolu Tavuklu Makarna"
+    },
+    "description": {
+      "en": "Pasta with basil-pine nut pesto and grilled chicken.",
+      "tr": "Fesleğen-çam fıstığı pestolu, ızgara tavuklu makarna."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "pasta",
+      "chicken_breast",
+      "basil",
+      "pine_nut",
+      "parmesan",
+      "olive_oil",
+      "garlic",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten",
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 725,
+      "proteinG": 55,
+      "carbsG": 42,
+      "fatG": 37,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Blend basil, pine nuts, garlic, parmesan and olive oil into pesto.",
+        "Cook the pasta until al dente.",
+        "Grill the seasoned chicken and slice it.",
+        "Toss the pasta with the pesto.",
+        "Top with chicken and serve."
+      ],
+      "tr": [
+        "Fesleğen, çam fıstığı, sarımsak, parmesan ve zeytinyağını pesto olana dek çekin.",
+        "Makarnayı al dente haşlayın.",
+        "Baharatlanmış tavuğu ızgarada pişirip dilimleyin.",
+        "Makarnayı pestoyla harmanlayın.",
+        "Üzerine tavuğu ekleyip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pasta": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "basil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "pine_nut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d026",
+    "name": {
+      "en": "Minestrone Soup",
+      "tr": "Minestrone Çorbası"
+    },
+    "description": {
+      "en": "Rustic Italian vegetable and bean soup with pasta.",
+      "tr": "Sebze, fasulye ve makarnayla doyurucu İtalyan köy çorbası."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 40,
+    "ingredientIds": [
+      "white_bean",
+      "pasta",
+      "tomato",
+      "carrot",
+      "celery",
+      "zucchini",
+      "onion",
+      "garlic",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 471,
+      "proteinG": 18,
+      "carbsG": 67,
+      "fatG": 17,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Sauté onion, garlic, carrot and celery in olive oil.",
+        "Add chopped tomato and zucchini; cook for 5 minutes.",
+        "Add beans and 3 cups of water; simmer for 15 minutes.",
+        "Add the pasta and cook until tender.",
+        "Season and serve hot."
+      ],
+      "tr": [
+        "Soğan, sarımsak, havuç ve kereviz sapını zeytinyağında kavurun.",
+        "Doğranmış domates ve kabağı ekleyip 5 dakika pişirin.",
+        "Fasulye ve 3 su bardağı su ekleyin; 15 dakika kaynatın.",
+        "Makarnayı ekleyip yumuşayana kadar pişirin.",
+        "Tatlandırıp sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "white_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "celery": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d027",
+    "name": {
+      "en": "Tuna Pasta",
+      "tr": "Ton Balıklı Makarna"
+    },
+    "description": {
+      "en": "Quick pantry pasta with tuna, tomato and parsley.",
+      "tr": "Ton balığı, domates ve maydanozla pratik bir makarna."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 20,
+    "ingredientIds": [
+      "pasta",
+      "tuna",
+      "tomato",
+      "garlic",
+      "olive_oil",
+      "parsley",
+      "lemon",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten",
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 550,
+      "proteinG": 41,
+      "carbsG": 56,
+      "fatG": 18,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the pasta until al dente.",
+        "Sauté garlic in olive oil, add chopped tomato.",
+        "Stir in drained tuna and cook for 2 minutes.",
+        "Toss with the pasta and a squeeze of lemon.",
+        "Finish with parsley and serve."
+      ],
+      "tr": [
+        "Makarnayı al dente haşlayın.",
+        "Sarımsağı zeytinyağında kavurup doğranmış domatesi ekleyin.",
+        "Suyu süzülmüş ton balığını ekleyip 2 dakika pişirin.",
+        "Makarna ve limon suyuyla harmanlayın.",
+        "Maydanozla tamamlayıp servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pasta": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d028",
+    "name": {
+      "en": "Chicken Fajitas",
+      "tr": "Tavuklu Fajita"
+    },
+    "description": {
+      "en": "Sizzling Mexican chicken and peppers wrapped in tortillas.",
+      "tr": "Tortilla ekmeğinde biberli, baharatlı Meksika usulü tavuk."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "chicken_breast",
+      "bell_pepper",
+      "onion",
+      "tortilla_wrap",
+      "olive_oil",
+      "paprika",
+      "cumin",
+      "lime",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 661,
+      "proteinG": 55,
+      "carbsG": 50,
+      "fatG": 27,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Slice the chicken, peppers and onion into strips.",
+        "Season the chicken with paprika, cumin and salt.",
+        "Stir-fry the chicken in hot oil, then add the vegetables.",
+        "Cook until the peppers are just tender; add lime juice.",
+        "Serve in warm tortillas."
+      ],
+      "tr": [
+        "Tavuğu, biberleri ve soğanı şerit şerit doğrayın.",
+        "Tavuğu toz biber, kimyon ve tuzla harmanlayın.",
+        "Tavuğu kızgın yağda soteleyin, sebzeleri ekleyin.",
+        "Biberler hafif yumuşayınca lime suyunu ekleyin.",
+        "Isıtılmış tortillalarla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tortilla_wrap": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "lime": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d029",
+    "name": {
+      "en": "Chili con Carne",
+      "tr": "Meksika Usulü Etli Fasulye"
+    },
+    "description": {
+      "en": "Smoky beef and kidney bean chili, rich in iron and fiber.",
+      "tr": "Demir ve lif deposu, baharatlı kıymalı barbunya yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 35,
+    "ingredientIds": [
+      "ground_beef",
+      "kidney_bean",
+      "tomato",
+      "onion",
+      "garlic",
+      "cumin",
+      "paprika",
+      "hot_pepper",
+      "olive_oil",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "periodFatigue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 685,
+      "proteinG": 46,
+      "carbsG": 47,
+      "fatG": 36,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Brown the beef with onion and garlic in olive oil.",
+        "Add spices and chopped hot pepper; cook for 1 minute.",
+        "Add chopped tomato and simmer for 10 minutes.",
+        "Stir in the beans and simmer 10 more minutes.",
+        "Serve hot."
+      ],
+      "tr": [
+        "Kıymayı soğan ve sarımsakla zeytinyağında kavurun.",
+        "Baharatları ve doğranmış acı biberi ekleyip 1 dakika çevirin.",
+        "Doğranmış domatesi ekleyip 10 dakika pişirin.",
+        "Barbunyayı ekleyip 10 dakika daha kaynatın.",
+        "Sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "kidney_bean": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "hot_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d030",
+    "name": {
+      "en": "Veggie Burrito Bowl",
+      "tr": "Sebzeli Burrito Kasesi"
+    },
+    "description": {
+      "en": "A vegan bowl of rice, black beans, corn and avocado.",
+      "tr": "Pirinç, siyah fasulye, mısır ve avokadolu vegan kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "white_rice",
+      "black_bean",
+      "corn",
+      "avocado",
+      "tomato",
+      "lime",
+      "coriander",
+      "olive_oil",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 612,
+      "proteinG": 17,
+      "carbsG": 90,
+      "fatG": 23,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Cook the rice and let it cool slightly.",
+        "Warm the black beans and corn.",
+        "Dice the tomato and avocado.",
+        "Assemble everything in a bowl.",
+        "Dress with olive oil, lime juice, coriander and salt."
+      ],
+      "tr": [
+        "Pirinci haşlayıp hafif soğutun.",
+        "Siyah fasulye ve mısırı ısıtın.",
+        "Domates ve avokadoyu küp küp doğrayın.",
+        "Hepsini bir kasede birleştirin.",
+        "Zeytinyağı, lime suyu, kişniş ve tuzla tatlandırın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "black_bean": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "lime": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "coriander": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d031",
+    "name": {
+      "en": "Teriyaki Salmon with Rice",
+      "tr": "Teriyaki Soslu Somon"
+    },
+    "description": {
+      "en": "Glazed salmon with a homemade honey-soy teriyaki over rice.",
+      "tr": "Bal ve soya soslu ev yapımı teriyaki ile pirinç üzerinde somon."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "salmon",
+      "white_rice",
+      "soy_sauce",
+      "honey",
+      "ginger",
+      "garlic",
+      "sesame_seeds",
+      "spring_onion"
+    ],
+    "allergenTags": [
+      "fish",
+      "soy",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 580,
+      "proteinG": 37,
+      "carbsG": 53,
+      "fatG": 23,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Mix soy sauce, honey, grated ginger and garlic for the glaze.",
+        "Pan-sear the salmon for 3 minutes per side.",
+        "Pour the glaze over and cook until sticky.",
+        "Serve over steamed rice.",
+        "Top with sesame seeds and sliced spring onion."
+      ],
+      "tr": [
+        "Soya sosu, bal, rendelenmiş zencefil ve sarımsağı karıştırıp sosu hazırlayın.",
+        "Somonu her yüzü 3 dakika olacak şekilde tavada mühürleyin.",
+        "Sosu üzerine döküp koyulaşana kadar pişirin.",
+        "Haşlanmış pirinç üzerinde servis edin.",
+        "Susam ve doğranmış taze soğanla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "d032",
+    "name": {
+      "en": "Vegetable Tofu Curry",
+      "tr": "Sebzeli Tofu Körisi"
+    },
+    "description": {
+      "en": "Creamy coconut curry with tofu, broccoli and carrots.",
+      "tr": "Tofu, brokoli ve havuçlu, hindistancevizi sütlü köri."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 35,
+    "ingredientIds": [
+      "tofu",
+      "coconut_milk",
+      "curry_powder",
+      "broccoli",
+      "carrot",
+      "onion",
+      "garlic",
+      "ginger",
+      "white_rice",
+      "salt"
+    ],
+    "allergenTags": [
+      "soy"
+    ],
+    "checkInTags": [
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 661,
+      "proteinG": 24,
+      "carbsG": 77,
+      "fatG": 33,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Sauté onion, garlic and ginger; add curry powder.",
+        "Add carrot and broccoli with a splash of water; cook 5 minutes.",
+        "Pour in the coconut milk and simmer.",
+        "Add cubed tofu and cook for 5 more minutes.",
+        "Serve over steamed rice."
+      ],
+      "tr": [
+        "Soğan, sarımsak ve zencefili soteleyin; köri baharatını ekleyin.",
+        "Havuç ve brokoliyi az suyla ekleyip 5 dakika pişirin.",
+        "Hindistancevizi sütünü ekleyip kaynatın.",
+        "Küp tofuyu ekleyip 5 dakika daha pişirin.",
+        "Haşlanmış pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tofu": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 100.0,
+        "unit": "ml"
+      },
+      "curry_powder": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "broccoli": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d033",
+    "name": {
+      "en": "Chicken Noodle Stir-Fry",
+      "tr": "Tavuklu Noodle Wok"
+    },
+    "description": {
+      "en": "Wok-tossed noodles with chicken, peppers and sesame.",
+      "tr": "Tavuk, biber ve susam yağıyla wokta çevrilmiş noodle."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "noodle",
+      "chicken_breast",
+      "bell_pepper",
+      "carrot",
+      "soy_sauce",
+      "sesame_oil",
+      "garlic",
+      "ginger",
+      "spring_onion"
+    ],
+    "allergenTags": [
+      "gluten",
+      "soy",
+      "sesame"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 523,
+      "proteinG": 47,
+      "carbsG": 54,
+      "fatG": 13,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the noodles according to the package.",
+        "Stir-fry sliced chicken in a hot wok until golden.",
+        "Add garlic, ginger and julienned vegetables; toss 3 minutes.",
+        "Add noodles, soy sauce and sesame oil; toss to combine.",
+        "Top with spring onion and serve."
+      ],
+      "tr": [
+        "Noodle'ı paket talimatına göre haşlayın.",
+        "Dilimlenmiş tavuğu kızgın wokta altın rengine kadar soteleyin.",
+        "Sarımsak, zencefil ve jülyen sebzeleri ekleyip 3 dakika çevirin.",
+        "Noodle, soya sosu ve susam yağını ekleyip harmanlayın.",
+        "Taze soğanla tamamlayıp servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "noodle": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sesame_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "d034",
+    "name": {
+      "en": "Shrimp Fried Rice",
+      "tr": "Karidesli Pilav"
+    },
+    "description": {
+      "en": "Asian-style fried rice with shrimp, egg and peas.",
+      "tr": "Karides, yumurta ve bezelyeli Asya usulü pilav."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "shrimp",
+      "white_rice",
+      "eggs",
+      "peas",
+      "carrot",
+      "soy_sauce",
+      "sesame_oil",
+      "spring_onion",
+      "garlic"
+    ],
+    "allergenTags": [
+      "shellfish",
+      "eggs",
+      "soy",
+      "sesame"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 540,
+      "proteinG": 46,
+      "carbsG": 60,
+      "fatG": 13,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Scramble the egg in a hot wok and set aside.",
+        "Stir-fry garlic and shrimp until pink.",
+        "Add diced carrot and peas; cook for 3 minutes.",
+        "Add cooked rice, soy sauce and sesame oil; toss well.",
+        "Return the egg, top with spring onion and serve."
+      ],
+      "tr": [
+        "Yumurtayı kızgın wokta çırparak pişirip kenara alın.",
+        "Sarımsak ve karidesi pembeleşene kadar soteleyin.",
+        "Küp havuç ve bezelyeyi ekleyip 3 dakika pişirin.",
+        "Haşlanmış pirinç, soya sosu ve susam yağını ekleyip karıştırın.",
+        "Yumurtayı geri ekleyin, taze soğanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "peas": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sesame_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      }
+    }
+  },
+  {
+    "id": "d035",
+    "name": {
+      "en": "Greek Baked Vegetables with Feta",
+      "tr": "Fırın Sebze (Briam)"
+    },
+    "description": {
+      "en": "Mediterranean oven-roasted vegetables topped with feta.",
+      "tr": "Beyaz peynirle taçlanan Akdeniz usulü fırın sebzeleri."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 50,
+    "ingredientIds": [
+      "eggplant",
+      "zucchini",
+      "potato",
+      "tomato",
+      "onion",
+      "garlic",
+      "olive_oil",
+      "oregano",
+      "feta_cheese",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 536,
+      "proteinG": 16,
+      "carbsG": 62,
+      "fatG": 27,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Slice all the vegetables and layer them in a baking dish.",
+        "Season with olive oil, oregano, garlic and salt.",
+        "Roast for 40 minutes until tender.",
+        "Crumble feta on top and serve."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Tüm sebzeleri dilimleyip fırın kabına dizin.",
+        "Zeytinyağı, kekik, sarımsak ve tuzla tatlandırın.",
+        "Yumuşayana kadar 40 dakika fırınlayın.",
+        "Üzerine beyaz peyniri ufalayıp servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggplant": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]
