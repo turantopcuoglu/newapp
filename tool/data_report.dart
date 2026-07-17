@@ -1,8 +1,8 @@
 // Recipe data integrity + calorie deviation report.
 //
-// Run with a plain Dart SDK (no Flutter needed):
-//   dart tool/data_report.dart          # report only
-//   dart tool/data_report.dart --strict # non-zero exit on integrity errors
+// Run after `flutter pub get`:
+//   dart run tool/data_report.dart          # report only
+//   dart run tool/data_report.dart --strict # non-zero exit on integrity errors
 //
 // Checks every recipe for: localized name/description/steps (tr+en),
 // ingredient ids that exist in the ingredient catalog, nutrition-data
@@ -10,10 +10,12 @@
 // hand-written calories against the ingredient-computed estimate and lists
 // the recipes that deviate the most.
 
-import '../lib/data/ingredient_nutrition_data.dart';
-import '../lib/data/mock_ingredients.dart';
-import '../lib/data/mock_recipes.dart';
-import '../lib/services/nutrition_calculator.dart';
+// ignore_for_file: avoid_print
+
+import 'package:nutri_guide/data/ingredient_nutrition_data.dart';
+import 'package:nutri_guide/data/mock_ingredients.dart';
+import 'package:nutri_guide/data/mock_recipes.dart';
+import 'package:nutri_guide/services/nutrition_calculator.dart';
 
 void main(List<String> args) {
   final strict = args.contains('--strict');
