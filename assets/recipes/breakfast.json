@@ -36,11 +36,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 350,
-      "proteinG": 12,
-      "carbsG": 55,
-      "fatG": 8,
-      "fiberG": 6
+      "calories": 404,
+      "proteinG": 15,
+      "carbsG": 80,
+      "fatG": 5,
+      "fiberG": 10
     },
     "steps": {
       "en": [
@@ -58,7 +58,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "b002",
@@ -98,10 +119,10 @@
     "fiberLevel": "low",
     "carbType": "simple",
     "macros": {
-      "calories": 310,
-      "proteinG": 22,
-      "carbsG": 4,
-      "fatG": 23,
+      "calories": 475,
+      "proteinG": 26,
+      "carbsG": 7,
+      "fatG": 39,
       "fiberG": 2
     },
     "steps": {
@@ -122,7 +143,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b003",
@@ -160,11 +206,11 @@
     "fiberLevel": "high",
     "carbType": "mixed",
     "macros": {
-      "calories": 280,
-      "proteinG": 10,
-      "carbsG": 45,
-      "fatG": 6,
-      "fiberG": 7
+      "calories": 364,
+      "proteinG": 20,
+      "carbsG": 60,
+      "fatG": 8,
+      "fiberG": 12
     },
     "steps": {
       "en": [
@@ -182,7 +228,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "strawberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "chia_seeds": {
+        "amount": 20.0,
+        "unit": "g"
+      }
+    }
   },
   {
     "id": "b004",
@@ -223,11 +290,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 380,
-      "proteinG": 14,
-      "carbsG": 30,
-      "fatG": 24,
-      "fiberG": 8
+      "calories": 548,
+      "proteinG": 22,
+      "carbsG": 36,
+      "fatG": 36,
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -245,7 +312,36 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "avocado": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
   },
   {
     "id": "b005",
@@ -284,11 +380,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 320,
-      "proteinG": 15,
-      "carbsG": 35,
-      "fatG": 14,
-      "fiberG": 4
+      "calories": 466,
+      "proteinG": 25,
+      "carbsG": 58,
+      "fatG": 17,
+      "fiberG": 8
     },
     "steps": {
       "en": [
@@ -306,7 +402,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
   },
   {
     "id": "b006",
@@ -347,11 +464,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 290,
-      "proteinG": 16,
-      "carbsG": 12,
-      "fatG": 20,
-      "fiberG": 3
+      "calories": 387,
+      "proteinG": 18,
+      "carbsG": 16,
+      "fatG": 29,
+      "fiberG": 4
     },
     "steps": {
       "en": [
@@ -371,7 +488,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b007",
@@ -410,11 +560,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 390,
-      "proteinG": 14,
-      "carbsG": 48,
-      "fatG": 16,
-      "fiberG": 5
+      "calories": 437,
+      "proteinG": 12,
+      "carbsG": 77,
+      "fatG": 12,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -432,7 +582,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "peanut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
   },
   {
     "id": "b008",
@@ -471,11 +642,11 @@
     "fiberLevel": "high",
     "carbType": "mixed",
     "macros": {
-      "calories": 290,
-      "proteinG": 9,
-      "carbsG": 38,
-      "fatG": 12,
-      "fiberG": 10
+      "calories": 301,
+      "proteinG": 11,
+      "carbsG": 46,
+      "fatG": 9,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -493,7 +664,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "chia_seeds": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "mango": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "vanilla": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "b009",
@@ -533,10 +725,10 @@
     "fiberLevel": "low",
     "carbType": "simple",
     "macros": {
-      "calories": 360,
-      "proteinG": 24,
-      "carbsG": 4,
-      "fatG": 28,
+      "calories": 402,
+      "proteinG": 26,
+      "carbsG": 5,
+      "fatG": 32,
       "fiberG": 1
     },
     "steps": {
@@ -555,7 +747,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b010",
@@ -596,11 +813,11 @@
     "fiberLevel": "low",
     "carbType": "simple",
     "macros": {
-      "calories": 420,
-      "proteinG": 10,
-      "carbsG": 62,
-      "fatG": 14,
-      "fiberG": 2
+      "calories": 577,
+      "proteinG": 27,
+      "carbsG": 60,
+      "fatG": 24,
+      "fiberG": 1
     },
     "steps": {
       "en": [
@@ -620,7 +837,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "flour": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "maple_syrup": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "vanilla": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "b011",
@@ -660,11 +902,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 370,
-      "proteinG": 14,
-      "carbsG": 50,
-      "fatG": 12,
-      "fiberG": 7
+      "calories": 463,
+      "proteinG": 18,
+      "carbsG": 68,
+      "fatG": 15,
+      "fiberG": 11
     },
     "steps": {
       "en": [
@@ -682,7 +924,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "quinoa": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "strawberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "b012",
@@ -723,10 +990,10 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 340,
-      "proteinG": 22,
-      "carbsG": 25,
-      "fatG": 16,
+      "calories": 647,
+      "proteinG": 37,
+      "carbsG": 33,
+      "fatG": 39,
       "fiberG": 2
     },
     "steps": {
@@ -745,7 +1012,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "salmon": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "cream": {
+        "amount": 50.0,
+        "unit": "ml"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b013",
@@ -786,10 +1078,10 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 340,
-      "proteinG": 13,
-      "carbsG": 40,
-      "fatG": 15,
+      "calories": 440,
+      "proteinG": 19,
+      "carbsG": 29,
+      "fatG": 29,
       "fiberG": 6
     },
     "steps": {
@@ -810,7 +1102,36 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "sweet_potato": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b014",
@@ -849,11 +1170,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 310,
-      "proteinG": 12,
-      "carbsG": 45,
-      "fatG": 10,
-      "fiberG": 8
+      "calories": 389,
+      "proteinG": 24,
+      "carbsG": 58,
+      "fatG": 8,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -871,7 +1192,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "flax_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
   },
   {
     "id": "b015",
@@ -912,11 +1254,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 400,
-      "proteinG": 20,
-      "carbsG": 35,
-      "fatG": 20,
-      "fiberG": 4
+      "calories": 714,
+      "proteinG": 41,
+      "carbsG": 42,
+      "fatG": 43,
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -934,7 +1276,36 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b016",
@@ -975,11 +1346,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 360,
-      "proteinG": 11,
-      "carbsG": 52,
-      "fatG": 13,
-      "fiberG": 7
+      "calories": 520,
+      "proteinG": 19,
+      "carbsG": 85,
+      "fatG": 15,
+      "fiberG": 13
     },
     "steps": {
       "en": [
@@ -997,7 +1368,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "b017",
@@ -1035,10 +1431,10 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 330,
-      "proteinG": 13,
+      "calories": 463,
+      "proteinG": 14,
       "carbsG": 40,
-      "fatG": 13,
+      "fatG": 28,
       "fiberG": 4
     },
     "steps": {
@@ -1057,7 +1453,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
   },
   {
     "id": "b018",
@@ -1098,11 +1515,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 250,
-      "proteinG": 18,
-      "carbsG": 10,
-      "fatG": 16,
-      "fiberG": 4
+      "calories": 327,
+      "proteinG": 17,
+      "carbsG": 18,
+      "fatG": 23,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -1122,7 +1539,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "tofu": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "turmeric": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b019",
@@ -1161,11 +1611,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 330,
-      "proteinG": 10,
-      "carbsG": 56,
-      "fatG": 7,
-      "fiberG": 7
+      "calories": 385,
+      "proteinG": 14,
+      "carbsG": 76,
+      "fatG": 5,
+      "fiberG": 11
     },
     "steps": {
       "en": [
@@ -1185,7 +1635,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "apple": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "maple_syrup": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      }
+    }
   },
   {
     "id": "b020",
@@ -1228,11 +1699,11 @@
     "fiberLevel": "low",
     "carbType": "mixed",
     "macros": {
-      "calories": 430,
-      "proteinG": 22,
-      "carbsG": 32,
-      "fatG": 24,
-      "fiberG": 3
+      "calories": 566,
+      "proteinG": 30,
+      "carbsG": 37,
+      "fatG": 33,
+      "fiberG": 4
     },
     "steps": {
       "en": [
@@ -1250,7 +1721,36 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b021",
@@ -1287,11 +1787,11 @@
     "fiberLevel": "high",
     "carbType": "mixed",
     "macros": {
-      "calories": 240,
-      "proteinG": 4,
-      "carbsG": 45,
-      "fatG": 7,
-      "fiberG": 6
+      "calories": 355,
+      "proteinG": 5,
+      "carbsG": 57,
+      "fatG": 16,
+      "fiberG": 7
     },
     "steps": {
       "en": [
@@ -1309,7 +1809,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pineapple": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "coconut_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
   },
   {
     "id": "b022",
@@ -1351,11 +1872,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 310,
-      "proteinG": 17,
-      "carbsG": 15,
-      "fatG": 21,
-      "fiberG": 4
+      "calories": 432,
+      "proteinG": 20,
+      "carbsG": 24,
+      "fatG": 31,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -1375,7 +1896,44 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "b023",
@@ -1415,11 +1973,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 320,
-      "proteinG": 16,
-      "carbsG": 30,
-      "fatG": 16,
-      "fiberG": 4
+      "calories": 425,
+      "proteinG": 21,
+      "carbsG": 51,
+      "fatG": 19,
+      "fiberG": 7
     },
     "steps": {
       "en": [
@@ -1437,7 +1995,28 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "flax_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      }
+    }
   },
   {
     "id": "b024",
@@ -1476,11 +2055,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 300,
-      "proteinG": 8,
-      "carbsG": 50,
-      "fatG": 8,
-      "fiberG": 4
+      "calories": 454,
+      "proteinG": 12,
+      "carbsG": 78,
+      "fatG": 12,
+      "fiberG": 7
     },
     "steps": {
       "en": [
@@ -1500,7 +2079,32 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "cornmeal": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "strawberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
   },
   {
     "id": "b025",
@@ -1540,10 +2144,10 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 280,
-      "proteinG": 20,
-      "carbsG": 6,
-      "fatG": 20,
+      "calories": 440,
+      "proteinG": 26,
+      "carbsG": 9,
+      "fatG": 34,
       "fiberG": 3
     },
     "steps": {
@@ -1564,6 +2168,31 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "broccoli": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]

@@ -38,11 +38,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 420,
-      "proteinG": 38,
-      "carbsG": 15,
-      "fatG": 24,
-      "fiberG": 5
+      "calories": 532,
+      "proteinG": 34,
+      "carbsG": 20,
+      "fatG": 35,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -62,7 +62,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "salmon": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d002",
@@ -102,11 +135,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 280,
-      "proteinG": 16,
-      "carbsG": 42,
-      "fatG": 6,
-      "fiberG": 12
+      "calories": 538,
+      "proteinG": 20,
+      "carbsG": 81,
+      "fatG": 17,
+      "fiberG": 21
     },
     "steps": {
       "en": [
@@ -126,7 +159,44 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "red_lentil": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
   },
   {
     "id": "d003",
@@ -168,10 +238,10 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 480,
-      "proteinG": 35,
-      "carbsG": 52,
-      "fatG": 14,
+      "calories": 638,
+      "proteinG": 54,
+      "carbsG": 55,
+      "fatG": 21,
       "fiberG": 3
     },
     "steps": {
@@ -192,7 +262,44 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d004",
@@ -235,10 +342,10 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 410,
-      "proteinG": 14,
-      "carbsG": 58,
-      "fatG": 14,
+      "calories": 516,
+      "proteinG": 20,
+      "carbsG": 59,
+      "fatG": 23,
       "fiberG": 6
     },
     "steps": {
@@ -259,7 +366,44 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "pasta": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "basil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d005",
@@ -300,11 +444,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 450,
-      "proteinG": 28,
-      "carbsG": 38,
-      "fatG": 20,
-      "fiberG": 5
+      "calories": 717,
+      "proteinG": 39,
+      "carbsG": 59,
+      "fatG": 35,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -324,7 +468,48 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "d006",
@@ -364,10 +549,10 @@
     "fiberLevel": "high",
     "carbType": "simple",
     "macros": {
-      "calories": 380,
-      "proteinG": 24,
-      "carbsG": 18,
-      "fatG": 26,
+      "calories": 543,
+      "proteinG": 36,
+      "carbsG": 24,
+      "fatG": 34,
       "fiberG": 8
     },
     "steps": {
@@ -388,7 +573,48 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggplant": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d007",
@@ -429,11 +655,11 @@
     "fiberLevel": "low",
     "carbType": "simple",
     "macros": {
-      "calories": 350,
-      "proteinG": 30,
-      "carbsG": 12,
-      "fatG": 20,
-      "fiberG": 1
+      "calories": 518,
+      "proteinG": 39,
+      "carbsG": 41,
+      "fatG": 21,
+      "fiberG": 4
     },
     "steps": {
       "en": [
@@ -453,7 +679,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      }
+    }
   },
   {
     "id": "d008",
@@ -495,11 +754,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 320,
-      "proteinG": 14,
-      "carbsG": 30,
-      "fatG": 18,
-      "fiberG": 4
+      "calories": 495,
+      "proteinG": 26,
+      "carbsG": 12,
+      "fatG": 39,
+      "fiberG": 3
     },
     "steps": {
       "en": [
@@ -519,7 +778,36 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d009",
@@ -561,11 +849,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 520,
-      "proteinG": 32,
-      "carbsG": 35,
-      "fatG": 28,
-      "fiberG": 6
+      "calories": 828,
+      "proteinG": 46,
+      "carbsG": 54,
+      "fatG": 48,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -585,7 +873,48 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "lamb": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "d010",
@@ -625,11 +954,11 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 480,
-      "proteinG": 26,
-      "carbsG": 48,
+      "calories": 389,
+      "proteinG": 35,
+      "carbsG": 17,
       "fatG": 20,
-      "fiberG": 3
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -649,7 +978,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   },
   {
     "id": "d011",
@@ -688,10 +1050,10 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 340,
-      "proteinG": 18,
-      "carbsG": 36,
-      "fatG": 14,
+      "calories": 684,
+      "proteinG": 38,
+      "carbsG": 55,
+      "fatG": 34,
       "fiberG": 4
     },
     "steps": {
@@ -712,7 +1074,44 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d012",
@@ -753,10 +1152,10 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 420,
-      "proteinG": 12,
-      "carbsG": 56,
-      "fatG": 16,
+      "calories": 472,
+      "proteinG": 16,
+      "carbsG": 54,
+      "fatG": 22,
       "fiberG": 3
     },
     "steps": {
@@ -777,7 +1176,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d013",
@@ -817,11 +1249,11 @@
     "fiberLevel": "high",
     "carbType": "simple",
     "macros": {
-      "calories": 220,
+      "calories": 224,
       "proteinG": 4,
-      "carbsG": 22,
-      "fatG": 14,
-      "fiberG": 8
+      "carbsG": 21,
+      "fatG": 16,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -841,7 +1273,40 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "eggplant": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d014",
@@ -886,11 +1351,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 520,
-      "proteinG": 40,
-      "carbsG": 48,
-      "fatG": 16,
-      "fiberG": 4
+      "calories": 749,
+      "proteinG": 70,
+      "carbsG": 65,
+      "fatG": 24,
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -910,7 +1375,56 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   },
   {
     "id": "d015",
@@ -952,9 +1466,9 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 460,
-      "proteinG": 28,
-      "carbsG": 42,
+      "calories": 443,
+      "proteinG": 48,
+      "carbsG": 16,
       "fatG": 20,
       "fiberG": 2
     },
@@ -976,6 +1490,35 @@
     },
     "imagePath": null,
     "isUserCreated": false,
-    "quantities": {}
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   }
 ]

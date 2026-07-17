@@ -1238,6 +1238,14 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     fiberPer100g: 0.0,
     defaultServingG: 4,
   ),
+  'edamame': IngredientNutrition(
+    caloriesPer100g: 121,
+    proteinPer100g: 11.9,
+    carbsPer100g: 8.9,
+    fatPer100g: 5.2,
+    fiberPer100g: 5.2,
+    defaultServingG: 100,
+  ),
   'white_vinegar': IngredientNutrition(
     caloriesPer100g: 18,
     proteinPer100g: 0.0,
