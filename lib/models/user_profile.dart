@@ -13,6 +13,10 @@ class UserProfile {
   final bool showBmi;
   final List<HealthCondition> healthConditions;
 
+  /// Diet preference tags (see DietClassifier constants): recipes that don't
+  /// satisfy every preference are excluded from recommendations.
+  final List<String> dietPreferences;
+
   const UserProfile({
     this.name,
     this.age,
@@ -24,6 +28,7 @@ class UserProfile {
     this.dislikedIngredients = const [],
     this.showBmi = false,
     this.healthConditions = const [],
+    this.dietPreferences = const [],
   });
 
   bool get isFemale => gender == Gender.female;
@@ -45,6 +50,7 @@ class UserProfile {
     List<String>? dislikedIngredients,
     bool? showBmi,
     List<HealthCondition>? healthConditions,
+    List<String>? dietPreferences,
   }) =>
       UserProfile(
         name: name ?? this.name,
@@ -57,6 +63,7 @@ class UserProfile {
         dislikedIngredients: dislikedIngredients ?? this.dislikedIngredients,
         showBmi: showBmi ?? this.showBmi,
         healthConditions: healthConditions ?? this.healthConditions,
+        dietPreferences: dietPreferences ?? this.dietPreferences,
       );
 
   Map<String, dynamic> toJson() => {
@@ -70,6 +77,7 @@ class UserProfile {
         'dislikedIngredients': dislikedIngredients,
         'showBmi': showBmi,
         'healthConditions': healthConditions.map((e) => e.name).toList(),
+        'dietPreferences': dietPreferences,
       };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
@@ -94,6 +102,7 @@ class UserProfile {
                         orElse: () => HealthCondition.pcos))
                 .toList() ??
             [],
+        dietPreferences: List<String>.from(json['dietPreferences'] ?? []),
       );
 
   String encode() => jsonEncode(toJson());

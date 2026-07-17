@@ -4,6 +4,7 @@ import '../core/theme.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
 import '../providers/storage_provider.dart';
+import '../services/diet_classifier.dart';
 import 'main_shell.dart';
 import 'mode_selection_screen.dart';
 
@@ -170,6 +171,7 @@ class _OnboardingAllergiesScreenState
     with SingleTickerProviderStateMixin {
   final Set<String> _selectedAllergens = {};
   final Set<String> _selectedAvoidedFoods = {};
+  final Set<String> _selectedDietPrefs = {};
   late final AnimationController _animController;
   late final Animation<double> _fadeAnim;
 
@@ -213,6 +215,16 @@ class _OnboardingAllergiesScreenState
     });
   }
 
+  void _toggleDietPref(String tag) {
+    setState(() {
+      if (_selectedDietPrefs.contains(tag)) {
+        _selectedDietPrefs.remove(tag);
+      } else {
+        _selectedDietPrefs.add(tag);
+      }
+    });
+  }
+
   void _onContinue() async {
     final notifier = ref.read(profileProvider.notifier);
 
@@ -224,6 +236,11 @@ class _OnboardingAllergiesScreenState
     // Save avoided foods as disliked ingredients
     if (_selectedAvoidedFoods.isNotEmpty) {
       notifier.updateDislikedIngredients(_selectedAvoidedFoods.toList());
+    }
+
+    // Save diet preferences
+    for (final pref in _selectedDietPrefs) {
+      notifier.toggleDietPreference(pref);
     }
 
     final storage = ref.read(storageProvider);
@@ -531,6 +548,121 @@ class _OnboardingAllergiesScreenState
                                             style: TextStyle(
                                               color: isSelected
                                                   ? item.color
+                                                  : Colors.white
+                                                      .withAlpha(200),
+                                              fontSize: 13,
+                                              fontWeight: isSelected
+                                                  ? FontWeight.w600
+                                                  : FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+
+                        // Diet preferences section
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withAlpha(10),
+                            borderRadius: BorderRadius.circular(20),
+                            border:
+                                Border.all(color: Colors.white.withAlpha(15)),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(6),
+                                    decoration: BoxDecoration(
+                                      color: AppTheme.successGreen
+                                          .withAlpha(30),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: const Icon(
+                                      Icons.eco_rounded,
+                                      color: AppTheme.successGreen,
+                                      size: 18,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    l10n.dietPreferencesTitle,
+                                    style: const TextStyle(
+                                      color: AppTheme.successGreen,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: {
+                                  DietClassifier.vegetarian:
+                                      l10n.dietVegetarian,
+                                  DietClassifier.vegan: l10n.dietVegan,
+                                  DietClassifier.glutenFree:
+                                      l10n.dietGlutenFree,
+                                  DietClassifier.dairyFree:
+                                      l10n.dietDairyFree,
+                                }.entries.map((entry) {
+                                  final isSelected =
+                                      _selectedDietPrefs.contains(entry.key);
+                                  return GestureDetector(
+                                    onTap: () => _toggleDietPref(entry.key),
+                                    child: AnimatedContainer(
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 14,
+                                        vertical: 8,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? AppTheme.successGreen
+                                                .withAlpha(40)
+                                            : Colors.white.withAlpha(8),
+                                        borderRadius:
+                                            BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: isSelected
+                                              ? AppTheme.successGreen
+                                                  .withAlpha(150)
+                                              : Colors.white.withAlpha(25),
+                                          width: isSelected ? 1.5 : 1,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(
+                                            isSelected
+                                                ? Icons.check_rounded
+                                                : Icons.eco_rounded,
+                                            color: isSelected
+                                                ? AppTheme.successGreen
+                                                : Colors.white
+                                                    .withAlpha(150),
+                                            size: 16,
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Text(
+                                            entry.value,
+                                            style: TextStyle(
+                                              color: isSelected
+                                                  ? AppTheme.successGreen
                                                   : Colors.white
                                                       .withAlpha(200),
                                               fontSize: 13,

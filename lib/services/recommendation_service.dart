@@ -1,6 +1,7 @@
 import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../models/user_profile.dart';
+import 'diet_classifier.dart';
 
 class ScoredRecipe {
   final Recipe recipe;
@@ -23,9 +24,16 @@ class ScoredRecipe {
 }
 
 class RecommendationService {
+  /// Used to honor diet preferences (vegetarian etc.). When null, diet
+  /// preferences are ignored.
+  final DietClassifier? dietClassifier;
+
+  RecommendationService({this.dietClassifier});
+
   /// Main recommendation algorithm.
   /// Filtering order:
-  /// 1. Exclude recipes with allergens or disliked ingredients (hard filter)
+  /// 1. Exclude recipes with allergens, disliked ingredients, or that don't
+  ///    satisfy the profile's diet preferences (hard filter)
   /// 2. Score by check-in match (soft bonus, never excludes)
   /// 3. Compare with kitchen inventory
   /// 4. Calculate compatibility score
@@ -36,24 +44,9 @@ class RecommendationService {
     required CheckInType checkIn,
     required Set<String> inventoryIds,
   }) {
-    // Step 1: Exclude allergens and disliked ingredients
-    final safeRecipes = allRecipes.where((recipe) {
-      // Check allergens
-      for (final allergen in recipe.allergenTags) {
-        if (profile.allergies
-            .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
-          return false;
-        }
-      }
-      // Check disliked ingredients
-      for (final ingredientId in recipe.ingredientIds) {
-        if (profile.dislikedIngredients
-            .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
-          return false;
-        }
-      }
-      return true;
-    }).toList();
+    // Step 1: Exclude allergens, disliked ingredients, diet mismatches
+    final safeRecipes =
+        allRecipes.where((recipe) => _isSafe(recipe, profile)).toList();
 
     // Step 2: Check-in match as a soft bonus instead of a hard filter.
     // With a hard filter, sparse (check-in x meal type) combinations produce
@@ -124,21 +117,8 @@ class RecommendationService {
     required UserProfile profile,
     required Set<String> inventoryIds,
   }) {
-    final safeRecipes = allRecipes.where((recipe) {
-      for (final allergen in recipe.allergenTags) {
-        if (profile.allergies
-            .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
-          return false;
-        }
-      }
-      for (final ingredientId in recipe.ingredientIds) {
-        if (profile.dislikedIngredients
-            .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
-          return false;
-        }
-      }
-      return true;
-    }).toList();
+    final safeRecipes =
+        allRecipes.where((recipe) => _isSafe(recipe, profile)).toList();
 
     return safeRecipes.map((recipe) {
       final available = <String>[];
@@ -162,5 +142,30 @@ class RecommendationService {
     }).toList()
       ..sort(
           (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+  }
+
+  /// Hard safety/suitability filter: allergens, disliked ingredients, and
+  /// diet preferences (a recipe must satisfy every selected preference).
+  bool _isSafe(Recipe recipe, UserProfile profile) {
+    for (final allergen in recipe.allergenTags) {
+      if (profile.allergies
+          .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
+        return false;
+      }
+    }
+    for (final ingredientId in recipe.ingredientIds) {
+      if (profile.dislikedIngredients
+          .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
+        return false;
+      }
+    }
+    final classifier = dietClassifier;
+    if (classifier != null && profile.dietPreferences.isNotEmpty) {
+      final tags = classifier.tagsFor(recipe);
+      for (final preference in profile.dietPreferences) {
+        if (!tags.contains(preference)) return false;
+      }
+    }
+    return true;
   }
 }

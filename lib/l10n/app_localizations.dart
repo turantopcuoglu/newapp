@@ -149,6 +149,12 @@ class AppLocalizations {
   String get profileDisliked => _t('profileDisliked');
   String get profileAllergiesAndAvoided => _t('profileAllergiesAndAvoided');
   String get profileAllergiesHint => _t('profileAllergiesHint');
+  String get dietPreferencesTitle => _t('dietPreferencesTitle');
+  String get dietPreferencesHint => _t('dietPreferencesHint');
+  String get dietVegetarian => _t('dietVegetarian');
+  String get dietVegan => _t('dietVegan');
+  String get dietGlutenFree => _t('dietGlutenFree');
+  String get dietDairyFree => _t('dietDairyFree');
   String get profileNoDisliked => _t('profileNoDisliked');
   String get profileLanguage => _t('profileLanguage');
   String get profileSave => _t('profileSave');

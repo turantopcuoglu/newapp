@@ -10,6 +10,7 @@ import '../models/ingredient.dart';
 import '../providers/inventory_provider.dart';
 import '../providers/locale_provider.dart';
 import '../providers/profile_provider.dart';
+import '../services/diet_classifier.dart';
 import '../providers/shopping_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -45,6 +46,11 @@ class SettingsScreen extends ConsumerWidget {
 
             // Allergies & Avoided Foods
             _AllergyDislikedSection(ref: ref),
+
+            const SizedBox(height: 16),
+
+            // Diet preferences
+            _DietPreferenceSection(ref: ref),
 
             const SizedBox(height: 16),
 
@@ -714,6 +720,76 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
                   ),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ─── Diet Preference Section ────────────────────────────────────────────────
+
+class _DietPreferenceSection extends StatelessWidget {
+  final WidgetRef ref;
+
+  const _DietPreferenceSection({required this.ref});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final profile = ref.watch(profileProvider);
+
+    final options = {
+      DietClassifier.vegetarian: l10n.dietVegetarian,
+      DietClassifier.vegan: l10n.dietVegan,
+      DietClassifier.glutenFree: l10n.dietGlutenFree,
+      DietClassifier.dairyFree: l10n.dietDairyFree,
+    };
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.eco_rounded, color: AppTheme.successGreen),
+                const SizedBox(width: 8),
+                Text(l10n.dietPreferencesTitle,
+                    style: theme.textTheme.titleMedium),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              l10n.dietPreferencesHint,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: AppTheme.textSecondary,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: options.entries.map((entry) {
+                final selected =
+                    profile.dietPreferences.contains(entry.key);
+                return FilterChip(
+                  label: Text(entry.value),
+                  selected: selected,
+                  onSelected: (_) => ref
+                      .read(profileProvider.notifier)
+                      .toggleDietPreference(entry.key),
+                  selectedColor: AppTheme.successGreen.withAlpha(40),
+                  checkmarkColor: AppTheme.successGreen,
+                  labelStyle: const TextStyle(
+                    color: AppTheme.textPrimary,
+                    fontSize: 13,
+                  ),
+                );
+              }).toList(),
             ),
           ],
         ),

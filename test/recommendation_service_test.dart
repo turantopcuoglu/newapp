@@ -1,7 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nutri_guide/core/enums.dart';
+import 'package:nutri_guide/data/mock_ingredients.dart';
 import 'package:nutri_guide/models/recipe.dart';
 import 'package:nutri_guide/models/user_profile.dart';
+import 'package:nutri_guide/services/diet_classifier.dart';
 import 'package:nutri_guide/services/recommendation_service.dart';
 
 Recipe _recipe(
@@ -61,6 +63,51 @@ void main() {
       );
 
       expect(result.map((s) => s.recipe.id), ['no_onion']);
+    });
+  });
+
+  group('diet preferences', () {
+    final dietService =
+        RecommendationService(dietClassifier: DietClassifier(mockIngredients));
+
+    test('vegetarian preference excludes meat recipes everywhere', () {
+      final recipes = [
+        _recipe('meaty', ingredientIds: ['chicken_breast', 'tomato']),
+        _recipe('veggie', ingredientIds: ['tomato', 'onion']),
+      ];
+      const profile =
+          UserProfile(dietPreferences: [DietClassifier.vegetarian]);
+
+      final browsing = dietService.getAllSafeRecipes(
+        allRecipes: recipes,
+        profile: profile,
+        inventoryIds: {},
+      );
+      expect(browsing.map((s) => s.recipe.id), ['veggie']);
+
+      final recommended = dietService.getRecommendations(
+        allRecipes: recipes,
+        profile: profile,
+        checkIn: CheckInType.noSpecificIssue,
+        inventoryIds: {},
+      );
+      final ids = recommended.values
+          .expand((list) => list)
+          .map((s) => s.recipe.id);
+      expect(ids, ['veggie']);
+    });
+
+    test('no preferences means no diet filtering', () {
+      final recipes = [
+        _recipe('meaty', ingredientIds: ['chicken_breast', 'tomato']),
+      ];
+
+      final result = dietService.getAllSafeRecipes(
+        allRecipes: recipes,
+        profile: const UserProfile(),
+        inventoryIds: {},
+      );
+      expect(result, hasLength(1));
     });
   });
 

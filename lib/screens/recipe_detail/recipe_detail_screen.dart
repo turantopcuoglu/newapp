@@ -8,7 +8,9 @@ import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../../providers/recipe_provider.dart';
 import '../../providers/shopping_provider.dart';
+import '../../services/diet_classifier.dart';
 import '../../services/recommendation_service.dart';
 
 class RecipeDetailScreen extends ConsumerWidget {
@@ -119,6 +121,58 @@ class RecipeDetailScreen extends ConsumerWidget {
                 ),
               ),
             ),
+
+            // Diet suitability badges (derived from ingredients)
+            Builder(builder: (context) {
+              final tags =
+                  ref.watch(dietClassifierProvider).tagsFor(recipe);
+              if (tags.isEmpty) return const SizedBox.shrink();
+              final labels = {
+                DietClassifier.vegetarian: l10n.dietVegetarian,
+                DietClassifier.vegan: l10n.dietVegan,
+                DietClassifier.glutenFree: l10n.dietGlutenFree,
+                DietClassifier.dairyFree: l10n.dietDairyFree,
+              };
+              return Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: tags
+                      .where(labels.containsKey)
+                      .map((tag) => Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 5),
+                            decoration: BoxDecoration(
+                              color: AppTheme.successGreen.withAlpha(20),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color:
+                                    AppTheme.successGreen.withAlpha(70),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(Icons.eco_rounded,
+                                    size: 14,
+                                    color: AppTheme.successGreen),
+                                const SizedBox(width: 4),
+                                Text(
+                                  labels[tag]!,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppTheme.successGreen,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ))
+                      .toList(),
+                ),
+              );
+            }),
 
             const SizedBox(height: 24),
 

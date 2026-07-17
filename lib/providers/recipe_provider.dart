@@ -43,7 +43,9 @@ final nutritionCalculatorProvider = Provider<NutritionCalculator>((ref) {
 
 /// Recommendation service instance.
 final recommendationServiceProvider = Provider<RecommendationService>((ref) {
-  return RecommendationService();
+  return RecommendationService(
+    dietClassifier: ref.watch(dietClassifierProvider),
+  );
 });
 
 /// Recommendations based on current check-in, profile, and inventory.

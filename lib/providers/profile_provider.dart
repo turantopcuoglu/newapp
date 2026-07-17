@@ -83,6 +83,17 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
     _save();
   }
 
+  void toggleDietPreference(String preference) {
+    final prefs = [...state.dietPreferences];
+    if (prefs.contains(preference)) {
+      prefs.remove(preference);
+    } else {
+      prefs.add(preference);
+    }
+    state = state.copyWith(dietPreferences: prefs);
+    _save();
+  }
+
   void updateHealthConditions(List<HealthCondition> conditions) {
     state = state.copyWith(healthConditions: conditions);
     _save();
