@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/day_boundary.dart';
 import '../core/enums.dart';
 import '../models/beverage_entry.dart';
+import '../models/cooked_entry.dart';
 import '../models/ingredient.dart';
 import '../models/meal_plan.dart';
 import '../models/recipe.dart';
@@ -25,6 +27,7 @@ class StorageService {
   static const String _dailyModeDateKey = 'daily_mode_date';
   static const String _disclaimerAcceptedKey = 'disclaimer_accepted';
   static const String _favoriteRecipesKey = 'favorite_recipes';
+  static const String _cookedEntriesKey = 'cooked_entries';
 
   StorageService(this._prefs);
 
@@ -223,12 +226,8 @@ class StorageService {
   }
 
   // --- Daily Mode ---
-  /// Returns the "mode day" string for a given DateTime.
-  /// The mode day resets at 6 AM, so 00:00-05:59 belongs to the previous day.
-  static String _modeDayKey(DateTime dt) {
-    final effective = dt.hour < 6 ? dt.subtract(const Duration(days: 1)) : dt;
-    return '${effective.year}-${effective.month.toString().padLeft(2, '0')}-${effective.day.toString().padLeft(2, '0')}';
-  }
+  /// The "mode day" for a given moment (06:00 reset, see [DayBoundary]).
+  static String _modeDayKey(DateTime dt) => DayBoundary.keyFor(dt);
 
   /// Get today's daily mode, respecting the 6 AM reset boundary.
   CheckInType? getDailyMode() {
@@ -256,6 +255,33 @@ class StorageService {
 
   Future<void> setDisclaimerAccepted() async {
     await _prefs.setBool(_disclaimerAcceptedKey, true);
+  }
+
+  // --- Cooked Entries (consumed calorie log) ---
+  List<CookedEntry> getCookedEntries() {
+    final data = _prefs.getString(_cookedEntriesKey);
+    if (data == null) return [];
+    final list = jsonDecode(data) as List<dynamic>;
+    return list
+        .map((e) => CookedEntry.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
+  Future<void> _saveCookedEntries(List<CookedEntry> entries) async {
+    final data = jsonEncode(entries.map((e) => e.toJson()).toList());
+    await _prefs.setString(_cookedEntriesKey, data);
+  }
+
+  Future<void> addCookedEntry(CookedEntry entry) async {
+    final entries = getCookedEntries();
+    entries.add(entry);
+    await _saveCookedEntries(entries);
+  }
+
+  Future<void> removeCookedEntry(String id) async {
+    final entries = getCookedEntries();
+    entries.removeWhere((e) => e.id == id);
+    await _saveCookedEntries(entries);
   }
 
   // --- Favorite Recipes ---
