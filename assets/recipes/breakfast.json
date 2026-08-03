@@ -3147,5 +3147,218 @@
         "unit": "teaspoon"
       }
     }
+  },
+  {
+    "id": "b033",
+    "name": {
+      "en": "Buckwheat Porridge with Apricots",
+      "tr": "Kayısılı Karabuğday Lapası"
+    },
+    "description": {
+      "en": "Gluten-free buckwheat simmered in milk with dried apricots and pumpkin seeds.",
+      "tr": "Kuru kayısı ve kabak çekirdeğiyle sütte pişen glutensiz karabuğday."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "buckwheat",
+      "milk",
+      "apricot",
+      "pumpkin_seeds",
+      "honey",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "periodCramps",
+      "lowEnergy"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 472,
+      "proteinG": 22,
+      "carbsG": 78,
+      "fatG": 12,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Rinse the buckwheat until the water runs clear.",
+        "Toast it in a dry pan for 3 minutes until it smells nutty.",
+        "Add the milk and bring it to a gentle simmer.",
+        "Cook on low for 15 minutes, stirring occasionally so it does not catch.",
+        "Chop the dried apricots and stir them in for the last 5 minutes.",
+        "The porridge is ready when the grains are soft and it coats the spoon.",
+        "Rest off the heat for 3 minutes.",
+        "Toast the pumpkin seeds briefly in a dry pan.",
+        "Spoon into a bowl, drizzle with honey and top with seeds and cinnamon."
+      ],
+      "tr": [
+        "Karabuğdayı suyu berraklaşana kadar yıkayın.",
+        "Kuru tavada kokusu çıkana dek 3 dakika kavurun.",
+        "Sütü ekleyip hafifçe kaynamaya bırakın.",
+        "Dibi tutmasın diye ara ara karıştırarak kısık ateşte 15 dakika pişirin.",
+        "Kuru kayısıları doğrayıp son 5 dakikada ekleyin.",
+        "Taneler yumuşayıp lapa kaşığa kıvam verdiğinde hazırdır.",
+        "Ateşten alıp 3 dakika dinlendirin.",
+        "Kabak çekirdeklerini kuru tavada kısaca kavurun.",
+        "Kaseye alın, bal gezdirip çekirdek ve tarçınla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "buckwheat": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "apricot": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b034",
+    "name": {
+      "en": "Mediterranean Tomato and Feta Baked Eggs",
+      "tr": "Fırında Domatesli Peynirli Yumurta"
+    },
+    "description": {
+      "en": "Eggs baked into a garlicky tomato base with feta and oregano.",
+      "tr": "Sarımsaklı domates sosunda, beyaz peynir ve kekikle fırınlanan yumurta."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "eggs",
+      "tomato",
+      "feta_cheese",
+      "garlic",
+      "red_onion",
+      "olive_oil",
+      "oregano",
+      "bread",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs",
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "cantFocus"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 607,
+      "proteinG": 28,
+      "carbsG": 41,
+      "fatG": 38,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Slice the onion thinly and soften it in olive oil in an ovenproof pan.",
+        "Add the garlic and cook for 1 minute without browning it.",
+        "Add the chopped tomatoes and oregano and simmer for 10 minutes.",
+        "Cook until the sauce thickens enough to hold a channel when you drag a spoon.",
+        "Make two wells in the sauce and crack an egg into each.",
+        "Crumble the feta around the eggs.",
+        "Bake for 10-12 minutes until the whites are set but the yolks still soft.",
+        "Serve straight from the pan with toasted bread."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Soğanı ince dilimleyip fırına girebilen bir tavada zeytinyağıyla yumuşatın.",
+        "Sarımsağı ekleyip kavurmadan 1 dakika çevirin.",
+        "Doğranmış domatesleri ve kekiği ekleyip 10 dakika pişirin.",
+        "Kaşıkla çizdiğinizde iz kalacak kıvama gelene dek pişirin.",
+        "Sosta iki yuva açıp her birine bir yumurta kırın.",
+        "Beyaz peyniri yumurtaların çevresine ufalayın.",
+        "Beyazlar tutup sarılar yumuşak kalana dek 10-12 dakika fırınlayın.",
+        "Kızarmış ekmekle, tavasıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "feta_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "red_onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "bread": {
+        "amount": 1.0,
+        "unit": "slice"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]

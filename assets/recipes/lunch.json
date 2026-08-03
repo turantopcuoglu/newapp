@@ -2857,5 +2857,558 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "l026",
+    "name": {
+      "en": "Purslane Salad with Yoghurt",
+      "tr": "Yoğurtlu Semizotu Salatası"
+    },
+    "description": {
+      "en": "Purslane dressed with garlic yoghurt — a cooling Anatolian summer plate.",
+      "tr": "Sarımsaklı yoğurtla hazırlanan semizotu — serinletici bir Anadolu yaz tabağı."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 20,
+    "ingredientIds": [
+      "purslane",
+      "yogurt",
+      "garlic",
+      "olive_oil",
+      "lemon",
+      "walnut",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "simple",
+    "macros": {
+      "calories": 358,
+      "proteinG": 20,
+      "carbsG": 16,
+      "fatG": 26,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Pick the purslane leaves and tender tips from the thick stems.",
+        "Wash them in several changes of water — purslane holds a lot of grit.",
+        "Dry the leaves well so the yoghurt does not thin out.",
+        "Crush the garlic with a pinch of salt into a paste.",
+        "Whisk the garlic paste into the yoghurt with the lemon juice.",
+        "Fold the purslane through the yoghurt just before serving so it stays crisp.",
+        "Toast the walnuts in a dry pan for 3 minutes and chop them.",
+        "Scatter the walnuts over and finish with olive oil."
+      ],
+      "tr": [
+        "Semizotunun yapraklarını ve taze uçlarını kalın saplardan ayırın.",
+        "Birkaç kez su değiştirerek yıkayın — semizotu çok kum tutar.",
+        "Yoğurt sulanmasın diye yaprakları iyice kurulayın.",
+        "Sarımsağı bir tutam tuzla ezerek püre hâline getirin.",
+        "Sarımsak püresini limon suyuyla birlikte yoğurda çırpın.",
+        "Semizotunu diri kalsın diye servis öncesi yoğurda karıştırın.",
+        "Cevizleri kuru tavada 3 dakika kavurup kıyın.",
+        "Cevizleri serpip zeytinyağıyla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "purslane": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l027",
+    "name": {
+      "en": "Barley Salad with Roasted Vegetables",
+      "tr": "Fırın Sebzeli Arpa Salatası"
+    },
+    "description": {
+      "en": "Chewy pearl barley tossed with roasted peppers, courgette and herbs.",
+      "tr": "Fırınlanmış biber, kabak ve yeşilliklerle harmanlanan dolgun arpa."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 60,
+    "ingredientIds": [
+      "barley",
+      "bell_pepper",
+      "zucchini",
+      "red_onion",
+      "tomato",
+      "parsley",
+      "lemon",
+      "olive_oil",
+      "sumac",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 443,
+      "proteinG": 9,
+      "carbsG": 69,
+      "fatG": 17,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Rinse the barley and simmer it in salted water for 30 minutes.",
+        "It should stay chewy at the centre — barley turns pasty if overcooked.",
+        "Drain and spread it on a tray to cool so it does not clump.",
+        "Preheat the oven to 200°C.",
+        "Cut the pepper, courgette and onion into chunks and toss with olive oil and salt.",
+        "Roast for 25 minutes until the edges char slightly.",
+        "Chop the roasted vegetables and the fresh tomato.",
+        "Fold everything together with lemon juice, sumac and parsley.",
+        "Serve at room temperature; it improves after 30 minutes."
+      ],
+      "tr": [
+        "Arpayı yıkayıp tuzlu suda 30 dakika pişirin.",
+        "Ortası diri kalmalı — fazla pişen arpa hamurlaşır.",
+        "Süzüp topaklanmasın diye tepsiye yayarak soğutun.",
+        "Fırını 200°C'ye ısıtın.",
+        "Biber, kabak ve soğanı iri doğrayıp zeytinyağı ve tuzla harmanlayın.",
+        "Kenarları hafif kararana dek 25 dakika fırınlayın.",
+        "Fırınlanmış sebzeleri ve taze domatesi doğrayın.",
+        "Limon suyu, sumak ve maydanozla hepsini harmanlayın.",
+        "Oda sıcaklığında servis edin; 30 dakika bekleyince lezzeti oturur."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "barley": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "red_onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sumac": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l028",
+    "name": {
+      "en": "Fava Bean Purée with Dill",
+      "tr": "Dereotlu Fava"
+    },
+    "description": {
+      "en": "Dried fava beans cooked down and set into a smooth purée, served cold.",
+      "tr": "Kuru baklanın ezilip kalıplandığı, soğuk servis edilen klasik meze."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 60,
+    "ingredientIds": [
+      "fava_bean",
+      "onion",
+      "olive_oil",
+      "dill",
+      "lemon",
+      "sugar",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "periodFatigue",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 478,
+      "proteinG": 12,
+      "carbsG": 41,
+      "fatG": 31,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Soak the dried fava beans overnight, then drain and rinse.",
+        "Slice the onion thinly and soften it in olive oil for 5 minutes.",
+        "Add the beans, sugar, salt and water to cover by two fingers.",
+        "Simmer covered for 45 minutes until the beans collapse completely.",
+        "Blend or mash until smooth — a few lumps are fine, gluey is not.",
+        "Pour into a shallow dish and level the surface.",
+        "Chill for at least 3 hours until set firm enough to slice.",
+        "Cut into squares, top with chopped dill and lemon.",
+        "Finish with a generous pour of olive oil and serve cold."
+      ],
+      "tr": [
+        "Kuru baklayı bir gece ıslatın, süzüp durulayın.",
+        "Soğanı ince dilimleyip zeytinyağında 5 dakika yumuşatın.",
+        "Bakla, şeker, tuz ve iki parmak geçecek kadar suyu ekleyin.",
+        "Baklalar tamamen dağılana dek kapalı olarak 45 dakika pişirin.",
+        "Pürüzsüz olana dek ezin ya da çekin — birkaç parça olabilir, sakızlaşmasın.",
+        "Sığ bir kaba döküp yüzeyini düzeltin.",
+        "Dilimlenecek kıvama gelene dek en az 3 saat buzdolabında bekletin.",
+        "Kare kare kesip üzerine kıyılmış dereotu ve limon ekleyin.",
+        "Bolca zeytinyağı gezdirip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "fava_bean": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 2.0,
+        "unit": "tablespoon"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "sugar": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l029",
+    "name": {
+      "en": "Red Lentil Balls (Mercimek Köftesi)",
+      "tr": "Mercimek Köftesi"
+    },
+    "description": {
+      "en": "Red lentils and fine bulgur kneaded with spring onion and lemon, shaped by hand and served cold in lettuce.",
+      "tr": "Kırmızı mercimek ve ince bulgurun taze soğan ve limonla yoğrulup elde şekillendiği, marul yaprağında soğuk servis edilen klasik."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 45,
+    "ingredientIds": [
+      "red_lentil",
+      "bulgur",
+      "spring_onion",
+      "tomato_paste",
+      "parsley",
+      "lemon",
+      "cumin",
+      "olive_oil",
+      "red_pepper_flakes",
+      "lettuce",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 525,
+      "proteinG": 20,
+      "carbsG": 79,
+      "fatG": 18,
+      "fiberG": 23
+    },
+    "steps": {
+      "en": [
+        "Rinse the red lentils and simmer them in twice their volume of water for 20 minutes.",
+        "Cook until the lentils collapse and almost all the water is gone.",
+        "Take off the heat, stir in the fine bulgur and cover the pot immediately.",
+        "Leave it covered for 20 minutes — the residual heat is what cooks the bulgur.",
+        "Soften the tomato paste, cumin and chilli flakes in olive oil in a small pan.",
+        "Add the spiced oil to the lentil mixture and knead by hand until smooth and even.",
+        "Knead in the chopped spring onion, parsley and lemon juice once the mixture has cooled.",
+        "Shape into small ovals by squeezing portions in your closed fist.",
+        "Serve cold in lettuce leaves with extra lemon."
+      ],
+      "tr": [
+        "Kırmızı mercimeği yıkayıp hacminin iki katı suda 20 dakika pişirin.",
+        "Mercimekler dağılıp suyu neredeyse tamamen çekene dek pişirin.",
+        "Ateşten alıp ince bulguru ekleyin ve tencerenin kapağını hemen kapatın.",
+        "20 dakika kapalı bekletin — bulguru pişiren şey bu artık ısıdır.",
+        "Küçük bir tavada salça, kimyon ve pul biberi zeytinyağında kavurun.",
+        "Baharatlı yağı mercimekli harca ekleyip pürüzsüz olana dek elle yoğurun.",
+        "Harç ılıyınca doğranmış taze soğan, maydanoz ve limon suyunu yedirin.",
+        "Avucunuzu kapatarak sıkıp küçük oval köfteler şekillendirin.",
+        "Marul yapraklarında, yanında limonla soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "red_lentil": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "spring_onion": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "parsley": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "lettuce": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l030",
+    "name": {
+      "en": "Liver Sauté with Onions and Sumac",
+      "tr": "Sumaklı Ciğer Sote"
+    },
+    "description": {
+      "en": "Quickly seared liver with sumac onions — one of the richest iron sources there is.",
+      "tr": "Sumaklı soğanla hızlıca mühürlenen ciğer — en güçlü demir kaynaklarından biri."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "liver",
+      "red_onion",
+      "sumac",
+      "flour",
+      "parsley",
+      "olive_oil",
+      "red_pepper_flakes",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "lowEnergy"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 470,
+      "proteinG": 35,
+      "carbsG": 35,
+      "fatG": 21,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Trim the liver of any membrane and cut it into bite-sized cubes.",
+        "Pat the pieces completely dry — wet liver steams and turns grey.",
+        "Slice the onion into thin half-moons and toss it with sumac and salt.",
+        "Rub the onion lightly with your hands so it softens and takes the sumac.",
+        "Toss the liver in flour and shake off the excess.",
+        "Heat the olive oil until very hot, almost smoking.",
+        "Sear the liver in a single layer for 2 minutes, turn, and cook 1-2 minutes more.",
+        "Salt only now — salting before searing draws out moisture and toughens it.",
+        "Serve immediately over the sumac onions with parsley and chilli flakes."
+      ],
+      "tr": [
+        "Ciğerin zarını temizleyip lokmalık küpler hâlinde doğrayın.",
+        "Parçaları iyice kurulayın — ıslak ciğer buharda pişer ve grileşir.",
+        "Soğanı ince yarım ay doğrayıp sumak ve tuzla harmanlayın.",
+        "Soğanı elinizle hafifçe ovun ki yumuşayıp sumağı alsın.",
+        "Ciğerleri una bulayıp fazlasını silkeleyin.",
+        "Zeytinyağını neredeyse dumanı çıkacak kadar kızdırın.",
+        "Ciğerleri tek sıra hâlinde 2 dakika mühürleyin, çevirip 1-2 dakika daha pişirin.",
+        "Tuzu ancak şimdi ekleyin — önce tuzlamak suyunu çekip sertleştirir.",
+        "Sumaklı soğanın üzerinde maydanoz ve pul biberle hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "liver": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "red_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "sumac": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "flour": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]

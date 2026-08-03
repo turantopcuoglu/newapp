@@ -2970,5 +2970,282 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "s036",
+    "name": {
+      "en": "Roasted Chickpeas with Sumac",
+      "tr": "Sumaklı Fırın Nohut"
+    },
+    "description": {
+      "en": "Chickpeas roasted until crisp and dusted with sumac — a savoury crunch.",
+      "tr": "Çıtır çıtır kavrulup sumakla tatlandırılan nohut — tuzlu bir atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 40,
+    "ingredientIds": [
+      "chickpea",
+      "olive_oil",
+      "sumac",
+      "cumin",
+      "paprika",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 425,
+      "proteinG": 15,
+      "carbsG": 49,
+      "fatG": 21,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Drain the chickpeas and dry them thoroughly on a towel.",
+        "Any moisture left here will steam them soft instead of crisping them.",
+        "Toss with olive oil, cumin and paprika but not yet the sumac.",
+        "Spread in a single layer and roast for 30-35 minutes, shaking twice.",
+        "They are done when they rattle in the tray and crack when pressed.",
+        "Toss with sumac and salt while still hot so it sticks.",
+        "Cool completely before storing, or they will go soft."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Nohutları süzüp bir bezle iyice kurulayın.",
+        "Kalan nem çıtırlaşmayı engeller, nohutları buharda yumuşatır.",
+        "Zeytinyağı, kimyon ve toz biberle harmanlayın; sumağı henüz eklemeyin.",
+        "Tek sıra hâlinde yayıp iki kez sallayarak 30-35 dakika kavurun.",
+        "Tepside şıkırdayıp bastırınca çatlıyorsa hazırdır.",
+        "Sumak ve tuzu sıcakken ekleyin ki tutunsun.",
+        "Yumuşamamaları için tamamen soğutmadan kaba koymayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sumac": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s037",
+    "name": {
+      "en": "Sesame Halva Bites with Cocoa",
+      "tr": "Kakaolu Tahin Topları"
+    },
+    "description": {
+      "en": "Tahini, cocoa and oats rolled into bites — magnesium in a sweet form.",
+      "tr": "Tahin, kakao ve yulafın top hâline geldiği tatlı bir magnezyum kaynağı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 35,
+    "ingredientIds": [
+      "tahini",
+      "cocoa_powder",
+      "oats",
+      "honey",
+      "sesame_seeds",
+      "dates"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "periodCramps",
+      "cravingSweets",
+      "lowEnergy"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 582,
+      "proteinG": 17,
+      "carbsG": 86,
+      "fatG": 26,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Pit the dates and soak them in hot water for 10 minutes.",
+        "Blitz the oats into a coarse flour.",
+        "Blend the drained dates into a sticky paste.",
+        "Stir the tahini well before measuring — its oil always separates.",
+        "Mix the tahini, cocoa, honey, oat flour and date paste into a stiff dough.",
+        "Chill for 20 minutes so it firms up enough to roll.",
+        "Roll into small balls with damp hands.",
+        "Roll each ball in sesame seeds to coat.",
+        "Refrigerate for 1 hour before eating; they keep for five days."
+      ],
+      "tr": [
+        "Hurmaların çekirdeğini çıkarıp 10 dakika sıcak suda bekletin.",
+        "Yulafı iri taneli un olana dek çekin.",
+        "Süzülmüş hurmaları yapışkan bir macun olana dek çekin.",
+        "Tahini ölçmeden önce iyice karıştırın — yağı hep ayrışır.",
+        "Tahin, kakao, bal, yulaf unu ve hurma macununu katı bir hamur olana dek karıştırın.",
+        "Şekil alacak kıvama gelmesi için 20 dakika buzdolabında bekletin.",
+        "Nemli elle küçük toplar yapın.",
+        "Her topu susama bulayın.",
+        "Yemeden önce 1 saat buzdolabında bekletin; beş gün dayanır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tahini": {
+        "amount": 2.0,
+        "unit": "tablespoon"
+      },
+      "cocoa_powder": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sesame_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "dates": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s038",
+    "name": {
+      "en": "Whipped Ricotta with Honey and Pistachio",
+      "tr": "Fıstıklı Ballı Ricotta"
+    },
+    "description": {
+      "en": "Ricotta whipped light, topped with pistachio and honey.",
+      "tr": "Hafifçe çırpılmış ricotta, üzerinde Antep fıstığı ve bal."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "ricotta",
+      "honey",
+      "pistachio",
+      "lemon",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 309,
+      "proteinG": 15,
+      "carbsG": 21,
+      "fatG": 20,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Take the ricotta out of the fridge 15 minutes ahead so it whips smoothly.",
+        "Whisk it hard for 2 minutes until it lightens and loses its grain.",
+        "Grate in a little lemon zest and whisk once more.",
+        "Chop the pistachios roughly.",
+        "Spoon the ricotta into a bowl and swirl the surface.",
+        "Scatter the pistachios over the top and drizzle with honey.",
+        "Finish with a pinch of cinnamon and serve cool."
+      ],
+      "tr": [
+        "Ricottayı kolay çırpılsın diye 15 dakika önceden buzdolabından çıkarın.",
+        "Hafifleyip tanesi kaybolana dek 2 dakika güçlüce çırpın.",
+        "Biraz limon kabuğu rendeleyip bir kez daha çırpın.",
+        "Antep fıstıklarını iri kıyın.",
+        "Ricottayı kaseye alıp yüzeyinde dalgalar oluşturun.",
+        "Üzerine fıstıkları serpip bal gezdirin.",
+        "Bir tutam tarçınla tamamlayıp serin servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ricotta": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "pistachio": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]
