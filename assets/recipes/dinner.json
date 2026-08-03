@@ -46,18 +46,26 @@
     },
     "steps": {
       "en": [
-        "Preheat oven to 200°C (400°F).",
-        "Place salmon on a baking tray, season with salt, pepper, and lemon juice.",
-        "Toss broccoli and carrots with olive oil and garlic, arrange around the salmon.",
-        "Bake for 18-20 minutes until salmon is cooked through.",
-        "Serve immediately with a squeeze of fresh lemon."
+        "Preheat the oven to 200°C.",
+        "Cut the broccoli into florets and slice the carrot into rounds.",
+        "Toss the vegetables with olive oil, crushed garlic, salt and pepper.",
+        "Spread them in a roasting tin and give them a 10 minute head start in the oven.",
+        "Pat the salmon dry and season it on both sides.",
+        "Lay the salmon on the vegetables, skin side down.",
+        "Roast for 12-15 minutes; the fish is done when it flakes at a fork's push.",
+        "Squeeze lemon over everything straight out of the oven.",
+        "Rest for 2 minutes and serve from the tin."
       ],
       "tr": [
-        "Fırını 200°C'ye önceden ısıtın.",
-        "Somonu fırın tepsisine yerleştirin, tuz, karabiber ve limon suyu ile tatlandırın.",
-        "Brokoli ve havuçları zeytinyağı ve sarımsakla karıştırın, somonun etrafına dizin.",
-        "Somon pişene kadar 18-20 dakika fırınlayın.",
-        "Taze limon sıkarak hemen servis edin."
+        "Fırını 200°C'ye ısıtın.",
+        "Brokoliyi çiçeklere ayırın, havucu yuvarlak dilimleyin.",
+        "Sebzeleri zeytinyağı, ezilmiş sarımsak, tuz ve karabiberle harmanlayın.",
+        "Fırın kabına yayıp somondan 10 dakika önce fırına verin.",
+        "Somonu kurulayıp iki yüzünü de baharatlayın.",
+        "Somonu derisi altta kalacak şekilde sebzelerin üzerine yerleştirin.",
+        "12-15 dakika pişirin; çatalla bastırınca lif lif ayrılıyorsa hazırdır.",
+        "Fırından çıkar çıkmaz üzerine limon sıkın.",
+        "2 dakika dinlendirip kabıyla servis edin."
       ]
     },
     "imagePath": null,
@@ -143,18 +151,26 @@
     },
     "steps": {
       "en": [
-        "Dice onion, carrot, and potato into small pieces.",
-        "Sauté vegetables in olive oil until softened.",
-        "Add rinsed red lentils and enough water to cover.",
-        "Bring to a boil, then simmer for 20 minutes until lentils are tender.",
-        "Blend until smooth, season with cumin, salt, and pepper. Serve with lemon."
+        "Rinse the red lentils until the water runs clear.",
+        "Dice the onion, carrot and potato into small, even pieces.",
+        "Soften the onion in olive oil over medium heat for 4 minutes.",
+        "Add the carrot and potato and cook for 3 minutes more.",
+        "Add the lentils and 1 litre of hot water.",
+        "Bring to a boil, skim off any foam, then simmer for 25 minutes.",
+        "The soup is ready when the lentils have completely collapsed.",
+        "Blend until smooth, then season with cumin, salt and pepper.",
+        "Serve hot with lemon to squeeze over."
       ],
       "tr": [
-        "Soğanı, havucu ve patatesi küçük küçük doğrayın.",
-        "Sebzeleri zeytinyağında yumuşayana kadar kavurun.",
-        "Yıkanmış kırmızı mercimeği ve üzerini geçecek kadar su ekleyin.",
-        "Kaynatın, sonra mercimekler yumuşayana kadar 20 dakika pişirin.",
-        "Pürüzsüz olana kadar blendırdan geçirin, kimyon, tuz ve karabiberle tatlandırın. Limonla servis edin."
+        "Kırmızı mercimeği suyu berraklaşana kadar yıkayın.",
+        "Soğan, havuç ve patatesi küçük ve eşit doğrayın.",
+        "Soğanı zeytinyağında orta ateşte 4 dakika kavurun.",
+        "Havuç ve patatesi ekleyip 3 dakika daha pişirin.",
+        "Mercimeği ve 1 litre sıcak suyu ekleyin.",
+        "Kaynatın, köpüğünü alın, sonra 25 dakika kısık ateşte pişirin.",
+        "Mercimekler tamamen dağıldığında çorba hazırdır.",
+        "Pürüzsüz olana dek blendırdan geçirip kimyon, tuz ve karabiberle tatlandırın.",
+        "Üzerine limon sıkılacak şekilde sıcak servis edin."
       ]
     },
     "imagePath": null,
@@ -246,18 +262,26 @@
     },
     "steps": {
       "en": [
-        "Cook rice according to package instructions.",
-        "Cut chicken breast into strips and season with salt and pepper.",
-        "Stir-fry chicken in olive oil over high heat until golden.",
-        "Add sliced bell pepper, onion, and garlic, cook for 3-4 minutes.",
-        "Add soy sauce, toss everything together, and serve over rice."
+        "Cook the rice in twice its volume of salted water for 15 minutes, then leave it covered.",
+        "Slice the chicken into thin strips across the grain.",
+        "Slice the pepper and onion into strips of the same size.",
+        "Heat the olive oil in a wok or wide pan until it shimmers.",
+        "Stir-fry the chicken in a single layer for 4 minutes without crowding the pan.",
+        "Add the garlic, pepper and onion and toss for 3 minutes over high heat.",
+        "The vegetables should stay crisp — do not let them soften completely.",
+        "Add the soy sauce and let it reduce and coat everything, about 1 minute.",
+        "Season and serve immediately over the rice."
       ],
       "tr": [
-        "Pirinci paket talimatlarına göre pişirin.",
-        "Tavuk göğsünü şeritler halinde kesin, tuz ve karabiberle tatlandırın.",
-        "Tavuğu zeytinyağında yüksek ateşte altın rengine kadar kavurun.",
-        "Dilimlenmiş biber, soğan ve sarımsağı ekleyin, 3-4 dakika pişirin.",
-        "Soya sosu ekleyin, karıştırın ve pilavın üzerine servis edin."
+        "Pirinci kendi hacminin iki katı tuzlu suda 15 dakika pişirip kapağı kapalı demlendirin.",
+        "Tavuğu liflerine dik, ince şeritler hâlinde doğrayın.",
+        "Biber ve soğanı aynı boyutta şeritler hâlinde kesin.",
+        "Wok ya da geniş tavada zeytinyağını dumanı çıkacak kadar kızdırın.",
+        "Tavuğu tavayı doldurmadan tek sıra hâlinde 4 dakika soteleyin.",
+        "Sarımsak, biber ve soğanı ekleyip yüksek ateşte 3 dakika çevirin.",
+        "Sebzeler diri kalmalı — tamamen yumuşamasınlar.",
+        "Soya sosunu ekleyip 1 dakika kadar, her şeyi kaplayana dek koyulaştırın.",
+        "Tuzunu ayarlayıp pilavın üzerinde hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -353,18 +377,26 @@
     },
     "steps": {
       "en": [
-        "Cook pasta in salted boiling water until al dente, drain.",
-        "Slice zucchini and tomatoes.",
-        "Sauté garlic in olive oil until fragrant, add zucchini and cook for 3 minutes.",
-        "Add tomatoes and cook for another 2 minutes.",
-        "Toss with pasta, top with parmesan and fresh basil. Season and serve."
+        "Bring a large pot of well-salted water to the boil.",
+        "Cut the courgette, pepper and mushrooms into even pieces and the broccoli into small florets.",
+        "Cook the pasta until al dente, keeping a cup of the cooking water.",
+        "Meanwhile heat the olive oil and soften the garlic without letting it brown.",
+        "Add the mushrooms and cook for 4 minutes until they release and reabsorb their water.",
+        "Add the courgette, pepper and broccoli and cook for 5 minutes.",
+        "Stir in the chopped tomato and simmer for 5 minutes into a light sauce.",
+        "Toss the drained pasta through the sauce with a splash of the pasta water.",
+        "Finish off the heat with basil and grated parmesan, and serve at once."
       ],
       "tr": [
-        "Makarnayı tuzlu kaynar suda al dente olana kadar pişirin, süzün.",
-        "Kabağı ve domatesleri dilimleyin.",
-        "Sarımsağı zeytinyağında kokusu çıkana kadar kavurun, kabağı ekleyip 3 dakika pişirin.",
-        "Domatesleri ekleyin ve 2 dakika daha pişirin.",
-        "Makarna ile karıştırın, parmesan ve taze fesleğen ile süsleyin. Tatlandırıp servis edin."
+        "Büyük bir tencerede bol tuzlu suyu kaynatın.",
+        "Kabak, biber ve mantarları eşit doğrayın, brokoliyi küçük çiçeklere ayırın.",
+        "Makarnayı al dente haşlayın, bir bardak haşlama suyunu ayırın.",
+        "Bu sırada zeytinyağını ısıtıp sarımsağı yakmadan kavurun.",
+        "Mantarları ekleyip suyunu salıp çekene dek 4 dakika pişirin.",
+        "Kabak, biber ve brokoliyi ekleyip 5 dakika pişirin.",
+        "Doğranmış domatesi ekleyip 5 dakika, hafif bir sos olana dek kaynatın.",
+        "Süzülmüş makarnayı bir miktar haşlama suyuyla sosa karıştırın.",
+        "Ateşten aldıktan sonra fesleğen ve rendelenmiş parmesanla tamamlayıp hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -467,18 +499,26 @@
     },
     "steps": {
       "en": [
-        "Cut off the tops of bell peppers and remove seeds.",
-        "Mix ground beef, partially cooked rice, diced onion, tomato, parsley, and spices.",
-        "Stuff the peppers with the mixture.",
-        "Place in a pot, add water halfway up the peppers.",
-        "Cover and simmer for 45 minutes until peppers are tender."
+        "Cut the tops off the peppers and remove the seeds and membranes.",
+        "Rinse the rice and soak it in warm salted water for 15 minutes.",
+        "Finely dice the onion and soften it in olive oil for 5 minutes.",
+        "Add the beef and cook until it loses its raw colour, breaking up any lumps.",
+        "Stir in the drained rice, chopped tomato, parsley, cumin, salt and pepper.",
+        "Fill the peppers loosely — the rice needs room to swell.",
+        "Stand them upright in a pot and add hot water to come a third of the way up.",
+        "Cover and simmer on low for 40 minutes.",
+        "They are done when the rice is soft and the peppers give easily; rest 10 minutes before serving."
       ],
       "tr": [
-        "Biberlerin üst kısımlarını kesin ve çekirdeklerini çıkarın.",
-        "Kıymayı, yarı pişmiş pirinci, doğranmış soğanı, domatesi, maydanozu ve baharatları karıştırın.",
-        "Biberleri karışımla doldurun.",
-        "Tencereye yerleştirin, biberlerin yarısına kadar su ekleyin.",
-        "Kapağı kapatıp biberler yumuşayana kadar 45 dakika pişirin."
+        "Biberlerin kapaklarını kesip çekirdek ve zarlarını temizleyin.",
+        "Pirinci yıkayıp ılık tuzlu suda 15 dakika bekletin.",
+        "Soğanı ince doğrayıp zeytinyağında 5 dakika kavurun.",
+        "Kıymayı ekleyip topaklarını dağıtarak rengi dönene dek pişirin.",
+        "Süzülmüş pirinç, doğranmış domates, maydanoz, kimyon, tuz ve karabiberi karıştırın.",
+        "Biberleri gevşek doldurun — pirincin şişecek yere ihtiyacı var.",
+        "Tencereye dik yerleştirip üçte birini geçecek kadar sıcak su ekleyin.",
+        "Kapağı kapatıp kısık ateşte 40 dakika pişirin.",
+        "Pirinç yumuşayıp biberler kolay eziliyorsa hazırdır; 10 dakika dinlendirip servis edin."
       ]
     },
     "imagePath": null,
@@ -572,18 +612,26 @@
     },
     "steps": {
       "en": [
-        "Peel eggplants in stripes and fry until golden brown.",
-        "Sauté ground beef with onions, garlic, and green peppers.",
-        "Add diced tomatoes, salt, and pepper to the meat mixture.",
-        "Slit the eggplants lengthwise and stuff with the meat filling.",
-        "Place in a baking dish, top with tomato slices and bake at 180°C for 20 minutes."
+        "Peel the aubergines in stripes and fry them whole in olive oil until soft, then drain on paper.",
+        "Soften the onion in the same pan for 4 minutes.",
+        "Add the beef and cook until browned, breaking up the lumps.",
+        "Add the garlic, half the chopped tomato and the diced pepper and cook 5 minutes.",
+        "Stir in the parsley, salt and pepper and take the filling off the heat.",
+        "Lay the aubergines in a baking dish and slit each one lengthways without cutting through.",
+        "Open the slits gently and spoon the filling inside.",
+        "Top each with a slice of tomato and a strip of pepper.",
+        "Add half a glass of hot water to the dish and bake at 180°C for 30 minutes."
       ],
       "tr": [
-        "Patlıcanları alacalı soyun ve kızarana kadar kızartın.",
-        "Kıymayı soğan, sarımsak ve biberlerle kavurun.",
-        "Doğranmış domatesleri, tuz ve karabiberi et karışımına ekleyin.",
-        "Patlıcanları boydan yarın ve et harcıyla doldurun.",
-        "Fırın kabına yerleştirin, üzerine domates dilimi koyun ve 180°C'de 20 dakika pişirin."
+        "Patlıcanları alacalı soyup zeytinyağında bütün hâlde yumuşayana dek kızartın, kağıt havluya alın.",
+        "Aynı tavada soğanı 4 dakika kavurun.",
+        "Kıymayı ekleyip topaklarını dağıtarak kızarana dek pişirin.",
+        "Sarımsağı, doğranmış domatesin yarısını ve küp biberi ekleyip 5 dakika pişirin.",
+        "Maydanoz, tuz ve karabiberi karıştırıp iç harcı ateşten alın.",
+        "Patlıcanları fırın kabına dizip her birini boydan boya, delmeden yarın.",
+        "Yarıkları nazikçe açıp iç harcı doldurun.",
+        "Her birinin üzerine bir domates dilimi ve bir şerit biber koyun.",
+        "Kaba yarım bardak sıcak su ekleyip 180°C fırında 30 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -678,18 +726,26 @@
     },
     "steps": {
       "en": [
-        "Grate the onion and squeeze out excess liquid.",
-        "Mix ground beef, grated onion, minced parsley, garlic, cumin, salt, and pepper.",
-        "Add soaked and squeezed bread, knead well for 5 minutes.",
-        "Shape into oval patties and let rest for 30 minutes.",
-        "Grill on high heat for 3-4 minutes each side until charred and cooked through."
+        "Soak the bread in a little water, then squeeze it dry and crumble it.",
+        "Grate the onion and squeeze out its juice so the köfte holds together.",
+        "Mix the beef, bread, onion, crushed garlic, parsley, cumin, salt and pepper.",
+        "Knead the mixture for 5 minutes — this is what gives köfte its texture.",
+        "Rest it covered in the fridge for at least 30 minutes.",
+        "Shape into oval patties of equal size with wet hands.",
+        "Heat the grill or a griddle pan until very hot.",
+        "Grill for 4-5 minutes a side without pressing them down.",
+        "Rest for 3 minutes before serving so the juices stay in."
       ],
       "tr": [
-        "Soğanı rendeleyin ve fazla suyunu sıkın.",
-        "Kıymayı, rendelenmiş soğanı, kıyılmış maydanozu, sarımsağı, kimyonu, tuzu ve karabiberi karıştırın.",
-        "Islatılıp sıkılmış ekmeği ekleyin, 5 dakika iyice yoğurun.",
-        "Oval köfteler şekillendirin ve 30 dakika dinlendirin.",
-        "Yüksek ateşte her tarafı 3-4 dakika ızgara yapın."
+        "Ekmeği az suda ıslatıp sıkın ve ufalayın.",
+        "Soğanı rendeleyip suyunu sıkın ki köfte dağılmasın.",
+        "Kıyma, ekmek, soğan, ezilmiş sarımsak, maydanoz, kimyon, tuz ve karabiberi karıştırın.",
+        "Harcı 5 dakika yoğurun — köftenin kıvamını bu verir.",
+        "Üzerini kapatıp buzdolabında en az 30 dakika dinlendirin.",
+        "Islak elle eşit boyda oval köfteler şekillendirin.",
+        "Izgarayı ya da ızgara tavayı iyice kızdırın.",
+        "Üzerine bastırmadan her yüzünü 4-5 dakika pişirin.",
+        "Suyunu kaybetmemesi için servis öncesi 3 dakika dinlendirin."
       ]
     },
     "imagePath": null,
@@ -779,18 +835,26 @@
     },
     "steps": {
       "en": [
-        "Wash spinach and sauté with diced onion until wilted.",
-        "Mix with crumbled feta cheese, salt, and pepper.",
-        "Layer yufka sheets in a greased baking pan, brushing each with olive oil.",
-        "Spread spinach filling between layers.",
-        "Brush top with egg wash and bake at 190°C for 30-35 minutes until golden."
+        "Wash the spinach, chop it and cook it in a dry pan until its water evaporates.",
+        "Soften the diced onion in olive oil and mix it into the spinach.",
+        "Stir in the crumbled feta, salt and pepper and let the filling cool completely.",
+        "Beat the egg with the yoghurt and a little olive oil for the wash.",
+        "Lay out a sheet of phyllo and brush it lightly with the wash.",
+        "Spread a line of filling along one edge and roll it up loosely.",
+        "Repeat with the remaining sheets and coil them into an oiled tin.",
+        "Brush the top with the rest of the wash.",
+        "Bake at 180°C for 35-40 minutes until deep golden, and rest 10 minutes before slicing."
       ],
       "tr": [
-        "Ispanağı yıkayın ve doğranmış soğanla suyunu salana kadar kavurun.",
-        "Ufalanmış beyaz peynir, tuz ve karabiberle karıştırın.",
-        "Yağlanmış fırın tepsisine yufka serip her birini zeytinyağı ile yağlayın.",
-        "Katlar arasına ıspanak harcı yayın.",
-        "Üzerine yumurta sarısı sürüp 190°C'de 30-35 dakika altın rengi olana kadar pişirin."
+        "Ispanağı yıkayıp doğrayın ve kuru tavada suyunu çekene dek pişirin.",
+        "Küp doğranmış soğanı zeytinyağında kavurup ıspanağa karıştırın.",
+        "Ufalanmış beyaz peynir, tuz ve karabiberi ekleyip iç harcı tamamen soğutun.",
+        "Üzeri için yumurtayı yoğurt ve az zeytinyağıyla çırpın.",
+        "Bir yufkayı açıp hazırladığınız karışımla hafifçe yağlayın.",
+        "Bir kenarına boydan boya harç dizip gevşek şekilde rulo yapın.",
+        "Kalan yufkalarla tekrarlayıp yağlanmış kalıba spiral şeklinde yerleştirin.",
+        "Üzerine kalan karışımı sürün.",
+        "180°C fırında koyu altın rengi olana dek 35-40 dakika pişirin, dilimlemeden 10 dakika dinlendirin."
       ]
     },
     "imagePath": null,
@@ -882,18 +946,26 @@
     },
     "steps": {
       "en": [
-        "Cut lamb into cubes and brown in olive oil.",
-        "Add diced onion and garlic, sauté until softened.",
-        "Add cubed potatoes, tomatoes, and bell peppers.",
-        "Season with cumin, salt, and pepper. Add water to cover.",
-        "Transfer to a clay pot and bake at 180°C for 1.5 hours until tender."
+        "Cut the lamb into large cubes and pat them dry.",
+        "Brown the meat in olive oil in batches over high heat, then set aside.",
+        "Soften the onion and garlic in the same pot for 5 minutes.",
+        "Return the meat, add hot water to just cover, and simmer covered for 45 minutes.",
+        "Meanwhile cube the potato, pepper and tomato.",
+        "Add the vegetables, cumin, salt and pepper to the pot.",
+        "Cook for another 30 minutes until the lamb pulls apart easily.",
+        "Check the liquid halfway and top up with hot water if it looks dry.",
+        "Rest off the heat for 10 minutes so the stew settles, then serve."
       ],
       "tr": [
-        "Kuzu etini küp küp doğrayın ve zeytinyağında kızartın.",
-        "Doğranmış soğan ve sarımsağı ekleyip yumuşayana kadar kavurun.",
-        "Küp doğranmış patates, domates ve biberleri ekleyin.",
-        "Kimyon, tuz ve karabiberle tatlandırın. Üzerini geçecek kadar su ekleyin.",
-        "Güveç kabına aktarın ve 180°C'de 1.5 saat yumuşayana kadar pişirin."
+        "Kuzu etini iri küpler hâlinde doğrayıp kurulayın.",
+        "Eti zeytinyağında, yüksek ateşte partiler hâlinde mühürleyip kenara alın.",
+        "Aynı tencerede soğan ve sarımsağı 5 dakika kavurun.",
+        "Eti geri koyun, üzerini örtecek kadar sıcak su ekleyip kapalı 45 dakika pişirin.",
+        "Bu sırada patates, biber ve domatesi küp doğrayın.",
+        "Sebzeleri, kimyonu, tuzu ve karabiberi tencereye ekleyin.",
+        "Kuzu eti kolayca ayrılana dek 30 dakika daha pişirin.",
+        "Ortada suyunu kontrol edin, azaldıysa sıcak su ekleyin.",
+        "Ateşten alıp 10 dakika dinlendirdikten sonra servis edin."
       ]
     },
     "imagePath": null,
@@ -989,18 +1061,26 @@
     },
     "steps": {
       "en": [
-        "Prepare dough with flour, yeast, water, and salt. Let rise for 1 hour.",
-        "Mix ground beef with diced tomato, pepper, onion, parsley, and spices.",
-        "Roll dough into oval shapes and spread meat mixture on top.",
-        "Fold edges up to form a boat shape.",
-        "Bake at 220°C for 12-15 minutes until golden and crispy."
+        "Mix the flour, yeast, a pinch of salt and warm water into a soft dough.",
+        "Knead for 10 minutes until smooth and elastic.",
+        "Cover and leave to rise for 1 hour, until doubled in size.",
+        "Mix the beef with grated onion, chopped pepper, tomato, parsley, cumin, salt and pepper.",
+        "Let the filling rest so the flavours combine while the dough proves.",
+        "Preheat the oven to its highest setting with a tray inside.",
+        "Roll the dough into a long oval and spread the filling to within a finger of the edges.",
+        "Fold the edges in and pinch the ends into the classic boat shape.",
+        "Bake on the hot tray for 12-15 minutes until the base is crisp and golden."
       ],
       "tr": [
-        "Un, maya, su ve tuzla hamur hazırlayın. 1 saat mayalanmaya bırakın.",
-        "Kıymayı doğranmış domates, biber, soğan, maydanoz ve baharatlarla karıştırın.",
-        "Hamuru oval açın ve üzerine et harcını yayın.",
-        "Kenarları kaldırarak kayık şekli verin.",
-        "220°C'de 12-15 dakika altın rengi ve çıtır olana kadar pişirin."
+        "Un, maya, bir tutam tuz ve ılık suyu yumuşak bir hamur olacak şekilde karıştırın.",
+        "Pürüzsüz ve esnek olana dek 10 dakika yoğurun.",
+        "Üzerini örtüp iki katına çıkana kadar 1 saat mayalandırın.",
+        "Kıymayı rendelenmiş soğan, doğranmış biber, domates, maydanoz, kimyon, tuz ve karabiberle karıştırın.",
+        "Hamur mayalanırken harcı dinlendirin ki tatlar birleşsin.",
+        "Fırını içinde tepsiyle birlikte en yüksek dereceye ısıtın.",
+        "Hamuru uzun oval açıp harcı kenarlara bir parmak boşluk bırakarak yayın.",
+        "Kenarları içe katlayıp uçlarını birleştirerek kayık şekli verin.",
+        "Kızgın tepsiye alıp altı gevrek ve altın rengi olana dek 12-15 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -1093,18 +1173,26 @@
     },
     "steps": {
       "en": [
-        "Blanch grape leaves in boiling water for 2 minutes, then drain.",
-        "Mix rice, ground meat, diced onion, tomato, parsley, and seasonings.",
-        "Place a spoonful of filling on each leaf and roll tightly.",
-        "Arrange rolls seam-side down in a pot, add water and lemon juice.",
-        "Cover and simmer on low heat for 50-60 minutes until rice is cooked."
+        "Rinse the rice and soak it in warm water for 20 minutes, then drain.",
+        "Soften the finely diced onion in olive oil for 5 minutes.",
+        "Add the beef and cook until it loses its raw colour.",
+        "Mix in the rice, chopped tomato, parsley, salt and pepper and let the filling cool.",
+        "Blanch the vine leaves briefly in hot water and pat them dry.",
+        "Lay each leaf vein side up and place a small line of filling near the stem.",
+        "Fold the sides in and roll firmly but not tightly — the rice will expand.",
+        "Pack the rolls seam down in a pot, add hot water to cover and weigh them down with a plate.",
+        "Simmer covered on low for 45 minutes, then rest and serve with lemon."
       ],
       "tr": [
-        "Asma yapraklarını kaynar suda 2 dakika haşlayın, süzün.",
-        "Pirinci, kıymayı, doğranmış soğanı, domatesi, maydanozu ve baharatları karıştırın.",
-        "Her yaprağın üzerine bir kaşık harç koyup sıkıca sarın.",
-        "Sarmaları dikişleri alta gelecek şekilde tencereye dizin, su ve limon suyu ekleyin.",
-        "Kapağı kapatıp kısık ateşte 50-60 dakika pirinç pişene kadar pişirin."
+        "Pirinci yıkayıp ılık suda 20 dakika bekletin ve süzün.",
+        "İnce doğranmış soğanı zeytinyağında 5 dakika kavurun.",
+        "Kıymayı ekleyip rengi dönene kadar pişirin.",
+        "Pirinç, doğranmış domates, maydanoz, tuz ve karabiberi karıştırıp harcı soğutun.",
+        "Asma yapraklarını sıcak suda kısaca haşlayıp kurulayın.",
+        "Her yaprağı damarlı yüzü üste gelecek şekilde açıp sap tarafına ince bir sıra harç koyun.",
+        "Yanlarını kapatıp sıkı ama gergin olmayacak şekilde sarın — pirinç şişecek.",
+        "Sarmaları birleşim yeri altta kalacak şekilde tencereye dizin, üzerini geçecek sıcak su ekleyip tabakla bastırın.",
+        "Kapalı, kısık ateşte 45 dakika pişirin, dinlendirip limonla servis edin."
       ]
     },
     "imagePath": null,
@@ -1195,18 +1283,26 @@
     },
     "steps": {
       "en": [
-        "Sauté sliced mushrooms in olive oil until golden, set aside.",
-        "In the same pan, sauté diced onion and garlic until soft.",
-        "Add rice and toast for 2 minutes, then add warm broth one ladle at a time.",
-        "Stir continuously, adding broth as it absorbs, for about 18 minutes.",
-        "Stir in mushrooms, parmesan, salt, and pepper. Serve immediately."
+        "Slice the mushrooms and sauté them in olive oil over high heat until golden; set aside.",
+        "Soften the finely diced onion and garlic in the same pan over low heat.",
+        "Add the rice and stir for 2 minutes until the grains turn translucent at the edges.",
+        "Add hot stock or water one ladle at a time.",
+        "Wait until each ladle is almost absorbed before adding the next, stirring constantly.",
+        "Continue for 18-20 minutes; the rice should be creamy but still firm in the centre.",
+        "Return the mushrooms to the pan for the last 3 minutes.",
+        "Take off the heat and beat in the grated parmesan vigorously — this is what makes it creamy.",
+        "Season, rest for 2 minutes and serve immediately."
       ],
       "tr": [
-        "Dilimlenmiş mantarları zeytinyağında altın rengi olana kadar kavurun, kenara alın.",
-        "Aynı tavada doğranmış soğan ve sarımsağı yumuşayana kadar kavurun.",
-        "Pirinci ekleyip 2 dakika kavurun, sonra ılık et suyunu kepçe kepçe ekleyin.",
-        "Sürekli karıştırarak yaklaşık 18 dakika boyunca et suyu ekleyin.",
-        "Mantarları, parmesanı, tuzu ve karabiberi karıştırın. Hemen servis edin."
+        "Mantarları dilimleyip zeytinyağında yüksek ateşte kızarana dek soteleyin ve kenara alın.",
+        "Aynı tavada ince doğranmış soğan ve sarımsağı kısık ateşte yumuşatın.",
+        "Pirinci ekleyip taneler kenarından şeffaflaşana dek 2 dakika çevirin.",
+        "Sıcak et suyunu ya da suyu birer kepçe hâlinde ekleyin.",
+        "Sürekli karıştırarak, her kepçe neredeyse çekilmeden yenisini eklemeyin.",
+        "18-20 dakika devam edin; pirinç kremamsı ama içi hafif diri olmalı.",
+        "Son 3 dakikada mantarları tavaya geri ekleyin.",
+        "Ateşten alıp rendelenmiş parmesanı güçlüce çırpın — kremamsı kıvamı bu verir.",
+        "Tuzunu ayarlayıp 2 dakika dinlendirin ve hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -1292,18 +1388,26 @@
     },
     "steps": {
       "en": [
-        "Peel eggplants in stripes and fry until softened.",
-        "Sauté sliced onions in olive oil for 10 minutes until caramelized.",
-        "Add diced tomatoes, garlic, parsley, salt, and pepper to onions.",
-        "Slit eggplants and fill with the onion-tomato mixture.",
-        "Arrange in a pan, add water, and simmer for 30 minutes. Serve cold or warm."
+        "Peel the aubergines in stripes and soak them in salted water for 15 minutes.",
+        "Pat them dry and fry them gently in olive oil until soft, then drain.",
+        "Slice the onions into thin half-moons — imam bayıldı is generous with onion.",
+        "Cook the onion in plenty of olive oil over low heat for 15 minutes until sweet and collapsed.",
+        "Add the garlic and chopped tomato and cook for 10 minutes.",
+        "Stir in the parsley, salt and pepper and take off the heat.",
+        "Slit the aubergines lengthways and open them out in a wide pan.",
+        "Fill them with the onion mixture and add a little hot water to the pan.",
+        "Cover and cook on low for 30 minutes, then cool — this dish is served at room temperature."
       ],
       "tr": [
-        "Patlıcanları alacalı soyun ve yumuşayana kadar kızartın.",
-        "Dilimlenmiş soğanları zeytinyağında 10 dakika karamelize olana kadar kavurun.",
-        "Doğranmış domatesleri, sarımsağı, maydanozu, tuzu ve karabiberi soğanlara ekleyin.",
-        "Patlıcanları yarın ve soğan-domates karışımıyla doldurun.",
-        "Tepsiye dizin, su ekleyin ve 30 dakika pişirin. Soğuk veya ılık servis edin."
+        "Patlıcanları alacalı soyup tuzlu suda 15 dakika bekletin.",
+        "Kurulayıp zeytinyağında yumuşayana dek hafif ateşte kızartın ve süzün.",
+        "Soğanları ince yarım ay şeklinde doğrayın — imam bayıldı bol soğan ister.",
+        "Soğanı bol zeytinyağında kısık ateşte 15 dakika, tatlanıp dağılana dek pişirin.",
+        "Sarımsağı ve doğranmış domatesi ekleyip 10 dakika pişirin.",
+        "Maydanoz, tuz ve karabiberi karıştırıp ateşten alın.",
+        "Patlıcanları boydan boya yarıp geniş bir tencerede açın.",
+        "İçlerini soğanlı harçla doldurup tencereye az sıcak su ekleyin.",
+        "Kapalı, kısık ateşte 30 dakika pişirip soğutun — bu yemek oda sıcaklığında servis edilir."
       ]
     },
     "imagePath": null,
@@ -1394,18 +1498,26 @@
     },
     "steps": {
       "en": [
-        "Marinate chicken in olive oil, lemon juice, cumin, garlic, salt, and pepper for 30 minutes.",
-        "Grill or pan-fry chicken until golden and cooked through, then slice.",
-        "Cook rice according to package instructions.",
-        "Mix yogurt with minced garlic and a pinch of salt for sauce.",
-        "Assemble bowls: rice, sliced chicken, chopped vegetables, and yogurt sauce."
+        "Slice the chicken thinly and marinate it with cumin, olive oil, salt and pepper for 20 minutes.",
+        "Cook the rice in twice its volume of salted water and keep it covered.",
+        "Sear the chicken in a very hot pan in a single layer for 4 minutes.",
+        "Turn and cook 3 minutes more until the edges crisp like döner.",
+        "Mix the yoghurt with crushed garlic, lemon juice and a pinch of salt.",
+        "Shred the lettuce and dice the tomato and cucumber.",
+        "Spoon the rice into a bowl as the base.",
+        "Arrange the chicken and vegetables in sections over the rice.",
+        "Spoon the garlic yoghurt over the top and serve warm."
       ],
       "tr": [
-        "Tavuğu zeytinyağı, limon suyu, kimyon, sarımsak, tuz ve karabiberle 30 dakika marine edin.",
-        "Tavuğu ızgarada veya tavada altın rengi olana kadar pişirip dilimleyin.",
-        "Pirinci paket talimatlarına göre pişirin.",
-        "Yoğurdu kıyılmış sarımsak ve bir tutam tuzla karıştırarak sos yapın.",
-        "Kaselere pilav, dilimlenmiş tavuk, doğranmış sebzeler ve yoğurt sosu yerleştirin."
+        "Tavuğu ince dilimleyip kimyon, zeytinyağı, tuz ve karabiberle 20 dakika marine edin.",
+        "Pirinci kendi hacminin iki katı tuzlu suda pişirip kapağı kapalı bekletin.",
+        "Tavuğu çok kızgın tavada tek sıra hâlinde 4 dakika mühürleyin.",
+        "Çevirip kenarları döner gibi çıtırlaşana dek 3 dakika daha pişirin.",
+        "Yoğurdu ezilmiş sarımsak, limon suyu ve bir tutam tuzla karıştırın.",
+        "Marulu jülyen doğrayın, domates ve salatalığı küp kesin.",
+        "Pilavı kasenin tabanına yayın.",
+        "Tavuk ve sebzeleri pilavın üzerine bölümler hâlinde dizin.",
+        "Sarımsaklı yoğurdu gezdirip ılık servis edin."
       ]
     },
     "imagePath": null,
@@ -1509,18 +1621,26 @@
     },
     "steps": {
       "en": [
-        "Make dough with flour, eggs, water, and salt. Rest for 30 minutes.",
-        "Mix ground beef with grated onion, salt, pepper, and cumin for filling.",
-        "Roll dough thin, cut into small squares, and place filling in each.",
-        "Pinch corners together to seal the dumplings.",
-        "Boil in salted water for 10-12 minutes. Serve with yogurt-garlic sauce and paprika butter."
+        "Mix the beef with grated onion, salt and pepper and knead it well.",
+        "Roll out a thin sheet of dough and cut it into small squares.",
+        "Place a pea-sized amount of filling in the centre of each square.",
+        "Pinch the four corners together so no filling escapes during boiling.",
+        "Bring a large pot of salted water to a rolling boil.",
+        "Cook the mantı for 10-12 minutes; they are done when they float and the dough is tender.",
+        "Mix the yoghurt with crushed garlic and a pinch of salt.",
+        "Drain the mantı well and spread the garlic yoghurt over them.",
+        "Finish with melted butter and cumin, and serve immediately."
       ],
       "tr": [
-        "Un, yumurta, su ve tuzla hamur yapın. 30 dakika dinlendirin.",
-        "Kıymayı rendelenmiş soğan, tuz, karabiber ve kimyonla karıştırın.",
-        "Hamuru ince açın, küçük kareler kesin ve her birine iç harç koyun.",
-        "Köşeleri birleştirip kapatın.",
-        "Tuzlu suda 10-12 dakika haşlayın. Yoğurt-sarımsak sosu ve biberli tereyağı ile servis edin."
+        "Kıymayı rendelenmiş soğan, tuz ve karabiberle iyice yoğurun.",
+        "İnce bir hamur açıp küçük kareler hâlinde kesin.",
+        "Her karenin ortasına nohut tanesi kadar harç koyun.",
+        "Haşlarken harç dışarı çıkmasın diye dört köşeyi birleştirip kapatın.",
+        "Büyük bir tencerede tuzlu suyu fokur fokur kaynatın.",
+        "Mantıları 10-12 dakika haşlayın; yüzeye çıkıp hamur yumuşadığında pişmiştir.",
+        "Yoğurdu ezilmiş sarımsak ve bir tutam tuzla karıştırın.",
+        "Mantıların suyunu iyice süzüp üzerine sarımsaklı yoğurdu yayın.",
+        "Eritilmiş tereyağı ve kimyonla tamamlayıp hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -1602,17 +1722,25 @@
     "steps": {
       "en": [
         "Preheat the oven to 200°C.",
-        "Chop the vegetables into large chunks and place in a baking dish.",
-        "Season the chicken and vegetables with olive oil, thyme, salt and pepper.",
-        "Bake for 35-40 minutes until the chicken is cooked through.",
-        "Rest for 5 minutes and serve hot."
+        "Cut the potato, carrot, pepper and onion into large, even chunks.",
+        "Toss the vegetables with half the olive oil, thyme, salt and pepper.",
+        "Spread them in a single layer in a roasting tin.",
+        "Rub the chicken with the remaining oil and season it well.",
+        "Nestle the chicken among the vegetables.",
+        "Roast for 35-40 minutes, turning the vegetables once halfway.",
+        "The chicken is done when the juices run clear at the thickest point.",
+        "Rest for 5 minutes and serve straight from the tin."
       ],
       "tr": [
         "Fırını 200°C'ye ısıtın.",
-        "Sebzeleri iri parçalar halinde doğrayıp fırın kabına dizin.",
-        "Tavuğu ve sebzeleri zeytinyağı, kekik, tuz ve karabiberle harmanlayın.",
-        "Tavuk pişene kadar 35-40 dakika fırınlayın.",
-        "5 dakika dinlendirip sıcak servis edin."
+        "Patates, havuç, biber ve soğanı iri ve eşit parçalar hâlinde doğrayın.",
+        "Sebzeleri zeytinyağının yarısı, kekik, tuz ve karabiberle harmanlayın.",
+        "Fırın kabına tek sıra hâlinde yayın.",
+        "Tavuğu kalan yağla ovup bolca baharatlayın.",
+        "Tavuğu sebzelerin arasına yerleştirin.",
+        "Ortasında sebzeleri bir kez çevirerek 35-40 dakika pişirin.",
+        "En kalın yerinden kestiğinizde suyu berrak akıyorsa tavuk pişmiştir.",
+        "5 dakika dinlendirip kabıyla servis edin."
       ]
     },
     "imagePath": null,
@@ -1700,18 +1828,26 @@
     },
     "steps": {
       "en": [
-        "Trim the beans and cut them in half.",
-        "Sauté the onion and garlic in olive oil until soft.",
-        "Add chopped tomato and cook for 5 minutes.",
-        "Add the beans and a little water, cover and simmer for 30 minutes.",
-        "Serve warm or at room temperature."
+        "Top and tail the beans and cut them in half.",
+        "Slice the onion into half-moons and chop the garlic.",
+        "Soften the onion in olive oil over low heat for 5 minutes without colouring it.",
+        "Add the garlic and cook for 1 minute.",
+        "Add the grated tomato and cook for 5 minutes until it thickens.",
+        "Add the beans and turn them through the sauce to coat.",
+        "Add half a glass of hot water, season and cover the pan.",
+        "Simmer on low for 30-35 minutes until the beans are completely tender.",
+        "Cool in the pan and serve warm or at room temperature with olive oil."
       ],
       "tr": [
         "Fasulyelerin uçlarını alıp ikiye bölün.",
-        "Soğanı ve sarımsağı zeytinyağında yumuşayana kadar kavurun.",
-        "Doğranmış domatesi ekleyip 5 dakika pişirin.",
-        "Fasulyeleri ve az su ekleyin, kapağı kapatıp 30 dakika pişirin.",
-        "Ilık ya da oda sıcaklığında servis edin."
+        "Soğanı yarım ay doğrayın, sarımsağı kıyın.",
+        "Soğanı zeytinyağında kısık ateşte renk almadan 5 dakika yumuşatın.",
+        "Sarımsağı ekleyip 1 dakika çevirin.",
+        "Rendelenmiş domatesi ekleyip koyulaşana dek 5 dakika pişirin.",
+        "Fasulyeleri ekleyip sosla kaplanacak şekilde çevirin.",
+        "Yarım bardak sıcak su ekleyin, tuzunu ayarlayıp kapağı kapatın.",
+        "Fasulyeler tamamen yumuşayana dek kısık ateşte 30-35 dakika pişirin.",
+        "Tencerede soğutup ılık ya da oda sıcaklığında, zeytinyağıyla servis edin."
       ]
     },
     "imagePath": null,
@@ -1792,18 +1928,26 @@
     },
     "steps": {
       "en": [
-        "Brown the ground beef with chopped onion in olive oil.",
-        "Stir in the tomato paste and cook for 2 minutes.",
-        "Add cooked chickpeas and enough water to cover.",
-        "Simmer for 20 minutes; season with cumin, salt and pepper.",
-        "Serve hot."
+        "If using dried chickpeas, soak them overnight and boil until tender.",
+        "Dice the onion finely.",
+        "Brown the beef in olive oil over high heat, breaking up the lumps.",
+        "Add the onion and cook for 5 minutes until softened.",
+        "Stir in the tomato paste and cook for 2 minutes to lose its raw taste.",
+        "Add the chickpeas and enough hot water to just cover them.",
+        "Season with cumin, salt and pepper.",
+        "Simmer covered on low for 25 minutes so the chickpeas take on the sauce.",
+        "Rest for 5 minutes off the heat, then serve hot with rice or bread."
       ],
       "tr": [
-        "Kıymayı doğranmış soğanla zeytinyağında kavurun.",
-        "Salçayı ekleyip 2 dakika çevirin.",
-        "Haşlanmış nohutu ve üzerini geçecek kadar su ekleyin.",
-        "20 dakika kaynatın; kimyon, tuz ve karabiberle tatlandırın.",
-        "Sıcak servis edin."
+        "Kuru nohut kullanıyorsanız bir gece ıslatıp yumuşayana dek haşlayın.",
+        "Soğanı ince doğrayın.",
+        "Kıymayı zeytinyağında yüksek ateşte, topaklarını dağıtarak kavurun.",
+        "Soğanı ekleyip yumuşayana dek 5 dakika pişirin.",
+        "Salçayı ekleyip ham tadı gitsin diye 2 dakika çevirin.",
+        "Nohutu ve üzerini örtecek kadar sıcak suyu ekleyin.",
+        "Kimyon, tuz ve karabiberle tatlandırın.",
+        "Nohut sosu çeksin diye kapalı, kısık ateşte 25 dakika pişirin.",
+        "Ateşten alıp 5 dakika dinlendirin ve pilav ya da ekmekle sıcak servis edin."
       ]
     },
     "imagePath": null,
@@ -1889,18 +2033,26 @@
     },
     "steps": {
       "en": [
-        "Sauté the onion and pepper in olive oil.",
-        "Add tomato paste and chopped tomato; cook for 3 minutes.",
-        "Stir in the bulgur and 1.5 cups of hot water.",
-        "Cover and simmer on low heat for 15 minutes.",
-        "Rest for 10 minutes before fluffing and serving."
+        "Rinse the bulgur and drain it well.",
+        "Dice the onion and pepper finely.",
+        "Soften the onion in olive oil over medium heat for 4 minutes.",
+        "Add the pepper and cook for 3 minutes more.",
+        "Stir in the tomato paste and cook for 1 minute to take off its raw edge.",
+        "Add the chopped tomato and cook until its water evaporates, about 4 minutes.",
+        "Add the bulgur with one and a half times its volume of hot water.",
+        "Cover and simmer on the lowest heat for 15 minutes without stirring.",
+        "Rest off the heat for 10 minutes, then fluff with a fork and serve."
       ],
       "tr": [
-        "Soğanı ve biberi zeytinyağında kavurun.",
-        "Salçayı ve doğranmış domatesi ekleyip 3 dakika pişirin.",
-        "Bulguru ve 1,5 su bardağı sıcak suyu ekleyin.",
-        "Kapağı kapatıp kısık ateşte 15 dakika pişirin.",
-        "Karıştırmadan önce 10 dakika demlendirin."
+        "Bulguru yıkayıp iyice süzün.",
+        "Soğan ve biberi ince doğrayın.",
+        "Soğanı zeytinyağında orta ateşte 4 dakika kavurun.",
+        "Biberi ekleyip 3 dakika daha pişirin.",
+        "Salçayı ekleyip ham kokusu gitsin diye 1 dakika çevirin.",
+        "Doğranmış domatesi ekleyip suyu çekene dek yaklaşık 4 dakika pişirin.",
+        "Bulguru, hacminin bir buçuk katı sıcak suyla birlikte ekleyin.",
+        "Kapağı kapatıp en kısık ateşte, karıştırmadan 15 dakika pişirin.",
+        "Ateşten alıp 10 dakika demlendirin, çatalla kabartıp servis edin."
       ]
     },
     "imagePath": null,
@@ -1986,18 +2138,26 @@
     },
     "steps": {
       "en": [
-        "Cube the chicken and marinate with olive oil, paprika, lemon and salt.",
-        "Thread onto skewers.",
-        "Grill for 12-15 minutes, turning occasionally.",
-        "Mix yogurt with crushed garlic and a pinch of salt.",
-        "Serve the skewers with the yogurt sauce."
+        "Cut the chicken into even cubes.",
+        "Mix the yoghurt, crushed garlic, paprika, olive oil, lemon juice, salt and pepper.",
+        "Coat the chicken in the marinade and refrigerate for at least 1 hour.",
+        "Thread the cubes onto skewers, leaving a little space between them.",
+        "Heat the grill or griddle until very hot.",
+        "Grill for 12-15 minutes, turning every 3 minutes for an even crust.",
+        "Check the largest piece — the juices should run clear.",
+        "Rest the skewers for 3 minutes.",
+        "Serve with the reserved yoghurt sauce and lemon wedges."
       ],
       "tr": [
-        "Tavuğu kuşbaşı doğrayıp zeytinyağı, toz biber, limon ve tuzla marine edin.",
-        "Şişlere dizin.",
-        "Ara ara çevirerek 12-15 dakika ızgarada pişirin.",
-        "Yoğurdu ezilmiş sarımsak ve bir tutam tuzla karıştırın.",
-        "Şişleri yoğurt sosuyla servis edin."
+        "Tavuğu eşit küpler hâlinde doğrayın.",
+        "Yoğurt, ezilmiş sarımsak, toz biber, zeytinyağı, limon suyu, tuz ve karabiberi karıştırın.",
+        "Tavukları marinatla kaplayıp en az 1 saat buzdolabında bekletin.",
+        "Küpleri aralarında biraz boşluk bırakarak şişlere dizin.",
+        "Izgarayı ya da ızgara tavayı iyice kızdırın.",
+        "Her 3 dakikada bir çevirerek 12-15 dakika, her yüzü eşit kızarana dek pişirin.",
+        "En iri parçayı kontrol edin — suyu berrak akmalı.",
+        "Şişleri 3 dakika dinlendirin.",
+        "Ayırdığınız yoğurt sosu ve limon dilimleriyle servis edin."
       ]
     },
     "imagePath": null,
@@ -2085,18 +2245,26 @@
     },
     "steps": {
       "en": [
-        "Sauté the chopped onion in olive oil until translucent.",
-        "Add washed, chopped spinach and cook until wilted.",
-        "Make two wells and crack the eggs into them.",
-        "Cover and cook until the eggs are set.",
-        "Season with chili flakes and serve with yogurt."
+        "Wash the spinach thoroughly and chop it roughly.",
+        "Dice the onion and soften it in olive oil for 4 minutes.",
+        "Add the spinach in batches, letting each batch wilt before adding more.",
+        "Cook until the water the spinach releases has evaporated.",
+        "Season with salt, pepper and chilli flakes.",
+        "Make wells in the spinach and crack an egg into each.",
+        "Cover the pan and cook on low for 4-5 minutes.",
+        "The eggs are ready when the whites are set but the yolks still soft.",
+        "Serve straight from the pan with garlic yoghurt on the side."
       ],
       "tr": [
-        "Doğranmış soğanı zeytinyağında pembeleşene kadar kavurun.",
-        "Yıkanmış, doğranmış ıspanağı ekleyip çekene kadar pişirin.",
-        "İki yuva açıp yumurtaları kırın.",
-        "Kapağı kapatıp yumurtalar pişene kadar bekleyin.",
-        "Pul biber serpin, yoğurtla servis edin."
+        "Ispanağı iyice yıkayıp kabaca doğrayın.",
+        "Soğanı küp doğrayıp zeytinyağında 4 dakika kavurun.",
+        "Ispanağı azar azar ekleyin, her seferinde çekmesini bekleyin.",
+        "Ispanağın saldığı su tamamen çekene kadar pişirin.",
+        "Tuz, karabiber ve pul biberle tatlandırın.",
+        "Ispanakta yuvalar açıp her birine bir yumurta kırın.",
+        "Tavanın kapağını kapatıp kısık ateşte 4-5 dakika pişirin.",
+        "Beyazlar tutup sarılar yumuşak kaldığında hazırdır.",
+        "Yanında sarımsaklı yoğurtla, tavasıyla servis edin."
       ]
     },
     "imagePath": null,
@@ -2185,18 +2353,26 @@
     },
     "steps": {
       "en": [
-        "Grate the zucchini, salt it and squeeze out the excess water.",
-        "Mix with eggs, flour, crumbled feta, dill and spring onion.",
-        "Heat olive oil in a pan.",
-        "Drop spoonfuls of batter and fry 3-4 minutes per side.",
-        "Drain on paper towels and serve."
+        "Grate the courgettes coarsely.",
+        "Salt them and leave for 15 minutes, then squeeze out as much water as you can.",
+        "This step decides whether the fritters hold together — do not rush it.",
+        "Chop the dill and spring onion finely.",
+        "Mix the courgette, eggs, flour, crumbled feta, dill and spring onion.",
+        "Season with salt and pepper; the batter should be thick, not runny.",
+        "Heat the olive oil in a pan over medium heat.",
+        "Drop spoonfuls in and flatten them slightly; fry 3-4 minutes a side until golden.",
+        "Drain on paper towels and serve warm with yoghurt."
       ],
       "tr": [
-        "Kabakları rendeleyin, tuzlayıp suyunu iyice sıkın.",
-        "Yumurta, un, ufalanmış beyaz peynir, dereotu ve taze soğanla karıştırın.",
-        "Tavada zeytinyağını ısıtın.",
-        "Kaşıkla harç dökün, her yüzünü 3-4 dakika kızartın.",
-        "Kağıt havluya alıp servis edin."
+        "Kabakları iri rendeleyin.",
+        "Tuzlayıp 15 dakika bekletin, sonra suyunu elinizle olabildiğince sıkın.",
+        "Mücverin dağılıp dağılmayacağını bu adım belirler — acele etmeyin.",
+        "Dereotu ve taze soğanı ince kıyın.",
+        "Kabak, yumurta, un, ufalanmış beyaz peynir, dereotu ve taze soğanı karıştırın.",
+        "Tuz ve karabiberle tatlandırın; harç akıcı değil kıvamlı olmalı.",
+        "Tavada zeytinyağını orta ateşte ısıtın.",
+        "Kaşıkla harç döküp hafifçe yayın; her yüzünü 3-4 dakika, altın rengi olana dek kızartın.",
+        "Kağıt havluya alıp yoğurtla ılık servis edin."
       ]
     },
     "imagePath": null,
@@ -2288,18 +2464,26 @@
     },
     "steps": {
       "en": [
-        "Layer sliced onion and tomato in a wide pan.",
-        "Place the sea bass fillets on top with lemon slices.",
-        "Drizzle with olive oil and add half a glass of water.",
-        "Cover and steam on low heat for 20 minutes.",
-        "Garnish with parsley and serve."
+        "Scale and clean the fish, or ask the fishmonger to do it.",
+        "Slice the onion into rings and lay them across the base of a wide pan.",
+        "Slice the tomato and layer half of it over the onion.",
+        "Place the fish on the vegetable bed and season inside and out.",
+        "Tuck the garlic and lemon slices around and inside the fish.",
+        "Cover with the remaining tomato and drizzle with olive oil.",
+        "Add half a glass of water, cover the pan and bring to a gentle simmer.",
+        "Steam on low for 20 minutes; the fish is done when the flesh parts from the bone.",
+        "Scatter with parsley and serve with the pan juices spooned over."
       ],
       "tr": [
-        "Geniş bir tencereye soğan ve domates dilimlerini dizin.",
-        "Levrek filetolarını limon dilimleriyle üzerine yerleştirin.",
-        "Zeytinyağı gezdirip yarım bardak su ekleyin.",
-        "Kapağı kapatıp kısık ateşte 20 dakika buğulayın.",
-        "Maydanozla süsleyip servis edin."
+        "Balığı temizleyip pullarını alın ya da balıkçıya temizletin.",
+        "Soğanı halka doğrayıp geniş bir tencerenin tabanına dizin.",
+        "Domatesi dilimleyip yarısını soğanın üzerine yayın.",
+        "Balığı sebze yatağının üzerine yerleştirip içini ve dışını baharatlayın.",
+        "Sarımsak ve limon dilimlerini balığın etrafına ve karnına yerleştirin.",
+        "Kalan domatesle örtüp zeytinyağı gezdirin.",
+        "Yarım bardak su ekleyin, kapağı kapatıp hafifçe kaynatın.",
+        "Kısık ateşte 20 dakika buğulayın; et kılçıktan ayrılıyorsa pişmiştir.",
+        "Maydanoz serpip tencere suyunu üzerine gezdirerek servis edin."
       ]
     },
     "imagePath": null,
@@ -2390,18 +2574,26 @@
     },
     "steps": {
       "en": [
-        "Cook the pasta in salted boiling water until al dente.",
-        "Sauté garlic and chili flakes in olive oil.",
-        "Add chopped tomatoes and simmer for 10 minutes.",
-        "Toss the pasta in the sauce.",
-        "Serve with basil and grated parmesan."
+        "Bring a large pot of well-salted water to the boil.",
+        "Slice the garlic thinly rather than crushing it, so it infuses the oil.",
+        "Warm the olive oil with the garlic and chilli flakes over low heat.",
+        "Let the garlic turn pale gold — do not let it brown or it will taste bitter.",
+        "Add the chopped tomatoes and simmer for 12 minutes until thickened.",
+        "Cook the pasta until al dente, reserving a cup of the water.",
+        "Toss the pasta into the sauce with a splash of the cooking water.",
+        "Stir over the heat for 1 minute so the sauce clings to the pasta.",
+        "Finish with torn basil and parmesan off the heat, and serve."
       ],
       "tr": [
-        "Makarnayı tuzlu kaynar suda al dente haşlayın.",
-        "Sarımsak ve pul biberi zeytinyağında kavurun.",
-        "Doğranmış domatesleri ekleyip 10 dakika pişirin.",
-        "Makarnayı sosla harmanlayın.",
-        "Fesleğen ve rendelenmiş parmesanla servis edin."
+        "Büyük bir tencerede bol tuzlu suyu kaynatın.",
+        "Sarımsağı ezmek yerine ince dilimleyin ki yağa tadını versin.",
+        "Zeytinyağını sarımsak ve pul biberle kısık ateşte ısıtın.",
+        "Sarımsak açık altın rengi olsun — kararırsa acılaşır.",
+        "Doğranmış domatesleri ekleyip koyulaşana dek 12 dakika pişirin.",
+        "Makarnayı al dente haşlayın, bir bardak suyunu ayırın.",
+        "Makarnayı bir miktar haşlama suyuyla sosa alın.",
+        "Sos makarnaya yapışsın diye ateşte 1 dakika karıştırın.",
+        "Ateşten alıp elle koparılmış fesleğen ve parmesanla tamamlayın."
       ]
     },
     "imagePath": null,
@@ -2489,18 +2681,26 @@
     },
     "steps": {
       "en": [
-        "Blend basil, pine nuts, garlic, parmesan and olive oil into pesto.",
-        "Cook the pasta until al dente.",
-        "Grill the seasoned chicken and slice it.",
-        "Toss the pasta with the pesto.",
-        "Top with chicken and serve."
+        "Toast the pine nuts in a dry pan for 2 minutes until fragrant, then cool.",
+        "Blend the basil, pine nuts, garlic and parmesan with the olive oil into a pesto.",
+        "Keep the pesto slightly coarse rather than completely smooth.",
+        "Season the chicken and grill it for 5-6 minutes a side.",
+        "Rest the chicken for 5 minutes, then slice it thickly.",
+        "Cook the pasta until al dente, reserving a cup of the water.",
+        "Take the pasta off the heat before mixing in the pesto — heat dulls its colour and flavour.",
+        "Loosen the pesto with a little pasta water and toss it through.",
+        "Top with the sliced chicken and extra parmesan, and serve."
       ],
       "tr": [
-        "Fesleğen, çam fıstığı, sarımsak, parmesan ve zeytinyağını pesto olana dek çekin.",
-        "Makarnayı al dente haşlayın.",
-        "Baharatlanmış tavuğu ızgarada pişirip dilimleyin.",
-        "Makarnayı pestoyla harmanlayın.",
-        "Üzerine tavuğu ekleyip servis edin."
+        "Çam fıstıklarını kuru tavada kokusu çıkana dek 2 dakika kavurup soğutun.",
+        "Fesleğen, çam fıstığı, sarımsak ve parmesanı zeytinyağıyla pesto olana dek çekin.",
+        "Pestoyu tamamen pürüzsüz değil, hafif taneli bırakın.",
+        "Tavuğu baharatlayıp her yüzünü 5-6 dakika ızgarada pişirin.",
+        "Tavuğu 5 dakika dinlendirip kalın dilimleyin.",
+        "Makarnayı al dente haşlayın, bir bardak suyunu ayırın.",
+        "Pestoyu karıştırmadan önce makarnayı ateşten alın — ısı rengini ve aromasını öldürür.",
+        "Pestoyu biraz haşlama suyuyla açıp makarnaya yedirin.",
+        "Üzerine dilimlenmiş tavuk ve biraz daha parmesan ekleyip servis edin."
       ]
     },
     "imagePath": null,
@@ -2590,18 +2790,26 @@
     },
     "steps": {
       "en": [
-        "Sauté onion, garlic, carrot and celery in olive oil.",
-        "Add chopped tomato and zucchini; cook for 5 minutes.",
-        "Add beans and 3 cups of water; simmer for 15 minutes.",
-        "Add the pasta and cook until tender.",
-        "Season and serve hot."
+        "Dice the onion, carrot and celery to the same small size.",
+        "Sweat them in olive oil over low heat for 8 minutes — this base builds the flavour.",
+        "Add the garlic and cook for 1 minute.",
+        "Stir in the chopped tomato and cook for 5 minutes.",
+        "Add the beans and 1 litre of hot water and bring to a simmer.",
+        "Simmer for 15 minutes, then add the diced courgette.",
+        "Add the pasta and cook until just tender, about 8 minutes.",
+        "Season with salt and pepper and adjust the thickness with hot water.",
+        "Rest for 5 minutes and serve with olive oil drizzled over."
       ],
       "tr": [
-        "Soğan, sarımsak, havuç ve kereviz sapını zeytinyağında kavurun.",
-        "Doğranmış domates ve kabağı ekleyip 5 dakika pişirin.",
-        "Fasulye ve 3 su bardağı su ekleyin; 15 dakika kaynatın.",
-        "Makarnayı ekleyip yumuşayana kadar pişirin.",
-        "Tatlandırıp sıcak servis edin."
+        "Soğan, havuç ve kerevizi aynı küçüklükte doğrayın.",
+        "Zeytinyağında kısık ateşte 8 dakika kavurun — lezzetin temeli bu.",
+        "Sarımsağı ekleyip 1 dakika çevirin.",
+        "Doğranmış domatesi ekleyip 5 dakika pişirin.",
+        "Fasulye ve 1 litre sıcak suyu ekleyip kaynamaya bırakın.",
+        "15 dakika pişirdikten sonra küp doğranmış kabağı ekleyin.",
+        "Makarnayı ekleyip yaklaşık 8 dakika, yumuşayana dek pişirin.",
+        "Tuz ve karabiberle tatlandırın, kıvamı sıcak suyla ayarlayın.",
+        "5 dakika dinlendirip üzerine zeytinyağı gezdirerek servis edin."
       ]
     },
     "imagePath": null,
@@ -2701,18 +2909,26 @@
     },
     "steps": {
       "en": [
-        "Cook the pasta until al dente.",
-        "Sauté garlic in olive oil, add chopped tomato.",
-        "Stir in drained tuna and cook for 2 minutes.",
-        "Toss with the pasta and a squeeze of lemon.",
-        "Finish with parsley and serve."
+        "Bring a pot of salted water to the boil for the pasta.",
+        "Drain the tuna well and flake it into large pieces.",
+        "Slice the garlic thinly and warm it in olive oil over low heat.",
+        "Add the chopped tomato and simmer for 8 minutes into a light sauce.",
+        "Cook the pasta until al dente, keeping a cup of the water.",
+        "Fold the tuna into the sauce and warm it through for 2 minutes only.",
+        "Overcooking the tuna makes it dry — treat it gently.",
+        "Toss the pasta through with a splash of the cooking water.",
+        "Finish with parsley, lemon juice and pepper, and serve at once."
       ],
       "tr": [
-        "Makarnayı al dente haşlayın.",
-        "Sarımsağı zeytinyağında kavurup doğranmış domatesi ekleyin.",
-        "Suyu süzülmüş ton balığını ekleyip 2 dakika pişirin.",
-        "Makarna ve limon suyuyla harmanlayın.",
-        "Maydanozla tamamlayıp servis edin."
+        "Makarna için tuzlu suyu kaynatın.",
+        "Ton balığının suyunu iyice süzüp iri parçalar hâlinde ayırın.",
+        "Sarımsağı ince dilimleyip zeytinyağında kısık ateşte ısıtın.",
+        "Doğranmış domatesi ekleyip 8 dakika, hafif bir sos olana dek pişirin.",
+        "Makarnayı al dente haşlayın, bir bardak suyunu ayırın.",
+        "Ton balığını sosa katıp sadece 2 dakika ısıtın.",
+        "Fazla pişen ton balığı kurur — nazik davranın.",
+        "Makarnayı bir miktar haşlama suyuyla sosa karıştırın.",
+        "Maydanoz, limon suyu ve karabiberle tamamlayıp hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -2803,18 +3019,26 @@
     },
     "steps": {
       "en": [
-        "Slice the chicken, peppers and onion into strips.",
-        "Season the chicken with paprika, cumin and salt.",
-        "Stir-fry the chicken in hot oil, then add the vegetables.",
-        "Cook until the peppers are just tender; add lime juice.",
-        "Serve in warm tortillas."
+        "Slice the chicken, peppers and onion into strips of the same width.",
+        "Toss the chicken with paprika, cumin, salt and half the olive oil.",
+        "Heat a heavy pan until it is almost smoking.",
+        "Cook the chicken in a single layer for 4 minutes without stirring, to get colour.",
+        "Turn it and cook for 3 minutes more, then move it to a plate.",
+        "Add the remaining oil and stir-fry the peppers and onion for 4 minutes.",
+        "Keep the vegetables slightly crisp rather than soft.",
+        "Return the chicken, squeeze over the lime and toss together for 1 minute.",
+        "Warm the tortillas and fill them at the table so they stay hot."
       ],
       "tr": [
-        "Tavuğu, biberleri ve soğanı şerit şerit doğrayın.",
-        "Tavuğu toz biber, kimyon ve tuzla harmanlayın.",
-        "Tavuğu kızgın yağda soteleyin, sebzeleri ekleyin.",
-        "Biberler hafif yumuşayınca lime suyunu ekleyin.",
-        "Isıtılmış tortillalarla servis edin."
+        "Tavuk, biber ve soğanı aynı kalınlıkta şeritler hâlinde doğrayın.",
+        "Tavuğu toz biber, kimyon, tuz ve zeytinyağının yarısıyla harmanlayın.",
+        "Kalın tabanlı tavayı neredeyse dumanı çıkacak kadar kızdırın.",
+        "Tavuğu renk alsın diye tek sıra hâlinde, karıştırmadan 4 dakika pişirin.",
+        "Çevirip 3 dakika daha pişirin ve bir tabağa alın.",
+        "Kalan yağı ekleyip biber ve soğanı 4 dakika soteleyin.",
+        "Sebzeleri yumuşatmayın, hafif diri kalsınlar.",
+        "Tavuğu geri ekleyin, lime sıkıp 1 dakika birlikte çevirin.",
+        "Tortillaları ısıtıp sıcak kalsın diye sofrada doldurun."
       ]
     },
     "imagePath": null,
@@ -2904,18 +3128,26 @@
     },
     "steps": {
       "en": [
-        "Brown the beef with onion and garlic in olive oil.",
-        "Add spices and chopped hot pepper; cook for 1 minute.",
-        "Add chopped tomato and simmer for 10 minutes.",
-        "Stir in the beans and simmer 10 more minutes.",
-        "Serve hot."
+        "Dice the onion and chop the garlic and hot pepper finely.",
+        "Brown the beef in olive oil over high heat until it is properly coloured.",
+        "Do not stir too early — a browned crust is where the flavour comes from.",
+        "Add the onion, garlic and hot pepper and cook for 5 minutes.",
+        "Stir in the cumin and paprika and toast them for 1 minute.",
+        "Add the chopped tomato and simmer for 10 minutes.",
+        "Add the kidney beans and a splash of hot water.",
+        "Simmer uncovered on low for 20 minutes until thick and glossy.",
+        "Season, rest for 5 minutes and serve hot."
       ],
       "tr": [
-        "Kıymayı soğan ve sarımsakla zeytinyağında kavurun.",
-        "Baharatları ve doğranmış acı biberi ekleyip 1 dakika çevirin.",
+        "Soğanı küp doğrayın, sarımsak ve acı biberi ince kıyın.",
+        "Kıymayı zeytinyağında yüksek ateşte iyice kızarana dek kavurun.",
+        "Erken karıştırmayın — lezzet o kızarmış yüzeyden gelir.",
+        "Soğan, sarımsak ve acı biberi ekleyip 5 dakika pişirin.",
+        "Kimyon ve toz biberi ekleyip 1 dakika kavurun.",
         "Doğranmış domatesi ekleyip 10 dakika pişirin.",
-        "Barbunyayı ekleyip 10 dakika daha kaynatın.",
-        "Sıcak servis edin."
+        "Barbunyayı ve bir miktar sıcak suyu ekleyin.",
+        "Kapaksız, kısık ateşte koyulaşıp parlayana dek 20 dakika pişirin.",
+        "Tuzunu ayarlayıp 5 dakika dinlendirin ve sıcak servis edin."
       ]
     },
     "imagePath": null,
@@ -3008,18 +3240,26 @@
     },
     "steps": {
       "en": [
-        "Cook the rice and let it cool slightly.",
-        "Warm the black beans and corn.",
-        "Dice the tomato and avocado.",
-        "Assemble everything in a bowl.",
-        "Dress with olive oil, lime juice, coriander and salt."
+        "Cook the rice in twice its volume of salted water and let it cool slightly.",
+        "Warm the black beans in a small pan with a pinch of salt.",
+        "Char the corn in a dry hot pan for 3 minutes for a smoky note.",
+        "Dice the tomato and chop the coriander.",
+        "Whisk the lime juice with olive oil and salt for the dressing.",
+        "Spoon the rice into a bowl as the base.",
+        "Arrange the beans, corn and tomato in sections over the rice.",
+        "Slice the avocado last so it does not brown, and add it to the bowl.",
+        "Spoon over the dressing, scatter the coriander and serve."
       ],
       "tr": [
-        "Pirinci haşlayıp hafif soğutun.",
-        "Siyah fasulye ve mısırı ısıtın.",
-        "Domates ve avokadoyu küp küp doğrayın.",
-        "Hepsini bir kasede birleştirin.",
-        "Zeytinyağı, lime suyu, kişniş ve tuzla tatlandırın."
+        "Pirinci kendi hacminin iki katı tuzlu suda pişirip hafif soğutun.",
+        "Siyah fasulyeyi küçük bir tavada bir tutam tuzla ısıtın.",
+        "Mısırı isli bir tat için kuru ve kızgın tavada 3 dakika kavurun.",
+        "Domatesi küp doğrayın, kişnişi kıyın.",
+        "Sos için lime suyunu zeytinyağı ve tuzla çırpın.",
+        "Pilavı kasenin tabanına yayın.",
+        "Fasulye, mısır ve domatesi pilavın üzerine bölümler hâlinde dizin.",
+        "Kararmasın diye avokadoyu en son dilimleyip kaseye ekleyin.",
+        "Sosu gezdirin, kişnişi serpip servis edin."
       ]
     },
     "imagePath": null,
@@ -3111,18 +3351,26 @@
     },
     "steps": {
       "en": [
-        "Mix soy sauce, honey, grated ginger and garlic for the glaze.",
-        "Pan-sear the salmon for 3 minutes per side.",
-        "Pour the glaze over and cook until sticky.",
-        "Serve over steamed rice.",
-        "Top with sesame seeds and sliced spring onion."
+        "Cook the rice and keep it covered and warm.",
+        "Mix the soy sauce, honey, grated ginger and crushed garlic into a glaze.",
+        "Pat the salmon completely dry so it sears rather than steams.",
+        "Heat a non-stick pan over medium-high heat with a little oil.",
+        "Sear the salmon skin side down for 4 minutes without moving it.",
+        "Turn it and cook for 2 minutes on the flesh side.",
+        "Pour in the glaze and let it bubble and thicken around the fish for 2 minutes.",
+        "Spoon the glaze over the salmon until it is shiny and coated.",
+        "Serve over the rice, scattered with sesame seeds and spring onion."
       ],
       "tr": [
-        "Soya sosu, bal, rendelenmiş zencefil ve sarımsağı karıştırıp sosu hazırlayın.",
-        "Somonu her yüzü 3 dakika olacak şekilde tavada mühürleyin.",
-        "Sosu üzerine döküp koyulaşana kadar pişirin.",
-        "Haşlanmış pirinç üzerinde servis edin.",
-        "Susam ve doğranmış taze soğanla tamamlayın."
+        "Pilavı pişirip kapağı kapalı sıcak tutun.",
+        "Soya sosu, bal, rendelenmiş zencefil ve ezilmiş sarımsağı karıştırıp sos hazırlayın.",
+        "Somonu iyice kurulayın ki buharda pişmek yerine mühürlensin.",
+        "Yapışmaz tavayı az yağla orta-yüksek ateşte ısıtın.",
+        "Somonu derili yüzü altta, oynatmadan 4 dakika mühürleyin.",
+        "Çevirip et tarafını 2 dakika pişirin.",
+        "Sosu dökün ve balığın etrafında 2 dakika kaynayıp koyulaşmasını bekleyin.",
+        "Somon parlayıp kaplanana dek sosu üzerine gezdirin.",
+        "Pilavın üzerinde, susam ve taze soğan serperek servis edin."
       ]
     },
     "imagePath": null,
@@ -3210,18 +3458,26 @@
     },
     "steps": {
       "en": [
-        "Sauté onion, garlic and ginger; add curry powder.",
-        "Add carrot and broccoli with a splash of water; cook 5 minutes.",
-        "Pour in the coconut milk and simmer.",
-        "Add cubed tofu and cook for 5 more minutes.",
-        "Serve over steamed rice."
+        "Press the tofu for 10 minutes and cut it into cubes.",
+        "Cook the rice and keep it covered.",
+        "Soften the diced onion in a pan for 4 minutes.",
+        "Add the garlic and grated ginger and cook for 1 minute.",
+        "Stir in the curry powder and toast it for 30 seconds to release its aroma.",
+        "Add the carrot and broccoli with a splash of water and cook for 5 minutes.",
+        "Pour in the coconut milk and simmer gently for 8 minutes.",
+        "Add the tofu and warm it through for 5 minutes without stirring too hard.",
+        "Season with salt and serve over the rice."
       ],
       "tr": [
-        "Soğan, sarımsak ve zencefili soteleyin; köri baharatını ekleyin.",
-        "Havuç ve brokoliyi az suyla ekleyip 5 dakika pişirin.",
-        "Hindistancevizi sütünü ekleyip kaynatın.",
-        "Küp tofuyu ekleyip 5 dakika daha pişirin.",
-        "Haşlanmış pirinçle servis edin."
+        "Tofuyu 10 dakika bastırıp küp doğrayın.",
+        "Pilavı pişirip kapağı kapalı bekletin.",
+        "Küp doğranmış soğanı tavada 4 dakika kavurun.",
+        "Sarımsak ve rendelenmiş zencefili ekleyip 1 dakika çevirin.",
+        "Köri baharatını ekleyip aroması açılsın diye 30 saniye kavurun.",
+        "Havuç ve brokoliyi biraz suyla ekleyip 5 dakika pişirin.",
+        "Hindistan cevizi sütünü ekleyip 8 dakika hafifçe kaynatın.",
+        "Tofuyu ekleyip çok karıştırmadan 5 dakika ısıtın.",
+        "Tuzunu ayarlayıp pilavın üzerinde servis edin."
       ]
     },
     "imagePath": null,
@@ -3318,18 +3574,26 @@
     },
     "steps": {
       "en": [
-        "Cook the noodles according to the package.",
-        "Stir-fry sliced chicken in a hot wok until golden.",
-        "Add garlic, ginger and julienned vegetables; toss 3 minutes.",
-        "Add noodles, soy sauce and sesame oil; toss to combine.",
-        "Top with spring onion and serve."
+        "Cook the noodles one minute short of the packet time and rinse them in cold water.",
+        "Slice the chicken thinly and the vegetables into matchsticks.",
+        "Heat the wok until it is very hot — a cool wok steams instead of frying.",
+        "Stir-fry the chicken in a single layer for 4 minutes until golden.",
+        "Push it aside and add the garlic and ginger for 30 seconds.",
+        "Add the carrot and pepper and toss for 3 minutes over high heat.",
+        "Add the noodles, soy sauce and sesame oil.",
+        "Toss everything together for 2 minutes so the sauce coats the noodles.",
+        "Finish with spring onion and serve straight from the wok."
       ],
       "tr": [
-        "Noodle'ı paket talimatına göre haşlayın.",
-        "Dilimlenmiş tavuğu kızgın wokta altın rengine kadar soteleyin.",
-        "Sarımsak, zencefil ve jülyen sebzeleri ekleyip 3 dakika çevirin.",
-        "Noodle, soya sosu ve susam yağını ekleyip harmanlayın.",
-        "Taze soğanla tamamlayıp servis edin."
+        "Noodle'ı paket süresinden bir dakika eksik haşlayıp soğuk suda durulayın.",
+        "Tavuğu ince dilimleyin, sebzeleri kibrit çöpü şeklinde doğrayın.",
+        "Woku iyice kızdırın — soğuk wok kızartmaz, buharda pişirir.",
+        "Tavuğu tek sıra hâlinde 4 dakika, altın rengi olana dek soteleyin.",
+        "Kenara itip sarımsak ve zencefili 30 saniye kavurun.",
+        "Havuç ve biberi ekleyip yüksek ateşte 3 dakika çevirin.",
+        "Noodle, soya sosu ve susam yağını ekleyin.",
+        "Sos noodle'ı kaplayana dek her şeyi 2 dakika birlikte çevirin.",
+        "Taze soğanla tamamlayıp wokuyla servis edin."
       ]
     },
     "imagePath": null,
@@ -3423,18 +3687,26 @@
     },
     "steps": {
       "en": [
-        "Scramble the egg in a hot wok and set aside.",
-        "Stir-fry garlic and shrimp until pink.",
-        "Add diced carrot and peas; cook for 3 minutes.",
-        "Add cooked rice, soy sauce and sesame oil; toss well.",
-        "Return the egg, top with spring onion and serve."
+        "Use cold, day-old rice if you can — fresh rice turns sticky when fried.",
+        "Beat the eggs and scramble them quickly in the hot wok, then set aside.",
+        "Add oil and stir-fry the garlic for 20 seconds.",
+        "Add the shrimp and cook for 2 minutes until they turn pink and curl.",
+        "Take the shrimp out so they do not overcook and toughen.",
+        "Stir-fry the diced carrot and peas for 3 minutes.",
+        "Add the rice and toss over high heat, breaking up any clumps, for 3 minutes.",
+        "Return the shrimp and egg, add the soy sauce and sesame oil.",
+        "Toss for 1 more minute, scatter with spring onion and serve."
       ],
       "tr": [
-        "Yumurtayı kızgın wokta çırparak pişirip kenara alın.",
-        "Sarımsak ve karidesi pembeleşene kadar soteleyin.",
-        "Küp havuç ve bezelyeyi ekleyip 3 dakika pişirin.",
-        "Haşlanmış pirinç, soya sosu ve susam yağını ekleyip karıştırın.",
-        "Yumurtayı geri ekleyin, taze soğanla servis edin."
+        "Mümkünse bir gün önceden kalmış soğuk pilav kullanın — taze pirinç kızartınca yapışır.",
+        "Yumurtaları çırpıp kızgın wokta hızlıca pişirin ve kenara alın.",
+        "Yağı ekleyip sarımsağı 20 saniye soteleyin.",
+        "Karidesleri ekleyip pembeleşip kıvrılana dek 2 dakika pişirin.",
+        "Sertleşmemesi için karidesleri tavadan alın.",
+        "Küp havuç ve bezelyeyi 3 dakika soteleyin.",
+        "Pilavı ekleyip topaklarını dağıtarak yüksek ateşte 3 dakika çevirin.",
+        "Karides ve yumurtayı geri ekleyin, soya sosu ve susam yağını dökün.",
+        "1 dakika daha çevirip taze soğan serperek servis edin."
       ]
     },
     "imagePath": null,
@@ -3526,18 +3798,26 @@
     },
     "steps": {
       "en": [
-        "Preheat the oven to 200°C.",
-        "Slice all the vegetables and layer them in a baking dish.",
-        "Season with olive oil, oregano, garlic and salt.",
-        "Roast for 40 minutes until tender.",
-        "Crumble feta on top and serve."
+        "Preheat the oven to 190°C.",
+        "Slice the aubergine, courgette and potato into rounds of equal thickness.",
+        "Salt the aubergine slices and leave them 15 minutes, then pat dry.",
+        "Slice the onion and tomato and chop the garlic.",
+        "Toss all the vegetables with olive oil, oregano, salt and pepper.",
+        "Arrange them overlapping in a baking dish so they cook evenly.",
+        "Cover with foil and bake for 30 minutes to soften them through.",
+        "Uncover and bake 20 minutes more until the edges caramelise.",
+        "Crumble the feta over the hot vegetables and rest 10 minutes before serving."
       ],
       "tr": [
-        "Fırını 200°C'ye ısıtın.",
-        "Tüm sebzeleri dilimleyip fırın kabına dizin.",
-        "Zeytinyağı, kekik, sarımsak ve tuzla tatlandırın.",
-        "Yumuşayana kadar 40 dakika fırınlayın.",
-        "Üzerine beyaz peyniri ufalayıp servis edin."
+        "Fırını 190°C'ye ısıtın.",
+        "Patlıcan, kabak ve patatesi eşit kalınlıkta yuvarlak dilimleyin.",
+        "Patlıcan dilimlerini tuzlayıp 15 dakika bekletin, sonra kurulayın.",
+        "Soğan ve domatesi dilimleyin, sarımsağı kıyın.",
+        "Tüm sebzeleri zeytinyağı, kekik, tuz ve karabiberle harmanlayın.",
+        "Eşit pişsinler diye fırın kabına birbirine bindirerek dizin.",
+        "Folyoyla kapatıp iyice yumuşamaları için 30 dakika pişirin.",
+        "Folyoyu alıp kenarları karamelize olana dek 20 dakika daha pişirin.",
+        "Sıcak sebzelerin üzerine beyaz peyniri ufalayıp 10 dakika dinlendirerek servis edin."
       ]
     },
     "imagePath": null,
