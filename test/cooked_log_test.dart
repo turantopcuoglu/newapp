@@ -107,4 +107,29 @@ void main() {
       expect(totals.proteinG, 55);
     });
   });
+
+  group('planned meals never count as consumed', () {
+    test('ConsumedTotals only sums cooked entries', () {
+      // The bug this guards: nutrition screens used to read mealPlanProvider,
+      // so adding a recipe to the planner inflated consumed calories.
+      final cooked = [
+        CookedEntry(
+          id: 'c1',
+          recipeId: 'r1',
+          dateTime: DateTime(2026, 8, 2, 12),
+          mealType: MealType.lunch,
+          macrosPerServing: const MacroEstimation(calories: 500, proteinG: 30),
+        ),
+      ];
+
+      final totals = ConsumedTotals.from(cooked);
+      expect(totals.calories, 500);
+      expect(totals.proteinG, 30);
+      expect(totals.mealCount, 1);
+
+      // An empty cooked log means zero intake regardless of any plan.
+      expect(ConsumedTotals.from(const <CookedEntry>[]).calories, 0);
+      expect(ConsumedTotals.from(const <CookedEntry>[]).mealCount, 0);
+    });
+  });
 }

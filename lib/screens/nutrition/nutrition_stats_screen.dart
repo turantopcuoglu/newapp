@@ -3,12 +3,13 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../core/day_boundary.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/beverage_provider.dart';
+import '../../providers/cooked_provider.dart';
 import '../../providers/meal_plan_provider.dart';
-import '../../providers/recipe_provider.dart';
 
 // ---------------------------------------------------------------------------
 // Data model for aggregated nutrition stats
@@ -21,6 +22,7 @@ class _NutritionData {
   final int fatG;
   final int fiberG;
   final int mealsLogged;
+  final int mealsPlanned;
   final int beverageCalories;
   final int waterMl;
 
@@ -31,6 +33,7 @@ class _NutritionData {
     this.fatG = 0,
     this.fiberG = 0,
     this.mealsLogged = 0,
+    this.mealsPlanned = 0,
     this.beverageCalories = 0,
     this.waterMl = 0,
   });
@@ -167,8 +170,8 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
   // ── Data aggregation ────────────────────────────────────────────────────
 
   _NutritionData _computeData() {
+    final cookedEntries = ref.read(cookedProvider);
     final mealPlans = ref.read(mealPlanProvider);
-    final recipeMap = ref.read(recipeMapProvider);
     final beverages = ref.read(beverageProvider);
 
     // Determine date range
@@ -191,31 +194,31 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
         break;
     }
 
-    // Filter meal plan entries by date range
-    final filteredMeals = mealPlans.where((e) {
+    // Consumed totals come from the cooked log — meals the user actually
+    // marked as cooked. Planned meals are an intention and are reported
+    // separately, so adding a recipe to the planner never inflates intake.
+    final filteredCooked = cookedEntries.where((e) {
+      if (_currentPeriod == _Period.daily) {
+        return e.dayKey == DayBoundary.keyFor(startDate);
+      }
+      return !e.dateTime.isBefore(startDate) && e.dateTime.isBefore(endDate);
+    }).toList();
+
+    final consumed = ConsumedTotals.from(filteredCooked);
+
+    // Planned meals in the same range (shown as a separate figure)
+    final plannedMeals = mealPlans.where((e) {
       if (_currentPeriod == _Period.daily) {
         return e.dateKey == _dateKey(startDate);
       }
       return !e.date.isBefore(startDate) && e.date.isBefore(endDate);
-    }).toList();
+    }).length;
 
-    // Sum macros from recipes
-    int totalCals = 0;
-    int protein = 0;
-    int carbs = 0;
-    int fat = 0;
-    int fiber = 0;
-
-    for (final entry in filteredMeals) {
-      final recipe = recipeMap[entry.recipeId];
-      if (recipe != null) {
-        totalCals += recipe.macros.calories;
-        protein += recipe.macros.proteinG;
-        carbs += recipe.macros.carbsG;
-        fat += recipe.macros.fatG;
-        fiber += recipe.macros.fiberG;
-      }
-    }
+    int totalCals = consumed.calories;
+    final protein = consumed.proteinG;
+    final carbs = consumed.carbsG;
+    final fat = consumed.fatG;
+    final fiber = consumed.fiberG;
 
     // Filter beverages by date range
     final filteredBeverages = beverages.where((b) {
@@ -242,7 +245,8 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
       carbsG: carbs,
       fatG: fat,
       fiberG: fiber,
-      mealsLogged: filteredMeals.length,
+      mealsLogged: filteredCooked.length,
+      mealsPlanned: plannedMeals,
       beverageCalories: bevCals,
       waterMl: waterMl,
     );
@@ -256,8 +260,8 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     final theme = Theme.of(context);
 
     // Watch providers so the widget rebuilds when data changes
+    ref.watch(cookedProvider);
     ref.watch(mealPlanProvider);
-    ref.watch(recipeMapProvider);
     ref.watch(beverageProvider);
 
     final data = _computeData();
@@ -1085,13 +1089,27 @@ class _MealsAndBeveragesCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Meals logged
+          // Meals actually cooked (drives the consumed totals above)
           Expanded(
             child: _SummaryTile(
               icon: Icons.restaurant_menu_rounded,
               iconColor: AppTheme.accentOrange,
               value: '${data.mealsLogged}',
-              label: l10n.summaryMealsLogged,
+              label: l10n.nutritionConsumed,
+            ),
+          ),
+          Container(
+            width: 1,
+            height: 56,
+            color: AppTheme.dividerColor,
+          ),
+          // Planned meals — an intention, not intake
+          Expanded(
+            child: _SummaryTile(
+              icon: Icons.calendar_today_rounded,
+              iconColor: AppTheme.softLavender,
+              value: '${data.mealsPlanned}',
+              label: l10n.nutritionPlanned,
             ),
           ),
           Container(

@@ -6,6 +6,8 @@ import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/recipe.dart';
+import '../../providers/cooked_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/recipe_provider.dart';
@@ -286,8 +288,9 @@ class RecipeDetailScreen extends ConsumerWidget {
                       }
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                            content: Text(
-                                '${currentMissing.length} items added')),
+                          content: Text(
+                              l10n.recipeItemsAdded(currentMissing.length)),
+                        ),
                       );
                     },
                     icon: const Icon(Icons.shopping_cart_outlined),
@@ -305,6 +308,10 @@ class RecipeDetailScreen extends ConsumerWidget {
                 label: Text(l10n.recipeAddToPlanner),
               ),
             ),
+            const SizedBox(height: 10),
+
+            // Cooked log: this — not the planner — drives consumed calories.
+            _CookedButton(recipe: recipe),
             const SizedBox(height: 40),
           ],
         ),
@@ -392,6 +399,53 @@ class _NutritionItem extends StatelessWidget {
                 .bodySmall
                 ?.copyWith(fontSize: 11)),
       ],
+    );
+  }
+}
+
+/// Logs the recipe into the cooked log (consumed calories). Flips to an undo
+/// action once the recipe is already logged for the current app-day.
+class _CookedButton extends ConsumerWidget {
+  final Recipe recipe;
+
+  const _CookedButton({required this.recipe});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final cookedToday = ref.watch(cookedTodayIdsProvider).contains(recipe.id);
+    final notifier = ref.read(cookedProvider.notifier);
+    final messenger = ScaffoldMessenger.of(context);
+
+    return SizedBox(
+      width: double.infinity,
+      child: cookedToday
+          ? OutlinedButton.icon(
+              onPressed: () {
+                if (notifier.undoToday(recipe.id)) {
+                  messenger.showSnackBar(
+                    SnackBar(content: Text(l10n.recipeCookedUndone)),
+                  );
+                }
+              },
+              icon: const Icon(Icons.undo_rounded),
+              label: Text(l10n.recipeUndoCooked),
+            )
+          : FilledButton.icon(
+              onPressed: () {
+                final entry = notifier.markCooked(recipe);
+                messenger.showSnackBar(
+                  SnackBar(
+                    content: Text(l10n.recipeCookedLogged(entry.calories)),
+                  ),
+                );
+              },
+              style: FilledButton.styleFrom(
+                backgroundColor: AppTheme.successGreen,
+              ),
+              icon: const Icon(Icons.restaurant_rounded),
+              label: Text(l10n.recipeMarkCooked),
+            ),
     );
   }
 }

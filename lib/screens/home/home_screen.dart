@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/day_boundary.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/health_tips_data.dart';
 import '../../l10n/app_localizations.dart';
+import '../../providers/cooked_provider.dart';
 import '../../providers/check_in_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/profile_provider.dart';
@@ -666,27 +668,18 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
   Widget build(BuildContext context) {
     final l10n = widget.l10n;
     final theme = Theme.of(context);
-    final mealPlans = ref.watch(mealPlanProvider);
-    final recipeMap = ref.watch(recipeMapProvider);
+    final cookedEntries = ref.watch(cookedProvider);
 
-    final date = _selectedDate;
-    final dateKey =
-        '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
-    final meals = mealPlans.where((e) => e.dateKey == dateKey).toList();
+    // Intake reflects recipes marked as cooked, not the meal plan: planning a
+    // meal is an intention and must not count as eaten.
+    final dayKey = DayBoundary.keyFor(_selectedDate);
+    final meals = cookedEntries.where((e) => e.dayKey == dayKey).toList();
+    final consumed = ConsumedTotals.from(meals);
 
-    int totalCalories = 0;
-    int totalProtein = 0;
-    int totalCarbs = 0;
-    int totalFat = 0;
-    for (final entry in meals) {
-      final recipe = recipeMap[entry.recipeId];
-      if (recipe != null) {
-        totalCalories += recipe.macros.calories;
-        totalProtein += recipe.macros.proteinG;
-        totalCarbs += recipe.macros.carbsG;
-        totalFat += recipe.macros.fatG;
-      }
-    }
+    final totalCalories = consumed.calories;
+    final totalProtein = consumed.proteinG;
+    final totalCarbs = consumed.carbsG;
+    final totalFat = consumed.fatG;
 
     return Container(
       padding: const EdgeInsets.all(20),

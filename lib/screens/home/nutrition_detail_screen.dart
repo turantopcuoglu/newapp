@@ -1,10 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/day_boundary.dart';
 import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
-import '../../providers/meal_plan_provider.dart';
-import '../../providers/recipe_provider.dart';
+import '../../models/cooked_entry.dart';
+import '../../providers/cooked_provider.dart';
 
 enum _Period { weekly, monthly, yearly }
 
@@ -22,8 +23,8 @@ class _NutritionDetailScreenState
 
   /// Returns a list of (label, calories, protein, carbs, fat) for each bar.
   List<_BarData> _computeData() {
-    final mealPlans = ref.read(mealPlanProvider);
-    final recipeMap = ref.read(recipeMapProvider);
+    // Charts show what was actually eaten (cooked log), not what was planned.
+    final cooked = ref.read(cookedProvider);
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
 
@@ -32,22 +33,22 @@ class _NutritionDetailScreenState
         // Last 7 days
         return List.generate(7, (i) {
           final date = today.subtract(Duration(days: 6 - i));
-          return _sumForDate(date, mealPlans, recipeMap);
+          return _sumForDate(date, cooked);
         });
       case _Period.monthly:
         // Last 4 weeks
         return List.generate(4, (i) {
           final weekEnd = today.subtract(Duration(days: (3 - i) * 7));
           final weekStart = weekEnd.subtract(const Duration(days: 6));
-          return _sumForRange(weekStart, weekEnd, mealPlans, recipeMap,
-              label: '${_weekLabel(i)}');
+          return _sumForRange(weekStart, weekEnd, cooked,
+              label: _weekLabel(i));
         });
       case _Period.yearly:
         // Last 12 months
         return List.generate(12, (i) {
           final month = DateTime(now.year, now.month - 11 + i, 1);
           final monthEnd = DateTime(month.year, month.month + 1, 0);
-          return _sumForRange(month, monthEnd, mealPlans, recipeMap,
+          return _sumForRange(month, monthEnd, cooked,
               label: _monthLabel(month.month));
         });
     }
@@ -68,25 +69,10 @@ class _NutritionDetailScreenState
     return months[month - 1];
   }
 
-  _BarData _sumForDate(
-    DateTime date,
-    List mealPlans,
-    Map recipeMap,
-  ) {
-    final dateKey =
-        '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
-    int cal = 0, pro = 0, carb = 0, fat = 0;
-    for (final entry in mealPlans) {
-      if (entry.dateKey == dateKey) {
-        final recipe = recipeMap[entry.recipeId];
-        if (recipe != null) {
-          cal += recipe.macros.calories as int;
-          pro += recipe.macros.proteinG as int;
-          carb += recipe.macros.carbsG as int;
-          fat += recipe.macros.fatG as int;
-        }
-      }
-    }
+  _BarData _sumForDate(DateTime date, List<CookedEntry> cooked) {
+    final dayKey = DayBoundary.keyFor(date);
+    final totals =
+        ConsumedTotals.from(cooked.where((e) => e.dayKey == dayKey));
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final dayNames = locale == 'tr'
@@ -94,44 +80,31 @@ class _NutritionDetailScreenState
         : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     return _BarData(
       label: dayNames[date.weekday - 1],
-      calories: cal,
-      protein: pro,
-      carbs: carb,
-      fat: fat,
+      calories: totals.calories,
+      protein: totals.proteinG,
+      carbs: totals.carbsG,
+      fat: totals.fatG,
     );
   }
 
   _BarData _sumForRange(
     DateTime start,
     DateTime end,
-    List mealPlans,
-    Map recipeMap, {
+    List<CookedEntry> cooked, {
     required String label,
   }) {
-    int cal = 0, pro = 0, carb = 0, fat = 0;
-    for (var d = start;
-        !d.isAfter(end);
-        d = d.add(const Duration(days: 1))) {
-      final dateKey =
-          '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
-      for (final entry in mealPlans) {
-        if (entry.dateKey == dateKey) {
-          final recipe = recipeMap[entry.recipeId];
-          if (recipe != null) {
-            cal += recipe.macros.calories as int;
-            pro += recipe.macros.proteinG as int;
-            carb += recipe.macros.carbsG as int;
-            fat += recipe.macros.fatG as int;
-          }
-        }
-      }
+    final keys = <String>{};
+    for (var d = start; !d.isAfter(end); d = d.add(const Duration(days: 1))) {
+      keys.add(DayBoundary.keyFor(d));
     }
+    final totals =
+        ConsumedTotals.from(cooked.where((e) => keys.contains(e.dayKey)));
     return _BarData(
       label: label,
-      calories: cal,
-      protein: pro,
-      carbs: carb,
-      fat: fat,
+      calories: totals.calories,
+      protein: totals.proteinG,
+      carbs: totals.carbsG,
+      fat: totals.fatG,
     );
   }
 

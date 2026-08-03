@@ -102,6 +102,19 @@ class AppLocalizations {
   String get recipeCalories => _t('recipeCalories');
   String get recipeAddToPlanner => _t('recipeAddToPlanner');
   String get recipeAddMissing => _t('recipeAddMissing');
+  String get recipeMarkCooked => _t('recipeMarkCooked');
+  String get recipeUndoCooked => _t('recipeUndoCooked');
+  String recipeCookedLogged(int n) =>
+      _t('recipeCookedLogged').replaceFirst('{n}', '$n');
+  String get recipeCookedUndone => _t('recipeCookedUndone');
+  String recipeItemsAdded(int n) =>
+      _t('recipeItemsAdded').replaceFirst('{n}', '$n');
+  String get nutritionConsumed => _t('nutritionConsumed');
+  String get nutritionPlanned => _t('nutritionPlanned');
+  String get nutritionConsumedToday => _t('nutritionConsumedToday');
+  String get nutritionNoConsumed => _t('nutritionNoConsumed');
+  String nutritionMealsLogged(int n) =>
+      _t('nutritionMealsLogged').replaceFirst('{n}', '$n');
   String get recipeCompatibility => _t('recipeCompatibility');
   String get recipeNoResults => _t('recipeNoResults');
 
