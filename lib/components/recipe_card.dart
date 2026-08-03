@@ -4,6 +4,7 @@ import '../l10n/app_localizations.dart';
 import '../models/recipe.dart';
 import '../services/recommendation_service.dart';
 import 'meal_type_badge.dart';
+import 'recipe_visual.dart';
 
 class RecipeCard extends StatelessWidget {
   final ScoredRecipe scoredRecipe;
@@ -31,6 +32,8 @@ class RecipeCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              RecipeVisual(recipe: recipe, height: 88),
+              const SizedBox(height: 12),
               Row(
                 children: [
                   Expanded(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/ingredient_chip.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/recipe_visual.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
@@ -47,6 +48,14 @@ class RecipeDetailScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Hero illustration
+            RecipeVisual(
+              recipe: recipe,
+              height: 170,
+              borderRadius: const BorderRadius.all(Radius.circular(18)),
+            ),
+            const SizedBox(height: 16),
+
             // Header badges
             Row(
               children: [

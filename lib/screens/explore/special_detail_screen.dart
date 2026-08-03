@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../components/recipe_visual.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
@@ -278,6 +279,17 @@ class _SpecialRecipeCard extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Row(
             children: [
+              // Leading thumbnail
+              SizedBox(
+                width: 64,
+                child: RecipeVisual(
+                  recipe: recipe,
+                  height: 64,
+                  borderRadius:
+                      const BorderRadius.all(Radius.circular(12)),
+                ),
+              ),
+              const SizedBox(width: 14),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
