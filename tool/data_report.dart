@@ -17,11 +17,24 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:nutri_guide/core/enums.dart';
 import 'package:nutri_guide/data/explore_data.dart';
 import 'package:nutri_guide/data/ingredient_nutrition_data.dart';
 import 'package:nutri_guide/data/mock_ingredients.dart';
 import 'package:nutri_guide/models/recipe.dart';
 import 'package:nutri_guide/services/nutrition_calculator.dart';
+
+/// Two recipes sharing this fraction of their ingredients read as the same
+/// dish to a user, even when the names differ.
+const double nearDuplicateThreshold = 0.70;
+
+/// Minimum steps to be cookable. Snacks are legitimately simpler than a
+/// main course, so padding them to a main's length would only add filler.
+int minStepsFor(MealType mealType) =>
+    mealType == MealType.snack ? 4 : 6;
+
+/// Below this, the dish is likely under-specified.
+const int minIngredients = 4;
 
 const recipeFiles = [
   'assets/recipes/breakfast.json',
@@ -41,6 +54,7 @@ void main(List<String> args) {
   final errors = <String>[];
   final warnings = <String>[];
   final deviations = <(String, String, int, int, double)>[];
+  final allRecipes = <Recipe>[];
   var totalRecipes = 0;
 
   for (final path in recipeFiles) {
@@ -63,6 +77,8 @@ void main(List<String> args) {
       recipes.clear();
       recipes.addAll(fixed.map(Recipe.fromJson));
     }
+
+    allRecipes.addAll(recipes);
 
     for (final recipe in recipes) {
       final name = recipe.name['en'] ?? recipe.id;
@@ -101,6 +117,18 @@ void main(List<String> args) {
       if (recipe.macros.calories <= 0) {
         errors.add('${recipe.id} ($name): calories must be > 0');
       }
+      for (final locale in ['en', 'tr']) {
+        final steps = recipe.steps[locale] ?? const [];
+        final required = minStepsFor(recipe.mealType);
+        if (steps.isNotEmpty && steps.length < required) {
+          errors.add('${recipe.id} ($name): only ${steps.length} $locale '
+              'steps, needs at least $required');
+        }
+      }
+      if (recipe.ingredientIds.length < minIngredients) {
+        warnings.add('${recipe.id} ($name): only '
+            '${recipe.ingredientIds.length} ingredients');
+      }
       if (recipe.quantities.isEmpty) {
         warnings.add('${recipe.id} ($name): no ingredient quantities');
       } else {
@@ -122,6 +150,41 @@ void main(List<String> args) {
         final computed = calculator.computePerServing(recipe).macros.calories;
         deviations.add(
             (recipe.id, name, recipe.macros.calories, computed, deviation));
+      }
+    }
+  }
+
+  // ── Cross-recipe checks: duplicates and near-duplicates ────────────────
+  // A library that repeats itself feels smaller than it is, so these are
+  // errors rather than warnings.
+  for (final locale in ['tr', 'en']) {
+    final byName = <String, List<String>>{};
+    for (final recipe in allRecipes) {
+      final name = (recipe.name[locale] ?? '').trim().toLowerCase();
+      if (name.isEmpty) continue;
+      byName.putIfAbsent(name, () => []).add(recipe.id);
+    }
+    byName.forEach((name, ids) {
+      if (ids.length > 1) {
+        errors.add('duplicate $locale name "$name": ${ids.join(", ")}');
+      }
+    });
+  }
+
+  for (var i = 0; i < allRecipes.length; i++) {
+    for (var j = i + 1; j < allRecipes.length; j++) {
+      final a = allRecipes[i];
+      final b = allRecipes[j];
+      final sa = a.ingredientIds.toSet();
+      final sb = b.ingredientIds.toSet();
+      if (sa.isEmpty || sb.isEmpty) continue;
+      final overlap =
+          sa.intersection(sb).length / sa.union(sb).length;
+      if (overlap >= nearDuplicateThreshold) {
+        final pct = (overlap * 100).round();
+        errors.add('near-duplicate ($pct% same ingredients): '
+            '${a.id} "${a.name['tr'] ?? a.id}" vs '
+            '${b.id} "${b.name['tr'] ?? b.id}"');
       }
     }
   }
