@@ -327,7 +327,10 @@
       "parmesan",
       "basil",
       "salt",
-      "black_pepper"
+      "black_pepper",
+      "mushroom",
+      "broccoli",
+      "bell_pepper"
     ],
     "allergenTags": [
       "gluten",
@@ -342,11 +345,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 516,
-      "proteinG": 20,
-      "carbsG": 59,
-      "fatG": 23,
-      "fiberG": 6
+      "calories": 579,
+      "proteinG": 25,
+      "carbsG": 70,
+      "fatG": 24,
+      "fiberG": 11
     },
     "steps": {
       "en": [
@@ -402,6 +405,18 @@
       "black_pepper": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "mushroom": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
       }
     }
   },
@@ -738,7 +753,9 @@
       "onion",
       "olive_oil",
       "salt",
-      "black_pepper"
+      "black_pepper",
+      "phyllo_dough",
+      "yogurt"
     ],
     "allergenTags": [
       "gluten",
@@ -754,11 +771,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 495,
-      "proteinG": 26,
-      "carbsG": 12,
-      "fatG": 39,
-      "fiberG": 3
+      "calories": 744,
+      "proteinG": 37,
+      "carbsG": 53,
+      "fatG": 43,
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -806,6 +823,14 @@
       "black_pepper": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "phyllo_dough": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
       }
     }
   },
@@ -941,7 +966,9 @@
       "parsley",
       "salt",
       "black_pepper",
-      "cumin"
+      "cumin",
+      "flour",
+      "yeast"
     ],
     "allergenTags": [
       "gluten"
@@ -954,11 +981,11 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 389,
-      "proteinG": 35,
-      "carbsG": 17,
-      "fatG": 20,
-      "fiberG": 5
+      "calories": 836,
+      "proteinG": 48,
+      "carbsG": 110,
+      "fatG": 21,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -1010,6 +1037,14 @@
       "cumin": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "flour": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "yeast": {
+        "amount": 3.0,
+        "unit": "g"
       }
     }
   },

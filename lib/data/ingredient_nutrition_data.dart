@@ -1238,6 +1238,22 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     fiberPer100g: 0.0,
     defaultServingG: 4,
   ),
+  'phyllo_dough': IngredientNutrition(
+    caloriesPer100g: 274,
+    proteinPer100g: 7.4,
+    carbsPer100g: 49.0,
+    fatPer100g: 4.6,
+    fiberPer100g: 1.7,
+    defaultServingG: 80,
+  ),
+  'cream_cheese': IngredientNutrition(
+    caloriesPer100g: 342,
+    proteinPer100g: 6.2,
+    carbsPer100g: 4.1,
+    fatPer100g: 34.0,
+    fiberPer100g: 0.0,
+    defaultServingG: 30,
+  ),
   'sea_bass': IngredientNutrition(
     caloriesPer100g: 124,
     proteinPer100g: 23.6,

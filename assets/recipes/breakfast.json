@@ -21,7 +21,8 @@
       "banana",
       "honey",
       "milk",
-      "cinnamon"
+      "cinnamon",
+      "walnut"
     ],
     "allergenTags": [
       "gluten",
@@ -36,11 +37,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 404,
-      "proteinG": 15,
-      "carbsG": 80,
-      "fatG": 5,
-      "fiberG": 10
+      "calories": 502,
+      "proteinG": 17,
+      "carbsG": 82,
+      "fatG": 15,
+      "fiberG": 11
     },
     "steps": {
       "en": [
@@ -78,6 +79,10 @@
       "cinnamon": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
       }
     }
   },
@@ -1330,7 +1335,8 @@
       "almond",
       "milk",
       "honey",
-      "cinnamon"
+      "cinnamon",
+      "yogurt"
     ],
     "allergenTags": [
       "gluten",
@@ -1346,10 +1352,10 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 520,
-      "proteinG": 19,
-      "carbsG": 85,
-      "fatG": 15,
+      "calories": 579,
+      "proteinG": 29,
+      "carbsG": 88,
+      "fatG": 16,
       "fiberG": 13
     },
     "steps": {
@@ -1392,6 +1398,10 @@
       "cinnamon": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
       }
     }
   },
@@ -1858,7 +1868,10 @@
       "cumin",
       "paprika",
       "olive_oil",
-      "salt"
+      "salt",
+      "eggplant",
+      "zucchini",
+      "yogurt"
     ],
     "allergenTags": [
       "eggs"
@@ -1872,11 +1885,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 432,
-      "proteinG": 20,
-      "carbsG": 24,
+      "calories": 503,
+      "proteinG": 28,
+      "carbsG": 35,
       "fatG": 31,
-      "fiberG": 6
+      "fiberG": 10
     },
     "steps": {
       "en": [
@@ -1932,6 +1945,18 @@
       "salt": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "eggplant": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
       }
     }
   },

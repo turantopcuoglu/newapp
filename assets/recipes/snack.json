@@ -21,7 +21,8 @@
       "banana",
       "almond",
       "honey",
-      "cinnamon"
+      "cinnamon",
+      "dates"
     ],
     "allergenTags": [
       "gluten",
@@ -37,11 +38,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 338,
+      "calories": 421,
       "proteinG": 10,
-      "carbsG": 59,
+      "carbsG": 81,
       "fatG": 10,
-      "fiberG": 11
+      "fiberG": 13
     },
     "steps": {
       "en": [
@@ -77,6 +78,10 @@
       "cinnamon": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "dates": {
+        "amount": 30.0,
+        "unit": "g"
       }
     }
   },
@@ -884,7 +889,9 @@
       "lemon",
       "salt",
       "black_pepper",
-      "red_pepper_flakes"
+      "red_pepper_flakes",
+      "cream_cheese",
+      "cucumber"
     ],
     "allergenTags": [
       "gluten",
@@ -899,11 +906,11 @@
     "fiberLevel": "medium",
     "carbType": "complex",
     "macros": {
-      "calories": 244,
-      "proteinG": 12,
-      "carbsG": 21,
-      "fatG": 14,
-      "fiberG": 4
+      "calories": 324,
+      "proteinG": 13,
+      "carbsG": 24,
+      "fatG": 21,
+      "fiberG": 5
     },
     "steps": {
       "en": [
@@ -949,6 +956,14 @@
       "red_pepper_flakes": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "cream_cheese": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
       }
     }
   },

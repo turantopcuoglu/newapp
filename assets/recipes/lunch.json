@@ -98,12 +98,12 @@
   {
     "id": "l002",
     "name": {
-      "en": "Turkish Red Lentil Soup",
-      "tr": "Mercimek Çorbası"
+      "en": "Ezogelin Soup",
+      "tr": "Ezogelin Çorbası"
     },
     "description": {
-      "en": "A classic Turkish red lentil soup seasoned with cumin and served with a squeeze of lemon.",
-      "tr": "Kimyon ile tatlandırılmış, limon sıkılarak servis edilen klasik Türk mercimek çorbası."
+      "en": "Red lentils simmered with bulgur and rice, finished with mint butter — heartier than a plain lentil soup.",
+      "tr": "Bulgur ve pirinçle kaynayan kırmızı mercimek, üzerine naneli tereyağı — sade mercimek çorbasından daha doyurucu."
     },
     "mealType": "lunch",
     "cuisineIds": [
@@ -111,21 +111,22 @@
     ],
     "dietTags": [],
     "servings": 1,
-    "prepTimeMin": null,
+    "prepTimeMin": 40,
     "ingredientIds": [
       "red_lentil",
+      "bulgur",
+      "white_rice",
       "onion",
-      "carrot",
-      "potato",
-      "garlic",
       "tomato_paste",
-      "cumin",
-      "olive_oil",
-      "lemon",
+      "mint",
+      "butter",
+      "red_pepper_flakes",
       "salt",
-      "black_pepper"
+      "lemon"
     ],
-    "allergenTags": [],
+    "allergenTags": [
+      "dairy"
+    ],
     "checkInTags": [
       "lowEnergy",
       "bloated",
@@ -135,76 +136,78 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 565,
-      "proteinG": 21,
-      "carbsG": 87,
-      "fatG": 17,
-      "fiberG": 21
+      "calories": 335,
+      "proteinG": 14,
+      "carbsG": 53,
+      "fatG": 9,
+      "fiberG": 15
     },
     "steps": {
       "en": [
-        "Dice the onion, carrot, and potato. Mince the garlic.",
-        "Sauté the onion and garlic in olive oil until softened, then add the carrot and potato.",
-        "Add the rinsed lentils, tomato paste, cumin, and enough water to cover. Bring to a boil.",
-        "Reduce heat and simmer for 25-30 minutes until lentils are soft.",
-        "Blend with an immersion blender until smooth. Season with salt and pepper.",
-        "Serve hot with a wedge of lemon on the side."
+        "Rinse the red lentils, bulgur and rice until the water runs clear.",
+        "Finely dice the onion and soften it in a pot with a little butter.",
+        "Stir in the tomato paste and cook for 1 minute to take off its raw edge.",
+        "Add the lentils, bulgur, rice and 1 litre of hot water.",
+        "Bring to a boil, then simmer on low for 25 minutes, stirring now and then.",
+        "The soup is ready when the lentils fall apart and it coats the spoon.",
+        "Season with salt; blend briefly for a smoother texture if you prefer.",
+        "Melt the remaining butter with mint and chilli flakes, pour over the soup.",
+        "Serve hot with a squeeze of lemon."
       ],
       "tr": [
-        "Soğanı, havucu ve patatesi küp küp doğrayın. Sarımsağı ince kıyın.",
-        "Soğan ve sarımsağı zeytinyağında kavurun, ardından havuç ve patatesi ekleyin.",
-        "Yıkanmış mercimeği, salçayı, kimyonu ve üzerini geçecek kadar su ekleyip kaynatın.",
-        "Ateşi kısıp 25-30 dakika mercimekler yumuşayana kadar pişirin.",
-        "Blender ile pürüzsüz hale getirin. Tuz ve karabiberle tatlandırın.",
-        "Sıcak olarak yanında limon dilimi ile servis edin."
+        "Kırmızı mercimek, bulgur ve pirinci suyu berraklaşana kadar yıkayın.",
+        "Soğanı ince doğrayıp tencerede az tereyağıyla kavurun.",
+        "Salçayı ekleyip ham kokusu gidene kadar 1 dakika çevirin.",
+        "Mercimek, bulgur, pirinç ve 1 litre sıcak suyu ekleyin.",
+        "Kaynayınca kısık ateşe alıp ara ara karıştırarak 25 dakika pişirin.",
+        "Mercimekler dağılıp çorba kaşığa kıvam verdiğinde pişmiştir.",
+        "Tuzunu ayarlayın; daha pürüzsüz isterseniz kısa süre blendırdan geçirin.",
+        "Kalan tereyağını nane ve pul biberle eritip çorbanın üzerine gezdirin.",
+        "Limon sıkarak sıcak servis edin."
       ]
     },
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
       "red_lentil": {
-        "amount": 150.0,
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 20.0,
         "unit": "g"
       },
       "onion": {
         "amount": 0.5,
         "unit": "piece"
       },
-      "carrot": {
-        "amount": 1.0,
-        "unit": "piece"
-      },
-      "potato": {
-        "amount": 1.0,
-        "unit": "piece"
-      },
-      "garlic": {
-        "amount": 2.0,
-        "unit": "clove"
-      },
       "tomato_paste": {
         "amount": 1.0,
         "unit": "tablespoon"
       },
-      "cumin": {
+      "mint": {
         "amount": 1.0,
         "unit": "teaspoon"
       },
-      "olive_oil": {
-        "amount": 1.0,
-        "unit": "tablespoon"
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
       },
-      "lemon": {
-        "amount": 0.5,
-        "unit": "piece"
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
       },
       "salt": {
         "amount": 1.0,
         "unit": "pinch"
       },
-      "black_pepper": {
-        "amount": 1.0,
-        "unit": "pinch"
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
       }
     }
   },
@@ -567,7 +570,9 @@
       "olive_oil",
       "salt",
       "black_pepper",
-      "oregano"
+      "oregano",
+      "potato",
+      "yogurt"
     ],
     "allergenTags": [],
     "checkInTags": [
@@ -579,11 +584,11 @@
     "fiberLevel": "medium",
     "carbType": "simple",
     "macros": {
-      "calories": 565,
-      "proteinG": 36,
-      "carbsG": 30,
-      "fatG": 34,
-      "fiberG": 10
+      "calories": 748,
+      "proteinG": 45,
+      "carbsG": 66,
+      "fatG": 35,
+      "fiberG": 14
     },
     "steps": {
       "en": [
@@ -649,6 +654,14 @@
       "oregano": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
       }
     }
   },
@@ -972,12 +985,12 @@
   {
     "id": "l010",
     "name": {
-      "en": "Turkish Stuffed Eggplant",
-      "tr": "Karnıyarık"
+      "en": "Kısır (Bulgur Salad)",
+      "tr": "Kısır"
     },
     "description": {
-      "en": "Fried eggplant halves stuffed with a savory ground beef, tomato, and pepper filling, baked until tender.",
-      "tr": "Kızartılmış patlıcanların içine kıymalı, domatesli ve biberli harç doldurularak fırında pişirilmiş karnıyarık."
+      "en": "Fine bulgur kneaded with pepper and pomegranate molasses, loaded with fresh herbs and served cold.",
+      "tr": "İnce bulgurun biber ve nar ekşisiyle yoğrulduğu, bol yeşillikli soğuk bir lezzet."
     },
     "mealType": "lunch",
     "cuisineIds": [
@@ -985,97 +998,103 @@
     ],
     "dietTags": [],
     "servings": 1,
-    "prepTimeMin": null,
+    "prepTimeMin": 30,
     "ingredientIds": [
-      "eggplant",
-      "ground_beef",
-      "onion",
-      "garlic",
-      "tomato",
-      "bell_pepper",
+      "bulgur",
       "tomato_paste",
+      "pomegranate_molasses",
+      "spring_onion",
+      "parsley",
+      "cucumber",
+      "lemon",
       "olive_oil",
-      "salt",
-      "black_pepper",
-      "parsley"
+      "red_pepper_flakes",
+      "salt"
     ],
-    "allergenTags": [],
+    "allergenTags": [
+      "gluten"
+    ],
     "checkInTags": [
-      "lowEnergy",
+      "bloated",
+      "cantFocus",
       "noSpecificIssue"
     ],
-    "proteinLevel": "high",
-    "fiberLevel": "medium",
-    "carbType": "simple",
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "complex",
     "macros": {
-      "calories": 555,
-      "proteinG": 36,
-      "carbsG": 27,
-      "fatG": 34,
-      "fiberG": 8
+      "calories": 485,
+      "proteinG": 12,
+      "carbsG": 79,
+      "fatG": 17,
+      "fiberG": 17
     },
     "steps": {
       "en": [
-        "Peel the eggplants in stripes and deep fry or pan-fry until softened. Place in a baking dish.",
-        "Sauté diced onion and garlic in olive oil until golden.",
-        "Add the ground beef and cook until browned. Stir in diced pepper, tomato paste, salt, and pepper.",
-        "Make a slit along each eggplant and stuff with the meat mixture. Top with tomato slices.",
-        "Bake at 180°C (350°F) for 20-25 minutes until everything is tender and heated through."
+        "Put the fine bulgur in a bowl and pour over an equal amount of hot water.",
+        "Cover and leave for 15 minutes until the bulgur has drunk all the water.",
+        "Fluff it with a fork so no lumps remain.",
+        "Add the tomato paste and chilli flakes and knead by hand until evenly coloured.",
+        "Work in the olive oil and pomegranate molasses.",
+        "Finely chop the spring onion, parsley and cucumber and fold them through.",
+        "Season with salt and lemon juice, then taste and adjust the sourness.",
+        "Chill for at least 20 minutes so the flavours settle.",
+        "Serve cold with lettuce leaves."
       ],
       "tr": [
-        "Patlıcanları alacalı soyup kızartın veya tavada yumuşayana kadar pişirin. Fırın kabına dizin.",
-        "Doğranmış soğan ve sarımsağı zeytinyağında altın rengi olana kadar kavurun.",
-        "Kıymayı ekleyip kızarana kadar pişirin. Doğranmış biber, salça, tuz ve karabiberi ekleyin.",
-        "Her patlıcanın ortasını yarıp kıymalı harçla doldurun. Üzerine domates dilimleri koyun.",
-        "180°C fırında 20-25 dakika her şey yumuşayana kadar pişirin."
+        "İnce bulguru bir kaseye alıp üzerine kendi hacmi kadar sıcak su dökün.",
+        "Üzerini kapatıp bulgur suyunu tamamen çekene kadar 15 dakika bekletin.",
+        "Çatalla kabartın, topak kalmasın.",
+        "Salça ve pul biberi ekleyip rengi eşitlenene kadar elinizle yoğurun.",
+        "Zeytinyağı ve nar ekşisini ekleyip yedirin.",
+        "Taze soğan, maydanoz ve salatalığı ince doğrayıp harca karıştırın.",
+        "Tuz ve limon suyunu ekleyin, tadına bakıp ekşiliği ayarlayın.",
+        "Lezzetlerin oturması için en az 20 dakika buzdolabında dinlendirin.",
+        "Marul yaprakları eşliğinde soğuk servis edin."
       ]
     },
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
-      "eggplant": {
-        "amount": 0.5,
-        "unit": "piece"
-      },
-      "ground_beef": {
-        "amount": 120.0,
+      "bulgur": {
+        "amount": 80.0,
         "unit": "g"
-      },
-      "onion": {
-        "amount": 0.5,
-        "unit": "piece"
-      },
-      "garlic": {
-        "amount": 2.0,
-        "unit": "clove"
-      },
-      "tomato": {
-        "amount": 1.0,
-        "unit": "piece"
-      },
-      "bell_pepper": {
-        "amount": 0.5,
-        "unit": "piece"
       },
       "tomato_paste": {
         "amount": 1.0,
         "unit": "tablespoon"
       },
+      "pomegranate_molasses": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
       "olive_oil": {
         "amount": 1.0,
         "unit": "tablespoon"
       },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
       "salt": {
         "amount": 1.0,
         "unit": "pinch"
-      },
-      "black_pepper": {
-        "amount": 1.0,
-        "unit": "pinch"
-      },
-      "parsley": {
-        "amount": 10.0,
-        "unit": "g"
       }
     }
   },
@@ -1288,112 +1307,115 @@
   {
     "id": "l013",
     "name": {
-      "en": "Spinach & Feta Börek",
-      "tr": "Ispanaklı Börek"
+      "en": "Borlotti Beans in Olive Oil",
+      "tr": "Zeytinyağlı Barbunya"
     },
     "description": {
-      "en": "Flaky Turkish pastry layers filled with a savory spinach and feta cheese mixture.",
-      "tr": "Ispanak ve beyaz peynir karışımı ile hazırlanmış geleneksel kat kat Türk böreği."
+      "en": "Borlotti beans slow-cooked with carrot and tomato, served at room temperature with olive oil.",
+      "tr": "Havuç ve domatesle ağır ateşte pişen barbunya, zeytinyağıyla oda sıcaklığında servis edilir."
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "turkish"
+      "turkish",
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
-    "prepTimeMin": null,
+    "prepTimeMin": 50,
     "ingredientIds": [
-      "flour",
-      "spinach",
-      "feta_cheese",
-      "eggs",
+      "kidney_bean",
+      "carrot",
+      "potato",
+      "tomato",
       "onion",
-      "butter",
+      "tomato_paste",
       "olive_oil",
-      "yogurt",
+      "sugar",
       "salt",
-      "black_pepper"
+      "lemon"
     ],
-    "allergenTags": [
-      "gluten",
-      "dairy",
-      "eggs"
-    ],
+    "allergenTags": [],
     "checkInTags": [
-      "cravingSweets",
-      "noSpecificIssue",
-      "bloated"
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue"
     ],
     "proteinLevel": "medium",
-    "fiberLevel": "medium",
-    "carbType": "mixed",
+    "fiberLevel": "high",
+    "carbType": "complex",
     "macros": {
-      "calories": 837,
-      "proteinG": 46,
-      "carbsG": 55,
-      "fatG": 49,
-      "fiberG": 5
+      "calories": 640,
+      "proteinG": 18,
+      "carbsG": 77,
+      "fatG": 31,
+      "fiberG": 17
     },
     "steps": {
       "en": [
-        "Wash and chop the spinach. Sauté with diced onion until wilted. Let cool.",
-        "Mix the cooled spinach with crumbled feta cheese, one egg, salt, and pepper.",
-        "Lay out a sheet of dough, brush with a mixture of melted butter, olive oil, and yogurt.",
-        "Spread the spinach filling along one edge and roll tightly. Repeat with remaining dough.",
-        "Arrange rolls in a greased baking tray, brush tops with egg wash.",
-        "Bake at 180°C (350°F) for 30-35 minutes until golden brown."
+        "If using dried beans, soak them overnight and drain.",
+        "Dice the onion and carrot; cube the potato and tomato.",
+        "Warm the olive oil in a pot and soften the onion without colouring it.",
+        "Add the carrot and cook for 3 more minutes.",
+        "Stir in the tomato paste and chopped tomato and cook for 2 minutes.",
+        "Add the beans, potato, sugar, salt and enough hot water to just cover.",
+        "Simmer covered on low heat for 35-40 minutes until the beans are tender.",
+        "Let it cool in the pot — the dish tastes best at room temperature.",
+        "Serve with a generous drizzle of olive oil and lemon."
       ],
       "tr": [
-        "Ispanağı yıkayıp doğrayın. Doğranmış soğanla birlikte suyunu salıp kavurun. Soğutun.",
-        "Soğumuş ıspanağı ufalanmış beyaz peynir, bir yumurta, tuz ve karabiberle karıştırın.",
-        "Yufkayı serin, eritilmiş tereyağı, zeytinyağı ve yoğurt karışımı ile fırçalayın.",
-        "Ispanak harcını bir kenara yayıp sıkıca sarın. Kalan yufkalarla tekrarlayın.",
-        "Yağlanmış fırın tepsisine dizin, üzerini yumurta ile fırçalayın.",
-        "180°C fırında 30-35 dakika altın rengi olana kadar pişirin."
+        "Kuru barbunya kullanıyorsanız bir gece önceden ıslatıp süzün.",
+        "Soğanı ve havucu doğrayın; patates ve domatesi küp küp kesin.",
+        "Tencerede zeytinyağını ısıtıp soğanı renk almadan yumuşatın.",
+        "Havucu ekleyip 3 dakika daha kavurun.",
+        "Salçayı ve doğranmış domatesi ekleyip 2 dakika pişirin.",
+        "Barbunya, patates, şeker, tuz ve üzerini örtecek kadar sıcak su ekleyin.",
+        "Kapağı kapalı kısık ateşte, fasulyeler yumuşayana dek 35-40 dakika pişirin.",
+        "Tencerede soğumaya bırakın — bu yemek oda sıcaklığında en lezzetlisidir.",
+        "Bolca zeytinyağı gezdirip limonla servis edin."
       ]
     },
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
-      "flour": {
-        "amount": 50.0,
+      "kidney_bean": {
+        "amount": 150.0,
         "unit": "g"
       },
-      "spinach": {
-        "amount": 100.0,
-        "unit": "g"
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
       },
-      "feta_cheese": {
-        "amount": 50.0,
-        "unit": "g"
+      "potato": {
+        "amount": 0.5,
+        "unit": "piece"
       },
-      "eggs": {
-        "amount": 2.0,
+      "tomato": {
+        "amount": 1.0,
         "unit": "piece"
       },
       "onion": {
         "amount": 0.5,
         "unit": "piece"
       },
-      "butter": {
-        "amount": 10.0,
-        "unit": "g"
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "teaspoon"
       },
       "olive_oil": {
-        "amount": 1.0,
+        "amount": 2.0,
         "unit": "tablespoon"
       },
-      "yogurt": {
-        "amount": 150.0,
-        "unit": "g"
+      "sugar": {
+        "amount": 1.0,
+        "unit": "teaspoon"
       },
       "salt": {
         "amount": 1.0,
         "unit": "pinch"
       },
-      "black_pepper": {
-        "amount": 1.0,
-        "unit": "pinch"
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
       }
     }
   },

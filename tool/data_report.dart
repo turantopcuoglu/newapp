@@ -24,9 +24,23 @@ import 'package:nutri_guide/data/mock_ingredients.dart';
 import 'package:nutri_guide/models/recipe.dart';
 import 'package:nutri_guide/services/nutrition_calculator.dart';
 
-/// Two recipes sharing this fraction of their ingredients read as the same
-/// dish to a user, even when the names differ.
+/// Two recipes sharing this fraction of their *characteristic* ingredients
+/// read as the same dish to a user, even when the names differ.
 const double nearDuplicateThreshold = 0.70;
+
+/// Seasonings, fats and sweeteners appear in most recipes, so counting them
+/// makes unrelated dishes look alike (salt alone is in half the library).
+/// Similarity is judged on what actually defines the dish.
+const Set<String> commonBaseIngredients = {
+  'salt', 'sugar', 'brown_sugar', 'powdered_sugar',
+  'black_pepper', 'white_pepper', 'red_pepper_flakes', 'paprika',
+  'cumin', 'oregano', 'thyme', 'basil', 'mint', 'parsley', 'dill',
+  'bay_leaf', 'rosemary', 'cinnamon', 'turmeric', 'coriander', 'nutmeg',
+  'clove', 'cardamom', 'sumac', 'curry_powder', 'ginger_powder',
+  'garlic_powder', 'onion_powder', 'vanilla',
+  'olive_oil', 'sunflower_oil', 'canola_oil', 'coconut_oil', 'sesame_oil',
+  'avocado_oil', 'grape_seed_oil', 'butter', 'ghee',
+};
 
 /// Minimum steps to be cookable. Snacks are legitimately simpler than a
 /// main course, so padding them to a main's length would only add filler.
@@ -175,8 +189,8 @@ void main(List<String> args) {
     for (var j = i + 1; j < allRecipes.length; j++) {
       final a = allRecipes[i];
       final b = allRecipes[j];
-      final sa = a.ingredientIds.toSet();
-      final sb = b.ingredientIds.toSet();
+      final sa = a.ingredientIds.toSet()..removeAll(commonBaseIngredients);
+      final sb = b.ingredientIds.toSet()..removeAll(commonBaseIngredients);
       if (sa.isEmpty || sb.isEmpty) continue;
       final overlap =
           sa.intersection(sb).length / sa.union(sb).length;
