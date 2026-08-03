@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,7 +22,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final storage = StorageService(prefs);
-  final bundledRecipes = await RecipeRepository.loadBundled();
+  final recipeRepository = RecipeRepository();
+  final bundledRecipes = await recipeRepository.loadLatest();
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -36,6 +39,10 @@ void main() async {
       child: const MyApp(),
     ),
   );
+
+  // Content refresh runs after first frame and applies on the next launch,
+  // so recipes never change under the user mid-session.
+  unawaited(recipeRepository.refreshFromRemote());
 }
 
 class _NoStretchScrollBehavior extends ScrollBehavior {
