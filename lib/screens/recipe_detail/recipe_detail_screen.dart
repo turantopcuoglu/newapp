@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../components/ingredient_chip.dart';
 import '../../components/meal_type_badge.dart';
 import '../../components/recipe_visual.dart';
 import '../../core/enums.dart';
@@ -196,17 +195,20 @@ class RecipeDetailScreen extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 14, vertical: 6),
+                child: Column(
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
-                    final name =
-                        ingredient?.localizedName(locale) ?? id;
+                    final name = ingredient?.localizedName(locale) ?? id;
                     final inKitchen = inventoryIds.contains(id);
-                    return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                    return _IngredientRow(
+                      name: name,
+                      // Quantities are per serving and live in the recipe
+                      // data; showing them is what makes a recipe cookable.
+                      quantity: _formatQuantity(recipe.quantities[id], l10n),
+                      isAvailable: inKitchen,
+                    );
                   }).toList(),
                 ),
               ),
@@ -455,6 +457,74 @@ class _CookedButton extends ConsumerWidget {
               icon: const Icon(Icons.restaurant_rounded),
               label: Text(l10n.recipeMarkCooked),
             ),
+    );
+  }
+}
+
+/// Formats a per-serving quantity with a localized unit, e.g. "200 ml",
+/// "1 yemek kaşığı". Returns null when the recipe declares no amount.
+String? _formatQuantity(IngredientQuantity? quantity, AppLocalizations l10n) {
+  if (quantity == null || quantity.amount <= 0) return null;
+  final amount = quantity.amount;
+  // Whole numbers read better without a trailing ".0"; halves keep one digit.
+  final text = amount == amount.roundToDouble()
+      ? amount.toInt().toString()
+      : amount.toStringAsFixed(1);
+  return '$text ${l10n.localizedUnit(quantity.unit.name)}';
+}
+
+/// One ingredient line: name on the left, amount on the right, with a marker
+/// showing whether it is already in the user's kitchen.
+class _IngredientRow extends StatelessWidget {
+  final String name;
+  final String? quantity;
+  final bool isAvailable;
+
+  const _IngredientRow({
+    required this.name,
+    required this.quantity,
+    required this.isAvailable,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color =
+        isAvailable ? AppTheme.successGreen : AppTheme.textSecondary;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 7),
+      child: Row(
+        children: [
+          Icon(
+            isAvailable
+                ? Icons.check_circle_rounded
+                : Icons.radio_button_unchecked_rounded,
+            size: 17,
+            color: color,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontSize: 14,
+                color: AppTheme.textPrimary,
+              ),
+            ),
+          ),
+          if (quantity != null) ...[
+            const SizedBox(width: 10),
+            Text(
+              quantity!,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppTheme.textPrimary,
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
