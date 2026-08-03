@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/beverage_provider.dart';
 import '../../providers/cooked_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../beverages/beverages_screen.dart';
 
 // ---------------------------------------------------------------------------
 // Data model for aggregated nutrition stats
@@ -1117,13 +1118,23 @@ class _MealsAndBeveragesCard extends StatelessWidget {
             height: 56,
             color: AppTheme.dividerColor,
           ),
-          // Beverage calories
+          // Beverage calories — tapping opens the beverage log, which is
+          // otherwise unreachable even though its calories show up here.
           Expanded(
-            child: _SummaryTile(
-              icon: Icons.local_cafe_rounded,
-              iconColor: AppTheme.warmCoral,
-              value: '${data.beverageCalories}',
-              label: l10n.recipeCalories,
+            child: InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const BeveragesScreen(),
+                ),
+              ),
+              borderRadius: BorderRadius.circular(12),
+              child: _SummaryTile(
+                icon: Icons.local_cafe_rounded,
+                iconColor: AppTheme.warmCoral,
+                value: '${data.beverageCalories}',
+                label: l10n.recipeCalories,
+              ),
             ),
           ),
           Container(

@@ -93,7 +93,8 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final notifier = ref.read(beverageProvider.notifier);
-    final entries = ref.watch(beverageProvider);
+    // Watched for rebuilds; the entries themselves are read via the notifier.
+    ref.watch(beverageProvider);
 
     final today = DateTime.now();
     final todayEntries = notifier.entriesForDate(today)
