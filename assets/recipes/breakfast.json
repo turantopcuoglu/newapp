@@ -2417,5 +2417,735 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "b026",
+    "name": {
+      "en": "Turkish Village Breakfast Plate",
+      "tr": "Serpme Köy Kahvaltısı"
+    },
+    "description": {
+      "en": "The classic spread: white cheese, olives, tomato, cucumber and eggs, all on one plate.",
+      "tr": "Klasik sofra: beyaz peynir, zeytin, domates, salatalık ve yumurta tek tabakta."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "eggs",
+      "feta_cheese",
+      "olives",
+      "tomato",
+      "cucumber",
+      "bread",
+      "butter",
+      "honey"
+    ],
+    "allergenTags": [
+      "eggs",
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "lowEnergy"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 641,
+      "proteinG": 29,
+      "carbsG": 55,
+      "fatG": 35,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Bring the cheese and butter out of the fridge 15 minutes ahead — cold dulls their flavour.",
+        "Wash the tomato and cucumber and slice them into rounds.",
+        "Arrange the cheese, olives, tomato and cucumber in separate sections of a large plate.",
+        "Melt the butter in a small pan over low heat.",
+        "Crack in the eggs and cook them gently for 3-4 minutes.",
+        "Keep the heat low so the whites stay tender rather than browning at the edges.",
+        "Slide the eggs onto the plate while still soft.",
+        "Add the bread and a small dish of honey.",
+        "Serve immediately with plenty of tea."
+      ],
+      "tr": [
+        "Peyniri ve tereyağını 15 dakika önceden buzdolabından çıkarın — soğukken aromaları kapanır.",
+        "Domates ve salatalığı yıkayıp yuvarlak dilimleyin.",
+        "Peynir, zeytin, domates ve salatalığı büyük bir tabakta ayrı bölümlere dizin.",
+        "Küçük bir tavada tereyağını kısık ateşte eritin.",
+        "Yumurtaları kırıp 3-4 dakika hafif ateşte pişirin.",
+        "Beyazlar kenarından kızarmasın, yumuşak kalsın diye ateşi kısık tutun.",
+        "Yumurtaları henüz yumuşakken tabağa alın.",
+        "Ekmeği ve küçük bir kâsede balı ekleyin.",
+        "Bol çayla hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "feta_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
+  },
+  {
+    "id": "b027",
+    "name": {
+      "en": "Turkish Semolina Halva Breakfast Bowl",
+      "tr": "Kahvaltılık İrmik Helvası"
+    },
+    "description": {
+      "en": "Semolina toasted in butter until nutty, then loosened with milk and topped with walnuts.",
+      "tr": "Tereyağında kokusu çıkana dek kavrulan irmik, sütle açılıp cevizle taçlanır."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 25,
+    "ingredientIds": [
+      "semolina",
+      "butter",
+      "milk",
+      "honey",
+      "walnut",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "periodCramps"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 528,
+      "proteinG": 16,
+      "carbsG": 65,
+      "fatG": 25,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Melt the butter in a heavy pan over low heat.",
+        "Add the semolina and stir constantly.",
+        "Roast for 8-10 minutes until it turns golden and smells nutty — this is the whole dish.",
+        "Warm the milk separately; adding cold milk would make the semolina seize.",
+        "Pour the warm milk in slowly while stirring hard to keep it smooth.",
+        "Cook for 3 minutes until it thickens and pulls away from the pan.",
+        "Take off the heat, cover and rest for 5 minutes.",
+        "Chop the walnuts and toast them briefly in a dry pan.",
+        "Spoon into a bowl, drizzle with honey and top with walnuts and cinnamon."
+      ],
+      "tr": [
+        "Kalın tabanlı bir tavada tereyağını kısık ateşte eritin.",
+        "İrmiği ekleyip sürekli karıştırın.",
+        "Rengi dönüp kokusu çıkana dek 8-10 dakika kavurun — bu yemeğin tamamı bu adımda.",
+        "Sütü ayrı ısıtın; soğuk süt eklemek irmiği topaklaştırır.",
+        "Ilık sütü karıştırarak yavaşça ekleyin, pürüzsüz kalsın.",
+        "Koyulaşıp tavadan ayrılana dek 3 dakika pişirin.",
+        "Ateşten alıp üzerini kapatın ve 5 dakika demlendirin.",
+        "Cevizleri kıyıp kuru tavada kısaca kavurun.",
+        "Kaseye alın, bal gezdirip ceviz ve tarçınla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "semolina": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b028",
+    "name": {
+      "en": "Turkish Herb Omelette (Kaygana)",
+      "tr": "Otlu Kaygana"
+    },
+    "description": {
+      "en": "A thin, herb-packed Anatolian omelette with plenty of parsley and dill.",
+      "tr": "Bol maydanoz ve dereotuyla hazırlanan ince Anadolu omleti."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 20,
+    "ingredientIds": [
+      "eggs",
+      "parsley",
+      "dill",
+      "spring_onion",
+      "flour",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "cantFocus"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 394,
+      "proteinG": 18,
+      "carbsG": 17,
+      "fatG": 29,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Wash the herbs and dry them well — wet herbs make the batter watery.",
+        "Chop the parsley, dill and spring onion very finely.",
+        "Beat the eggs until the yolks and whites are fully combined.",
+        "Whisk in the flour a little at a time so no lumps form.",
+        "Fold in the herbs and season with salt and pepper.",
+        "Heat the olive oil in a pan over medium-low heat.",
+        "Pour in the batter and tilt the pan to spread it thin.",
+        "Cook for 3 minutes until the base sets, then flip and cook 2 minutes more.",
+        "Slide onto a plate and serve warm, cut into wedges."
+      ],
+      "tr": [
+        "Yeşillikleri yıkayıp iyice kurulayın — ıslak ot harcı sulandırır.",
+        "Maydanoz, dereotu ve taze soğanı çok ince kıyın.",
+        "Yumurtaları sarısı ve beyazı birleşene dek çırpın.",
+        "Unu azar azar ekleyip topak kalmayacak şekilde çırpın.",
+        "Yeşillikleri harca katıp tuz ve karabiberle tatlandırın.",
+        "Tavada zeytinyağını orta-kısık ateşte ısıtın.",
+        "Harcı dökün ve tavayı çevirerek ince bir tabaka hâlinde yayın.",
+        "Altı tutana dek 3 dakika pişirin, çevirip 2 dakika daha pişirin.",
+        "Tabağa alıp dilimleyerek ılık servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "flour": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b029",
+    "name": {
+      "en": "Labneh Bowl with Sumac and Olive Oil",
+      "tr": "Sumaklı Labne Kasesi"
+    },
+    "description": {
+      "en": "Thick strained yoghurt with sumac, olive oil and warm pita.",
+      "tr": "Sumak ve zeytinyağıyla tatlandırılmış yoğun süzme yoğurt, yanında sıcak pide."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 15,
+    "ingredientIds": [
+      "labne",
+      "sumac",
+      "olive_oil",
+      "tomato",
+      "cucumber",
+      "mint",
+      "pita_bread",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 539,
+      "proteinG": 14,
+      "carbsG": 52,
+      "fatG": 32,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Spoon the labneh into a shallow bowl.",
+        "Spread it out and make a well in the centre with the back of a spoon.",
+        "Pour the olive oil into the well so it pools rather than soaking straight in.",
+        "Dice the tomato and cucumber small and pile them to one side.",
+        "Sprinkle the sumac generously over the labneh.",
+        "Scatter the mint and a pinch of salt over the top.",
+        "Warm the pita in a dry pan for 30 seconds a side.",
+        "Cut the pita into strips and serve alongside for scooping."
+      ],
+      "tr": [
+        "Labneyi geniş ve sığ bir kaseye alın.",
+        "Yayıp kaşığın arkasıyla ortasında bir çukur açın.",
+        "Zeytinyağını çukura dökün ki hemen emilmeyip göl gibi kalsın.",
+        "Domates ve salatalığı küçük doğrayıp bir kenara yığın.",
+        "Sumağı labnenin üzerine bolca serpin.",
+        "Nane ve bir tutam tuzu üzerine ekleyin.",
+        "Pideyi kuru tavada her yüzü 30 saniye ısıtın.",
+        "Pideyi şeritler hâlinde kesip banmak için yanında servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "labne": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "sumac": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "mint": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "pita_bread": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b030",
+    "name": {
+      "en": "Ricotta and Honey Toast with Figs",
+      "tr": "Ballı Ricottalı Tost"
+    },
+    "description": {
+      "en": "Whipped ricotta on toast with honey and a grind of pepper — Italian breakfast, five minutes.",
+      "tr": "Tostun üzerinde çırpılmış ricotta, bal ve taze karabiber — beş dakikalık İtalyan kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "ricotta",
+      "bread",
+      "honey",
+      "walnut",
+      "black_pepper",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 448,
+      "proteinG": 17,
+      "carbsG": 48,
+      "fatG": 22,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Take the ricotta out of the fridge so it whips smoothly.",
+        "Whisk it with a little lemon zest until light and spreadable.",
+        "Toast the bread until crisp at the edges but still soft in the middle.",
+        "Let the toast cool for a minute so the ricotta does not slide off.",
+        "Spread the whipped ricotta thickly over each slice.",
+        "Toast the walnuts in a dry pan for 2 minutes and chop them.",
+        "Scatter the walnuts over the ricotta.",
+        "Drizzle with honey and finish with a grind of black pepper — the pepper is what makes it."
+      ],
+      "tr": [
+        "Ricottayı kolay çırpılsın diye buzdolabından çıkarın.",
+        "Biraz limon kabuğu rendesiyle, hafif ve sürülebilir olana dek çırpın.",
+        "Ekmeği kenarları gevrek, ortası yumuşak kalacak şekilde kızartın.",
+        "Ricotta kaymasın diye tostu bir dakika soğutun.",
+        "Çırpılmış ricottayı her dilime kalın kalın sürün.",
+        "Cevizleri kuru tavada 2 dakika kavurup kıyın.",
+        "Cevizleri ricottanın üzerine serpin.",
+        "Bal gezdirip taze çekilmiş karabiberle tamamlayın — asıl lezzeti karabiber verir."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ricotta": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 2.0,
+        "unit": "slice"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "b031",
+    "name": {
+      "en": "Savoury Miso Oat Bowl",
+      "tr": "Tuzlu Yulaf Kasesi"
+    },
+    "description": {
+      "en": "Oats cooked savoury with soy, sesame and a soft egg — the Asian answer to porridge.",
+      "tr": "Soya, susam ve az pişmiş yumurtayla tuzlu pişen yulaf — lapanın Asya yorumu."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 20,
+    "ingredientIds": [
+      "oats",
+      "eggs",
+      "soy_sauce",
+      "sesame_oil",
+      "spring_onion",
+      "spinach",
+      "ginger",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "eggs",
+      "soy",
+      "sesame",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 393,
+      "proteinG": 20,
+      "carbsG": 40,
+      "fatG": 18,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Grate the ginger finely.",
+        "Bring 250 ml of water to the boil with the ginger.",
+        "Stir in the oats and cook for 5 minutes over low heat.",
+        "Season with soy sauce instead of sugar — this is a savoury porridge.",
+        "Add the spinach and let it wilt into the oats for 1 minute.",
+        "Meanwhile soft-boil the egg for exactly 6.5 minutes for a runny yolk.",
+        "Cool the egg briefly under cold water and peel it.",
+        "Spoon the oats into a bowl and halve the egg over the top.",
+        "Finish with sesame oil, spring onion and sesame seeds."
+      ],
+      "tr": [
+        "Zencefili ince rendeleyin.",
+        "250 ml suyu zencefille birlikte kaynatın.",
+        "Yulafı ekleyip kısık ateşte 5 dakika pişirin.",
+        "Şeker yerine soya sosuyla tatlandırın — bu tuzlu bir lapa.",
+        "Ispanağı ekleyip 1 dakikada yulafa çekmesini sağlayın.",
+        "Bu sırada yumurtayı akışkan sarı için tam 6,5 dakika haşlayın.",
+        "Yumurtayı kısaca soğuk sudan geçirip soyun.",
+        "Yulafı kaseye alıp yumurtayı ikiye bölerek üzerine yerleştirin.",
+        "Susam yağı, taze soğan ve susamla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sesame_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "spring_onion": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b032",
+    "name": {
+      "en": "Mexican Egg and Bean Tortilla",
+      "tr": "Meksika Usulü Fasulyeli Tortilla"
+    },
+    "description": {
+      "en": "Black beans and eggs on a warm tortilla with avocado and lime.",
+      "tr": "Sıcak tortillada siyah fasulye ve yumurta, yanında avokado ve lime."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 20,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "eggs",
+      "black_bean",
+      "avocado",
+      "tomato",
+      "lime",
+      "coriander",
+      "cheddar_cheese",
+      "paprika"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten",
+      "dairy"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "lowEnergy"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 689,
+      "proteinG": 37,
+      "carbsG": 66,
+      "fatG": 33,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Warm the black beans in a small pan with the paprika and a splash of water.",
+        "Mash about half of them so the mixture holds on the tortilla.",
+        "Dice the tomato and chop the coriander.",
+        "Beat the eggs and scramble them over low heat until just set.",
+        "Take them off the heat while still creamy — they keep cooking on the plate.",
+        "Warm the tortilla in a dry pan for 20 seconds a side.",
+        "Spread the beans over the tortilla, then add the eggs.",
+        "Top with sliced avocado, tomato and grated cheese.",
+        "Squeeze over the lime, scatter the coriander and serve open or folded."
+      ],
+      "tr": [
+        "Siyah fasulyeyi küçük bir tavada toz biber ve biraz suyla ısıtın.",
+        "Tortillada dağılmaması için yarısını ezin.",
+        "Domatesi küp doğrayın, kişnişi kıyın.",
+        "Yumurtaları çırpıp kısık ateşte, henüz tutar tutmaz pişirin.",
+        "Kremamsıyken ateşten alın — tabakta pişmeye devam eder.",
+        "Tortillayı kuru tavada her yüzü 20 saniye ısıtın.",
+        "Fasulyeyi tortillaya yayıp üzerine yumurtayı ekleyin.",
+        "Dilimlenmiş avokado, domates ve rendelenmiş peynirle tamamlayın.",
+        "Lime sıkın, kişniş serpip açık ya da katlayarak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "black_bean": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "lime": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "coriander": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
   }
 ]

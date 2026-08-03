@@ -2812,5 +2812,163 @@
         "unit": "teaspoon"
       }
     }
+  },
+  {
+    "id": "s034",
+    "name": {
+      "en": "Tahini and Molasses on Bread",
+      "tr": "Tahin Pekmezli Ekmek"
+    },
+    "description": {
+      "en": "The Turkish winter classic: tahini and grape molasses stirred together on fresh bread.",
+      "tr": "Türk kışının klasiği: ekmek üzerinde birlikte çırpılmış tahin ve pekmez."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "tahini",
+      "pomegranate_molasses",
+      "bread",
+      "walnut"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "periodCramps"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 357,
+      "proteinG": 9,
+      "carbsG": 31,
+      "fatG": 24,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Stir the tahini in its jar first — the oil always separates on top.",
+        "Spoon the tahini and molasses into a small bowl.",
+        "Mix them until the colour is completely even and glossy.",
+        "The mixture should be thick enough to hold on the bread, not runny.",
+        "Spread it over the bread right to the edges.",
+        "Chop the walnuts and scatter them on top."
+      ],
+      "tr": [
+        "Önce kavanozdaki tahini karıştırın — yağı hep üstte ayrışır.",
+        "Tahin ve pekmezi küçük bir kaseye alın.",
+        "Rengi tamamen eşitlenip parlayana dek karıştırın.",
+        "Karışım akıcı değil, ekmekte duracak kıvamda olmalı.",
+        "Ekmeğin üzerine kenarlara kadar sürün.",
+        "Cevizleri kıyıp üzerine serpin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tahini": {
+        "amount": 2.0,
+        "unit": "tablespoon"
+      },
+      "pomegranate_molasses": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "bread": {
+        "amount": 1.0,
+        "unit": "slice"
+      },
+      "walnut": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s035",
+    "name": {
+      "en": "Dried Apricots with Almonds",
+      "tr": "Bademli Kuru Kayısı"
+    },
+    "description": {
+      "en": "Dried apricots stuffed with almonds — iron and magnesium in two bites.",
+      "tr": "Bademle doldurulmuş kuru kayısı — iki lokmada demir ve magnezyum."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "apricot",
+      "almond",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "cravingSweets",
+      "lowEnergy"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "simple",
+    "macros": {
+      "calories": 112,
+      "proteinG": 4,
+      "carbsG": 9,
+      "fatG": 8,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Toast the almonds in a dry pan for 3 minutes until fragrant, then cool.",
+        "If the apricots are very dry, soak them in warm water for 5 minutes and pat dry.",
+        "Open each apricot along its natural seam without splitting it in two.",
+        "Tuck one or two almonds inside each.",
+        "Dust lightly with cinnamon.",
+        "Serve at room temperature; they keep in a sealed jar for a week."
+      ],
+      "tr": [
+        "Bademleri kuru tavada kokusu çıkana dek 3 dakika kavurup soğutun.",
+        "Kayısılar çok kuruysa ılık suda 5 dakika bekletip kurulayın.",
+        "Her kayısıyı ikiye ayırmadan, doğal çizgisinden açın.",
+        "İçine bir ya da iki badem yerleştirin.",
+        "Üzerine hafifçe tarçın serpin.",
+        "Oda sıcaklığında servis edin; ağzı kapalı kavanozda bir hafta durur."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apricot": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]

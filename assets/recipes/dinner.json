@@ -3864,5 +3864,843 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "d036",
+    "name": {
+      "en": "Herb Roast Chicken with Root Vegetables",
+      "tr": "Otlu Fırın Tavuk ve Kök Sebzeler"
+    },
+    "description": {
+      "en": "A whole tray of chicken, potato, carrot and turnip roasted with rosemary.",
+      "tr": "Tavuk, patates, havuç ve şalgamın biberiyeyle fırınlandığı tek tepsi."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 55,
+    "ingredientIds": [
+      "chicken_thigh",
+      "potato",
+      "carrot",
+      "turnip",
+      "red_onion",
+      "rosemary",
+      "garlic",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 768,
+      "proteinG": 54,
+      "carbsG": 58,
+      "fatG": 36,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Cut the potato, carrot, turnip and onion into equal chunks so they finish together.",
+        "Toss the vegetables with olive oil, crushed garlic, rosemary, salt and pepper.",
+        "Spread them in a single layer — crowding steams them instead of roasting.",
+        "Pat the chicken dry and season it well on both sides.",
+        "Lay the chicken skin side up on top of the vegetables.",
+        "Roast for 40-45 minutes without turning the chicken, so the skin crisps.",
+        "The chicken is done when the juices run clear at the bone.",
+        "Rest for 5 minutes and serve straight from the tray."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Patates, havuç, şalgam ve soğanı aynı anda pişsinler diye eşit parçalar hâlinde doğrayın.",
+        "Sebzeleri zeytinyağı, ezilmiş sarımsak, biberiye, tuz ve karabiberle harmanlayın.",
+        "Tek sıra hâlinde yayın — sıkışırlarsa kızarmaz, buharda pişer.",
+        "Tavuğu kurulayıp iki yüzünü de bolca baharatlayın.",
+        "Tavuğu derili yüzü üstte kalacak şekilde sebzelerin üzerine yerleştirin.",
+        "Derisi çıtırlaşsın diye çevirmeden 40-45 dakika pişirin.",
+        "Kemiğe yakın yerden kestiğinizde suyu berrak akıyorsa tavuk pişmiştir.",
+        "5 dakika dinlendirip tepsisiyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_thigh": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "turnip": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "red_onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "rosemary": {
+        "amount": 2.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d037",
+    "name": {
+      "en": "Beef and Barley Stew",
+      "tr": "Arpalı Et Yahnisi"
+    },
+    "description": {
+      "en": "Slow-cooked beef with pearl barley, carrot and celery — iron-rich comfort food.",
+      "tr": "Arpa, havuç ve kerevizle ağır ateşte pişen et yahnisi — demir deposu."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 95,
+    "ingredientIds": [
+      "beef_steak",
+      "barley",
+      "carrot",
+      "celery",
+      "onion",
+      "garlic",
+      "tomato_paste",
+      "olive_oil",
+      "thyme",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "lowEnergy"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 704,
+      "proteinG": 43,
+      "carbsG": 38,
+      "fatG": 43,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cut the beef into large cubes and pat them completely dry.",
+        "Brown them in olive oil over high heat in batches, without crowding the pot.",
+        "A dark crust here is where the stew's depth comes from — do not rush it.",
+        "Set the meat aside and soften the onion, carrot and celery in the same pot.",
+        "Add the garlic and tomato paste and cook for 2 minutes.",
+        "Return the beef with the barley, thyme and enough hot water to cover by two fingers.",
+        "Bring to a boil, then simmer covered on the lowest heat for 1 hour 15 minutes.",
+        "The stew is ready when the beef shreds under a fork and the barley is plump.",
+        "Season, rest for 10 minutes and serve."
+      ],
+      "tr": [
+        "Eti iri küpler hâlinde doğrayıp iyice kurulayın.",
+        "Tencereyi doldurmadan, partiler hâlinde yüksek ateşte zeytinyağında mühürleyin.",
+        "Yahninin derinliği bu koyu kabuktan gelir — acele etmeyin.",
+        "Eti kenara alıp aynı tencerede soğan, havuç ve kerevizi kavurun.",
+        "Sarımsak ve salçayı ekleyip 2 dakika çevirin.",
+        "Eti arpa, kekik ve iki parmak geçecek kadar sıcak suyla tencereye geri koyun.",
+        "Kaynatıp en kısık ateşte, kapalı olarak 1 saat 15 dakika pişirin.",
+        "Et çatalla lif lif ayrılıp arpa şiştiğinde yahni hazırdır.",
+        "Tuzunu ayarlayıp 10 dakika dinlendirin ve servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "barley": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "celery": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "thyme": {
+        "amount": 2.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d038",
+    "name": {
+      "en": "Turkey Meatloaf with Roasted Vegetables",
+      "tr": "Hindi Köfte Rulo ve Fırın Sebze"
+    },
+    "description": {
+      "en": "A lighter meatloaf made with turkey mince, baked alongside vegetables.",
+      "tr": "Hindi kıymasıyla hazırlanan hafif köfte rulo, yanında fırın sebzeler."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 55,
+    "ingredientIds": [
+      "ground_turkey",
+      "breadcrumbs",
+      "eggs",
+      "onion",
+      "carrot",
+      "zucchini",
+      "tomato_paste",
+      "garlic",
+      "olive_oil",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 719,
+      "proteinG": 57,
+      "carbsG": 44,
+      "fatG": 36,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Grate the onion and squeeze out its liquid so the loaf holds together.",
+        "Mix the turkey, breadcrumbs, egg, onion, crushed garlic, oregano, salt and pepper.",
+        "Work the mixture just until combined — overmixing makes it dense.",
+        "Shape it into a loaf on a lined tray.",
+        "Brush the top with tomato paste loosened with a little olive oil.",
+        "Cut the carrot and courgette into chunks and scatter them around the loaf.",
+        "Bake for 40 minutes until firm and cooked through at the centre.",
+        "Rest for 10 minutes before slicing, or it will crumble."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Soğanı rendeleyip suyunu sıkın ki rulo dağılmasın.",
+        "Hindi kıyması, galeta unu, yumurta, soğan, ezilmiş sarımsak, kekik, tuz ve karabiberi karıştırın.",
+        "Harcı sadece birleşene kadar karıştırın — fazlası sertleştirir.",
+        "Kağıt serili tepside rulo şeklinde şekillendirin.",
+        "Üzerine biraz zeytinyağıyla açılmış salçayı fırçalayın.",
+        "Havuç ve kabağı iri doğrayıp rulonun etrafına dizin.",
+        "Ortası pişip diri hâle gelene dek 40 dakika fırınlayın.",
+        "Dilimlemeden önce 10 dakika dinlendirin, yoksa dağılır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "zucchini": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tomato_paste": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d039",
+    "name": {
+      "en": "Baked Cod with Potatoes and Olives",
+      "tr": "Fırında Morina, Patates ve Zeytin"
+    },
+    "description": {
+      "en": "White fish baked over sliced potato with olives, lemon and oregano.",
+      "tr": "Dilimlenmiş patates üzerinde zeytin, limon ve kekikle fırınlanan beyaz balık."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 45,
+    "ingredientIds": [
+      "cod",
+      "potato",
+      "olives",
+      "tomato",
+      "red_onion",
+      "lemon",
+      "olive_oil",
+      "oregano",
+      "garlic",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 533,
+      "proteinG": 36,
+      "carbsG": 55,
+      "fatG": 20,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Slice the potato thinly, about 3 mm, so it cooks in the same time as the fish.",
+        "Toss the potato slices with olive oil, salt and pepper and spread them in a dish.",
+        "Give the potatoes a 20 minute head start in the oven.",
+        "Slice the tomato and onion and scatter them over the softened potatoes.",
+        "Pat the cod dry, season it and lay it on top.",
+        "Add the olives, crushed garlic, oregano and lemon slices around the fish.",
+        "Bake for 15 minutes; the cod is done when it flakes at a fork's push.",
+        "Rest for 3 minutes and serve from the dish."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Patatesi balıkla aynı sürede pişsin diye yaklaşık 3 mm kalınlığında ince dilimleyin.",
+        "Patates dilimlerini zeytinyağı, tuz ve karabiberle harmanlayıp kaba yayın.",
+        "Patatesleri balıktan 20 dakika önce fırına verin.",
+        "Domates ve soğanı dilimleyip yumuşamış patateslerin üzerine dağıtın.",
+        "Morinayı kurulayıp baharatlayın ve üzerine yerleştirin.",
+        "Zeytin, ezilmiş sarımsak, kekik ve limon dilimlerini balığın çevresine ekleyin.",
+        "15 dakika pişirin; çatalla bastırınca lif lif ayrılıyorsa hazırdır.",
+        "3 dakika dinlendirip kabıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cod": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olives": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "red_onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d040",
+    "name": {
+      "en": "Chicken Mole with Rice",
+      "tr": "Mole Soslu Tavuk"
+    },
+    "description": {
+      "en": "Chicken in a Mexican mole sauce — chillies, almonds and dark chocolate cooked into a deep, savoury sauce.",
+      "tr": "Meksika mole sosunda tavuk — acı biber, badem ve bitter çikolatanın derin, tuzlu bir sosa dönüştüğü klasik."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 50,
+    "ingredientIds": [
+      "chicken_breast",
+      "dark_chocolate",
+      "almond",
+      "hot_pepper",
+      "tomato",
+      "onion",
+      "garlic",
+      "sesame_seeds",
+      "cinnamon",
+      "cumin",
+      "white_rice",
+      "olive_oil",
+      "salt"
+    ],
+    "allergenTags": [
+      "nuts",
+      "sesame"
+    ],
+    "checkInTags": [
+      "periodCramps",
+      "lowEnergy",
+      "cantFocus"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 939,
+      "proteinG": 62,
+      "carbsG": 83,
+      "fatG": 42,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Toast the almonds and sesame seeds in a dry pan for 3 minutes, then set aside.",
+        "Toast the dried chilli briefly in the same pan until it smells smoky, then soak it in hot water for 10 minutes.",
+        "Soften the onion and garlic in olive oil for 5 minutes.",
+        "Add the chopped tomato, cumin and cinnamon and cook for 8 minutes.",
+        "Blend the sauce with the drained chilli, almonds and sesame seeds until smooth.",
+        "Return the sauce to the pan and simmer gently for 10 minutes to thicken.",
+        "Take it off the heat and stir in the dark chocolate until it melts and the sauce turns glossy.",
+        "Season the chicken, sear it for 4 minutes a side, then simmer it in the sauce for 10 minutes.",
+        "Serve over rice with a scattering of sesame seeds."
+      ],
+      "tr": [
+        "Badem ve susamı kuru tavada 3 dakika kavurup kenara alın.",
+        "Aynı tavada acı biberi isli kokusu çıkana dek kısaca kavurun, sonra 10 dakika sıcak suda bekletin.",
+        "Soğan ve sarımsağı zeytinyağında 5 dakika kavurun.",
+        "Doğranmış domates, kimyon ve tarçını ekleyip 8 dakika pişirin.",
+        "Sosu, süzülmüş acı biber, badem ve susamla birlikte pürüzsüz olana dek çekin.",
+        "Sosu tavaya geri alıp koyulaşması için 10 dakika hafifçe kaynatın.",
+        "Ateşten alıp bitter çikolatayı eriyip sos parlayana dek karıştırın.",
+        "Tavuğu baharatlayıp her yüzünü 4 dakika mühürleyin, sonra sosta 10 dakika pişirin.",
+        "Pilavın üzerinde, susam serperek servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "dark_chocolate": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "hot_pepper": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "white_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d041",
+    "name": {
+      "en": "Lentil and Spinach Stew with Lemon",
+      "tr": "Limonlu Ispanaklı Mercimek"
+    },
+    "description": {
+      "en": "Green lentils and spinach finished with lemon — iron with the vitamin C to absorb it.",
+      "tr": "Limonla tamamlanan yeşil mercimek ve ıspanak — demir ve onu emdiren C vitamini bir arada."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 40,
+    "ingredientIds": [
+      "green_lentil",
+      "spinach",
+      "onion",
+      "garlic",
+      "carrot",
+      "lemon",
+      "cumin",
+      "coriander",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "periodFatigue",
+      "lowEnergy",
+      "bloated"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 423,
+      "proteinG": 20,
+      "carbsG": 54,
+      "fatG": 17,
+      "fiberG": 19
+    },
+    "steps": {
+      "en": [
+        "Rinse the lentils and pick out any stones.",
+        "Dice the onion and carrot and soften them in olive oil for 5 minutes.",
+        "Add the garlic and cumin and cook for 1 minute until fragrant.",
+        "Add the lentils and hot water to cover by two fingers.",
+        "Simmer for 25 minutes until the lentils are tender but still hold their shape.",
+        "Salt only now — salting earlier keeps lentils firm.",
+        "Stir in the spinach and cook for 2 minutes until it wilts.",
+        "Squeeze in the lemon off the heat; the vitamin C helps the iron absorb.",
+        "Scatter with coriander and serve warm."
+      ],
+      "tr": [
+        "Mercimeği yıkayıp taşlarını ayıklayın.",
+        "Soğan ve havucu doğrayıp zeytinyağında 5 dakika kavurun.",
+        "Sarımsak ve kimyonu ekleyip kokusu çıkana dek 1 dakika pişirin.",
+        "Mercimeği ve iki parmak geçecek kadar sıcak suyu ekleyin.",
+        "Mercimekler yumuşayıp şeklini koruyana dek 25 dakika pişirin.",
+        "Tuzu ancak şimdi ekleyin — erken tuz mercimeği sert bırakır.",
+        "Ispanağı ekleyip çekene dek 2 dakika pişirin.",
+        "Ateşten alıp limonu sıkın; C vitamini demirin emilimini artırır.",
+        "Kişniş serpip ılık servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "green_lentil": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "coriander": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d042",
+    "name": {
+      "en": "Pumpkin Seed Crusted Salmon with Greens",
+      "tr": "Kabak Çekirdekli Somon"
+    },
+    "description": {
+      "en": "Salmon baked under a pumpkin seed crust with swiss chard — magnesium and omega-3.",
+      "tr": "Kabak çekirdeği kabuğuyla fırınlanan somon ve pazı — magnezyum ve omega-3."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 30,
+    "ingredientIds": [
+      "salmon",
+      "pumpkin_seeds",
+      "swiss_chard",
+      "garlic",
+      "lemon",
+      "olive_oil",
+      "black_pepper",
+      "salt"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "periodCramps",
+      "cantFocus"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "simple",
+    "macros": {
+      "calories": 600,
+      "proteinG": 39,
+      "carbsG": 12,
+      "fatG": 45,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Toast the pumpkin seeds in a dry pan for 3 minutes, then chop them coarsely.",
+        "Pat the salmon dry and season it on both sides.",
+        "Brush the top of the fillet with a little olive oil so the crust sticks.",
+        "Press the chopped seeds onto the oiled surface in an even layer.",
+        "Bake for 12-14 minutes until the fish flakes and the crust is golden.",
+        "Meanwhile strip the chard leaves from the stems and slice the stems thinly.",
+        "Cook the stems in olive oil with garlic for 3 minutes, then add the leaves for 2 minutes.",
+        "Serve the salmon over the greens with lemon squeezed on top."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Kabak çekirdeklerini kuru tavada 3 dakika kavurup iri kıyın.",
+        "Somonu kurulayıp iki yüzünü de baharatlayın.",
+        "Kabuk tutunsun diye filetonun üstünü az zeytinyağıyla fırçalayın.",
+        "Kıyılmış çekirdekleri yağlı yüzeye eşit bir tabaka hâlinde bastırın.",
+        "Balık lif lif ayrılıp kabuk kızarana dek 12-14 dakika pişirin.",
+        "Bu sırada pazı yapraklarını saplarından ayırıp sapları ince doğrayın.",
+        "Sapları sarımsakla zeytinyağında 3 dakika, sonra yaprakları ekleyip 2 dakika pişirin.",
+        "Somonu yeşilliklerin üzerinde, limon sıkarak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "swiss_chard": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
   }
 ]
