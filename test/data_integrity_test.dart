@@ -44,6 +44,18 @@ void main() {
     }
   });
 
+  test('every catalog ingredient has nutrition data', () {
+    // Recipes can only be as accurate as the catalog behind them: an
+    // ingredient without nutrition data silently under-counts calories
+    // wherever it is used.
+    final missing = mockIngredients
+        .map((i) => i.id)
+        .where((id) => !ingredientNutritionData.containsKey(id))
+        .toList();
+    expect(missing, isEmpty,
+        reason: 'ingredients missing nutrition data: ${missing.join(", ")}');
+  });
+
   test('every recipe ingredient has nutrition data', () {
     for (final r in recipes) {
       for (final id in r.ingredientIds) {
