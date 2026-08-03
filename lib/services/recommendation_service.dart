@@ -1,7 +1,9 @@
 import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../models/user_profile.dart';
+import '../data/explore_data.dart';
 import 'diet_classifier.dart';
+import 'special_category_matcher.dart';
 
 class ScoredRecipe {
   final Recipe recipe;
@@ -34,7 +36,8 @@ class RecommendationService {
   /// Filtering order:
   /// 1. Exclude recipes with allergens, disliked ingredients, or that don't
   ///    satisfy the profile's diet preferences (hard filter)
-  /// 2. Score by check-in match (soft bonus, never excludes)
+  /// 2. Score by check-in and health-condition match (soft bonus, never
+  ///    excludes)
   /// 3. Compare with kitchen inventory
   /// 4. Calculate compatibility score
   /// 5. Sort by compatibility, meal type relevance, nutritional balance
@@ -79,15 +82,21 @@ class RecommendationService {
       final checkInMatch = recipe.checkInTags
           .any((tag) => checkInTypes.contains(tag));
 
+      // Health conditions are a standing need, not a mood: a recipe that
+      // suits every declared condition ranks highest, one that suits none
+      // gets no bonus. Soft like the check-in, so nothing disappears.
+      final healthMatch = _healthMatchRatio(recipe, profile);
+
       // Nutritional balance bonus (small weight)
       double nutritionBonus = 0;
       if (recipe.proteinLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.fiberLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.carbType == CarbType.complex) nutritionBonus += 0.03;
 
-      final score = (ingredientScore * 0.55) +
-          (checkInMatch ? 0.35 : 0.0) +
-          (nutritionBonus * 0.10);
+      final score = (ingredientScore * 0.45) +
+          (checkInMatch ? 0.28 : 0.0) +
+          (healthMatch * 0.20) +
+          (nutritionBonus * 0.07);
 
       return ScoredRecipe(
         recipe: recipe,
@@ -142,6 +151,24 @@ class RecommendationService {
     }).toList()
       ..sort(
           (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+  }
+
+  /// Fraction of the profile's health conditions a recipe suits, 0..1.
+  /// Returns 0 when no condition is declared, so the term drops out for
+  /// users who have not filled that in.
+  static double _healthMatchRatio(Recipe recipe, UserProfile profile) {
+    final conditions = profile.healthConditions;
+    if (conditions.isEmpty) return 0;
+
+    var matches = 0;
+    for (final condition in conditions) {
+      final category = specialCategories
+          .where((c) => c.healthCondition == condition)
+          .firstOrNull;
+      if (category == null) continue;
+      if (matchesSpecialCategory(recipe, category)) matches++;
+    }
+    return matches / conditions.length;
   }
 
   /// Hard safety/suitability filter: allergens, disliked ingredients, and

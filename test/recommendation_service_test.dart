@@ -111,6 +111,91 @@ void main() {
     });
   });
 
+  group('health conditions', () {
+    // Same nutrient profile on both, differing only in an ingredient the
+    // magnesium filter looks for — so the health term is the only thing that
+    // can separate them.
+    Recipe withMagnesium(String id) => Recipe(
+          id: id,
+          name: {'en': id},
+          description: {'en': ''},
+          ingredientIds: const ['spinach', 'tomato'],
+          carbType: CarbType.complex,
+          fiberLevel: NutrientLevel.high,
+          proteinLevel: NutrientLevel.high,
+        );
+
+    Recipe withoutMagnesium(String id) => Recipe(
+          id: id,
+          name: {'en': id},
+          description: {'en': ''},
+          ingredientIds: const ['lettuce', 'tomato'],
+          carbType: CarbType.complex,
+          fiberLevel: NutrientLevel.high,
+          proteinLevel: NutrientLevel.high,
+        );
+
+    test('a declared condition lifts matching recipes up the ranking', () {
+      final recipes = [withoutMagnesium('plain'), withMagnesium('rich')];
+      const profile = UserProfile(
+          healthConditions: [HealthCondition.magnesiumDeficiency]);
+
+      final lunch = service.getRecommendations(
+        allRecipes: recipes,
+        profile: profile,
+        checkIn: CheckInType.noSpecificIssue,
+        inventoryIds: {},
+      )[MealType.lunch]!;
+
+      expect(lunch.first.recipe.id, 'rich');
+      // Soft, not a filter: the other recipe is still offered.
+      expect(lunch, hasLength(2));
+    });
+
+    test('no declared condition contributes nothing to the score', () {
+      final recipes = [withoutMagnesium('plain'), withMagnesium('rich')];
+
+      final scores = service
+          .getRecommendations(
+            allRecipes: recipes,
+            profile: const UserProfile(),
+            checkIn: CheckInType.noSpecificIssue,
+            inventoryIds: {},
+          )[MealType.lunch]!
+          .map((s) => s.compatibilityScore)
+          .toSet();
+
+      // Identical on every other term, so equal scores prove the health term
+      // dropped out rather than quietly reordering the list.
+      expect(scores, hasLength(1));
+    });
+
+    test('partially matching recipes rank between full and no match', () {
+      final recipes = [
+        withoutMagnesium('none'),
+        withMagnesium('one_of_two'),
+      ];
+      // Two conditions declared, the recipe satisfies only the magnesium one.
+      const profile = UserProfile(healthConditions: [
+        HealthCondition.magnesiumDeficiency,
+        HealthCondition.vitaminB12Deficiency,
+      ]);
+
+      final lunch = service.getRecommendations(
+        allRecipes: recipes,
+        profile: profile,
+        checkIn: CheckInType.noSpecificIssue,
+        inventoryIds: {},
+      )[MealType.lunch]!;
+
+      final partial =
+          lunch.firstWhere((s) => s.recipe.id == 'one_of_two');
+      final none = lunch.firstWhere((s) => s.recipe.id == 'none');
+      expect(partial.compatibilityScore,
+          greaterThan(none.compatibilityScore));
+    });
+  });
+
   group('check-in soft scoring', () {
     test('non-matching recipes still appear, ranked below matching ones', () {
       final recipes = [
