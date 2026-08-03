@@ -99,6 +99,28 @@ void main() {
     }
   });
 
+  test('health category filters use canonical ingredient ids', () {
+    // Matching is an exact id comparison: a stale id like 'walnuts' or a
+    // generic one like 'fish' matches nothing and quietly hides recipes from
+    // the category, which is how magnesium ended up showing 46 of 73.
+    healthConditionIngredients.forEach((condition, ids) {
+      final unknown =
+          ids.where((id) => !ingredientIds.contains(id)).toList();
+      expect(unknown, isEmpty,
+          reason: '${condition.name} references unknown ingredients: '
+              '${unknown.join(", ")}');
+    });
+  });
+
+  test('every health category matches a useful number of recipes', () {
+    healthConditionIngredients.forEach((condition, ids) {
+      final matching =
+          recipes.where((r) => r.ingredientIds.any(ids.contains)).length;
+      expect(matching, greaterThanOrEqualTo(15),
+          reason: '${condition.name} only matches $matching recipes');
+    });
+  });
+
   test('diet classifier: meat recipes are never vegetarian or vegan', () {
     final classifier = DietClassifier(mockIngredients);
     for (final r in recipes) {

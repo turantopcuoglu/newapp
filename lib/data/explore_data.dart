@@ -196,28 +196,42 @@ const Map<String, List<int>> cuisineGradients = {
 
 // ── Health Condition Ingredient Filters ───────────────────────────────────
 // Ingredients considered beneficial for each health condition.
+//
+// These must be canonical ids from mock_ingredients.dart: matching is an exact
+// id comparison, so a generic term like 'fish' or a plural like 'walnuts'
+// silently matches nothing and hides recipes from the category. The data
+// report validates every id here for exactly that reason.
 
 const Map<HealthCondition, List<String>> healthConditionIngredients = {
   HealthCondition.ironDeficiency: [
-    'beef', 'lamb', 'ground_beef', 'red_meat', 'spinach', 'lentils',
-    'red_lentils', 'chickpeas', 'eggs', 'liver', 'kidney_beans',
-    'dark_chocolate', 'quinoa', 'tofu', 'pumpkin_seeds',
+    'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver', 'spinach',
+    'swiss_chard', 'red_lentil', 'green_lentil', 'chickpea', 'kidney_bean',
+    'white_bean', 'black_bean', 'fava_bean', 'eggs', 'dark_chocolate',
+    'quinoa', 'tofu', 'pumpkin_seeds', 'sesame_seeds', 'apricot', 'dates',
   ],
   HealthCondition.vitaminB12Deficiency: [
-    'beef', 'lamb', 'ground_beef', 'red_meat', 'chicken', 'chicken_breast',
-    'chicken_thigh', 'fish', 'salmon', 'tuna', 'sardine', 'eggs',
-    'milk', 'yogurt', 'cheese', 'feta_cheese', 'liver',
+    'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver',
+    'chicken_breast', 'chicken_thigh', 'chicken_wing', 'turkey_breast',
+    'ground_turkey', 'salmon', 'tuna', 'cod', 'sardine', 'anchovy',
+    'sea_bass', 'sea_bream', 'mussel', 'squid', 'octopus', 'shrimp',
+    'eggs', 'milk', 'yogurt', 'greek_yogurt', 'kefir', 'cheddar_cheese',
+    'feta_cheese', 'parmesan', 'mozzarella', 'goat_cheese', 'ricotta',
   ],
   HealthCondition.magnesiumDeficiency: [
-    'spinach', 'almonds', 'walnuts', 'cashews', 'pumpkin_seeds',
-    'sunflower_seeds', 'chia_seeds', 'flaxseeds', 'banana', 'avocado',
-    'dark_chocolate', 'black_beans', 'kidney_beans', 'lentils',
-    'chickpeas', 'oats', 'quinoa', 'tofu', 'edamame',
+    'spinach', 'swiss_chard', 'kale', 'almond', 'walnut', 'cashew',
+    'hazelnut', 'pistachio', 'peanut', 'pumpkin_seeds', 'sunflower_seeds',
+    'sesame_seeds', 'chia_seeds', 'flax_seeds', 'tahini', 'banana',
+    'avocado', 'dark_chocolate', 'cocoa_powder', 'black_bean',
+    'kidney_bean', 'white_bean', 'red_lentil', 'green_lentil', 'chickpea',
+    'oats', 'quinoa', 'buckwheat', 'bulgur', 'tofu', 'edamame',
   ],
   HealthCondition.anemia: [
-    'beef', 'lamb', 'ground_beef', 'red_meat', 'spinach', 'lentils',
-    'red_lentils', 'chickpeas', 'eggs', 'liver', 'kidney_beans',
-    'dark_chocolate', 'quinoa', 'tofu', 'pumpkin_seeds',
-    'lemon', 'orange', 'tomato', 'bell_pepper', 'broccoli',
+    'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver', 'spinach',
+    'swiss_chard', 'red_lentil', 'green_lentil', 'chickpea', 'kidney_bean',
+    'white_bean', 'eggs', 'dark_chocolate', 'quinoa', 'tofu',
+    'pumpkin_seeds', 'apricot', 'dates', 'pomegranate',
+    // Vitamin C sources: iron is poorly absorbed without them.
+    'lemon', 'lime', 'orange', 'tangerine', 'grapefruit', 'tomato',
+    'bell_pepper', 'broccoli', 'parsley', 'strawberry',
   ],
 };

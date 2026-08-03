@@ -50,6 +50,9 @@ int minStepsFor(MealType mealType) =>
 /// Below this, the dish is likely under-specified.
 const int minIngredients = 4;
 
+/// A health category with fewer matches than this looks broken to a user.
+const int minRecipesPerHealthCategory = 15;
+
 const recipeFiles = [
   'assets/recipes/breakfast.json',
   'assets/recipes/lunch.json',
@@ -167,6 +170,25 @@ void main(List<String> args) {
       }
     }
   }
+
+  // ── Health category filters ────────────────────────────────────────────
+  // Matching is an exact id comparison, so a stale id here hides recipes from
+  // a whole category without any visible failure.
+  healthConditionIngredients.forEach((condition, ids) {
+    for (final id in ids) {
+      if (!ingredientIds.contains(id)) {
+        errors.add('healthConditionIngredients[${condition.name}]: '
+            'unknown ingredient "$id"');
+      }
+    }
+    final matching = allRecipes
+        .where((r) => r.ingredientIds.any(ids.contains))
+        .length;
+    if (matching < minRecipesPerHealthCategory) {
+      warnings.add('health category ${condition.name} matches only '
+          '$matching recipes');
+    }
+  });
 
   // ── Cross-recipe checks: duplicates and near-duplicates ────────────────
   // A library that repeats itself feels smaller than it is, so these are
