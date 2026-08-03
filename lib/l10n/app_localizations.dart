@@ -162,6 +162,14 @@ class AppLocalizations {
   String get profileDisliked => _t('profileDisliked');
   String get profileAllergiesAndAvoided => _t('profileAllergiesAndAvoided');
   String get profileAllergiesHint => _t('profileAllergiesHint');
+  String get remindersTitle => _t('remindersTitle');
+  String get remindersHint => _t('remindersHint');
+  String get remindersEnable => _t('remindersEnable');
+  String get remindersDenied => _t('remindersDenied');
+  String get reminderCheckInTitle => _t('reminderCheckInTitle');
+  String get reminderCheckInBody => _t('reminderCheckInBody');
+  String get reminderDinnerTitle => _t('reminderDinnerTitle');
+  String get reminderDinnerBody => _t('reminderDinnerBody');
   String get dietPreferencesTitle => _t('dietPreferencesTitle');
   String get dietPreferencesHint => _t('dietPreferencesHint');
   String get dietVegetarian => _t('dietVegetarian');

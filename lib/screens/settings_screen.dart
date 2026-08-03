@@ -10,7 +10,9 @@ import '../models/ingredient.dart';
 import '../providers/inventory_provider.dart';
 import '../providers/locale_provider.dart';
 import '../providers/profile_provider.dart';
+import '../providers/storage_provider.dart';
 import '../services/diet_classifier.dart';
+import '../services/notification_service.dart';
 import '../providers/shopping_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -51,6 +53,11 @@ class SettingsScreen extends ConsumerWidget {
 
             // Diet preferences
             _DietPreferenceSection(ref: ref),
+
+            const SizedBox(height: 16),
+
+            // Reminders
+            _ReminderSection(ref: ref),
 
             const SizedBox(height: 16),
 
@@ -720,6 +727,111 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
                   ),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ─── Reminder Section ───────────────────────────────────────────────────────
+
+/// Daily on-device reminders. Scheduling is local, so this needs no backend.
+class _ReminderSection extends StatefulWidget {
+  final WidgetRef ref;
+
+  const _ReminderSection({required this.ref});
+
+  @override
+  State<_ReminderSection> createState() => _ReminderSectionState();
+}
+
+class _ReminderSectionState extends State<_ReminderSection> {
+  static const int _checkInHour = 9;
+  static const int _dinnerHour = 17;
+
+  final _notifications = NotificationService();
+  late bool _enabled =
+      widget.ref.read(storageProvider).areRemindersEnabled();
+  bool _busy = false;
+
+  Future<void> _toggle(bool value) async {
+    final l10n = AppLocalizations.of(context);
+    final storage = widget.ref.read(storageProvider);
+    setState(() => _busy = true);
+
+    if (!value) {
+      await _notifications.cancelAll();
+      await storage.setRemindersEnabled(false);
+      if (mounted) setState(() { _enabled = false; _busy = false; });
+      return;
+    }
+
+    await _notifications.init();
+    final granted = await _notifications.requestPermissions();
+    if (!granted) {
+      await storage.setRemindersEnabled(false);
+      if (!mounted) return;
+      setState(() { _enabled = false; _busy = false; });
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.remindersDenied)));
+      return;
+    }
+
+    await _notifications.scheduleDaily(
+      kind: ReminderKind.checkIn,
+      title: l10n.reminderCheckInTitle,
+      body: l10n.reminderCheckInBody,
+      hour: _checkInHour,
+    );
+    await _notifications.scheduleDaily(
+      kind: ReminderKind.dinnerIdea,
+      title: l10n.reminderDinnerTitle,
+      body: l10n.reminderDinnerBody,
+      hour: _dinnerHour,
+    );
+    await storage.setRemindersEnabled(true);
+    if (mounted) setState(() { _enabled = true; _busy = false; });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.notifications_active_rounded,
+                    color: AppTheme.accentTeal),
+                const SizedBox(width: 8),
+                Text(l10n.remindersTitle,
+                    style: theme.textTheme.titleMedium),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              l10n.remindersHint,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: AppTheme.textSecondary,
+              ),
+            ),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(l10n.remindersEnable),
+              subtitle: Text(
+                '${_checkInHour.toString().padLeft(2, '0')}:00  ·  '
+                '${_dinnerHour.toString().padLeft(2, '0')}:00',
+                style: theme.textTheme.bodySmall,
+              ),
+              value: _enabled,
+              onChanged: _busy ? null : _toggle,
             ),
           ],
         ),

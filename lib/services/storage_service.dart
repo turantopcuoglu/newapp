@@ -28,6 +28,7 @@ class StorageService {
   static const String _disclaimerAcceptedKey = 'disclaimer_accepted';
   static const String _favoriteRecipesKey = 'favorite_recipes';
   static const String _cookedEntriesKey = 'cooked_entries';
+  static const String _remindersEnabledKey = 'reminders_enabled';
 
   StorageService(this._prefs);
 
@@ -255,6 +256,14 @@ class StorageService {
 
   Future<void> setDisclaimerAccepted() async {
     await _prefs.setBool(_disclaimerAcceptedKey, true);
+  }
+
+  // --- Reminders ---
+  bool areRemindersEnabled() =>
+      _prefs.getBool(_remindersEnabledKey) ?? false;
+
+  Future<void> setRemindersEnabled(bool enabled) async {
+    await _prefs.setBool(_remindersEnabledKey, enabled);
   }
 
   // --- Cooked Entries (consumed calorie log) ---

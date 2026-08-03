@@ -19,8 +19,12 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
 ## Mimari
 
 - `assets/recipes/*.json` — tarif içeriği (breakfast/lunch/dinner/snack).
-  Açılışta `RecipeRepository.loadBundled()` (lib/data/recipe_repository.dart)
+  Açılışta `RecipeRepository.loadLatest()` (lib/data/recipe_repository.dart)
   ile yüklenir ve `main.dart`'ta `bundledRecipesProvider` override edilir.
+  Önbellekte geçerli bir uzak paket varsa o, yoksa bundled asset kullanılır;
+  `--dart-define=RECIPE_BUNDLE_URL=...` verilirse açılıştan sonra arka planda
+  yeni sürüm indirilir (bir sonraki açılışta geçerli olur). Adres verilmezse
+  uygulama tamamen bundled içerikle çalışır.
 - `lib/data/` — malzeme kataloğu (`mock_ingredients.dart`, kanonik ID kaynağı),
   besin verisi (`ingredient_nutrition_data.dart`, 100 g bazlı + `defaultServingG`),
   keşfet kategorileri (`explore_data.dart` — tarifler kategoriye `cuisineIds`
@@ -29,9 +33,17 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
   sevilmeyen + beslenme tercihi sert eleme → check-in eşleşmesi yumuşak bonus →
   kiler eşleşme skoru), `nutrition_calculator.dart` (miktar × besin verisinden
   makro hesabı), `diet_classifier.dart` (malzemelerden vejetaryen/vegan/
-  glutensiz/laktozsuz türetimi).
+  glutensiz/laktozsuz türetimi), `notification_service.dart` (cihaz üstünde
+  günlük hatırlatma; sunucu gerekmez).
+- **Tüketilen kalori** `cookedProvider`'dan (lib/providers/cooked_provider.dart)
+  gelir — kullanıcının "Pişirdim" dediği kayıtlar. `mealPlanProvider` yalnızca
+  *plandır*, tüketim sayılmaz; bu ikisini birbirine karıştırma.
+  Gün sınırı tek yerde: `DayBoundary` (06:00 reset).
 - `lib/providers/` — Riverpod provider'ları; `recipe_provider.dart` merkezi.
 - `lib/screens/` — UI; `main_shell.dart` sekmeleri tanımlar.
+
+- `lib/components/recipe_visual.dart` — tarif görseli. Fotoğraf yok; mutfak
+  gradyanı + yemek emojisi çizilir. `imagePath` doluysa o kullanılır.
 
 ## Veri kuralları (tarif eklerken/düzenlerken)
 
