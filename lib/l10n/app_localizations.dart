@@ -162,6 +162,13 @@ class AppLocalizations {
   String get profileDisliked => _t('profileDisliked');
   String get profileAllergiesAndAvoided => _t('profileAllergiesAndAvoided');
   String get profileAllergiesHint => _t('profileAllergiesHint');
+  String get healthForYouTitle => _t('healthForYouTitle');
+  String get healthForYouHint => _t('healthForYouHint');
+  String get healthExploreTitle => _t('healthExploreTitle');
+  String get healthExploreHint => _t('healthExploreHint');
+  String get healthSetUpPrompt => _t('healthSetUpPrompt');
+  String healthRecipeCount(int n) =>
+      _t('healthRecipeCount').replaceFirst('{n}', '$n');
   String get remindersTitle => _t('remindersTitle');
   String get remindersHint => _t('remindersHint');
   String get remindersEnable => _t('remindersEnable');

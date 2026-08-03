@@ -171,6 +171,48 @@ const List<SpecialCategory> specialCategories = [
     gradient: 'anemia',
     healthCondition: HealthCondition.anemia,
   ),
+
+  // Categories driven by allergen exclusion or check-in tags rather than a
+  // HealthCondition — gluten and lactose intolerance and cycle support are
+  // what users actually search for, but they are not "conditions" in the
+  // deficiency sense above.
+  SpecialCategory(
+    id: 'glutenFree',
+    name: {'en': 'Gluten-Free', 'tr': 'Glutensiz'},
+    subtitle: {
+      'en': 'No wheat, no barley, no worry',
+      'tr': 'Buğday ve arpa içermeyen tarifler',
+    },
+    emoji: '🌾',
+    gradient: 'glutenFree',
+    relatedAllergenExclusions: ['gluten'],
+  ),
+  SpecialCategory(
+    id: 'lactoseFree',
+    name: {'en': 'Lactose-Free', 'tr': 'Laktozsuz'},
+    subtitle: {
+      'en': 'Dairy-free meals that still satisfy',
+      'tr': 'Süt ürünü içermeyen doyurucu öğünler',
+    },
+    emoji: '🥛',
+    gradient: 'lactoseFree',
+    relatedAllergenExclusions: ['dairy'],
+  ),
+  SpecialCategory(
+    id: 'periodSupport',
+    name: {'en': 'Period Support', 'tr': 'Regl Dönemi'},
+    subtitle: {
+      'en': 'Magnesium and iron for cramps and fatigue',
+      'tr': 'Kramp ve yorgunluk için magnezyum ve demir',
+    },
+    emoji: '🌙',
+    gradient: 'periodSupport',
+    relatedCheckInTypes: [
+      CheckInType.periodCramps,
+      CheckInType.periodFatigue,
+      CheckInType.pms,
+    ],
+  ),
 ];
 
 // ── Gradient Definitions ──────────────────────────────────────────────────
@@ -192,6 +234,9 @@ const Map<String, List<int>> cuisineGradients = {
   'vitaminB12': [0xFFEC407A, 0xFFF48FB1],
   'magnesiumDeficiency': [0xFF00897B, 0xFF4DB6AC],
   'anemia': [0xFFC62828, 0xFFEF5350],
+  'glutenFree': [0xFF8D6E63, 0xFFBCAAA4],
+  'lactoseFree': [0xFF546E7A, 0xFF90A4AE],
+  'periodSupport': [0xFF8E24AA, 0xFFCE93D8],
 };
 
 // ── Health Condition Ingredient Filters ───────────────────────────────────

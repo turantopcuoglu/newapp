@@ -18,6 +18,7 @@ import '../planner/planner_screen.dart';
 import 'meal_recommendations_screen.dart';
 import 'nutrition_detail_screen.dart';
 import 'widgets/check_in_sheet.dart';
+import 'widgets/health_focus_section.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -92,7 +93,11 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   child: _NutritionDayCard(l10n: l10n),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 22),
+
+                // Health areas: the user's own first, then the rest to browse
+                const HealthFocusSection(),
+                const SizedBox(height: 22),
 
                 // Meal Recommendations by type
                 Text(

@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/favorites_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
+import '../../services/special_category_matcher.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
 class SpecialDetailScreen extends ConsumerWidget {
@@ -198,42 +199,11 @@ class SpecialDetailScreen extends ConsumerWidget {
   }
 
   List<ScoredRecipe> _filterRecipes(List<ScoredRecipe> allScored) {
-    final condition = category.healthCondition;
-    if (condition == null) return allScored;
-
-    switch (condition) {
-      case HealthCondition.pcos:
-        // PCOS: complex carbs, medium-high fiber, medium-high protein, no simple carbs
-        return allScored.where((sr) {
-          final r = sr.recipe;
-          return r.carbType != CarbType.simple &&
-              (r.fiberLevel == NutrientLevel.medium ||
-                  r.fiberLevel == NutrientLevel.high) &&
-              (r.proteinLevel == NutrientLevel.medium ||
-                  r.proteinLevel == NutrientLevel.high);
-        }).toList();
-
-      case HealthCondition.insulinResistance:
-        // Insulin resistance: complex carbs, medium-high fiber, no simple carbs
-        return allScored.where((sr) {
-          final r = sr.recipe;
-          return r.carbType != CarbType.simple &&
-              (r.fiberLevel == NutrientLevel.medium ||
-                  r.fiberLevel == NutrientLevel.high);
-        }).toList();
-
-      case HealthCondition.ironDeficiency:
-      case HealthCondition.vitaminB12Deficiency:
-      case HealthCondition.magnesiumDeficiency:
-      case HealthCondition.anemia:
-        // Ingredient-based filtering
-        final targetIngredients =
-            healthConditionIngredients[condition] ?? [];
-        return allScored.where((sr) {
-          return sr.recipe.ingredientIds
-              .any((id) => targetIngredients.contains(id));
-        }).toList();
-    }
+    // Shared with the home screen's per-category counts, so the number the
+    // user taps always matches the list they land on.
+    return allScored
+        .where((sr) => matchesSpecialCategory(sr.recipe, category))
+        .toList();
   }
 }
 
