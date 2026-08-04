@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/turkish_string_helper.dart';
@@ -544,10 +545,15 @@ class _RecipeBookCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Row(
+              // Badges wrap instead of sharing one row with the actions: the
+              // labels are translated and the meal-type/kcal/own-recipe trio
+              // used to push the buttons off the card in Turkish.
+              Wrap(
+                spacing: 8,
+                runSpacing: 6,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   MealTypeBadge(mealType: recipe.mealType),
-                  const SizedBox(width: 8),
                   if (recipe.macros.calories > 0)
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -564,8 +570,7 @@ class _RecipeBookCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  if (recipe.isUserCreated) ...[
-                    const SizedBox(width: 8),
+                  if (recipe.isUserCreated)
                     Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 3),
@@ -582,7 +587,12 @@ class _RecipeBookCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
+                ],
+              ),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  SaveRecipeButton(recipeId: recipe.id, size: 34),
                   const Spacer(),
                   if (onDelete != null)
                     SizedBox(
@@ -597,18 +607,22 @@ class _RecipeBookCard extends StatelessWidget {
                       ),
                     ),
                   // Add to planner button
-                  SizedBox(
-                    height: 32,
-                    child: TextButton.icon(
-                      onPressed: onAddToPlanner,
-                      icon: const Icon(Icons.calendar_today, size: 14),
-                      label: Text(
-                        l10n.recipeBookAddToPlanner,
-                        style: const TextStyle(fontSize: 11),
-                      ),
-                      style: TextButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        minimumSize: Size.zero,
+                  Flexible(
+                    child: SizedBox(
+                      height: 32,
+                      child: TextButton.icon(
+                        onPressed: onAddToPlanner,
+                        icon: const Icon(Icons.calendar_today, size: 14),
+                        label: Text(
+                          l10n.recipeBookAddToPlanner,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontSize: 11),
+                        ),
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          minimumSize: Size.zero,
+                        ),
                       ),
                     ),
                   ),

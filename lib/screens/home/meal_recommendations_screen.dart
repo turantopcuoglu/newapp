@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
@@ -154,6 +155,11 @@ class MealRecommendationsScreen extends StatelessWidget {
                                         scored.compatibilityPercent),
                                   ),
                                 ),
+                              ),
+                              const SizedBox(width: 8),
+                              SaveRecipeButton(
+                                recipeId: recipe.id,
+                                size: 34,
                               ),
                             ],
                           ),

@@ -107,6 +107,10 @@ class AppLocalizations {
   String recipeCookedLogged(int n) =>
       _t('recipeCookedLogged').replaceFirst('{n}', '$n');
   String get recipeCookedUndone => _t('recipeCookedUndone');
+  String get recipeSave => _t('recipeSave');
+  String get recipeUnsave => _t('recipeUnsave');
+  String get recipeSaved => _t('recipeSaved');
+  String get recipeUnsaved => _t('recipeUnsaved');
   String recipeItemsAdded(int n) =>
       _t('recipeItemsAdded').replaceFirst('{n}', '$n');
   String get nutritionConsumed => _t('nutritionConsumed');

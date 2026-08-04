@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/meal_type_badge.dart';
 import '../../components/recipe_visual.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
@@ -41,6 +42,14 @@ class RecipeDetailScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.localizedName(locale)),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: Center(
+              child: SaveRecipeButton(recipeId: recipe.id, size: 38),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -310,6 +319,8 @@ class RecipeDetailScreen extends ConsumerWidget {
                 );
               }(),
             ],
+            const SizedBox(height: 10),
+            SaveRecipeWideButton(recipeId: recipe.id),
             const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,

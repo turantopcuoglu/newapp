@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
@@ -221,26 +222,7 @@ class _SavedRecipesBody extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    GestureDetector(
-                      onTap: () => ref.read(favoritesProvider.notifier).toggleFavorite(recipe.id),
-                      child: Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          color: AppTheme.warmCoral.withAlpha(20),
-                          borderRadius: BorderRadius.circular(14),
-                          border: Border.all(
-                            color: AppTheme.warmCoral.withAlpha(80),
-                            width: 1.5,
-                          ),
-                        ),
-                        child: const Icon(
-                          Icons.bookmark_rounded,
-                          color: AppTheme.warmCoral,
-                          size: 22,
-                        ),
-                      ),
-                    ),
+                    SaveRecipeButton(recipeId: recipe.id, size: 44),
                   ],
                 ),
               ),

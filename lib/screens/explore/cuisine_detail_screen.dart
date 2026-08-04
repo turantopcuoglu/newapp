@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/recipe_visual.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
-import '../../providers/favorites_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
@@ -20,7 +20,6 @@ class CuisineDetailScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final allRecipes = ref.watch(recipeMapProvider);
-    final favorites = ref.watch(favoritesProvider);
     final scoredRecipes = ref.watch(safeScoredRecipesProvider);
 
     // Recipes belong to a cuisine via their cuisineIds tags
@@ -154,16 +153,10 @@ class CuisineDetailScreen extends ConsumerWidget {
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
                     final scored = cuisineRecipes[index];
-                    final recipe = scored.recipe;
-                    final isFav = favorites.contains(recipe.id);
 
                     return _RecipeCard(
                       scored: scored,
                       locale: locale,
-                      isFavorite: isFav,
-                      onFavoriteTap: () => ref
-                          .read(favoritesProvider.notifier)
-                          .toggleFavorite(recipe.id),
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -188,15 +181,11 @@ class CuisineDetailScreen extends ConsumerWidget {
 class _RecipeCard extends StatelessWidget {
   final ScoredRecipe scored;
   final String locale;
-  final bool isFavorite;
-  final VoidCallback onFavoriteTap;
   final VoidCallback onTap;
 
   const _RecipeCard({
     required this.scored,
     required this.locale,
-    required this.isFavorite,
-    required this.onFavoriteTap,
     required this.onTap,
   });
 
@@ -310,41 +299,8 @@ class _RecipeCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 12),
-              // Right: favorite button
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: onFavoriteTap,
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 250),
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        color: isFavorite
-                            ? AppTheme.warmCoral.withAlpha(20)
-                            : AppTheme.background,
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: isFavorite
-                              ? AppTheme.warmCoral.withAlpha(80)
-                              : AppTheme.dividerColor,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Icon(
-                        isFavorite
-                            ? Icons.bookmark_rounded
-                            : Icons.bookmark_border_rounded,
-                        color: isFavorite
-                            ? AppTheme.warmCoral
-                            : AppTheme.textLight,
-                        size: 22,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // Right: save button
+              SaveRecipeButton(recipeId: recipe.id, size: 44),
             ],
           ),
         ),

@@ -6,6 +6,8 @@ import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/diet_classifier.dart';
+import '../../services/special_category_matcher.dart';
 import 'cuisine_detail_screen.dart';
 import 'special_detail_screen.dart';
 
@@ -291,20 +293,35 @@ class _SpecialCategoryGrid extends ConsumerWidget {
 
   const _SpecialCategoryGrid({required this.locale});
 
+  /// Diet preference ids mapped to the category that represents them.
+  static const Map<String, String> _preferenceToCategory = {
+    DietClassifier.glutenFree: 'glutenFree',
+    DietClassifier.dairyFree: 'lactoseFree',
+  };
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final profile = ref.watch(profileProvider);
     final selectedConditions = profile.healthConditions;
+    final recipes = ref.watch(allRecipesProvider);
 
-    // Show categories matching user's selected conditions, or all if none selected
-    final visibleCategories = selectedConditions.isEmpty
-        ? specialCategories
-        : specialCategories
-            .where((c) =>
-                c.healthCondition != null &&
-                selectedConditions.contains(c.healthCondition))
-            .toList();
+    // This tab is the only way into health areas now, so nothing is filtered
+    // out: the user's own areas come first and the rest stay browsable.
+    final mineIds = <String>{
+      for (final c in specialCategories)
+        if (c.healthCondition != null &&
+            selectedConditions.contains(c.healthCondition))
+          c.id,
+      for (final preference in profile.dietPreferences)
+        if (_preferenceToCategory.containsKey(preference))
+          _preferenceToCategory[preference]!,
+    };
+
+    final visibleCategories = [
+      ...specialCategories.where((c) => mineIds.contains(c.id)),
+      ...specialCategories.where((c) => !mineIds.contains(c.id)),
+    ];
 
     return CustomScrollView(
       slivers: [
@@ -443,7 +460,9 @@ class _SpecialCategoryGrid extends ConsumerWidget {
               crossAxisCount: 2,
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
-              childAspectRatio: 0.85,
+              // Taller than the text needs: the tiles now carry a recipe
+              // count under the subtitle and must not clip it.
+              childAspectRatio: 0.72,
             ),
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -451,6 +470,12 @@ class _SpecialCategoryGrid extends ConsumerWidget {
                 return _SpecialTile(
                   category: category,
                   locale: locale,
+                  isMine: mineIds.contains(category.id),
+                  // Same matcher the detail screen uses, so the count on the
+                  // tile is exactly the list the user lands on.
+                  recipeCount: recipes
+                      .where((r) => matchesSpecialCategory(r, category))
+                      .length,
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -472,16 +497,21 @@ class _SpecialCategoryGrid extends ConsumerWidget {
 class _SpecialTile extends StatelessWidget {
   final SpecialCategory category;
   final String locale;
+  final bool isMine;
+  final int recipeCount;
   final VoidCallback onTap;
 
   const _SpecialTile({
     required this.category,
     required this.locale,
+    required this.isMine,
+    required this.recipeCount,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final colors = cuisineGradients[category.gradient] ??
         cuisineGradients['healthy']!;
 
@@ -523,20 +553,38 @@ class _SpecialTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Emoji badge
-                  Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(40),
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Center(
-                      child: Text(
-                        category.emoji,
-                        style: const TextStyle(fontSize: 26),
+                  Row(
+                    children: [
+                      // Emoji badge
+                      Container(
+                        width: 48,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withAlpha(40),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Center(
+                          child: Text(
+                            category.emoji,
+                            style: const TextStyle(fontSize: 26),
+                          ),
+                        ),
                       ),
-                    ),
+                      const Spacer(),
+                      if (isMine)
+                        Container(
+                          padding: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withAlpha(45),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_rounded,
+                            color: Colors.white,
+                            size: 14,
+                          ),
+                        ),
+                    ],
                   ),
                   const Spacer(),
                   Text(
@@ -561,6 +609,23 @@ class _SpecialTile extends StatelessWidget {
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 6),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withAlpha(45),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      l10n.healthRecipeCount(recipeCount),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ],
               ),

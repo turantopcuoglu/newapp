@@ -5,6 +5,7 @@ import '../models/recipe.dart';
 import '../services/recommendation_service.dart';
 import 'meal_type_badge.dart';
 import 'recipe_visual.dart';
+import 'save_recipe_button.dart';
 
 class RecipeCard extends StatelessWidget {
   final ScoredRecipe scoredRecipe;
@@ -44,6 +45,8 @@ class RecipeCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   MealTypeBadge(mealType: recipe.mealType),
+                  const SizedBox(width: 8),
+                  SaveRecipeButton(recipeId: recipe.id, size: 36),
                 ],
               ),
               const SizedBox(height: 6),
