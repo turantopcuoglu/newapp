@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
+import '../../core/turkish_string_helper.dart';
+import '../../data/ingredient_visual.dart';
 import '../../l10n/app_localizations.dart';
 import '../../services/recommendation_service.dart';
+import '../../widgets/turkish_text_field.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
-class MealRecommendationsScreen extends StatelessWidget {
+class MealRecommendationsScreen extends StatefulWidget {
   final MealType mealType;
   final List<ScoredRecipe> recipes;
 
@@ -17,15 +20,78 @@ class MealRecommendationsScreen extends StatelessWidget {
   });
 
   @override
+  State<MealRecommendationsScreen> createState() =>
+      _MealRecommendationsScreenState();
+}
+
+class _MealRecommendationsScreenState
+    extends State<MealRecommendationsScreen> {
+  final _searchController = TextEditingController();
+  String _query = '';
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  MealType get mealType => widget.mealType;
+
+  /// Matches a recipe on its name, its description or any ingredient it uses,
+  /// so "avokado" finds the dishes that contain it, not just the ones named
+  /// after it.
+  bool _matches(ScoredRecipe scored, String locale) {
+    if (_query.isEmpty) return true;
+    final recipe = scored.recipe;
+    if (TurkishStringHelper.containsTr(recipe.localizedName(locale), _query) ||
+        TurkishStringHelper.containsTr(
+            recipe.localizedDescription(locale), _query)) {
+      return true;
+    }
+    for (final id in recipe.ingredientIds) {
+      final ingredient = ingredientById(id);
+      final name = ingredient?.localizedName(locale) ?? id;
+      if (TurkishStringHelper.containsTr(name, _query)) return true;
+    }
+    return false;
+  }
+
+  @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
+    final recipes =
+        widget.recipes.where((sr) => _matches(sr, locale)).toList();
 
     return Scaffold(
       backgroundColor: AppTheme.background,
       appBar: AppBar(
         title: Text(_getMealTitle(l10n)),
         backgroundColor: AppTheme.background,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(64),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 12),
+            child: TurkishTextField(
+              controller: _searchController,
+              onChanged: (value) => setState(() => _query = value),
+              decoration: InputDecoration(
+                hintText: l10n.recommendationsSearchHint,
+                prefixIcon:
+                    const Icon(Icons.search, color: AppTheme.textLight),
+                suffixIcon: _query.isEmpty
+                    ? null
+                    : IconButton(
+                        icon: const Icon(Icons.clear, size: 20),
+                        onPressed: () {
+                          _searchController.clear();
+                          setState(() => _query = '');
+                        },
+                      ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: recipes.isEmpty
           ? Center(
@@ -41,7 +107,9 @@ class MealRecommendationsScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      l10n.recipeNoResults,
+                      _query.isEmpty
+                          ? l10n.recipeNoResults
+                          : l10n.recommendationsSearchEmpty,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 14,

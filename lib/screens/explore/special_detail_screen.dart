@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../components/health_recipe_card.dart';
+import '../../components/preference_warning.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../data/health_category_info.dart';
 import '../../data/ingredient_visual.dart';
 import '../../l10n/app_localizations.dart';
+import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/preference_matcher.dart';
 import '../../services/special_category_matcher.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 import 'health_recipe_list_screen.dart';
@@ -28,15 +31,29 @@ class SpecialDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final scoredRecipes = ref.watch(safeScoredRecipesProvider);
-    final allRecipes = ref.watch(allRecipesProvider);
+    // Browsable: allergens are out, preferences only reorder. Counting from
+    // the same list the tiles open means the numbers cannot lie.
+    final scoredRecipes = ref.watch(browsableScoredRecipesProvider);
+    final profile = ref.watch(profileProvider);
+    final browsable = scoredRecipes.map((sr) => sr.recipe).toList();
 
     final filteredRecipes = scoredRecipes
         .where((sr) => matchesSpecialCategory(sr.recipe, category))
         .toList();
 
     final info = healthCategoryInfo[category.id];
-    final ingredientIds = healthCategoryIngredients(category, allRecipes);
+
+    // Ingredients the user avoids stay on the page, they just move to the
+    // end and carry a warning — the tile disappearing was the bug.
+    final ingredientFits = {
+      for (final id in healthCategoryIngredients(category, browsable))
+        id: ingredientById(id) == null
+            ? PreferenceFit.clean
+            : ingredientPreferenceFit(ingredientById(id)!, profile),
+    };
+    final ingredientIds = ingredientFits.keys.toList()
+      ..sort((a, b) =>
+          ingredientFits[a]!.demotion.compareTo(ingredientFits[b]!.demotion));
 
     final gradientColors =
         cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
@@ -127,8 +144,7 @@ class SpecialDetailScreen extends ConsumerWidget {
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
               sliver: SliverGrid(
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 14,
                   crossAxisSpacing: 14,
@@ -137,14 +153,15 @@ class SpecialDetailScreen extends ConsumerWidget {
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
                     final id = ingredientIds[index];
-                    final count = allRecipes
-                        .where((r) =>
-                            matchesCategoryIngredient(r, category, id))
+                    final count = browsable
+                        .where(
+                            (r) => matchesCategoryIngredient(r, category, id))
                         .length;
                     return _IngredientTile(
                       ingredientId: id,
                       locale: locale,
                       recipeCount: count,
+                      fit: ingredientFits[id]!,
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -280,8 +297,7 @@ class _CategoryHeader extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color: Colors.white.withAlpha(30),
               borderRadius: BorderRadius.circular(10),
@@ -431,12 +447,14 @@ class _IngredientTile extends StatelessWidget {
   final String ingredientId;
   final String locale;
   final int recipeCount;
+  final PreferenceFit fit;
   final VoidCallback onTap;
 
   const _IngredientTile({
     required this.ingredientId,
     required this.locale,
     required this.recipeCount,
+    required this.fit,
     required this.onTap,
   });
 
@@ -449,88 +467,113 @@ class _IngredientTile extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(colors[0]), Color(colors[1])],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Color(colors[0]).withAlpha(55),
-              blurRadius: 14,
-              offset: const Offset(0, 5),
+      child: Opacity(
+        // Still tappable, just visibly out of the way.
+        opacity: fit.fits ? 1 : 0.55,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(colors[0]), Color(colors[1])],
             ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            // Oversized watermark, same trick the cuisine tiles use.
-            Positioned(
-              right: -6,
-              bottom: -10,
-              child: Text(
-                ingredientEmoji(ingredientId),
-                style: TextStyle(
-                  fontSize: 64,
-                  color: Colors.white.withAlpha(35),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Color(colors[0]).withAlpha(55),
+                blurRadius: 14,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Stack(
+            children: [
+              // Oversized watermark, same trick the cuisine tiles use.
+              Positioned(
+                right: -6,
+                bottom: -10,
+                child: Text(
+                  ingredientEmoji(ingredientId),
+                  style: TextStyle(
+                    fontSize: 64,
+                    color: Colors.white.withAlpha(35),
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(40),
-                      borderRadius: BorderRadius.circular(12),
+              Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white.withAlpha(40),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Center(
+                            child: Text(
+                              ingredientEmoji(ingredientId),
+                              style: const TextStyle(fontSize: 22),
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        if (!fit.fits)
+                          Tooltip(
+                            message: preferenceReasons(fit, l10n).join(' · '),
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withAlpha(50),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: const Icon(
+                                Icons.info_outline_rounded,
+                                color: Colors.white,
+                                size: 14,
+                              ),
+                            ),
+                          ),
+                      ],
                     ),
-                    child: Center(
-                      child: Text(
-                        ingredientEmoji(ingredientId),
-                        style: const TextStyle(fontSize: 22),
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Text(
-                    name,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                      height: 1.2,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const SizedBox(height: 6),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 8, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(45),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      l10n.healthRecipeCount(recipeCount),
+                    const Spacer(),
+                    Text(
+                      name,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        height: 1.2,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 6),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(45),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        l10n.healthRecipeCount(recipeCount),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

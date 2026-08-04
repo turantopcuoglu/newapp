@@ -7,6 +7,7 @@ import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
 import '../../widgets/turkish_text_field.dart';
 import '../../models/ingredient.dart';
+import '../../models/shopping_item.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/shopping_provider.dart';
 
@@ -414,18 +415,36 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
           ),
         ),
 
-        // Clear purchased button
+        // Bulk actions on the ticked items. Moving them one by one was the
+        // only way to get a finished shop into the kitchen.
         if (purchased.isNotEmpty)
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: TextButton.icon(
-                onPressed: () =>
-                    ref.read(shoppingProvider.notifier).clearPurchased(),
-                icon: const Icon(Icons.clear_all, size: 18),
-                label: Text(l10n.shoppingClearPurchased),
-              ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: () => _movePurchasedToKitchen(purchased),
+                    icon: const Icon(Icons.kitchen_rounded, size: 18),
+                    label: Text(
+                      l10n.shoppingMovePurchasedToKitchen(purchased.length),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                TextButton.icon(
+                  onPressed: () =>
+                      ref.read(shoppingProvider.notifier).clearPurchased(),
+                  icon: const Icon(Icons.clear_all, size: 18),
+                  label: Text(
+                    l10n.shoppingClearPurchased,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -516,6 +535,25 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
             : null,
       ),
     );
+  }
+
+  /// Moves every ticked item into the kitchen in one go and takes them off
+  /// the list — the same thing the per-item button does, without the tapping.
+  void _movePurchasedToKitchen(List<ShoppingItem> purchased) {
+    final l10n = AppLocalizations.of(context);
+    final ingredientIds =
+        purchased.map((item) => _resolveIngredientId(item.name)).toList();
+
+    ref.read(inventoryProvider.notifier).addAll(ingredientIds);
+    ref
+        .read(shoppingProvider.notifier)
+        .removeItems(purchased.map((item) => item.id));
+
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(
+        content: Text(l10n.shoppingMovedToKitchen(purchased.length)),
+      ));
   }
 
   void _addItem() {

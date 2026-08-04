@@ -22,9 +22,12 @@ class _NutritionDetailScreenState
   _Period _period = _Period.weekly;
 
   /// Returns a list of (label, calories, protein, carbs, fat) for each bar.
+  ///
+  /// Watches the log rather than reading it once: ticking a meal off while
+  /// this screen is open has to move the bars.
   List<_BarData> _computeData() {
     // Charts show what was actually eaten (cooked log), not what was planned.
-    final cooked = ref.read(cookedProvider);
+    final cooked = ref.watch(cookedProvider);
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
 
@@ -70,7 +73,11 @@ class _NutritionDetailScreenState
   }
 
   _BarData _sumForDate(DateTime date, List<CookedEntry> cooked) {
-    final dayKey = DayBoundary.keyFor(date);
+    // keyForDate, not keyFor: the buckets are calendar dates at midnight, and
+    // keyFor would push every one of them back a day (06:00 reset), so the
+    // current day's meals landed in no bucket at all and the charts read as
+    // if nothing had been eaten.
+    final dayKey = DayBoundary.keyForDate(date);
     final totals =
         ConsumedTotals.from(cooked.where((e) => e.dayKey == dayKey));
     final l10n = AppLocalizations.of(context);
@@ -95,7 +102,7 @@ class _NutritionDetailScreenState
   }) {
     final keys = <String>{};
     for (var d = start; !d.isAfter(end); d = d.add(const Duration(days: 1))) {
-      keys.add(DayBoundary.keyFor(d));
+      keys.add(DayBoundary.keyForDate(d));
     }
     final totals =
         ConsumedTotals.from(cooked.where((e) => keys.contains(e.dayKey)));

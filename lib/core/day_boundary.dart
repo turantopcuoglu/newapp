@@ -13,6 +13,22 @@ class DayBoundary {
         '${effective.day.toString().padLeft(2, '0')}';
   }
 
+  /// Key for a calendar date that is already an app-day.
+  ///
+  /// [keyFor] shifts anything before 06:00 back a day, which is right for a
+  /// timestamp but wrong for a date: `DateTime(2026, 8, 4)` is midnight, so
+  /// passing it to [keyFor] would silently return 2026-08-03. Charts and
+  /// day-by-day lists build their buckets from dates, so they use this.
+  static String keyForDate(DateTime date) =>
+      '${date.year}-'
+      '${date.month.toString().padLeft(2, '0')}-'
+      '${date.day.toString().padLeft(2, '0')}';
+
+  /// A timestamp that lands inside the app-day of [date], for logging
+  /// something on a day other than today.
+  static DateTime middayOf(DateTime date) =>
+      DateTime(date.year, date.month, date.day, 12);
+
   /// Key for the day that contains "now".
   static String today() => keyFor(DateTime.now());
 

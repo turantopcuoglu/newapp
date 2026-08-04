@@ -51,6 +51,15 @@ class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
     _storage.removeShoppingItem(id);
   }
 
+  void removeItems(Iterable<String> ids) {
+    final toRemove = ids.toSet();
+    if (toRemove.isEmpty) return;
+    for (final id in toRemove) {
+      _storage.removeShoppingItem(id);
+    }
+    state = state.where((i) => !toRemove.contains(i.id)).toList();
+  }
+
   void clearPurchased() {
     final toRemove = state.where((i) => i.isPurchased).toList();
     for (final item in toRemove) {

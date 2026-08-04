@@ -80,3 +80,19 @@ final safeScoredRecipesProvider = Provider<List<ScoredRecipe>>((ref) {
     inventoryIds: inventoryIds,
   );
 });
+
+/// Everything browsable: allergens excluded, disliked foods and unmet diet
+/// preferences demoted to the bottom instead of hidden. Explore uses this so
+/// a category never empties out silently after a preference change.
+final browsableScoredRecipesProvider = Provider<List<ScoredRecipe>>((ref) {
+  final profile = ref.watch(profileProvider);
+  final inventoryIds = ref.watch(inventoryIdsProvider);
+  final allRecipes = ref.watch(allRecipesProvider);
+  final service = ref.watch(recommendationServiceProvider);
+
+  return service.getBrowsableRecipes(
+    allRecipes: allRecipes,
+    profile: profile,
+    inventoryIds: inventoryIds,
+  );
+});

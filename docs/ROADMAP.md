@@ -35,7 +35,7 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **82 test, tümü geçiyor** (12 dosya) |
+| Test | **109 test, tümü geçiyor** (15 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
@@ -94,6 +94,25 @@ Kronolojik değil, konu bazlı. Detay için `git log` (28 commit).
 - **Tarif Defterim taşma hatası** (2026-08-04): kendi tariflerinde rozetler ve
   aksiyon butonları tek Row'daydı, TR etiketlerle 97 px taşıyordu. Rozetler
   artık `Wrap`, butonlar ayrı satırda.
+- **Yemek listesi ↔ beslenme özeti entegrasyonu** (2026-08-04): "Pişirdim"
+  artık ana sayfadaki yemek listesinde görünüyor ve listedeki her satırda
+  pişirme tiki var (`CookedTick`). Plan + pişirme tek listede birleşiyor:
+  `lib/services/day_meal_list.dart`. Planlayıcı ekranı da aynı tiki kullanıyor.
+- **Haftalık/aylık grafik hatası** (2026-08-04): grafik kovaları gece yarısı
+  tarihlerinden üretiliyordu, `DayBoundary.keyFor` bunları bir gün geriye
+  kaydırdığı için o günün öğünleri hiçbir kovaya düşmüyordu. Yeni
+  `DayBoundary.keyForDate` tarih kovaları için; `keyFor` yalnız zaman damgası
+  için. Ekranlar `ref.read` yerine `ref.watch` ile canlı güncelleniyor.
+- **Alışveriş → mutfak toplu taşıma** (2026-08-04): tik atılan ürünler tek
+  tuşla envantere gidiyor (`InventoryNotifier.addAll`).
+- **Tercihler artık gizlemiyor, sıralıyor** (2026-08-04): Keşfet'te (mutfak
+  listeleri, sağlık kategorileri, malzeme kartları) sevilmeyen besin ve
+  beslenme tercihi eşleşmeyen içeriği **silmiyor**, en alta indirip nedenini
+  yazıyor + "beslenme tercihini değiştir" bağlantısı veriyor
+  (`lib/services/preference_matcher.dart`, `browsableScoredRecipesProvider`).
+  **Alerjenler hâlâ sert eleme** — bu güvenlik meselesi, test koruyor.
+- **Günün önerileri araması** (2026-08-04): tarif adı, açıklaması *ve*
+  malzeme adına göre arama.
 
 ---
 
@@ -172,6 +191,13 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
    etiketler İngilizcenin 1.5 katı olabiliyor; `Spacer`'lı Row taşma
    üretiyor. Rozetleri `Wrap`'e, aksiyonları ayrı satıra al. Dar ekran
    (320 px) widget testi bunu yakalar.
+9. **`keyFor` tarih değil zaman damgası içindir.** 06:00 kaydırması yüzünden
+   `keyFor(DateTime(y,m,d))` bir önceki günü verir; gün kovası üreten her yer
+   `keyForDate` kullanmalı. Bu hata haftalık/aylık grafikleri boş gösterdi.
+10. **Tercih filtresi ile alerjen filtresi aynı şey değil.** Tercih (sevilmeyen
+   besin, beslenme tercihi) tarama ekranlarında **sıralar**; alerjen her yerde
+   **eler**. İkisini tek `_isSafe` altında birleştirmek kategori sayfalarını
+   sessizce boşaltıyordu.
 7. **`analyze` + `test` platform derlemesini kapsamaz.** Bu ikisi yalnızca
    Dart tarafını derler; Gradle'a hiç dokunmaz. `flutter_local_notifications`
    eklendiğinde Android `checkDebugAarMetadata` aşamasında "core library
@@ -185,7 +211,7 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 
 ```bash
 flutter analyze                              # 0 error
-flutter test                                 # 82+ test, tümü geçmeli
+flutter test                                 # 109+ test, tümü geçmeli
 dart run tool/data_report.dart --strict      # 0 hata, 0 sapma
 git push -u origin claude/recipe-save-ui-fixes-629z7x
 ```

@@ -66,12 +66,20 @@ class AppLocalizations {
   String get homeMealDinnerTitle => _t('homeMealDinnerTitle');
   String get homeMealSnackTitle => _t('homeMealSnackTitle');
   String get homeMealRecipeCount => _t('homeMealRecipeCount');
+  String get recommendationsSearchHint => _t('recommendationsSearchHint');
+  String get recommendationsSearchEmpty => _t('recommendationsSearchEmpty');
   String get homeQuickActions => _t('homeQuickActions');
   String get homeFat => _t('homeFat');
   String get homeMealListTitle => _t('homeMealListTitle');
   String get homeTomorrow => _t('homeTomorrow');
   String get homeMealListEmpty => _t('homeMealListEmpty');
   String get homeMealListSeeAll => _t('homeMealListSeeAll');
+  String get mealListMarkCooked => _t('mealListMarkCooked');
+  String get mealListMarkNotCooked => _t('mealListMarkNotCooked');
+  String mealListCookedCount(int n) =>
+      _t('mealListCookedCount').replaceFirst('{n}', '$n');
+  String get mealListCookedNotPlanned => _t('mealListCookedNotPlanned');
+  String get mealListNutritionHint => _t('mealListNutritionHint');
 
   // Check-in
   String get checkInTitle => _t('checkInTitle');
@@ -138,6 +146,10 @@ class AppLocalizations {
   String get shoppingAddItem => _t('shoppingAddItem');
   String get shoppingClearPurchased => _t('shoppingClearPurchased');
   String get shoppingMoveToKitchen => _t('shoppingMoveToKitchen');
+  String shoppingMovePurchasedToKitchen(int n) =>
+      _t('shoppingMovePurchasedToKitchen').replaceFirst('{n}', '$n');
+  String shoppingMovedToKitchen(int n) =>
+      _t('shoppingMovedToKitchen').replaceFirst('{n}', '$n');
   String get shoppingItemHint => _t('shoppingItemHint');
 
   // My Recipes
@@ -193,6 +205,12 @@ class AppLocalizations {
   String get dietVegan => _t('dietVegan');
   String get dietGlutenFree => _t('dietGlutenFree');
   String get dietDairyFree => _t('dietDairyFree');
+  String preferenceWarningIngredient(String name) =>
+      _t('preferenceWarningIngredient').replaceFirst('{name}', name);
+  String get preferenceWarningList => _t('preferenceWarningList');
+  String get preferenceReasonDisliked => _t('preferenceReasonDisliked');
+  String get preferenceChangeCta => _t('preferenceChangeCta');
+  String get preferenceMismatchShort => _t('preferenceMismatchShort');
   String get profileNoDisliked => _t('profileNoDisliked');
   String get profileLanguage => _t('profileLanguage');
   String get profileSave => _t('profileSave');

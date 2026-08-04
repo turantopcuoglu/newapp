@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../components/cooked_tick.dart';
 import '../../core/day_boundary.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
@@ -9,9 +10,9 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/cooked_provider.dart';
 import '../../providers/check_in_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../../services/day_meal_list.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
-import '../../models/meal_plan.dart';
 import '../../models/recipe.dart';
 import '../../services/recommendation_service.dart';
 import '../planner/planner_screen.dart';
@@ -716,11 +717,17 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
                 ),
               ),
               const SizedBox(width: 12),
-              Text(
-                l10n.summaryTitle,
-                style: theme.textTheme.titleMedium,
+              // Expanded, not Spacer: the title and the badge are both
+              // translated and together they outgrow a narrow phone.
+              Expanded(
+                child: Text(
+                  l10n.summaryTitle,
+                  style: theme.textTheme.titleMedium,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-              const Spacer(),
+              const SizedBox(width: 8),
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -980,22 +987,26 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final mealPlans = ref.watch(mealPlanProvider);
+    final cookedEntries = ref.watch(cookedProvider);
     final recipeMap = ref.watch(recipeMapProvider);
 
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final tomorrow = today.add(const Duration(days: 1));
 
-    final todayKey =
-        '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
-    final tomorrowKey =
-        '${tomorrow.year}-${tomorrow.month.toString().padLeft(2, '0')}-${tomorrow.day.toString().padLeft(2, '0')}';
-
-    final todayMeals = mealPlans.where((e) => e.dateKey == todayKey).toList()
-      ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
-    final tomorrowMeals =
-        mealPlans.where((e) => e.dateKey == tomorrowKey).toList()
-          ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
+    // Planned and cooked meals share one list: a recipe marked cooked from
+    // its own page shows up here too, and ticking a line here feeds the
+    // nutrition summary.
+    final todayMeals = buildDayMealList(
+      date: today,
+      plans: mealPlans,
+      cooked: cookedEntries,
+    );
+    final tomorrowMeals = buildDayMealList(
+      date: tomorrow,
+      plans: mealPlans,
+      cooked: cookedEntries,
+    );
 
     return GestureDetector(
       onTap: () => Navigator.push(
@@ -1069,11 +1080,20 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 4),
+            Text(
+              l10n.mealListNutritionHint,
+              style: const TextStyle(
+                fontSize: 11,
+                color: AppTheme.textLight,
+              ),
+            ),
+            const SizedBox(height: 14),
 
             // Today
             _DayMealSection(
               label: l10n.plannerToday,
+              date: today,
               meals: todayMeals,
               recipeMap: recipeMap,
               locale: locale,
@@ -1094,6 +1114,7 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
             // Tomorrow
             _DayMealSection(
               label: l10n.homeTomorrow,
+              date: tomorrow,
               meals: tomorrowMeals,
               recipeMap: recipeMap,
               locale: locale,
@@ -1107,9 +1128,10 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
   }
 }
 
-class _DayMealSection extends StatelessWidget {
+class _DayMealSection extends ConsumerWidget {
   final String label;
-  final List<MealPlanEntry> meals;
+  final DateTime date;
+  final List<DayMealItem> meals;
   final Map<String, Recipe> recipeMap;
   final String locale;
   final AppLocalizations l10n;
@@ -1117,6 +1139,7 @@ class _DayMealSection extends StatelessWidget {
 
   const _DayMealSection({
     required this.label,
+    required this.date,
     required this.meals,
     required this.recipeMap,
     required this.locale,
@@ -1164,7 +1187,9 @@ class _DayMealSection extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cookedCount = meals.where((m) => m.isCooked).length;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1198,6 +1223,25 @@ class _DayMealSection extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
+            if (cookedCount > 0) ...[
+              const SizedBox(width: 6),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: AppTheme.successGreen.withAlpha(22),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  l10n.mealListCookedCount(cookedCount),
+                  style: const TextStyle(
+                    fontSize: 11,
+                    color: AppTheme.successGreen,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
         const SizedBox(height: 10),
@@ -1225,17 +1269,39 @@ class _DayMealSection extends StatelessWidget {
             ),
           )
         else
-          ...meals.map((entry) {
-            final recipe = recipeMap[entry.recipeId];
-            final recipeName = recipe != null
-                ? recipe.localizedName(locale)
-                : '—';
-            final color = _mealTypeColor(entry.mealType);
+          ...meals.map((item) {
+            final recipe = recipeMap[item.recipeId];
+            final recipeName = recipe?.localizedName(locale) ?? '—';
+            final color = _mealTypeColor(item.mealType);
 
             return Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Row(
                 children: [
+                  // Cooked tick: this is what feeds the nutrition summary.
+                  CookedTick(
+                    isCooked: item.isCooked,
+                    onTap: recipe == null
+                        ? null
+                        : () {
+                            final nowCooked = ref
+                                .read(cookedProvider.notifier)
+                                .toggleForDay(recipe, date);
+                            ScaffoldMessenger.of(context)
+                              ..hideCurrentSnackBar()
+                              ..showSnackBar(SnackBar(
+                                content: Text(nowCooked
+                                    ? l10n.recipeCookedLogged(
+                                        recipe.macros.calories)
+                                    : l10n.recipeCookedUndone),
+                                duration: const Duration(milliseconds: 1500),
+                              ));
+                          },
+                    tooltip: item.isCooked
+                        ? l10n.mealListMarkNotCooked
+                        : l10n.mealListMarkCooked,
+                  ),
+                  const SizedBox(width: 10),
                   // Meal type icon
                   Container(
                     padding: const EdgeInsets.all(6),
@@ -1244,39 +1310,48 @@ class _DayMealSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
-                      _mealTypeIcon(entry.mealType),
+                      _mealTypeIcon(item.mealType),
                       color: color,
                       size: 16,
                     ),
                   ),
                   const SizedBox(width: 10),
-                  // Meal type label
-                  SizedBox(
-                    width: 80,
-                    child: Text(
-                      _mealTypeLabel(entry.mealType),
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: color,
-                      ),
-                    ),
-                  ),
                   // Recipe name
                   Expanded(
-                    child: Text(
-                      recipeName,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: AppTheme.textPrimary,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          recipeName,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: item.isCooked
+                                ? AppTheme.textSecondary
+                                : AppTheme.textPrimary,
+                            fontWeight: FontWeight.w500,
+                            decoration: item.isCooked
+                                ? TextDecoration.lineThrough
+                                : null,
+                          ),
+                        ),
+                        Text(
+                          item.isUnplanned
+                              ? '${_mealTypeLabel(item.mealType)} · '
+                                  '${l10n.mealListCookedNotPlanned}'
+                              : _mealTypeLabel(item.mealType),
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: color,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   // Time label
-                  if (entry.timeLabel.isNotEmpty)
+                  if (item.timeLabel.isNotEmpty)
                     Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 2),
@@ -1285,7 +1360,7 @@ class _DayMealSection extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        entry.timeLabel,
+                        item.timeLabel,
                         style: const TextStyle(
                           fontSize: 11,
                           color: AppTheme.textSecondary,

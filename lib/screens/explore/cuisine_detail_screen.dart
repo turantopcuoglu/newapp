@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../components/preference_warning.dart';
 import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
@@ -7,6 +8,7 @@ import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/preference_matcher.dart';
 import '../../services/recommendation_service.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
@@ -19,25 +21,15 @@ class CuisineDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final allRecipes = ref.watch(recipeMapProvider);
-    final scoredRecipes = ref.watch(safeScoredRecipesProvider);
-
-    // Recipes belong to a cuisine via their cuisineIds tags
-    final cuisineRecipes = allRecipes.values
-        .where((recipe) => recipe.cuisineIds.contains(cuisine.id))
-        .map((recipe) {
-      // Find scored version if available
-      final scored = scoredRecipes
-          .where((sr) => sr.recipe.id == recipe.id)
-          .firstOrNull;
-      return scored ??
-          ScoredRecipe(
-            recipe: recipe,
-            compatibilityScore: 0,
-            availableIngredients: [],
-            missingIngredients: recipe.ingredientIds,
-          );
-    }).toList();
+    // Recipes belong to a cuisine via their cuisineIds tags. The browsable
+    // list is already ordered by diet fit first and pantry match second, so
+    // what the user can eat sits at the top and what they avoid at the bottom
+    // — visible, with the reason, instead of missing.
+    final cuisineRecipes = ref
+        .watch(browsableScoredRecipesProvider)
+        .where((sr) => sr.recipe.cuisineIds.contains(cuisine.id))
+        .toList();
+    final hasDemoted = cuisineRecipes.any((sr) => !sr.preferenceFit.fits);
 
     final gradientColors = cuisineGradients[cuisine.gradient] ??
         cuisineGradients['healthy']!;
@@ -146,7 +138,16 @@ class CuisineDetailScreen extends ConsumerWidget {
                 ),
               ),
             )
-          else
+          else ...[
+            if (hasDemoted)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                  child: PreferenceWarningCard(
+                    fit: _listFitOf(cuisineRecipes),
+                  ),
+                ),
+              ),
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
               sliver: SliverList(
@@ -170,8 +171,23 @@ class CuisineDetailScreen extends ConsumerWidget {
                 ),
               ),
             ),
+          ],
         ],
       ),
+    );
+  }
+
+  /// Reasons gathered from the demoted recipes, for the banner above them.
+  PreferenceFit _listFitOf(List<ScoredRecipe> recipes) {
+    final diets = <String>{};
+    final disliked = <String>{};
+    for (final sr in recipes) {
+      diets.addAll(sr.preferenceFit.unmetDietPreferences);
+      disliked.addAll(sr.preferenceFit.dislikedIngredientIds);
+    }
+    return PreferenceFit(
+      dislikedIngredientIds: disliked.toList(),
+      unmetDietPreferences: diets.toList(),
     );
   }
 }
@@ -295,6 +311,10 @@ class _RecipeCard extends StatelessWidget {
                           ),
                       ],
                     ),
+                    if (!scored.preferenceFit.fits) ...[
+                      const SizedBox(height: 6),
+                      PreferenceMismatchChip(fit: scored.preferenceFit),
+                    ],
                   ],
                 ),
               ),

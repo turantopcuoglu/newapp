@@ -4,6 +4,7 @@ import '../core/enums.dart';
 import '../core/theme.dart';
 import '../l10n/app_localizations.dart';
 import '../services/recommendation_service.dart';
+import 'preference_warning.dart';
 import 'recipe_visual.dart';
 import 'save_recipe_button.dart';
 
@@ -63,8 +64,11 @@ class HealthRecipeCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Badges row
-                    Row(
+                    // Badges wrap: "Akşam Yemeği" plus "Alerjen Yok" does not
+                    // fit next to the thumbnail on a narrow phone.
+                    Wrap(
+                      spacing: 6,
+                      runSpacing: 4,
                       children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -84,8 +88,7 @@ class HealthRecipeCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        if (recipe.allergenTags.isEmpty) ...[
-                          const SizedBox(width: 6),
+                        if (recipe.allergenTags.isEmpty)
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 8,
@@ -104,7 +107,6 @@ class HealthRecipeCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ],
                       ],
                     ),
                     const SizedBox(height: 8),
@@ -149,6 +151,8 @@ class HealthRecipeCard extends StatelessWidget {
                           label: '${recipe.macros.fiberG}g ${l10n.recipeFiber}',
                           color: AppTheme.successGreen,
                         ),
+                        // Says why this card sits at the bottom of the list.
+                        PreferenceMismatchChip(fit: scored.preferenceFit),
                       ],
                     ),
                   ],

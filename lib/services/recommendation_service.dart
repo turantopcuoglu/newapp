@@ -3,6 +3,7 @@ import '../models/recipe.dart';
 import '../models/user_profile.dart';
 import '../data/explore_data.dart';
 import 'diet_classifier.dart';
+import 'preference_matcher.dart';
 import 'special_category_matcher.dart';
 
 class ScoredRecipe {
@@ -11,11 +12,16 @@ class ScoredRecipe {
   final List<String> availableIngredients;
   final List<String> missingIngredients;
 
+  /// Why this recipe sits low in a browsing list, if it does. Always
+  /// [PreferenceFit.clean] on lists that hard-filter preferences.
+  final PreferenceFit preferenceFit;
+
   const ScoredRecipe({
     required this.recipe,
     required this.compatibilityScore,
     required this.availableIngredients,
     required this.missingIngredients,
+    this.preferenceFit = PreferenceFit.clean,
   });
 
   int get compatibilityPercent {
@@ -151,6 +157,57 @@ class RecommendationService {
     }).toList()
       ..sort(
           (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+  }
+
+  /// Everything the user may safely see while browsing, ordered by fit.
+  ///
+  /// Allergens are still a hard exclusion — those are a safety matter.
+  /// Disliked foods and unmet diet preferences only demote: the recipe stays
+  /// visible at the bottom of the list, tagged with the reason, because
+  /// silently emptying a category the user just opened looks broken.
+  List<ScoredRecipe> getBrowsableRecipes({
+    required List<Recipe> allRecipes,
+    required UserProfile profile,
+    required Set<String> inventoryIds,
+  }) {
+    final classifier = dietClassifier;
+
+    final scored = allRecipes
+        .where((recipe) => !hasAllergenConflict(recipe.allergenTags, profile))
+        .map((recipe) {
+      final available = <String>[];
+      final missing = <String>[];
+      for (final id in recipe.ingredientIds) {
+        if (inventoryIds.contains(id)) {
+          available.add(id);
+        } else {
+          missing.add(id);
+        }
+      }
+      final score = recipe.ingredientIds.isEmpty
+          ? 0.0
+          : available.length / recipe.ingredientIds.length;
+
+      return ScoredRecipe(
+        recipe: recipe,
+        compatibilityScore: score,
+        availableIngredients: available,
+        missingIngredients: missing,
+        preferenceFit: classifier == null
+            ? PreferenceFit.clean
+            : recipePreferenceFit(recipe, profile, classifier),
+      );
+    }).toList();
+
+    scored.sort((a, b) {
+      // What the user can eat first, then the pantry match inside each group.
+      final byFit =
+          a.preferenceFit.demotion.compareTo(b.preferenceFit.demotion);
+      if (byFit != 0) return byFit;
+      return b.compatibilityScore.compareTo(a.compatibilityScore);
+    });
+
+    return scored;
   }
 
   /// Fraction of the profile's health conditions a recipe suits, 0..1.

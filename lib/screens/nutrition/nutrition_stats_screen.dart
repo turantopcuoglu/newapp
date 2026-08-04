@@ -171,9 +171,11 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
   // ── Data aggregation ────────────────────────────────────────────────────
 
   _NutritionData _computeData() {
-    final cookedEntries = ref.read(cookedProvider);
-    final mealPlans = ref.read(mealPlanProvider);
-    final beverages = ref.read(beverageProvider);
+    // Watched, not read: logging a meal has to move these numbers while the
+    // screen is open.
+    final cookedEntries = ref.watch(cookedProvider);
+    final mealPlans = ref.watch(mealPlanProvider);
+    final beverages = ref.watch(beverageProvider);
 
     // Determine date range
     late DateTime startDate;
@@ -198,12 +200,18 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     // Consumed totals come from the cooked log — meals the user actually
     // marked as cooked. Planned meals are an intention and are reported
     // separately, so adding a recipe to the planner never inflates intake.
-    final filteredCooked = cookedEntries.where((e) {
-      if (_currentPeriod == _Period.daily) {
-        return e.dayKey == DayBoundary.keyFor(startDate);
-      }
-      return !e.dateTime.isBefore(startDate) && e.dateTime.isBefore(endDate);
-    }).toList();
+    // App-day keys, not raw timestamps: keyFor would shift a midnight range
+    // bound back a day, and a meal cooked at 01:00 belongs to the previous
+    // app-day the same way the daily card counts it.
+    final rangeKeys = <String>{};
+    for (var d = startDate;
+        d.isBefore(endDate);
+        d = d.add(const Duration(days: 1))) {
+      rangeKeys.add(DayBoundary.keyForDate(d));
+    }
+
+    final filteredCooked =
+        cookedEntries.where((e) => rangeKeys.contains(e.dayKey)).toList();
 
     final consumed = ConsumedTotals.from(filteredCooked);
 

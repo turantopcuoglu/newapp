@@ -46,13 +46,29 @@ class CookedNotifier extends StateNotifier<List<CookedEntry>> {
 
   /// Removes the most recent log of a recipe on the current app-day.
   /// Returns false when there is nothing to undo.
-  bool undoToday(String recipeId) {
-    final today = DayBoundary.today();
+  bool undoToday(String recipeId) => undoOn(recipeId, DayBoundary.today());
+
+  /// Removes the most recent log of a recipe on a given app-day.
+  bool undoOn(String recipeId, String dayKey) {
     final match = state
-        .where((e) => e.recipeId == recipeId && e.dayKey == today)
+        .where((e) => e.recipeId == recipeId && e.dayKey == dayKey)
         .lastOrNull;
     if (match == null) return false;
     removeEntry(match.id);
+    return true;
+  }
+
+  /// Flips the cooked state of a recipe for [date]. Returns true when the
+  /// recipe ended up logged as cooked.
+  ///
+  /// The meal list ticks entries off through this, so a meal planned for
+  /// yesterday can still be marked without back-dating the whole log by hand:
+  /// a past day is logged at midday, which lands inside that app-day.
+  bool toggleForDay(Recipe recipe, DateTime date) {
+    final dayKey = DayBoundary.keyForDate(date);
+    if (undoOn(recipe.id, dayKey)) return false;
+    final isToday = dayKey == DayBoundary.today();
+    markCooked(recipe, at: isToday ? DateTime.now() : DayBoundary.middayOf(date));
     return true;
   }
 

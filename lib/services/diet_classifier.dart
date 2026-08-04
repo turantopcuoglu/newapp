@@ -24,6 +24,15 @@ class DietClassifier {
   /// Animal-derived (non-flesh) ingredient ids that break vegan suitability.
   static const Set<String> _animalProductIds = {'eggs', 'honey'};
 
+  /// Whether an ingredient id is animal flesh. Exposed because the browsing
+  /// screens judge single ingredients, not only whole recipes.
+  static bool isMeatOrFish(String ingredientId) =>
+      _meatAndFishIds.contains(ingredientId);
+
+  /// Whether an ingredient id is animal-derived but not flesh (eggs, honey).
+  static bool isAnimalProduct(String ingredientId) =>
+      _animalProductIds.contains(ingredientId);
+
   final Map<String, Ingredient> _ingredientsById;
 
   DietClassifier(List<Ingredient> ingredients)

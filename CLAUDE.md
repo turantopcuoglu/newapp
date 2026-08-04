@@ -44,8 +44,17 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
   günlük hatırlatma; sunucu gerekmez).
 - **Tüketilen kalori** `cookedProvider`'dan (lib/providers/cooked_provider.dart)
   gelir — kullanıcının "Pişirdim" dediği kayıtlar. `mealPlanProvider` yalnızca
-  *plandır*, tüketim sayılmaz; bu ikisini birbirine karıştırma.
-  Gün sınırı tek yerde: `DayBoundary` (06:00 reset).
+  *plandır*, tüketim sayılmaz; bu ikisini birbirine karıştırma. Yemek listesi
+  ikisini `buildDayMealList` (lib/services/day_meal_list.dart) ile birleştirip
+  gösterir; satırdaki tik `cookedProvider`'ı değiştirir, beslenme özeti de
+  oradan beslenir.
+  Gün sınırı tek yerde: `DayBoundary` (06:00 reset). Gün kovası üretirken
+  `keyForDate` kullan — `keyFor` zaman damgası içindir ve gece yarısı
+  tarihlerini bir gün geriye kaydırır.
+- **Tercih ≠ alerjen.** Alerjen her yerde sert elenir (güvenlik, testler
+  gevşetilmez). Sevilmeyen besin ve beslenme tercihi ise Keşfet'te yalnızca
+  sıralamayı değiştirir: `preference_matcher.dart` + `browsableScoredRecipes
+  Provider` uyumsuzu en alta indirir ve nedenini kart üstünde gösterir.
 - `lib/providers/` — Riverpod provider'ları; `recipe_provider.dart` merkezi.
 - `lib/screens/` — UI; `main_shell.dart` sekmeleri tanımlar.
 

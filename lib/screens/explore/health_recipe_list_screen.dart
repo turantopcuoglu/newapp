@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../components/health_recipe_card.dart';
+import '../../components/preference_warning.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../data/ingredient_visual.dart';
 import '../../l10n/app_localizations.dart';
+import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/preference_matcher.dart';
+import '../../services/recommendation_service.dart';
 import '../../services/special_category_matcher.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
@@ -29,7 +33,10 @@ class HealthRecipeListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final scored = ref.watch(safeScoredRecipesProvider);
+    // Browsable, not "safe": a disliked food or a diet preference must not
+    // empty this page out, it only pushes those recipes down.
+    final scored = ref.watch(browsableScoredRecipesProvider);
+    final profile = ref.watch(profileProvider);
 
     final recipes = scored.where((sr) {
       final id = ingredientId;
@@ -41,6 +48,12 @@ class HealthRecipeListScreen extends ConsumerWidget {
     final ingredient =
         ingredientId == null ? null : ingredientById(ingredientId!);
     final title = ingredient?.localizedName(locale) ?? l10n.healthAllRecipes;
+
+    // The warning names the ingredient when there is one, otherwise it speaks
+    // for the demoted recipes further down the list.
+    final warningFit = ingredient != null
+        ? ingredientPreferenceFit(ingredient, profile)
+        : _listFitOf(recipes);
 
     final gradientColors =
         cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
@@ -111,23 +124,45 @@ class HealthRecipeListScreen extends ConsumerWidget {
                 ),
               ),
             )
-          : ListView.builder(
+          : ListView(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-              itemCount: recipes.length,
-              itemBuilder: (context, index) {
-                final sr = recipes[index];
-                return HealthRecipeCard(
-                  scored: sr,
-                  locale: locale,
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => RecipeDetailScreen(scoredRecipe: sr),
+              children: [
+                if (!warningFit.fits) ...[
+                  PreferenceWarningCard(
+                    fit: warningFit,
+                    subject: ingredient?.localizedName(locale),
+                  ),
+                  const SizedBox(height: 14),
+                ],
+                ...recipes.map(
+                  (sr) => HealthRecipeCard(
+                    scored: sr,
+                    locale: locale,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => RecipeDetailScreen(scoredRecipe: sr),
+                      ),
                     ),
                   ),
-                );
-              },
+                ),
+              ],
             ),
+    );
+  }
+
+  /// Combined reasons across the demoted recipes, so the banner above a whole
+  /// list says the same thing the cards below it do.
+  PreferenceFit _listFitOf(List<ScoredRecipe> recipes) {
+    final diets = <String>{};
+    final disliked = <String>{};
+    for (final sr in recipes) {
+      diets.addAll(sr.preferenceFit.unmetDietPreferences);
+      disliked.addAll(sr.preferenceFit.dislikedIngredientIds);
+    }
+    return PreferenceFit(
+      dislikedIngredientIds: disliked.toList(),
+      unmetDietPreferences: diets.toList(),
     );
   }
 }

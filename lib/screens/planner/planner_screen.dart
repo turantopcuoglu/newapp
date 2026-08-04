@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../components/cooked_tick.dart';
 import '../../components/meal_type_badge.dart';
 import '../../core/enums.dart';
+import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
-import '../../models/meal_plan.dart';
+import '../../models/recipe.dart';
+import '../../providers/cooked_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/day_meal_list.dart';
 import '../../services/recommendation_service.dart';
 
 class PlannerScreen extends ConsumerStatefulWidget {
@@ -45,6 +49,7 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final mealPlans = ref.watch(mealPlanProvider);
+    final cookedEntries = ref.watch(cookedProvider);
     final recipeMap = ref.watch(recipeMapProvider);
     final theme = Theme.of(context);
     final dateFormat = DateFormat('MMM d');
@@ -90,10 +95,13 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
               itemBuilder: (context, index) {
                 final day = _weekStart.add(Duration(days: index));
                 final isToday = _isSameDay(day, DateTime.now());
-                final dayEntries = mealPlans
-                    .where((e) => _isSameDay(e.date, day))
-                    .toList()
-                  ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
+                // Planned and cooked meals in one list, so a recipe logged
+                // from its own page is visible here as well.
+                final dayEntries = buildDayMealList(
+                  date: day,
+                  plans: mealPlans,
+                  cooked: cookedEntries,
+                );
 
                 return Card(
                   color: isToday
@@ -147,8 +155,8 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
                                 style: theme.textTheme.bodySmall),
                           )
                         else
-                          ...dayEntries.map((entry) =>
-                              _buildEntry(context, entry, recipeMap)),
+                          ...dayEntries.map((item) =>
+                              _buildEntry(context, day, item, recipeMap)),
                       ],
                     ),
                   ),
@@ -161,18 +169,32 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
     );
   }
 
-  Widget _buildEntry(BuildContext context, MealPlanEntry entry,
-      Map<String, dynamic> recipeMap) {
-    final recipe = recipeMap[entry.recipeId];
-    final locale = AppLocalizations.of(context).locale.languageCode;
+  Widget _buildEntry(BuildContext context, DateTime day, DayMealItem item,
+      Map<String, Recipe> recipeMap) {
+    final l10n = AppLocalizations.of(context);
+    final locale = l10n.locale.languageCode;
     final theme = Theme.of(context);
+    final recipe = recipeMap[item.recipeId];
 
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Row(
         children: [
-          MealTypeBadge(mealType: entry.mealType),
-          if (entry.timeLabel.isNotEmpty) ...[
+          CookedTick(
+            isCooked: item.isCooked,
+            size: 24,
+            tooltip: item.isCooked
+                ? l10n.mealListMarkNotCooked
+                : l10n.mealListMarkCooked,
+            onTap: recipe == null
+                ? null
+                : () => ref
+                    .read(cookedProvider.notifier)
+                    .toggleForDay(recipe, day),
+          ),
+          const SizedBox(width: 8),
+          MealTypeBadge(mealType: item.mealType),
+          if (item.timeLabel.isNotEmpty) ...[
             const SizedBox(width: 6),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
@@ -181,7 +203,7 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(
-                entry.timeLabel,
+                item.timeLabel,
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
@@ -192,18 +214,39 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
           ],
           const SizedBox(width: 10),
           Expanded(
-            child: Text(
-              recipe?.localizedName(locale) ?? entry.recipeId,
-              style: theme.textTheme.bodyMedium,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  recipe?.localizedName(locale) ?? item.recipeId,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    decoration:
+                        item.isCooked ? TextDecoration.lineThrough : null,
+                    color: item.isCooked ? AppTheme.textSecondary : null,
+                  ),
+                ),
+                if (item.isUnplanned)
+                  Text(
+                    l10n.mealListCookedNotPlanned,
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: AppTheme.successGreen,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+              ],
             ),
           ),
-          IconButton(
-            icon: const Icon(Icons.close, size: 18),
-            onPressed: () =>
-                ref.read(mealPlanProvider.notifier).removeEntry(entry.id),
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(),
-          ),
+          // A cooked-only line has no plan entry to remove; unticking it is
+          // what takes it off the list.
+          if (item.planId != null)
+            IconButton(
+              icon: const Icon(Icons.close, size: 18),
+              onPressed: () =>
+                  ref.read(mealPlanProvider.notifier).removeEntry(item.planId!),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(),
+            ),
         ],
       ),
     );
