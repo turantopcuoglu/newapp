@@ -173,6 +173,12 @@ class AppLocalizations {
   String get healthSetUpPrompt => _t('healthSetUpPrompt');
   String healthRecipeCount(int n) =>
       _t('healthRecipeCount').replaceFirst('{n}', '$n');
+  String get healthAboutTitle => _t('healthAboutTitle');
+  String get healthIngredientsTitle => _t('healthIngredientsTitle');
+  String get healthIngredientsHint => _t('healthIngredientsHint');
+  String get healthAllRecipes => _t('healthAllRecipes');
+  String get healthIngredientEmpty => _t('healthIngredientEmpty');
+  String get healthInfoDisclaimer => _t('healthInfoDisclaimer');
   String get remindersTitle => _t('remindersTitle');
   String get remindersHint => _t('remindersHint');
   String get remindersEnable => _t('remindersEnable');

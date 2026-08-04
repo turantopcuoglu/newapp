@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-08-03 · Dal: `claude/recipe-app-strategy-aojpcj`
+> Son güncelleme: 2026-08-04 · Dal: `claude/recipe-save-ui-fixes-629z7x`
 
 ---
 
@@ -35,8 +35,8 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **69 test, tümü geçiyor** (10 dosya) |
-| `flutter analyze` | **0 hata** (24 kozmetik info/warning kaldı) |
+| Test | **82 test, tümü geçiyor** (12 dosya) |
+| `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
 
@@ -79,8 +79,21 @@ Kronolojik değil, konu bazlı. Detay için `git log` (28 commit).
 - Tarif görselleri: `RecipeVisual` (mutfak gradyanı + yemek emojisi, 40 farklı
   emoji). Asset yok, uygulama boyutu artmıyor.
 - Beslenme tercihi filtresi (vejetaryen/vegan/glutensiz/laktozsuz).
-- **Sağlık alanları ana sayfada**: kullanıcının kendi alanları geniş kart,
-  diğerleri keşif şeridi. Sağlık durumu artık öneri sıralamasını da etkiliyor.
+- **Sağlık alanları Keşfet'te** (2026-08-04): ana sayfadaki bölüm kaldırıldı,
+  tek giriş Keşfet → "Sana Özel". O sekme artık profile uymayan kategorileri
+  gizlemiyor; hepsini, kullanıcının kendi alanları önde, tarif sayısıyla
+  gösteriyor. Sağlık durumu öneri sıralamasını etkilemeye devam ediyor.
+- **Sağlık kategorisi sayfası yeniden kuruldu** (2026-08-04): başlık → sağlık
+  durumu açıklaması (`lib/data/health_category_info.dart`, TR+EN özet +
+  kaynak/ipucu listeleri) → dünya mutfağı kartı görünümünde **malzeme
+  kategorileri**. Bir malzemeye dokununca o malzemeyi içeren *ve* sağlık
+  durumuna uyan tarifler açılıyor (`matchesCategoryIngredient`).
+- **Tarif kaydetme her yerde** (2026-08-04): `SaveRecipeButton` /
+  `SaveRecipeWideButton` — her önizleme kartında ve tarif detayında; hepsi
+  `favoritesProvider`'ı okuduğu için durum tek kaynaktan geliyor.
+- **Tarif Defterim taşma hatası** (2026-08-04): kendi tariflerinde rozetler ve
+  aksiyon butonları tek Row'daydı, TR etiketlerle 97 px taşıyordu. Rozetler
+  artık `Wrap`, butonlar ayrı satırda.
 
 ---
 
@@ -152,8 +165,13 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 5. **Testin yanlış olabilir.** Sağlık skorlaması testinde skor farkı sağlık
    teriminden değil, mevcut besin bonusundan geliyordu. Test düşünce önce
    testi sorgula.
-6. **Ana sayfadaki sayı ile açılan liste aynı fonksiyondan geçmeli.**
+6. **Keşfet'teki sayı ile açılan liste aynı fonksiyondan geçmeli.**
    `matchesSpecialCategory` tek kaynak; ayrılırlarsa rozet yalan söyler.
+   Malzeme kartları için aynı kural `matchesCategoryIngredient`'ta.
+8. **Tek Row'a sığdırılan rozet + buton kombinasyonu TR'de taşar.** Türkçe
+   etiketler İngilizcenin 1.5 katı olabiliyor; `Spacer`'lı Row taşma
+   üretiyor. Rozetleri `Wrap`'e, aksiyonları ayrı satıra al. Dar ekran
+   (320 px) widget testi bunu yakalar.
 7. **`analyze` + `test` platform derlemesini kapsamaz.** Bu ikisi yalnızca
    Dart tarafını derler; Gradle'a hiç dokunmaz. `flutter_local_notifications`
    eklendiğinde Android `checkDebugAarMetadata` aşamasında "core library
@@ -167,9 +185,9 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 
 ```bash
 flutter analyze                              # 0 error
-flutter test                                 # 69+ test, tümü geçmeli
+flutter test                                 # 82+ test, tümü geçmeli
 dart run tool/data_report.dart --strict      # 0 hata, 0 sapma
-git push -u origin claude/recipe-app-strategy-aojpcj
+git push -u origin claude/recipe-save-ui-fixes-629z7x
 ```
 
 İçerik değiştiyse `--fix-macros` çalıştırmayı unutma, yoksa

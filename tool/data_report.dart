@@ -19,10 +19,12 @@ import 'dart:io';
 
 import 'package:nutri_guide/core/enums.dart';
 import 'package:nutri_guide/data/explore_data.dart';
+import 'package:nutri_guide/data/health_category_info.dart';
 import 'package:nutri_guide/data/ingredient_nutrition_data.dart';
 import 'package:nutri_guide/data/mock_ingredients.dart';
 import 'package:nutri_guide/models/recipe.dart';
 import 'package:nutri_guide/services/nutrition_calculator.dart';
+import 'package:nutri_guide/services/special_category_matcher.dart';
 
 /// Two recipes sharing this fraction of their *characteristic* ingredients
 /// read as the same dish to a user, even when the names differ.
@@ -52,6 +54,10 @@ const int minIngredients = 4;
 
 /// A health category with fewer matches than this looks broken to a user.
 const int minRecipesPerHealthCategory = 15;
+
+/// Fewer tiles than this and the category page looks empty under its
+/// explanation, so the ingredient lists need filling out.
+const int minIngredientTilesPerCategory = 6;
 
 const recipeFiles = [
   'assets/recipes/breakfast.json',
@@ -189,6 +195,43 @@ void main(List<String> args) {
           '$matching recipes');
     }
   });
+
+  // ── Health category editorial content ──────────────────────────────────
+  // The ingredient tiles under a category come from healthCategoryInfo; a
+  // stale id there renders a tile that opens an empty list, and a category
+  // without content silently falls back to the plain recipe list.
+  for (final category in specialCategories) {
+    final info = healthCategoryInfo[category.id];
+    if (info == null) {
+      errors.add('healthCategoryInfo: no content for category '
+          '"${category.id}"');
+      continue;
+    }
+    for (final locale in ['tr', 'en']) {
+      if ((info.summary[locale] ?? '').trim().isEmpty) {
+        errors.add('healthCategoryInfo[${category.id}]: missing $locale '
+            'summary');
+      }
+      for (final section in info.sections) {
+        if ((section.title[locale] ?? '').trim().isEmpty ||
+            (section.items[locale] ?? const []).isEmpty) {
+          errors.add('healthCategoryInfo[${category.id}]: incomplete '
+              '$locale section');
+        }
+      }
+    }
+    for (final id in info.ingredientIds) {
+      if (!ingredientIds.contains(id)) {
+        errors.add('healthCategoryInfo[${category.id}]: unknown ingredient '
+            '"$id"');
+      }
+    }
+    final withRecipes = healthCategoryIngredients(category, allRecipes);
+    if (withRecipes.length < minIngredientTilesPerCategory) {
+      warnings.add('health category ${category.id} shows only '
+          '${withRecipes.length} ingredient tiles');
+    }
+  }
 
   // ── Cross-recipe checks: duplicates and near-duplicates ────────────────
   // A library that repeats itself feels smaller than it is, so these are

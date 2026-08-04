@@ -87,8 +87,15 @@ Android SDK yok — o durumda kullanıcının cihazda doğrulaması gerekir.)
 `explore_data.dart` içindeki `specialCategories` üç tip filtre kullanır:
 sağlık durumu (besin profili veya faydalı malzeme), alerjen dışlama
 (glutensiz/laktozsuz) ve check-in etiketi (regl). Filtreleme mantığı TEK
-yerde: `lib/services/special_category_matcher.dart` — ana sayfadaki sayı ve
+yerde: `lib/services/special_category_matcher.dart` — Keşfet'teki sayı ve
 açılan liste aynı fonksiyondan geçmeli, yoksa rozet yalan söyler.
+
+Kategorilere **tek giriş** Keşfet → "Sana Özel"; ana sayfada sağlık bölümü
+yok. Kategori sayfası şu sırayla: başlık → sağlık durumu açıklaması →
+malzeme kartları. Açıklama metni ve kartlardaki malzemeler
+`lib/data/health_category_info.dart` içinde (TR+EN zorunlu, malzeme ID'leri
+kanonik olmalı — rapor doğruluyor). Bir malzeme kartı yalnızca o malzemeyi
+içeren VE kategoriye uyan tarifleri listeler (`matchesCategoryIngredient`).
 
 ## Git
 
