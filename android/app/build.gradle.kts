@@ -11,6 +11,11 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        // flutter_local_notifications schedules through java.time APIs that
+        // are not in older Android runtimes, so it requires desugaring even
+        // when the app itself never touches them. Without this the build
+        // fails at checkDebugAarMetadata.
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -28,6 +33,8 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // Desugaring adds methods; cheap insurance against the 64K limit.
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -41,4 +48,10 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Version must match what flutter_local_notifications itself builds
+    // against; a lower one still fails the AAR metadata check.
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

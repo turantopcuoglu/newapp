@@ -77,6 +77,11 @@ Her veri veya içerik değişikliğinden sonra: `flutter test` +
 Rapor kopya/benzerlik hatası verirse tarifi gerçekten farklılaştır —
 eşiği gevşetme. Bu kural iki kez gerçek kopyayı yakaladı.
 
+**pubspec'e bağımlılık eklediysen ayrıca `flutter build apk --debug` çalıştır.**
+`analyze`/`test` yalnızca Dart tarafını derler, Gradle'a dokunmaz; desugaring
+ve AAR metadata hataları sadece APK derlemesinde görünür. (Bu sandbox'ta
+Android SDK yok — o durumda kullanıcının cihazda doğrulaması gerekir.)
+
 ## Sağlık kategorileri
 
 `explore_data.dart` içindeki `specialCategories` üç tip filtre kullanır:

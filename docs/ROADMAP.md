@@ -154,6 +154,12 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
    testi sorgula.
 6. **Ana sayfadaki sayı ile açılan liste aynı fonksiyondan geçmeli.**
    `matchesSpecialCategory` tek kaynak; ayrılırlarsa rozet yalan söyler.
+7. **`analyze` + `test` platform derlemesini kapsamaz.** Bu ikisi yalnızca
+   Dart tarafını derler; Gradle'a hiç dokunmaz. `flutter_local_notifications`
+   eklendiğinde Android `checkDebugAarMetadata` aşamasında "core library
+   desugaring" hatası verdi ve testler yeşilken kullanıcıya kadar gitti.
+   Platform yapılandırması isteyen eklentiler Dart tarafında **sessizdir** —
+   bağımlılık eklediysen mutlaka APK derle.
 
 ---
 
@@ -168,3 +174,15 @@ git push -u origin claude/recipe-app-strategy-aojpcj
 
 İçerik değiştiyse `--fix-macros` çalıştırmayı unutma, yoksa
 `data_integrity_test` makro uyuşmazlığından düşer.
+
+**pubspec'e yeni bağımlılık eklediysen** yukarıdakiler YETMEZ:
+
+```bash
+flutter build apk --debug     # Gradle/AAR aşamasını da dener
+```
+
+`analyze` ve `test` Gradle'a hiç dokunmaz; desugaring, minSdk çakışması ve
+AAR metadata hataları yalnızca burada görünür. **Bu sandbox'ta Android SDK
+kurulu değil** (`ANDROID_HOME` boş), yani bu adım burada çalıştırılamaz —
+platform yapılandırması gerektiren bir bağımlılık eklediysen kullanıcıya
+"cihazda derleyip doğrulayın" demen gerekir.
