@@ -1,11 +1,18 @@
 # NutriGuide (nutri_guide)
 
+> **Yeni oturum:** önce `docs/ROADMAP.md` oku — projenin nerede olduğu,
+> sıradaki iş ve bu projede daha önce düşülen tuzaklar orada. Bu dosya
+> değişmez kuralları içerir, ROADMAP güncel durumu.
+
 Kişiselleştirilmiş tarif ve beslenme uygulaması: günlük mod (check-in), sağlık
 durumu, alerji/beslenme tercihi ve evdeki malzemelere göre tarif önerir;
 kalori/makro takibi yapar. Flutter + Riverpod, yerel depolama
 (SharedPreferences), TR/EN iki dilli, backend yok.
 
 ## Komutlar
+
+> Bu ortamda Flutter kurulu gelmez; kurulum adımları `docs/ROADMAP.md`
+> bölüm 0'da. Sürüm 3.32.5 olmalı (3.24.x `intl` ile çakışıyor).
 
 ```bash
 flutter pub get                            # bağımlılıklar
@@ -66,6 +73,17 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
 Her veri veya içerik değişikliğinden sonra: `flutter test` +
 `dart run tool/data_report.dart --strict`. Alerjen güvenliği testleri
 (`test/recommendation_service_test.dart`) asla gevşetilmez.
+
+Rapor kopya/benzerlik hatası verirse tarifi gerçekten farklılaştır —
+eşiği gevşetme. Bu kural iki kez gerçek kopyayı yakaladı.
+
+## Sağlık kategorileri
+
+`explore_data.dart` içindeki `specialCategories` üç tip filtre kullanır:
+sağlık durumu (besin profili veya faydalı malzeme), alerjen dışlama
+(glutensiz/laktozsuz) ve check-in etiketi (regl). Filtreleme mantığı TEK
+yerde: `lib/services/special_category_matcher.dart` — ana sayfadaki sayı ve
+açılan liste aynı fonksiyondan geçmeli, yoksa rozet yalan söyler.
 
 ## Git
 
