@@ -102,7 +102,7 @@
       "tr": "Ispanaklı Muzlu Smoothie"
     },
     "description": {
-      "en": "A creamy green smoothie packed with spinach, banana, and yogurt for sustained energy.",
+      "en": "A creamy green smoothie packed with spinach, banana, and Turkish yogurt for sustained energy.",
       "tr": "Ispanak, muz ve yoğurtla hazırlanan kremamsı yeşil smoothie ile enerjinizi koruyun."
     },
     "mealType": "snack",
@@ -142,7 +142,7 @@
       "en": [
         "Wash the spinach well; young leaves blend smoothest.",
         "Blend the spinach with the milk alone first — this stops stringy bits in the drink.",
-        "Add the banana, yoghurt and honey.",
+        "Add the banana, Turkish yogurt and honey.",
         "Blend on high for 45 seconds until the colour is even.",
         "Taste and add a little more honey if the spinach still comes through.",
         "Pour into a glass and drink straight away, before it separates."
@@ -632,11 +632,11 @@
   {
     "id": "s008",
     "name": {
-      "en": "Yogurt with Honey and Walnuts",
+      "en": "Turkish Yogurt with Honey and Walnuts",
       "tr": "Ballı Cevizli Yoğurt"
     },
     "description": {
-      "en": "Creamy yogurt drizzled with honey and topped with crunchy walnuts for a balanced snack.",
+      "en": "Creamy Turkish yogurt drizzled with honey and topped with crunchy walnuts for a balanced snack.",
       "tr": "Bal ve çıtır cevizle zenginleştirilmiş kremamsı yoğurt atıştırmalığı."
     },
     "mealType": "snack",
@@ -673,10 +673,10 @@
     },
     "steps": {
       "en": [
-        "Drain the yoghurt in a sieve for 15 minutes if you want it thicker.",
+        "Drain the Turkish yogurt in a sieve for 15 minutes if you want it thicker.",
         "Toast the walnuts in a dry pan for 3 minutes to bring out their oils.",
         "Let the walnuts cool, then chop them roughly.",
-        "Spoon the yoghurt into a bowl and smooth the surface.",
+        "Spoon the yogurt into a bowl and smooth the surface.",
         "Scatter the walnuts over the top.",
         "Drizzle with honey just before serving so it stays on the surface."
       ],
@@ -713,7 +713,7 @@
       "tr": "Mangolu Hindistancevizli Smoothie"
     },
     "description": {
-      "en": "A tropical smoothie blending mango, coconut, and yogurt for a refreshing pick-me-up.",
+      "en": "A tropical smoothie blending mango, coconut, and Turkish yogurt for a refreshing pick-me-up.",
       "tr": "Mango, hindistancevizi ve yoğurdun harmanlandığı tropikal bir smoothie."
     },
     "mealType": "snack",
@@ -752,7 +752,7 @@
       "en": [
         "Chill the mango beforehand — cold fruit gives a thicker smoothie without ice.",
         "Peel the mango and cut the flesh away from the stone.",
-        "Put the yoghurt in the blender first so the blades turn freely.",
+        "Put the Turkish yogurt in the blender first so the blades turn freely.",
         "Add the mango, coconut and honey.",
         "Blend on high for 45 seconds until completely smooth.",
         "Pour into a glass and serve cold."
@@ -1260,11 +1260,11 @@
   {
     "id": "s015",
     "name": {
-      "en": "Strawberry Yogurt Parfait",
+      "en": "Strawberry Parfait with Turkish Yogurt",
       "tr": "Çilekli Yoğurt Parfesi"
     },
     "description": {
-      "en": "Layers of yogurt, fresh strawberries, and oats for a light and satisfying parfait.",
+      "en": "Layers of Turkish yogurt, fresh strawberries, and oats for a light and satisfying parfait.",
       "tr": "Yoğurt, taze çilek ve yulaf katmanlarından oluşan hafif ve doyurucu bir parfe."
     },
     "mealType": "snack",
@@ -1302,9 +1302,9 @@
       "en": [
         "Toast the oats in a dry pan for 3 minutes and let them cool.",
         "Hull the strawberries and slice them.",
-        "Spoon a third of the yoghurt into the base of a glass.",
+        "Spoon a third of the Turkish yogurt into the base of a glass.",
         "Add a layer of oats and strawberries.",
-        "Repeat the layers, finishing with yoghurt.",
+        "Repeat the layers, finishing with yogurt.",
         "Drizzle with honey just before serving so the layers stay distinct."
       ],
       "tr": [

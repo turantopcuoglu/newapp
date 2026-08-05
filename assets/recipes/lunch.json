@@ -456,7 +456,7 @@
       "tr": "Tavuk Dürüm"
     },
     "description": {
-      "en": "Spiced grilled chicken wrapped in a warm tortilla with fresh vegetables and yogurt sauce.",
+      "en": "Spiced grilled chicken wrapped in a warm tortilla with fresh vegetables and Turkish yogurt sauce.",
       "tr": "Baharatlı ızgara tavuk, taze sebzeler ve yoğurt sosu ile sıcak lavaşa sarılmış dürüm."
     },
     "mealType": "lunch",
@@ -505,8 +505,8 @@
         "Let it colour for 3 minutes before stirring, then cook 4 minutes more.",
         "Slice the tomato and onion thinly and shred the lettuce.",
         "Warm the tortilla in a dry pan for 20 seconds a side so it folds without tearing.",
-        "Spread yoghurt down the middle of the wrap.",
-        "Layer the chicken and vegetables over the yoghurt.",
+        "Spread Turkish yogurt down the middle of the wrap.",
+        "Layer the chicken and vegetables over the yogurt.",
         "Fold in the ends, roll tightly and cut in half on the diagonal."
       ],
       "tr": [
@@ -628,7 +628,7 @@
         "Sauté the onion, garlic, and bell pepper, then add the ground beef and cook until browned.",
         "Stir in tomato paste, diced tomatoes, salt, pepper, and oregano. Simmer for 10 minutes.",
         "Layer eggplant and meat sauce in a baking dish. Bake at 180°C (350°F) for 25 minutes.",
-        "Let it rest for 5 minutes and serve with yoghurt on the side."
+        "Let it rest for 5 minutes and serve with Turkish yogurt on the side."
       ],
       "tr": [
         "Patlıcanları yuvarlak dilimleyip tuzlayın ve 20 dakika suyunu salması için bekletin.",
@@ -2437,8 +2437,8 @@
     "steps": {
       "en": [
         "Cut the chicken thighs into large, even chunks.",
-        "Mix the yoghurt, crushed garlic, paprika, cumin, olive oil, salt and pepper into a marinade.",
-        "Coat the chicken and refrigerate for at least 1 hour — the yoghurt tenderises it.",
+        "Mix the Turkish yogurt, crushed garlic, paprika, cumin, olive oil, salt and pepper into a marinade.",
+        "Coat the chicken and refrigerate for at least 1 hour — the yogurt tenderises it.",
         "Cut the pepper, onion, courgette and tomato into pieces the same size as the chicken.",
         "Thread the chicken and vegetables alternately onto skewers, not too tightly.",
         "Heat the grill or a griddle pan until very hot.",
@@ -2681,7 +2681,7 @@
         "Pat the cod fillets dry and cut them into finger-sized pieces.",
         "Season the fish with paprika, cumin, salt and pepper.",
         "Shred the cabbage as finely as you can.",
-        "Mix the yoghurt with crushed garlic and lemon juice for the sauce.",
+        "Mix the Turkish yogurt with crushed garlic and lemon juice for the sauce.",
         "Toss half the sauce through the cabbage to make a quick slaw.",
         "Heat the olive oil in a pan over medium-high heat.",
         "Fry the cod for 2-3 minutes a side; it is done when it flakes at a fork's push.",
@@ -2877,11 +2877,11 @@
   {
     "id": "l026",
     "name": {
-      "en": "Purslane Salad with Yoghurt",
+      "en": "Purslane Salad with Turkish Yogurt",
       "tr": "Yoğurtlu Semizotu Salatası"
     },
     "description": {
-      "en": "Purslane dressed with garlic yoghurt — a cooling Anatolian summer plate.",
+      "en": "Purslane dressed with garlic Turkish yogurt — a cooling Anatolian summer plate.",
       "tr": "Sarımsaklı yoğurtla hazırlanan semizotu — serinletici bir Anadolu yaz tabağı."
     },
     "mealType": "lunch",
@@ -2922,10 +2922,10 @@
       "en": [
         "Pick the purslane leaves and tender tips from the thick stems.",
         "Wash them in several changes of water — purslane holds a lot of grit.",
-        "Dry the leaves well so the yoghurt does not thin out.",
+        "Dry the leaves well so the Turkish yogurt does not thin out.",
         "Crush the garlic with a pinch of salt into a paste.",
-        "Whisk the garlic paste into the yoghurt with the lemon juice.",
-        "Fold the purslane through the yoghurt just before serving so it stays crisp.",
+        "Whisk the garlic paste into the yogurt with the lemon juice.",
+        "Fold the purslane through the yogurt just before serving so it stays crisp.",
         "Toast the walnuts in a dry pan for 3 minutes and chop them.",
         "Scatter the walnuts over and finish with olive oil."
       ],

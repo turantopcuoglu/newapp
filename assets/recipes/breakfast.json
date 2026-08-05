@@ -197,7 +197,7 @@
       "tr": "Meyveli Muz Smoothie"
     },
     "description": {
-      "en": "A refreshing and vibrant smoothie blending strawberries, banana, and yogurt for a quick breakfast.",
+      "en": "A refreshing and vibrant smoothie blending strawberries, banana, and Turkish yogurt for a quick breakfast.",
       "tr": "Çilek, muz ve yoğurdun harmanlandığı ferahlatıcı ve pratik bir kahvaltı smoothie'si."
     },
     "mealType": "breakfast",
@@ -236,7 +236,7 @@
       "en": [
         "Chill the fruit beforehand — cold fruit gives a thicker smoothie without ice.",
         "Hull the strawberries and peel the banana.",
-        "Put the yoghurt in the blender first so the blades move freely.",
+        "Put the Turkish yogurt in the blender first so the blades move freely.",
         "Add the banana, strawberries and honey.",
         "Blend on high for 30-45 seconds until completely smooth.",
         "Add the chia seeds and pulse briefly so they stay whole.",
@@ -382,11 +382,11 @@
   {
     "id": "b005",
     "name": {
-      "en": "Greek Yogurt Parfait with Nuts and Berries",
+      "en": "Turkish Yogurt Parfait with Nuts and Berries",
       "tr": "Meyveli ve Fındıklı Yoğurt Parfesi"
     },
     "description": {
-      "en": "Layered Greek yogurt with crunchy walnuts, fresh blueberries, and a drizzle of honey.",
+      "en": "Layered Turkish yogurt with crunchy walnuts, fresh blueberries, and a drizzle of honey.",
       "tr": "Çıtır ceviz, taze yaban mersini ve bal ile katman katman hazırlanmış yoğurt parfesi."
     },
     "mealType": "breakfast",
@@ -427,9 +427,9 @@
         "Toast the oats in a dry pan for 3 minutes until they smell nutty, then cool.",
         "Roughly chop the hazelnuts.",
         "Rinse the blueberries and pat them dry.",
-        "Spoon a third of the yoghurt into the bottom of a glass.",
+        "Spoon a third of the Turkish yogurt into the bottom of a glass.",
         "Add a layer of oats and blueberries.",
-        "Repeat the layers, finishing with yoghurt on top.",
+        "Repeat the layers, finishing with yogurt on top.",
         "Scatter the hazelnuts over the surface.",
         "Drizzle with honey just before serving so the layers stay distinct."
       ],
@@ -1250,7 +1250,7 @@
       "tr": "Yaban Mersinli Gece Yulafı"
     },
     "description": {
-      "en": "No-cook overnight oats soaked in yogurt with fresh blueberries and flaxseeds.",
+      "en": "No-cook overnight oats soaked in Turkish yogurt with fresh blueberries and flaxseeds.",
       "tr": "Yoğurt içinde bekletilmiş, taze yaban mersini ve keten tohumu ile hazırlanan pişirme gerektirmeyen yulaf."
     },
     "mealType": "breakfast",
@@ -1288,7 +1288,7 @@
     },
     "steps": {
       "en": [
-        "Stir the oats, yoghurt and flaxseed together in a jar.",
+        "Stir the oats, Turkish yogurt and flaxseed together in a jar.",
         "Add the honey and mix until no dry oats remain.",
         "Fold in half the blueberries, keeping the rest for the morning.",
         "Seal the jar and refrigerate for at least 6 hours or overnight.",
@@ -1485,7 +1485,7 @@
       "en": [
         "Freeze the banana in slices beforehand for a thicker, colder smoothie.",
         "Blitz the oats alone for 10 seconds so they do not stay gritty.",
-        "Add the milk and yoghurt to the blender.",
+        "Add the milk and Turkish yogurt to the blender.",
         "Add the frozen banana, almonds, honey and cinnamon.",
         "Blend on high for 45 seconds until completely smooth.",
         "Check the consistency and thin with milk if it is too thick to pour.",
@@ -2071,7 +2071,7 @@
         "Return the fried vegetables to the sauce and season with salt.",
         "Make wells in the mixture and crack in the eggs.",
         "Cover and cook on low for 5 minutes until the whites just set.",
-        "Serve with a spoonful of garlicky yoghurt on the side."
+        "Serve with a spoonful of garlicky Turkish yogurt on the side."
       ],
       "tr": [
         "Patlıcan ve kabağı 2 cm'lik küpler hâlinde doğrayın.",

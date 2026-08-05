@@ -163,7 +163,9 @@ const List<Ingredient> mockIngredients = [
   ),
   Ingredient(
     id: 'yogurt',
-    name: {'en': 'Yogurt', 'tr': 'Yoğurt'},
+    // İngilizcede "Turkish Yogurt" — süzme/Greek yoğurttan ayrışsın diye.
+    // Türkçede sade "Yoğurt" yeterli.
+    name: {'en': 'Turkish Yogurt', 'tr': 'Yoğurt'},
     category: IngredientCategory.dairy,
     allergenTags: ['dairy'],
   ),

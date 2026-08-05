@@ -839,7 +839,7 @@
         "Wash the spinach, chop it and cook it in a dry pan until its water evaporates.",
         "Soften the diced onion in olive oil and mix it into the spinach.",
         "Stir in the crumbled feta, salt and pepper and let the filling cool completely.",
-        "Beat the egg with the yoghurt and a little olive oil for the wash.",
+        "Beat the egg with the Turkish yogurt and a little olive oil for the wash.",
         "Lay out a sheet of phyllo and brush it lightly with the wash.",
         "Spread a line of filling along one edge and roll it up loosely.",
         "Repeat with the remaining sheets and coil them into an oiled tin.",
@@ -1455,7 +1455,7 @@
       "tr": "Tavuk Döner Kasesi"
     },
     "description": {
-      "en": "Spiced chicken shawarma served over rice with fresh vegetables and yogurt sauce.",
+      "en": "Spiced chicken shawarma served over rice with fresh vegetables and Turkish yogurt sauce.",
       "tr": "Baharatlı tavuk döner, pilav üzerine taze sebzeler ve yoğurt sosuyla servis edilir."
     },
     "mealType": "dinner",
@@ -1503,11 +1503,11 @@
         "Cook the rice in twice its volume of salted water and keep it covered.",
         "Sear the chicken in a very hot pan in a single layer for 4 minutes.",
         "Turn and cook 3 minutes more until the edges crisp like döner.",
-        "Mix the yoghurt with crushed garlic, lemon juice and a pinch of salt.",
+        "Mix the Turkish yogurt with crushed garlic, lemon juice and a pinch of salt.",
         "Shred the lettuce and dice the tomato and cucumber.",
         "Spoon the rice into a bowl as the base.",
         "Arrange the chicken and vegetables in sections over the rice.",
-        "Spoon the garlic yoghurt over the top and serve warm."
+        "Spoon the garlic yogurt over the top and serve warm."
       ],
       "tr": [
         "Tavuğu ince dilimleyip kimyon, zeytinyağı, tuz ve karabiberle 20 dakika marine edin.",
@@ -1581,7 +1581,7 @@
       "tr": "Mantı"
     },
     "description": {
-      "en": "Tiny Turkish dumplings filled with spiced meat, topped with yogurt and garlic butter sauce.",
+      "en": "Tiny Turkish dumplings filled with spiced meat, topped with Turkish yogurt and garlic butter sauce.",
       "tr": "Baharatlı kıyma dolgulu minik Türk mantısı, yoğurt ve sarımsaklı tereyağı sosuyla."
     },
     "mealType": "dinner",
@@ -1634,8 +1634,8 @@
         "Pinch the four corners together so no filling escapes during boiling.",
         "Bring a large pot of salted water to a rolling boil.",
         "Cook the mantı for 10-12 minutes; they are done when they float and the dough is tender.",
-        "Mix the yoghurt with crushed garlic and a pinch of salt.",
-        "Drain the mantı well and spread the garlic yoghurt over them.",
+        "Mix the Turkish yogurt with crushed garlic and a pinch of salt.",
+        "Drain the mantı well and spread the garlic yogurt over them.",
         "Finish with melted butter and cumin, and serve immediately."
       ],
       "tr": [
@@ -2116,11 +2116,11 @@
   {
     "id": "d020",
     "name": {
-      "en": "Chicken Skewers with Yogurt Sauce",
+      "en": "Chicken Skewers with Turkish Yogurt Sauce",
       "tr": "Yoğurt Soslu Tavuk Şiş"
     },
     "description": {
-      "en": "Grilled marinated chicken skewers with a garlicky yogurt sauce.",
+      "en": "Grilled marinated chicken skewers with a garlicky Turkish yogurt sauce.",
       "tr": "Sarımsaklı yoğurt sosuyla marine edilmiş ızgara tavuk şiş."
     },
     "mealType": "dinner",
@@ -2160,14 +2160,14 @@
     "steps": {
       "en": [
         "Cut the chicken into even cubes.",
-        "Mix the yoghurt, crushed garlic, paprika, olive oil, lemon juice, salt and pepper.",
+        "Mix the Turkish yogurt, crushed garlic, paprika, olive oil, lemon juice, salt and pepper.",
         "Coat the chicken in the marinade and refrigerate for at least 1 hour.",
         "Thread the cubes onto skewers, leaving a little space between them.",
         "Heat the grill or griddle until very hot.",
         "Grill for 12-15 minutes, turning every 3 minutes for an even crust.",
         "Check the largest piece — the juices should run clear.",
         "Rest the skewers for 3 minutes.",
-        "Serve with the reserved yoghurt sauce and lemon wedges."
+        "Serve with the reserved yogurt sauce and lemon wedges."
       ],
       "tr": [
         "Tavuğu eşit küpler hâlinde doğrayın.",
@@ -2275,7 +2275,7 @@
         "Make wells in the spinach and crack an egg into each.",
         "Cover the pan and cook on low for 4-5 minutes.",
         "The eggs are ready when the whites are set but the yolks still soft.",
-        "Stir the crushed garlic into the yoghurt and serve it alongside, straight from the pan."
+        "Stir the crushed garlic into the Turkish yogurt and serve it alongside, straight from the pan."
       ],
       "tr": [
         "Ispanağı iyice yıkayıp kabaca doğrayın.",
@@ -2388,7 +2388,7 @@
         "Season with salt and pepper; the batter should be thick, not runny.",
         "Heat the olive oil in a pan over medium heat.",
         "Drop spoonfuls in and flatten them slightly; fry 3-4 minutes a side until golden.",
-        "Drain on paper towels and serve warm with yoghurt."
+        "Drain on paper towels and serve warm with Turkish yogurt."
       ],
       "tr": [
         "Kabakları iri rendeleyin.",
