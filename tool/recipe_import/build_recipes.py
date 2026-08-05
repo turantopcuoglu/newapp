@@ -141,7 +141,9 @@ CUISINE_RULES = [
     ('ortadoğu', 'middleEastern'), ('orta doğu', 'middleEastern'),
     ('levant', 'middleEastern'), ('kuzey afrika', 'middleEastern'),
     ('meksika', 'mexican'), ('tex-mex', 'mexican'),
-    ('asya', 'asian'), ('japon', 'asian'),
+    ('asya', 'asian'), ('japon', 'asian'), ('kore', 'asian'),
+    ('çin', 'asian'), ('vietnam', 'asian'), ('tayland', 'asian'),
+    ('latin amerika', 'mexican'),
 ]
 
 

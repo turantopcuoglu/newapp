@@ -3217,5 +3217,5206 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "b035",
+    "name": {
+      "en": "Vegan Menemen with Tofu",
+      "tr": "Tofulu Vegan Menemen"
+    },
+    "description": {
+      "en": "An egg-free menemen variation made with tomatoes, Turkish green pepper and crumbled tofu.",
+      "tr": "Domates, sivri biber ve ufalanmış tofuyla hazırlanan, yumurtasız menemen uyarlaması."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tofu",
+      "tomato",
+      "bell_pepper",
+      "onion",
+      "olive_oil",
+      "turmeric",
+      "red_pepper_flakes",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "soy"
+    ],
+    "checkInTags": [
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 283,
+      "proteinG": 15,
+      "carbsG": 20,
+      "fatG": 18,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Press the tofu with a clean towel to remove excess moisture, then crumble it into coarse pieces.",
+        "Heat the oil over medium heat.",
+        "If using onion, cook it for 3 minutes, then add the finely chopped pepper and cook for 2 minutes.",
+        "Add the grated tomato and cook uncovered for 6-8 minutes until excess liquid evaporates.",
+        "Add the tofu, turmeric and seasonings.",
+        "Cook for 4-5 minutes, stirring, and serve hot."
+      ],
+      "tr": [
+        "Tofuyu temiz bir bezle bastırarak fazla suyundan arındırın ve iri parçalar hâlinde ufalayın.",
+        "Yağı tavada orta ateşte ısıtın.",
+        "Soğan kullanıyorsanız 3 dakika; ardından ince doğranmış biberi 2 dakika soteleyin.",
+        "Rendelenmiş domatesi ekleyip kapaksız 6-8 dakika, fazla suyu çekilene kadar pişirin.",
+        "Tofu, zerdeçal ve baharatları ekleyin.",
+        "Karıştırarak 4-5 dakika ısıtın ve sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tofu": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "turmeric": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b036",
+    "name": {
+      "en": "Apple Cinnamon Overnight Oats",
+      "tr": "Elmalı Tarçınlı Gece Yulafı"
+    },
+    "description": {
+      "en": "No-cook overnight oats set with soy drink, apple, chia seeds and walnuts.",
+      "tr": "Soya içeceği, elma, chia ve cevizle gece boyunca kıvam alan pişirmesiz yulaf kasesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "soy_milk",
+      "apple",
+      "chia_seeds",
+      "walnut",
+      "cinnamon",
+      "vanilla"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 432,
+      "proteinG": 17,
+      "carbsG": 56,
+      "fatG": 16,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Mix the oats, soy drink, chia, cinnamon and vanilla in a lidded jar.",
+        "Dice half of the apple and fold it into the mixture.",
+        "Cover and refrigerate for at least 6 hours.",
+        "Stir before serving and top with the remaining apple and roughly chopped walnuts.",
+        "Serve cold."
+      ],
+      "tr": [
+        "Yulaf, soya içeceği, chia, tarçın ve vanilyayı kapaklı bir kavanozda karıştırın.",
+        "Elmanın yarısını küçük küpler hâlinde doğrayıp karışıma ekleyin.",
+        "Kapağını kapatıp en az 6 saat buzdolabında bekletin.",
+        "Servisten önce karıştırın; kalan elmayı ve iri kıyılmış cevizi üzerine ekleyin.",
+        "Soğuk tüketin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "soy_milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "apple": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "vanilla": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b037",
+    "name": {
+      "en": "Herbed Chickpea Flour Pancakes",
+      "tr": "Otlu Nohut Unu Krepleri"
+    },
+    "description": {
+      "en": "Thin savoury breakfast pancakes made with chickpea flour, courgette, spinach and fresh herbs.",
+      "tr": "Nohut unu, kabak, ıspanak ve taze otlarla hazırlanan tuzlu, ince kahvaltı krepleri."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea_flour",
+      "water",
+      "zucchini",
+      "spinach",
+      "parsley",
+      "olive_oil",
+      "cumin",
+      "salt",
+      "black_pepper",
+      "tomato",
+      "cucumber"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 355,
+      "proteinG": 16,
+      "carbsG": 40,
+      "fatG": 15,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Whisk the chickpea flour, water, cumin, salt and pepper until smooth; rest for 10 minutes.",
+        "Finely grate and squeeze the courgette; finely chop the spinach and parsley.",
+        "Stir the vegetables into the batter.",
+        "Heat a non-stick pan over medium heat and grease it with half the oil.",
+        "Spread in half the batter as a thin layer.",
+        "Flip once the base is browned and the top looks dry; cook the second side for 1-2 minutes.",
+        "Repeat and serve with the vegetables."
+      ],
+      "tr": [
+        "Nohut unu, su, kimyon, tuz ve karabiberi pürüzsüz olana kadar çırpıp 10 dakika dinlendirin.",
+        "Kabağı ince rendeleyip suyunu sıkın; ıspanak ve maydanozu ince kıyın.",
+        "Sebzeleri hamura karıştırın.",
+        "Yapışmaz tavayı orta ateşte ısıtıp yağın yarısıyla yağlayın.",
+        "Hamurun yarısını ince tabaka hâlinde yayın.",
+        "Altı kızarıp üst yüzeyi kuruyunca çevirin; ikinci yüzü 1-2 dakika pişirin.",
+        "Kalan hamurla tekrarlayıp sebzelerle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea_flour": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 110.0,
+        "unit": "ml"
+      },
+      "zucchini": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cucumber": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b038",
+    "name": {
+      "en": "Berry Chia Bowl with Turkish Yogurt",
+      "tr": "Orman Meyveli Chia Yoğurt Kasesi"
+    },
+    "description": {
+      "en": "A cold breakfast bowl made with lactose-free Turkish yogurt, mixed berries, chia seeds and hazelnuts.",
+      "tr": "Laktozsuz yoğurt, orman meyveleri, chia ve fındıkla hazırlanan soğuk kahvaltı kasesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lactose_free_yogurt",
+      "blueberry",
+      "raspberry",
+      "chia_seeds",
+      "hazelnut",
+      "molasses",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 429,
+      "proteinG": 14,
+      "carbsG": 52,
+      "fatG": 21,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Mix the Turkish yogurt and chia seeds in a bowl and refrigerate for 10 minutes.",
+        "Wash and dry the berries thoroughly; if frozen, thaw them in the refrigerator and drain excess liquid.",
+        "Arrange the berries over the Turkish yogurt.",
+        "Finish with roughly chopped hazelnuts, grape molasses and cinnamon; serve immediately."
+      ],
+      "tr": [
+        "Yoğurt ve chia tohumunu kasede karıştırıp 10 dakika buzdolabında bekletin.",
+        "Orman meyvelerini yıkayıp iyice kurulayın; donmuşsa buzdolabında çözdürüp fazla suyunu süzün.",
+        "Meyveleri yoğurdun üzerine yerleştirin.",
+        "İri kıyılmış fındık, pekmez ve tarçınla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lactose_free_yogurt": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "hazelnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "molasses": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b039",
+    "name": {
+      "en": "Potato and Spinach Egg Muffins",
+      "tr": "Patatesli Ispanaklı Yumurta Muffinleri"
+    },
+    "description": {
+      "en": "Two individual egg muffins baked with potato, spinach, mushrooms and pepper.",
+      "tr": "Patates, ıspanak, mantar ve biberle fırınlanan iki adet porsiyonluk yumurta muffini."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "potato",
+      "spinach",
+      "mushroom",
+      "bell_pepper",
+      "olive_oil",
+      "salt",
+      "black_pepper",
+      "oregano"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "periodFatigue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 384,
+      "proteinG": 24,
+      "carbsG": 32,
+      "fatG": 19,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 180°C.",
+        "Lightly grease two large muffin cups with half the oil.",
+        "Finely chop the mushrooms and pepper.",
+        "Sauté in the remaining oil for 4 minutes; add the spinach and cook for 1-2 minutes until its moisture evaporates.",
+        "Dice the potato and divide it with the vegetables between the cups.",
+        "Whisk the eggs with the seasonings and pour over.",
+        "Bake for 18-22 minutes until the centres are fully set.",
+        "Rest in the tin for 5 minutes before removing."
+      ],
+      "tr": [
+        "Fırını 180°C'ye ısıtın.",
+        "İki büyük muffin gözünü yağın yarısıyla ince biçimde yağlayın.",
+        "Mantar ve biberi küçük doğrayın.",
+        "Kalan yağda 4 dakika soteleyin; ıspanağı ekleyip suyu çekilene kadar 1-2 dakika pişirin.",
+        "Patatesi küçük küpler hâlinde doğrayıp sebzelerle muffin gözlerine paylaştırın.",
+        "Yumurtaları baharatlarla çırpıp üzerlerine dökün.",
+        "Ortaları tamamen katılaşana kadar 18-22 dakika pişirin.",
+        "Kalıpta 5 dakika dinlendirip çıkarın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "potato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b040",
+    "name": {
+      "en": "Çılbır (Turkish Poached Eggs with Turkish Yogurt)",
+      "tr": "Çılbır"
+    },
+    "description": {
+      "en": "A traditional Turkish breakfast of poached eggs over garlic Turkish yogurt with chilli butter.",
+      "tr": "Sarımsaklı yoğurt üzerinde poşe yumurta ve pul biberli tereyağıyla servis edilen geleneksel Türk kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "yogurt",
+      "butter",
+      "garlic",
+      "red_pepper_flakes",
+      "white_vinegar",
+      "bread",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 496,
+      "proteinG": 39,
+      "carbsG": 35,
+      "fatG": 23,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Mix the Turkish yogurt with the grated garlic and a little salt and spread it on a serving plate.",
+        "Bring a wide pan of water to a bare simmer and add the vinegar.",
+        "Crack the eggs into separate cups and slide them into the water.",
+        "Poach for 3-4 minutes until the whites are fully set; drain with a slotted spoon and place over the Turkish yogurt.",
+        "Foam the butter with the pepper flakes for 20-30 seconds, spoon over the eggs and serve with the bread."
+      ],
+      "tr": [
+        "Yoğurdu rendelenmiş sarımsak ve az tuzla karıştırıp servis tabağına yayın.",
+        "Geniş tencerede suyu hafif kaynama noktasına getirin; sirkeyi ekleyin.",
+        "Yumurtaları ayrı kaplara kırıp suya kaydırın.",
+        "Beyazlar tamamen katılaşana kadar 3-4 dakika pişirin; delikli kaşıkla süzüp yoğurdun üzerine alın.",
+        "Tereyağını pul biberle 20-30 saniye köpürtün; yumurtaların üzerine gezdirip ekmekle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 0.5,
+        "unit": "clove"
+      },
+      "red_pepper_flakes": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "white_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "bread": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b041",
+    "name": {
+      "en": "Eggs with Pastırma and Peppers",
+      "tr": "Pastırmalı Biberli Yumurta"
+    },
+    "description": {
+      "en": "A substantial egg breakfast cooked in a pan with pastırma, peppers and tomato.",
+      "tr": "Pastırma, biber ve domatesle tavada pişirilen doyurucu yumurta kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "pastirma",
+      "bell_pepper",
+      "tomato",
+      "olive_oil",
+      "bread",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 548,
+      "proteinG": 46,
+      "carbsG": 35,
+      "fatG": 25,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Finely chop the pepper, dice the tomato and cut the pastırma into strips.",
+        "Heat the oil over medium heat and cook the pepper for 3 minutes, then the tomato for 3 minutes.",
+        "Add the pastırma and toss for 1 minute.",
+        "Crack in the eggs and cover.",
+        "Cook until the whites are fully set; serve with black pepper and the bread without adding extra salt."
+      ],
+      "tr": [
+        "Biberi ince doğrayıp domatesi küp kesin; pastırmayı şeritlere ayırın.",
+        "Yağı tavada orta ateşte ısıtıp biberi 3 dakika, domatesi 3 dakika pişirin.",
+        "Pastırmayı ekleyip 1 dakika çevirin.",
+        "Yumurtaları kırıp kapağı kapatın.",
+        "Beyazlar tamamen katılaşana kadar pişirin; ek tuz eklemeden karabiber ve ekmekle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "pastirma": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b042",
+    "name": {
+      "en": "Breakfast Quesadilla with Smoked Turkey and Kashar",
+      "tr": "Hindi Füme ve Kaşarlı Kahvaltı Quesadillası"
+    },
+    "description": {
+      "en": "A crisp breakfast quesadilla filled with smoked turkey, kashar cheese and pepper.",
+      "tr": "Hindi füme, kaşar peyniri ve biberle doldurulup tavada çıtırlaştırılan kahvaltı quesadillası."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "turkey_breast",
+      "cheddar_cheese",
+      "bell_pepper",
+      "onion",
+      "olive_oil",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 482,
+      "proteinG": 37,
+      "carbsG": 36,
+      "fatG": 20,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Finely chop the pepper and spring onion and cut the smoked turkey into strips.",
+        "Layer the kashar, turkey and vegetables over half the tortilla; add pepper and fold over.",
+        "Heat the oil in a non-stick pan over medium heat.",
+        "Cook for 2-3 minutes per side until browned.",
+        "Once the cheese has fully melted, rest for 1 minute and cut into wedges."
+      ],
+      "tr": [
+        "Biberi ve taze soğanı ince doğrayın; hindi fümeyi şerit kesin.",
+        "Tortillanın yarısına kaşar, hindi füme ve sebzeleri yayın; karabiber ekleyip diğer yarısını kapatın.",
+        "Yağı yapışmaz tavada orta ateşte ısıtın.",
+        "Quesadillayı her yüzü 2-3 dakika kızarana kadar pişirin.",
+        "Peynir tamamen eriyince 1 dakika dinlendirip üçgenlere kesin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b043",
+    "name": {
+      "en": "Savoury Oats with Egg and Mushrooms",
+      "tr": "Yumurtalı Mantarlı Tuzlu Yulaf"
+    },
+    "description": {
+      "en": "Savoury milk-cooked oats topped with mushrooms, spinach, egg and Parmesan.",
+      "tr": "Sütle pişen yulafın mantar, ıspanak, yumurta ve Parmesanla tamamlandığı tuzlu kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "milk",
+      "water",
+      "eggs",
+      "mushroom",
+      "spinach",
+      "parmesan",
+      "olive_oil",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 439,
+      "proteinG": 28,
+      "carbsG": 42,
+      "fatG": 19,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the oats with the milk and water over low heat for 5-6 minutes, stirring.",
+        "Heat the oil in another pan; brown the sliced mushrooms for 5 minutes and add the spinach.",
+        "Add the egg and cook until the white and yolk reach the required safe doneness.",
+        "Spoon the oats into a bowl and finish with the vegetables, egg, Parmesan and black pepper."
+      ],
+      "tr": [
+        "Yulafı süt ve suyla kısık ateşte 5-6 dakika karıştırarak pişirin.",
+        "Yağı ayrı tavada ısıtın; dilimlenmiş mantarı 5 dakika kızartıp ıspanağı ekleyin.",
+        "Yumurtayı tavaya kırıp beyazı ve sarısı istenen güvenli kıvama gelene kadar pişirin.",
+        "Yulafı kaseye alın; sebzeler, yumurta, Parmesan ve karabiberle tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 100.0,
+        "unit": "ml"
+      },
+      "water": {
+        "amount": 120.0,
+        "unit": "ml"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "mushroom": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b044",
+    "name": {
+      "en": "French Toast with Ricotta and Berries",
+      "tr": "Orman Meyveli Ricottalı Fransız Tostu"
+    },
+    "description": {
+      "en": "Egg-and-milk soaked bread pan-cooked and served with ricotta and mixed berries.",
+      "tr": "Yumurtalı süt karışımında pişirilen ekmeğin ricotta ve orman meyveleriyle servis edildiği tatlı kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "eggs",
+      "milk",
+      "ricotta",
+      "blueberry",
+      "raspberry",
+      "maple_syrup",
+      "butter",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 582,
+      "proteinG": 25,
+      "carbsG": 73,
+      "fatG": 22,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Whisk the egg, milk and cinnamon in a wide dish.",
+        "Soak both sides of the bread briefly.",
+        "Melt the butter over medium-low heat and cook the bread for 2-3 minutes per side.",
+        "Check that no raw egg mixture remains in the centre.",
+        "Serve warm with the ricotta, berries and maple syrup."
+      ],
+      "tr": [
+        "Yumurta, süt ve tarçını geniş tabakta çırpın.",
+        "Ekmekleri iki yüzü karışımı çekecek kadar kısa süre bekletin.",
+        "Tereyağını tavada orta-kısık ateşte eritin; ekmekleri her yüzü 2-3 dakika pişirin.",
+        "Merkezde çiğ yumurta karışımı kalmadığını kontrol edin.",
+        "Ricotta, orman meyveleri ve akçaağaç şurubuyla sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "ricotta": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "maple_syrup": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b045",
+    "name": {
+      "en": "Salmon Potato Breakfast Cakes",
+      "tr": "Somonlu Patates Kahvaltı Köfteleri"
+    },
+    "description": {
+      "en": "Pan-seared breakfast cakes made with salmon, potato and dill and served with a Turkish yogurt sauce.",
+      "tr": "Somon, patates ve dereotuyla hazırlanan; tavada kızartılıp yoğurtlu sosla sunulan kahvaltı köfteleri."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "potato",
+      "eggs",
+      "oats",
+      "dill",
+      "olive_oil",
+      "yogurt",
+      "lemon",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 541,
+      "proteinG": 38,
+      "carbsG": 43,
+      "fatG": 24,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Check the salmon for bones and flake it; mash the potato.",
+        "Mix the salmon, potato, egg, oats and dill and shape into 4 small cakes.",
+        "Heat the oil over medium heat and cook for 3-4 minutes per side until browned and hot in the centre.",
+        "Mix the Turkish yogurt with the lemon juice and serve with the cakes."
+      ],
+      "tr": [
+        "Somonu kılçık açısından kontrol edip iri parçalara ayırın; patatesi ezin.",
+        "Somon, patates, yumurta, yulaf ve dereotunu karıştırıp 4 küçük köfte yapın.",
+        "Yağı tavada orta ateşte ısıtın; köfteleri her yüzü 3-4 dakika kızarana ve merkezi tamamen ısınana kadar pişirin.",
+        "Yoğurt ile limon suyunu karıştırıp köftelerle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "oats": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b046",
+    "name": {
+      "en": "Chicken Sausage Vegetable Breakfast Skillet",
+      "tr": "Tavuk Sosisli Sebzeli Kahvaltı Tavası"
+    },
+    "description": {
+      "en": "A one-pan breakfast of chicken sausage, potato, egg and colourful vegetables.",
+      "tr": "Tavuk sosisi, patates, yumurta ve renkli sebzelerle hazırlanan tek tava kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sausage",
+      "potato",
+      "eggs",
+      "bell_pepper",
+      "zucchini",
+      "onion",
+      "olive_oil",
+      "oregano",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 561,
+      "proteinG": 28,
+      "carbsG": 40,
+      "fatG": 32,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cut the potato into 1 cm cubes, chop the vegetables and slice the sausage.",
+        "Heat the oil and cook the potato for 10 minutes; add 2 tbsp water and cover briefly if needed.",
+        "Add the sausage and vegetables and cook for 8-10 minutes until the sausage reaches 74°C in the centre.",
+        "Make a well, add the egg, cover and cook until the white is fully set."
+      ],
+      "tr": [
+        "Patatesi 1 cm küp, sebzeleri küçük parçalar hâlinde doğrayın; sosisi dilimleyin.",
+        "Yağı tavada ısıtıp patatesi 10 dakika pişirin; gerekirse 2 yemek kaşığı su ekleyip kısa süre kapatın.",
+        "Sosis ve sebzeleri ekleyip sosisin merkezi 74°C'ye ulaşana kadar 8-10 dakika pişirin.",
+        "Ortada yuva açıp yumurtayı kırın; kapağı kapalı olarak beyaz tamamen katılaşana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sausage": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b047",
+    "name": {
+      "en": "Cheesy Polenta with Poached Eggs",
+      "tr": "Peynirli Polenta ve Poşe Yumurta"
+    },
+    "description": {
+      "en": "Creamy cheese polenta served with spinach and two poached eggs.",
+      "tr": "Kremamsı peynirli polentanın ıspanak ve iki poşe yumurtayla servis edildiği sıcak kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cornmeal",
+      "water",
+      "eggs",
+      "cheddar_cheese",
+      "spinach",
+      "olive_oil",
+      "white_vinegar",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 572,
+      "proteinG": 30,
+      "carbsG": 47,
+      "fatG": 30,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Bring the water to the boil and whisk in the polenta in a thin stream; cook until thick according to the packet timing.",
+        "Stir in the grated kashar and keep warm.",
+        "Wilt the spinach in the oil for 1-2 minutes.",
+        "Poach the eggs in barely simmering water with the vinegar for 3-4 minutes until the whites are fully set.",
+        "Spoon the polenta into a bowl, add the spinach and eggs and serve with black pepper."
+      ],
+      "tr": [
+        "Suyu kaynatıp polentayı ince akışla eklerken çırpın; paket süresine göre koyulaşana kadar pişirin.",
+        "Rendelenmiş kaşarı polentaya karıştırıp sıcak tutun.",
+        "Ispanağı yağda 1-2 dakika soldurun.",
+        "Sirke eklenmiş hafif kaynar suda yumurtaları, beyazları tamamen katılaşana kadar 3-4 dakika poşe edin.",
+        "Polentayı kaseye alın; ıspanak ve yumurtaları ekleyip karabiberle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cornmeal": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 280.0,
+        "unit": "ml"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "white_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b048",
+    "name": {
+      "en": "Beef and Potato Breakfast Hash",
+      "tr": "Kıymalı Patates Kahvaltı Tavası"
+    },
+    "description": {
+      "en": "A substantial breakfast hash made with lean minced beef, potato, peppers and egg.",
+      "tr": "Yağsız dana kıyma, patates, biber ve yumurtayla hazırlanan doyurucu kahvaltı tavası."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "potato",
+      "eggs",
+      "bell_pepper",
+      "onion",
+      "tomato",
+      "olive_oil",
+      "paprika",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 567,
+      "proteinG": 39,
+      "carbsG": 40,
+      "fatG": 28,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cut the potato into 1 cm cubes and finely chop the pepper and onion.",
+        "Heat the oil and cook the potato for 10-12 minutes.",
+        "Add the beef and onion and cook until the beef reaches 71°C.",
+        "Add the pepper, tomato and paprika and cook for 4 minutes.",
+        "Make a well, add the egg, cover and cook until the white is fully set."
+      ],
+      "tr": [
+        "Patatesi 1 cm küp; biber ve soğanı küçük doğrayın.",
+        "Yağı tavada ısıtıp patatesi 10-12 dakika pişirin.",
+        "Kıyma ve soğanı ekleyip kıyma 71°C'ye ulaşana kadar kavurun.",
+        "Biber, domates ve toz biberi ekleyip 4 dakika pişirin.",
+        "Yuva açıp yumurtayı kırın; kapağı kapalı olarak beyaz tamamen katılaşana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b049",
+    "name": {
+      "en": "Cocoa Banana Protein Pancakes",
+      "tr": "Kakaolu Muzlu Protein Pankekleri"
+    },
+    "description": {
+      "en": "Soft pancakes made with oats, banana, egg, milk, cocoa and whey protein.",
+      "tr": "Yulaf, muz, yumurta, süt, kakao ve peynir altı suyu proteiniyle hazırlanan yumuşak pankekler."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "banana",
+      "eggs",
+      "milk",
+      "whey_protein",
+      "cocoa_powder",
+      "baking_powder",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 555,
+      "proteinG": 38,
+      "carbsG": 67,
+      "fatG": 18,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Blend the oats to a flour.",
+        "Blend with the banana, egg, milk, protein powder, cocoa and baking powder until smooth.",
+        "Rest for 5 minutes; add 1-2 tbsp water if too thick.",
+        "Spread the oil thinly over a non-stick pan.",
+        "Pour 4 small pancakes.",
+        "Cook for 2-3 minutes per side until no raw batter remains in the centre."
+      ],
+      "tr": [
+        "Yulafı un kıvamına gelene kadar çekin.",
+        "Muz, yumurta, süt, protein tozu, kakao ve kabartma tozuyla pürüzsüz karıştırın.",
+        "Hamuru 5 dakika dinlendirin; çok koyuysa 1-2 yemek kaşığı su ekleyin.",
+        "Yağı yapışmaz tavaya ince yayın.",
+        "Hamurdan 4 küçük pankek dökün.",
+        "Her yüzünü 2-3 dakika, merkezde çiğ hamur kalmayana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 100.0,
+        "unit": "ml"
+      },
+      "whey_protein": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b050",
+    "name": {
+      "en": "Kuymak (Turkish Cornmeal and Cheese Breakfast)",
+      "tr": "Kuymak"
+    },
+    "description": {
+      "en": "A hot Black Sea breakfast dish made with cornmeal, butter and melting cheese.",
+      "tr": "Mısır unu, tereyağı ve eriyen peynirle hazırlanan sıcak Karadeniz kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cornmeal",
+      "water",
+      "string_cheese",
+      "butter",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 529,
+      "proteinG": 23,
+      "carbsG": 40,
+      "fatG": 32,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Melt the butter in a small pan and toast the cornmeal for 2 minutes until fragrant.",
+        "Gradually whisk in the water and simmer for 6-8 minutes until smooth.",
+        "Add the cheese and stir only until melted and stretchy.",
+        "Serve hot without extra salt if the cheese is already salty."
+      ],
+      "tr": [
+        "Tereyağını küçük tavada eritip mısır ununu 2 dakika kokusu çıkana kadar kavurun.",
+        "Suyu azar azar ekleyip topak kalmayana kadar çırpın; kısık ateşte 6-8 dakika pişirin.",
+        "Peyniri ekleyip yalnızca eriyene ve uzayan kıvam oluşana kadar karıştırın.",
+        "Peynir tuzluysa ek tuz koymadan sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cornmeal": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 220.0,
+        "unit": "ml"
+      },
+      "string_cheese": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b051",
+    "name": {
+      "en": "Eggs Benedict with Turkey Ham",
+      "tr": "Hindi Jambonlu Eggs Benedict"
+    },
+    "description": {
+      "en": "Toasted bread topped with turkey ham, poached eggs and a small portion of hollandaise.",
+      "tr": "Kızarmış ekmek üzerinde hindi jambon, poşe yumurta ve küçük porsiyon Hollandez sos."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "turkey_breast",
+      "eggs",
+      "butter",
+      "lemon",
+      "white_vinegar",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 682,
+      "proteinG": 50,
+      "carbsG": 33,
+      "fatG": 39,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Toast the bread and heat the turkey ham thoroughly in a pan.",
+        "Poach the eggs in barely simmering water with vinegar for 3-4 minutes until the whites are fully set.",
+        "Whisk the pasteurized yolk with lemon over a bain-marie; slowly add the melted butter until thick.",
+        "Assemble the bread, turkey ham, eggs and warm sauce and serve immediately."
+      ],
+      "tr": [
+        "Ekmeği kızartıp hindi jambonu tavada tamamen ısıtın.",
+        "Poşe yumurtaları sirkeli hafif kaynar suda, beyazları tamamen katılaşana kadar 3-4 dakika pişirin.",
+        "Pastörize sarıyı limonla benmari üzerinde çırpın; eritilmiş tereyağını ince akışla ekleyip koyulaştırın.",
+        "Ekmek, hindi jambon, yumurta ve ılık sosu birleştirip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 3.0,
+        "unit": "piece"
+      },
+      "butter": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "white_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b052",
+    "name": {
+      "en": "Baked Eggs with Sucuk and Kashar",
+      "tr": "Sucuklu Kaşarlı Fırın Yumurta"
+    },
+    "description": {
+      "en": "A single-serving baked breakfast of sucuk, tomato, pepper, kashar and eggs.",
+      "tr": "Sucuk, domates, biber, kaşar ve yumurtanın tek porsiyonluk kapta fırınlandığı kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "sucuk",
+      "cheddar_cheese",
+      "tomato",
+      "bell_pepper",
+      "bread"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 663,
+      "proteinG": 40,
+      "carbsG": 34,
+      "fatG": 41,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Cook the sucuk in a small pan for 2 minutes and drain excess fat.",
+        "Add the tomato and pepper to a small baking dish and pre-bake for 5 minutes; add the sucuk.",
+        "Crack in the eggs and scatter over the kashar.",
+        "Bake for 10-14 minutes until the centre reaches 71°C and no liquid egg remains; serve with bread."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Sucuğu küçük tavada 2 dakika çevirip fazla yağını süzün.",
+        "Domates ve biberi küçük fırın kabına koyup 5 dakika ön pişirin; sucuğu ekleyin.",
+        "Yumurtaları kırıp kaşarı serpin.",
+        "Merkez 71°C'ye ulaşana ve sıvı yumurta kalmayana kadar 10-14 dakika pişirip ekmekle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "sucuk": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 50.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b053",
+    "name": {
+      "en": "Chicken and Bean Breakfast Burrito",
+      "tr": "Tavuklu Fasulyeli Kahvaltı Burritosu"
+    },
+    "description": {
+      "en": "A warm breakfast burrito filled with chicken, egg, black beans, salsa and cheese.",
+      "tr": "Tavuk, yumurta, siyah fasulye, salsa ve peynirle doldurulan sıcak kahvaltı burritosu."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "chicken_breast",
+      "eggs",
+      "black_bean",
+      "salsa",
+      "cheddar_cheese",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 681,
+      "proteinG": 49,
+      "carbsG": 57,
+      "fatG": 28,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Scramble the egg in the oil until no liquid remains.",
+        "Layer the chicken, egg, beans, salsa and kashar over the tortilla.",
+        "Fold in the sides and roll tightly; toast seam-side down for 2 minutes and the other side for 2 minutes.",
+        "Cut in half and serve when hot in the centre."
+      ],
+      "tr": [
+        "Yumurtayı yağda sıvı kısmı kalmayana kadar karıştırarak pişirin.",
+        "Tortillaya tavuk, yumurta, fasulye, salsa ve kaşarı yerleştirin.",
+        "Yanları içe katlayıp sıkıca sarın; kuru tavada birleşme yeri altta olacak şekilde 2 dakika, diğer yüzünü 2 dakika ısıtın.",
+        "Merkezi tamamen sıcak olduğunda ikiye kesip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "black_bean": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "salsa": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b054",
+    "name": {
+      "en": "Lemon Ricotta Pancakes",
+      "tr": "Limonlu Ricottalı Pankek"
+    },
+    "description": {
+      "en": "Soft ricotta pancakes flavoured with lemon zest and served with berries.",
+      "tr": "Ricotta ve limon kabuğuyla yumuşak dokulu, orman meyvesiyle servis edilen pankekler."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "flour",
+      "ricotta",
+      "eggs",
+      "milk",
+      "baking_powder",
+      "lemon",
+      "butter",
+      "blueberry",
+      "raspberry"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 661,
+      "proteinG": 28,
+      "carbsG": 87,
+      "fatG": 23,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Mix the flour and baking powder.",
+        "In another bowl whisk the ricotta, egg, milk and lemon zest.",
+        "Add the wet mixture to the flour and stir only until combined; rest for 5 minutes.",
+        "Grease a pan with butter over medium-low heat and cook 4 small pancakes for 2-3 minutes per side.",
+        "Check that no raw batter remains in the centre and serve with the berries."
+      ],
+      "tr": [
+        "Un ve kabartma tozunu karıştırın.",
+        "Ayrı kapta ricotta, yumurta, süt ve limon kabuğunu çırpın.",
+        "Yaş karışımı una ekleyip yalnızca birleşene kadar karıştırın; 5 dakika dinlendirin.",
+        "Tavayı orta-kısık ateşte tereyağıyla yağlayın; 4 küçük pankeki her yüzü 2-3 dakika pişirin.",
+        "Merkezde çiğ hamur kalmadığını kontrol edip meyvelerle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "flour": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "baking_powder": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "butter": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 100.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b055",
+    "name": {
+      "en": "Smoked Mackerel Potato Breakfast Bowl",
+      "tr": "Füme Uskumrulu Patates Kahvaltı Kasesi"
+    },
+    "description": {
+      "en": "A cold breakfast bowl of smoked mackerel, boiled potato, cucumber and dill Turkish yogurt.",
+      "tr": "Füme uskumru, haşlanmış patates, salatalık ve dereotlu yoğurtla hazırlanan soğuk kahvaltı kasesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "mackerel",
+      "potato",
+      "yogurt",
+      "cucumber",
+      "dill",
+      "lemon",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 386,
+      "proteinG": 30,
+      "carbsG": 40,
+      "fatG": 12,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Check the smoked mackerel for bones and flake coarsely.",
+        "Cut the potato into bite-size pieces and slice the cucumber into half-moons.",
+        "Mix the Turkish yogurt, dill, lemon and pepper.",
+        "Combine everything in a bowl and serve cold."
+      ],
+      "tr": [
+        "Füme uskumruyu kılçık açısından kontrol edip iri parçalara ayırın.",
+        "Patatesi lokmalık doğrayın; salatalığı yarım ay kesin.",
+        "Yoğurt, dereotu, limon ve karabiberi karıştırın.",
+        "Tüm malzemeleri kasede birleştirip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "mackerel": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b056",
+    "name": {
+      "en": "Croque Madame",
+      "tr": "Croque Madame"
+    },
+    "description": {
+      "en": "A French hot ham-and-cheese sandwich finished with béchamel and a fried egg.",
+      "tr": "Jambon ve peynirli sıcak sandviçin beşamel ve tavada yumurtayla tamamlandığı Fransız kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "turkey_breast",
+      "gruyere",
+      "eggs",
+      "milk",
+      "butter",
+      "flour",
+      "mustard",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 677,
+      "proteinG": 51,
+      "carbsG": 46,
+      "fatG": 32,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Cook the flour in half the butter for 1 minute; gradually whisk in the milk to make a thick béchamel.",
+        "Spread mustard over the bread, add the ham and half the cheese, close and top with the béchamel and remaining cheese.",
+        "Bake at 200°C for 8-10 minutes until browned.",
+        "Fry the egg in the remaining butter until the white is fully set and place over the sandwich."
+      ],
+      "tr": [
+        "Tereyağının yarısıyla unu 1 dakika pişirin; sütü azar azar çırpıp koyu beşamel yapın.",
+        "Ekmeğe hardal sürüp jambon ve peynirin yarısını koyun; kapatıp üzerine beşamel ve kalan peyniri yayın.",
+        "200°C fırında 8-10 dakika kızartın.",
+        "Kalan tereyağında yumurtayı beyazı tamamen katılaşana kadar pişirip sandviçin üzerine koyun."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "gruyere": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 80.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "flour": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b057",
+    "name": {
+      "en": "Pear Granola Bowl with Turkish Yogurt",
+      "tr": "Armutlu Granolalı Yoğurt Kasesi"
+    },
+    "description": {
+      "en": "A crisp breakfast bowl of Turkish yogurt, pear, granola, almonds and cinnamon.",
+      "tr": "Yoğurt, armut, granola, badem ve tarçınla hazırlanan çıtır kahvaltı kasesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "pear",
+      "granola",
+      "almond",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 482,
+      "proteinG": 28,
+      "carbsG": 60,
+      "fatG": 17,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Wash the pear, remove the core and slice thinly.",
+        "Spoon the Turkish yogurt into a bowl.",
+        "Add the pear and granola.",
+        "Finish with roughly chopped almonds and cinnamon and serve immediately."
+      ],
+      "tr": [
+        "Armudu yıkayıp çekirdekli bölümünü çıkarın ve ince dilimleyin.",
+        "Yoğurdu kaseye alın.",
+        "Armut ve granolayı üzerine yerleştirin.",
+        "İri kıyılmış badem ve tarçınla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "pear": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "granola": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b058",
+    "name": {
+      "en": "Beef Sausage and Baked Bean Breakfast Plate",
+      "tr": "Dana Sosisli Kuru Fasulyeli Kahvaltı Tabağı"
+    },
+    "description": {
+      "en": "A hot breakfast plate of beef sausage, baked beans, egg, mushrooms and toast.",
+      "tr": "Dana sosis, domates soslu fasulye, yumurta, mantar ve tosttan oluşan sıcak kahvaltı tabağı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sausage",
+      "baked_beans",
+      "eggs",
+      "mushroom",
+      "bread",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 655,
+      "proteinG": 36,
+      "carbsG": 48,
+      "fatG": 34,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cook the sausages, turning, until the centres reach 71°C.",
+        "Brown the mushrooms in the oil for 4-5 minutes and heat the beans to a simmer in a small pan.",
+        "Cook the egg until the white is fully set and toast the bread.",
+        "Serve all components together on a hot plate."
+      ],
+      "tr": [
+        "Sosisleri tavada çevirerek merkezleri 71°C'ye ulaşana kadar pişirin.",
+        "Aynı tavada mantarı yağla 4-5 dakika kızartın; fasulyeyi küçük tencerede kaynama noktasına kadar ısıtın.",
+        "Yumurtayı beyazı tamamen katılaşana kadar pişirin; ekmeği kızartın.",
+        "Tüm bileşenleri sıcak tabakta birlikte servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sausage": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "baked_beans": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b059",
+    "name": {
+      "en": "Mini Spinach and Goat Cheese Quiche",
+      "tr": "Ispanaklı Keçi Peynirli Mini Kiş"
+    },
+    "description": {
+      "en": "Two small quiches filled with spinach, goat cheese and egg custard.",
+      "tr": "Ispanak, keçi peyniri ve yumurtalı harçla hazırlanan iki küçük kiş."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "quiche_pastry",
+      "eggs",
+      "milk",
+      "goat_cheese",
+      "spinach",
+      "onion",
+      "olive_oil",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 655,
+      "proteinG": 25,
+      "carbsG": 42,
+      "fatG": 43,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Line two small tart tins with pastry, prick and pre-bake for 8 minutes.",
+        "Cook the onion and spinach in the oil for 3-4 minutes until the moisture evaporates.",
+        "Whisk the egg, milk and pepper; divide the vegetables and goat cheese between the shells and add the custard.",
+        "Bake for 16-20 minutes until the centres reach 71°C and are fully set."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Hamuru iki küçük tart kalıbına yerleştirip çatalla delin; 8 dakika ön pişirin.",
+        "Soğan ve ıspanağı yağda suyu çekilene kadar 3-4 dakika pişirin.",
+        "Yumurta, süt ve karabiberi çırpın; sebzeleri ve keçi peynirini hamurlara paylaştırıp karışımı dökün.",
+        "Merkezler 71°C'ye ulaşana ve tamamen katılaşana kadar 16-20 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "quiche_pastry": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "goat_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "b060",
+    "name": {
+      "en": "Potato Rösti with Pastirma and Egg",
+      "tr": "Pastırmalı Patates Röşti ve Yumurta"
+    },
+    "description": {
+      "en": "A filling breakfast of crisp potato rösti topped with pastirma, fully cooked egg and rocket.",
+      "tr": "Çıtır patates röşti üzerinde pastırma, tam pişmiş yumurta ve rokalı doyurucu kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "potato",
+      "pastirma",
+      "eggs",
+      "onion",
+      "olive_oil",
+      "arugula"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 610,
+      "proteinG": 42,
+      "carbsG": 49,
+      "fatG": 28,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Grate the potato, squeeze it very dry and mix with the onion.",
+        "Cook two thin rösti in the oiled pan for 5-6 minutes per side.",
+        "Warm the pastirma; cook the eggs until whites and yolks are firm and serve over the rösti."
+      ],
+      "tr": [
+        "Patatesi rendeleyip suyunu iyice sıkın; soğanla karıştırın.",
+        "Yağlı tavada iki ince röştiyi her yüzü 5-6 dakika kızartın.",
+        "Pastırmayı ısıtın; yumurtaları beyaz ve sarıları katılaşana kadar pişirip röşti üzerinde servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "potato": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "pastirma": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b061",
+    "name": {
+      "en": "Baked Oats with Tahini and Banana",
+      "tr": "Tahinli Muzlu Fırın Yulaf"
+    },
+    "description": {
+      "en": "A single-serving baked breakfast made with banana, tahini, oats and plant drink.",
+      "tr": "Muz, tahin, yulaf ve bitkisel içecekle hazırlanan tek porsiyonluk fırın kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "banana",
+      "tahini",
+      "soy_milk",
+      "baking_powder",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 539,
+      "proteinG": 20,
+      "carbsG": 78,
+      "fatG": 18,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Mash half the banana and whisk with the soya drink and tahini.",
+        "Add the oats, baking powder and cinnamon and transfer to a small dish.",
+        "Arrange the remaining banana on top and bake at 180°C for 25-30 minutes."
+      ],
+      "tr": [
+        "Muzun yarısını ezip soya içeceği ve tahinle çırpın.",
+        "Yulaf, kabartma tozu ve tarçını ekleyip küçük kaba alın.",
+        "Kalan muzu üzerine dizip 180°C'de 25-30 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "soy_milk": {
+        "amount": 160.0,
+        "unit": "ml"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b062",
+    "name": {
+      "en": "Breakfast Polenta with Mushrooms and Cheese",
+      "tr": "Mantarlı Peynirli Kahvaltı Polentası"
+    },
+    "description": {
+      "en": "A warm bowl of creamy polenta topped with sautéed mushrooms, kashar and egg.",
+      "tr": "Kremamsı polenta üzerinde sotelenmiş mantar, kaşar ve yumurtalı sıcak kahvaltı kasesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cornmeal",
+      "milk",
+      "water",
+      "mushroom",
+      "cheddar_cheese",
+      "eggs",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 624,
+      "proteinG": 33,
+      "carbsG": 61,
+      "fatG": 29,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the polenta with the milk and water until thick; stir in half the kashar.",
+        "Sauté the mushrooms in the oil until their liquid evaporates.",
+        "Cook the egg until fully firm and serve with the polenta, mushrooms and remaining cheese."
+      ],
+      "tr": [
+        "Polentayı süt ve suyla paket süresine göre koyulaştırın; kaşarın yarısını karıştırın.",
+        "Mantarı yağda suyunu çekene kadar soteleyin.",
+        "Yumurtayı tamamen katı pişirip polenta, mantar ve kalan peynirle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cornmeal": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "water": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "mushroom": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b063",
+    "name": {
+      "en": "Chicken Waffle Sandwich",
+      "tr": "Tavuklu Waffle Sandviç"
+    },
+    "description": {
+      "en": "A breakfast sandwich of chicken, kashar, tomato and lettuce between whole-wheat waffles.",
+      "tr": "Tam buğdaylı waffle arasında tavuk, kaşar, domates ve marulla hazırlanan kahvaltı sandviçi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "waffle",
+      "chicken_breast",
+      "cheddar_cheese",
+      "tomato",
+      "lettuce",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 630,
+      "proteinG": 54,
+      "carbsG": 37,
+      "fatG": 29,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Grill the chicken at an even thickness until it reaches 74°C.",
+        "Warm the waffles and spread one with mustard.",
+        "Layer the chicken, kashar, tomato and lettuce and close with the other waffle."
+      ],
+      "tr": [
+        "Tavuğu eşit kalınlıkta hazırlayıp merkezi 74°C'ye ulaşana kadar ızgarada pişirin.",
+        "Waffle'ları ısıtıp birine hardal sürün.",
+        "Tavuk, kaşar, domates ve marulu katmanlayıp diğer waffle ile kapatın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "waffle": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b064",
+    "name": {
+      "en": "Rye Toast with Sardines and Avocado",
+      "tr": "Avokadolu Sardalyalı Çavdar Tostu"
+    },
+    "description": {
+      "en": "An open rye toast topped with sardines, avocado, radish and lemon.",
+      "tr": "Çavdar ekmeği üzerinde sardalya, avokado, turp ve limonlu açık tost."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "sardine",
+      "avocado",
+      "radish",
+      "lemon",
+      "dill"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 545,
+      "proteinG": 32,
+      "carbsG": 51,
+      "fatG": 25,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Toast the bread.",
+        "Mash the avocado with the lemon and spread over the bread.",
+        "Add the sardines, thinly sliced radish and dill and serve immediately."
+      ],
+      "tr": [
+        "Ekmeği kızartın.",
+        "Avokadoyu limonla ezip ekmeğe yayın.",
+        "Sardalya, ince turp ve dereotunu ekleyip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "sardine": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "radish": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b065",
+    "name": {
+      "en": "Courgette and Lor Cheese Crêpe Rolls",
+      "tr": "Kabaklı Lorlu Krep Rulosu"
+    },
+    "description": {
+      "en": "Warm whole-wheat crêpe rolls filled with courgette, lor cheese and dill.",
+      "tr": "Tam buğday krep içinde kabak, lor peyniri ve dereotuyla hazırlanan sıcak rulolar."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "whole_wheat_flour",
+      "eggs",
+      "milk",
+      "zucchini",
+      "cottage_cheese",
+      "olive_oil",
+      "dill"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 555,
+      "proteinG": 33,
+      "carbsG": 56,
+      "fatG": 24,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Whisk the flour, egg and milk and cook two thin crêpes with half the oil.",
+        "Cook the grated courgette in the remaining oil until dry and mix with the lor and dill.",
+        "Spread the filling over the crêpes, roll and cut each in half to serve."
+      ],
+      "tr": [
+        "Un, yumurta ve sütü çırpıp iki ince krebi yağın yarısıyla pişirin.",
+        "Rendelenmiş kabağı kalan yağda suyunu çekene kadar pişirip lor ve dereotuyla karıştırın.",
+        "Dolguyu kreplere yayıp sarın; ortadan ikiye keserek servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "whole_wheat_flour": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 140.0,
+        "unit": "ml"
+      },
+      "zucchini": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "cottage_cheese": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b066",
+    "name": {
+      "en": "Beef Breakfast Skillet",
+      "tr": "Dana Kıymalı Kahvaltı Tavası"
+    },
+    "description": {
+      "en": "A one-pan breakfast of minced beef, potato, pepper, tomato and eggs.",
+      "tr": "Dana kıyma, patates, biber, domates ve yumurtayla hazırlanan tek tava kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "potato",
+      "eggs",
+      "bell_pepper",
+      "tomato",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 712,
+      "proteinG": 52,
+      "carbsG": 41,
+      "fatG": 37,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Dice the potato and cook in the covered pan with the oil for 10 minutes.",
+        "Add the beef and pepper and cook until the beef reaches 71°C; add the tomato.",
+        "Add the eggs and cook until the centre reaches 71°C with no liquid egg remaining."
+      ],
+      "tr": [
+        "Patatesi küçük küp kesip kapaklı tavada yağla 10 dakika pişirin.",
+        "Kıyma ve biberi ekleyip kıyma 71°C'ye ulaşana kadar pişirin; domatesi ekleyin.",
+        "Yumurtaları kırıp merkez 71°C'ye ulaşana ve sıvı yumurta kalmayana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b067",
+    "name": {
+      "en": "Semolina Porridge with Dates and Walnuts",
+      "tr": "Hurmalı Cevizli İrmik Lapası"
+    },
+    "description": {
+      "en": "A warm milk-cooked semolina porridge with dates, walnuts and orange zest.",
+      "tr": "Sütle pişirilmiş irmik, hurma, ceviz ve portakal kabuklu sıcak kahvaltı lapası."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "semolina",
+      "milk",
+      "dates",
+      "walnut",
+      "orange",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "simple",
+    "macros": {
+      "calories": 602,
+      "proteinG": 22,
+      "carbsG": 97,
+      "fatG": 17,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Heat the milk and whisk in the semolina.",
+        "Cook over low heat for 6-8 minutes until thick; stir in the chopped dates.",
+        "Serve warm with the walnuts, orange zest and cinnamon."
+      ],
+      "tr": [
+        "Sütü ısıtıp irmiği çırparak ekleyin.",
+        "Kısık ateşte 6-8 dakika koyulaştırın; doğranmış hurmayı karıştırın.",
+        "Ceviz, portakal kabuğu ve tarçınla sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "semolina": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 300.0,
+        "unit": "ml"
+      },
+      "dates": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "orange": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b068",
+    "name": {
+      "en": "Tomato and Cheese Bagel",
+      "tr": "Peynirli Domatesli Bagel"
+    },
+    "description": {
+      "en": "A whole-grain bagel sandwich with cream cheese, kashar, tomato, cucumber and sprouts.",
+      "tr": "Tam tahıllı bagel içinde krem peynir, kaşar, domates, salatalık ve filizli kahvaltı sandviçi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bagel",
+      "cream_cheese",
+      "cheddar_cheese",
+      "tomato",
+      "cucumber",
+      "radish_sprouts"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 541,
+      "proteinG": 23,
+      "carbsG": 56,
+      "fatG": 26,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Split and lightly toast the bagel.",
+        "Spread both cut sides with cream cheese and add the kashar.",
+        "Layer the washed tomato, cucumber and sprouts and serve immediately."
+      ],
+      "tr": [
+        "Bagel'ı ortadan kesip hafifçe kızartın.",
+        "İki iç yüzeye krem peynir sürüp kaşarı ekleyin.",
+        "Yıkanmış domates, salatalık ve filizi katmanlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bagel": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "radish_sprouts": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b069",
+    "name": {
+      "en": "Apple Cinnamon French Toast",
+      "tr": "Elmalı Tarçınlı Fransız Tostu"
+    },
+    "description": {
+      "en": "Warm egg-battered toast served with cinnamon apples and Turkish yogurt.",
+      "tr": "Yumurtalı ekmek üzerinde tarçınlı elma ve yoğurtla servis edilen sıcak kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "eggs",
+      "milk",
+      "apple",
+      "yogurt",
+      "butter",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 674,
+      "proteinG": 37,
+      "carbsG": 80,
+      "fatG": 24,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the sliced apple with half the butter and cinnamon for 6 minutes.",
+        "Whisk the eggs and milk; soak the bread and cook both sides thoroughly in the remaining butter.",
+        "Serve with the apples and Turkish yogurt."
+      ],
+      "tr": [
+        "Elmayı ince dilimleyip tereyağının yarısı ve tarçınla 6 dakika yumuşatın.",
+        "Yumurta ve sütü çırpın; ekmeği batırıp kalan tereyağında iki yüzünü tamamen pişirin.",
+        "Elma ve yoğurtla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 80.0,
+        "unit": "ml"
+      },
+      "apple": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b070",
+    "name": {
+      "en": "Whole-Grain Menemen Wrap",
+      "tr": "Menemenli Tam Tahıllı Dürüm"
+    },
+    "description": {
+      "en": "A breakfast wrap of tomato, pepper and fully cooked menemen with kashar in a whole-grain tortilla.",
+      "tr": "Domates, biber ve tam pişmiş yumurtalı menemenin kaşarla tam tahıllı tortillaya sarıldığı kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "tomato",
+      "bell_pepper",
+      "tortilla_wrap",
+      "cheddar_cheese",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 638,
+      "proteinG": 32,
+      "carbsG": 44,
+      "fatG": 38,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cook the pepper in the oil for 3 minutes; add the tomato and reduce.",
+        "Add the eggs and cook until no liquid egg remains and the centre reaches 71°C.",
+        "Add the kashar and menemen to the tortilla and roll tightly."
+      ],
+      "tr": [
+        "Biberi yağda 3 dakika pişirip domatesi ekleyin ve suyunu çektirin.",
+        "Yumurtaları ekleyip sıvı yumurta kalmayana ve merkez 71°C'ye ulaşana kadar pişirin.",
+        "Tortillaya kaşar ve menemeni koyup sıkıca sarın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b071",
+    "name": {
+      "en": "Salmon Egg Muffins",
+      "tr": "Somonlu Yumurta Muffinleri"
+    },
+    "description": {
+      "en": "Four small baked breakfast muffins made with salmon, eggs, spinach and lor cheese.",
+      "tr": "Somon, yumurta, ıspanak ve lorla hazırlanan dört küçük fırın kahvaltı muffini."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "eggs",
+      "spinach",
+      "cottage_cheese",
+      "dill",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 606,
+      "proteinG": 52,
+      "carbsG": 9,
+      "fatG": 40,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Briefly wilt and squeeze the spinach; flake the salmon.",
+        "Mix the eggs, lor, dill, spinach and salmon and divide among four greased moulds.",
+        "Bake at 180°C for 16-20 minutes until the centres reach 71°C."
+      ],
+      "tr": [
+        "Ispanağı kısa süre soldurup suyunu sıkın; somonu iri parçalayın.",
+        "Yumurta, lor, dereotu, ıspanak ve somonu karıştırıp yağlanmış dört kalıba paylaştırın.",
+        "180°C'de merkezleri 71°C'ye ulaşana kadar 16-20 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 3.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cottage_cheese": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b072",
+    "name": {
+      "en": "Banana Crêpes with Tahini and Pekmez",
+      "tr": "Tahin Pekmezli Muzlu Krep"
+    },
+    "description": {
+      "en": "Whole-wheat crêpes filled with banana, tahini and grape pekmez.",
+      "tr": "Tam buğday kreplerinin muz, tahin ve üzüm pekmeziyle doldurulduğu tatlı kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "whole_wheat_flour",
+      "eggs",
+      "milk",
+      "banana",
+      "tahini",
+      "molasses",
+      "butter"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "periodFatigue",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 657,
+      "proteinG": 26,
+      "carbsG": 92,
+      "fatG": 25,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Whisk the flour, egg and milk until smooth.",
+        "Cook two thin crêpes in the buttered pan until the batter is fully set.",
+        "Divide the banana, tahini and pekmez between the crêpes and fold."
+      ],
+      "tr": [
+        "Un, yumurta ve sütü pürüzsüz çırpın.",
+        "Tereyağlı tavada iki ince krep pişirin; hamur tamamen katılaşmalıdır.",
+        "Muz, tahin ve pekmezi paylaştırıp krepleri katlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "whole_wheat_flour": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "banana": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "molasses": {
+        "amount": 12.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b073",
+    "name": {
+      "en": "Chicken Sausage and Sweet Potato Skillet",
+      "tr": "Tavuk Sosisli Tatlı Patates Tavası"
+    },
+    "description": {
+      "en": "A breakfast skillet of chicken sausage, sweet potato, pepper, onion and eggs.",
+      "tr": "Tavuk sosis, tatlı patates, biber, soğan ve yumurtayla hazırlanan kahvaltı tavası."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sausage",
+      "sweet_potato",
+      "eggs",
+      "bell_pepper",
+      "onion",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 741,
+      "proteinG": 35,
+      "carbsG": 57,
+      "fatG": 42,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Dice the sweet potato and cook in the covered pan with oil for 10-12 minutes.",
+        "Add the sausage, pepper and onion and cook for 6 minutes until the sausage is heated through.",
+        "Add the eggs and cook until the centre reaches 71°C."
+      ],
+      "tr": [
+        "Tatlı patatesi küçük küp kesip kapaklı tavada yağla 10-12 dakika pişirin.",
+        "Sosis, biber ve soğanı ekleyip sosis tamamen ısınana kadar 6 dakika pişirin.",
+        "Yumurtaları kırıp merkez 71°C'ye ulaşana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sausage": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "sweet_potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b074",
+    "name": {
+      "en": "Toast with Labneh, Figs and Walnuts",
+      "tr": "Labneli İncirli Cevizli Tost"
+    },
+    "description": {
+      "en": "Whole-grain toast topped with labneh, fresh figs, walnuts and a little honey.",
+      "tr": "Tam tahıllı tost üzerinde labne, taze incir, ceviz ve az ballı kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "labne",
+      "fig",
+      "walnut",
+      "honey",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 682,
+      "proteinG": 18,
+      "carbsG": 87,
+      "fatG": 31,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Toast the bread.",
+        "Spread over the labneh and arrange the sliced figs.",
+        "Finish with the walnuts, honey and cinnamon and serve immediately."
+      ],
+      "tr": [
+        "Ekmeği kızartın.",
+        "Labneyi üzerine yayıp dilimlenmiş incirleri yerleştirin.",
+        "Ceviz, bal ve tarçınla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "labne": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "fig": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b075",
+    "name": {
+      "en": "Broccoli and Cheese Frittata",
+      "tr": "Peynirli Brokolili Frittata"
+    },
+    "description": {
+      "en": "A thick breakfast omelette made with eggs, broccoli, potato, kashar and onion.",
+      "tr": "Yumurta, brokoli, patates, kaşar ve soğanla hazırlanan kalın kahvaltı omleti."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "broccoli",
+      "potato",
+      "cheddar_cheese",
+      "onion",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 694,
+      "proteinG": 42,
+      "carbsG": 38,
+      "fatG": 43,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Boil the broccoli for 3 minutes and drain; soften the onion in the oil.",
+        "Add the potato and broccoli, pour in the beaten eggs and scatter over the kashar.",
+        "Start over low heat and finish in a 190°C oven until the centre reaches 71°C."
+      ],
+      "tr": [
+        "Brokoliyi 3 dakika haşlayıp süzün; soğanı yağda yumuşatın.",
+        "Patates ve brokoliyi tavaya ekleyip çırpılmış yumurtayı dökün; kaşarı serpin.",
+        "Kısık ateşte başlayıp 190°C fırında merkez 71°C'ye ulaşana kadar tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 3.0,
+        "unit": "piece"
+      },
+      "broccoli": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b076",
+    "name": {
+      "en": "Tuna and Potato Breakfast Cakes",
+      "tr": "Ton Balıklı Patatesli Kahvaltı Köftesi"
+    },
+    "description": {
+      "en": "Four pan-cooked breakfast cakes made with tuna, potato, egg and spring onion.",
+      "tr": "Ton balığı, patates, yumurta ve taze soğanla hazırlanan dört tava köftesi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tuna",
+      "potato",
+      "eggs",
+      "breadcrumbs",
+      "onion",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 590,
+      "proteinG": 45,
+      "carbsG": 58,
+      "fatG": 19,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Mash the potato and mix with the tuna, egg, breadcrumbs and spring onion.",
+        "Shape into four flat cakes.",
+        "Cook in the oiled pan for 4-5 minutes per side until the centres are piping hot and fully set."
+      ],
+      "tr": [
+        "Patatesi ezin; ton balığı, yumurta, galeta unu ve taze soğanla karıştırın.",
+        "Dört yassı köfte yapın.",
+        "Yağlı tavada iki yüzünü 4-5'er dakika, merkezleri tamamen sıcak ve katı olana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tuna": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "breadcrumbs": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b077",
+    "name": {
+      "en": "Chocolate Cherry Overnight Oats",
+      "tr": "Çikolatalı Vişneli Gece Yulafı"
+    },
+    "description": {
+      "en": "A chilled breakfast made with Turkish yogurt, milk, oats, sour cherries, cocoa and dark chocolate.",
+      "tr": "Yoğurt, süt, yulaf, vişne, kakao ve bitter çikolatayla hazırlanan soğuk kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "yogurt",
+      "milk",
+      "sour_cherry",
+      "cocoa_powder",
+      "dark_chocolate",
+      "chia_seeds"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 580,
+      "proteinG": 34,
+      "carbsG": 80,
+      "fatG": 17,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Mix the oats, Turkish yogurt, milk, cocoa and chia in a lidded container.",
+        "Add half the cherries and refrigerate for at least 6 hours.",
+        "Serve chilled with the remaining cherries and chopped chocolate."
+      ],
+      "tr": [
+        "Yulaf, yoğurt, süt, kakao ve chiayı kapaklı kapta karıştırın.",
+        "Vişnenin yarısını ekleyip en az 6 saat buzdolabında bekletin.",
+        "Kalan vişne ve doğranmış çikolatayla soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 100.0,
+        "unit": "ml"
+      },
+      "sour_cherry": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "dark_chocolate": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b078",
+    "name": {
+      "en": "Smoked Turkey and Cheese Croissant",
+      "tr": "Hindi Füme Peynirli Kruvasan"
+    },
+    "description": {
+      "en": "A warm croissant breakfast sandwich with smoked turkey, cheese, tomato and rocket.",
+      "tr": "Kruvasan içinde hindi füme, peynir, domates ve rokalı sıcak kahvaltı sandviçi."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "croissant",
+      "turkey_breast",
+      "cheddar_cheese",
+      "tomato",
+      "arugula",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 669,
+      "proteinG": 46,
+      "carbsG": 46,
+      "fatG": 33,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Split the croissant and spread with mustard.",
+        "Add the smoked turkey and kashar and heat at 180°C for 5-6 minutes until the cheese melts.",
+        "Add the tomato and washed, dried rocket and serve."
+      ],
+      "tr": [
+        "Kruvasanı ortadan açıp hardal sürün.",
+        "Hindi füme ve kaşarı ekleyip 180°C'de peynir eriyene kadar 5-6 dakika ısıtın.",
+        "Domates ve yıkanıp kurulanmış rokayı ekleyerek servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "croissant": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b079",
+    "name": {
+      "en": "Chickpea Flour Vegetable Omelette",
+      "tr": "Nohut Unlu Sebzeli Omlet"
+    },
+    "description": {
+      "en": "An egg-free pan breakfast made with chickpea flour, tomato, spinach, pepper and spring onion.",
+      "tr": "Nohut unu, domates, ıspanak, biber ve taze soğanla hazırlanan yumurtasız tava kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea_flour",
+      "water",
+      "tomato",
+      "spinach",
+      "bell_pepper",
+      "onion",
+      "olive_oil",
+      "turmeric"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 464,
+      "proteinG": 22,
+      "carbsG": 59,
+      "fatG": 16,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Whisk the chickpea flour, water and turmeric until smooth and add the vegetables.",
+        "Heat half the oil and pour in half the mixture in a thin layer.",
+        "Cook for 4-5 minutes per side until no raw batter remains; repeat for the second omelette."
+      ],
+      "tr": [
+        "Nohut unu, su ve zerdeçalı pürüzsüz çırpıp sebzeleri ekleyin.",
+        "Yağın yarısını tavada ısıtıp karışımın yarısını ince tabaka dökün.",
+        "İki yüzünü 4-5'er dakika, içi çiğ kalmayana kadar pişirin; ikinci omleti tekrarlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea_flour": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "turmeric": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b080",
+    "name": {
+      "en": "Gözleme Plate with Sucuk and Cheese",
+      "tr": "Sucuklu Peynirli Gözleme Tabağı"
+    },
+    "description": {
+      "en": "A thin gözleme filled with sucuk, kashar and pepper, served with tomato and cucumber.",
+      "tr": "Sucuk, kaşar ve biberle doldurulmuş ince gözlemenin domates-salatalıkla sunulduğu kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "phyllo_dough",
+      "sucuk",
+      "cheddar_cheese",
+      "bell_pepper",
+      "tomato",
+      "cucumber"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 708,
+      "proteinG": 34,
+      "carbsG": 56,
+      "fatG": 39,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Heat the sucuk through and drain excess fat; briefly cook the pepper.",
+        "Add the sucuk, pepper and kashar to half the yufka and fold.",
+        "Cook both sides in a dry pan until the cheese melts and serve with the vegetables."
+      ],
+      "tr": [
+        "Sucuğu tavada tamamen ısıtıp fazla yağını süzün; biberi kısa süre çevirin.",
+        "Yufkanın yarısına sucuk, biber ve kaşarı koyup kapatın.",
+        "Kuru tavada iki yüzünü peynir eriyene kadar pişirip sebzelerle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "phyllo_dough": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "sucuk": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b081",
+    "name": {
+      "en": "Strawberry Peanut Butter Waffles",
+      "tr": "Fıstık Ezmeli Çilekli Waffle"
+    },
+    "description": {
+      "en": "A fruity breakfast of whole-wheat waffles, peanut butter, strawberries and Turkish yogurt.",
+      "tr": "Tam buğday waffle, fıstık ezmesi, çilek ve yoğurtla hazırlanan meyveli kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "whole_wheat_flour",
+      "eggs",
+      "milk",
+      "peanut_butter",
+      "strawberry",
+      "yogurt",
+      "baking_powder"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "nuts",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 581,
+      "proteinG": 36,
+      "carbsG": 71,
+      "fatG": 21,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Whisk the flour, egg, milk and baking powder.",
+        "Cook two small waffles until the batter is fully cooked.",
+        "Serve with peanut butter, strawberries and Turkish yogurt."
+      ],
+      "tr": [
+        "Un, yumurta, süt ve kabartma tozunu çırpın.",
+        "Waffle makinesinde hamur tamamen pişene kadar iki küçük waffle hazırlayın.",
+        "Fıstık ezmesi, çilek ve yoğurtla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "whole_wheat_flour": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 130.0,
+        "unit": "ml"
+      },
+      "peanut_butter": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "strawberry": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b082",
+    "name": {
+      "en": "Shrimp, Avocado and Egg Toast",
+      "tr": "Karidesli Avokadolu Yumurta Tostu"
+    },
+    "description": {
+      "en": "Whole-grain toast topped with avocado, fully cooked egg and lemon shrimp.",
+      "tr": "Tam tahıllı tost üzerinde avokado, tam pişmiş yumurta ve limonlu karides."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "shrimp",
+      "eggs",
+      "avocado",
+      "olive_oil",
+      "lemon"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "gluten",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 581,
+      "proteinG": 41,
+      "carbsG": 49,
+      "fatG": 27,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp in the oil for 3-4 minutes until firm and opaque.",
+        "Cook the egg until white and yolk are firm; mash the avocado with lemon.",
+        "Top the toast with the avocado, egg and shrimp."
+      ],
+      "tr": [
+        "Karidesi yağda eti sıkı ve opak olana kadar 3-4 dakika pişirin.",
+        "Yumurtayı beyazı ve sarısı katılaşana kadar pişirin; avokadoyu limonla ezin.",
+        "Kızarmış ekmeğe avokado, yumurta ve karidesi yerleştirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "shrimp": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "avocado": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "b083",
+    "name": {
+      "en": "Smoked Turkey, Spinach and Egg Wrap",
+      "tr": "Hindi Füme Ispanaklı Yumurtalı Dürüm"
+    },
+    "description": {
+      "en": "A warm whole-grain breakfast wrap with smoked turkey, spinach, egg and kashar.",
+      "tr": "Hindi füme, ıspanak, yumurta ve kaşarlı sıcak tam tahıllı kahvaltı dürümü."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "turkey_breast",
+      "eggs",
+      "spinach",
+      "cheddar_cheese",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 688,
+      "proteinG": 56,
+      "carbsG": 37,
+      "fatG": 35,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Wilt the spinach in the oil and heat the smoked turkey through.",
+        "Add the eggs and cook until no liquid egg remains.",
+        "Fill the tortilla with the mixture and kashar, roll and warm both sides in the pan."
+      ],
+      "tr": [
+        "Ispanağı yağda soldurup hindi fümeyi tamamen ısıtın.",
+        "Yumurtaları ekleyip sıvı yumurta kalmayana kadar pişirin.",
+        "Tortillaya harç ve kaşarı koyup sarın; tavada iki yüzünü ısıtın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b084",
+    "name": {
+      "en": "Baked Cocoa Pear Oats",
+      "tr": "Kakaolu Armutlu Fırın Yulaf"
+    },
+    "description": {
+      "en": "A single-serving baked breakfast made with pear, cocoa, oats, milk and hazelnuts.",
+      "tr": "Armut, kakao, yulaf, süt ve fındıkla hazırlanan tek porsiyon fırın kahvaltısı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "pear",
+      "milk",
+      "eggs",
+      "cocoa_powder",
+      "hazelnut",
+      "baking_powder"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 664,
+      "proteinG": 30,
+      "carbsG": 87,
+      "fatG": 26,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Whisk the milk and egg and add the oats, cocoa and baking powder.",
+        "Stir in half the diced pear, transfer to a dish and top with the remaining pear and hazelnuts.",
+        "Bake at 180°C for 28-32 minutes until the centre is fully set."
+      ],
+      "tr": [
+        "Süt ve yumurtayı çırpıp yulaf, kakao ve kabartma tozunu ekleyin.",
+        "Küp armudun yarısını karıştırıp kaba alın; kalan armut ve fındığı üzerine ekleyin.",
+        "180°C'de merkezi tamamen katılaşana kadar 28-32 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "pear": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cocoa_powder": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "hazelnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b085",
+    "name": {
+      "en": "Pastirma and Kashar Potato Cake",
+      "tr": "Pastırmalı Kaşarlı Patates Keki"
+    },
+    "description": {
+      "en": "A thick pan-cooked breakfast cake of grated potato, pastirma, kashar and egg.",
+      "tr": "Rendelenmiş patates, pastırma, kaşar ve yumurtayla tavada hazırlanan kalın kahvaltı keki."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "potato",
+      "pastirma",
+      "cheddar_cheese",
+      "eggs",
+      "onion",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 699,
+      "proteinG": 45,
+      "carbsG": 50,
+      "fatG": 36,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Grate and squeeze the potato very dry; mix with the egg and onion.",
+        "Spread half in the oiled pan; add the pastirma and kashar and cover with the remaining potato.",
+        "Cook over low heat for 8-10 minutes per side until the centre reaches 71°C."
+      ],
+      "tr": [
+        "Patatesi rendeleyip suyunu iyice sıkın; yumurta ve soğanla karıştırın.",
+        "Karışımın yarısını yağlı tavaya yayın; pastırma ve kaşarı ekleyip kalan patatesle kapatın.",
+        "Kısık ateşte iki yüzünü 8-10'ar dakika, merkez 71°C'ye ulaşana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "potato": {
+        "amount": 260.0,
+        "unit": "g"
+      },
+      "pastirma": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b086",
+    "name": {
+      "en": "Savoury Lor and Dill Muffins",
+      "tr": "Lorlu Dereotlu Tuzlu Muffin"
+    },
+    "description": {
+      "en": "Four savoury breakfast muffins made with lor, dill, Turkish yogurt and whole-wheat flour.",
+      "tr": "Lor, dereotu, yoğurt ve tam buğday unuyla hazırlanan dört tuzlu kahvaltı muffini."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "whole_wheat_flour",
+      "cottage_cheese",
+      "yogurt",
+      "eggs",
+      "olive_oil",
+      "dill",
+      "baking_powder"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 606,
+      "proteinG": 38,
+      "carbsG": 66,
+      "fatG": 24,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Mix the flour and baking powder; add the egg, Turkish yogurt and oil.",
+        "Fold in the lor and dill and divide among four moulds.",
+        "Bake at 180°C for 20-24 minutes until the centres are fully set."
+      ],
+      "tr": [
+        "Un ve kabartma tozunu karıştırın; yumurta, yoğurt ve yağı ekleyin.",
+        "Lor ve dereotunu katıp dört kalıba paylaştırın.",
+        "180°C'de merkezleri tamamen katılaşana kadar 20-24 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "whole_wheat_flour": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cottage_cheese": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "b087",
+    "name": {
+      "en": "Apple Walnut Quinoa Porridge",
+      "tr": "Elmalı Cevizli Kinoa Lapası"
+    },
+    "description": {
+      "en": "A warm breakfast porridge made with quinoa, milk, apple, walnuts and cinnamon.",
+      "tr": "Kinoa, süt, elma, ceviz ve tarçınla hazırlanan sıcak kahvaltı lapası."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "quinoa",
+      "milk",
+      "water",
+      "apple",
+      "walnut",
+      "cinnamon",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 612,
+      "proteinG": 22,
+      "carbsG": 93,
+      "fatG": 20,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Rinse the quinoa thoroughly and cook with the milk and water for 15-18 minutes.",
+        "Add half the diced apple and the cinnamon for the final 5 minutes.",
+        "Serve with the remaining apple, walnuts and honey."
+      ],
+      "tr": [
+        "Kinoayı iyice yıkayıp süt ve suyla 15-18 dakika pişirin.",
+        "Küp elmanın yarısı ve tarçını son 5 dakikada ekleyin.",
+        "Kalan elma, ceviz ve balla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "quinoa": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "water": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "apple": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "honey": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b088",
+    "name": {
+      "en": "Chicken and Cheese Breakfast Quesadilla",
+      "tr": "Tavuklu Peynirli Kahvaltı Quesadillası"
+    },
+    "description": {
+      "en": "A warm whole-grain quesadilla filled with chicken, egg, kashar and pepper.",
+      "tr": "Tavuk, yumurta, kaşar ve biberle doldurulmuş sıcak tam tahıllı quesadilla."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "chicken_breast",
+      "eggs",
+      "cheddar_cheese",
+      "bell_pepper",
+      "salsa"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 786,
+      "proteinG": 60,
+      "carbsG": 60,
+      "fatG": 33,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Shred chicken that previously reached 74°C; cook the pepper and egg until no liquid remains.",
+        "Spread the chicken, egg and kashar over one tortilla and cover with the other.",
+        "Cook both sides in a dry pan until the cheese melts, cut into four wedges and serve with salsa."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış tavuğu didikleyin; biber ve yumurtayı sıvı kalmayana kadar pişirin.",
+        "Bir tortillaya tavuk, yumurta ve kaşarı yayıp diğeriyle kapatın.",
+        "Kuru tavada iki yüzünü peynir eriyene kadar pişirip dört dilime kesin; salsayla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "salsa": {
+        "amount": 50.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "b089",
+    "name": {
+      "en": "Scrambled Eggs with Smoked Trout",
+      "tr": "Füme Alabalıklı Çırpılmış Yumurta"
+    },
+    "description": {
+      "en": "Fully cooked scrambled eggs with smoked trout, dill and rye bread.",
+      "tr": "Tam pişmiş çırpılmış yumurta, füme alabalık, dereotu ve çavdar ekmekli kahvaltı."
+    },
+    "mealType": "breakfast",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "trout",
+      "bread",
+      "milk",
+      "butter",
+      "dill",
+      "tomato"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 609,
+      "proteinG": 42,
+      "carbsG": 47,
+      "fatG": 28,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Whisk the eggs and milk and cook in the buttered pan, stirring, until no liquid egg remains.",
+        "Add the smoked trout for the final 30 seconds to warm through.",
+        "Serve with dill, rye bread and tomato."
+      ],
+      "tr": [
+        "Yumurta ve sütü çırpın; tereyağlı tavada sıvı yumurta kalmayana kadar karıştırarak pişirin.",
+        "Füme alabalığı son 30 saniyede ekleyip ısıtın.",
+        "Dereotu, çavdar ekmeği ve domatesle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "trout": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 30.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      }
+    }
   }
 ]

@@ -4741,5 +4741,5464 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "d043",
+    "name": {
+      "en": "Chickpea Vegetable Coconut Curry",
+      "tr": "Nohutlu Sebzeli Hindistan Cevizi Körisi"
+    },
+    "description": {
+      "en": "Chickpeas, spinach and tomato simmered with light coconut milk and spices, served with brown rice.",
+      "tr": "Nohut, ıspanak ve domatesin hafif Hindistan cevizi sütü ve baharatlarla piştiği, esmer pirinçli köri."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea",
+      "brown_rice",
+      "coconut_milk",
+      "tomato",
+      "spinach",
+      "onion",
+      "olive_oil",
+      "coriander",
+      "cumin",
+      "turmeric",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 743,
+      "proteinG": 23,
+      "carbsG": 93,
+      "fatG": 35,
+      "fiberG": 21
+    },
+    "steps": {
+      "en": [
+        "Heat the oil in a saucepan over medium heat and soften the finely chopped onion for 4 minutes.",
+        "Add the coriander, cumin and turmeric and stir for 30 seconds until fragrant.",
+        "Add the tomato, chickpeas and coconut milk; simmer gently for 10 minutes.",
+        "Add the spinach and wilt for 2 minutes.",
+        "Season and serve with thoroughly reheated brown rice."
+      ],
+      "tr": [
+        "Yağı tencerede orta ateşte ısıtıp ince doğranmış soğanı 4 dakika yumuşatın.",
+        "Kişniş, kimyon ve zerdeçalı ekleyip 30 saniye kokusu çıkana kadar karıştırın.",
+        "Domates, nohut ve Hindistan cevizi sütünü ekleyin; kısık ateşte 10 dakika pişirin.",
+        "Ispanağı ekleyip 2 dakika soldurun.",
+        "Tuzunu ayarlayıp tamamen ısıtılmış esmer pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "brown_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 100.0,
+        "unit": "ml"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "coriander": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "turmeric": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d044",
+    "name": {
+      "en": "Peppers Stuffed with Lentils and Walnuts",
+      "tr": "Mercimekli Cevizli Biber Dolması"
+    },
+    "description": {
+      "en": "Meat-free peppers baked with a filling of green lentils, rice, tomato and walnuts.",
+      "tr": "Yeşil mercimek, pirinç, domates ve cevizli içle fırınlanan etsiz dolmalık biberler."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bell_pepper",
+      "green_lentil",
+      "white_rice",
+      "tomato",
+      "onion",
+      "walnut",
+      "olive_oil",
+      "mint",
+      "cumin",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 677,
+      "proteinG": 26,
+      "carbsG": 98,
+      "fatG": 22,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Cut the tops from the peppers and remove the seeds.",
+        "Soften the onion in half the oil for 4 minutes.",
+        "Add the diced tomato and cook for 3 minutes.",
+        "Mix in the lentils, rice, roughly chopped walnuts and seasonings.",
+        "Fill the peppers loosely.",
+        "Place in a small baking dish and add 60 ml hot water to the base.",
+        "Drizzle with the remaining oil; bake covered for 25 minutes, then uncovered for 15-20 minutes until tender."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Biberlerin üstlerini kesip çekirdeklerini çıkarın.",
+        "Yağın yarısında soğanı 4 dakika yumuşatın.",
+        "Küp domatesi ekleyip 3 dakika pişirin.",
+        "Mercimek, pirinç, iri kıyılmış ceviz ve baharatları karıştırın.",
+        "İç harcı biberlere gevşekçe doldurun.",
+        "Biberleri küçük kaba yerleştirip tabana 60 ml sıcak su ekleyin.",
+        "Kalan yağı gezdirin; üzeri kapalı 25, açık 15-20 dakika, biberler yumuşayana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bell_pepper": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "green_lentil": {
+        "amount": 67.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 36.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "mint": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d045",
+    "name": {
+      "en": "Polenta with Mushrooms, Spinach and White Beans",
+      "tr": "Mantarlı Ispanaklı Beyaz Fasulyeli Polenta"
+    },
+    "description": {
+      "en": "Creamy polenta served with a warm topping of mushrooms, spinach and white beans.",
+      "tr": "Kremamsı polentanın mantar, ıspanak ve beyaz fasulyeli sıcak harçla servis edildiği bitkisel ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cornmeal",
+      "water",
+      "mushroom",
+      "spinach",
+      "white_bean",
+      "olive_oil",
+      "nutritional_yeast",
+      "garlic",
+      "salt",
+      "black_pepper",
+      "oregano"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 560,
+      "proteinG": 29,
+      "carbsG": 87,
+      "fatG": 14,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Bring the water to the boil and season lightly.",
+        "Add the polenta in a thin stream while whisking; cook until thick according to the packet timing.",
+        "Stir half of the nutritional yeast into the polenta and keep warm.",
+        "Heat the oil over medium-high heat.",
+        "Brown the sliced mushrooms for 6-7 minutes; add the garlic, oregano, beans and spinach and cook for another 2-3 minutes.",
+        "Spoon the polenta into a bowl, add the mushroom topping and finish with the remaining nutritional yeast."
+      ],
+      "tr": [
+        "Suyu kaynatıp hafif tuzlayın.",
+        "Polentayı ince akışla eklerken sürekli çırpın; paket süresine göre koyulaşana kadar pişirin.",
+        "Besin mayasının yarısını polentaya karıştırıp sıcak tutun.",
+        "Yağı tavada orta-yüksek ateşte ısıtın.",
+        "Dilimlenmiş mantarı 6-7 dakika kızartın; sarımsak, kekik, fasulye ve ıspanağı ekleyip 2-3 dakika daha pişirin.",
+        "Polentayı kaseye alın; mantarlı harcı üzerine koyup kalan besin mayasıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cornmeal": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 300.0,
+        "unit": "ml"
+      },
+      "mushroom": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "white_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "nutritional_yeast": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d046",
+    "name": {
+      "en": "Sesame Tofu and Broccoli Rice Bowl",
+      "tr": "Susamlı Tofu ve Brokoli Kasesi"
+    },
+    "description": {
+      "en": "Pan-seared tofu and broccoli in a gluten-free tamari sesame sauce, served over brown rice.",
+      "tr": "Tavada kızartılmış tofu ve brokolinin glütensiz tamari-susam sosuyla esmer pirinç üzerinde servis edildiği kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tofu",
+      "brown_rice",
+      "broccoli",
+      "tamari",
+      "sesame_oil",
+      "sesame_seeds",
+      "rice_vinegar",
+      "ginger",
+      "water"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 460,
+      "proteinG": 24,
+      "carbsG": 56,
+      "fatG": 19,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Press the tofu dry and cut it into 2 cm cubes.",
+        "Divide the broccoli into small florets.",
+        "Heat the sesame oil in a non-stick pan over medium-high heat; sear the tofu for 6-8 minutes, turning until browned.",
+        "Add the broccoli and water, cover and steam for 3 minutes.",
+        "Add the tamari, rice vinegar and grated ginger and stir for 1-2 minutes.",
+        "Serve over hot rice with the sesame seeds."
+      ],
+      "tr": [
+        "Tofuyu bastırarak kurutup 2 cm küpler hâlinde kesin.",
+        "Brokoliyi küçük çiçeklere ayırın.",
+        "Yapışmaz tavada susam yağını orta-yüksek ateşte ısıtın; tofuyu 6-8 dakika çevirerek kızartın.",
+        "Brokoli ve suyu ekleyip kapağı kapalı 3 dakika buharda yumuşatın.",
+        "Tamari, pirinç sirkesi ve rendelenmiş zencefili ekleyip 1-2 dakika karıştırın.",
+        "Sıcak pirinç üzerinde susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tofu": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "brown_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tamari": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "rice_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 30.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "d047",
+    "name": {
+      "en": "Baked Aubergine with Tomato and White Beans",
+      "tr": "Patlıcanlı Domatesli Beyaz Fasulye Fırın"
+    },
+    "description": {
+      "en": "A baked main dish of aubergine, tomato and white beans with a sunflower seed and nutritional yeast topping.",
+      "tr": "Patlıcan, domates ve beyaz fasulyenin ay çekirdeği ve besin mayalı üst katmanla fırınlandığı ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggplant",
+      "white_bean",
+      "tomato",
+      "onion",
+      "olive_oil",
+      "sunflower_seeds",
+      "nutritional_yeast",
+      "garlic",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 651,
+      "proteinG": 31,
+      "carbsG": 85,
+      "fatG": 25,
+      "fiberG": 27
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Cut the aubergine into 2 cm cubes, toss with 10 g of the oil and a little salt, and roast for 20 minutes.",
+        "Soften the onion in the remaining oil for 4 minutes.",
+        "Add the garlic and chopped tomato and cook for 8 minutes.",
+        "Stir the beans, oregano, pepper and roasted aubergine into the tomato sauce and transfer to a small baking dish.",
+        "Add the sunflower seeds and nutritional yeast and bake for another 15 minutes; rest for 5 minutes."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Patlıcanı 2 cm küpler hâlinde doğrayıp yağın 10 gramı ve az tuzla karıştırın; 20 dakika fırınlayın.",
+        "Kalan yağda soğanı 4 dakika yumuşatın.",
+        "Sarımsak ve doğranmış domatesi ekleyip 8 dakika pişirin.",
+        "Fasulye, kekik, karabiber ve fırınlanmış patlıcanı domates sosuna karıştırıp küçük fırın kabına aktarın.",
+        "Ay çekirdeği ve besin mayasını üzerine serpin; 15 dakika daha fırınlayıp 5 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggplant": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "white_bean": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "sunflower_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "nutritional_yeast": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d048",
+    "name": {
+      "en": "Beef Stroganoff with Mushrooms",
+      "tr": "Mantarlı Dana Stroganof"
+    },
+    "description": {
+      "en": "Thin beef and mushrooms cooked in a mustard sour-cream sauce and served with egg noodles.",
+      "tr": "İnce dana eti ve mantarın hardallı ekşi krema sosunda pişip yumurtalı erişteyle servis edildiği yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "noodle",
+      "mushroom",
+      "onion",
+      "sour_cream",
+      "olive_oil",
+      "mustard",
+      "beef_stock",
+      "paprika",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 767,
+      "proteinG": 44,
+      "carbsG": 61,
+      "fatG": 38,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cut the beef into thin strips and slice the mushrooms and onion.",
+        "Heat the oil in a wide pan over high heat and sear the beef in one layer for 2-3 minutes; once it reaches at least 63°C, remove and rest for 3 minutes.",
+        "Cook the onion and mushrooms for 6 minutes.",
+        "Add the stock, mustard and paprika and boil for 2 minutes.",
+        "Reduce the heat, add the sour cream and beef and warm without boiling.",
+        "Serve with the hot noodles."
+      ],
+      "tr": [
+        "Eti ince şerit kesin; mantar ve soğanı dilimleyin.",
+        "Yağı geniş tavada yüksek ateşte ısıtıp eti tek sıra hâlinde 2-3 dakika mühürleyin; en az 63°C'ye ulaşınca tabağa alın ve 3 dakika dinlendirin.",
+        "Soğan ve mantarı 6 dakika pişirin.",
+        "Et suyu, hardal ve toz biberi ekleyip 2 dakika kaynatın.",
+        "Ateşi kısın; ekşi kremayı ve eti ekleyip kaynatmadan ısıtın.",
+        "Sıcak erişteyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "sour_cream": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 80.0,
+        "unit": "ml"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d049",
+    "name": {
+      "en": "Chicken Tikka Masala with Rice",
+      "tr": "Tavuk Tikka Masala ve Pirinç"
+    },
+    "description": {
+      "en": "Turkish Yogurt-spiced chicken simmered in a tomato and light coconut sauce and served with rice.",
+      "tr": "Yoğurt ve baharatla marine edilen tavuğun domatesli hafif Hindistan cevizi sosunda pişip pirinçle sunulduğu yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "basmati_rice",
+      "yogurt",
+      "tomato",
+      "coconut_milk",
+      "onion",
+      "olive_oil",
+      "garam_masala",
+      "cumin",
+      "garlic",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 787,
+      "proteinG": 61,
+      "carbsG": 65,
+      "fatG": 32,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cut the chicken into 2 cm cubes and mix with the Turkish yogurt, garam masala, cumin and garlic; refrigerate for 30 minutes.",
+        "Heat the oil and soften the onion for 4 minutes.",
+        "Add the chicken with its marinade and cook for 5 minutes until coloured.",
+        "Add the tomato and coconut milk and simmer for 10-12 minutes until the chicken reaches 74°C.",
+        "Season and serve with thoroughly heated rice."
+      ],
+      "tr": [
+        "Tavuğu 2 cm küp kesin; yoğurt, garam masala, kimyon ve sarımsakla karıştırıp buzdolabında 30 dakika bekletin.",
+        "Yağı tavada ısıtıp soğanı 4 dakika yumuşatın.",
+        "Tavuğu marinadıyla ekleyip dışı renk alana kadar 5 dakika pişirin.",
+        "Domates ve Hindistan cevizi sütünü ekleyin; tavuk 74°C'ye ulaşana kadar kısık ateşte 10-12 dakika pişirin.",
+        "Tuzunu ayarlayıp tamamen ısıtılmış pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "basmati_rice": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 80.0,
+        "unit": "ml"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "garam_masala": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d050",
+    "name": {
+      "en": "Baked Sea Bass with Lemon Potatoes",
+      "tr": "Limonlu Patatesli Fırın Levrek"
+    },
+    "description": {
+      "en": "A simple tray-baked dinner of sea bass fillet, thin potatoes, tomato and lemon.",
+      "tr": "Levrek fileto, ince patates, domates ve limonun aynı tepside fırınlandığı sade akşam yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sea_bass",
+      "potato",
+      "tomato",
+      "zucchini",
+      "olive_oil",
+      "lemon",
+      "garlic",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 546,
+      "proteinG": 43,
+      "carbsG": 50,
+      "fatG": 20,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Slice the potato 4-5 mm thick, toss with 10 g of the oil, garlic and oregano and pre-bake for 20 minutes.",
+        "Add the courgette and tomato and bake for another 10 minutes.",
+        "Place the sea bass over the vegetables with the remaining oil, lemon juice, salt and pepper.",
+        "Bake for 10-14 minutes until the fish reaches 63°C and is opaque and flakes easily."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Patatesi 4-5 mm dilimleyip yağın 10 gramı, sarımsak ve kekikle karıştırın; 20 dakika ön pişirin.",
+        "Kabak ve domatesi tepsiye ekleyip 10 dakika daha pişirin.",
+        "Levrek filetoyu kalan yağ, limon suyu, tuz ve karabiberle sebzelerin üzerine yerleştirin.",
+        "Balık 63°C'ye ulaşana ve eti opaklaşıp çatalla kolay ayrılana kadar 10-14 dakika fırınlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sea_bass": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d051",
+    "name": {
+      "en": "Turkey Meatballs and Spaghetti in Tomato Sauce",
+      "tr": "Domates Soslu Hindi Köfte ve Spagetti"
+    },
+    "description": {
+      "en": "Baked turkey meatballs served with tomato sauce and spaghetti.",
+      "tr": "Fırında pişmiş hindi köftelerin domates sosu ve spagettiyle servis edildiği akşam yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american",
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_turkey",
+      "pasta",
+      "tomato",
+      "parmesan",
+      "breadcrumbs",
+      "eggs",
+      "olive_oil",
+      "garlic",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 820,
+      "proteinG": 64,
+      "carbsG": 79,
+      "fatG": 27,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Mix the turkey, breadcrumbs, egg, half the Parmesan and seasonings and shape into 6 small meatballs.",
+        "Bake on parchment for 12-15 minutes until the centres reach 74°C.",
+        "Cook the garlic in the oil for 30 seconds; add the tomato and oregano and reduce for 10 minutes.",
+        "Add the meatballs to the sauce and serve with the hot spaghetti and remaining Parmesan."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Hindi kıyma, galeta unu, yumurta, Parmesan yarısı ve baharatlarla 6 küçük köfte yapın.",
+        "Köfteleri yağlı kâğıtta 12-15 dakika, merkezleri 74°C'ye ulaşana kadar pişirin.",
+        "Yağda sarımsağı 30 saniye çevirin; domates ve kekiği ekleyip 10 dakika koyulaştırın.",
+        "Köfteleri sosa katın; sıcak spagetti ve kalan Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d052",
+    "name": {
+      "en": "Beef Burrito Bowl",
+      "tr": "Dana Etli Burrito Kasesi"
+    },
+    "description": {
+      "en": "A substantial bowl of spiced minced beef, rice, black beans, corn, salsa and avocado.",
+      "tr": "Baharatlı dana kıyma, pirinç, siyah fasulye, mısır, salsa ve avokadolu doyurucu kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "white_rice",
+      "black_bean",
+      "corn",
+      "salsa",
+      "avocado",
+      "cumin",
+      "paprika",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 777,
+      "proteinG": 48,
+      "carbsG": 84,
+      "fatG": 28,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Cook the beef with the cumin and chilli in a non-stick pan for 6-8 minutes until it reaches 71°C.",
+        "Heat the rice, beans and corn thoroughly in a separate pan.",
+        "Dice the avocado and drain excess liquid from the salsa.",
+        "Add the rice mixture to a bowl and serve with the beef, salsa and avocado in sections."
+      ],
+      "tr": [
+        "Kıymayı yapışmaz tavada kimyon ve toz biberle, merkezi 71°C'ye ulaşana kadar 6-8 dakika pişirin.",
+        "Pirinç, fasulye ve mısırı ayrı kapta tamamen ısıtın.",
+        "Avokadoyu küp doğrayın; salsanın fazla suyunu süzün.",
+        "Pirinç karışımını kaseye alın; kıyma, salsa ve avokadoyla bölümler hâlinde servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 47.0,
+        "unit": "g"
+      },
+      "black_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "salsa": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d053",
+    "name": {
+      "en": "Lamb and Apricot Tagine with Couscous",
+      "tr": "Kuzu Etli Kayısılı Tajin ve Kuskus"
+    },
+    "description": {
+      "en": "A slow-simmered stew of lamb, dried apricots, chickpeas and warm spices served with couscous.",
+      "tr": "Kuzu eti, kuru kayısı, nohut ve sıcak baharatların yavaşça pişirilip kuskusla sunulduğu güveç."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "couscous",
+      "chickpea",
+      "dried_apricot",
+      "onion",
+      "tomato",
+      "olive_oil",
+      "water",
+      "cumin",
+      "cinnamon",
+      "ginger",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 910,
+      "proteinG": 49,
+      "carbsG": 101,
+      "fatG": 35,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Heat the oil and brown the lamb for 3-4 minutes; add the onion and cook for 3 minutes.",
+        "Add the tomato, water and spices; cover and simmer gently for 35 minutes.",
+        "Add the chickpeas and halved apricots and cook for another 15-20 minutes until tender and at least 63°C.",
+        "Season and serve with the hot couscous."
+      ],
+      "tr": [
+        "Yağı tencerede ısıtıp kuzu etini 3-4 dakika renk alana kadar mühürleyin; soğanı ekleyip 3 dakika pişirin.",
+        "Domates, su ve baharatları ekleyin; kapağı kapalı kısık ateşte 35 dakika pişirin.",
+        "Nohut ve ikiye bölünmüş kayısıları ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 15-20 dakika daha pişirin.",
+        "Tuzunu ayarlayıp sıcak kuskusla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "couscous": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "dried_apricot": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 200.0,
+        "unit": "ml"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "ginger": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d054",
+    "name": {
+      "en": "Paella-Inspired Rice with Shrimp and Mussels",
+      "tr": "Karidesli Midyeli Paella Esintili Pirinç"
+    },
+    "description": {
+      "en": "A paella-inspired dinner of saffron rice cooked with shrimp, mussels, peas and pepper.",
+      "tr": "Safranlı pirinçte karides, midye, bezelye ve biberin birlikte piştiği paella esintili akşam yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "white_rice",
+      "shrimp",
+      "mussel",
+      "peas",
+      "bell_pepper",
+      "tomato",
+      "olive_oil",
+      "fish_stock",
+      "saffron",
+      "paprika"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 662,
+      "proteinG": 53,
+      "carbsG": 77,
+      "fatG": 15,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Discard mussels that are open and do not close when tapped, or are cracked.",
+        "Heat the oil and cook the pepper and tomato for 4 minutes.",
+        "Add the stock, saffron, paprika, peas and rice and boil for 5 minutes.",
+        "Add the shrimp and mussels, cover and cook for 5-7 minutes until the shrimp are opaque and the mussels open.",
+        "Discard any mussels that remain closed; rest for 3 minutes and serve."
+      ],
+      "tr": [
+        "Açık veya kırık midyeleri pişirmeden önce atın.",
+        "Yağı geniş tavada ısıtıp biber ve domatesi 4 dakika pişirin.",
+        "Balık suyu, safran, toz biber, bezelye ve pirinci ekleyip 5 dakika kaynatın.",
+        "Karides ve midyeleri üstüne yerleştirip kapağı kapatın; karides opaklaşıp midyeler açılana kadar 5-7 dakika pişirin.",
+        "Açılmayan midyeleri atın; 3 dakika dinlendirip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "shrimp": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mussel": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "fish_stock": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "saffron": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d055",
+    "name": {
+      "en": "Chicken and Mushroom Puff Pastry Pie",
+      "tr": "Tavuklu Mantarlı Milföy Kapama"
+    },
+    "description": {
+      "en": "A single-serving pie of creamy chicken, mushrooms and peas baked under puff pastry.",
+      "tr": "Tavuk, mantar ve bezelyeli kremalı harcın milföy kapağı altında fırınlandığı tek porsiyon turta."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "puff_pastry",
+      "mushroom",
+      "peas",
+      "cream",
+      "onion",
+      "olive_oil",
+      "chicken_stock",
+      "eggs",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1026,
+      "proteinG": 55,
+      "carbsG": 58,
+      "fatG": 63,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Cut the chicken into 2 cm cubes and cook with the onion and mushrooms in the oil for 6 minutes.",
+        "Add the stock, cream and peas and reduce for 4 minutes; confirm the chicken reaches 74°C.",
+        "Transfer to a small baking dish.",
+        "Cover with the pastry, seal the edges, cut a steam vent and brush with egg.",
+        "Bake for 18-22 minutes until puffed and browned; rest for 5 minutes."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Tavuğu 2 cm küp kesin; yağda soğan ve mantarla 6 dakika pişirin.",
+        "Tavuk suyu, krema ve bezelyeyi ekleyip 4 dakika koyulaştırın; tavuk parçalarının 74°C'ye ulaştığını kontrol edin.",
+        "Harcı küçük fırın kabına aktarın.",
+        "Milföyü üzerine kapatıp kenarları bastırın; buhar deliği açıp yumurta sürün.",
+        "Milföy kabarıp kızarana kadar 18-22 dakika fırınlayın; 5 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "puff_pastry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cream": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "chicken_stock": {
+        "amount": 80.0,
+        "unit": "ml"
+      },
+      "eggs": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d056",
+    "name": {
+      "en": "Baked Aubergine Parmesan",
+      "tr": "Fırında Patlıcan Parmesan"
+    },
+    "description": {
+      "en": "A main dish of baked aubergine slices layered with tomato sauce, mozzarella and Parmesan.",
+      "tr": "Fırınlanmış patlıcan dilimlerinin domates sosu, mozzarella ve Parmesanla katmanlandığı ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american",
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggplant",
+      "tomato_sauce",
+      "mozzarella",
+      "parmesan",
+      "breadcrumbs",
+      "eggs",
+      "olive_oil",
+      "oregano",
+      "salt",
+      "black_pepper",
+      "lettuce"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 806,
+      "proteinG": 51,
+      "carbsG": 68,
+      "fatG": 39,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 210°C.",
+        "Slice the aubergine 1 cm thick, salt lightly and pat dry after 15 minutes.",
+        "Coat in beaten egg and breadcrumbs, drizzle with half the oil and bake for 20 minutes, turning halfway.",
+        "Layer the tomato sauce, aubergine, mozzarella and Parmesan in a small dish; add the remaining oil and oregano.",
+        "Bake at 190°C for 18-20 minutes until hot in the centre and browned; serve with the salad."
+      ],
+      "tr": [
+        "Fırını 210°C'ye ısıtın.",
+        "Patlıcanı 1 cm dilimleyip az tuzlayın; 15 dakika sonra kurulayın.",
+        "Dilimleri çırpılmış yumurtaya ve galeta ununa bulayın; yağın yarısını ince gezdirip 20 dakika, yarısında çevirerek fırınlayın.",
+        "Küçük kapta domates sosu, patlıcan, mozzarella ve Parmesanı katmanlayın; kalan yağı ve kekiği ekleyin.",
+        "190°C'de 18-20 dakika, merkez tamamen sıcak ve peynir kızarmış olana kadar pişirin; salatayla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggplant": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "tomato_sauce": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "lettuce": {
+        "amount": 150.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d057",
+    "name": {
+      "en": "Beef Bibimbap-Inspired Rice Bowl",
+      "tr": "Dana Etli Bibimbap Esintili Pirinç Kasesi"
+    },
+    "description": {
+      "en": "A bibimbap-inspired bowl of seasoned beef, rice, egg and separately cooked colourful vegetables.",
+      "tr": "Baharatlı dana eti, pirinç, yumurta ve ayrı pişmiş renkli sebzelerden oluşan bibimbap esintili kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "veal",
+      "white_rice",
+      "eggs",
+      "carrot",
+      "zucchini",
+      "spinach",
+      "mushroom",
+      "sesame_oil",
+      "gochujang",
+      "tamari",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 733,
+      "proteinG": 51,
+      "carbsG": 77,
+      "fatG": 25,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Finely cut the vegetables and sauté them separately in the same pan for 1-3 minutes to retain colour and texture.",
+        "Cook the beef with the tamari over high heat until it reaches at least 63°C; rest for 3 minutes.",
+        "Cook the egg until the white is fully set.",
+        "Add the hot rice to a bowl; arrange the vegetables, beef and egg separately and serve with gochujang, sesame oil and sesame seeds."
+      ],
+      "tr": [
+        "Sebzeleri ince doğrayıp aynı tavada ayrı ayrı 1-3 dakika soteleyin; renk ve dokularını koruyun.",
+        "Dana etini tamariyle yüksek ateşte, merkezi en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Yumurtayı beyazı tamamen katılaşana kadar pişirin.",
+        "Sıcak pirinci kaseye alın; sebzeleri, eti ve yumurtayı ayrı bölümlere yerleştirip gochujang, susam yağı ve susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "veal": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "gochujang": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "tamari": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d058",
+    "name": {
+      "en": "Chicken Cacciatore",
+      "tr": "Tavuk Cacciatore"
+    },
+    "description": {
+      "en": "An Italian main course of chicken braised with tomato, mushrooms, pepper and olives.",
+      "tr": "Tavuk, domates, mantar, biber ve zeytinle ağır ateşte pişirilen İtalyan usulü ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_thigh",
+      "tomato",
+      "mushroom",
+      "bell_pepper",
+      "onion",
+      "olives",
+      "olive_oil",
+      "cornmeal",
+      "oregano"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 814,
+      "proteinG": 59,
+      "carbsG": 69,
+      "fatG": 36,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Brown the chicken on both sides in the oil and transfer to a plate.",
+        "Cook the onion, mushrooms and pepper for 6 minutes; add the passata, olives, oregano and chicken.",
+        "Cover and simmer for 20-25 minutes until the chicken reaches 74°C; serve with polenta prepared according to the packet."
+      ],
+      "tr": [
+        "Tavuğu yağda iki yüzü renk alana kadar pişirip tabağa çıkarın.",
+        "Soğan, mantar ve biberi 6 dakika soteleyin; domates, zeytin, kekik ve tavuğu ekleyin.",
+        "Kapağı kapalı olarak 20-25 dakika, tavuk 74°C'ye ulaşana kadar pişirin; pakete göre hazırlanan polentayla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_thigh": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cornmeal": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d059",
+    "name": {
+      "en": "Beef Lasagne",
+      "tr": "Dana Etli Lazanya"
+    },
+    "description": {
+      "en": "A classic baked dish layered with beef ragù, béchamel, pasta sheets and cheese.",
+      "tr": "Dana ragù, beşamel, makarna yaprağı ve peynir katmanlarından oluşan klasik fırın yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "lasagna_sheets",
+      "tomato",
+      "onion",
+      "milk",
+      "flour",
+      "butter",
+      "mozzarella",
+      "parmesan"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1045,
+      "proteinG": 72,
+      "carbsG": 89,
+      "fatG": 43,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the beef and onion until the beef reaches 71°C; add the tomatoes and reduce for 12 minutes.",
+        "Cook the butter and flour for 1 minute; whisk in the milk and thicken the béchamel.",
+        "Layer the ragù, pasta, béchamel and cheeses and bake at 190°C for 30-35 minutes; rest for 10 minutes."
+      ],
+      "tr": [
+        "Kıyma ve soğanı kıyma 71°C'ye ulaşana kadar pişirin; domatesi ekleyip 12 dakika çektirin.",
+        "Tereyağı ve unu 1 dakika pişirin; sütü çırparak ekleyip beşameli koyulaştırın.",
+        "190°C'de ragù, makarna, beşamel ve peynirleri katmanlayıp 30-35 dakika pişirin; 10 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "lasagna_sheets": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "flour": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d060",
+    "name": {
+      "en": "Almond-Crusted Baked Trout",
+      "tr": "Bademli Fırın Alabalık"
+    },
+    "description": {
+      "en": "A balanced baked plate of almond-crusted trout with potatoes and green beans.",
+      "tr": "Badem kaplı alabalığın patates ve taze fasulyeyle servis edildiği dengeli fırın tabağı."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "trout",
+      "potato",
+      "green_beans",
+      "almond",
+      "breadcrumbs",
+      "olive_oil",
+      "lemon",
+      "dill"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 780,
+      "proteinG": 51,
+      "carbsG": 61,
+      "fatG": 38,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Pre-bake the potatoes with half the oil at 210°C for 20 minutes.",
+        "Press the almond, breadcrumb and dill mixture over the trout and add it to the tray.",
+        "Bake for another 12-15 minutes until the fish reaches 63°C; serve with boiled green beans and lemon."
+      ],
+      "tr": [
+        "Patatesi yağın yarısıyla 210°C'de 20 dakika ön pişirin.",
+        "Alabalığın üzerine badem, galeta unu ve dereotu karışımını bastırın; tepsiye ekleyin.",
+        "Balık 63°C'ye ulaşana kadar 12-15 dakika daha pişirin; haşlanmış fasulye ve limonla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "trout": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "green_beans": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d061",
+    "name": {
+      "en": "Coconut Shrimp Rice Noodles",
+      "tr": "Karidesli Hindistan Cevizli Pirinç Noodle"
+    },
+    "description": {
+      "en": "An aromatic stir-fry of shrimp, rice noodles, coconut milk and vegetables.",
+      "tr": "Karides, pirinç noodle, hindistan cevizi sütü ve sebzelerle hazırlanan aromatik tava yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "noodle",
+      "coconut_milk",
+      "broccoli",
+      "carrot",
+      "curry_paste",
+      "soy_sauce",
+      "lemon",
+      "canola_oil"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "shellfish",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 850,
+      "proteinG": 52,
+      "carbsG": 83,
+      "fatG": 37,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Soften the noodles according to the packet and drain.",
+        "Stir-fry the vegetables in the oil for 4 minutes; add the curry paste and coconut milk.",
+        "Add the shrimp and cook for 3-4 minutes until firm and opaque; toss with the noodles, soy sauce and lime."
+      ],
+      "tr": [
+        "Noodle'ı pakete göre yumuşatıp süzün.",
+        "Sebzeleri yağda 4 dakika çevirin; köri ezmesi ve hindistan cevizi sütünü ekleyin.",
+        "Karidesi ekleyip eti sıkı ve opak olana kadar 3-4 dakika pişirin; noodle, soya sosu ve limonla karıştırın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 120.0,
+        "unit": "ml"
+      },
+      "broccoli": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "curry_paste": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "canola_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d062",
+    "name": {
+      "en": "Lamb Moussaka with Béchamel",
+      "tr": "Beşamelli Kuzu Musakka"
+    },
+    "description": {
+      "en": "Moussaka layered with baked aubergine, spiced minced lamb and béchamel.",
+      "tr": "Fırın patlıcan, baharatlı kuzu kıyma ve beşamel katmanlarıyla hazırlanan musakka."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "eggplant",
+      "tomato",
+      "onion",
+      "milk",
+      "flour",
+      "butter",
+      "parmesan",
+      "olive_oil",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 899,
+      "proteinG": 54,
+      "carbsG": 52,
+      "fatG": 55,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Slice the aubergine, coat with oil and bake at 210°C for 20 minutes.",
+        "Cook the lamb and onion until the meat reaches 71°C; add the tomatoes and cinnamon and reduce.",
+        "Make béchamel with the butter, flour and milk.",
+        "Layer the aubergine, meat and béchamel, top with cheese and bake at 190°C for 25 minutes; rest for 10 minutes."
+      ],
+      "tr": [
+        "Patlıcanı dilimleyip yağla 210°C'de 20 dakika fırınlayın.",
+        "Kuzu ve soğanı kıyma 71°C'ye ulaşana kadar pişirin; domates ve tarçını ekleyip çektirin.",
+        "Tereyağı, un ve sütle beşamel hazırlayın.",
+        "Patlıcan, et ve beşameli katmanlayıp peynirle 190°C'de 25 dakika pişirin; 10 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "eggplant": {
+        "amount": 300.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "flour": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d063",
+    "name": {
+      "en": "Turkey Shepherd's Pie",
+      "tr": "Hindili Çoban Payı"
+    },
+    "description": {
+      "en": "A shepherd's pie adaptation with minced turkey and vegetables baked under mashed potato.",
+      "tr": "Hindi kıyma ve sebzeli harcın patates püresi altında fırınlandığı çoban payı uyarlaması."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_turkey",
+      "potato",
+      "peas",
+      "carrot",
+      "onion",
+      "chicken_stock",
+      "milk",
+      "butter",
+      "tomato_paste"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 778,
+      "proteinG": 62,
+      "carbsG": 79,
+      "fatG": 24,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Boil the potato and mash with the milk and butter.",
+        "Cook the turkey, onion and carrot until the turkey reaches 74°C; add the tomato purée, peas and stock and reduce.",
+        "Transfer to a dish, spread over the mash and bake at 200°C for 20 minutes until browned."
+      ],
+      "tr": [
+        "Patatesi haşlayıp süt ve tereyağıyla ezin.",
+        "Hindi, soğan ve havucu hindi 74°C'ye ulaşana kadar pişirin; salça, bezelye ve suyu ekleyip koyulaştırın.",
+        "Harcı kaba alın, püreyi yayın ve 200°C'de 20 dakika kızartın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 280.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "chicken_stock": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "milk": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "tomato_paste": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d064",
+    "name": {
+      "en": "Chicken Enchiladas",
+      "tr": "Tavuklu Enchilada"
+    },
+    "description": {
+      "en": "Tortillas filled with spiced chicken and beans, then baked with sauce and cheese.",
+      "tr": "Baharatlı tavuk ve fasulyenin tortilla içinde sos ve peynirle fırınlandığı enchilada tabağı."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "tortilla_wrap",
+      "kidney_bean",
+      "enchilada_sauce",
+      "cheddar_cheese",
+      "onion",
+      "corn",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 1095,
+      "proteinG": 84,
+      "carbsG": 103,
+      "fatG": 39,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Cook the diced chicken and onion in the oil until the chicken reaches 74°C; add the beans and corn.",
+        "Divide the filling among the tortillas, roll and place in a sauced baking dish.",
+        "Add the remaining sauce and kashar and bake at 190°C for 18-20 minutes."
+      ],
+      "tr": [
+        "Küçük doğranmış tavuğu ve soğanı yağda tavuk 74°C'ye ulaşana kadar pişirin; fasulye ve mısırı ekleyin.",
+        "Harcı tortillalara paylaştırıp sarın ve soslu fırın kabına dizin.",
+        "Kalan sosu ve kaşarı ekleyip 190°C'de 18-20 dakika fırınlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "kidney_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "enchilada_sauce": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d065",
+    "name": {
+      "en": "Fish Tacos",
+      "tr": "Balık Taco"
+    },
+    "description": {
+      "en": "Corn tacos with spiced white fish, cabbage slaw and a Turkish yogurt-lime sauce.",
+      "tr": "Baharatlı beyaz balık, lahana salatası ve yoğurtlu limon soslu mısır taco."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cod",
+      "tortilla_wrap",
+      "cabbage",
+      "avocado",
+      "yogurt",
+      "lemon",
+      "olive_oil",
+      "cumin",
+      "coriander"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 700,
+      "proteinG": 51,
+      "carbsG": 65,
+      "fatG": 28,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Cook the fish with the cumin and oil until it reaches 63°C, then flake coarsely.",
+        "Massage the cabbage with half the lime juice; mix the Turkish yogurt with the remainder.",
+        "Warm the tortillas and fill with fish, cabbage, avocado, Turkish yogurt sauce and coriander."
+      ],
+      "tr": [
+        "Balığı kimyon ve yağla tavada 63°C'ye ulaşana kadar pişirip iri parçalara ayırın.",
+        "Lahanayı limonun yarısıyla ovun; yoğurdu kalan limonla karıştırın.",
+        "Tortillaları ısıtıp balık, lahana, avokado, yoğurt sos ve kişnişle doldurun."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cod": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "cabbage": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d066",
+    "name": {
+      "en": "Teriyaki Beef Soba",
+      "tr": "Dana Etli Teriyaki Soba"
+    },
+    "description": {
+      "en": "A quick noodle dish with thinly sliced beef, buckwheat soba, broccoli and teriyaki sauce.",
+      "tr": "İnce dana eti, karabuğdaylı soba, brokoli ve teriyaki soslu hızlı noodle yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "noodle",
+      "broccoli",
+      "carrot",
+      "soy_sauce",
+      "mirin",
+      "honey",
+      "sesame_oil",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "simple",
+    "macros": {
+      "calories": 936,
+      "proteinG": 53,
+      "carbsG": 95,
+      "fatG": 37,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the soba according to the packet and drain.",
+        "Sear the thin beef slices in a very hot pan for 2-3 minutes; add the soy sauce, mirin and honey.",
+        "Add the vegetables and cook until tender-crisp; toss in the soba and sesame oil and serve with sesame."
+      ],
+      "tr": [
+        "Soba noodle'ı pakete göre haşlayıp süzün.",
+        "İnce dana dilimlerini çok sıcak tavada 2-3 dakika pişirin; soya sosu, mirin ve balı ekleyin.",
+        "Sebzeleri ekleyip diri-yumuşak pişirin; soba ve susam yağını karıştırıp susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "mirin": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "honey": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d067",
+    "name": {
+      "en": "Spinach and Ricotta Cannelloni",
+      "tr": "Ispanaklı Ricottalı Cannelloni"
+    },
+    "description": {
+      "en": "Pasta tubes filled with spinach and ricotta, baked with tomato sauce and cheese.",
+      "tr": "Ispanak ve ricotta dolgulu makarna tüplerinin domates sosu ve peynirle fırınlandığı yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lasagna_sheets",
+      "ricotta",
+      "spinach",
+      "tomato_sauce",
+      "mozzarella",
+      "parmesan",
+      "eggs",
+      "nutmeg"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1007,
+      "proteinG": 65,
+      "carbsG": 94,
+      "fatG": 43,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Wilt the spinach, cool and squeeze it thoroughly; mix with the ricotta, egg, nutmeg and Parmesan.",
+        "Fill the cannelloni tubes and arrange in a dish with the tomato sauce.",
+        "Scatter over the mozzarella; bake covered at 190°C for 25 minutes and uncovered for 10 minutes, until the centre reaches 71°C."
+      ],
+      "tr": [
+        "Ispanağı soldurup soğutun ve suyunu iyice sıkın; ricotta, yumurta, muskat ve Parmesanla karıştırın.",
+        "Karışımı cannelloni tüplerine doldurup domates soslu kaba dizin.",
+        "Mozzarellayı serpip kapalı olarak 190°C'de 25 dakika, ardından açık 10 dakika pişirin; merkez 71°C'ye ulaşmalıdır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lasagna_sheets": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato_sauce": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "nutmeg": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d068",
+    "name": {
+      "en": "Baked Sea Bass Provençal",
+      "tr": "Fırında Levrek Provençal"
+    },
+    "description": {
+      "en": "A Provençal-inspired main course of sea bass baked with tomato, courgette, olives and Mediterranean herbs.",
+      "tr": "Levrek, domates, kabak, zeytin ve Akdeniz otlarıyla fırınlanan Provençal esintili ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sea_bass",
+      "potato",
+      "tomato",
+      "zucchini",
+      "olives",
+      "olive_oil",
+      "garlic",
+      "oregano"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 630,
+      "proteinG": 55,
+      "carbsG": 50,
+      "fatG": 24,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Thinly slice the potato and pre-bake with half the oil at 200°C for 20 minutes.",
+        "Add the tomato, courgette, olives, garlic and oregano and place the sea bass on top.",
+        "Drizzle with the remaining oil and bake for 12-15 minutes until the fish reaches 63°C."
+      ],
+      "tr": [
+        "Patatesi ince dilimleyip yağın yarısıyla 200°C'de 20 dakika ön pişirin.",
+        "Domates, kabak, zeytin, sarımsak ve kekiği ekleyip levreği üzerine yerleştirin.",
+        "Kalan yağı gezdirip balık 63°C'ye ulaşana kadar 12-15 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sea_bass": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d069",
+    "name": {
+      "en": "Chicken Kyiv-Inspired Stuffed Breast",
+      "tr": "Tavuk Kiev Esintili Dolma"
+    },
+    "description": {
+      "en": "An adaptation of breaded chicken breast filled with garlic herb butter and served with vegetables.",
+      "tr": "Sarımsaklı otlu tereyağıyla doldurulup pane edilen tavuk göğsünün sebzelerle sunulduğu uyarlama."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "butter",
+      "garlic",
+      "parsley",
+      "eggs",
+      "breadcrumbs",
+      "flour",
+      "broccoli",
+      "potato"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 970,
+      "proteinG": 85,
+      "carbsG": 83,
+      "fatG": 33,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Mix and chill the butter, garlic and parsley; place inside the chicken and seal tightly.",
+        "Coat the chicken in flour, beaten egg and breadcrumbs.",
+        "Bake at 200°C for 25-30 minutes until the centre reaches 74°C; serve with boiled broccoli and potato."
+      ],
+      "tr": [
+        "Tereyağı, sarımsak ve maydanozu karıştırıp soğutun; tavuğun içine yerleştirip sıkıca kapatın.",
+        "Tavuğu un, çırpılmış yumurta ve galeta ununa bulayın.",
+        "200°C'de merkezi 74°C'ye ulaşana kadar 25-30 dakika pişirip haşlanmış brokoli ve patatesle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "breadcrumbs": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "flour": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 180.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d070",
+    "name": {
+      "en": "Beef Stroganoff",
+      "tr": "Dana Etli Stroganoff"
+    },
+    "description": {
+      "en": "Beef, mushrooms and onion in a sour-cream sauce served with egg noodles.",
+      "tr": "Dana eti, mantar, soğan ve ekşi krema sosunun yumurtalı erişteyle servis edildiği yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "noodle",
+      "mushroom",
+      "onion",
+      "sour_cream",
+      "beef_stock",
+      "butter",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1067,
+      "proteinG": 61,
+      "carbsG": 77,
+      "fatG": 56,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cook the noodles according to the packet.",
+        "Sear the beef quickly until it reaches at least 63°C and rest for 3 minutes.",
+        "Cook the mushrooms and onion in butter; reduce with the stock and mustard, then off the heat stir in the sour cream and beef and serve with noodles."
+      ],
+      "tr": [
+        "Erişteyi pakete göre haşlayın.",
+        "Eti çok sıcak tavada en az 63°C'ye ulaşana kadar hızla pişirip 3 dakika dinlendirin.",
+        "Mantar ve soğanı tereyağında pişirin; et suyu ve hardalı ekleyip çektirin, ocaktan alınca ekşi krema ve eti karıştırıp erişteyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "sour_cream": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d071",
+    "name": {
+      "en": "Lamb and Vegetable Tagine",
+      "tr": "Kuzu Etli Sebzeli Tagine"
+    },
+    "description": {
+      "en": "A tagine-inspired slow-cooked dish of lamb, chickpeas, apricots, carrot and warm spices.",
+      "tr": "Kuzu eti, nohut, kayısı, havuç ve sıcak baharatlarla ağır ateşte pişirilen tagine esintili yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "chickpea",
+      "carrot",
+      "zucchini",
+      "dried_apricot",
+      "onion",
+      "beef_stock",
+      "olive_oil",
+      "cumin",
+      "cinnamon"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1019,
+      "proteinG": 63,
+      "carbsG": 83,
+      "fatG": 51,
+      "fiberG": 20
+    },
+    "steps": {
+      "en": [
+        "Brown the lamb in the oil and add the onion.",
+        "Add the carrot, apricots, spices and stock and simmer covered for 45 minutes.",
+        "Add the chickpeas and courgette and cook for 15 more minutes until the lamb is tender and reaches at least 63°C."
+      ],
+      "tr": [
+        "Kuzu etini yağda renk alana kadar pişirip soğanı ekleyin.",
+        "Havuç, kayısı, baharatlar ve et suyunu ekleyip kapalı olarak 45 dakika kısık ateşte pişirin.",
+        "Nohut ve kabağı ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 15 dakika daha pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "dried_apricot": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 300.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d072",
+    "name": {
+      "en": "Shrimp Paella-Inspired Rice",
+      "tr": "Karidesli Paella Esintili Pilav"
+    },
+    "description": {
+      "en": "A one-pan rice dish with shrimp, saffron, peas, pepper and tomato.",
+      "tr": "Karides, safranlı pirinç, bezelye, biber ve domatesle hazırlanan tek tava pilavı."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "white_rice",
+      "peas",
+      "bell_pepper",
+      "tomato",
+      "fish_stock",
+      "olive_oil",
+      "saffron"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 743,
+      "proteinG": 60,
+      "carbsG": 97,
+      "fatG": 13,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the pepper in the oil for 4 minutes; add the rice, tomato, saffron and fish stock.",
+        "Simmer without stirring for 15 minutes; add the peas.",
+        "Arrange the shrimp and cook for 5-6 more minutes until firm and fully opaque; rest for 5 minutes."
+      ],
+      "tr": [
+        "Biberi yağda 4 dakika pişirip pirinç, domates, safran ve balık suyunu ekleyin.",
+        "Karıştırmadan kısık ateşte 15 dakika pişirin; bezelyeyi ekleyin.",
+        "Karidesi yerleştirip eti sıkı ve tamamen opak olana kadar 5-6 dakika daha pişirin; 5 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "fish_stock": {
+        "amount": 350.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "saffron": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d073",
+    "name": {
+      "en": "Tomato Orzo with Turkey Meatballs",
+      "tr": "Hindi Köfteli Domatesli Orzo"
+    },
+    "description": {
+      "en": "A one-pan dish of turkey meatballs served with tomato orzo, spinach and Parmesan.",
+      "tr": "Hindi köftelerinin domatesli orzo, ıspanak ve Parmesanla servis edildiği tek tava yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_turkey",
+      "pasta",
+      "tomato",
+      "spinach",
+      "onion",
+      "parmesan",
+      "olive_oil",
+      "water"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 921,
+      "proteinG": 74,
+      "carbsG": 83,
+      "fatG": 33,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Shape the turkey into six meatballs and cook in the oil, turning, until the centres reach 74°C; remove.",
+        "Add the onion, orzo, tomatoes and water and cook for 12-14 minutes.",
+        "Add the spinach and meatballs and heat through; serve with Parmesan."
+      ],
+      "tr": [
+        "Hindi kıymayı altı köfte yapıp yağda çevirerek merkezleri 74°C'ye ulaşana kadar pişirin; çıkarın.",
+        "Soğan, orzo, domates ve suyu tavaya ekleyip 12-14 dakika pişirin.",
+        "Ispanak ve köfteleri ekleyip tamamen ısıtın; Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 85.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 250.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "d074",
+    "name": {
+      "en": "Salmon Wellington-Inspired Parcel",
+      "tr": "Somon Wellington Esintili"
+    },
+    "description": {
+      "en": "A Wellington-inspired pastry parcel filled with salmon, spinach and cream cheese.",
+      "tr": "Somon, ıspanak ve krem peynirin milföy içinde fırınlandığı Wellington esintili paket."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "puff_pastry",
+      "spinach",
+      "cream_cheese",
+      "eggs",
+      "green_beans",
+      "dill"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 1291,
+      "proteinG": 62,
+      "carbsG": 67,
+      "fatG": 86,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Wilt the spinach, cool and squeeze very dry; mix with the cream cheese and dill.",
+        "Place the salmon and spinach mixture on the pastry, seal and brush with beaten egg.",
+        "Bake at 200°C for 25-30 minutes until the salmon reaches 63°C; serve with boiled beans."
+      ],
+      "tr": [
+        "Ispanağı soldurup soğutun ve suyunu çok iyi sıkın; krem peynir ve dereotuyla karıştırın.",
+        "Milföye somon ve ıspanak karışımını koyup kapatın; çırpılmış yumurta sürün.",
+        "200°C'de somon merkezi 63°C'ye ulaşana kadar 25-30 dakika pişirip haşlanmış fasulyeyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "puff_pastry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "green_beans": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d075",
+    "name": {
+      "en": "Thai Green Chicken Curry",
+      "tr": "Tavuklu Tay Yeşil Köri"
+    },
+    "description": {
+      "en": "An aromatic curry of chicken, coconut milk, green curry paste, aubergine and green beans.",
+      "tr": "Tavuk, hindistan cevizi sütü, yeşil köri ezmesi, patlıcan ve fasulyeli aromatik köri."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "coconut_milk",
+      "white_rice",
+      "eggplant",
+      "green_beans",
+      "curry_paste",
+      "fish_sauce",
+      "basil"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 1039,
+      "proteinG": 69,
+      "carbsG": 81,
+      "fatG": 51,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Cook the curry paste with the thick part of the coconut milk for 2 minutes.",
+        "Add the chicken, remaining coconut milk and aubergine and simmer for 12 minutes.",
+        "Add the beans and cook until the chicken reaches 74°C; finish with fish sauce and basil and serve with rice."
+      ],
+      "tr": [
+        "Köri ezmesini hindistan cevizi sütünün koyu kısmıyla 2 dakika pişirin.",
+        "Tavuk, kalan süt ve patlıcanı ekleyip 12 dakika kısık ateşte pişirin.",
+        "Fasulyeyi ekleyip tavuk 74°C'ye ulaşana kadar pişirin; balık sosu ve fesleğenle tamamlayıp pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "eggplant": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "green_beans": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "curry_paste": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "fish_sauce": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "basil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d076",
+    "name": {
+      "en": "Beef Casserole with Potato Gratin",
+      "tr": "Dana Etli Patates Gratenli Güveç"
+    },
+    "description": {
+      "en": "A beef and root-vegetable casserole baked under a thin potato, milk and cheese gratin.",
+      "tr": "Dana eti ve kök sebzeli güvecin ince patates, süt ve peynir katmanıyla fırınlandığı yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "veal",
+      "potato",
+      "carrot",
+      "onion",
+      "beef_stock",
+      "milk",
+      "cheddar_cheese",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 928,
+      "proteinG": 69,
+      "carbsG": 71,
+      "fatG": 41,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Brown the beef in the oil; add the onion, carrot and stock and simmer covered for 35 minutes.",
+        "Transfer to a baking dish, overlap the thin potato slices and pour over the milk.",
+        "Add the kashar and bake at 190°C for 35-40 minutes until the potato is tender and the centre is piping hot."
+      ],
+      "tr": [
+        "Eti yağda renk alana kadar pişirin; soğan, havuç ve et suyunu ekleyip kapalı olarak 35 dakika pişirin.",
+        "Güveci fırın kabına alıp ince patatesleri üst üste dizin; sütü dökün.",
+        "Kaşarı serpip 190°C'de patates yumuşayana ve merkez tamamen sıcak olana kadar 35-40 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "veal": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 280.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 220.0,
+        "unit": "ml"
+      },
+      "milk": {
+        "amount": 120.0,
+        "unit": "ml"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d077",
+    "name": {
+      "en": "Pumpkin and Sage Ravioli",
+      "tr": "Balkabaklı Adaçaylı Ravioli"
+    },
+    "description": {
+      "en": "Pumpkin and ricotta ravioli served with sage butter, spinach and walnuts.",
+      "tr": "Balkabağı-ricotta dolgulu raviolinin adaçaylı tereyağı, ıspanak ve cevizle sunulduğu yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ravioli",
+      "spinach",
+      "butter",
+      "walnut",
+      "parmesan",
+      "sage"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1096,
+      "proteinG": 43,
+      "carbsG": 109,
+      "fatG": 56,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the ravioli in boiling water according to the packet.",
+        "Heat the butter with the sage until foaming and wilt the spinach.",
+        "Toss the drained ravioli in the sauce and serve with walnuts and Parmesan."
+      ],
+      "tr": [
+        "Ravioliyi paketteki süreye göre kaynar suda pişirin.",
+        "Tereyağını adaçayıyla köpürtene kadar ısıtıp ıspanağı soldurun.",
+        "Süzülen ravioliyi sosa alıp ceviz ve Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ravioli": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "sage": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "d078",
+    "name": {
+      "en": "Baked Chicken Parmesan",
+      "tr": "Fırında Tavuk Parmesan"
+    },
+    "description": {
+      "en": "Breaded chicken breast baked with tomato sauce, mozzarella and Parmesan.",
+      "tr": "Pane tavuk göğsünün domates sosu, mozzarella ve Parmesanla fırınlandığı ana yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "american",
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "breadcrumbs",
+      "eggs",
+      "tomato_sauce",
+      "mozzarella",
+      "parmesan",
+      "pasta",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1171,
+      "proteinG": 109,
+      "carbsG": 91,
+      "fatG": 40,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Even the chicken, coat in egg and breadcrumbs and bake on an oiled tray at 200°C for 15 minutes.",
+        "Turn and add the sauce and cheeses.",
+        "Bake for another 10-12 minutes until the chicken reaches 74°C and serve with spaghetti."
+      ],
+      "tr": [
+        "Tavuğu eşit kalınlığa getirip yumurta ve galeta ununa bulayın; yağlı tepside 200°C'de 15 dakika pişirin.",
+        "Çevirip sos ve peynirleri ekleyin.",
+        "Tavuk 74°C'ye ulaşana kadar 10-12 dakika daha pişirip spagettiyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato_sauce": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 67.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d079",
+    "name": {
+      "en": "Beef Goulash",
+      "tr": "Dana Etli Gulaş"
+    },
+    "description": {
+      "en": "A slow-cooked goulash of beef, onion, pepper, tomato and paprika.",
+      "tr": "Dana eti, soğan, biber, domates ve paprika ile ağır ateşte pişirilen gulaş."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "veal",
+      "potato",
+      "onion",
+      "bell_pepper",
+      "tomato",
+      "beef_stock",
+      "olive_oil",
+      "paprika"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 767,
+      "proteinG": 62,
+      "carbsG": 69,
+      "fatG": 28,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Brown the beef in batches and remove; soften the onion and pepper.",
+        "Add the paprika, tomatoes, stock and beef and simmer covered for 60 minutes.",
+        "Add the potato and cook for another 25 minutes until the beef is tender and reaches at least 63°C."
+      ],
+      "tr": [
+        "Eti yağda parti hâlinde renk aldırıp çıkarın; soğan ve biberi yumuşatın.",
+        "Paprika, domates, et suyu ve eti ekleyip kapalı olarak 60 dakika kısık ateşte pişirin.",
+        "Patatesi ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 25 dakika daha pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "veal": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 300.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "paprika": {
+        "amount": 2.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d080",
+    "name": {
+      "en": "Teriyaki Salmon Rice Bowl",
+      "tr": "Teriyaki Somon Pirinç Kasesi"
+    },
+    "description": {
+      "en": "A dinner bowl of teriyaki salmon, rice, broccoli, carrot and edamame.",
+      "tr": "Teriyaki soslu somon, pirinç, brokoli, havuç ve edamameli akşam kasesi."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "white_rice",
+      "broccoli",
+      "edamame",
+      "carrot",
+      "soy_sauce",
+      "mirin",
+      "honey",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 878,
+      "proteinG": 56,
+      "carbsG": 91,
+      "fatG": 31,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Mix the soy sauce, mirin and honey and brush over the salmon.",
+        "Bake the salmon at 200°C for 12-15 minutes until it reaches 63°C.",
+        "Place over the rice, steamed vegetables and edamame and serve with sesame."
+      ],
+      "tr": [
+        "Soya sosu, mirin ve balı karıştırıp somonun üzerine sürün.",
+        "Somonu 200°C'de merkezi 63°C'ye ulaşana kadar 12-15 dakika pişirin.",
+        "Pirinç, buharda sebzeler ve edamame üzerine yerleştirip susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "edamame": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "mirin": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "honey": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d081",
+    "name": {
+      "en": "Lamb Keşkek-Inspired Bowl",
+      "tr": "Kuzu Etli Keşkek Esintili Kase"
+    },
+    "description": {
+      "en": "A keşkek-inspired bowl of long-cooked wheat and lamb finished with paprika butter.",
+      "tr": "Dövme buğday ve kuzu etinin uzun süre pişirilip tereyağlı biberle sunulduğu keşkek esintili kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "wheat_berries",
+      "lamb",
+      "onion",
+      "water",
+      "butter",
+      "paprika"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 951,
+      "proteinG": 55,
+      "carbsG": 72,
+      "fatG": 50,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Soak the wheat overnight and drain.",
+        "Cook the wheat, lamb, onion and water over very low heat for 90-120 minutes until the lamb is tender and reaches at least 63°C.",
+        "Beat the lamb and wheat until fibrous and serve with paprika butter."
+      ],
+      "tr": [
+        "Buğdayı geceden ıslatıp süzün.",
+        "Buğday, kuzu, soğan ve suyu çok kısık ateşte et yumuşayana ve en az 63°C'ye ulaşana kadar 90-120 dakika pişirin.",
+        "Et ve buğdayı lifli kıvam alana kadar dövüp biberli eritilmiş tereyağıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "wheat_berries": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "lamb": {
+        "amount": 170.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 700.0,
+        "unit": "ml"
+      },
+      "butter": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d082",
+    "name": {
+      "en": "Tomato Shrimp Linguine",
+      "tr": "Karidesli Domatesli Linguine"
+    },
+    "description": {
+      "en": "A quick pasta dish of shrimp, linguine, cherry tomatoes, garlic and parsley.",
+      "tr": "Karides, linguine, kiraz domates, sarımsak ve maydanozla hazırlanan hızlı makarna."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "pasta",
+      "tomato",
+      "garlic",
+      "olive_oil",
+      "parsley",
+      "lemon"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 705,
+      "proteinG": 58,
+      "carbsG": 81,
+      "fatG": 18,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the linguine according to the packet and reserve some water.",
+        "Cook the garlic and tomatoes in the oil for 5 minutes; add the shrimp and cook for 3-4 minutes until firm and opaque.",
+        "Toss with the pasta, lemon, parsley and enough pasta water."
+      ],
+      "tr": [
+        "Linguine'yi pakete göre haşlayıp biraz suyunu ayırın.",
+        "Sarımsak ve domatesi yağda 5 dakika pişirip karidesi ekleyin; eti sıkı ve opak olana kadar 3-4 dakika pişirin.",
+        "Makarna, limon, maydanoz ve gerektiği kadar makarna suyunu karıştırın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "d083",
+    "name": {
+      "en": "Turkey Aubergine Parmesan",
+      "tr": "Hindili Patlıcan Parmesan"
+    },
+    "description": {
+      "en": "A baked dish layered with minced turkey, roasted aubergine, tomato sauce and cheese.",
+      "tr": "Hindi kıyma, fırın patlıcan, domates sosu ve peynir katmanlarından oluşan fırın yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_turkey",
+      "eggplant",
+      "tomato_sauce",
+      "mozzarella",
+      "parmesan",
+      "olive_oil",
+      "onion"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 881,
+      "proteinG": 82,
+      "carbsG": 43,
+      "fatG": 44,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Slice the aubergine and bake with half the oil at 210°C for 20 minutes.",
+        "Cook the turkey and onion in the remaining oil until the turkey reaches 74°C; add the sauce.",
+        "Layer the aubergine, turkey sauce and cheeses and bake at 190°C for 25 minutes."
+      ],
+      "tr": [
+        "Patlıcanı dilimleyip yağın yarısıyla 210°C'de 20 dakika fırınlayın.",
+        "Hindi ve soğanı kalan yağda hindi 74°C'ye ulaşana kadar pişirip sosu ekleyin.",
+        "Patlıcan, hindi sosu ve peynirleri katmanlayıp 190°C'de 25 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "eggplant": {
+        "amount": 320.0,
+        "unit": "g"
+      },
+      "tomato_sauce": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 12.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d084",
+    "name": {
+      "en": "Baked Sea Bream with Fennel",
+      "tr": "Fırında Çipura ve Rezene"
+    },
+    "description": {
+      "en": "A Mediterranean tray bake of sea bream, fennel, orange, potato and olives.",
+      "tr": "Çipura, rezene, portakal, patates ve zeytinle tek tepside hazırlanan Akdeniz yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sea_bream",
+      "potato",
+      "fennel_bulb",
+      "orange",
+      "olives",
+      "olive_oil",
+      "oregano"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 661,
+      "proteinG": 52,
+      "carbsG": 68,
+      "fatG": 22,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Thinly slice the potato and fennel and pre-bake with half the oil at 200°C for 25 minutes.",
+        "Add the sea bream and top with orange, olives, oregano and the remaining oil.",
+        "Bake for another 12-15 minutes until the fish reaches 63°C."
+      ],
+      "tr": [
+        "Patates ve rezeneyi ince dilimleyip yağın yarısıyla 200°C'de 25 dakika ön pişirin.",
+        "Çipurayı üzerine koyup portakal, zeytin, kekik ve kalan yağı ekleyin.",
+        "Balık 63°C'ye ulaşana kadar 12-15 dakika daha pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sea_bream": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "fennel_bulb": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "orange": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d085",
+    "name": {
+      "en": "Chicken and Cashew Stir-Fry",
+      "tr": "Tavuklu Kaju Fıstıklı Sebze Tavası"
+    },
+    "description": {
+      "en": "A quick stir-fry of chicken, cashews, broccoli, pepper and sugar snap peas.",
+      "tr": "Tavuk, kaju, brokoli, biber ve şeker bezelyeli hızlı sebze tavası."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "white_rice",
+      "broccoli",
+      "bell_pepper",
+      "sugar_snap_peas",
+      "cashew",
+      "soy_sauce",
+      "sesame_oil"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 841,
+      "proteinG": 74,
+      "carbsG": 83,
+      "fatG": 24,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Thinly slice the chicken and cook in a very hot pan until it reaches 74°C; remove.",
+        "Stir-fry the vegetables for 4-5 minutes until tender-crisp.",
+        "Add the chicken, cashews, soy sauce and sesame oil and serve with rice."
+      ],
+      "tr": [
+        "Tavuğu ince doğrayıp çok sıcak tavada 74°C'ye ulaşana kadar pişirin; çıkarın.",
+        "Sebzeleri 4-5 dakika diri-yumuşak soteleyin.",
+        "Tavuk, kaju, soya sosu ve susam yağını ekleyip pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "sugar_snap_peas": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cashew": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d086",
+    "name": {
+      "en": "Beef, Corn and Bean Bowl",
+      "tr": "Dana Etli Mısır ve Fasulye Kasesi"
+    },
+    "description": {
+      "en": "A Mexican-inspired bowl of spiced minced beef, rice, black beans, corn, avocado and salsa.",
+      "tr": "Baharatlı dana kıyma, pirinç, siyah fasulye, mısır, avokado ve salsalı Meksika esintili kase."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "white_rice",
+      "black_bean",
+      "corn",
+      "avocado",
+      "salsa",
+      "cheddar_cheese",
+      "cumin"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 1140,
+      "proteinG": 71,
+      "carbsG": 106,
+      "fatG": 49,
+      "fiberG": 20
+    },
+    "steps": {
+      "en": [
+        "Cook the minced beef with the cumin until it reaches 71°C.",
+        "Heat the rice, beans and corn through and arrange in a bowl.",
+        "Add the beef, avocado, salsa and kashar."
+      ],
+      "tr": [
+        "Dana kıymayı kimyonla merkezi 71°C'ye ulaşana kadar pişirin.",
+        "Pirinç, fasulye ve mısırı tamamen ısıtıp kaseye yerleştirin.",
+        "Kıyma, avokado, salsa ve kaşarı ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 62.0,
+        "unit": "g"
+      },
+      "black_bean": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "salsa": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d087",
+    "name": {
+      "en": "Mushroom Ricotta Gnocchi",
+      "tr": "Mantarlı Ricottalı Gnocchi"
+    },
+    "description": {
+      "en": "A creamy skillet dish of gnocchi, mushrooms, spinach, ricotta and Parmesan.",
+      "tr": "Gnocchi, mantar, ıspanak, ricotta ve Parmesanla hazırlanan kremamsı tava yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "gnocchi",
+      "mushroom",
+      "spinach",
+      "ricotta",
+      "parmesan",
+      "olive_oil",
+      "garlic"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 847,
+      "proteinG": 40,
+      "carbsG": 100,
+      "fatG": 34,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the gnocchi according to the packet and drain.",
+        "Cook the mushrooms and garlic in the oil for 6-7 minutes and wilt the spinach.",
+        "Stir in the gnocchi, ricotta and a little cooking water and heat through; serve with Parmesan."
+      ],
+      "tr": [
+        "Gnocchi'yi pakete göre haşlayıp süzün.",
+        "Mantar ve sarımsağı yağda 6-7 dakika pişirip ıspanağı soldurun.",
+        "Gnocchi, ricotta ve biraz pişirme suyunu karıştırıp tamamen ısıtın; Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "gnocchi": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
+      }
+    }
+  },
+  {
+    "id": "d088",
+    "name": {
+      "en": "Chicken Tikka Masala",
+      "tr": "Tavuk Tikka Masala"
+    },
+    "description": {
+      "en": "Spiced chicken pieces in a creamy tomato sauce served with basmati rice.",
+      "tr": "Baharatlı tavuk parçalarının domatesli kremalı sos ve basmati pirinçle sunulduğu yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "yogurt",
+      "basmati_rice",
+      "tomato",
+      "cream",
+      "onion",
+      "canola_oil",
+      "garam_masala"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 980,
+      "proteinG": 78,
+      "carbsG": 71,
+      "fatG": 41,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Marinate the chicken with the Turkish yogurt and half the spices for 30 minutes in the refrigerator.",
+        "Cook the chicken in the oil to 74°C and remove; cook the onion, tomato and remaining spices for 10 minutes.",
+        "Add the cream and chicken, heat through and serve with rice."
+      ],
+      "tr": [
+        "Tavuğu yoğurt ve baharatın yarısıyla 30 dakika buzdolabında bekletin.",
+        "Tavuğu yağda 74°C'ye ulaşana kadar pişirip çıkarın; soğan, domates ve kalan baharatı 10 dakika pişirin.",
+        "Krema ve tavuğu ekleyip tamamen ısıtın; pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "basmati_rice": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "cream": {
+        "amount": 60.0,
+        "unit": "ml"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "canola_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garam_masala": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "d089",
+    "name": {
+      "en": "Beef Ragù Pappardelle",
+      "tr": "Dana Etli Ragù Pappardelle"
+    },
+    "description": {
+      "en": "Slow-cooked beef ragù served with wide pappardelle and Parmesan.",
+      "tr": "Uzun süre pişmiş dana ragù sosunun geniş pappardelle ve Parmesanla sunulduğu yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "pasta",
+      "tomato",
+      "onion",
+      "carrot",
+      "celery",
+      "olive_oil",
+      "parmesan"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1064,
+      "proteinG": 70,
+      "carbsG": 92,
+      "fatG": 45,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the beef, onion, carrot and celery in the oil until the beef reaches 71°C.",
+        "Add the tomatoes and simmer for 35-45 minutes.",
+        "Cook the pappardelle according to the packet and serve with the sauce and Parmesan."
+      ],
+      "tr": [
+        "Kıyma, soğan, havuç ve kerevizi yağda kıyma 71°C'ye ulaşana kadar pişirin.",
+        "Domatesi ekleyip kısık ateşte 35-45 dakika çektirin.",
+        "Pappardelleyi pakete göre haşlayıp sos ve Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "celery": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d090",
+    "name": {
+      "en": "Mustard Herb-Crusted Baked Salmon",
+      "tr": "Hardallı Ot Kabuklu Fırın Somon"
+    },
+    "description": {
+      "en": "Salmon coated with mustard, herbs and breadcrumbs, baked with potato and asparagus.",
+      "tr": "Hardal, ot ve galeta unu kaplı somonun patates ve kuşkonmazla fırınlandığı yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "potato",
+      "asparagus",
+      "mustard",
+      "breadcrumbs",
+      "parsley",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 862,
+      "proteinG": 52,
+      "carbsG": 63,
+      "fatG": 43,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Pre-bake the potato with half the oil at 210°C for 20 minutes.",
+        "Spread mustard over the salmon, press on the breadcrumbs and parsley and add to the tray with asparagus.",
+        "Bake for another 12-15 minutes until the salmon reaches 63°C."
+      ],
+      "tr": [
+        "Patatesi yağın yarısıyla 210°C'de 20 dakika ön pişirin.",
+        "Somona hardal sürüp galeta unu ve maydanozu bastırın; kuşkonmazla tepsiye ekleyin.",
+        "Somon 63°C'ye ulaşana kadar 12-15 dakika daha pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "asparagus": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 12.0,
+        "unit": "g"
+      },
+      "breadcrumbs": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d091",
+    "name": {
+      "en": "Lamb and Okra Stew",
+      "tr": "Kuzu Etli Bamyali Güveç"
+    },
+    "description": {
+      "en": "A lemony slow-cooked stew of lamb, okra, tomato and onion.",
+      "tr": "Kuzu eti, bamya, domates ve soğanla limonlu olarak ağır ateşte pişirilen güveç."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "okra",
+      "tomato",
+      "onion",
+      "bulgur",
+      "olive_oil",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 982,
+      "proteinG": 60,
+      "carbsG": 82,
+      "fatG": 50,
+      "fiberG": 23
+    },
+    "steps": {
+      "en": [
+        "Brown the lamb in the oil and add the onion.",
+        "Add the tomatoes and a little water and simmer covered for 35 minutes.",
+        "Add the okra and lemon and cook for another 20 minutes until the lamb is tender and reaches at least 63°C; serve with bulgur."
+      ],
+      "tr": [
+        "Kuzu etini yağda renk alana kadar pişirip soğanı ekleyin.",
+        "Domates ve biraz su ekleyip kapalı olarak 35 dakika pişirin.",
+        "Bamya ve limonu ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 20 dakika daha pişirin; bulgurla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "okra": {
+        "amount": 250.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 61.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "d092",
+    "name": {
+      "en": "Red Curry with Shrimp",
+      "tr": "Karidesli Kırmızı Köri"
+    },
+    "description": {
+      "en": "An aromatic curry of shrimp, coconut milk, red curry, bamboo shoots and vegetables.",
+      "tr": "Karides, hindistan cevizi sütü, kırmızı köri, bambu filizi ve sebzeli aromatik yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "coconut_milk",
+      "white_rice",
+      "bell_pepper",
+      "bamboo_shoots",
+      "curry_paste",
+      "green_beans",
+      "fish_sauce"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 933,
+      "proteinG": 57,
+      "carbsG": 82,
+      "fatG": 46,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Cook the curry paste with the thick part of the coconut milk for 2 minutes.",
+        "Add the remaining milk, pepper, beans and bamboo and simmer for 8 minutes.",
+        "Add the shrimp and cook for 3-4 minutes until fully opaque; finish with fish sauce and serve with rice."
+      ],
+      "tr": [
+        "Köri ezmesini hindistan cevizi sütünün koyu kısmıyla 2 dakika pişirin.",
+        "Kalan süt, biber, fasulye ve bambuyu ekleyip 8 dakika kaynatın.",
+        "Karidesi ekleyip tamamen opak olana kadar 3-4 dakika pişirin; balık sosuyla tamamlayıp pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "coconut_milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bamboo_shoots": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "curry_paste": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "green_beans": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "fish_sauce": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "d093",
+    "name": {
+      "en": "Turkey-Stuffed Peppers",
+      "tr": "Hindi Etli Dolma Biber"
+    },
+    "description": {
+      "en": "Peppers stuffed with minced turkey, rice, tomato and cheese and baked.",
+      "tr": "Biberlerin hindi kıyma, pirinç, domates ve peynirli harçla doldurulup fırınlandığı yemek."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_turkey",
+      "bell_pepper",
+      "white_rice",
+      "tomato",
+      "onion",
+      "cheddar_cheese",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 954,
+      "proteinG": 70,
+      "carbsG": 74,
+      "fatG": 41,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the turkey and onion in the oil until the turkey reaches 74°C; add the rice and tomato.",
+        "Halve the peppers and fill with the mixture.",
+        "Add the kashar and bake at 190°C for 25-30 minutes until the peppers are tender."
+      ],
+      "tr": [
+        "Hindi ve soğanı yağda hindi 74°C'ye ulaşana kadar pişirin; pirinç ve domatesi ekleyin.",
+        "Biberleri ikiye bölüp harcı doldurun.",
+        "Kaşarı serpip 190°C'de biberler yumuşayana kadar 25-30 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_turkey": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 300.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d095",
+    "name": {
+      "en": "Chicken and Mushroom Puff Pastry Bowl",
+      "tr": "Tavuklu Mantarlı Milföy Kasesi"
+    },
+    "description": {
+      "en": "A single-serving pie of creamy chicken and mushroom filling under a puff-pastry lid.",
+      "tr": "Tavuk ve mantarlı kremalı harcın milföy kapağı altında fırınlandığı tek porsiyon pay."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "mushroom",
+      "puff_pastry",
+      "milk",
+      "flour",
+      "onion",
+      "peas",
+      "butter"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 1162,
+      "proteinG": 80,
+      "carbsG": 84,
+      "fatG": 55,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Cook the chicken, onion and mushrooms in the butter until the chicken reaches 74°C.",
+        "Add the flour, whisk in the milk until thick and stir in the peas; transfer to a dish.",
+        "Cover with pastry and bake at 200°C for 20-25 minutes until browned and piping hot at the centre."
+      ],
+      "tr": [
+        "Tavuk, soğan ve mantarı tereyağında tavuk 74°C'ye ulaşana kadar pişirin.",
+        "Unu ekleyip sütü çırparak koyulaştırın; bezelyeyi karıştırıp kaba alın.",
+        "Milföyle kapatıp 200°C'de hamur kızarana ve merkez tamamen sıcak olana kadar 20-25 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "puff_pastry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "flour": {
+        "amount": 12.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d096",
+    "name": {
+      "en": "Beef and Vegetable Udon",
+      "tr": "Dana Etli Sebzeli Udon"
+    },
+    "description": {
+      "en": "A quick noodle stir-fry of beef, udon, broccoli, pepper and mushrooms.",
+      "tr": "Dana eti, udon, brokoli, biber ve mantarla hazırlanan hızlı noodle tavası."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "noodle",
+      "broccoli",
+      "bell_pepper",
+      "mushroom",
+      "soy_sauce",
+      "sesame_oil",
+      "canola_oil"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 988,
+      "proteinG": 59,
+      "carbsG": 87,
+      "fatG": 44,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Sear the beef in a very hot pan to at least 63°C and rest for 3 minutes.",
+        "Stir-fry the vegetables in the rapeseed oil for 5 minutes.",
+        "Add the udon, beef, soy sauce and sesame oil and heat through."
+      ],
+      "tr": [
+        "Dana etini çok sıcak tavada en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Sebzeleri kanola yağında 5 dakika soteleyin.",
+        "Udon, dana eti, soya sosu ve susam yağını ekleyip tamamen ısıtın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 88.0,
+        "unit": "g"
+      },
+      "broccoli": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "canola_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "d097",
+    "name": {
+      "en": "Spinach and Cheese Polenta Gratin",
+      "tr": "Peynirli Ispanaklı Polenta Graten"
+    },
+    "description": {
+      "en": "A baked dish layered with creamy polenta, spinach, ricotta, tomato and mozzarella.",
+      "tr": "Kremamsı polenta, ıspanak, ricotta, domates ve mozzarella katmanlı fırın yemeği."
+    },
+    "mealType": "dinner",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cornmeal",
+      "spinach",
+      "ricotta",
+      "tomato_sauce",
+      "mozzarella",
+      "parmesan",
+      "water"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 857,
+      "proteinG": 52,
+      "carbsG": 92,
+      "fatG": 34,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Cook the polenta with the water until thick and spread in a dish.",
+        "Wilt and squeeze the spinach, mix with ricotta, spread over the polenta and add the sauce.",
+        "Add the mozzarella and Parmesan and bake at 190°C for 25 minutes."
+      ],
+      "tr": [
+        "Polentayı suyla koyulaşana kadar pişirip kaba yayın.",
+        "Ispanağı soldurup suyunu sıkın; ricottayla karıştırıp polentanın üzerine yayın ve sosu ekleyin.",
+        "Mozzarella ve Parmesanı serpip 190°C'de 25 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cornmeal": {
+        "amount": 85.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tomato_sauce": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 400.0,
+        "unit": "ml"
+      }
+    }
   }
 ]

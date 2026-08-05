@@ -3197,5 +3197,4675 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "s040",
+    "name": {
+      "en": "Lemon-Spiced Edamame",
+      "tr": "Limonlu Baharatlı Edamame"
+    },
+    "description": {
+      "en": "A protein-rich snack of shelled edamame served warm with lemon, sesame and mild spices.",
+      "tr": "Ayıklanmış edamamenin limon, susam ve hafif baharatla sıcak servis edildiği proteinli atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "edamame",
+      "sesame_seeds",
+      "sesame_oil",
+      "lemon",
+      "garlic",
+      "red_pepper_flakes",
+      "salt"
+    ],
+    "allergenTags": [
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 262,
+      "proteinG": 19,
+      "carbsG": 17,
+      "fatG": 15,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "If using frozen edamame, cook it thoroughly according to the packet instructions and drain.",
+        "Heat the sesame oil in a pan over medium heat and toss the edamame for 2-3 minutes until hot.",
+        "Add the garlic powder, pepper flakes and salt and stir for 30 seconds.",
+        "Remove from the heat, add the lemon juice and sesame seeds and serve warm."
+      ],
+      "tr": [
+        "Dondurulmuş edamame kullanıyorsanız paket talimatına göre tamamen pişirip süzün.",
+        "Susam yağını tavada orta ateşte ısıtıp edamameyi 2-3 dakika çevirerek ısıtın.",
+        "Toz sarımsak, pul biber ve tuzu ekleyip 30 saniye karıştırın.",
+        "Ocaktan alın; limon suyu ve susamı ekleyip sıcak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "edamame": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "garlic": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s041",
+    "name": {
+      "en": "Berry Almond Chia Pudding",
+      "tr": "Orman Meyveli Bademli Chia Pudingi"
+    },
+    "description": {
+      "en": "A chilled soy and chia pudding topped with mixed berries and almonds.",
+      "tr": "Soya içeceği ve chia tohumu ile kıvam alan, orman meyvesi ve bademle servis edilen soğuk puding."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "soy_milk",
+      "chia_seeds",
+      "blueberry",
+      "raspberry",
+      "almond",
+      "maple_syrup",
+      "vanilla"
+    ],
+    "allergenTags": [
+      "nuts",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 428,
+      "proteinG": 15,
+      "carbsG": 52,
+      "fatG": 19,
+      "fiberG": 20
+    },
+    "steps": {
+      "en": [
+        "Mix the soy drink, maple syrup and vanilla.",
+        "Add the chia seeds and whisk for 1 minute; stir again after 10 minutes to break up any clumps.",
+        "Cover and refrigerate for at least 4 hours.",
+        "Serve cold with the berries and roughly chopped almonds."
+      ],
+      "tr": [
+        "Soya içeceği, akçaağaç şurubu ve vanilyayı karıştırın.",
+        "Chia tohumunu ekleyip 1 dakika çırpın; 10 dakika sonra topakları açmak için yeniden karıştırın.",
+        "Üzerini kapatıp en az 4 saat buzdolabında bekletin.",
+        "Orman meyveleri ve iri kıyılmış bademle soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "soy_milk": {
+        "amount": 180.0,
+        "unit": "ml"
+      },
+      "chia_seeds": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "maple_syrup": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "vanilla": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s042",
+    "name": {
+      "en": "Rice Cakes with Apple and Peanut Butter",
+      "tr": "Elmalı Fıstık Ezmeli Pirinç Patlakları"
+    },
+    "description": {
+      "en": "A quick snack of gluten-free rice cakes topped with peanut butter, apple, chia and cinnamon.",
+      "tr": "Glütensiz pirinç patlaklarının fıstık ezmesi, elma, chia ve tarçınla tamamlandığı hızlı atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "rice_cake",
+      "peanut_butter",
+      "apple",
+      "chia_seeds",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 322,
+      "proteinG": 9,
+      "carbsG": 44,
+      "fatG": 15,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Thinly slice the apple and remove the core.",
+        "Spread the peanut butter evenly over the two rice cakes.",
+        "Arrange the apple slices on top.",
+        "Add the chia and cinnamon and serve immediately to keep the rice cakes crisp."
+      ],
+      "tr": [
+        "Elmayı ince dilimleyin ve çekirdekli bölümünü çıkarın.",
+        "Fıstık ezmesini iki pirinç patlağına eşit sürün.",
+        "Elma dilimlerini üzerine yerleştirin.",
+        "Chia ve tarçın serpip bekletmeden servis edin; aksi hâlde pirinç patlakları yumuşar."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "rice_cake": {
+        "amount": 18.0,
+        "unit": "g"
+      },
+      "peanut_butter": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "apple": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s043",
+    "name": {
+      "en": "Lemon Dill Dip with Turkish Yogurt",
+      "tr": "Limonlu Dereotlu Yoğurt Dip"
+    },
+    "description": {
+      "en": "A fresh lactose-free Turkish yogurt dip with dill, lemon and olive oil, served with raw vegetables.",
+      "tr": "Laktozsuz yoğurt, dereotu, limon ve zeytinyağıyla hazırlanan; çiğ sebzelerle sunulan ferah dip."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lactose_free_yogurt",
+      "cucumber",
+      "carrot",
+      "bell_pepper",
+      "pumpkin_seeds",
+      "olive_oil",
+      "lemon",
+      "dill",
+      "garlic",
+      "salt"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 309,
+      "proteinG": 13,
+      "carbsG": 32,
+      "fatG": 17,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Mix the Turkish yogurt, lemon juice, olive oil, finely chopped dill, grated garlic and salt.",
+        "Cover and refrigerate the dip for 15 minutes.",
+        "Cut the cucumber, carrot and pepper into thick sticks.",
+        "Finish the dip with the pumpkin seeds and serve cold with the vegetables.",
+        "Do not leave at room temperature for more than 2 hours."
+      ],
+      "tr": [
+        "Yoğurt, limon suyu, zeytinyağı, ince kıyılmış dereotu, rendelenmiş sarımsak ve tuzu karıştırın.",
+        "Dip sosu kapatıp 15 dakika buzdolabında dinlendirin.",
+        "Salatalık, havuç ve biberi kalın çubuklar hâlinde kesin.",
+        "Sosu kabak çekirdeğiyle tamamlayıp sebzelerle soğuk servis edin.",
+        "Oda sıcaklığında 2 saatten fazla bekletmeyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lactose_free_yogurt": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 0.5,
+        "unit": "clove"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s044",
+    "name": {
+      "en": "Cheese, Grape and Walnut Skewers",
+      "tr": "Peynirli Üzümlü Cevizli Şişler"
+    },
+    "description": {
+      "en": "No-cook sweet-savoury mini skewers made with aged kashar, grapes and walnuts.",
+      "tr": "Eski kaşar, üzüm ve cevizle hazırlanan pişirmesiz tatlı-tuzlu mini şişler."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cheddar_cheese",
+      "grape",
+      "walnut",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 351,
+      "proteinG": 15,
+      "carbsG": 24,
+      "fatG": 23,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Wash and dry the grapes thoroughly; halve any large grapes.",
+        "Cut the kashar into roughly 2 cm cubes.",
+        "Thread the grapes and cheese alternately onto short skewers.",
+        "Roughly chop the walnuts, scatter over and serve without delay."
+      ],
+      "tr": [
+        "Üzümleri yıkayıp tamamen kurulayın; büyük taneleri ikiye kesin.",
+        "Kaşarı yaklaşık 2 cm küpler hâlinde doğrayın.",
+        "Kısa şişlere üzüm ve peynir küplerini sırayla dizin.",
+        "Cevizi iri kıyıp üzerine serpin; bekletmeden servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cheddar_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "grape": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s045",
+    "name": {
+      "en": "Cucumber Rolls with Smoked Turkey and Cream Cheese",
+      "tr": "Hindi Füme ve Krem Peynirli Salatalık Ruloları"
+    },
+    "description": {
+      "en": "A cold snack of smoked turkey and cream cheese rolled in thin cucumber ribbons.",
+      "tr": "İnce salatalık şeritlerine hindi füme ve krem peynir sarılarak hazırlanan soğuk atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "turkey_breast",
+      "cream_cheese",
+      "cucumber",
+      "sesame_seeds",
+      "dill",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "sesame"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 296,
+      "proteinG": 28,
+      "carbsG": 8,
+      "fatG": 17,
+      "fiberG": 1
+    },
+    "steps": {
+      "en": [
+        "Use a vegetable peeler to cut the cucumber lengthwise into thin ribbons; pat dry.",
+        "Mix the cream cheese with the dill and pepper.",
+        "Spread a little cream cheese over each ribbon, add smoked turkey and roll tightly.",
+        "Add the sesame seeds and serve, or refrigerate briefly in a sealed container."
+      ],
+      "tr": [
+        "Salatalığı sebze soyacağıyla boydan ince şeritler hâlinde kesin; kâğıt havluyla kurulayın.",
+        "Krem peyniri dereotu ve karabiberle karıştırın.",
+        "Her salatalık şeridine az krem peynir sürüp bir parça hindi füme yerleştirin ve sıkıca sarın.",
+        "Susam serpip hemen servis edin veya kapalı kapta kısa süre soğuk saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "turkey_breast": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s046",
+    "name": {
+      "en": "Egg and Avocado Snack Bowl",
+      "tr": "Avokadolu Yumurtalı Atıştırmalık Kase"
+    },
+    "description": {
+      "en": "A practical savoury snack of boiled eggs, avocado, tomato and a rice cake.",
+      "tr": "Haşlanmış yumurta, avokado, domates ve pirinç patlağıyla hazırlanan pratik tuzlu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "avocado",
+      "tomato",
+      "rice_cake",
+      "lemon",
+      "red_pepper_flakes",
+      "salt"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 352,
+      "proteinG": 19,
+      "carbsG": 19,
+      "fatG": 24,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Boil the eggs until the whites and yolks are fully firm; cool and peel.",
+        "Coarsely mash the avocado with the lemon juice and salt.",
+        "Slice the tomato and eggs and arrange in a small bowl.",
+        "Serve with the avocado, pepper flakes and coarsely broken rice cake."
+      ],
+      "tr": [
+        "Yumurtaları sarı ve beyazları tamamen katılaşana kadar haşlayın; soğutup soyun.",
+        "Avokadoyu limon suyu ve tuzla iri ezin.",
+        "Domatesi ve yumurtaları dilimleyip küçük kaseye yerleştirin.",
+        "Avokado, pul biber ve iri kırılmış pirinç patlağıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "avocado": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "rice_cake": {
+        "amount": 9.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s047",
+    "name": {
+      "en": "Tuna and Corn Lettuce Cups",
+      "tr": "Ton Balıklı Mısırlı Marul Kayıkları"
+    },
+    "description": {
+      "en": "A cold snack of tuna and corn in a Turkish yogurt mayonnaise filling served in crisp lettuce cups.",
+      "tr": "Ton balığı ve mısırlı yoğurt-mayonez harcının çıtır marul yapraklarında sunulduğu soğuk ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tuna",
+      "corn",
+      "yogurt",
+      "mayonnaise",
+      "lettuce",
+      "onion",
+      "lemon",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 266,
+      "proteinG": 30,
+      "carbsG": 17,
+      "fatG": 10,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Drain and coarsely flake the tuna.",
+        "Mix the Turkish yogurt, mayonnaise, lemon and pepper; add the tuna, corn and finely chopped spring onion.",
+        "Wash and dry the lettuce leaves thoroughly.",
+        "Divide the filling among the leaves and serve immediately."
+      ],
+      "tr": [
+        "Ton balığını süzüp çatalla iri parçalara ayırın.",
+        "Yoğurt, mayonez, limon ve karabiberi karıştırın; ton balığı, mısır ve ince doğranmış taze soğanı ekleyin.",
+        "Marul yapraklarını yıkayıp tamamen kurulayın.",
+        "Harcı yapraklara paylaştırıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tuna": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "mayonnaise": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s048",
+    "name": {
+      "en": "Mini Caprese Skewers",
+      "tr": "Mini Caprese Şişleri"
+    },
+    "description": {
+      "en": "No-cook skewers of mini mozzarella, cherry tomatoes and basil with olive oil and balsamic vinegar.",
+      "tr": "Mini mozzarella, kiraz domates ve fesleğenin zeytinyağı ve balzamikle servis edildiği pişirmesiz şişler."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "mozzarella",
+      "tomato",
+      "basil",
+      "olive_oil",
+      "balsamic_vinegar",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 308,
+      "proteinG": 24,
+      "carbsG": 11,
+      "fatG": 19,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Wash and dry the tomatoes and basil thoroughly and drain the mozzarella.",
+        "Thread the tomatoes, basil and mozzarella onto short skewers.",
+        "Mix the olive oil and balsamic vinegar and drizzle over.",
+        "Add black pepper and serve without delay."
+      ],
+      "tr": [
+        "Domatesleri ve fesleğeni yıkayıp tamamen kurulayın; mozzarellayı süzün.",
+        "Kısa şişlere domates, fesleğen ve mozzarella dizin.",
+        "Zeytinyağı ve balzamik sirkeyi karıştırıp üzerine gezdirin.",
+        "Karabiber ekleyip bekletmeden servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "mozzarella": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "basil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "balsamic_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s049",
+    "name": {
+      "en": "Cottage Cheese and Pineapple Bowl",
+      "tr": "Ananaslı Lor Peynirli Kase"
+    },
+    "description": {
+      "en": "A sweet-savoury protein bowl of cottage cheese, fresh pineapple and pumpkin seeds.",
+      "tr": "Lor peyniri, taze ananas ve kabak çekirdeğiyle hazırlanan tatlı-tuzlu proteinli kase."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cottage_cheese",
+      "pineapple",
+      "pumpkin_seeds",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 292,
+      "proteinG": 22,
+      "carbsG": 23,
+      "fatG": 14,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Cut the pineapple into edible 1-2 cm cubes.",
+        "Stir the cottage cheese lightly in a bowl.",
+        "Add the pineapple on top.",
+        "Finish with the pumpkin seeds and cinnamon and serve cold."
+      ],
+      "tr": [
+        "Ananası yenebilir 1-2 cm küpler hâlinde doğrayın.",
+        "Lor peynirini kasede hafifçe karıştırın.",
+        "Ananası üzerine ekleyin.",
+        "Kabak çekirdeği ve tarçınla tamamlayıp soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cottage_cheese": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "pineapple": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s050",
+    "name": {
+      "en": "Rice Cakes with Sardines and Tomato",
+      "tr": "Sardalyalı Domatesli Pirinç Patlakları"
+    },
+    "description": {
+      "en": "Two crisp rice cakes topped with sardines, tomato, cucumber and lemon.",
+      "tr": "Sardalya, domates, salatalık ve limonla tamamlanan iki çıtır pirinç patlağı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sardine",
+      "rice_cake",
+      "tomato",
+      "cucumber",
+      "lemon",
+      "parsley",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "fish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 268,
+      "proteinG": 23,
+      "carbsG": 22,
+      "fatG": 10,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Drain the sardines, check for large bones or skin and mash coarsely.",
+        "Thinly slice the tomato and cucumber and blot away excess moisture.",
+        "Divide the sardines between the rice cakes and add the vegetables.",
+        "Finish with lemon, parsley and pepper and serve immediately."
+      ],
+      "tr": [
+        "Sardalyayı süzüp kılçık ve büyük deri parçaları açısından kontrol edin; çatalla iri ezin.",
+        "Domates ve salatalığı ince dilimleyip fazla suyunu alın.",
+        "Sardalyayı pirinç patlaklarına paylaştırın; sebzeleri üzerine yerleştirin.",
+        "Limon, maydanoz ve karabiberle tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sardine": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "rice_cake": {
+        "amount": 18.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "parsley": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s051",
+    "name": {
+      "en": "Mini Chicken and Hummus Wrap",
+      "tr": "Tavuklu Humuslu Mini Dürüm"
+    },
+    "description": {
+      "en": "A small tortilla wrap filled with cooked chicken, hummus and crisp vegetables.",
+      "tr": "Pişmiş tavuk, humus ve çıtır sebzelerle hazırlanan küçük tortilla dürümü."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "tortilla_wrap",
+      "hummus",
+      "carrot",
+      "cucumber",
+      "lettuce",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 333,
+      "proteinG": 29,
+      "carbsG": 33,
+      "fatG": 10,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Confirm the chicken previously reached 74°C and was refrigerated; cut into thin strips.",
+        "Spread the hummus over the tortilla and add the lemon juice.",
+        "Place the chicken and finely cut vegetables in the centre.",
+        "Fold in the sides, roll tightly, cut in half and serve immediately."
+      ],
+      "tr": [
+        "Tavuğun önceden 74°C'ye ulaşmış ve soğukta saklanmış olduğundan emin olun; ince şerit kesin.",
+        "Tortillaya humusu sürüp limon suyu gezdirin.",
+        "Tavuk ve ince doğranmış sebzeleri ortasına yerleştirin.",
+        "Yanları içe katlayıp sıkıca sarın; ikiye kesip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "hummus": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 5.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s052",
+    "name": {
+      "en": "Cocoa Banana Milk Smoothie",
+      "tr": "Kakaolu Muzlu Sütlü Smoothie"
+    },
+    "description": {
+      "en": "A thick snack smoothie made with milk, banana, oats, cocoa and peanut butter.",
+      "tr": "Süt, muz, yulaf, kakao ve fıstık ezmesiyle hazırlanan koyu kıvamlı ara öğün smoothie’si."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "milk",
+      "banana",
+      "oats",
+      "cocoa_powder",
+      "peanut_butter",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 374,
+      "proteinG": 18,
+      "carbsG": 56,
+      "fatG": 12,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "For a colder texture, slice and freeze the banana in advance.",
+        "Process the oats in the blender for 10 seconds.",
+        "Add the milk, banana, cocoa, peanut butter and cinnamon.",
+        "Blend for 40-45 seconds until smooth and serve immediately."
+      ],
+      "tr": [
+        "Daha soğuk kıvam için muzu önceden dilimleyip dondurun.",
+        "Yulafı blenderda 10 saniye öğütün.",
+        "Süt, muz, kakao, fıstık ezmesi ve tarçını ekleyin.",
+        "40-45 saniye pürüzsüz olana kadar çekip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "milk": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "banana": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "peanut_butter": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s053",
+    "name": {
+      "en": "Baked Courgette Cheese Bites",
+      "tr": "Fırında Kabaklı Peynirli Lokmalar"
+    },
+    "description": {
+      "en": "Six small savoury bites baked with grated courgette, egg, kashar and oats.",
+      "tr": "Rendelenmiş kabak, yumurta, kaşar ve yulafla fırınlanan altı küçük tuzlu lokma."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "zucchini",
+      "eggs",
+      "cheddar_cheese",
+      "oats",
+      "olive_oil",
+      "dill",
+      "baking_powder",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 408,
+      "proteinG": 23,
+      "carbsG": 20,
+      "fatG": 27,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 190°C.",
+        "Grate and lightly salt the courgette; after 10 minutes squeeze it very thoroughly in a clean towel.",
+        "Process the oats to a coarse flour and mix with the courgette, egg, grated kashar, dill and baking powder.",
+        "Divide into 6 equal portions in a greased mini muffin tin.",
+        "Bake for 16-20 minutes until fully set in the centres; rest in the tin for 5 minutes."
+      ],
+      "tr": [
+        "Fırını 190°C'ye ısıtın.",
+        "Kabağı rendeleyip az tuzlayın; 10 dakika sonra temiz bezle suyunu çok iyi sıkın.",
+        "Yulafı iri un kıvamına getirin; kabak, yumurta, rendelenmiş kaşar, dereotu ve kabartma tozuyla karıştırın.",
+        "Yağlanmış mini muffin kalıbına 6 eşit parça paylaştırın.",
+        "Merkezleri tamamen katılaşana kadar 16-20 dakika pişirin; kalıpta 5 dakika dinlendirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "zucchini": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cheddar_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s054",
+    "name": {
+      "en": "Turkey Ham and Cheese Crackers",
+      "tr": "Hindi Jambonlu Peynirli Krakerler"
+    },
+    "description": {
+      "en": "A practical snack of whole-grain crackers topped with turkey ham, kashar and cucumber.",
+      "tr": "Tam tahıllı kraker üzerinde hindi jambon, kaşar ve salatalıkla hazırlanan pratik ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "crackers",
+      "turkey_breast",
+      "cheddar_cheese",
+      "cucumber",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 423,
+      "proteinG": 35,
+      "carbsG": 33,
+      "fatG": 17,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Slice the cucumber and kashar to fit the crackers.",
+        "Spread a very thin layer of mustard over the crackers.",
+        "Layer with turkey ham, kashar and cucumber and serve immediately."
+      ],
+      "tr": [
+        "Salatalığı ve kaşarı kraker boyutunda dilimleyin.",
+        "Krakerlere çok ince hardal sürün.",
+        "Hindi jambon, kaşar ve salatalığı katmanlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "crackers": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s055",
+    "name": {
+      "en": "Smoked Salmon Cucumber Bites",
+      "tr": "Füme Somonlu Salatalık Lokmaları"
+    },
+    "description": {
+      "en": "Chilled cucumber bites topped with cream cheese, smoked salmon, dill and capers.",
+      "tr": "Salatalık dilimleri üzerinde krem peynir, füme somon, dereotu ve kaparili soğuk lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cucumber",
+      "salmon",
+      "cream_cheese",
+      "capers",
+      "dill",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 359,
+      "proteinG": 21,
+      "carbsG": 10,
+      "fatG": 26,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Cut the cucumber into thick rounds and pat dry.",
+        "Mix the cream cheese with the lemon and dill and divide among the slices.",
+        "Top with the smoked salmon and capers and serve chilled."
+      ],
+      "tr": [
+        "Salatalığı kalın yuvarlaklar hâlinde kesip kurulayın.",
+        "Krem peyniri limon ve dereotuyla karıştırıp dilimlere paylaştırın.",
+        "Füme somon ve kapariyi ekleyip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cucumber": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "salmon": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "capers": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s056",
+    "name": {
+      "en": "Peach Turkish Yogurt Bowl",
+      "tr": "Şeftalili Yoğurt Kasesi"
+    },
+    "description": {
+      "en": "A fruity snack bowl made with Turkish yogurt, peach, oats, almonds and cinnamon.",
+      "tr": "Yoğurt, şeftali, yulaf, badem ve tarçınla hazırlanan meyveli ara öğün kasesi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "peach",
+      "oats",
+      "almond",
+      "honey",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 379,
+      "proteinG": 29,
+      "carbsG": 47,
+      "fatG": 11,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Wash, stone and slice the peach.",
+        "Spoon the Turkish yogurt into a bowl and add the peach and oats.",
+        "Finish with the almonds, honey and cinnamon and serve immediately."
+      ],
+      "tr": [
+        "Şeftaliyi yıkayıp çekirdeğini çıkarın ve dilimleyin.",
+        "Yoğurdu kaseye alıp şeftali ve yulafı ekleyin.",
+        "Badem, bal ve tarçınla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "peach": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s057",
+    "name": {
+      "en": "Beef Jerky Trail Mix",
+      "tr": "Dana Kurutulmuş Etli Kuruyemiş Karışımı"
+    },
+    "description": {
+      "en": "A portion-controlled mix of beef jerky, almonds, pumpkin seeds and dried apricots.",
+      "tr": "Dana kurutulmuş et, badem, kabak çekirdeği ve kuru kayısılı porsiyon kontrollü karışım."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_jerky",
+      "almond",
+      "pumpkin_seeds",
+      "dried_apricot",
+      "breakfast_cereal"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "periodFatigue",
+      "pms",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 512,
+      "proteinG": 26,
+      "carbsG": 41,
+      "fatG": 29,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cut the dried apricots into bite-sized pieces.",
+        "Weigh and mix all ingredients in a lidded container.",
+        "Consume as one portion and do not return leftovers to the main mixture."
+      ],
+      "tr": [
+        "Kuru kayısıyı lokmalık doğrayın.",
+        "Tüm bileşenleri tartıp kapaklı bir kapta karıştırın.",
+        "Tek porsiyon olarak tüketin; artanı ana karışıma geri dökmeyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_jerky": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "dried_apricot": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "breakfast_cereal": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s058",
+    "name": {
+      "en": "Egg and Cheese Mini Sandwich",
+      "tr": "Yumurtalı Peynirli Mini Sandviç"
+    },
+    "description": {
+      "en": "A filling snack sandwich with firm egg, kashar, tomato and rocket on whole-grain bread.",
+      "tr": "Tam tahıllı küçük ekmekte katı yumurta, kaşar, domates ve rokalı doyurucu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "eggs",
+      "cheddar_cheese",
+      "tomato",
+      "arugula",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 405,
+      "proteinG": 22,
+      "carbsG": 36,
+      "fatG": 19,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Boil the egg until both white and yolk are firm, then cool.",
+        "Split the roll and spread with mustard; add the sliced egg, kashar and tomato.",
+        "Add washed and dried rocket, close and serve immediately."
+      ],
+      "tr": [
+        "Yumurtayı beyazı ve sarısı tamamen katılaşana kadar haşlayıp soğutun.",
+        "Ekmeği açıp hardal sürün; dilimlenmiş yumurta, kaşar ve domatesi ekleyin.",
+        "Yıkanıp kurulanmış rokayla kapatıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s059",
+    "name": {
+      "en": "Shrimp and Avocado Lettuce Cups",
+      "tr": "Karidesli Avokado Marul Kup"
+    },
+    "description": {
+      "en": "A light savoury snack of lime shrimp and avocado served in lettuce leaves.",
+      "tr": "Limonlu karides ve avokadonun marul yapraklarında sunulduğu hafif tuzlu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "avocado",
+      "lettuce",
+      "tomato",
+      "lemon",
+      "olive_oil",
+      "coriander"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 306,
+      "proteinG": 32,
+      "carbsG": 13,
+      "fatG": 16,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp in the oil for 3-4 minutes until firm and fully opaque, then cool.",
+        "Dice the avocado and tomato and mix with the lime and coriander; add the shrimp.",
+        "Divide among washed and dried lettuce leaves and serve immediately."
+      ],
+      "tr": [
+        "Karidesi yağda 3-4 dakika, eti sıkı ve tamamen opak olana kadar pişirip soğutun.",
+        "Avokado ve domatesi küp doğrayıp limon ve kişnişle karıştırın; karidesi ekleyin.",
+        "Yıkanıp kurulanmış marul yapraklarına paylaştırıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s060",
+    "name": {
+      "en": "Berry Kefir Smoothie",
+      "tr": "Orman Meyveli Kefir Smoothie"
+    },
+    "description": {
+      "en": "A chilled snack smoothie made with kefir, mixed berries, banana and oats.",
+      "tr": "Kefir, orman meyveleri, muz ve yulafla hazırlanan soğuk içecek ara öğünü."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "kefir",
+      "blueberry",
+      "raspberry",
+      "banana",
+      "oats",
+      "chia_seeds"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 510,
+      "proteinG": 18,
+      "carbsG": 84,
+      "fatG": 15,
+      "fiberG": 21
+    },
+    "steps": {
+      "en": [
+        "Process the oats and chia seeds for 10 seconds.",
+        "Add the kefir, berries and banana.",
+        "Blend for 40-50 seconds until smooth and serve immediately."
+      ],
+      "tr": [
+        "Yulaf ve chia tohumunu blenderda 10 saniye öğütün.",
+        "Kefir, orman meyvesi ve muzu ekleyin.",
+        "Pürüzsüz olana kadar 40-50 saniye çekip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "kefir": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "blueberry": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s061",
+    "name": {
+      "en": "Chicken and Sweetcorn Quesadilla Wedges",
+      "tr": "Tavuklu Mısırlı Quesadilla Dilimleri"
+    },
+    "description": {
+      "en": "Four warm quesadilla wedges filled with chicken, sweetcorn and cheese.",
+      "tr": "Tortilla içinde tavuk, mısır ve peynirle hazırlanan dört sıcak quesadilla dilimi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "chicken_breast",
+      "corn",
+      "cheddar_cheese",
+      "salsa"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 516,
+      "proteinG": 41,
+      "carbsG": 44,
+      "fatG": 20,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Finely shred chicken that previously reached 74°C.",
+        "Spread the chicken, corn and kashar over half the tortilla and fold.",
+        "Cook in a dry pan for 2-3 minutes per side until the cheese melts; cut into four wedges and serve with salsa."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış tavuğu ince didikleyin.",
+        "Tortillanın yarısına tavuk, mısır ve kaşarı yayın; katlayın.",
+        "Kuru tavada iki yüzünü peynir eriyene kadar 2-3'er dakika pişirip dört dilime kesin; salsayla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "salsa": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s062",
+    "name": {
+      "en": "Baked Apple Ricotta Cup",
+      "tr": "Fırın Elmalı Ricotta Kup"
+    },
+    "description": {
+      "en": "A warm sweet snack baked with cinnamon apple, ricotta, oats and walnuts.",
+      "tr": "Tarçınlı elma, ricotta, yulaf ve cevizle fırınlanan sıcak tatlı ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "apple",
+      "ricotta",
+      "oats",
+      "walnut",
+      "honey",
+      "cinnamon",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 530,
+      "proteinG": 21,
+      "carbsG": 56,
+      "fatG": 28,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Dice the apple and toss with the lemon and cinnamon.",
+        "Layer the ricotta, apple and oats in a small baking dish and scatter over the walnuts.",
+        "Bake at 190°C for 18-20 minutes and drizzle with honey just before serving."
+      ],
+      "tr": [
+        "Elmayı küp doğrayıp limon ve tarçınla karıştırın.",
+        "Küçük fırın kabına ricotta, elma ve yulafı katmanlayın; cevizi serpin.",
+        "190°C'de 18-20 dakika pişirip balı servis öncesi gezdirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apple": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 5.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s063",
+    "name": {
+      "en": "Tuna and Cheese Stuffed Mini Peppers",
+      "tr": "Ton Balıklı Peynir Dolgulu Mini Biberler"
+    },
+    "description": {
+      "en": "Mini peppers filled with a chilled mixture of tuna, cream cheese, sweetcorn and dill.",
+      "tr": "Mini biberlerin ton balığı, krem peynir, mısır ve dereotlu soğuk harçla doldurulduğu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bell_pepper",
+      "tuna",
+      "cream_cheese",
+      "corn",
+      "dill",
+      "lemon",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 370,
+      "proteinG": 33,
+      "carbsG": 22,
+      "fatG": 17,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Halve the peppers lengthways and remove the seeds.",
+        "Mix the tuna, cream cheese, corn, dill, lemon and pepper.",
+        "Divide the filling among the pepper halves and serve chilled."
+      ],
+      "tr": [
+        "Biberleri uzunlamasına ikiye kesip çekirdeklerini çıkarın.",
+        "Ton balığı, krem peynir, mısır, dereotu, limon ve karabiberi karıştırın.",
+        "Harcı biber yarılarına paylaştırıp soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bell_pepper": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s064",
+    "name": {
+      "en": "Chicken Caesar Lettuce Bites",
+      "tr": "Tavuklu Sezar Marul Lokmaları"
+    },
+    "description": {
+      "en": "Lettuce bites filled with chicken, Turkish yogurt anchovy dressing, Parmesan and croutons.",
+      "tr": "Marul yapraklarında tavuk, yoğurtlu ançüez sosu, Parmesan ve krutonla hazırlanan lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american",
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "lettuce",
+      "yogurt",
+      "parmesan",
+      "croutons",
+      "anchovy",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 344,
+      "proteinG": 43,
+      "carbsG": 20,
+      "fatG": 10,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Dice chicken that previously reached 74°C.",
+        "Mix the Turkish yogurt, mashed anchovy and lemon and combine with the chicken.",
+        "Divide among the lettuce leaves, add Parmesan and croutons and serve immediately."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış tavuğu küçük doğrayın.",
+        "Yoğurt, ezilmiş ançüez ve limonu karıştırıp tavukla birleştirin.",
+        "Marul yapraklarına paylaştırıp Parmesan ve krutonla hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "croutons": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "anchovy": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s065",
+    "name": {
+      "en": "Rice Cakes with Banana and Peanut Butter",
+      "tr": "Muzlu Fıstık Ezmeli Pirinç Patlağı"
+    },
+    "description": {
+      "en": "A snack of rice cakes topped with unsweetened peanut butter, banana, cacao nibs and cinnamon.",
+      "tr": "Pirinç patlağı üzerinde şekersiz fıstık ezmesi, muz, kakao parçacığı ve tarçınlı ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "rice_cake",
+      "peanut_butter",
+      "banana",
+      "cacao_nibs",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "nuts",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 425,
+      "proteinG": 12,
+      "carbsG": 56,
+      "fatG": 20,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Spread the peanut butter evenly over the rice cakes.",
+        "Slice the banana and arrange on top.",
+        "Finish with cacao nibs and cinnamon and consume immediately."
+      ],
+      "tr": [
+        "Fıstık ezmesini pirinç patlaklarına eşit yayın.",
+        "Muzu dilimleyip üzerine dizin.",
+        "Kakao parçacığı ve tarçınla tamamlayıp hemen tüketin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "rice_cake": {
+        "amount": 27.0,
+        "unit": "g"
+      },
+      "peanut_butter": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cacao_nibs": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s066",
+    "name": {
+      "en": "Cheese and Olive Mini Muffins",
+      "tr": "Peynirli Zeytinli Mini Muffin"
+    },
+    "description": {
+      "en": "Six small savoury muffins made with kashar, olives and oregano.",
+      "tr": "Kaşar, zeytin ve kekikle hazırlanan altı küçük tuzlu muffin."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "whole_wheat_flour",
+      "eggs",
+      "yogurt",
+      "cheddar_cheese",
+      "olives",
+      "olive_oil",
+      "baking_powder"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 620,
+      "proteinG": 34,
+      "carbsG": 49,
+      "fatG": 34,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Mix the flour and baking powder; add the egg, Turkish yogurt and oil.",
+        "Fold in the grated kashar and chopped olives and divide among six mini moulds.",
+        "Bake at 180°C for 16-18 minutes until the centres are fully set."
+      ],
+      "tr": [
+        "Un ve kabartma tozunu karıştırın; yumurta, yoğurt ve yağı ekleyin.",
+        "Rendelenmiş kaşar ve doğranmış zeytini katıp altı mini kalıba paylaştırın.",
+        "180°C'de merkezler tamamen katılaşana kadar 16-18 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "whole_wheat_flour": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "baking_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s067",
+    "name": {
+      "en": "Tuna-Stuffed Eggs",
+      "tr": "Ton Balıklı Yumurta Dolması"
+    },
+    "description": {
+      "en": "Firm egg halves filled with tuna, Turkish yogurt, mustard and chives.",
+      "tr": "Katı yumurta yarılarının ton balığı, yoğurt, hardal ve frenk soğanlı harçla doldurulduğu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "tuna",
+      "yogurt",
+      "mustard",
+      "chives",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish",
+      "mustard"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 288,
+      "proteinG": 36,
+      "carbsG": 3,
+      "fatG": 14,
+      "fiberG": 0
+    },
+    "steps": {
+      "en": [
+        "Boil the eggs until whites and yolks are fully firm, then cool.",
+        "Remove the yolks and mash with the tuna, Turkish yogurt, mustard and chives.",
+        "Fill the four egg halves and serve chilled."
+      ],
+      "tr": [
+        "Yumurtaları beyaz ve sarıları tamamen katılaşana kadar haşlayıp soğutun.",
+        "Sarıları çıkarıp ton balığı, yoğurt, hardal ve frenk soğanıyla ezin.",
+        "Harcı dört yumurta yarısına doldurup soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "tuna": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "chives": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s068",
+    "name": {
+      "en": "Crispbread with Labneh and Strawberries",
+      "tr": "Çilekli Labneli Galeta"
+    },
+    "description": {
+      "en": "A sweet-savoury snack of rye crispbread topped with labneh, strawberries, pistachios and a little honey.",
+      "tr": "Çavdar galeta üzerinde labne, çilek, Antep fıstığı ve az ballı tatlı-tuzlu ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "crackers",
+      "labne",
+      "strawberry",
+      "pistachio",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 455,
+      "proteinG": 13,
+      "carbsG": 51,
+      "fatG": 24,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Wash, dry and slice the strawberries.",
+        "Spread the labneh over the crispbread and arrange the strawberries.",
+        "Add the pistachios and honey and serve immediately."
+      ],
+      "tr": [
+        "Çilekleri yıkayıp kurulayın ve dilimleyin.",
+        "Galetalara labneyi yayın ve çilekleri dizin.",
+        "Antep fıstığı ve balı ekleyip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "crackers": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "labne": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "strawberry": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "pistachio": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s069",
+    "name": {
+      "en": "Apple Slices with Smoked Turkey",
+      "tr": "Hindi Füme Elma Dilimleri"
+    },
+    "description": {
+      "en": "Small chilled bites of apple slices topped with smoked turkey, kashar and mustard.",
+      "tr": "Elma dilimleri üzerinde hindi füme, kaşar ve hardallı küçük soğuk lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "apple",
+      "turkey_breast",
+      "cheddar_cheese",
+      "mustard",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "mustard"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cravingSweets",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 349,
+      "proteinG": 34,
+      "carbsG": 27,
+      "fatG": 13,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Core and cut the apple into thin rounds and coat with lemon.",
+        "Spread each slice with a little mustard.",
+        "Top with smoked turkey and kashar and serve immediately."
+      ],
+      "tr": [
+        "Elmayı çekirdeksiz ince yuvarlaklar hâlinde kesip limonla kaplayın.",
+        "Her dilime çok az hardal sürün.",
+        "Hindi füme ve kaşarı üzerine yerleştirip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apple": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s070",
+    "name": {
+      "en": "Cocoa Hazelnut Energy Bites",
+      "tr": "Kakaolu Fındıklı Enerji Topları"
+    },
+    "description": {
+      "en": "Four no-bake energy bites made with dates, hazelnuts, oats and cocoa.",
+      "tr": "Hurma, fındık, yulaf ve kakaoyla hazırlanan dört adet pişmeyen enerji topu."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "dates",
+      "hazelnut",
+      "oats",
+      "cocoa_powder",
+      "chia_seeds"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 537,
+      "proteinG": 13,
+      "carbsG": 82,
+      "fatG": 24,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Process the hazelnuts and oats to a coarse crumb.",
+        "Add the dates, cocoa and chia and process until the mixture holds together.",
+        "Shape into four equal balls and chill for 20 minutes before serving."
+      ],
+      "tr": [
+        "Fındık ve yulafı mutfak robotunda iri kum kıvamına getirin.",
+        "Hurma, kakao ve chiayı ekleyip karışım toparlanana kadar çekin.",
+        "Dört eşit top yapıp 20 dakika soğutarak servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "dates": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "hazelnut": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "chia_seeds": {
+        "amount": 8.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s071",
+    "name": {
+      "en": "Shrimp Rice Paper Rolls",
+      "tr": "Karidesli Pirinç Kâğıdı Ruloları"
+    },
+    "description": {
+      "en": "Three fresh rolls filled with cooked shrimp, rice noodles, carrot, cucumber and herbs.",
+      "tr": "Pişmiş karides, pirinç noodle, havuç, salatalık ve otlarla hazırlanan üç taze rulo."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "rice_paper",
+      "noodle",
+      "carrot",
+      "cucumber",
+      "lettuce",
+      "mint",
+      "peanut_sauce"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "nuts",
+      "peanuts",
+      "shellfish",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 472,
+      "proteinG": 33,
+      "carbsG": 68,
+      "fatG": 8,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp until firm and opaque, then cool.",
+        "Soften the rice papers one at a time and divide the shrimp, noodles and vegetables among them.",
+        "Fold in the sides and roll tightly; serve immediately with peanut sauce."
+      ],
+      "tr": [
+        "Karidesi eti sıkı ve opak olana kadar pişirip soğutun.",
+        "Pirinç kâğıtlarını tek tek yumuşatıp karides, noodle ve sebzeleri paylaştırın.",
+        "Kenarları içe katlayıp sıkıca sarın; fıstık sosuyla hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "rice_paper": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 32.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "mint": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "peanut_sauce": {
+        "amount": 25.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s072",
+    "name": {
+      "en": "Turkish Yogurt Tahini Fruit Dip",
+      "tr": "Yoğurtlu Tahinli Meyve Dip"
+    },
+    "description": {
+      "en": "A Turkish yogurt, tahini and cinnamon dip served with apple, pear and grapes.",
+      "tr": "Yoğurt, tahin ve tarçınlı dip sosun elma, armut ve üzümle sunulduğu meyveli ara öğün."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "tahini",
+      "apple",
+      "pear",
+      "grape",
+      "honey",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 390,
+      "proteinG": 20,
+      "carbsG": 58,
+      "fatG": 12,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Whisk the Turkish yogurt, tahini, honey and cinnamon until smooth.",
+        "Wash the fruit and slice the apple and pear.",
+        "Serve the fruit immediately with the dip."
+      ],
+      "tr": [
+        "Yoğurt, tahin, bal ve tarçını pürüzsüz çırpın.",
+        "Meyveleri yıkayın; elma ve armudu dilimleyin.",
+        "Meyveleri dip sosla birlikte hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "apple": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pear": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "grape": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s073",
+    "name": {
+      "en": "Sucuk and Cheese Mini Skewers",
+      "tr": "Peynirli Sucuklu Mini Şişler"
+    },
+    "description": {
+      "en": "Small snack skewers made with fully cooked sucuk, kashar, cherry tomatoes and cucumber.",
+      "tr": "Tam pişmiş sucuk, kaşar, kiraz domates ve salatalıkla hazırlanan küçük ara öğün şişleri."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sucuk",
+      "cheddar_cheese",
+      "tomato",
+      "cucumber",
+      "bread"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 570,
+      "proteinG": 31,
+      "carbsG": 29,
+      "fatG": 37,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Cook the sucuk through in a small pan, drain excess fat and cool briefly.",
+        "Cut the kashar, tomatoes, cucumber and bread into bite-sized pieces.",
+        "Thread the ingredients alternately onto six short skewers and serve immediately."
+      ],
+      "tr": [
+        "Sucuğu küçük tavada tamamen ısıtıp fazla yağını süzün ve kısa süre soğutun.",
+        "Kaşar, domates, salatalık ve ekmeği lokmalık kesin.",
+        "Bileşenleri altı kısa şişe sırayla dizip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sucuk": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s074",
+    "name": {
+      "en": "Rye Canapés with Salmon and Cream Cheese",
+      "tr": "Somonlu Krem Peynirli Çavdar Kanepeler"
+    },
+    "description": {
+      "en": "Six rye crispbread canapés topped with cooked salmon, cream cheese, cucumber and dill.",
+      "tr": "Çavdar galeta üzerinde pişmiş somon, krem peynir, salatalık ve dereotlu altı kanepe."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "crackers",
+      "salmon",
+      "cream_cheese",
+      "cucumber",
+      "dill"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 485,
+      "proteinG": 22,
+      "carbsG": 34,
+      "fatG": 29,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Spread the crispbread pieces with cream cheese.",
+        "Divide the salmon that previously reached 63°C and the cucumber among them.",
+        "Finish with dill and serve immediately."
+      ],
+      "tr": [
+        "Galeta parçalarına krem peynir sürün.",
+        "Önceden 63°C'ye ulaşmış somonu ve salatalığı paylaştırın.",
+        "Dereotuyla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "crackers": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "salmon": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s075",
+    "name": {
+      "en": "Frozen Turkish Yogurt Granola Bites",
+      "tr": "Yoğurtlu Granolalı Dondurulmuş Lokmalar"
+    },
+    "description": {
+      "en": "Six frozen bites made with Turkish yogurt, mixed berries, granola and almonds.",
+      "tr": "Yoğurt, orman meyvesi, granola ve bademle hazırlanan altı dondurulmuş lokma."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "blueberry",
+      "raspberry",
+      "granola",
+      "almond",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 516,
+      "proteinG": 29,
+      "carbsG": 68,
+      "fatG": 17,
+      "fiberG": 15
+    },
+    "steps": {
+      "en": [
+        "Mix the Turkish yogurt and honey and divide among six silicone moulds.",
+        "Add the berries, granola and almonds.",
+        "Freeze for at least 3 hours and soften for 5 minutes before serving."
+      ],
+      "tr": [
+        "Yoğurt ve balı karıştırıp altı silikon kalıba paylaştırın.",
+        "Meyve, granola ve bademi üzerlerine ekleyin.",
+        "En az 3 saat dondurup servis öncesi 5 dakika yumuşatın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "granola": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s076",
+    "name": {
+      "en": "Chicken Pesto Mini Skewers",
+      "tr": "Tavuklu Pestolu Mini Şişler"
+    },
+    "description": {
+      "en": "Six small skewers made with cooked chicken, mozzarella, cherry tomatoes and pesto.",
+      "tr": "Pişmiş tavuk, mozzarella, kiraz domates ve pestoyla hazırlanan altı küçük şiş."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "mozzarella",
+      "tomato",
+      "pesto",
+      "basil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 421,
+      "proteinG": 50,
+      "carbsG": 7,
+      "fatG": 21,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Cut chicken that previously reached 74°C into bite-sized pieces.",
+        "Thread the chicken, mozzarella and tomatoes onto six short skewers.",
+        "Loosen the pesto with a little water, drizzle over and serve chilled with basil."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış tavuğu lokmalık kesin.",
+        "Tavuk, mozzarella ve domatesi altı kısa şişe dizin.",
+        "Pestoyu çok az suyla inceltip gezdirin; fesleğenle soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pesto": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "basil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s077",
+    "name": {
+      "en": "Pear, Cheese and Walnut Bites",
+      "tr": "Peynirli Armutlu Cevizli Lokmalar"
+    },
+    "description": {
+      "en": "Small bites of pear slices topped with aged kashar, walnuts and a little honey.",
+      "tr": "Armut dilimleri üzerinde eski kaşar, ceviz ve az ballı küçük lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "pear",
+      "cheddar_cheese",
+      "walnut",
+      "honey",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 453,
+      "proteinG": 16,
+      "carbsG": 35,
+      "fatG": 30,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Core and thinly slice the pear and coat with lemon.",
+        "Divide the cheese among the pear slices.",
+        "Add the walnuts and honey and serve immediately."
+      ],
+      "tr": [
+        "Armudu çekirdeksiz ince dilimleyip limonla kaplayın.",
+        "Peyniri armut dilimlerine paylaştırın.",
+        "Ceviz ve balı ekleyip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pear": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s078",
+    "name": {
+      "en": "Tuna Sweetcorn Cups",
+      "tr": "Ton Balıklı Mısır Kup"
+    },
+    "description": {
+      "en": "Lettuce cups filled with a chilled mixture of tuna, sweetcorn, Turkish yogurt, cucumber and dill.",
+      "tr": "Marul kupalarında ton balığı, mısır, yoğurt, salatalık ve dereotlu soğuk harç."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tuna",
+      "corn",
+      "yogurt",
+      "cucumber",
+      "lettuce",
+      "dill"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 234,
+      "proteinG": 35,
+      "carbsG": 21,
+      "fatG": 3,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Mix the tuna, corn, Turkish yogurt, diced cucumber and dill.",
+        "Wash and dry the lettuce leaves thoroughly.",
+        "Divide the filling among the six leaves and serve immediately."
+      ],
+      "tr": [
+        "Ton balığı, mısır, yoğurt, küçük doğranmış salatalık ve dereotunu karıştırın.",
+        "Marul yapraklarını yıkayıp tamamen kurutun.",
+        "Harcı altı yaprağa paylaştırıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tuna": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s079",
+    "name": {
+      "en": "Cocoa Banana Chia Pudding",
+      "tr": "Kakaolu Muzlu Chia Puding"
+    },
+    "description": {
+      "en": "A chilled pudding made with soya drink, chia, banana, cocoa and peanut butter.",
+      "tr": "Soya içeceği, chia, muz, kakao ve fıstık ezmesiyle hazırlanan soğuk puding."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "soy_milk",
+      "chia_seeds",
+      "banana",
+      "cocoa_powder",
+      "peanut_butter"
+    ],
+    "allergenTags": [
+      "nuts",
+      "peanuts",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 440,
+      "proteinG": 19,
+      "carbsG": 49,
+      "fatG": 22,
+      "fiberG": 18
+    },
+    "steps": {
+      "en": [
+        "Whisk the soya drink, chia and cocoa.",
+        "Stir again after 10 minutes and refrigerate for at least 4 hours.",
+        "Serve with sliced banana and peanut butter."
+      ],
+      "tr": [
+        "Soya içeceği, chia ve kakaoyu çırpın.",
+        "10 dakika sonra tekrar karıştırıp en az 4 saat buzdolabında bekletin.",
+        "Dilimlenmiş muz ve fıstık ezmesiyle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "soy_milk": {
+        "amount": 220.0,
+        "unit": "ml"
+      },
+      "chia_seeds": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "peanut_butter": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s080",
+    "name": {
+      "en": "Smoked Turkey Hummus Rolls",
+      "tr": "Hindi Füme Humus Ruloları"
+    },
+    "description": {
+      "en": "Chilled smoked turkey rolls filled with hummus, carrot, cucumber and rocket.",
+      "tr": "Hindi füme dilimlerinin humus, havuç, salatalık ve roka ile sarıldığı soğuk rulolar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "turkey_breast",
+      "hummus",
+      "carrot",
+      "cucumber",
+      "arugula"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 296,
+      "proteinG": 37,
+      "carbsG": 20,
+      "fatG": 8,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cut the carrot and cucumber into thin batons.",
+        "Spread the turkey slices with hummus and add the vegetables and rocket.",
+        "Roll tightly and serve as six chilled rolls."
+      ],
+      "tr": [
+        "Havuç ve salatalığı ince çubuklar hâlinde kesin.",
+        "Hindi dilimlerine humus sürüp sebzeleri ve rokayı yerleştirin.",
+        "Sıkıca sarıp altı rulo hâlinde soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "turkey_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "hummus": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s081",
+    "name": {
+      "en": "Mini Shrimp Toast",
+      "tr": "Karidesli Mini Tost"
+    },
+    "description": {
+      "en": "Small toasts baked with a shrimp, spring onion, sesame and egg topping.",
+      "tr": "Karides, taze soğan, susam ve yumurtalı harcın ekmek üzerinde fırınlandığı küçük tostlar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "bread",
+      "eggs",
+      "onion",
+      "sesame_seeds",
+      "sesame_oil"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "gluten",
+      "sesame",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 431,
+      "proteinG": 39,
+      "carbsG": 34,
+      "fatG": 16,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Finely chop the shrimp and mix with the egg white, spring onion and sesame oil.",
+        "Spread over four small pieces of bread and sprinkle with sesame.",
+        "Bake at 200°C for 10-12 minutes until the shrimp is fully opaque and the egg white is set."
+      ],
+      "tr": [
+        "Karidesi ince doğrayıp yumurta akı, taze soğan ve susam yağıyla karıştırın.",
+        "Karışımı dört küçük ekmek parçasına yayın ve susam serpin.",
+        "200°C'de karides tamamen opak ve yumurta akı katı olana kadar 10-12 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "sesame_oil": {
+        "amount": 3.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s082",
+    "name": {
+      "en": "Roasted Chickpea and Cheese Mix",
+      "tr": "Fırın Nohutlu Peynirli Karışım"
+    },
+    "description": {
+      "en": "A savoury mix of spiced roasted chickpeas, white cheese, pumpkin seeds and sun-dried tomatoes.",
+      "tr": "Baharatlı fırın nohut, beyaz peynir, kabak çekirdeği ve kuru domatesli tuzlu karışım."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea",
+      "feta_cheese",
+      "pumpkin_seeds",
+      "tomato",
+      "olive_oil",
+      "paprika"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 501,
+      "proteinG": 25,
+      "carbsG": 44,
+      "fatG": 27,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Dry the chickpeas thoroughly and toss with the oil and paprika.",
+        "Roast at 200°C for 25-30 minutes, stirring occasionally, and cool completely.",
+        "Mix with the white cheese, pumpkin seeds and sun-dried tomatoes and serve."
+      ],
+      "tr": [
+        "Nohudu çok iyi kurutup yağ ve paprika ile karıştırın.",
+        "200°C'de 25-30 dakika, ara sıra çevirerek çıtırlaştırın ve tamamen soğutun.",
+        "Beyaz peynir, kabak çekirdeği ve kuru domatesle karıştırıp tüketin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "feta_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s083",
+    "name": {
+      "en": "Sucuk Egg Mini Muffins",
+      "tr": "Sucuklu Yumurtalı Mini Muffin"
+    },
+    "description": {
+      "en": "Four small savoury snack muffins made with sucuk, eggs, kashar, pepper and tomato.",
+      "tr": "Sucuk, yumurta, kaşar, biber ve domatesle hazırlanan dört küçük kahvaltılık ara öğün muffini."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "eggs",
+      "sucuk",
+      "cheddar_cheese",
+      "bell_pepper",
+      "tomato"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 524,
+      "proteinG": 35,
+      "carbsG": 8,
+      "fatG": 39,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Heat the sucuk through in a small pan and drain excess fat.",
+        "Mix the eggs, sucuk, kashar and diced vegetables and divide among four moulds.",
+        "Bake at 180°C for 15-18 minutes until the centres reach 71°C."
+      ],
+      "tr": [
+        "Sucuğu küçük tavada tamamen ısıtıp fazla yağını süzün.",
+        "Yumurta, sucuk, kaşar ve küçük doğranmış sebzeleri karıştırıp dört kalıba paylaştırın.",
+        "180°C'de merkezleri 71°C'ye ulaşana kadar 15-18 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "sucuk": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 35.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 60.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s084",
+    "name": {
+      "en": "Melon and Pastirma Bites",
+      "tr": "Pastırmalı Kavun Lokmaları"
+    },
+    "description": {
+      "en": "Six small sweet-savoury bites of melon, pastirma, kashar and mint.",
+      "tr": "Kavun, pastırma, kaşar ve naneli altı küçük tatlı-tuzlu lokma."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "melon",
+      "pastirma",
+      "cheddar_cheese",
+      "mint"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 402,
+      "proteinG": 38,
+      "carbsG": 23,
+      "fatG": 19,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cut the melon and kashar into six equal bite-sized pieces.",
+        "Warm the pastirma briefly in a pan and cool.",
+        "Thread the melon, pastirma, kashar and mint onto short skewers and serve immediately."
+      ],
+      "tr": [
+        "Kavun ve kaşarı altı eşit lokmalık parçaya kesin.",
+        "Pastırmayı kısa süre tavada ısıtıp soğutun.",
+        "Kavun, pastırma, kaşar ve naneyi kısa şişlere dizip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "melon": {
+        "amount": 200.0,
+        "unit": "g"
+      },
+      "pastirma": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "mint": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s085",
+    "name": {
+      "en": "Cocoa Turkish Yogurt Strawberry Cup",
+      "tr": "Yoğurtlu Kakaolu Çilek Kup"
+    },
+    "description": {
+      "en": "A chilled cup layered with cocoa Turkish yogurt, strawberries, banana and hazelnuts.",
+      "tr": "Kakaolu yoğurt, çilek, muz ve fındık katmanlarından oluşan soğuk kup."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "strawberry",
+      "banana",
+      "cocoa_powder",
+      "hazelnut",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 345,
+      "proteinG": 23,
+      "carbsG": 46,
+      "fatG": 12,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Whisk the Turkish yogurt, cocoa and honey until smooth.",
+        "Layer the Turkish yogurt, strawberries and banana in a cup.",
+        "Finish with hazelnuts and serve immediately."
+      ],
+      "tr": [
+        "Yoğurt, kakao ve balı pürüzsüz çırpın.",
+        "Kup içine yoğurt, çilek ve muz katmanları yapın.",
+        "Fındıkla tamamlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "strawberry": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 6.0,
+        "unit": "g"
+      },
+      "hazelnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s086",
+    "name": {
+      "en": "Chicken and Avocado Crackers",
+      "tr": "Tavuklu Avokadolu Krakerler"
+    },
+    "description": {
+      "en": "Whole-grain crackers topped with chicken, avocado, tomato and lemon.",
+      "tr": "Tam tahıllı kraker üzerinde tavuk, avokado, domates ve limonlu lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "crackers",
+      "chicken_breast",
+      "avocado",
+      "tomato",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 444,
+      "proteinG": 34,
+      "carbsG": 38,
+      "fatG": 19,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Dice chicken that previously reached 74°C.",
+        "Mash the avocado with lemon and spread over the crackers.",
+        "Add the chicken and tomato and serve immediately."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış tavuğu küçük doğrayın.",
+        "Avokadoyu limonla ezip krakerlere yayın.",
+        "Tavuk ve domatesi ekleyip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "crackers": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s087",
+    "name": {
+      "en": "Tuna Cucumber Sandwiches",
+      "tr": "Ton Balıklı Salatalık Sandviçleri"
+    },
+    "description": {
+      "en": "Mini sandwiches of cucumber slices filled with tuna, cream cheese and dill.",
+      "tr": "Salatalık dilimleri arasında ton balığı, krem peynir ve dereotlu mini sandviçler."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cucumber",
+      "tuna",
+      "cream_cheese",
+      "dill",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "complex",
+    "macros": {
+      "calories": 300,
+      "proteinG": 28,
+      "carbsG": 11,
+      "fatG": 16,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Mix the tuna, cream cheese, dill and lemon.",
+        "Cut the cucumber into thick rounds and pat dry.",
+        "Place the filling between pairs of slices to make six mini sandwiches."
+      ],
+      "tr": [
+        "Ton balığı, krem peynir, dereotu ve limonu karıştırın.",
+        "Salatalığı kalın yuvarlaklar hâlinde kesip kurulayın.",
+        "Harcı iki dilim arasına koyarak altı mini sandviç yapın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cucumber": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s088",
+    "name": {
+      "en": "Cheese, Grape and Almond Snack Box",
+      "tr": "Peynirli Üzümlü Badem Kutusu"
+    },
+    "description": {
+      "en": "A portioned chilled snack box of kashar, grapes, almonds and whole-grain crackers.",
+      "tr": "Kaşar, üzüm, badem ve tam tahıllı krakerden oluşan ölçülü soğuk ara öğün kutusu."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cheddar_cheese",
+      "grape",
+      "almond",
+      "crackers"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 567,
+      "proteinG": 22,
+      "carbsG": 53,
+      "fatG": 32,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Wash and dry the grapes thoroughly.",
+        "Cut the kashar into bite-sized cubes.",
+        "Arrange the ingredients separately in a divided container and keep chilled."
+      ],
+      "tr": [
+        "Üzümleri yıkayıp iyice kurulayın.",
+        "Kaşarı lokmalık küpler hâlinde kesin.",
+        "Tüm bileşenleri bölmeli kaba ayrı ayrı yerleştirip soğuk saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cheddar_cheese": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "grape": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "crackers": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s089",
+    "name": {
+      "en": "Banana Tahini Oat Bars",
+      "tr": "Muzlu Tahinli Yulaf Barı"
+    },
+    "description": {
+      "en": "Two soft baked bars made with banana, tahini, oats, raisins and sesame.",
+      "tr": "Muz, tahin, yulaf, kuru üzüm ve susamla hazırlanan iki yumuşak fırın barı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "banana",
+      "oats",
+      "tahini",
+      "raisins",
+      "sesame_seeds",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "periodFatigue",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 595,
+      "proteinG": 17,
+      "carbsG": 94,
+      "fatG": 21,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Mash the banana and mix with the tahini.",
+        "Add the oats, raisins, sesame and cinnamon and press into a small tin.",
+        "Bake at 180°C for 20-22 minutes, cool completely and cut into two bars."
+      ],
+      "tr": [
+        "Muzu ezip tahinle karıştırın.",
+        "Yulaf, kuru üzüm, susam ve tarçını ekleyip küçük kalıba bastırın.",
+        "180°C'de 20-22 dakika pişirip tamamen soğutun ve iki bara kesin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "banana": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "raisins": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s090",
+    "name": {
+      "en": "Smoked Turkey and Cheese Tortilla Rolls",
+      "tr": "Hindi Füme Peynirli Tortilla Ruloları"
+    },
+    "description": {
+      "en": "Six rolls made with whole-grain tortilla, smoked turkey, cream cheese, carrot and spinach.",
+      "tr": "Tam tahıllı tortilla, hindi füme, krem peynir, havuç ve ıspanakla hazırlanan altı rulo."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "turkey_breast",
+      "cream_cheese",
+      "carrot",
+      "spinach"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 491,
+      "proteinG": 37,
+      "carbsG": 39,
+      "fatG": 21,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Spread the cream cheese evenly over the tortilla.",
+        "Add the smoked turkey, thin carrot and washed, dried spinach.",
+        "Roll tightly, cut into six pieces and serve chilled."
+      ],
+      "tr": [
+        "Tortillaya krem peyniri eşit yayın.",
+        "Hindi füme, ince havuç ve yıkanıp kurulanmış ıspanağı yerleştirin.",
+        "Sıkıca sarıp altı parçaya kesin ve soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "spinach": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s091",
+    "name": {
+      "en": "Shrimp Mango Lettuce Bites",
+      "tr": "Karidesli Mango Marul Lokmaları"
+    },
+    "description": {
+      "en": "Lettuce bites filled with lime shrimp, mango, cucumber and coriander.",
+      "tr": "Limonlu karides, mango, salatalık ve kişnişin marul yapraklarında sunulduğu lokmalar."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "mango",
+      "cucumber",
+      "lettuce",
+      "lemon",
+      "coriander",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cravingSweets",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 243,
+      "proteinG": 29,
+      "carbsG": 22,
+      "fatG": 6,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp in the oil for 3-4 minutes until fully opaque and cool.",
+        "Mix with the mango, cucumber, lime and coriander.",
+        "Divide among washed and dried lettuce leaves and serve immediately."
+      ],
+      "tr": [
+        "Karidesi yağda tamamen opak olana kadar 3-4 dakika pişirip soğutun.",
+        "Mango, salatalık, limon ve kişnişle karıştırın.",
+        "Yıkanıp kurulanmış marul yapraklarına paylaştırıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 110.0,
+        "unit": "g"
+      },
+      "mango": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s092",
+    "name": {
+      "en": "Peach Kefir Smoothie",
+      "tr": "Kefirli Şeftalili Smoothie"
+    },
+    "description": {
+      "en": "A chilled snack smoothie made with kefir, peach, banana, oats and flaxseed.",
+      "tr": "Kefir, şeftali, muz, yulaf ve keten tohumuyla hazırlanan soğuk içecek ara öğünü."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "kefir",
+      "peach",
+      "banana",
+      "oats",
+      "flax_seeds"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 413,
+      "proteinG": 17,
+      "carbsG": 60,
+      "fatG": 15,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Stone and chop the peach.",
+        "Add all ingredients to a blender.",
+        "Blend for 40-50 seconds until smooth and serve immediately."
+      ],
+      "tr": [
+        "Şeftalinin çekirdeğini çıkarıp doğrayın.",
+        "Tüm bileşenleri blendera alın.",
+        "40-50 saniye pürüzsüz olana kadar çekip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "kefir": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "peach": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "flax_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s093",
+    "name": {
+      "en": "Mini Pide with Sucuk and Kashar",
+      "tr": "Sucuklu Kaşarlı Mini Pide"
+    },
+    "description": {
+      "en": "Two small open pides topped with sucuk, kashar, tomato and pepper.",
+      "tr": "Tam buğday hamuru üzerinde sucuk, kaşar, domates ve biberli iki küçük açık pide."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "pizza_dough",
+      "sucuk",
+      "cheddar_cheese",
+      "tomato",
+      "bell_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 641,
+      "proteinG": 31,
+      "carbsG": 55,
+      "fatG": 33,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Roll the dough into two small ovals.",
+        "Divide the sucuk, tomato, pepper and kashar over the dough and fold in the edges.",
+        "Bake at 220°C for 12-15 minutes until the dough is cooked and the sucuk is heated through."
+      ],
+      "tr": [
+        "Hamuru iki küçük oval hâlinde açın.",
+        "Sucuk, domates, biber ve kaşarı paylaştırıp kenarları içe kıvırın.",
+        "220°C'de hamur pişip sucuk tamamen ısınana kadar 12-15 dakika fırınlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pizza_dough": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "sucuk": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
   }
 ]

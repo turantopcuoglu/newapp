@@ -39,6 +39,20 @@ STRONG_IRON = {'liver', 'ground_beef', 'beef_steak', 'veal', 'lamb',
                'red_lentil', 'green_lentil', 'spinach', 'swiss_chard',
                'molasses'}
 
+OMEGA3 = {'salmon', 'sardine', 'anchovy', 'mackerel', 'trout', 'walnut',
+          'flax_seeds', 'chia_seeds', 'tuna', 'sea_bass'}
+
+FRUIT = {'banana', 'apple', 'pear', 'strawberry', 'blueberry', 'raspberry',
+         'mango', 'fig', 'grape', 'peach', 'sour_cherry', 'orange',
+         'pomegranate', 'kiwi', 'apricot', 'melon', 'watermelon', 'plum',
+         'blackberry', 'cherry', 'pineapple', 'tangerine'}
+
+# Şişkinlikte ağır gelen, gaz yapıcı olarak bilinen gruplar.
+BLOATING = {'chickpea', 'white_bean', 'black_bean', 'kidney_bean',
+            'fava_bean', 'red_lentil', 'green_lentil', 'split_pea',
+            'black_eyed_pea', 'cabbage', 'red_cabbage', 'broccoli',
+            'cauliflower', 'brussels_sprouts', 'onion', 'baked_beans'}
+
 MAGNESIUM = {'pumpkin_seeds', 'tahini', 'dark_chocolate', 'cocoa_powder',
              'spinach', 'swiss_chard', 'almond', 'walnut', 'hazelnut',
              'cashew', 'chia_seeds', 'flax_seeds', 'buckwheat', 'quinoa',
@@ -94,6 +108,20 @@ def main():
 
             tags = set(r['checkInTags'])
             original = set(tags)
+
+            # Yeni gelen tariflerin check-in etiketi yok; taban seti veriden
+            # türetilir. Elle etiketlenmiş eski tarifler bu bloğa girmez.
+            if not tags:
+                tags.add('noSpecificIssue')
+                if macros['carbsG'] >= 35 and r['carbType'] != 'simple':
+                    tags.add('lowEnergy')
+                if OMEGA3 & ings or 'eggs' in ings:
+                    tags.add('cantFocus')
+                if (SWEET | FRUIT) & ings:
+                    tags.add('cravingSweets')
+                if (macros['fiberG'] <= 6 and macros['fatG'] <= 20
+                        and not (BLOATING & ings)):
+                    tags.add('bloated')
 
             # Toparlanma: protein yüksekse ekle, düşükse yanlış etikettir.
             if macros['proteinG'] >= 25:

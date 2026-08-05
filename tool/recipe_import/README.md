@@ -5,10 +5,14 @@ birleştiği için uygulamada 143) — tarif
 içeriğinin kaynağıdır. Ad, açıklama, malzeme, miktar, hazırlanış, mutfak ve
 alerjen bilgisi oradan gelir; `assets/recipes/*.json` bu araçlarla üretilir.
 
+İkinci kaynak `docs/yeni-tarifler.md` (220 yeni tarif, B035-S093). Şeması
+farklı olduğu için ayrı ayrıştırıcısı var: `parse_pack.py` + `build_pack.py`.
+
 ## Çalıştırma sırası
 
 ```bash
 python3 tool/recipe_import/build_recipes.py                   # md -> JSON
+python3 tool/recipe_import/build_pack.py                      # 220 yeni tarif
 dart run tool/data_report.dart --fix-macros                   # makroları hesapla
 python3 tool/recipe_import/apply_tags.py                      # seviye + etiket
 dart run tool/data_report.dart --strict
@@ -27,6 +31,9 @@ türetir, o yüzden `--fix-macros`'tan sonra çalışmalı.
 | `ing_map.py` | Rapordaki malzeme adı → kanonik katalog ID(leri). Bir satır birden çok malzeme olabilir ("Tuz ve karabiber"). |
 | `table_names.json` | Bölüm özet tablolarından alınan tam Türkçe adlar; 20 tarifte başlık satırı kırpık geldiği için ad buradan okunur. |
 | `build_recipes.py` | Ayrıştırılmış raporu `assets/recipes/*.json` üzerine yazar: ad, açıklama, adımlar, malzeme + miktar, mutfak, alerjen, porsiyon. |
+| `parse_pack.py` | 220 yeni tarif belgesini ayrıştırır (TR\|EN malzeme tablosu, TR+EN adım satırları). |
+| `ing_map_pack.py` | Yeni paketin malzeme adları + katalogda olmayanların besin verisi. Pişmiş→kuru çevrim katsayıları da burada. |
+| `build_pack.py` | Yeni tarifleri JSON'a **ekler** (mevcutlara dokunmaz), kopyaları alır dışarıda bırakır. |
 | `apply_tags.py` | Yeni makrolardan `proteinLevel`/`fiberLevel`/`carbType` türetir, check-in etiketlerini gözden geçirir. |
 
 ## Bilinmesi gerekenler

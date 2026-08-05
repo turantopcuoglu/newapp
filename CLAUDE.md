@@ -70,12 +70,13 @@ Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
 
 ## Veri kuralları (tarif eklerken/düzenlerken)
 
-- **Tarif içeriğinin kaynağı `docs/tarif-duzeltme-raporu.md`.** 144 tarifin
-  adı, açıklaması, malzemesi, miktarı, hazırlanışı, mutfağı ve alerjeni oradan
-  gelir; `assets/recipes/*.json` `tool/recipe_import/` ile üretilir (sıra ve
-  tuzaklar: `tool/recipe_import/README.md`). Tarif metnini elle düzenlemen
-  gerekiyorsa raporu da güncelle, yoksa bir sonraki içe aktarma değişikliği
-  siler.
+- **Tarif içeriğinin kaynağı iki belge:** `docs/tarif-duzeltme-raporu.md`
+  (ilk 144 tarifin düzeltilmiş hâli) ve `docs/yeni-tarifler.md` (220 yeni
+  tarif). Ad, açıklama, malzeme, miktar, hazırlanış, mutfak ve alerjen
+  oradan gelir; `assets/recipes/*.json` `tool/recipe_import/` ile üretilir
+  (sıra ve tuzaklar: `tool/recipe_import/README.md`). Tarif metnini elle
+  düzenlemen gerekiyorsa kaynak belgeyi de güncelle, yoksa bir sonraki içe
+  aktarma değişikliği siler.
 - Tarif kaynağı YALNIZCA `assets/recipes/*.json`; Dart koduna tarif gömme.
 - **Kalori/makro elle yazılmaz**: `quantities` (porsiyon başına miktar) doldurulur,
   `dart run tool/data_report.dart --fix-macros` makroları üretir. Test,

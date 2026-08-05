@@ -65,12 +65,12 @@ double _methodOverlap(Recipe a, Recipe b) {
 /// Minimum steps to be cookable. Snacks are legitimately simpler than a
 /// main course, so padding them to a main's length would only add filler.
 ///
-/// The corrected recipe corpus writes each method as a few dense steps; the
-/// importer re-splits them at sentence boundaries, which lands most recipes
-/// at 4-8. Four is the floor for "this is a method, not a one-liner" —
-/// padding beyond that would mean inventing text the recipe source does not
-/// have.
-int minStepsFor(MealType mealType) => 4;
+/// The recipe sources write each method as a few dense steps; the importer
+/// re-splits them at sentence boundaries, which lands recipes at 3-8. Three
+/// is the floor for "this is a method, not a one-liner" — padding beyond
+/// that would mean inventing text the recipe source does not have, or
+/// breaking clauses apart mid-sentence.
+int minStepsFor(MealType mealType) => 3;
 
 /// Below this, the dish is likely under-specified.
 const int minIngredients = 4;
@@ -92,6 +92,8 @@ const List<String> doughWords = [
 const Set<String> doughIngredients = {
   'flour', 'whole_wheat_flour', 'semolina', 'cornmeal', 'phyllo_dough',
   'puff_pastry', 'bread', 'pita_bread', 'tortilla_wrap', 'breadcrumbs',
+  'chickpea_flour', 'pizza_dough', 'quiche_pastry', 'lasagna_sheets',
+  'gnocchi', 'ravioli', 'bagel', 'croissant', 'simit',
 };
 
 const recipeFiles = [

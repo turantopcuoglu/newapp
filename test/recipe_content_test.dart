@@ -59,6 +59,10 @@ void main() {
       const doughIngredients = {
         'flour', 'whole_wheat_flour', 'semolina', 'cornmeal', 'phyllo_dough',
         'puff_pastry', 'bread', 'pita_bread', 'tortilla_wrap', 'breadcrumbs',
+        // Hazır hamurlar da hamurdur: pide/pizza hamuru açılan tarifler
+        // un listelemek zorunda değil.
+        'chickpea_flour', 'pizza_dough', 'quiche_pastry', 'lasagna_sheets',
+        'gnocchi', 'ravioli', 'bagel', 'croissant', 'simit',
       };
 
       for (final recipe in recipes) {

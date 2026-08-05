@@ -3325,5 +3325,5461 @@
         "unit": "pinch"
       }
     }
+  },
+  {
+    "id": "l031",
+    "name": {
+      "en": "Mediterranean Lentil Quinoa Bowl",
+      "tr": "Akdeniz Usulü Mercimekli Kinoa Kasesi"
+    },
+    "description": {
+      "en": "A balanced lunch bowl of quinoa, green lentils, fresh vegetables and lemon tahini dressing.",
+      "tr": "Kinoa, yeşil mercimek, taze sebzeler ve limonlu tahin sosuyla hazırlanan dengeli öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "quinoa",
+      "green_lentil",
+      "tomato",
+      "cucumber",
+      "parsley",
+      "tahini",
+      "lemon",
+      "olive_oil",
+      "water",
+      "salt",
+      "cumin"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodCramps",
+      "periodFatigue",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 496,
+      "proteinG": 22,
+      "carbsG": 69,
+      "fatG": 17,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Cool the cooked quinoa and lentils completely.",
+        "Dice the tomato and cucumber and chop the parsley.",
+        "Whisk the tahini, lemon juice, olive oil, cumin and water into a pourable dressing.",
+        "Combine the quinoa, lentils and vegetables in a bowl.",
+        "Drizzle with the dressing and serve, or refrigerate in a sealed container for up to 24 hours."
+      ],
+      "tr": [
+        "Pişmiş kinoa ve mercimeği tamamen soğutun.",
+        "Domates ve salatalığı küp doğrayıp maydanozu kıyın.",
+        "Tahin, limon suyu, zeytinyağı, kimyon ve suyu akışkan bir sos olana kadar çırpın.",
+        "Kinoa, mercimek ve sebzeleri kasede karıştırın.",
+        "Sosu üzerine gezdirip hemen servis edin veya kapalı kapta buzdolabında en fazla 24 saat saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "quinoa": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "green_lentil": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l032",
+    "name": {
+      "en": "Courgette Chickpea Patties",
+      "tr": "Kabaklı Nohut Köfteleri"
+    },
+    "description": {
+      "en": "Tender chickpea and courgette patties with fresh herbs and a crisp pan-seared exterior.",
+      "tr": "Nohut, kabak ve taze otlarla tavada kızartılan, dışı gevrek yumuşak köfteler."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea",
+      "zucchini",
+      "eggs",
+      "chickpea_flour",
+      "parsley",
+      "olive_oil",
+      "cumin",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 546,
+      "proteinG": 29,
+      "carbsG": 60,
+      "fatG": 23,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Coarsely grate and lightly salt the courgette; after 10 minutes, squeeze it very thoroughly in a clean towel.",
+        "Coarsely mash the chickpeas.",
+        "Mix with the courgette, egg, chickpea flour, parsley and seasonings.",
+        "Shape into 4 small patties and refrigerate for 10 minutes.",
+        "Heat the oil in a non-stick pan over medium heat.",
+        "Cook for 3-4 minutes per side until browned and hot throughout."
+      ],
+      "tr": [
+        "Kabağı iri rendeleyip hafif tuzlayın; 10 dakika sonra temiz bezle suyunu çok iyi sıkın.",
+        "Nohudu çatalla iri püre yapın.",
+        "Kabak, yumurta, nohut unu, maydanoz ve baharatlarla karıştırın.",
+        "Karışımdan 4 küçük köfte şekillendirip 10 dakika buzdolabında dinlendirin.",
+        "Yağı yapışmaz tavada orta ateşte ısıtın.",
+        "Köfteleri her yüzü 3-4 dakika kızarana ve içi tamamen ısınana kadar pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "chickpea_flour": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l033",
+    "name": {
+      "en": "Sweet Potato with Black Beans and Corn",
+      "tr": "Siyah Fasulyeli Mısırlı Tatlı Patates"
+    },
+    "description": {
+      "en": "A baked sweet potato filled with black beans, corn, tomato and avocado.",
+      "tr": "Fırınlanmış tatlı patatesin siyah fasulye, mısır, domates ve avokadoyla doldurulduğu öğle yemeği."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sweet_potato",
+      "black_bean",
+      "corn",
+      "tomato",
+      "avocado",
+      "lemon",
+      "cumin",
+      "paprika",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 526,
+      "proteinG": 20,
+      "carbsG": 97,
+      "fatG": 10,
+      "fiberG": 25
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Wash and pierce the sweet potato; bake for 40-55 minutes until completely tender in the centre.",
+        "Heat the beans and corn in a small pan with the cumin, paprika and 2 tbsp water for 4-5 minutes.",
+        "Dice the tomato; mash the avocado with the lime juice and salt.",
+        "Split the potato lengthwise and fluff the flesh with a fork.",
+        "Add the bean mixture and finish with the tomato and avocado."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Tatlı patatesi yıkayıp birkaç yerinden delin; tepside 40-55 dakika, ortası tamamen yumuşayana kadar pişirin.",
+        "Fasulye ve mısırı küçük tavada kimyon, toz biber ve 2 yemek kaşığı suyla 4-5 dakika ısıtın.",
+        "Domatesi küp doğrayın; avokadoyu limon suyu ve tuzla ezin.",
+        "Patatesi boydan yarıp içini çatalla gevşetin.",
+        "Fasulyeli karışımı doldurun; domates ve avokadoyla tamamlayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sweet_potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "black_bean": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l034",
+    "name": {
+      "en": "Rice Noodle Salad with Tofu and Vegetables",
+      "tr": "Tofulu Pirinç Erişteli Sebze Salatası"
+    },
+    "description": {
+      "en": "A cold salad of tofu, rice noodles, edamame and crisp vegetables with a lime sesame dressing.",
+      "tr": "Tofu, pirinç eriştesi, edamame ve çıtır sebzelerin limonlu susam sosuyla birleştiği soğuk salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tofu",
+      "noodle",
+      "edamame",
+      "carrot",
+      "cucumber",
+      "red_cabbage",
+      "tamari",
+      "lemon",
+      "sesame_oil",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 541,
+      "proteinG": 27,
+      "carbsG": 71,
+      "fatG": 18,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook the rice noodles according to the packet instructions; rinse under cold water and drain very thoroughly.",
+        "Cut the tofu into 2 cm cubes.",
+        "Shred the carrot and cabbage and slice the cucumber into half-moons.",
+        "Whisk together the tamari, lime juice and sesame oil.",
+        "Toss the noodles, tofu, edamame and vegetables with the dressing.",
+        "Add the sesame seeds and serve, or refrigerate for up to 24 hours."
+      ],
+      "tr": [
+        "Pirinç eriştesini paket talimatına göre pişirin; soğuk sudan geçirip çok iyi süzün.",
+        "Tofuyu 2 cm küpler hâlinde doğrayın.",
+        "Havuç ve lahanayı ince, salatalığı yarım ay şeklinde kesin.",
+        "Tamari, limon suyu ve susam yağını çırpın.",
+        "Erişte, tofu, edamame ve sebzeleri sosla karıştırın.",
+        "Susamı ekleyip hemen servis edin veya 24 saate kadar soğuk saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tofu": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "edamame": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "red_cabbage": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tamari": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l035",
+    "name": {
+      "en": "White Bean Salad with Roasted Pepper",
+      "tr": "Köz Biberli Beyaz Fasulye Salatası"
+    },
+    "description": {
+      "en": "A substantial salad of white beans, roasted pepper, fresh vegetables, olives and pumpkin seeds.",
+      "tr": "Beyaz fasulye, közlenmiş biber, taze sebzeler, zeytin ve kabak çekirdeğiyle hazırlanan doyurucu salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "white_bean",
+      "bell_pepper",
+      "tomato",
+      "cucumber",
+      "olives",
+      "pumpkin_seeds",
+      "olive_oil",
+      "lemon",
+      "parsley",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 509,
+      "proteinG": 24,
+      "carbsG": 61,
+      "fatG": 22,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Rinse and drain the beans thoroughly.",
+        "Cut the roasted pepper, tomato and cucumber into bite-size pieces.",
+        "Whisk together the olive oil, lemon juice, salt and pepper.",
+        "Gently toss the beans, vegetables, olives and chopped parsley with the dressing.",
+        "Scatter over the pumpkin seeds just before serving.",
+        "Do not leave at room temperature for more than 2 hours."
+      ],
+      "tr": [
+        "Fasulyeyi durulayıp iyice süzün.",
+        "Köz biberi, domatesi ve salatalığı lokmalık doğrayın.",
+        "Zeytinyağı, limon suyu, tuz ve karabiberi çırpın.",
+        "Fasulye, sebzeler, zeytin ve kıyılmış maydanozu sosla nazikçe karıştırın.",
+        "Kabak çekirdeğini servis öncesi üzerine serpin.",
+        "Oda sıcaklığında 2 saatten fazla bekletmeyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "white_bean": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l036",
+    "name": {
+      "en": "Chicken Caesar Salad",
+      "tr": "Tavuklu Sezar Salatası"
+    },
+    "description": {
+      "en": "A main-course salad of grilled chicken, lettuce, croutons, Parmesan and anchovy Caesar dressing.",
+      "tr": "Izgara tavuk, marul, kruton, Parmesan ve ançüezli Sezar sosuyla hazırlanan ana öğün salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "lettuce",
+      "bread",
+      "parmesan",
+      "yogurt",
+      "olive_oil",
+      "anchovy",
+      "lemon",
+      "mustard",
+      "garlic",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 572,
+      "proteinG": 61,
+      "carbsG": 30,
+      "fatG": 23,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Even the chicken to a uniform thickness without flattening it excessively; grill until the centre reaches 74°C and rest for 5 minutes.",
+        "Cube the bread and toast it in a dry pan.",
+        "Wash and dry the lettuce thoroughly.",
+        "Whisk the Turkish yogurt, oil, mashed anchovy, lemon, mustard, garlic and pepper.",
+        "Toss the lettuce with the dressing and serve with the sliced chicken, croutons and grated Parmesan."
+      ],
+      "tr": [
+        "Tavuğu dövmeden eşit kalınlığa getirin; yapışmaz ızgarada merkezi 74°C'ye ulaşana kadar pişirip 5 dakika dinlendirin.",
+        "Ekmeği küp doğrayıp kuru tavada çıtırlaştırın.",
+        "Marulu yıkayıp tamamen kurutun.",
+        "Yoğurt, yağ, ezilmiş ançüez, limon, hardal, sarımsak ve karabiberi çırpın.",
+        "Marulu sosla karıştırın; dilimlenmiş tavuk, kruton ve rendelenmiş Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "anchovy": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 0.5,
+        "unit": "clove"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l037",
+    "name": {
+      "en": "Beef Meatball Couscous Bowl",
+      "tr": "Dana Köfteli Kuskus Kasesi"
+    },
+    "description": {
+      "en": "A balanced lunch bowl of spiced beef meatballs, couscous, tomato, cucumber and Turkish yogurt sauce.",
+      "tr": "Baharatlı dana köftesi, kuskus, domates, salatalık ve yoğurt soslu dengeli öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "couscous",
+      "tomato",
+      "cucumber",
+      "yogurt",
+      "olive_oil",
+      "parsley",
+      "cumin",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 658,
+      "proteinG": 49,
+      "carbsG": 57,
+      "fatG": 25,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Mix the beef with the cumin, salt, pepper and half the parsley and shape into 5 small meatballs.",
+        "Heat the oil over medium heat and cook the meatballs for 8-10 minutes, turning, until the centres reach 71°C.",
+        "Chop the tomato and cucumber and mix the Turkish yogurt with the remaining parsley.",
+        "Add the couscous to a bowl and serve with the vegetables, meatballs and Turkish yogurt sauce."
+      ],
+      "tr": [
+        "Kıyma, kimyon, tuz, karabiber ve maydanozun yarısını yoğurup 5 küçük köfte yapın.",
+        "Yağı tavada orta ateşte ısıtın; köfteleri çevirerek merkezleri 71°C'ye ulaşana kadar 8-10 dakika pişirin.",
+        "Domates ve salatalığı doğrayın; yoğurdu kalan maydanozla karıştırın.",
+        "Kuskusu kaseye alın; sebzeler, köfteler ve yoğurt sosla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "couscous": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l038",
+    "name": {
+      "en": "Niçoise-Inspired Salmon Salad",
+      "tr": "Somonlu Nisuaz Esintili Salata"
+    },
+    "description": {
+      "en": "A Niçoise-inspired salad of salmon, potato, egg, green beans, tomato and olives.",
+      "tr": "Somon, patates, yumurta, taze fasulye, domates ve zeytinle hazırlanan Nisuaz esintili salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "potato",
+      "eggs",
+      "green_beans",
+      "tomato",
+      "olives",
+      "olive_oil",
+      "lemon",
+      "mustard",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 586,
+      "proteinG": 34,
+      "carbsG": 40,
+      "fatG": 32,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Bake the salmon at 190°C for about 10-12 minutes until the centre reaches 63°C; flake coarsely.",
+        "Boil the egg until the yolk and white are firm.",
+        "Boil the green beans for 5-7 minutes until tender-crisp and cool.",
+        "Whisk the oil, lemon, mustard and pepper.",
+        "Arrange the potato, beans, tomato and olives; add the salmon and egg and serve with the dressing."
+      ],
+      "tr": [
+        "Somonu 190°C fırında merkezi 63°C'ye ulaşana kadar yaklaşık 10-12 dakika pişirin; iri parçalara ayırın.",
+        "Yumurtayı sarısı ve beyazı katılaşana kadar haşlayın.",
+        "Taze fasulyeyi 5-7 dakika diri-yumuşak haşlayıp soğutun.",
+        "Yağ, limon, hardal ve karabiberi çırpın.",
+        "Patates, fasulye, domates ve zeytini tabağa alın; somon ve yumurtayı ekleyip sosla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "green_beans": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l039",
+    "name": {
+      "en": "Turkey Pesto and Mozzarella Sandwich",
+      "tr": "Hindili Pestolu Mozzarellalı Sandviç"
+    },
+    "description": {
+      "en": "A warm sandwich filled with smoked turkey, pesto, mozzarella, tomato and rocket.",
+      "tr": "Hindi füme, pesto, mozzarella, domates ve roka içeren sıcak sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "turkey_breast",
+      "mozzarella",
+      "pesto",
+      "tomato",
+      "arugula"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 591,
+      "proteinG": 51,
+      "carbsG": 50,
+      "fatG": 20,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Spread the pesto over the inside of the bread.",
+        "Layer the smoked turkey, mozzarella and tomato.",
+        "Toast in a sandwich press or dry pan for 4-5 minutes until the cheese melts and the bread browns.",
+        "Rest for 1 minute, open and add the washed and dried rocket.",
+        "Close and serve immediately."
+      ],
+      "tr": [
+        "Ekmeğin iç yüzlerine pestoyu sürün.",
+        "Hindi füme, mozzarella ve domatesi katmanlayın.",
+        "Sandviçi tost makinesinde veya kuru tavada, peynir eriyip ekmek kızarana kadar 4-5 dakika ısıtın.",
+        "Bir dakika dinlendirip açın; yıkanmış ve kurulanmış rokayı ekleyin.",
+        "Kapatıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "pesto": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 20.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l040",
+    "name": {
+      "en": "Quinoa Salad with Shrimp and Avocado",
+      "tr": "Karidesli Avokadolu Kinoa Salatası"
+    },
+    "description": {
+      "en": "A lime-dressed lunch salad with shrimp, quinoa, avocado, tomato and corn.",
+      "tr": "Karides, kinoa, avokado, domates ve mısırlı limonlu öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "quinoa",
+      "avocado",
+      "tomato",
+      "corn",
+      "red_onion",
+      "olive_oil",
+      "lemon",
+      "cumin",
+      "salt"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 579,
+      "proteinG": 41,
+      "carbsG": 58,
+      "fatG": 24,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Pat the shrimp dry.",
+        "Cook in a non-stick pan with half the oil for 3-4 minutes until firm, pearly and opaque.",
+        "Once the quinoa is completely cool, mix it with the tomato, corn and finely chopped onion.",
+        "Whisk the remaining oil with the lime, cumin and salt and add to the salad.",
+        "Add the shrimp and diced avocado, toss gently and serve immediately."
+      ],
+      "tr": [
+        "Karidesi kâğıt havluyla kurulayın.",
+        "Yapışmaz tavada yağın yarısıyla 3-4 dakika, eti sıkı, inci renginde ve opak olana kadar pişirin.",
+        "Kinoa tamamen soğukken domates, mısır ve ince doğranmış soğanla karıştırın.",
+        "Kalan yağ, limon, kimyon ve tuzu çırpıp salataya ekleyin.",
+        "Karides ve küp avokadoyu ekleyip nazikçe karıştırarak hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "quinoa": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "red_onion": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "cumin": {
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l041",
+    "name": {
+      "en": "Mexican-Inspired Chicken and Black Bean Soup",
+      "tr": "Tavuklu Siyah Fasulyeli Meksika Esintili Çorba"
+    },
+    "description": {
+      "en": "A hearty single-serving spiced soup made with chicken, black beans, corn and tomato.",
+      "tr": "Tavuk, siyah fasulye, mısır ve domatesle hazırlanan baharatlı, tek porsiyonluk doyurucu çorba."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mexican",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "black_bean",
+      "corn",
+      "tomato",
+      "onion",
+      "chicken_stock",
+      "olive_oil",
+      "cumin",
+      "paprika",
+      "tortilla_wrap"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 593,
+      "proteinG": 51,
+      "carbsG": 70,
+      "fatG": 14,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Heat the oil and cook the diced chicken and onion for 4 minutes.",
+        "Add the tomato, stock and spices; bring to the boil and cook for 8 minutes.",
+        "Add the beans and corn and simmer for another 5-7 minutes until the chicken reaches 74°C.",
+        "Cut the tortilla into strips, toast in a dry pan and add over the soup."
+      ],
+      "tr": [
+        "Yağı tencerede ısıtıp küçük doğranmış tavuk ve soğanı 4 dakika çevirin.",
+        "Domates, tavuk suyu ve baharatları ekleyin; kaynama noktasına getirip 8 dakika pişirin.",
+        "Fasulye ve mısırı ekleyin; tavuk parçaları 74°C'ye ulaşana kadar 5-7 dakika daha kaynatın.",
+        "Tortillayı şerit kesip kuru tavada kızartın; çorbanın üzerine ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "black_bean": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "chicken_stock": {
+        "amount": 250.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "tortilla_wrap": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l042",
+    "name": {
+      "en": "Lamb Skewers with Bulgur Shepherd's Salad",
+      "tr": "Kuzu Şiş ve Bulgurlu Çoban Salatası"
+    },
+    "description": {
+      "en": "Grilled lamb skewers served with bulgur, tomato, cucumber and Turkish yogurt.",
+      "tr": "Izgara kuzu şişin bulgur, domates, salatalık ve yoğurtla servis edildiği öğle tabağı."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "bulgur",
+      "tomato",
+      "cucumber",
+      "yogurt",
+      "olive_oil",
+      "lemon",
+      "oregano",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 719,
+      "proteinG": 47,
+      "carbsG": 55,
+      "fatG": 37,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Mix the lamb with half the oil, oregano and pepper and thread onto a skewer.",
+        "Grill, turning, until the centre reaches at least 63°C; rest for 3 minutes.",
+        "Chop the tomato and cucumber and mix with the bulgur, remaining oil, lemon and a little salt.",
+        "Serve the lamb skewer with the bulgur salad and Turkish yogurt."
+      ],
+      "tr": [
+        "Kuzu etini yağın yarısı, kekik ve karabiberle karıştırıp şişe dizin.",
+        "Izgarada çevirerek etin merkezi en az 63°C'ye ulaşana kadar pişirin; 3 dakika dinlendirin.",
+        "Domates ve salatalığı doğrayıp bulgur, kalan yağ, limon ve az tuzla karıştırın.",
+        "Kuzu şişi bulgurlu salata ve yoğurtla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 54.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l043",
+    "name": {
+      "en": "Potato and Egg Salad with Mustard Dressing",
+      "tr": "Yumurtalı Patatesli Hardallı Salata"
+    },
+    "description": {
+      "en": "A substantial salad of potato, eggs and green beans with a Turkish yogurt mustard dressing.",
+      "tr": "Patates, yumurta ve taze fasulyenin yoğurtlu hardal sosuyla birleştiği doyurucu salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "potato",
+      "eggs",
+      "green_beans",
+      "yogurt",
+      "mustard",
+      "olive_oil",
+      "lemon",
+      "dill",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 537,
+      "proteinG": 31,
+      "carbsG": 51,
+      "fatG": 25,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Boil the eggs until both yolks and whites are firm, then cool.",
+        "Boil the green beans for 5-7 minutes until tender-crisp and refresh under cold water.",
+        "Whisk the Turkish yogurt, mustard, oil, lemon, dill and seasonings.",
+        "Cut the potato and eggs into bite-size pieces; mix with the beans and dressing and serve or refrigerate."
+      ],
+      "tr": [
+        "Yumurtaları sarıları ve beyazları katılaşana kadar haşlayıp soğutun.",
+        "Taze fasulyeyi 5-7 dakika diri-yumuşak haşlayıp soğuk sudan geçirin.",
+        "Yoğurt, hardal, yağ, limon, dereotu ve baharatları çırpın.",
+        "Patatesi ve yumurtayı lokmalık doğrayın; fasulye ve sosla karıştırıp hemen servis edin veya soğuk saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "potato": {
+        "amount": 220.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "green_beans": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l044",
+    "name": {
+      "en": "Tuna and Corn Pasta Salad",
+      "tr": "Ton Balıklı Mısırlı Makarna Salatası"
+    },
+    "description": {
+      "en": "A cold lunch salad of tuna, corn, pasta and vegetables in a Turkish yogurt mayonnaise dressing.",
+      "tr": "Ton balığı, mısır, makarna ve sebzelerin yoğurt-mayonez sosuyla birleştiği soğuk öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tuna",
+      "pasta",
+      "corn",
+      "yogurt",
+      "mayonnaise",
+      "cucumber",
+      "bell_pepper",
+      "lemon",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 633,
+      "proteinG": 48,
+      "carbsG": 77,
+      "fatG": 15,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the pasta according to the packet directions, rinse under cold water and drain completely.",
+        "Drain and flake the tuna and finely chop the vegetables.",
+        "Mix the Turkish yogurt, mayonnaise, lemon and pepper.",
+        "Combine all ingredients with the dressing and serve, or refrigerate in a sealed container for up to 24 hours."
+      ],
+      "tr": [
+        "Makarnayı paket talimatına göre pişirip soğuk sudan geçirin ve tamamen süzün.",
+        "Ton balığını süzüp iri parçalara ayırın; sebzeleri küçük doğrayın.",
+        "Yoğurt, mayonez, limon ve karabiberi karıştırın.",
+        "Tüm malzemeleri sosla birleştirip hemen servis edin veya kapalı kapta buzdolabında 24 saate kadar saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tuna": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "mayonnaise": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l045",
+    "name": {
+      "en": "Halloumi Lentil and Roasted Vegetable Bowl",
+      "tr": "Hellimli Mercimekli Köz Sebze Kasesi"
+    },
+    "description": {
+      "en": "A warm-cold lunch bowl of grilled halloumi, lentils, quinoa and roasted vegetables.",
+      "tr": "Izgara hellim, mercimek, kinoa ve közlenmiş sebzelerden oluşan sıcak-soğuk öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "halloumi",
+      "green_lentil",
+      "quinoa",
+      "zucchini",
+      "bell_pepper",
+      "olive_oil",
+      "lemon",
+      "mint",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 691,
+      "proteinG": 40,
+      "carbsG": 78,
+      "fatG": 26,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 210°C.",
+        "Toss the courgette and pepper with the oil and roast for 18-20 minutes.",
+        "Heat the lentils and quinoa thoroughly and mix with the lemon and chopped mint.",
+        "Cut the halloumi into 1 cm slices and brown in a dry pan for 1-2 minutes per side.",
+        "Add the grain and lentil mixture to a bowl and serve with the vegetables and halloumi."
+      ],
+      "tr": [
+        "Fırını 210°C'ye ısıtın.",
+        "Kabak ve biberi yağla karıştırıp 18-20 dakika kızartın.",
+        "Mercimek ve kinoayı tamamen ısıtın; limon ve kıyılmış naneyle karıştırın.",
+        "Hellimi 1 cm dilimleyip kuru tavada her yüzünü 1-2 dakika kızartın.",
+        "Tahıl-bakliyat karışımını kaseye alın; sebzeler ve hellimle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "halloumi": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "green_lentil": {
+        "amount": 62.0,
+        "unit": "g"
+      },
+      "quinoa": {
+        "amount": 33.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "mint": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l046",
+    "name": {
+      "en": "Chicken Club Sandwich",
+      "tr": "Tavuklu Club Sandviç"
+    },
+    "description": {
+      "en": "A triple-layer sandwich with grilled chicken, smoked turkey, egg, tomato and lettuce.",
+      "tr": "Izgara tavuk, hindi füme, yumurta, domates ve marullu üç katlı sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "chicken_breast",
+      "turkey_breast",
+      "eggs",
+      "tomato",
+      "lettuce",
+      "mayonnaise"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 686,
+      "proteinG": 63,
+      "carbsG": 49,
+      "fatG": 25,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Grill the chicken until it reaches 74°C and rest; hard-boil the egg.",
+        "Toast the bread, spread thinly with mayonnaise and divide the chicken, turkey, egg, tomato and lettuce between two layers.",
+        "Stack all three slices, secure and cut diagonally; serve immediately."
+      ],
+      "tr": [
+        "Tavuğu merkezi 74°C'ye ulaşana kadar ızgara edip dinlendirin; yumurtayı tam katı haşlayın.",
+        "Ekmekleri kızartıp mayonezi ince sürün; tavuk, hindi füme, yumurta, domates ve marulu iki kata paylaştırın.",
+        "Üç dilimi üst üste koyup kürdanla sabitleyin; çapraz kesip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "mayonnaise": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l047",
+    "name": {
+      "en": "Beef Taco Salad",
+      "tr": "Dana Etli Taco Salatası"
+    },
+    "description": {
+      "en": "A salad of spiced minced beef, lettuce, beans, corn, tomato and tortilla pieces.",
+      "tr": "Baharatlı dana kıyma, marul, fasulye, mısır, domates ve tortilla parçalı salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "lettuce",
+      "kidney_bean",
+      "corn",
+      "tomato",
+      "avocado",
+      "tortilla_wrap",
+      "yogurt",
+      "cumin",
+      "paprika"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 741,
+      "proteinG": 54,
+      "carbsG": 66,
+      "fatG": 31,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Cook the beef with the spices until it reaches 71°C; cut the tortilla into wedges and toast in a dry pan.",
+        "Add the lettuce, beans, corn and tomato to a bowl and top with the beef and avocado.",
+        "Serve immediately with the Turkish yogurt and tortilla pieces."
+      ],
+      "tr": [
+        "Kıymayı baharatlarla merkezi 71°C'ye ulaşana kadar kavurun; tortillayı üçgen kesip kuru tavada kızartın.",
+        "Marul, fasulye, mısır ve domatesi kaseye alın; kıyma ve avokadoyu ekleyin.",
+        "Yoğurt ve tortilla parçalarıyla hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "kidney_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "l048",
+    "name": {
+      "en": "Trout Potato Salad with Dill",
+      "tr": "Alabalıklı Patatesli Dereotlu Salata"
+    },
+    "description": {
+      "en": "A cold salad of baked trout, potato, peas and dill Turkish yogurt dressing.",
+      "tr": "Fırın alabalık, patates, bezelye ve dereotlu yoğurt soslu soğuk salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "trout",
+      "potato",
+      "peas",
+      "yogurt",
+      "dill",
+      "lemon",
+      "mustard",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 433,
+      "proteinG": 41,
+      "carbsG": 46,
+      "fatG": 9,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Bake the trout at 190°C for 10-12 minutes until it reaches 63°C, then cool.",
+        "Mix the Turkish yogurt, dill, lemon, mustard and pepper.",
+        "Gently combine the potato, peas and flaked fish with the dressing and serve cold."
+      ],
+      "tr": [
+        "Alabalığı 190°C'de 63°C'ye ulaşana kadar 10-12 dakika pişirip soğutun.",
+        "Yoğurt, dereotu, limon, hardal ve karabiberi karıştırın.",
+        "Patates, bezelye ve iri ayrılmış balığı sosla nazikçe birleştirip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "trout": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "l049",
+    "name": {
+      "en": "Shrimp and Egg Ramen Soup",
+      "tr": "Karidesli Yumurtalı Ramen Çorbası"
+    },
+    "description": {
+      "en": "A quick ramen-inspired soup with noodles, shrimp, egg, mushrooms and pak choi.",
+      "tr": "Erişte, karides, yumurta, mantar ve pak choi içeren hızlı ramen esintili çorba."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "noodle",
+      "shrimp",
+      "eggs",
+      "mushroom",
+      "pak_choi",
+      "chicken_stock",
+      "soy_sauce",
+      "sesame_oil",
+      "ginger"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "gluten",
+      "sesame",
+      "shellfish",
+      "soy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 572,
+      "proteinG": 47,
+      "carbsG": 63,
+      "fatG": 14,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Hard-boil the egg and halve it.",
+        "Boil the stock with the ginger, mushrooms and soy sauce; cook the noodles according to the packet timing.",
+        "Add the shrimp and pak choi and cook for 3-4 minutes until the shrimp are opaque; serve with the egg and sesame oil."
+      ],
+      "tr": [
+        "Yumurtayı sarı ve beyazı katılaşana kadar haşlayıp ikiye kesin.",
+        "Et suyunu zencefil, mantar ve soya sosuyla kaynatın; erişteyi paket süresine göre pişirin.",
+        "Karides ve pak choi ekleyip karides tamamen opak olana kadar 3-4 dakika pişirin; yumurta ve susam yağıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "noodle": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "shrimp": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pak_choi": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chicken_stock": {
+        "amount": 400.0,
+        "unit": "ml"
+      },
+      "soy_sauce": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "ginger": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l050",
+    "name": {
+      "en": "Chicken Pesto Pasta Salad",
+      "tr": "Tavuklu Pestolu Makarna Salatası"
+    },
+    "description": {
+      "en": "A cold lunch salad with chicken, short pasta, pesto, cherry tomatoes and mozzarella.",
+      "tr": "Tavuk, kısa makarna, pesto, kiraz domates ve mozzarella içeren soğuk öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "pasta",
+      "pesto",
+      "mozzarella",
+      "tomato",
+      "arugula",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 687,
+      "proteinG": 57,
+      "carbsG": 62,
+      "fatG": 23,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cook and cool the pasta completely; confirm the chicken previously reached 74°C.",
+        "Mix the pesto and lemon with the pasta.",
+        "Add the chicken, mozzarella, tomatoes and rocket and serve, or refrigerate for up to 24 hours."
+      ],
+      "tr": [
+        "Makarnayı pişirip tamamen soğutun; tavuğun önceden 74°C'ye ulaştığından emin olun.",
+        "Pesto ve limonu makarnayla karıştırın.",
+        "Tavuk, mozzarella, domates ve rokayı ekleyip hemen servis edin veya 24 saat soğuk saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 71.0,
+        "unit": "g"
+      },
+      "pesto": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l051",
+    "name": {
+      "en": "Lamb Shawarma-Inspired Bowl",
+      "tr": "Kuzu Şavurma Esintili Kase"
+    },
+    "description": {
+      "en": "A shawarma-inspired bowl of spiced lamb, rice, hummus, pickles and tomato.",
+      "tr": "Baharatlı kuzu eti, pirinç, humus, turşu ve domatesli şavurma esintili kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "white_rice",
+      "hummus",
+      "tomato",
+      "pickles",
+      "red_onion",
+      "olive_oil",
+      "cumin",
+      "coriander"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 732,
+      "proteinG": 40,
+      "carbsG": 61,
+      "fatG": 37,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cook the lamb with the oil and spices over high heat for 5-7 minutes until it reaches at least 63°C; rest for 3 minutes.",
+        "Heat the rice thoroughly and chop the tomato, pickle and onion.",
+        "Serve the rice, hummus, vegetables and lamb in sections in a bowl."
+      ],
+      "tr": [
+        "Kuzu etini yağ ve baharatla yüksek ateşte, en az 63°C'ye ulaşana kadar 5-7 dakika pişirip 3 dakika dinlendirin.",
+        "Pirinci tamamen ısıtın; domates, turşu ve soğanı doğrayın.",
+        "Pirinç, humus, sebzeler ve eti kasede bölümler hâlinde servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "hummus": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pickles": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "red_onion": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "coriander": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "l052",
+    "name": {
+      "en": "Turkey and Cranberry Wrap",
+      "tr": "Hindi ve Turna Yemişli Dürüm"
+    },
+    "description": {
+      "en": "A sweet-savoury wrap filled with turkey, cream cheese, cranberry sauce and greens.",
+      "tr": "Hindi, krem peynir, turna yemişi sosu ve yeşillikle hazırlanan tatlı-tuzlu dürüm."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "turkey_breast",
+      "cream_cheese",
+      "cranberry_sauce",
+      "lettuce",
+      "cucumber",
+      "walnut"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 521,
+      "proteinG": 36,
+      "carbsG": 45,
+      "fatG": 22,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Spread the cream cheese and cranberry sauce thinly over the tortilla.",
+        "Add the turkey, lettuce, cucumber and roughly chopped walnuts.",
+        "Fold in the sides, roll tightly, cut in half and serve cold."
+      ],
+      "tr": [
+        "Tortillaya krem peynir ve turna yemişi sosunu ince tabaka sürün.",
+        "Hindi, marul, salatalık ve iri kıyılmış cevizi yerleştirin.",
+        "Yanları içe katlayıp sıkıca sarın; ikiye kesip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "cranberry_sauce": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l053",
+    "name": {
+      "en": "Salmon Poke-Inspired Bowl",
+      "tr": "Somonlu Poke Esintili Kase"
+    },
+    "description": {
+      "en": "A poke-inspired bowl made with cooked salmon, sushi rice, edamame, avocado and cucumber.",
+      "tr": "Pişmiş somon, sushi pirinci, edamame, avokado ve salatalıkla hazırlanan poke esintili kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "white_rice",
+      "edamame",
+      "avocado",
+      "cucumber",
+      "carrot",
+      "soy_sauce",
+      "sesame_seeds",
+      "rice_vinegar"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 708,
+      "proteinG": 40,
+      "carbsG": 67,
+      "fatG": 31,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Confirm the salmon previously reached 63°C and flake into large pieces.",
+        "Mix the rice with the rice vinegar and finely cut the vegetables.",
+        "Arrange everything separately in a bowl and serve with the soy sauce and sesame."
+      ],
+      "tr": [
+        "Somonun önceden 63°C'ye ulaştığından emin olup iri küpler hâlinde ayırın.",
+        "Pirinci pirinç sirkesiyle karıştırın; sebzeleri ince doğrayın.",
+        "Tüm malzemeleri kasede ayrı bölümlere yerleştirip soya sosu ve susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 58.0,
+        "unit": "g"
+      },
+      "edamame": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 10.0,
+        "unit": "ml"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "rice_vinegar": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l054",
+    "name": {
+      "en": "Cheeseburger Salad Bowl",
+      "tr": "Çizburger Salata Kasesi"
+    },
+    "description": {
+      "en": "A bun-free cheeseburger bowl with beef patty, kashar, lettuce, tomato, pickles and baked potato.",
+      "tr": "Dana köftesi, kaşar, marul, domates, turşu ve fırın patatesli ekmeksiz çizburger kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ground_beef",
+      "cheddar_cheese",
+      "potato",
+      "lettuce",
+      "tomato",
+      "pickles",
+      "olive_oil",
+      "mustard",
+      "ketchup"
+    ],
+    "allergenTags": [
+      "dairy",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 724,
+      "proteinG": 48,
+      "carbsG": 42,
+      "fatG": 40,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Cut the potato into wedges, toss with half the oil and bake at 210°C for 25-30 minutes.",
+        "Shape and cook the beef patty until it reaches 71°C; melt the kashar over it and slice.",
+        "Add the lettuce, tomato, pickles and potato to a bowl; add the beef and serve with mustard and ketchup."
+      ],
+      "tr": [
+        "Patatesi elma dilim kesip yağın yarısıyla 210°C'de 25-30 dakika fırınlayın.",
+        "Kıymaya şekil verip tavada merkezi 71°C'ye ulaşana kadar pişirin; kaşarı üzerine eritip dilimleyin.",
+        "Marul, domates, turşu ve patatesi kaseye alın; eti ekleyip hardal-ketçapla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ground_beef": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pickles": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "ketchup": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l055",
+    "name": {
+      "en": "Chicken Mushroom Barley Soup",
+      "tr": "Tavuklu Mantarlı Arpa Çorbası"
+    },
+    "description": {
+      "en": "A hearty soup made with chicken, pearl barley, mushrooms and root vegetables.",
+      "tr": "Tavuk, inci arpa, mantar ve kök sebzelerle hazırlanan doyurucu çorba."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "barley",
+      "mushroom",
+      "carrot",
+      "celery",
+      "onion",
+      "chicken_stock",
+      "olive_oil",
+      "oregano"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 510,
+      "proteinG": 46,
+      "carbsG": 60,
+      "fatG": 11,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Cook the onion, carrot, celery and mushrooms in the oil for 5 minutes.",
+        "Add the diced chicken, barley, stock and oregano and bring to the boil.",
+        "Simmer for 30-35 minutes until the barley is tender and the chicken reaches 74°C."
+      ],
+      "tr": [
+        "Yağda soğan, havuç, kereviz ve mantarı 5 dakika pişirin.",
+        "Küçük doğranmış tavuk, arpa, et suyu ve kekiği ekleyip kaynatın.",
+        "Arpa yumuşayana ve tavuk 74°C'ye ulaşana kadar kısık ateşte 30-35 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "barley": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "celery": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "chicken_stock": {
+        "amount": 500.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "oregano": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "l056",
+    "name": {
+      "en": "Chicken Caesar Pasta Bowl",
+      "tr": "Tavuklu Sezar Makarna Kasesi"
+    },
+    "description": {
+      "en": "A lunch bowl of grilled chicken, pasta, lettuce, tomato and a Turkish yogurt Caesar-inspired dressing.",
+      "tr": "Izgara tavuk, makarna, marul, domates ve yoğurtlu Sezar esintili soslu öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "american",
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "pasta",
+      "lettuce",
+      "tomato",
+      "yogurt",
+      "parmesan",
+      "anchovy",
+      "mustard"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 647,
+      "proteinG": 69,
+      "carbsG": 63,
+      "fatG": 12,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Grill the chicken until it reaches 74°C, then rest.",
+        "Whisk the Turkish yogurt with the mashed anchovy, mustard and a little water.",
+        "Toss the cold pasta, lettuce and tomato with the dressing and serve with chicken and Parmesan."
+      ],
+      "tr": [
+        "Tavuğu 74°C'ye ulaşana kadar ızgarada pişirip dinlendirin.",
+        "Yoğurt, ezilmiş ançüez, hardal ve az suyu çırpın.",
+        "Soğuk makarna, marul ve domatesi sosla karıştırıp tavuk ve Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 71.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "anchovy": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l057",
+    "name": {
+      "en": "Beef Bibimbap-Inspired Bowl",
+      "tr": "Dana Etli Bibimbap Esintili Kase"
+    },
+    "description": {
+      "en": "A mixed bowl of rice, beef, spinach, carrot, mushrooms, egg and chilli sauce.",
+      "tr": "Pirinç, dana eti, ıspanak, havuç, mantar, yumurta ve acı soslu karışık kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "white_rice",
+      "eggs",
+      "spinach",
+      "carrot",
+      "mushroom",
+      "gochujang",
+      "sesame_oil"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 829,
+      "proteinG": 53,
+      "carbsG": 72,
+      "fatG": 37,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Briefly sauté the vegetables separately.",
+        "Sear the thin beef until it reaches at least 63°C, rest for 3 minutes and cook the egg until firm.",
+        "Arrange the ingredients over the rice and serve with gochujang and sesame oil."
+      ],
+      "tr": [
+        "Sebzeleri ayrı ayrı kısa süre soteleyin.",
+        "İnce eti çok sıcak tavada en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin; yumurtayı tamamen katı pişirin.",
+        "Pirinç üzerine bileşenleri yerleştirip gochujang ve susam yağıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "gochujang": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l058",
+    "name": {
+      "en": "Tuna and Chickpea Sandwich",
+      "tr": "Ton Balıklı Nohutlu Sandviç"
+    },
+    "description": {
+      "en": "A whole-grain sandwich filled with mashed chickpeas and tuna mixed with celery, Turkish yogurt and lemon.",
+      "tr": "Ezilmiş nohut ve ton balığının kereviz, yoğurt ve limonla birleştiği tam tahıllı sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "tuna",
+      "chickpea",
+      "yogurt",
+      "celery",
+      "lemon",
+      "lettuce"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 551,
+      "proteinG": 46,
+      "carbsG": 76,
+      "fatG": 7,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Coarsely mash the chickpeas with a fork.",
+        "Mix with the tuna, Turkish yogurt, finely chopped celery and lemon.",
+        "Fill the bread with the mixture and lettuce and serve immediately."
+      ],
+      "tr": [
+        "Nohudu çatalla kaba biçimde ezin.",
+        "Ton balığı, yoğurt, ince kereviz ve limonla karıştırın.",
+        "Marulla birlikte ekmek arasına koyup hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "celery": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "lettuce": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l059",
+    "name": {
+      "en": "Roasted Pepper Lentil Soup with Cheese Toast",
+      "tr": "Köz Biberli Mercimek Çorbası ve Peynirli Tost"
+    },
+    "description": {
+      "en": "A lunch meal of red lentil and roasted pepper soup served with whole-grain kashar toast.",
+      "tr": "Kırmızı mercimek ve köz biber çorbasının kaşarlı tam tahıllı tostla sunulduğu öğle menüsü."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "red_lentil",
+      "bell_pepper",
+      "onion",
+      "vegetable_stock",
+      "olive_oil",
+      "bread",
+      "cheddar_cheese"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 772,
+      "proteinG": 37,
+      "carbsG": 97,
+      "fatG": 27,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Soften the onion in the oil; add the lentils, pepper and stock and cook for 20 minutes.",
+        "Blend until smooth and return to the boil.",
+        "Toast the bread with the kashar and serve with the hot soup."
+      ],
+      "tr": [
+        "Soğanı yağda yumuşatıp mercimek, biber ve sebze suyunu ekleyin; 20 dakika pişirin.",
+        "Çorbayı pürüzsüz çekip yeniden kaynama noktasına getirin.",
+        "Ekmek ve kaşarı tostlayıp sıcak çorbayla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "red_lentil": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "vegetable_stock": {
+        "amount": 400.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cheddar_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l060",
+    "name": {
+      "en": "Shrimp and Mango Salad",
+      "tr": "Karidesli Mango Salatası"
+    },
+    "description": {
+      "en": "A salad of shrimp, mango, cabbage, cucumber, rice noodles and lime-dressed herbs.",
+      "tr": "Karides, mango, lahana, salatalık, pirinç noodle ve limonlu otlarla hazırlanan salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "mango",
+      "noodle",
+      "red_cabbage",
+      "cucumber",
+      "lemon",
+      "sesame_oil",
+      "coriander"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "sesame",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 518,
+      "proteinG": 44,
+      "carbsG": 73,
+      "fatG": 7,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Prepare the noodles according to the packet and cool.",
+        "Cook the shrimp for 3-4 minutes until firm and fully opaque, then cool.",
+        "Toss all ingredients with the lime and sesame oil and serve immediately."
+      ],
+      "tr": [
+        "Noodle'ı pakete göre hazırlayıp soğutun.",
+        "Karidesi eti sıkı ve tamamen opak olana kadar 3-4 dakika pişirip soğutun.",
+        "Tüm bileşenleri limon ve susam yağıyla karıştırıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "mango": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "red_cabbage": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l061",
+    "name": {
+      "en": "Turkey Caprese Panini",
+      "tr": "Hindili Caprese Panini"
+    },
+    "description": {
+      "en": "A warm panini with smoked turkey, mozzarella, tomato, basil and pesto.",
+      "tr": "Hindi füme, mozzarella, domates, fesleğen ve pestolu sıcak panini."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "turkey_breast",
+      "mozzarella",
+      "tomato",
+      "pesto",
+      "basil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 624,
+      "proteinG": 55,
+      "carbsG": 55,
+      "fatG": 20,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Spread the pesto over the cut sides of the bread.",
+        "Layer the turkey, mozzarella and tomato and close.",
+        "Press for 4-5 minutes until the cheese melts and the filling is piping hot; add the basil."
+      ],
+      "tr": [
+        "Ekmeğin iç yüzlerine pestoyu sürün.",
+        "Hindi, mozzarella ve domatesi katmanlayıp kapatın.",
+        "Panini presinde peynir eriyip içi tamamen sıcak olana kadar 4-5 dakika pişirin; fesleğeni ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "pesto": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "basil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l062",
+    "name": {
+      "en": "Lamb and Bean Stew Bowl",
+      "tr": "Kuzu Etli Fasulyeli Güveç Kasesi"
+    },
+    "description": {
+      "en": "A hearty lunch stew of lamb, white beans, tomato and root vegetables.",
+      "tr": "Kuzu eti, beyaz fasulye, domates ve kök sebzelerle hazırlanan doyurucu öğle güveci."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "white_bean",
+      "tomato",
+      "carrot",
+      "onion",
+      "olive_oil",
+      "beef_stock"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 800,
+      "proteinG": 54,
+      "carbsG": 57,
+      "fatG": 41,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Brown the lamb in the oil.",
+        "Add the onion and carrot and cook for 5 minutes; add the tomatoes and stock and simmer for 35 minutes.",
+        "Add the beans and cook for 10 more minutes until the lamb is tender and reaches at least 63°C."
+      ],
+      "tr": [
+        "Kuzu etini yağda renk alana kadar pişirin.",
+        "Soğan ve havucu ekleyip 5 dakika çevirin; domates ve et suyunu ekleyip 35 dakika kısık ateşte pişirin.",
+        "Fasulyeyi ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 10 dakika daha pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "white_bean": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 200.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l063",
+    "name": {
+      "en": "Mackerel Soba Salad",
+      "tr": "Uskumrulu Soba Salatası"
+    },
+    "description": {
+      "en": "A chilled noodle salad of cooked mackerel, soba, edamame, cucumber and sesame.",
+      "tr": "Pişmiş uskumru, soba, edamame, salatalık ve susamlı soğuk noodle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "mackerel",
+      "noodle",
+      "edamame",
+      "cucumber",
+      "carrot",
+      "soy_sauce",
+      "rice_vinegar",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 683,
+      "proteinG": 41,
+      "carbsG": 72,
+      "fatG": 25,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the mackerel to 63°C, cool and flake coarsely.",
+        "Cook the soba according to the packet and rinse under cold water.",
+        "Toss with the vegetables, edamame, soy sauce, vinegar and sesame and add the mackerel."
+      ],
+      "tr": [
+        "Uskumruyu 63°C'ye ulaşana kadar pişirip soğutun ve iri parçalara ayırın.",
+        "Sobayı pakete göre haşlayıp soğuk suyla durulayın.",
+        "Sebzeler, edamame, sos, sirke ve susamla karıştırıp uskumruyu ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "mackerel": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "edamame": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "rice_vinegar": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l064",
+    "name": {
+      "en": "Chicken and Hummus Pitta Pocket",
+      "tr": "Tavuklu Humuslu Pide Cep"
+    },
+    "description": {
+      "en": "A whole-wheat pitta pocket filled with chicken, hummus, tomato, cucumber and parsley.",
+      "tr": "Tam buğday pide cebinde tavuk, humus, domates, salatalık ve maydanozlu öğle sandviçi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "middleEastern",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "pita_bread",
+      "chicken_breast",
+      "hummus",
+      "tomato",
+      "cucumber",
+      "parsley",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 614,
+      "proteinG": 56,
+      "carbsG": 68,
+      "fatG": 13,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Grill the chicken to 74°C, rest for 5 minutes and slice.",
+        "Warm the pitta and spread the hummus inside.",
+        "Fill with chicken, washed vegetables, parsley and lemon."
+      ],
+      "tr": [
+        "Tavuğu 74°C'ye ulaşana kadar ızgarada pişirip 5 dakika dinlendirin ve dilimleyin.",
+        "Pideyi ısıtıp iç yüzeye humusu yayın.",
+        "Tavuk, yıkanmış sebzeler, maydanoz ve limonla doldurun."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pita_bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "hummus": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l065",
+    "name": {
+      "en": "Barley Risotto with Mushrooms and Goat's Cheese",
+      "tr": "Mantarlı Keçi Peynirli Arpa Risotto"
+    },
+    "description": {
+      "en": "A risotto-style lunch of pearl barley, mushrooms, peas and goat's cheese.",
+      "tr": "İnci arpa, mantar, bezelye ve keçi peyniriyle risotto tekniğinde hazırlanan öğle yemeği."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "barley",
+      "mushroom",
+      "peas",
+      "goat_cheese",
+      "onion",
+      "vegetable_stock",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 705,
+      "proteinG": 31,
+      "carbsG": 91,
+      "fatG": 27,
+      "fiberG": 20
+    },
+    "steps": {
+      "en": [
+        "Cook the onion and mushrooms in the oil for 6 minutes; add the barley.",
+        "Gradually add hot stock and stir for 30-35 minutes until the barley is tender.",
+        "Add the peas for the final 5 minutes and the goat's cheese just before serving."
+      ],
+      "tr": [
+        "Soğan ve mantarı yağda 6 dakika pişirin; arpayı ekleyin.",
+        "Sıcak sebze suyunu bölerek ekleyip arpa yumuşayana kadar 30-35 dakika karıştırarak pişirin.",
+        "Bezelyeyi son 5 dakikada, keçi peynirini servis öncesi ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "barley": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "peas": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "goat_cheese": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "vegetable_stock": {
+        "amount": 500.0,
+        "unit": "ml"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l066",
+    "name": {
+      "en": "Mediterranean Chicken Bulgur Bowl",
+      "tr": "Tavuklu Akdeniz Bulgur Kasesi"
+    },
+    "description": {
+      "en": "A lunch bowl of grilled chicken, bulgur, roasted pepper, chickpeas, cucumber and Turkish yogurt sauce.",
+      "tr": "Izgara tavuk, bulgur, köz biber, nohut, salatalık ve yoğurt soslu öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "bulgur",
+      "chickpea",
+      "bell_pepper",
+      "cucumber",
+      "yogurt",
+      "olive_oil",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 721,
+      "proteinG": 66,
+      "carbsG": 78,
+      "fatG": 17,
+      "fiberG": 20
+    },
+    "steps": {
+      "en": [
+        "Grill the chicken with half the oil until it reaches 74°C, then rest.",
+        "Mix the Turkish yogurt and lemon and arrange the bulgur, chickpeas and vegetables in a bowl.",
+        "Serve with the sliced chicken, remaining oil and Turkish yogurt sauce."
+      ],
+      "tr": [
+        "Tavuğu yağın yarısıyla 74°C'ye ulaşana kadar ızgarada pişirip dinlendirin.",
+        "Yoğurt ve limonu karıştırın; bulgur, nohut ve sebzeleri kaseye alın.",
+        "Dilimlenmiş tavuk, kalan yağ ve yoğurt sosla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 57.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l067",
+    "name": {
+      "en": "Beef Pho-Inspired Soup",
+      "tr": "Dana Etli Pho Esintili Çorba"
+    },
+    "description": {
+      "en": "A pho-inspired soup of rice noodles, thin beef, aromatic broth, sprouts and herbs.",
+      "tr": "Pirinç noodle, ince dana eti, aromatik et suyu, filiz ve otlarla hazırlanan pho esintili çorba."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "noodle",
+      "beef_stock",
+      "bean_sprouts",
+      "onion",
+      "ginger",
+      "star_anise",
+      "lemon",
+      "coriander"
+    ],
+    "allergenTags": [
+      "gluten",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 696,
+      "proteinG": 49,
+      "carbsG": 65,
+      "fatG": 26,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Simmer the stock with onion, ginger and star anise for 15 minutes and strain.",
+        "Prepare the noodles separately; sear the beef slices to at least 63°C and rest for 3 minutes.",
+        "Place the noodles, beef and washed sprouts in a bowl, pour over the boiling broth and serve with lime and coriander."
+      ],
+      "tr": [
+        "Et suyunu soğan, zencefil ve yıldız anasonla 15 dakika kaynatıp süzün.",
+        "Noodle'ı ayrı hazırlayın; dana dilimlerini tavada en az 63°C'ye ulaştırıp 3 dakika dinlendirin.",
+        "Noodle, et ve yıkanmış filizleri kaseye alıp kaynar suyu dökün; limon ve kişnişle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "beef_stock": {
+        "amount": 500.0,
+        "unit": "ml"
+      },
+      "bean_sprouts": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "onion": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "ginger": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "star_anise": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l068",
+    "name": {
+      "en": "Salmon and Cream Cheese Bagel Sandwich",
+      "tr": "Somonlu Krem Peynirli Bagel Sandviç"
+    },
+    "description": {
+      "en": "A whole-grain bagel sandwich with cooked salmon, cream cheese, cucumber and dill.",
+      "tr": "Tam tahıllı bagel içinde pişmiş somon, krem peynir, salatalık ve dereotlu sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bagel",
+      "salmon",
+      "cream_cheese",
+      "cucumber",
+      "red_onion",
+      "dill",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 663,
+      "proteinG": 36,
+      "carbsG": 57,
+      "fatG": 31,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Confirm the salmon previously reached 63°C and cool it.",
+        "Split the bagel and spread with cream cheese.",
+        "Layer the salmon, cucumber, onion, dill and lemon and serve immediately."
+      ],
+      "tr": [
+        "Somonun önceden 63°C'ye ulaştığından emin olup soğutun.",
+        "Bagel'ı açıp krem peynir sürün.",
+        "Somon, salatalık, soğan, dereotu ve limonu katmanlayıp hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bagel": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "salmon": {
+        "amount": 110.0,
+        "unit": "g"
+      },
+      "cream_cheese": {
+        "amount": 45.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "red_onion": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "dill": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l069",
+    "name": {
+      "en": "Cajun Shrimp Rice Bowl",
+      "tr": "Karidesli Cajun Pirinç Kasesi"
+    },
+    "description": {
+      "en": "A lunch bowl of Cajun-spiced shrimp, brown rice, corn, beans and pepper.",
+      "tr": "Cajun baharatlı karides, esmer pirinç, mısır, fasulye ve biberli öğle kasesi."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "brown_rice",
+      "kidney_bean",
+      "corn",
+      "bell_pepper",
+      "olive_oil",
+      "cajun_seasoning"
+    ],
+    "allergenTags": [
+      "fish",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 679,
+      "proteinG": 56,
+      "carbsG": 88,
+      "fatG": 14,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp with half the seasoning and oil for 3-4 minutes until firm and opaque.",
+        "Heat the pepper, beans, corn and rice through in the same pan with the remaining seasoning.",
+        "Transfer to a bowl and add the shrimp on top."
+      ],
+      "tr": [
+        "Karidesi baharatın yarısı ve yağla 3-4 dakika, eti sıkı ve opak olana kadar pişirin.",
+        "Biber, fasulye, mısır ve pirinci kalan baharatla aynı tavada tamamen ısıtın.",
+        "Kaseye alıp karidesi üzerine yerleştirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 160.0,
+        "unit": "g"
+      },
+      "brown_rice": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "kidney_bean": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "corn": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "cajun_seasoning": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "l070",
+    "name": {
+      "en": "Turkey Waldorf Salad",
+      "tr": "Hindili Waldorf Salatası"
+    },
+    "description": {
+      "en": "A Waldorf-inspired salad of turkey, apple, grapes, celery, walnuts and Turkish yogurt dressing.",
+      "tr": "Hindi, elma, üzüm, kereviz, ceviz ve yoğurtlu sosla hazırlanan Waldorf esintili salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "american",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "turkey_breast",
+      "apple",
+      "grape",
+      "celery",
+      "walnut",
+      "yogurt",
+      "lettuce",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "cravingSweets",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 515,
+      "proteinG": 53,
+      "carbsG": 47,
+      "fatG": 16,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cool and dice turkey that previously reached 74°C.",
+        "Whisk the Turkish yogurt and lemon and mix with the turkey, apple, grapes, celery and walnuts.",
+        "Serve chilled over washed lettuce."
+      ],
+      "tr": [
+        "Önceden 74°C'ye ulaşmış hindiyi soğutup küp doğrayın.",
+        "Yoğurt ve limonu çırpıp hindi, elma, üzüm, kereviz ve cevizle karıştırın.",
+        "Yıkanmış marul üzerinde soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "turkey_breast": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "apple": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "grape": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "celery": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l071",
+    "name": {
+      "en": "Lamb and Aubergine Wrap",
+      "tr": "Kuzu Etli Patlıcanlı Dürüm"
+    },
+    "description": {
+      "en": "A whole-grain wrap with grilled lamb, roasted aubergine, tomato, parsley and Turkish yogurt sauce.",
+      "tr": "Izgara kuzu, köz patlıcan, domates, maydanoz ve yoğurt soslu tam tahıllı dürüm."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "tortilla_wrap",
+      "eggplant",
+      "tomato",
+      "yogurt",
+      "parsley",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 788,
+      "proteinG": 47,
+      "carbsG": 53,
+      "fatG": 44,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Bake the aubergine with half the oil at 210°C for 20 minutes until tender.",
+        "Cook the lamb in the remaining oil to at least 63°C and rest for 3 minutes.",
+        "Fill the flatbread with aubergine, lamb, tomato, parsley and Turkish yogurt and roll."
+      ],
+      "tr": [
+        "Patlıcanı yağın yarısıyla 210°C'de yumuşayana kadar 20 dakika fırınlayın.",
+        "Kuzuyu kalan yağla en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Lavaşa patlıcan, kuzu, domates, maydanoz ve yoğurdu koyup sarın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "tortilla_wrap": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "eggplant": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 60.0,
+        "unit": "g"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l072",
+    "name": {
+      "en": "Tuna Pesto Pasta",
+      "tr": "Ton Balıklı Pesto Makarna"
+    },
+    "description": {
+      "en": "A quick lunch of tuna, whole-wheat pasta, pesto, tomato and rocket.",
+      "tr": "Ton balığı, tam buğday makarna, pesto, domates ve rokalı hızlı öğle yemeği."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "pasta",
+      "tuna",
+      "pesto",
+      "tomato",
+      "arugula",
+      "parmesan"
+    ],
+    "allergenTags": [
+      "dairy",
+      "fish",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 647,
+      "proteinG": 49,
+      "carbsG": 70,
+      "fatG": 18,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "If the pasta is hot, loosen the pesto with a little cooking water.",
+        "Add the tuna and halved tomatoes and toss gently.",
+        "Serve with washed, dried rocket and Parmesan."
+      ],
+      "tr": [
+        "Makarna sıcaksa bir miktar pişirme suyuyla pestoyu karıştırın.",
+        "Ton balığı ve ikiye kesilmiş domatesi ekleyip nazikçe karıştırın.",
+        "Yıkanıp kurulanmış roka ve Parmesanla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pasta": {
+        "amount": 83.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "pesto": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "parmesan": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l073",
+    "name": {
+      "en": "Chicken Banh Mi-Inspired Sandwich",
+      "tr": "Tavuklu Banh Mi Esintili Sandviç"
+    },
+    "description": {
+      "en": "A baguette sandwich with chicken, quick-pickled carrot, cucumber, coriander and chilli sauce.",
+      "tr": "Tavuk, hızlı turşulanmış havuç, salatalık, kişniş ve acılı soslu baget sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "bread",
+      "carrot",
+      "cucumber",
+      "rice_vinegar",
+      "coriander",
+      "hot_sauce",
+      "mayonnaise"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 630,
+      "proteinG": 51,
+      "carbsG": 60,
+      "fatG": 19,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Soak the carrot in the vinegar for 15 minutes and drain.",
+        "Cook the chicken to 74°C, rest and slice.",
+        "Spread the baguette with mayonnaise and chilli sauce and add the chicken, carrot, cucumber and coriander."
+      ],
+      "tr": [
+        "Havucu sirkeyle 15 dakika bekletip süzün.",
+        "Tavuğu 74°C'ye ulaşana kadar pişirip dinlendirin ve dilimleyin.",
+        "Bagete mayonez ve acı sos sürüp tavuk, havuç, salatalık ve kişnişi yerleştirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "rice_vinegar": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "coriander": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "hot_sauce": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "mayonnaise": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l074",
+    "name": {
+      "en": "Halloumi and Chickpea Vegetable Bowl",
+      "tr": "Hellimli Nohutlu Sebze Kasesi"
+    },
+    "description": {
+      "en": "A bowl of grilled halloumi, chickpeas, quinoa, courgette, tomato and lemon-dressed herbs.",
+      "tr": "Izgara hellim, nohut, kinoa, kabak, domates ve limonlu otlarla hazırlanan kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "halloumi",
+      "chickpea",
+      "quinoa",
+      "zucchini",
+      "tomato",
+      "olive_oil",
+      "lemon",
+      "parsley"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 797,
+      "proteinG": 40,
+      "carbsG": 80,
+      "fatG": 37,
+      "fiberG": 18
+    },
+    "steps": {
+      "en": [
+        "Grill the courgette with half the oil until tender.",
+        "Cook the halloumi in a dry pan until browned on both sides.",
+        "Mix the quinoa, chickpeas, vegetables, parsley, lemon and remaining oil and serve with halloumi."
+      ],
+      "tr": [
+        "Kabağı yağın yarısıyla ızgarada yumuşatın.",
+        "Hellimi kuru tavada iki yüzü kızarana kadar pişirin.",
+        "Kinoa, nohut, sebzeler, maydanoz, limon ve kalan yağı karıştırıp hellimle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "halloumi": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "quinoa": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l075",
+    "name": {
+      "en": "Beef Orzo Salad",
+      "tr": "Dana Etli Arpa Şehriye Salatası"
+    },
+    "description": {
+      "en": "A lunch salad of beef, orzo, tomato, cucumber, rocket and white cheese.",
+      "tr": "Dana eti, arpa şehriye, domates, salatalık, roka ve beyaz peynirli öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "pasta",
+      "tomato",
+      "cucumber",
+      "arugula",
+      "feta_cheese",
+      "olive_oil",
+      "lemon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 873,
+      "proteinG": 52,
+      "carbsG": 68,
+      "fatG": 44,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cook the beef to at least 63°C, rest for 3 minutes and slice.",
+        "Toss the cooled orzo, tomato, cucumber and rocket with the oil and lemon.",
+        "Serve with the beef and crumbled white cheese."
+      ],
+      "tr": [
+        "Dana etini en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin ve dilimleyin.",
+        "Soğumuş şehriye, domates, salatalık ve rokayı yağ-limonla karıştırın.",
+        "Dana eti ve ufalanmış beyaz peynirle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "pasta": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "feta_cheese": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 15.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l076",
+    "name": {
+      "en": "Chicken Satay Noodle Salad",
+      "tr": "Tavuklu Satay Noodle Salatası"
+    },
+    "description": {
+      "en": "A chilled lunch salad of chicken, rice noodles, vegetables and peanut sauce.",
+      "tr": "Tavuk, pirinç noodle, sebzeler ve fıstık soslu soğuk öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chicken_breast",
+      "noodle",
+      "carrot",
+      "cucumber",
+      "red_cabbage",
+      "peanut_butter",
+      "soy_sauce",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "peanuts",
+      "soy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 709,
+      "proteinG": 59,
+      "carbsG": 75,
+      "fatG": 19,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Cook the chicken to 74°C, cool and slice.",
+        "Prepare and cool the noodles; whisk the peanut butter, soy sauce and lime.",
+        "Toss the noodles, vegetables and chicken with the dressing and serve chilled."
+      ],
+      "tr": [
+        "Tavuğu 74°C'ye ulaşana kadar pişirip soğutun ve dilimleyin.",
+        "Noodle'ı pakete göre hazırlayıp soğutun; fıstık ezmesi, soya ve limonu çırpın.",
+        "Noodle, sebzeler ve tavuğu sosla karıştırıp soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chicken_breast": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "noodle": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "carrot": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "red_cabbage": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "peanut_butter": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l077",
+    "name": {
+      "en": "Beef Panzanella Salad",
+      "tr": "Dana Etli Panzanella Salatası"
+    },
+    "description": {
+      "en": "A salad of grilled beef, toasted bread, tomato, cucumber, rocket and basil.",
+      "tr": "Izgara dana eti, kızarmış ekmek, domates, salatalık, roka ve fesleğenli salata."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "bread",
+      "tomato",
+      "cucumber",
+      "arugula",
+      "olive_oil",
+      "balsamic_vinegar",
+      "basil"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 771,
+      "proteinG": 46,
+      "carbsG": 59,
+      "fatG": 39,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the beef to at least 63°C and rest for 3 minutes.",
+        "Cube and toast the bread in a dry pan.",
+        "Toss the vegetables with the oil and vinegar and add the bread and sliced beef."
+      ],
+      "tr": [
+        "Dana etini en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Ekmeği küp doğrayıp kuru tavada kızartın.",
+        "Sebzeleri yağ ve sirkeyle karıştırıp ekmek ve dilimlenmiş eti ekleyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "bread": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 12.0,
+        "unit": "g"
+      },
+      "balsamic_vinegar": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "basil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l078",
+    "name": {
+      "en": "Miso Soup with Salmon and Rice",
+      "tr": "Somonlu Miso Çorbası ve Pirinç"
+    },
+    "description": {
+      "en": "A lunch meal of salmon, tofu, mushroom, wakame and miso soup served with rice.",
+      "tr": "Somon, tofu, mantar, wakame ve misolu çorbanın pirinçle sunulduğu öğle menüsü."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "salmon",
+      "white_rice",
+      "tofu",
+      "mushroom",
+      "miso_paste",
+      "wakame",
+      "water",
+      "onion"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 587,
+      "proteinG": 40,
+      "carbsG": 57,
+      "fatG": 21,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Bake the salmon to 63°C and flake coarsely.",
+        "Simmer the water, mushrooms, tofu and wakame for 6 minutes; lower the heat.",
+        "Loosen the miso with hot broth, add without boiling and finish with salmon and spring onion; serve with rice."
+      ],
+      "tr": [
+        "Somonu 63°C'ye ulaşana kadar fırınlayıp iri parçalara ayırın.",
+        "Su, mantar, tofu ve wakameyi 6 dakika kaynatın; ateşi kısın.",
+        "Misoyu ayrı sıcak suyla açıp çorbaya ekleyin; kaynatmadan somon ve taze soğanla tamamlayıp pirinçle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "salmon": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 55.0,
+        "unit": "g"
+      },
+      "tofu": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "mushroom": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "miso_paste": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "wakame": {
+        "amount": 3.0,
+        "unit": "g"
+      },
+      "water": {
+        "amount": 450.0,
+        "unit": "ml"
+      },
+      "onion": {
+        "amount": 20.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l079",
+    "name": {
+      "en": "Mediterranean Shrimp Couscous Bowl",
+      "tr": "Karidesli Akdeniz Kuskus Kasesi"
+    },
+    "description": {
+      "en": "A bowl of shrimp, couscous, chickpeas, tomato, cucumber and lemon-dressed herbs.",
+      "tr": "Karides, kuskus, nohut, domates, salatalık ve limonlu otlarla hazırlanan kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "shrimp",
+      "couscous",
+      "chickpea",
+      "tomato",
+      "cucumber",
+      "olive_oil",
+      "lemon",
+      "parsley"
+    ],
+    "allergenTags": [
+      "fish",
+      "gluten",
+      "shellfish"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 685,
+      "proteinG": 55,
+      "carbsG": 88,
+      "fatG": 14,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Cook the shrimp with half the oil for 3-4 minutes until firm and opaque.",
+        "Toss the couscous, chickpeas and vegetables with the remaining oil, lemon and parsley.",
+        "Add the shrimp on top and serve."
+      ],
+      "tr": [
+        "Karidesi yağın yarısıyla eti sıkı ve opak olana kadar 3-4 dakika pişirin.",
+        "Kuskus, nohut ve sebzeleri kalan yağ, limon ve maydanozla karıştırın.",
+        "Karidesi üzerine yerleştirip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "shrimp": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "couscous": {
+        "amount": 68.0,
+        "unit": "g"
+      },
+      "chickpea": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 20.0,
+        "unit": "ml"
+      },
+      "parsley": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l080",
+    "name": {
+      "en": "Turkey and Avocado Baguette",
+      "tr": "Hindili Avokadolu Baget"
+    },
+    "description": {
+      "en": "A whole-grain baguette sandwich with smoked turkey, avocado, tomato, lettuce and mustard.",
+      "tr": "Hindi füme, avokado, domates, marul ve hardallı tam tahıllı baget sandviç."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "turkey_breast",
+      "avocado",
+      "tomato",
+      "lettuce",
+      "mustard",
+      "lemon"
+    ],
+    "allergenTags": [
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 570,
+      "proteinG": 45,
+      "carbsG": 62,
+      "fatG": 17,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Mash the avocado with lemon and spread inside the baguette with the mustard.",
+        "Layer the smoked turkey and tomato.",
+        "Add washed and dried lettuce and serve immediately."
+      ],
+      "tr": [
+        "Avokadoyu limonla ezin; bagetin içine hardalla birlikte sürün.",
+        "Hindi füme ve domatesi katmanlayın.",
+        "Yıkanıp kurulanmış marulu ekleyip hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "turkey_breast": {
+        "amount": 110.0,
+        "unit": "g"
+      },
+      "avocado": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "lettuce": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 10.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "l081",
+    "name": {
+      "en": "Lentil Salad with Lamb Meatballs",
+      "tr": "Kuzu Köfteli Mercimek Salatası"
+    },
+    "description": {
+      "en": "A lunch salad of lamb meatballs, green lentils, roasted pepper, rocket and Turkish yogurt sauce.",
+      "tr": "Kuzu köfte, yeşil mercimek, köz biber, roka ve yoğurt soslu öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lamb",
+      "green_lentil",
+      "bell_pepper",
+      "arugula",
+      "yogurt",
+      "olive_oil",
+      "cumin"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 812,
+      "proteinG": 61,
+      "carbsG": 59,
+      "fatG": 38,
+      "fiberG": 11
+    },
+    "steps": {
+      "en": [
+        "Mix the lamb with cumin, shape five meatballs and cook until the centres reach 71°C.",
+        "Toss the lentils, pepper and rocket with the oil.",
+        "Add the meatballs and serve with Turkish yogurt."
+      ],
+      "tr": [
+        "Kıymayı kimyonla yoğurup beş köfte yapın; merkezleri 71°C'ye ulaşana kadar pişirin.",
+        "Mercimek, biber ve rokayı yağla karıştırın.",
+        "Köfteleri salataya ekleyip yoğurtla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lamb": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "green_lentil": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "bell_pepper": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 8.0,
+        "unit": "g"
+      },
+      "cumin": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "l082",
+    "name": {
+      "en": "Niçoise-Inspired Tuna and Bean Wrap",
+      "tr": "Ton Balıklı Fasulyeli Nisuaz Esintili Dürüm"
+    },
+    "description": {
+      "en": "A wrap filled with tuna, green beans, potato, egg, tomato and olives.",
+      "tr": "Ton balığı, taze fasulye, patates, yumurta, domates ve zeytinli dürüm."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_wrap",
+      "tuna",
+      "potato",
+      "green_beans",
+      "eggs",
+      "tomato",
+      "olives",
+      "mustard"
+    ],
+    "allergenTags": [
+      "eggs",
+      "fish",
+      "gluten",
+      "mustard"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 568,
+      "proteinG": 44,
+      "carbsG": 64,
+      "fatG": 15,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Boil the egg until fully firm and the beans until tender-crisp, then cool.",
+        "Spread the tortilla with mustard and arrange the ingredients in a line.",
+        "Roll tightly and cut in half."
+      ],
+      "tr": [
+        "Yumurtayı tamamen katı, fasulyeyi diri-yumuşak haşlayıp soğutun.",
+        "Tortillaya hardal sürüp tüm bileşenleri uzun şerit hâlinde yerleştirin.",
+        "Sıkıca sarıp ortadan ikiye kesin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_wrap": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "tuna": {
+        "amount": 90.0,
+        "unit": "g"
+      },
+      "potato": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "green_beans": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "tomato": {
+        "amount": 70.0,
+        "unit": "g"
+      },
+      "olives": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "mustard": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l083",
+    "name": {
+      "en": "Chicken and Courgette Lasagne Rolls",
+      "tr": "Tavuklu Kabaklı Lazanya Rulosu"
+    },
+    "description": {
+      "en": "Lasagne sheets rolled around chicken, courgette and ricotta filling and baked in tomato sauce.",
+      "tr": "Lazanya yapraklarında tavuk, kabak ve ricotta dolgusunun domates sosuyla fırınlandığı rulolar."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "italian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "lasagna_sheets",
+      "chicken_breast",
+      "zucchini",
+      "ricotta",
+      "tomato_sauce",
+      "mozzarella"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 829,
+      "proteinG": 73,
+      "carbsG": 74,
+      "fatG": 26,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Cook the chicken to 74°C and shred; sauté the courgette until dry.",
+        "Spread the chicken, courgette and ricotta over cooked lasagne sheets and roll.",
+        "Place in a sauced dish, add mozzarella and bake at 190°C for 20-25 minutes."
+      ],
+      "tr": [
+        "Tavuğu 74°C'ye ulaşana kadar pişirip didikleyin; kabağı suyunu çekene kadar soteleyin.",
+        "Tavuk, kabak ve ricottayı haşlanmış lazanya yapraklarına yayıp sarın.",
+        "Soslu kaba dizip mozzarella ekleyin; 190°C'de 20-25 dakika pişirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "lasagna_sheets": {
+        "amount": 75.0,
+        "unit": "g"
+      },
+      "chicken_breast": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "zucchini": {
+        "amount": 140.0,
+        "unit": "g"
+      },
+      "ricotta": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "tomato_sauce": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "mozzarella": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l084",
+    "name": {
+      "en": "Beetroot and Halloumi Salad",
+      "tr": "Hellimli Pancar Salatası"
+    },
+    "description": {
+      "en": "A colourful lunch salad of grilled halloumi, beetroot, rocket, orange, walnuts and bulgur.",
+      "tr": "Izgara hellim, pancar, roka, portakal, ceviz ve bulgurlu renkli öğle salatası."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "mediterranean",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "halloumi",
+      "beet",
+      "bulgur",
+      "arugula",
+      "orange",
+      "walnut",
+      "olive_oil"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 761,
+      "proteinG": 31,
+      "carbsG": 76,
+      "fatG": 41,
+      "fiberG": 19
+    },
+    "steps": {
+      "en": [
+        "Cook the halloumi in a dry pan until browned on both sides.",
+        "Toss the beetroot, bulgur, rocket and orange with the oil.",
+        "Serve with the halloumi and walnuts."
+      ],
+      "tr": [
+        "Hellimi kuru tavada iki yüzü kızarana kadar pişirin.",
+        "Pancar, bulgur, roka ve portakalı yağla karıştırın.",
+        "Hellim ve cevizle servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "halloumi": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "beet": {
+        "amount": 180.0,
+        "unit": "g"
+      },
+      "bulgur": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "arugula": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "orange": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "l085",
+    "name": {
+      "en": "Beef Kimchi Rice Bowl",
+      "tr": "Dana Etli Kimchi Pirinç Kasesi"
+    },
+    "description": {
+      "en": "A Korean-inspired bowl of beef, kimchi, rice, spinach and fully cooked egg.",
+      "tr": "Dana eti, kimchi, pirinç, ıspanak ve tam pişmiş yumurtalı Kore esintili kase."
+    },
+    "mealType": "lunch",
+    "cuisineIds": [
+      "asian",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "beef_steak",
+      "white_rice",
+      "kimchi",
+      "eggs",
+      "spinach",
+      "soy_sauce",
+      "sesame_oil",
+      "sesame_seeds"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "lowEnergy",
+      "noSpecificIssue",
+      "periodFatigue",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 802,
+      "proteinG": 52,
+      "carbsG": 60,
+      "fatG": 39,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Cook the beef with soy sauce to at least 63°C and rest for 3 minutes.",
+        "Wilt the spinach, cook the egg until fully firm and heat the rice through.",
+        "Arrange everything in a bowl and serve with sesame oil and sesame seeds."
+      ],
+      "tr": [
+        "Dana etini soya sosuyla en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Ispanağı soldurun; yumurtayı tamamen katı pişirin; pirinci tamamen ısıtın.",
+        "Tüm bileşenleri kaseye yerleştirip susam yağı ve susamla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "beef_steak": {
+        "amount": 130.0,
+        "unit": "g"
+      },
+      "white_rice": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "kimchi": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "soy_sauce": {
+        "amount": 15.0,
+        "unit": "ml"
+      },
+      "sesame_oil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "sesame_seeds": {
+        "amount": 5.0,
+        "unit": "g"
+      }
+    }
   }
 ]

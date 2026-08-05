@@ -33,25 +33,27 @@ Notlar:
 
 | Ölçüm | Değer |
 |---|---|
-| Tarif sayısı | **143** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 37) |
-| Tarif içeriği | `docs/tarif-duzeltme-raporu.md`'den içe aktarıldı (2026-08-05) |
-| Malzeme kataloğu | 241, **hepsinde** besin verisi var |
+| Tarif sayısı | **361** (kahvaltı 89 · öğle 85 · akşam 96 · ara öğün 91) |
+| Tarif içeriği | `docs/tarif-duzeltme-raporu.md` + `docs/yeni-tarifler.md` (2026-08-05) |
+| Malzeme kataloğu | 301, **hepsinde** besin verisi var |
 | Test | **119 test, tümü geçiyor** (16 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
-| Ortalama adım/tarif | 5.6 (rapor 4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
+| Ortalama adım/tarif | 4.6 (kaynaklar 3-4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
 
-**Mutfak dağılımı:** international 58 · turkish 44 · american 34 ·
-mediterranean 16 · middleEastern 11 · italian 11 · asian 10 · mexican 8
-(rapor birçok tarifi "… Esintili Füzyon" diye etiketliyor; bunlar hem kendi
-mutfağında hem Dünya & Füzyon'da görünüyor.)
+**Mutfak dağılımı:** international 242 · turkish 66 · american 52 ·
+mediterranean 46 · italian 39 · asian 35 · mexican 21 · middleEastern 17
+(kaynak belgeler tariflerin çoğunu "… Esintili Füzyon" diye etiketliyor;
+bunlar hem kendi mutfağında hem Dünya & Füzyon'da görünüyor. Daraltmak
+tek satırlık değişiklik: `cuisines_for`.)
 
-**Sağlık kategorisi kapsaması:** insülin direnci 119 · anemi 118 · PCOS 92 ·
-B12 91 · laktozsuz 82 · regl 81 · magnezyum 79 · glutensiz 77 · demir 73
+**Sağlık kategorisi kapsaması:** insülin direnci 310 · anemi 297 · PCOS 282 ·
+B12 276 · demir 199 · magnezyum 182 · laktozsuz 166 · glutensiz 157 ·
+regl 145
 
-**Check-in kapsaması:** noSpecificIssue 96 · postWorkout 68 · lowEnergy 65 ·
-pms 57 · bloated 46 · cantFocus 44 · periodFatigue 33 · periodCramps 30 ·
-cravingSweets 29 (regl etiketleri artık hedefin üstünde)
+**Check-in kapsaması:** noSpecificIssue 313 · lowEnergy 244 · postWorkout 243 ·
+cantFocus 148 · pms 82 · periodFatigue 76 · cravingSweets 71 · bloated 70 ·
+periodCramps 55
 
 ---
 
@@ -132,12 +134,29 @@ geliyor (`tool/recipe_import/`). Bu sırada çıkan kök nedenler:
   sayısı 143. Birleştirme `build_recipes.py` içinde `DROPPED`/`MERGED` ile
   kayıtlı, yeniden içe aktarmada korunur.
 
+**220 yeni tarif eklendi (2026-08-05)** — kullanıcı `docs/yeni-tarifler.md`
+ile B035-B089, L031-L085, D043-D097, S039-S093 aralığını verdi. Farklı bir
+şema kullanıyor (malzemeler TR|EN tablosunda, adımlar tek numarada TR+EN),
+o yüzden ayrı bir ayrıştırıcı var: `parse_pack.py` + `build_pack.py`.
+- 60 yeni malzeme kataloğa girdi (sucuk, pastırma, hellim, humus, gochujang,
+  tamari, soya içeceği, **laktozsuz yoğurt**, et/tavuk/sebze/balık suyu,
+  kimchi, wakame, mirin, gnocchi, ravioli, lazanya, gravyer …). Katalog 301.
+- Pakette kütüphanedekiyle birebir aynı iki tarif vardı (S039 = s037,
+  D094 = d065); alınmadı, gerekçesi `build_pack.py` içinde. Net ekleme 218.
+- İki tarif aynı İngilizce adı taşıyordu (D055/D095); D095 Türkçe adına
+  uyacak şekilde "… Puff Pastry Bowl" oldu.
+- Belgenin kalori sütunu miktarlarıyla tutmuyor: 218 tarifin 93'ünde %15+
+  fark var ve hep belge düşük kalıyor (elle doğrulandı, ör. s062 320 → 530).
+  Kural gereği makro `quantities`'ten hesaplanıyor.
+- Yeni tariflerin check-in etiketi yoktu; `apply_tags.py` boş olanlara veriden
+  taban set türetiyor (lowEnergy/cantFocus/cravingSweets/bloated).
+
 **Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
 tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**
 (içindekiler) + PDF yer imleri, sonra öğün türüne göre her tarif (künye,
 makro şeridi, miktarlı malzemeler, numaralı adımlar, alerjenler). Metin
 kaynağı JSON + Dart sözlükleri; PDF'e elle içerik yazılmıyor. Çıktı:
-`docs/NutriGuide-Tarif-Kitabi.pdf` (77 sayfa). Türkçe karakterler için
+`docs/NutriGuide-Tarif-Kitabi.pdf` (186 sayfa). Türkçe karakterler için
 DejaVu fontu gerekiyor, `--locale en` ile İngilizcesi üretilir.
 
 **İçerik denetimi (2026-08-05)** — kullanıcı mantı ve tahin-pekmez hatalarını
