@@ -1665,17 +1665,17 @@
   {
     "id": "s020",
     "name": {
-      "en": "Spiced Roasted Chickpeas",
-      "tr": "Baharatlı Çıtır Fırın Nohut"
+      "en": "Spiced Crispy Roasted Chickpeas with Sumac",
+      "tr": "Sumaklı Baharatlı Çıtır Fırın Nohut"
     },
     "description": {
-      "en": "A spiced chickpea snack roasted with cumin, sweet paprika and garlic powder.",
-      "tr": "Kimyon, tatlı toz biber ve sarımsak tozuyla fırında kızartılan baharatlı nohut atıştırmalığı."
+      "en": "Chickpeas roasted with cumin, paprika and garlic powder, finished with sumac straight out of the oven.",
+      "tr": "Kimyon, toz biber ve sarımsak tozuyla fırında kızartılıp sıcakken sumakla tamamlanan çıtır nohut atıştırmalığı."
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "turkish",
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1686,6 +1686,7 @@
       "cumin",
       "paprika",
       "garlic_powder",
+      "sumac",
       "salt"
     ],
     "allergenTags": [],
@@ -1697,39 +1698,39 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 262,
-      "proteinG": 12,
-      "carbsG": 36,
-      "fatG": 9,
-      "fiberG": 11
+      "calories": 369,
+      "proteinG": 15,
+      "carbsG": 47,
+      "fatG": 15,
+      "fiberG": 15
     },
     "steps": {
       "en": [
-        "Preheat the oven to 200°C.",
-        "Drain and rinse the chickpeas and dry them very thoroughly.",
-        "Toss with the oil, cumin, paprika, garlic powder and salt.",
-        "Spread in a single layer and roast for 30-40 minutes, shaking twice, until dry and browned outside.",
-        "Cool completely on the tray; they crisp further as they cool.",
-        "Consume the same day."
+        "Heat the oven to 200°C.",
+        "Drain and rinse the chickpeas, then dry them very well with a clean cloth.",
+        "Toss the chickpeas with the olive oil, cumin, paprika and garlic powder; hold back the sumac and salt for now.",
+        "Spread them in a single layer on a tray and roast for 35-45 minutes, shaking twice, until dry and golden outside.",
+        "Add the sumac and salt the moment they leave the oven.",
+        "Cool completely on the tray and eat the same day."
       ],
       "tr": [
         "Fırını 200°C'ye ısıtın.",
-        "Nohudu süzüp yıkayın ve bezle çok iyi kurulayın.",
-        "Nohudu yağ, kimyon, toz biber, sarımsak tozu ve tuzla karıştırın.",
-        "Tek sıra hâlinde tepsiye yayın; iki kez sallayarak 30-40 dakika, dışı kuru ve kızarmış olana kadar fırınlayın.",
-        "Tepside tamamen soğutun; soğurken daha kıtır hâle gelir.",
-        "Aynı gün tüketin."
+        "Nohudu süzüp yıkayın ve temiz bezle çok iyi kurulayın.",
+        "Nohudu zeytinyağı, kimyon, toz biber ve sarımsak tozuyla karıştırın; sumağı ve tuzu şimdilik eklemeyin.",
+        "Tek sıra hâlinde tepsiye yayın; iki kez sallayarak 35-45 dakika, dışı kuru ve kızarmış olana kadar fırınlayın.",
+        "Fırından çıkar çıkmaz sumak ve tuzu ekleyin.",
+        "Tepside tamamen soğutup aynı gün tüketin."
       ]
     },
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
       "chickpea": {
-        "amount": 120.0,
+        "amount": 150.0,
         "unit": "g"
       },
       "olive_oil": {
-        "amount": 5.0,
+        "amount": 10.0,
         "unit": "g"
       },
       "cumin": {
@@ -1742,6 +1743,10 @@
       },
       "garlic_powder": {
         "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      "sumac": {
+        "amount": 1.0,
         "unit": "teaspoon"
       },
       "salt": {
@@ -3011,94 +3016,6 @@
       "cinnamon": {
         "amount": 0.25,
         "unit": "teaspoon"
-      }
-    }
-  },
-  {
-    "id": "s036",
-    "name": {
-      "en": "Crispy Roasted Chickpeas with Sumac",
-      "tr": "Sumaklı Çıtır Fırın Nohut"
-    },
-    "description": {
-      "en": "A crisp snack of cooked chickpeas roasted with cumin and paprika and finished with sumac.",
-      "tr": "Pişmiş nohutun kimyon ve toz biberle fırında kızartılıp sumakla tamamlandığı çıtır atıştırmalık."
-    },
-    "mealType": "snack",
-    "cuisineIds": [
-      "turkish",
-      "middleEastern"
-    ],
-    "dietTags": [],
-    "servings": 1,
-    "prepTimeMin": 40,
-    "ingredientIds": [
-      "chickpea",
-      "olive_oil",
-      "sumac",
-      "cumin",
-      "paprika",
-      "salt"
-    ],
-    "allergenTags": [],
-    "checkInTags": [
-      "bloated",
-      "noSpecificIssue"
-    ],
-    "proteinLevel": "medium",
-    "fiberLevel": "high",
-    "carbType": "complex",
-    "macros": {
-      "calories": 365,
-      "proteinG": 15,
-      "carbsG": 46,
-      "fatG": 15,
-      "fiberG": 15
-    },
-    "steps": {
-      "en": [
-        "Preheat the oven to 200°C.",
-        "Drain and rinse the chickpeas and dry them very thoroughly with a clean towel.",
-        "Toss with the olive oil, cumin and paprika; do not add the sumac or salt yet.",
-        "Spread in a single layer and roast for 35-45 minutes, shaking twice, until dry and browned outside.",
-        "Add the sumac and salt immediately after roasting.",
-        "Cool completely on the tray and consume the same day."
-      ],
-      "tr": [
-        "Fırını 200°C'ye ısıtın.",
-        "Nohudu süzüp yıkayın ve temiz bezle çok iyi kurulayın.",
-        "Nohudu zeytinyağı, kimyon ve toz biberle karıştırın; sumağı ve tuzu şimdilik eklemeyin.",
-        "Tek sıra hâlinde tepsiye yayın; iki kez sallayarak 35-45 dakika, dışı kuru ve kızarmış olana kadar fırınlayın.",
-        "Fırından çıkar çıkmaz sumak ve tuzu ekleyin.",
-        "Tepside tamamen soğutup aynı gün tüketin."
-      ]
-    },
-    "imagePath": null,
-    "isUserCreated": false,
-    "quantities": {
-      "chickpea": {
-        "amount": 150.0,
-        "unit": "g"
-      },
-      "olive_oil": {
-        "amount": 10.0,
-        "unit": "g"
-      },
-      "sumac": {
-        "amount": 1.0,
-        "unit": "teaspoon"
-      },
-      "cumin": {
-        "amount": 0.5,
-        "unit": "teaspoon"
-      },
-      "paprika": {
-        "amount": 0.5,
-        "unit": "teaspoon"
-      },
-      "salt": {
-        "amount": 1.0,
-        "unit": "pinch"
       }
     }
   },

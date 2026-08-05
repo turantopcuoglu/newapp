@@ -33,16 +33,16 @@ Notlar:
 
 | Ölçüm | Değer |
 |---|---|
-| Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
+| Tarif sayısı | **143** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 37) |
 | Tarif içeriği | `docs/tarif-duzeltme-raporu.md`'den içe aktarıldı (2026-08-05) |
 | Malzeme kataloğu | 241, **hepsinde** besin verisi var |
 | Test | **119 test, tümü geçiyor** (16 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
-| `data_report --strict` | **1 hata** (s020/s036 kopyası, raporda da öyle), 0 kalori sapması |
+| `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 5.6 (rapor 4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
 
-**Mutfak dağılımı:** international 59 · turkish 44 · american 34 ·
-mediterranean 16 · middleEastern 12 · italian 11 · asian 10 · mexican 8
+**Mutfak dağılımı:** international 58 · turkish 44 · american 34 ·
+mediterranean 16 · middleEastern 11 · italian 11 · asian 10 · mexican 8
 (rapor birçok tarifi "… Esintili Füzyon" diye etiketliyor; bunlar hem kendi
 mutfağında hem Dünya & Füzyon'da görünüyor.)
 
@@ -127,6 +127,10 @@ geliyor (`tool/recipe_import/`). Bu sırada çıkan kök nedenler:
   suyu, kuru kayısı, kuru üzüm, simit eklendi (hiçbiri "yakınıyla" değiştirilmedi).
 - Besin seviyeleri (`proteinLevel`/`fiberLevel`/`carbType`) artık makrolardan
   türetiliyor; eskiden elle yazılmıştı ve hiçbir kuralla tutarlı değildi.
+- **S020 + S036 birleşti** (kullanıcı kararı): raporda ikisi de 200°C fırın
+  nohuttu, tek fark sumaktı. Tek tarif ikisinin baharatını taşıyor, tarif
+  sayısı 143. Birleştirme `build_recipes.py` içinde `DROPPED`/`MERGED` ile
+  kayıtlı, yeniden içe aktarmada korunur.
 
 **Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
 tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**

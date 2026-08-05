@@ -10,6 +10,7 @@ from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ing_map import MAP, NEW_INGREDIENTS  # noqa: E402
+from parse_report import parse  # noqa: E402
 
 SP = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(SP))
@@ -245,10 +246,68 @@ TITLE_FIX = {
 }
 
 
+# ── birleştirilen tarifler ───────────────────────────────────────────────
+# S020 ve S036 raporda aynı yemek: 200°C'de kızartılan nohut, tek fark
+# sumak. Kullanıcı kararıyla tek tarifte birleştirildi; S036 içe
+# aktarılmıyor, S020 ikisinin de baharatını taşıyor.
+DROPPED = {'S036'}
+
+MERGED = {
+    'S020': {
+        'name_tr': 'Sumaklı Baharatlı Çıtır Fırın Nohut',
+        'name_en': 'Spiced Crispy Roasted Chickpeas with Sumac',
+        'desc_tr': 'Kimyon, toz biber ve sarımsak tozuyla fırında kızartılıp '
+                   'sıcakken sumakla tamamlanan çıtır nohut atıştırmalığı.',
+        'desc_en': 'Chickpeas roasted with cumin, paprika and garlic powder, '
+                   'finished with sumac straight out of the oven.',
+        'cuisine_tr': 'Türk ve Ortadoğu Esintili Atıştırmalık',
+        'ings_tr': [
+            'Pişmiş, süzülmüş nohut - 150 g',
+            'Zeytinyağı - 10 g',
+            'Kimyon - 1/2 çay kaşığı',
+            'Tatlı toz biber - 1/2 çay kaşığı',
+            'Sarımsak tozu - 1/4 çay kaşığı',
+            'Sumak - 1 çay kaşığı',
+            'Tuz - 1 küçük tutam',
+        ],
+        'ings_en': [
+            'Cooked, drained chickpeas - 150 g',
+            'Olive oil - 10 g',
+            'Cumin - 1/2 tsp',
+            'Sweet paprika - 1/2 tsp',
+            'Garlic powder - 1/4 tsp',
+            'Sumac - 1 tsp',
+            'Salt - 1 small pinch',
+        ],
+        'steps_tr': [
+            "Fırını 200°C'ye ısıtın. Nohudu süzüp yıkayın ve temiz bezle çok "
+            "iyi kurulayın.",
+            'Nohudu zeytinyağı, kimyon, toz biber ve sarımsak tozuyla '
+            'karıştırın; sumağı ve tuzu şimdilik eklemeyin.',
+            'Tek sıra hâlinde tepsiye yayın; iki kez sallayarak 35-45 dakika, '
+            'dışı kuru ve kızarmış olana kadar fırınlayın.',
+            'Fırından çıkar çıkmaz sumak ve tuzu ekleyin. Tepside tamamen '
+            'soğutup aynı gün tüketin.',
+        ],
+        'steps_en': [
+            'Heat the oven to 200°C. Drain and rinse the chickpeas, then dry '
+            'them very well with a clean cloth.',
+            'Toss the chickpeas with the olive oil, cumin, paprika and garlic '
+            'powder; hold back the sumac and salt for now.',
+            'Spread them in a single layer on a tray and roast for 35-45 '
+            'minutes, shaking twice, until dry and golden outside.',
+            'Add the sumac and salt the moment they leave the oven. Cool '
+            'completely on the tray and eat the same day.',
+        ],
+        'allergens_tr': 'Yok.',
+        'allergens_en': 'None.',
+    },
+}
+
+
 # ── ana akış ──────────────────────────────────────────────────────────────
 def main():
-    report = {r['code']: r for r in
-              json.load(open(f'{SP}/report.json', encoding='utf-8'))}
+    report = {r['code']: r for r in parse()}
     # Raporun 20 tarifte başlık satırı kırpık ("... Yaban Mersinli Gece");
     # bölüm başındaki özet tablosunda adlar tam. Türkçe ad oradan alınır.
     table_names = json.load(open(f'{SP}/table_names.json', encoding='utf-8'))
@@ -260,10 +319,15 @@ def main():
         data = json.load(open(path, encoding='utf-8'))
         for recipe in data:
             code = recipe['id'].upper()
+            if code in DROPPED:
+                stats['birleştirildi'].append(code)
+                continue
             rep = report.get(code)
             if not rep:
                 stats['raporda_yok'].append(code)
                 continue
+            if code in MERGED:
+                rep = {**rep, **MERGED[code]}
 
             name_tr = table_names.get(code, rep['name_tr'])
             name_en = rep['name_en']
@@ -329,6 +393,7 @@ def main():
                                 for k, v in rep['macros'].items()}
             stats['güncellendi'].append(code)
 
+        data = [r for r in data if r['id'].upper() not in DROPPED]
         json.dump(data, open(path, 'w', encoding='utf-8'),
                   ensure_ascii=False, indent=2)
         open(path, 'a', encoding='utf-8').write('')
@@ -339,6 +404,7 @@ def main():
             open(path, 'a', encoding='utf-8').write('\n')
 
     print("güncellenen tarif:", len(stats['güncellendi']))
+    print("birleştirilip çıkarılan:", stats['birleştirildi'] or "yok")
     print("raporda olmayan:", stats['raporda_yok'] or "yok")
     print("eşleşmeyen malzeme:", stats['eşleşmeyen'] or "yok")
     print("mutfak dağılımı:", dict(cuisine_counter))

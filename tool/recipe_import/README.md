@@ -1,14 +1,14 @@
 # Tarif düzeltme raporunu içe aktarma
 
-`docs/tarif-duzeltme-raporu.md` — 144 tarifin düzeltilmiş hâli — tarif
+`docs/tarif-duzeltme-raporu.md` — 144 tarifin düzeltilmiş hâli (ikisi
+birleştiği için uygulamada 143) — tarif
 içeriğinin kaynağıdır. Ad, açıklama, malzeme, miktar, hazırlanış, mutfak ve
 alerjen bilgisi oradan gelir; `assets/recipes/*.json` bu araçlarla üretilir.
 
 ## Çalıştırma sırası
 
 ```bash
-python3 tool/recipe_import/parse_report.py /tmp/report.json   # md -> yapısal
-python3 tool/recipe_import/build_recipes.py                   # JSON'a yaz
+python3 tool/recipe_import/build_recipes.py                   # md -> JSON
 dart run tool/data_report.dart --fix-macros                   # makroları hesapla
 python3 tool/recipe_import/apply_tags.py                      # seviye + etiket
 dart run tool/data_report.dart --strict
@@ -23,7 +23,7 @@ türetir, o yüzden `--fix-macros`'tan sonra çalışmalı.
 
 | Dosya | İşi |
 |---|---|
-| `parse_report.py` | Markdown raporu tarif tarif ayrıştırır. Rapordaki bozuk başlıkları (kırpılmış satırlar, ortadan bölünmüş künye) burada temizler. |
+| `parse_report.py` | Markdown raporu tarif tarif ayrıştırır (`build_recipes.py` bunu çağırır; tek başına çalıştırılırsa ayrıştırmayı dosyaya yazar ve tutarlılık özeti basar). Rapordaki bozuk başlıkları (kırpılmış satırlar, ortadan bölünmüş künye) burada temizler. |
 | `ing_map.py` | Rapordaki malzeme adı → kanonik katalog ID(leri). Bir satır birden çok malzeme olabilir ("Tuz ve karabiber"). |
 | `table_names.json` | Bölüm özet tablolarından alınan tam Türkçe adlar; 20 tarifte başlık satırı kırpık geldiği için ad buradan okunur. |
 | `build_recipes.py` | Ayrıştırılmış raporu `assets/recipes/*.json` üzerine yazar: ad, açıklama, adımlar, malzeme + miktar, mutfak, alerjen, porsiyon. |
@@ -41,5 +41,9 @@ türetir, o yüzden `--fix-macros`'tan sonra çalışmalı.
 - **Yoğurt:** raporda Türkçe metinlerde "Türk yoğurdu" yazıyor; kullanıcı
   kuralı gereği Türkçede sade "yoğurt" olur, İngilizcede "Turkish yogurt"
   kalır. Çevrim `build_recipes.py` içindeki `TR_YOGURT` listesinde.
+- **Birleştirilen tarif:** raporda S020 ve S036 aynı yemek (200°C fırın
+  nohut, tek fark sumak). Kullanıcı kararıyla tek tarifte birleşti:
+  `build_recipes.py` içinde S036 `DROPPED`, S020 ise `MERGED` ile ikisinin
+  baharatını taşıyor. Bu yüzden tarif sayısı 143.
 - **Adımlar:** rapor her tarifi 4 yoğun adımda topluyor; içe aktarıcı bunları
   cümle sınırından bölerek 4-8 adıma çıkarır. Metin birebir korunur.
