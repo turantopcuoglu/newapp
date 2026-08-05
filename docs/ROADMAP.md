@@ -41,11 +41,11 @@ Notlar:
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 4.4 (kaynaklar 3-4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
 
-**Mutfak dağılımı:** international 242 · turkish 66 · american 52 ·
-mediterranean 46 · italian 39 · asian 35 · mexican 21 · middleEastern 17
-(kaynak belgeler tariflerin çoğunu "… Esintili Füzyon" diye etiketliyor;
-bunlar hem kendi mutfağında hem Dünya & Füzyon'da görünüyor. Daraltmak
-tek satırlık değişiklik: `cuisines_for`.)
+**Mutfak dağılımı:** international 96 · turkish 66 · american 57 ·
+mediterranean 46 · italian 39 · asian 37 · mexican 21 · middleEastern 18
+(mutfağı belli olan tarif yalnızca o mutfakta görünür; Dünya & Füzyon
+yalnızca uygulamada karşılığı olmayan etiketler için — Fransız, Britanya,
+İskandinav, "Dünya ve Füzyon" gibi. Kural: `cuisines_for`.)
 
 **Sağlık kategorisi kapsaması:** insülin direnci 310 · anemi 297 · PCOS 282 ·
 B12 276 · demir 199 · magnezyum 182 · laktozsuz 166 · glutensiz 157 ·
@@ -150,6 +150,13 @@ o yüzden ayrı bir ayrıştırıcı var: `parse_pack.py` + `build_pack.py`.
   Kural gereği makro `quantities`'ten hesaplanıyor.
 - Yeni tariflerin check-in etiketi yoktu; `apply_tags.py` boş olanlara veriden
   taban set türetiyor (lowEnergy/cantFocus/cravingSweets/bloated).
+
+**Mutfak dağılımı dengelendi (2026-08-05)** — "… Esintili Füzyon" etiketli her
+tarif hem kendi mutfağına hem Dünya & Füzyon'a giriyordu; kategori 242 tarifle
+diğerlerini eziyordu. Artık mutfağı belli olan tarif **yalnızca** o mutfakta
+görünüyor, Dünya & Füzyon 96'ya indi. Uygulamada karşılığı olmayan etiketler
+(Fransız, Britanya, İskandinav, Rus, Macar…) orada kalıyor; Hint → Asya,
+Kuzey Amerika/Louisiana/Hawaii → Amerikan, Fas → Ortadoğu eşlendi.
 
 **Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
 tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**

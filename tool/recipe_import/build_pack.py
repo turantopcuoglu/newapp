@@ -131,13 +131,20 @@ def main() -> None:
     for meal, new_recipes in by_meal.items():
         path = f'{ROOT}/assets/recipes/{meal}.json'
         data = json.load(open(path, encoding='utf-8'))
-        existing = {r['id'] for r in data}
+        by_id = {r['id']: r for r in data}
+        # İçe aktarıcının sahip olduğu alanlar. checkInTags ve besin
+        # seviyeleri apply_tags'in işi, burada korunur.
+        owned = ('name', 'description', 'cuisineIds', 'ingredientIds',
+                 'allergenTags', 'servings', 'steps', 'quantities', 'macros')
         for recipe in new_recipes:
-            if recipe['id'] in existing:
-                continue
-            data.append(recipe)
-            added[meal] += 1
             cuisines.update(recipe['cuisineIds'])
+            current = by_id.get(recipe['id'])
+            if current is None:
+                data.append(recipe)
+                added[meal] += 1
+                continue
+            for key in owned:
+                current[key] = recipe[key]
         data.sort(key=lambda r: r['id'])
         json.dump(data, open(path, 'w', encoding='utf-8'),
                   ensure_ascii=False, indent=2)

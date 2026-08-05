@@ -230,8 +230,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -345,8 +344,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -896,8 +894,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1446,8 +1443,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1782,8 +1778,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2105,8 +2100,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2557,8 +2551,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2896,8 +2889,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3338,8 +3330,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3454,8 +3445,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3561,8 +3551,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3664,8 +3653,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4006,8 +3994,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4226,8 +4213,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4318,8 +4304,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4428,8 +4413,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4858,8 +4842,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5257,8 +5240,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5364,8 +5346,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5456,8 +5437,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5557,7 +5537,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5649,7 +5629,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5752,8 +5732,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5954,8 +5933,7 @@
     "mealType": "lunch",
     "cuisineIds": [
       "american",
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6054,8 +6032,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6154,8 +6131,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6247,8 +6223,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6339,8 +6314,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6438,8 +6412,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6526,8 +6499,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6615,8 +6587,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6714,8 +6685,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6805,8 +6775,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6896,8 +6865,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6992,8 +6960,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7094,7 +7061,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7186,7 +7153,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7276,8 +7243,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7374,8 +7340,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7466,8 +7431,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7556,8 +7520,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7653,8 +7616,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7749,8 +7711,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7846,8 +7807,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7944,8 +7904,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8040,8 +7999,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8138,8 +8096,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8325,8 +8282,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8514,8 +8470,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8601,8 +8556,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -8694,8 +8648,7 @@
     },
     "mealType": "lunch",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,

@@ -104,8 +104,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -537,8 +536,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -849,8 +847,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1037,8 +1034,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1235,8 +1231,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1312,8 +1307,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1410,8 +1404,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1489,8 +1482,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -1596,8 +1588,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2097,8 +2088,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2631,8 +2621,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "american",
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -2787,8 +2776,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3032,8 +3020,7 @@
     "mealType": "snack",
     "cuisineIds": [
       "turkish",
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3129,8 +3116,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3210,8 +3196,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -3483,8 +3468,7 @@
     "mealType": "snack",
     "cuisineIds": [
       "turkish",
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4102,8 +4086,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4194,8 +4177,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4736,7 +4718,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "international"
+      "american"
     ],
     "dietTags": [],
     "servings": 1,
@@ -4908,8 +4890,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5086,8 +5067,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mexican",
-      "international"
+      "mexican"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5262,8 +5242,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5355,8 +5334,7 @@
     "mealType": "snack",
     "cuisineIds": [
       "american",
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5530,8 +5508,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5711,8 +5688,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -5957,8 +5933,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6057,8 +6032,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6394,8 +6368,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "italian",
-      "international"
+      "italian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6725,8 +6698,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "middleEastern",
-      "international"
+      "middleEastern"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6804,8 +6776,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,
@@ -6893,8 +6864,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "mediterranean",
-      "international"
+      "mediterranean"
     ],
     "dietTags": [],
     "servings": 1,
@@ -7625,8 +7595,7 @@
     },
     "mealType": "snack",
     "cuisineIds": [
-      "asian",
-      "international"
+      "asian"
     ],
     "dietTags": [],
     "servings": 1,

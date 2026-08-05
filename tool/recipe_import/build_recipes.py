@@ -143,20 +143,29 @@ CUISINE_RULES = [
     ('meksika', 'mexican'), ('tex-mex', 'mexican'),
     ('asya', 'asian'), ('japon', 'asian'), ('kore', 'asian'),
     ('çin', 'asian'), ('vietnam', 'asian'), ('tayland', 'asian'),
+    ('hint', 'asian'),
     ('latin amerika', 'mexican'),
+    ('kuzey amerika', 'american'), ('louisiana', 'american'),
+    ('hawaii', 'american'),
+    ('fas', 'middleEastern'),
 ]
 
 
 def cuisines_for(label):
+    """Mutfak etiketi → Keşfet kategorileri.
+
+    Kaynak belgeler tariflerin çoğunu "… Esintili Füzyon" diye etiketliyor.
+    Mutfağı belli olan tarif YALNIZCA o mutfakta görünür; "Dünya & Füzyon"
+    yalnızca uygulamada karşılığı olmayan etiketler için kalır (Fransız,
+    Britanya, İskandinav, "Dünya ve Füzyon" gibi). Aksi hâlde bütün füzyonlar
+    Dünya & Füzyon'a da düşüyor ve kategori diğerlerini eziyordu.
+    """
     low = label.lower()
     out = []
     for key, cid in CUISINE_RULES:
         if key in low and cid not in out:
             out.append(cid)
-    if not out or 'füzyon' in low or 'dünya' in low or 'avrupa' in low:
-        if 'international' not in out:
-            out.append('international')
-    return out
+    return out or ['international']
 
 
 # ── alerjen eşlemesi ──────────────────────────────────────────────────────
@@ -407,7 +416,9 @@ def main():
 
     print("güncellenen tarif:", len(stats['güncellendi']))
     print("birleştirilip çıkarılan:", stats['birleştirildi'] or "yok")
-    print("raporda olmayan:", stats['raporda_yok'] or "yok")
+    # Paketten gelen tarifler bu raporda yok; onları build_pack yönetiyor.
+    print("bu raporda olmayan (başka kaynaktan gelen):",
+          len(stats['raporda_yok']))
     print("eşleşmeyen malzeme:", stats['eşleşmeyen'] or "yok")
     print("mutfak dağılımı:", dict(cuisine_counter))
     print("alerjen etiketi değişen tarif:", len(stats['alerjen_değişti']))
