@@ -92,6 +92,12 @@ Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
   bu alanı okur: eksik etiket = alerjik kullanıcıya o tarifin gösterilmesi.
   ("tree_nuts" 12 tarifte yazılıydı, hiçbir profil onu seçemediği için fındık
   filtresi bu tarifleri hiç elemiyordu.) Rapor ikisini de hata sayar.
+- **Yoğurt adlandırması (sabit kural).** Türkçe metinlerde yalnızca
+  **"yoğurt"**, İngilizce metinlerde **"Turkish yogurt"** yazılır; malzeme
+  kataloğundaki tek yoğurt girdisi `yogurt` (TR "Yoğurt" / EN "Turkish
+  Yogurt"). **"Yunan yoğurdu" / "Greek yogurt" hiçbir yerde geçmez** — ayrı
+  bir süzme/Greek yoğurt girdisi de yoktur. Laktozsuz tariflerde biçim
+  "laktozsuz yoğurt" / "lactose-free Turkish yogurt" olur.
 - Nutrition tablosunda tahıl/bakliyat değerleri pişmiş bazdadır
   (rice/pasta/lentil), yulaf/bulgur/un kuru bazdadır — miktarları buna göre yaz.
 

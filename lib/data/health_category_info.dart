@@ -218,7 +218,7 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       'liver', 'salmon', 'tuna', 'sardine', 'mussel', 'anchovy', 'eggs',
       'ground_beef', 'beef_steak', 'veal', 'lamb', 'chicken_breast',
       'chicken_thigh', 'turkey_breast', 'cod', 'sea_bass', 'sea_bream',
-      'shrimp', 'squid', 'octopus', 'milk', 'yogurt', 'greek_yogurt',
+      'shrimp', 'squid', 'octopus', 'milk', 'yogurt',
       'kefir', 'cheddar_cheese', 'feta_cheese', 'parmesan', 'mozzarella',
       'goat_cheese', 'ricotta',
     ],
@@ -322,7 +322,7 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
     ],
     ingredientIds: [
       'oats', 'quinoa', 'buckwheat', 'bulgur', 'eggs', 'chicken_breast',
-      'salmon', 'greek_yogurt', 'chickpea', 'red_lentil', 'green_lentil',
+      'salmon', 'yogurt', 'chickpea', 'red_lentil', 'green_lentil',
       'white_bean', 'avocado', 'olive_oil', 'walnut', 'almond', 'chia_seeds',
       'flax_seeds', 'pumpkin_seeds', 'broccoli', 'spinach', 'cauliflower',
       'zucchini', 'blueberry', 'cinnamon', 'tahini',
@@ -376,7 +376,7 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
     ingredientIds: [
       'oats', 'bulgur', 'quinoa', 'buckwheat', 'whole_wheat_flour',
       'red_lentil', 'green_lentil', 'chickpea', 'white_bean', 'black_bean',
-      'eggs', 'greek_yogurt', 'yogurt', 'chicken_breast', 'salmon',
+      'eggs', 'yogurt', 'chicken_breast', 'salmon',
       'walnut', 'almond', 'chia_seeds', 'flax_seeds', 'avocado', 'olive_oil',
       'broccoli', 'spinach', 'cauliflower', 'apple', 'pear', 'blueberry',
       'cinnamon',

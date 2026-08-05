@@ -2625,12 +2625,12 @@
   {
     "id": "s031",
     "name": {
-      "en": "Greek Yogurt Parfait with Berries",
+      "en": "Turkish Yogurt Parfait with Berries",
       "tr": "Meyveli Yoğurt Parfesi"
     },
     "description": {
-      "en": "Thick Greek yogurt layered with fresh blueberries, raspberries, granola, and a drizzle of honey.",
-      "tr": "Taze yaban mersini, ahududu, granola ve bal ile katman katman hazırlanan koyu Yunan yoğurdu parfesi."
+      "en": "Thick Turkish yogurt layered with fresh blueberries, raspberries, granola, and a drizzle of honey.",
+      "tr": "Taze yaban mersini, ahududu, granola ve bal ile katman katman hazırlanan koyu yoğurt parfesi."
     },
     "mealType": "snack",
     "cuisineIds": [
@@ -2640,7 +2640,7 @@
     "servings": 1,
     "prepTimeMin": null,
     "ingredientIds": [
-      "greek_yogurt",
+      "yogurt",
       "blueberry",
       "raspberry",
       "granola_bar",
@@ -2660,21 +2660,21 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 364,
-      "proteinG": 14,
+      "calories": 326,
+      "proteinG": 15,
       "carbsG": 51,
-      "fatG": 13,
+      "fatG": 9,
       "fiberG": 9
     },
     "steps": {
       "en": [
-        "Spoon a thick layer of Greek yogurt into the bottom of a glass or jar.",
+        "Spoon a thick layer of Turkish yogurt into the bottom of a glass or jar.",
         "Add a layer of fresh blueberries and raspberries.",
         "Crumble granola bar pieces over the berries.",
         "Repeat layers and finish with a drizzle of honey on top."
       ],
       "tr": [
-        "Bir bardak veya kavanozun altına kalın bir katman Yunan yoğurdu koyun.",
+        "Bir bardak veya kavanozun altına kalın bir katman yoğurt koyun.",
         "Üzerine taze yaban mersini ve ahududu katmanı ekleyin.",
         "Meyvelerin üzerine ufalanmış granola bar parçaları serpin.",
         "Katmanları tekrarlayın ve üzerine bal gezdirerek servis edin."
@@ -2683,7 +2683,7 @@
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
-      "greek_yogurt": {
+      "yogurt": {
         "amount": 100.0,
         "unit": "g"
       },

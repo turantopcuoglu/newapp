@@ -1128,14 +1128,6 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     fiberPer100g: 0.0,
     defaultServingG: 200,
   ),
-  'greek_yogurt': IngredientNutrition(
-    caloriesPer100g: 97,
-    proteinPer100g: 9.0,
-    carbsPer100g: 3.6,
-    fatPer100g: 5.0,
-    fiberPer100g: 0.0,
-    defaultServingG: 150,
-  ),
   'basil': IngredientNutrition(
     caloriesPer100g: 23,
     proteinPer100g: 3.2,

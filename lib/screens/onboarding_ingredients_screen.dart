@@ -28,7 +28,6 @@ const Map<IngredientCategory, List<String>> _onboardingIngredientIds = {
     'butter',
     'cream',
     'mozzarella',
-    'greek_yogurt',
   ],
   IngredientCategory.grain: [
     'white_rice',

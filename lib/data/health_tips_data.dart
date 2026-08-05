@@ -232,9 +232,9 @@ const List<MoodFoodTip> moodFoodTips = [
     },
     body: {
       'en':
-          'Sweet cravings often indicate blood sugar fluctuations or magnesium deficiency. Reach for naturally sweet options like dates with almond butter, dark chocolate (70%+), or Greek yogurt with berries. These provide sweetness along with fiber and protein to stabilize blood sugar.',
+          'Sweet cravings often indicate blood sugar fluctuations or magnesium deficiency. Reach for naturally sweet options like dates with almond butter, dark chocolate (70%+), or Turkish yogurt with berries. These provide sweetness along with fiber and protein to stabilize blood sugar.',
       'tr':
-          'Tatlı isteği genellikle kan şekeri dalgalanmalarını veya magnezyum eksikliğini gösterir. Badem ezmeli hurma, bitter çikolata (%70+) veya meyveli Yunan yoğurdu gibi doğal tatlı seçeneklere yönelin. Bunlar, kan şekerini dengelemek için lif ve proteinle birlikte tatlılık sağlar.',
+          'Tatlı isteği genellikle kan şekeri dalgalanmalarını veya magnezyum eksikliğini gösterir. Badem ezmeli hurma, bitter çikolata (%70+) veya meyveli yoğurt gibi doğal tatlı seçeneklere yönelin. Bunlar, kan şekerini dengelemek için lif ve proteinle birlikte tatlılık sağlar.',
     },
   ),
   MoodFoodTip(
@@ -297,9 +297,9 @@ const List<MoodFoodTip> moodFoodTips = [
     },
     body: {
       'en':
-          'Within 30-60 minutes after exercise, consume a mix of protein (20-30g) for muscle repair and carbs to replenish glycogen. Great options: chicken with rice, Greek yogurt with granola, or a protein smoothie with banana. Don\'t forget to rehydrate with water and electrolytes.',
+          'Within 30-60 minutes after exercise, consume a mix of protein (20-30g) for muscle repair and carbs to replenish glycogen. Great options: chicken with rice, Turkish yogurt with granola, or a protein smoothie with banana. Don\'t forget to rehydrate with water and electrolytes.',
       'tr':
-          'Egzersizden sonraki 30-60 dakika içinde, kas onarımı için protein (20-30g) ve glikojen depolamak için karbonhidrat tüketin. Harika seçenekler: pirinçli tavuk, granolalı Yunan yoğurdu veya muzlu protein smoothie. Su ve elektrolitlerle sıvı takviyesini unutmayın.',
+          'Egzersizden sonraki 30-60 dakika içinde, kas onarımı için protein (20-30g) ve glikojen depolamak için karbonhidrat tüketin. Harika seçenekler: pirinçli tavuk, granolalı yoğurt veya muzlu protein smoothie. Su ve elektrolitlerle sıvı takviyesini unutmayın.',
     },
   ),
   MoodFoodTip(

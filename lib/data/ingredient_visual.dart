@@ -20,7 +20,7 @@ const Map<String, String> _ingredientEmoji = {
   'shrimp': '🦐', 'squid': '🦑', 'octopus': '🐙', 'mussel': '🦪',
   'eggs': '🥚', 'tofu': '🧊',
   // Dairy
-  'milk': '🥛', 'yogurt': '🥛', 'greek_yogurt': '🥛', 'kefir': '🥛',
+  'milk': '🥛', 'yogurt': '🥛', 'kefir': '🥛',
   'cheddar_cheese': '🧀', 'feta_cheese': '🧀', 'parmesan': '🧀',
   'mozzarella': '🧀', 'goat_cheese': '🧀', 'ricotta': '🧀',
   'cottage_cheese': '🧀', 'labne': '🧀', 'butter': '🧈',

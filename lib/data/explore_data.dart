@@ -259,7 +259,7 @@ const Map<HealthCondition, List<String>> healthConditionIngredients = {
     'chicken_breast', 'chicken_thigh', 'chicken_wing', 'turkey_breast',
     'ground_turkey', 'salmon', 'tuna', 'cod', 'sardine', 'anchovy',
     'sea_bass', 'sea_bream', 'mussel', 'squid', 'octopus', 'shrimp',
-    'eggs', 'milk', 'yogurt', 'greek_yogurt', 'kefir', 'cheddar_cheese',
+    'eggs', 'milk', 'yogurt', 'kefir', 'cheddar_cheese',
     'feta_cheese', 'parmesan', 'mozzarella', 'goat_cheese', 'ricotta',
   ],
   HealthCondition.magnesiumDeficiency: [
