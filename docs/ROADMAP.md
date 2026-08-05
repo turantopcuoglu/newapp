@@ -114,6 +114,14 @@ Kronolojik değil, konu bazlı. Detay için `git log` (28 commit).
 - **Günün önerileri araması** (2026-08-04): tarif adı, açıklaması *ve*
   malzeme adına göre arama.
 
+**Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
+tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**
+(içindekiler) + PDF yer imleri, sonra öğün türüne göre her tarif (künye,
+makro şeridi, miktarlı malzemeler, numaralı adımlar, alerjenler). Metin
+kaynağı JSON + Dart sözlükleri; PDF'e elle içerik yazılmıyor. Çıktı:
+`docs/NutriGuide-Tarif-Kitabi.pdf` (80 sayfa). Türkçe karakterler için
+DejaVu fontu gerekiyor, `--locale en` ile İngilizcesi üretilir.
+
 **İçerik denetimi (2026-08-05)** — kullanıcı mantı ve tahin-pekmez hatalarını
 bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 - **Alerjen etiketleri**: 27 tarif malzemelerinin taşıdığı alerjeni beyan

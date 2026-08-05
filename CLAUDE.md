@@ -21,7 +21,14 @@ flutter test                               # tüm testler geçmeli
 dart run tool/data_report.dart             # tarif verisi bütünlük + kalori raporu
 dart run tool/data_report.dart --strict    # hata varsa non-zero exit (CI)
 dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden hesaplar
+
+pip install reportlab                       # tek seferlik (PDF üretimi için)
+python3 tool/generate_recipe_pdf.py         # docs/NutriGuide-Tarif-Kitabi.pdf
+python3 tool/generate_recipe_pdf.py --locale en
 ```
+
+Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
+çalıştırıp `docs/` altındaki dosyayı güncelle.
 
 ## Mimari
 
