@@ -243,6 +243,7 @@
       "black_pepper"
     ],
     "allergenTags": [
+      "gluten",
       "soy"
     ],
     "checkInTags": [
@@ -357,8 +358,8 @@
       "bell_pepper"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -814,9 +815,9 @@
       "yogurt"
     ],
     "allergenTags": [
-      "gluten",
       "dairy",
-      "eggs"
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -1597,11 +1598,15 @@
       "garlic",
       "salt",
       "black_pepper",
-      "cumin"
+      "cumin",
+      "flour",
+      "eggs",
+      "butter"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -1613,16 +1618,18 @@
     "fiberLevel": "low",
     "carbType": "complex",
     "macros": {
-      "calories": 443,
-      "proteinG": 48,
-      "carbsG": 16,
-      "fatG": 20,
-      "fiberG": 2
+      "calories": 1045,
+      "proteinG": 68,
+      "carbsG": 108,
+      "fatG": 36,
+      "fiberG": 5
     },
     "steps": {
       "en": [
+        "Knead the flour, egg, a pinch of salt and warm water added little by little into a firm dough.",
+        "Cover the dough with a damp cloth and rest it for 30 minutes — it rolls out far more easily.",
         "Mix the beef with grated onion, salt and pepper and knead it well.",
-        "Roll out a thin sheet of dough and cut it into small squares.",
+        "Roll the dough out paper-thin on a floured surface and cut it into 2 cm squares.",
         "Place a pea-sized amount of filling in the centre of each square.",
         "Pinch the four corners together so no filling escapes during boiling.",
         "Bring a large pot of salted water to a rolling boil.",
@@ -1632,8 +1639,10 @@
         "Finish with melted butter and cumin, and serve immediately."
       ],
       "tr": [
+        "Un, yumurta, bir tutam tuz ve azar azar ılık suyla kulak memesinden sert bir hamur yoğurun.",
+        "Hamuru nemli bir bezle örtüp 30 dakika dinlendirin — açması böyle kolaylaşır.",
         "Kıymayı rendelenmiş soğan, tuz ve karabiberle iyice yoğurun.",
-        "İnce bir hamur açıp küçük kareler hâlinde kesin.",
+        "Hamuru unlanmış tezgâhta kâğıt inceliğinde açıp 2 cm'lik kareler hâlinde kesin.",
         "Her karenin ortasına nohut tanesi kadar harç koyun.",
         "Haşlarken harç dışarı çıkmasın diye dört köşeyi birleştirip kapatın.",
         "Büyük bir tencerede tuzlu suyu fokur fokur kaynatın.",
@@ -1673,6 +1682,18 @@
       "cumin": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "flour": {
+        "amount": 120.0,
+        "unit": "g"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "butter": {
+        "amount": 10.0,
+        "unit": "g"
       }
     }
   },
@@ -2222,11 +2243,12 @@
       "red_pepper_flakes",
       "salt",
       "black_pepper",
-      "yogurt"
+      "yogurt",
+      "garlic"
     ],
     "allergenTags": [
-      "eggs",
-      "dairy"
+      "dairy",
+      "eggs"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -2237,9 +2259,9 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 446,
+      "calories": 454,
       "proteinG": 32,
-      "carbsG": 17,
+      "carbsG": 19,
       "fatG": 30,
       "fiberG": 6
     },
@@ -2253,7 +2275,7 @@
         "Make wells in the spinach and crack an egg into each.",
         "Cover the pan and cook on low for 4-5 minutes.",
         "The eggs are ready when the whites are set but the yolks still soft.",
-        "Serve straight from the pan with garlic yoghurt on the side."
+        "Stir the crushed garlic into the yoghurt and serve it alongside, straight from the pan."
       ],
       "tr": [
         "Ispanağı iyice yıkayıp kabaca doğrayın.",
@@ -2264,7 +2286,7 @@
         "Ispanakta yuvalar açıp her birine bir yumurta kırın.",
         "Tavanın kapağını kapatıp kısık ateşte 4-5 dakika pişirin.",
         "Beyazlar tutup sarılar yumuşak kaldığında hazırdır.",
-        "Yanında sarımsaklı yoğurtla, tavasıyla servis edin."
+        "Yoğurdu ezilmiş sarımsakla karıştırıp yanında, tavasıyla servis edin."
       ]
     },
     "imagePath": null,
@@ -2301,6 +2323,10 @@
       "yogurt": {
         "amount": 100.0,
         "unit": "g"
+      },
+      "garlic": {
+        "amount": 1.0,
+        "unit": "clove"
       }
     }
   },
@@ -2330,12 +2356,13 @@
       "spring_onion",
       "olive_oil",
       "salt",
-      "black_pepper"
+      "black_pepper",
+      "yogurt"
     ],
     "allergenTags": [
+      "dairy",
       "eggs",
-      "gluten",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "pms",
@@ -2345,10 +2372,10 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 682,
-      "proteinG": 31,
-      "carbsG": 51,
-      "fatG": 40,
+      "calories": 729,
+      "proteinG": 39,
+      "carbsG": 54,
+      "fatG": 41,
       "fiberG": 4
     },
     "steps": {
@@ -2413,6 +2440,10 @@
       "black_pepper": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "yogurt": {
+        "amount": 80.0,
+        "unit": "g"
       }
     }
   },
@@ -2555,8 +2586,8 @@
       "salt"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -2661,8 +2692,8 @@
       "salt"
     ],
     "allergenTags": [
-      "gluten",
       "dairy",
+      "gluten",
       "nuts"
     ],
     "checkInTags": [
@@ -2890,8 +2921,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "gluten",
-      "fish"
+      "fish",
+      "gluten"
     ],
     "checkInTags": [
       "cantFocus",
@@ -3332,8 +3363,9 @@
     ],
     "allergenTags": [
       "fish",
-      "soy",
-      "sesame"
+      "gluten",
+      "sesame",
+      "soy"
     ],
     "checkInTags": [
       "cantFocus",
@@ -3555,8 +3587,8 @@
     ],
     "allergenTags": [
       "gluten",
-      "soy",
-      "sesame"
+      "sesame",
+      "soy"
     ],
     "checkInTags": [
       "postWorkout",
@@ -3666,10 +3698,11 @@
       "garlic"
     ],
     "allergenTags": [
-      "shellfish",
       "eggs",
-      "soy",
-      "sesame"
+      "gluten",
+      "sesame",
+      "shellfish",
+      "soy"
     ],
     "checkInTags": [
       "postWorkout",
@@ -3777,7 +3810,8 @@
       "olive_oil",
       "oregano",
       "feta_cheese",
-      "salt"
+      "salt",
+      "black_pepper"
     ],
     "allergenTags": [
       "dairy"
@@ -3790,11 +3824,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 536,
+      "calories": 537,
       "proteinG": 16,
-      "carbsG": 62,
+      "carbsG": 63,
       "fatG": 27,
-      "fiberG": 13
+      "fiberG": 14
     },
     "steps": {
       "en": [
@@ -3860,6 +3894,10 @@
         "unit": "g"
       },
       "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
         "amount": 1.0,
         "unit": "pinch"
       }

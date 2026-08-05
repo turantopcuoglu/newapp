@@ -1076,6 +1076,16 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     fiberPer100g: 9.3,
     defaultServingG: 15,
   ),
+  // Grape molasses (pekmez): the sweetener in tahin-pekmez, not to be
+  // confused with the sour pomegranate molasses below.
+  'molasses': IngredientNutrition(
+    caloriesPer100g: 293,
+    proteinPer100g: 0.5,
+    carbsPer100g: 73.0,
+    fatPer100g: 0.1,
+    fiberPer100g: 0.0,
+    defaultServingG: 20,
+  ),
   'pomegranate_molasses': IngredientNutrition(
     caloriesPer100g: 222,
     proteinPer100g: 0.3,

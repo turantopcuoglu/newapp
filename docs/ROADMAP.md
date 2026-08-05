@@ -35,7 +35,7 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **109 test, tümü geçiyor** (15 dosya) |
+| Test | **119 test, tümü geçiyor** (16 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
@@ -113,6 +113,27 @@ Kronolojik değil, konu bazlı. Detay için `git log` (28 commit).
   **Alerjenler hâlâ sert eleme** — bu güvenlik meselesi, test koruyor.
 - **Günün önerileri araması** (2026-08-04): tarif adı, açıklaması *ve*
   malzeme adına göre arama.
+
+**İçerik denetimi (2026-08-05)** — kullanıcı mantı ve tahin-pekmez hatalarını
+bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
+- **Alerjen etiketleri**: 27 tarif malzemelerinin taşıdığı alerjeni beyan
+  etmiyordu (fındık, süt, gluten); 12 tarif hiçbir profilin seçemediği
+  `tree_nuts` etiketini taşıyordu. Etiketler artık malzemelerden türetilenin
+  üstünü kapsıyor, sözlük tek yerde: `lib/data/allergens.dart`. Rapor + test
+  bunu hata sayıyor. **Bu güvenlik tarafı; gevşetme.**
+- **Mantı**: adımlar hamur açıyordu, listede un/yumurta/tereyağı yoktu. Hamur
+  yoğurma ve dinlendirme adımları eklendi.
+- **Tahin Pekmezli Ekmek**: listede pekmez yerine nar ekşisi vardı. Katalogda
+  pekmez yoktu — `molasses` eklendi (besin verisiyle).
+- **Kuru Fasulye Pilav**: barbunya ile yazılmıştı, kuru fasulyeye çevrildi.
+- Adımda geçip listede olmayanlar (d021 sarımsak, d022 yoğurt, d035 karabiber,
+  s016 limon, s025 hurma, s028 salsa malzemeleri, s030 tuz/toz biber, s004 ve
+  s014 tuz, l010 marul) eklendi; listede olup adımda kullanılmayanlar (s026
+  hindistancevizi sütü) çıkarıldı ya da adımlara işlendi (l006 patates+yoğurt,
+  s012 krem peynir+salatalık, l004 limon).
+- Adı malzemesini tutmayan tarifler düzeltildi: b005 "Fındıklı" (cevizle
+  yapılıyordu), b023 "Lor Peyniri" (yoğurtla yapılıyordu), s025 "Hurmalı"
+  (hurma yoktu).
 
 ---
 
@@ -194,6 +215,13 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 9. **`keyFor` tarih değil zaman damgası içindir.** 06:00 kaydırması yüzünden
    `keyFor(DateTime(y,m,d))` bir önceki günü verir; gün kovası üreten her yer
    `keyForDate` kullanmalı. Bu hata haftalık/aylık grafikleri boş gösterdi.
+10. **Tarif verisinde iki yönlü tutarlılık ara.** Yalnızca "listedeki ID
+   geçerli mi" yetmez: adımda geçen malzeme listede var mı, listedeki malzeme
+   adımlarda kullanılıyor mu, ad neyi vaat ediyor? Üç sorunun üçü de gerçek
+   hata yakaladı (hamursuz mantı, kullanılmayan hindistancevizi sütü,
+   fındıksız "Fındıklı" parfe).
+11. **`allergenTags` elle yazılırsa eksik kalır.** Malzemelerden türet, sonra
+   beyanla birleştir; sözlük dışı etiket sessizce hiçbir şeyi elemez.
 10. **Tercih filtresi ile alerjen filtresi aynı şey değil.** Tercih (sevilmeyen
    besin, beslenme tercihi) tarama ekranlarında **sıralar**; alerjen her yerde
    **eler**. İkisini tek `_isSafe` altında birleştirmek kategori sayfalarını
@@ -211,7 +239,7 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 
 ```bash
 flutter analyze                              # 0 error
-flutter test                                 # 109+ test, tümü geçmeli
+flutter test                                 # 119+ test, tümü geçmeli
 dart run tool/data_report.dart --strict      # 0 hata, 0 sapma
 git push -u origin claude/recipe-save-ui-fixes-629z7x
 ```

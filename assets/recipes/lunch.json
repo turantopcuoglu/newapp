@@ -133,7 +133,8 @@
       "lemon"
     ],
     "allergenTags": [
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -368,8 +369,9 @@
     ],
     "allergenTags": [
       "fish",
-      "soy",
-      "sesame"
+      "gluten",
+      "sesame",
+      "soy"
     ],
     "checkInTags": [
       "cantFocus",
@@ -393,7 +395,8 @@
         "Bake the salmon at 200°C (400°F) for 12-15 minutes.",
         "Steam the broccoli florets for 4-5 minutes until tender-crisp.",
         "Mix soy sauce and sesame oil to make the glaze.",
-        "Serve the salmon over rice with broccoli on the side, drizzled with the glaze."
+        "Serve the salmon over rice with broccoli on the side, drizzled with the glaze.",
+        "Squeeze the lemon over everything just before serving."
       ],
       "tr": [
         "Pirinci paket talimatlarına göre pişirin.",
@@ -401,7 +404,8 @@
         "Somonu 200°C fırında 12-15 dakika pişirin.",
         "Brokoli çiçeklerini 4-5 dakika buharda pişirin.",
         "Soya sosu ve susam yağını karıştırarak sos hazırlayın.",
-        "Somonu pirinç üzerinde brokoli ile birlikte sosu gezdirerek servis edin."
+        "Somonu pirinç üzerinde brokoli ile birlikte sosu gezdirerek servis edin.",
+        "Servis etmeden hemen önce üzerine limon sıkın."
       ]
     },
     "imagePath": null,
@@ -476,8 +480,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "noSpecificIssue",
@@ -598,7 +602,9 @@
       "potato",
       "yogurt"
     ],
-    "allergenTags": [],
+    "allergenTags": [
+      "dairy"
+    ],
     "checkInTags": [
       "lowEnergy",
       "noSpecificIssue",
@@ -618,18 +624,20 @@
       "en": [
         "Slice the eggplant into rounds, salt them, and let sit for 20 minutes to draw out moisture.",
         "Pan-fry the eggplant slices in olive oil until golden on both sides. Set aside.",
+        "Slice the potatoes into rounds and fry them in the same oil until golden, then drain.",
         "Sauté the onion, garlic, and bell pepper, then add the ground beef and cook until browned.",
         "Stir in tomato paste, diced tomatoes, salt, pepper, and oregano. Simmer for 10 minutes.",
         "Layer eggplant and meat sauce in a baking dish. Bake at 180°C (350°F) for 25 minutes.",
-        "Let it rest for 5 minutes before serving."
+        "Let it rest for 5 minutes and serve with yoghurt on the side."
       ],
       "tr": [
         "Patlıcanları yuvarlak dilimleyip tuzlayın ve 20 dakika suyunu salması için bekletin.",
         "Patlıcan dilimlerini zeytinyağında her iki tarafı altın rengi olana kadar kızartın.",
+        "Patatesleri yuvarlak dilimleyip aynı yağda altın rengi olana dek kızartın ve süzün.",
         "Soğan, sarımsak ve biberi kavurun, ardından kıymayı ekleyip kızarana kadar pişirin.",
         "Salça, doğranmış domates, tuz, karabiber ve kekiği ekleyip 10 dakika kaynatın.",
         "Patlıcan ve kıymalı sosu fırın kabında katlar halinde dizin. 180°C fırında 25 dakika pişirin.",
-        "Servis etmeden önce 5 dakika dinlendirin."
+        "5 dakika dinlendirip yanında yoğurtla servis edin."
       ]
     },
     "imagePath": null,
@@ -829,7 +837,8 @@
       "red_pepper_flakes"
     ],
     "allergenTags": [
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -932,9 +941,10 @@
       "salt"
     ],
     "allergenTags": [
+      "gluten",
+      "sesame",
       "shellfish",
-      "soy",
-      "sesame"
+      "soy"
     ],
     "checkInTags": [
       "postWorkout",
@@ -1041,7 +1051,8 @@
       "lemon",
       "olive_oil",
       "red_pepper_flakes",
-      "salt"
+      "salt",
+      "lettuce"
     ],
     "allergenTags": [
       "gluten"
@@ -1055,11 +1066,11 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 485,
+      "calories": 489,
       "proteinG": 12,
-      "carbsG": 79,
+      "carbsG": 80,
       "fatG": 17,
-      "fiberG": 17
+      "fiberG": 18
     },
     "steps": {
       "en": [
@@ -1127,6 +1138,10 @@
       "salt": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "lettuce": {
+        "amount": 30.0,
+        "unit": "g"
       }
     }
   },
@@ -1498,8 +1513,9 @@
       "salt"
     ],
     "allergenTags": [
-      "soy",
-      "sesame"
+      "gluten",
+      "sesame",
+      "soy"
     ],
     "checkInTags": [
       "noSpecificIssue",
@@ -1850,8 +1866,8 @@
       "oregano"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -1963,7 +1979,7 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "pms",
@@ -2181,8 +2197,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "eggs",
-      "dairy"
+      "dairy",
+      "eggs"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -2641,9 +2657,9 @@
       "black_pepper"
     ],
     "allergenTags": [
+      "dairy",
       "fish",
-      "gluten",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "noSpecificIssue",
@@ -2740,7 +2756,7 @@
   {
     "id": "l025",
     "name": {
-      "en": "Turkish Kidney Bean Stew with Rice",
+      "en": "Turkish White Bean Stew with Rice",
       "tr": "Kuru Fasulye Pilav"
     },
     "description": {
@@ -2755,7 +2771,7 @@
     "servings": 1,
     "prepTimeMin": null,
     "ingredientIds": [
-      "kidney_bean",
+      "white_bean",
       "white_rice",
       "onion",
       "garlic",
@@ -2781,9 +2797,9 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 660,
-      "proteinG": 19,
-      "carbsG": 93,
+      "calories": 674,
+      "proteinG": 20,
+      "carbsG": 95,
       "fatG": 25,
       "fiberG": 15
     },
@@ -2808,10 +2824,6 @@
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
-      "kidney_bean": {
-        "amount": 120.0,
-        "unit": "g"
-      },
       "white_rice": {
         "amount": 150.0,
         "unit": "g"
@@ -2855,6 +2867,10 @@
       "black_pepper": {
         "amount": 1.0,
         "unit": "pinch"
+      },
+      "white_bean": {
+        "amount": 120.0,
+        "unit": "g"
       }
     }
   },

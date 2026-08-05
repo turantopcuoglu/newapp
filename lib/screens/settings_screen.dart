@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
 import '../core/turkish_string_helper.dart';
+import '../data/allergens.dart';
 import '../data/mock_ingredients.dart';
 import '../widgets/turkish_text_field.dart';
 import '../l10n/app_localizations.dart';
@@ -912,18 +913,6 @@ class _DietPreferenceSection extends StatelessWidget {
 
 // ─── Allergy & Disliked Ingredients Section ─────────────────────────────────
 
-/// All known allergen tags used in the ingredient database.
-const Map<String, Map<String, String>> _allergenLabels = {
-  'gluten': {'en': 'Gluten', 'tr': 'Gluten'},
-  'dairy': {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
-  'eggs': {'en': 'Eggs', 'tr': 'Yumurta'},
-  'nuts': {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
-  'peanuts': {'en': 'Peanuts', 'tr': 'Yer Fıstığı'},
-  'fish': {'en': 'Fish', 'tr': 'Balık'},
-  'shellfish': {'en': 'Shellfish', 'tr': 'Kabuklu Deniz Ürünleri'},
-  'soy': {'en': 'Soy', 'tr': 'Soya'},
-  'sesame': {'en': 'Sesame', 'tr': 'Susam'},
-};
 
 class _AllergyDislikedSection extends StatelessWidget {
   final WidgetRef ref;
@@ -1011,8 +1000,8 @@ class _AllergyDislikedSection extends StatelessWidget {
                 runSpacing: 8,
                 children: profile.allergies.map((tag) {
                   final label =
-                      _allergenLabels[tag]?[locale] ??
-                      _allergenLabels[tag]?['en'] ??
+                      allergenLabels[tag]?[locale] ??
+                      allergenLabels[tag]?['en'] ??
                       tag;
                   return Chip(
                     label: Text(label),
@@ -1157,7 +1146,7 @@ class _AddAllergenSheet extends StatelessWidget {
     final profile = ref.watch(profileProvider);
     final currentAllergies = profile.allergies.toSet();
 
-    final available = _allergenLabels.entries
+    final available = allergenLabels.entries
         .where((e) => !currentAllergies.contains(e.key))
         .toList();
 

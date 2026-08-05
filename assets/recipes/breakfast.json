@@ -25,8 +25,9 @@
       "walnut"
     ],
     "allergenTags": [
+      "dairy",
       "gluten",
-      "dairy"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -120,8 +121,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "eggs",
-      "dairy"
+      "dairy",
+      "eggs"
     ],
     "checkInTags": [
       "postWorkout",
@@ -305,8 +306,8 @@
       "lemon"
     ],
     "allergenTags": [
-      "gluten",
-      "eggs"
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "noSpecificIssue",
@@ -397,15 +398,15 @@
     "prepTimeMin": null,
     "ingredientIds": [
       "yogurt",
-      "walnut",
+      "hazelnut",
       "blueberry",
       "honey",
       "oats"
     ],
     "allergenTags": [
       "dairy",
-      "nuts",
-      "gluten"
+      "gluten",
+      "nuts"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -415,31 +416,31 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 466,
+      "calories": 461,
       "proteinG": 25,
-      "carbsG": 58,
-      "fatG": 17,
+      "carbsG": 59,
+      "fatG": 16,
       "fiberG": 8
     },
     "steps": {
       "en": [
         "Toast the oats in a dry pan for 3 minutes until they smell nutty, then cool.",
-        "Roughly chop the walnuts.",
+        "Roughly chop the hazelnuts.",
         "Rinse the blueberries and pat them dry.",
         "Spoon a third of the yoghurt into the bottom of a glass.",
         "Add a layer of oats and blueberries.",
         "Repeat the layers, finishing with yoghurt on top.",
-        "Scatter the walnuts over the surface.",
+        "Scatter the hazelnuts over the surface.",
         "Drizzle with honey just before serving so the layers stay distinct."
       ],
       "tr": [
         "Yulafı kuru tavada 3 dakika, kokusu çıkana kadar kavurup soğutun.",
-        "Cevizleri iri kıyın.",
+        "Fındıkları iri kıyın.",
         "Yaban mersinlerini yıkayıp kurulayın.",
         "Yoğurdun üçte birini bardağın dibine yayın.",
         "Üzerine bir kat yulaf ve yaban mersini ekleyin.",
         "Katları tekrarlayın, en üste yoğurt gelsin.",
-        "Cevizleri yüzeye serpin.",
+        "Fındıkları yüzeye serpin.",
         "Katlar dağılmasın diye balı servis etmeden hemen önce gezdirin."
       ]
     },
@@ -448,10 +449,6 @@
     "quantities": {
       "yogurt": {
         "amount": 150.0,
-        "unit": "g"
-      },
-      "walnut": {
-        "amount": 20.0,
         "unit": "g"
       },
       "blueberry": {
@@ -464,6 +461,10 @@
       },
       "oats": {
         "amount": 40.0,
+        "unit": "g"
+      },
+      "hazelnut": {
+        "amount": 20.0,
         "unit": "g"
       }
     }
@@ -780,8 +781,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "eggs",
-      "dairy"
+      "dairy",
+      "eggs"
     ],
     "checkInTags": [
       "postWorkout",
@@ -877,9 +878,9 @@
       "vanilla"
     ],
     "allergenTags": [
-      "gluten",
+      "dairy",
       "eggs",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -975,8 +976,8 @@
       "cinnamon"
     ],
     "allergenTags": [
-      "nuts",
-      "dairy"
+      "dairy",
+      "nuts"
     ],
     "checkInTags": [
       "postWorkout",
@@ -1070,9 +1071,9 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "gluten",
+      "dairy",
       "fish",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "cantFocus",
@@ -1267,8 +1268,8 @@
       "honey"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "bloated",
@@ -1359,9 +1360,9 @@
       "salt"
     ],
     "allergenTags": [
-      "gluten",
+      "dairy",
       "eggs",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "cantFocus",
@@ -1461,9 +1462,9 @@
       "yogurt"
     ],
     "allergenTags": [
+      "dairy",
       "gluten",
-      "nuts",
-      "dairy"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -1560,8 +1561,8 @@
       "olive_oil"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "noSpecificIssue",
@@ -1753,8 +1754,8 @@
       "milk"
     ],
     "allergenTags": [
-      "gluten",
-      "dairy"
+      "dairy",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -1845,9 +1846,9 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "gluten",
+      "dairy",
       "eggs",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "postWorkout",
@@ -2042,6 +2043,7 @@
       "yogurt"
     ],
     "allergenTags": [
+      "dairy",
       "eggs"
     ],
     "checkInTags": [
@@ -2154,7 +2156,7 @@
     "servings": 1,
     "prepTimeMin": null,
     "ingredientIds": [
-      "yogurt",
+      "cottage_cheese",
       "walnut",
       "honey",
       "flax_seeds",
@@ -2174,29 +2176,29 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 425,
-      "proteinG": 21,
+      "calories": 484,
+      "proteinG": 23,
       "carbsG": 51,
-      "fatG": 19,
+      "fatG": 24,
       "fiberG": 7
     },
     "steps": {
       "en": [
-        "Drain the yoghurt in a sieve for 20 minutes for a thicker, curd-like texture.",
+        "Drain the cottage cheese in a sieve for 10 minutes to lose the excess whey.",
         "Roughly chop the walnuts.",
         "Toast the walnuts and flaxseed in a dry pan for 2 minutes until fragrant.",
         "Slice the banana into rounds.",
-        "Spoon the drained yoghurt into a bowl and smooth the surface.",
+        "Spoon the cottage cheese into a bowl and smooth the surface.",
         "Arrange the banana slices over the top.",
         "Scatter over the toasted walnuts and flaxseed.",
         "Drizzle with honey and serve cold."
       ],
       "tr": [
-        "Daha yoğun, lor kıvamında olsun diye yoğurdu süzgeçte 20 dakika süzün.",
+        "Lor peynirini süzgeçte 10 dakika süzüp fazla suyunu alın.",
         "Cevizleri iri kıyın.",
         "Ceviz ve keten tohumunu kuru tavada kokusu çıkana dek 2 dakika kavurun.",
         "Muzu yuvarlak dilimleyin.",
-        "Süzülmüş yoğurdu kaseye alıp yüzeyini düzeltin.",
+        "Loru kaseye alıp yüzeyini düzeltin.",
         "Muz dilimlerini üzerine dizin.",
         "Kavrulmuş ceviz ve keten tohumunu serpin.",
         "Bal gezdirip soğuk servis edin."
@@ -2205,10 +2207,6 @@
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
-      "yogurt": {
-        "amount": 150.0,
-        "unit": "g"
-      },
       "walnut": {
         "amount": 20.0,
         "unit": "g"
@@ -2224,6 +2222,10 @@
       "banana": {
         "amount": 1.0,
         "unit": "piece"
+      },
+      "cottage_cheese": {
+        "amount": 150.0,
+        "unit": "g"
       }
     }
   },
@@ -2347,8 +2349,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "eggs",
-      "dairy"
+      "dairy",
+      "eggs"
     ],
     "checkInTags": [
       "postWorkout",
@@ -2446,8 +2448,8 @@
       "honey"
     ],
     "allergenTags": [
-      "eggs",
       "dairy",
+      "eggs",
       "gluten"
     ],
     "checkInTags": [
@@ -2552,6 +2554,7 @@
     ],
     "allergenTags": [
       "dairy",
+      "gluten",
       "nuts"
     ],
     "checkInTags": [
@@ -2957,9 +2960,9 @@
     ],
     "allergenTags": [
       "eggs",
-      "soy",
+      "gluten",
       "sesame",
-      "gluten"
+      "soy"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -3065,9 +3068,9 @@
       "paprika"
     ],
     "allergenTags": [
+      "dairy",
       "eggs",
-      "gluten",
-      "dairy"
+      "gluten"
     ],
     "checkInTags": [
       "postWorkout",
@@ -3274,8 +3277,8 @@
       "black_pepper"
     ],
     "allergenTags": [
-      "eggs",
       "dairy",
+      "eggs",
       "gluten"
     ],
     "checkInTags": [

@@ -73,7 +73,18 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
   `mock_ingredients.dart` — ör. `walnut`, `white_rice`, `chickpea`; çoğul
   ID kullanma).
 - Yeni malzeme kullanılacaksa önce kataloğa ve `ingredient_nutrition_data.dart`'a
-  eklenmeli (rapor eksikleri WARN olarak gösterir).
+  eklenmeli (rapor eksikleri WARN olarak gösterir). Katalogda olmayan bir
+  malzemeyi "yakın olanla" değiştirme — pekmez yerine nar ekşisi yazıldığı için
+  tarif yanlış çıktı; doğrusu kataloğa `molasses` eklemekti.
+- **Adımlar ile malzeme listesi birbirini tutmalı.** Adımda geçen her şey
+  listede olmalı (mantıda hamur açılıyordu ama un/yumurta listede yoktu),
+  listedeki her şey de adımlarda kullanılmalı. Rapor hamur kuralını,
+  `test/recipe_content_test.dart` bu sınıfın örneklerini bekliyor.
+- **`allergenTags` malzemelerin taşıdığı her alerjeni içermeli** ve yalnızca
+  `lib/data/allergens.dart` sözlüğündeki etiketler kullanılmalı. Sert filtre
+  bu alanı okur: eksik etiket = alerjik kullanıcıya o tarifin gösterilmesi.
+  ("tree_nuts" 12 tarifte yazılıydı, hiçbir profil onu seçemediği için fındık
+  filtresi bu tarifleri hiç elemiyordu.) Rapor ikisini de hata sayar.
 - Nutrition tablosunda tahıl/bakliyat değerleri pişmiş bazdadır
   (rice/pasta/lentil), yulaf/bulgur/un kuru bazdadır — miktarları buna göre yaz.
 

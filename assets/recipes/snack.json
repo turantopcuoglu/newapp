@@ -26,7 +26,7 @@
     ],
     "allergenTags": [
       "gluten",
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -230,7 +230,7 @@
         "Rest for 10 minutes, then stir again — this second stir is what prevents lumps.",
         "Cover and refrigerate for at least 4 hours or overnight.",
         "It is ready when the pudding holds its shape on a spoon.",
-        "Wash the berries and halve the strawberries just before serving.",
+        "Wash the strawberries and blueberries, halving the strawberries, just before serving.",
         "Spoon into glasses and top with the fruit.",
         "Serve cold."
       ],
@@ -240,7 +240,7 @@
         "10 dakika bekletip tekrar karıştırın — topaklanmayı asıl önleyen bu ikinci karıştırmadır.",
         "Üzerini kapatıp en az 4 saat ya da bir gece buzdolabında bekletin.",
         "Kaşıkta şeklini koruduğunda hazırdır.",
-        "Meyveleri servis öncesi yıkayın, çilekleri ikiye bölün.",
+        "Çilek ve yaban mersinlerini yıkayın, çilekleri ikiye bölün.",
         "Bardaklara paylaştırıp meyveleri üzerine ekleyin.",
         "Soğuk servis edin."
       ]
@@ -295,7 +295,8 @@
       "olive_oil",
       "carrot",
       "cucumber",
-      "bell_pepper"
+      "bell_pepper",
+      "salt"
     ],
     "allergenTags": [
       "sesame"
@@ -371,6 +372,10 @@
       "bell_pepper": {
         "amount": 0.5,
         "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
       }
     }
   },
@@ -559,7 +564,7 @@
     ],
     "allergenTags": [
       "gluten",
-      "tree_nuts",
+      "nuts",
       "peanuts"
     ],
     "checkInTags": [
@@ -648,7 +653,7 @@
     ],
     "allergenTags": [
       "dairy",
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "bloated",
@@ -726,7 +731,7 @@
     ],
     "allergenTags": [
       "dairy",
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -806,7 +811,7 @@
       "honey"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "bloated",
@@ -887,8 +892,8 @@
       "coconut_oil"
     ],
     "allergenTags": [
-      "gluten",
-      "eggs"
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -982,8 +987,9 @@
       "cucumber"
     ],
     "allergenTags": [
-      "gluten",
-      "eggs"
+      "dairy",
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "bloated",
@@ -1004,13 +1010,15 @@
       "en": [
         "Toast bread slices and cut into bite-sized squares.",
         "Mash avocado with lemon juice, salt, and black pepper.",
-        "Spread avocado mixture on each toast square and top with boiled egg slices.",
+        "Spread cream cheese on each toast square, then the avocado mixture on top.",
+        "Layer thin cucumber slices and boiled egg slices over the avocado.",
         "Finish with a sprinkle of chili flakes."
       ],
       "tr": [
         "Ekmek dilimlerini kızartın ve lokma büyüklüğünde kareler halinde kesin.",
         "Avokadoyu limon suyu, tuz ve karabiberle ezin.",
-        "Her tost karesine avokado karışımını sürün ve üzerine haşlanmış yumurta dilimleri koyun.",
+        "Her tost karesine krem peyniri, üzerine de avokado karışımını sürün.",
+        "İnce dilimlenmiş salatalık ve haşlanmış yumurta dilimlerini üzerine dizin.",
         "Pul biber serperek servis edin."
       ]
     },
@@ -1169,10 +1177,11 @@
       "olive_oil",
       "lemon",
       "carrot",
-      "bell_pepper"
+      "bell_pepper",
+      "salt"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "bloated",
@@ -1241,6 +1250,10 @@
       "bell_pepper": {
         "amount": 0.5,
         "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
       }
     }
   },
@@ -1346,7 +1359,8 @@
       "tahini",
       "olive_oil",
       "salt",
-      "cumin"
+      "cumin",
+      "lemon"
     ],
     "allergenTags": [
       "sesame"
@@ -1360,9 +1374,9 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 238,
+      "calories": 243,
       "proteinG": 5,
-      "carbsG": 25,
+      "carbsG": 27,
       "fatG": 14,
       "fiberG": 5
     },
@@ -1410,6 +1424,10 @@
       "cumin": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
       }
     }
   },
@@ -1776,7 +1794,7 @@
       "cucumber"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -2048,6 +2066,7 @@
       "black_pepper"
     ],
     "allergenTags": [
+      "gluten",
       "soy"
     ],
     "checkInTags": [
@@ -2129,10 +2148,11 @@
       "cashew",
       "coconut",
       "honey",
-      "vanilla"
+      "vanilla",
+      "dates"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "cantFocus",
@@ -2142,22 +2162,22 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 183,
-      "proteinG": 3,
-      "carbsG": 12,
+      "calories": 294,
+      "proteinG": 4,
+      "carbsG": 42,
       "fatG": 13,
-      "fiberG": 2
+      "fiberG": 5
     },
     "steps": {
       "en": [
         "Blend cashews and pitted dates in a food processor until a sticky dough forms.",
-        "Add shredded coconut and vanilla extract; pulse to combine.",
+        "Add the shredded coconut, honey and vanilla extract; pulse to combine.",
         "Roll into small balls and coat with extra shredded coconut.",
         "Refrigerate for 20 minutes before serving."
       ],
       "tr": [
         "Kaju ve çekirdeksiz hurmaları mutfak robotunda yapışkan bir hamur oluşana kadar karıştırın.",
-        "Rendelenmiş hindistancevizi ve vanilya özütü ekleyin; kısa süreli karıştırın.",
+        "Rendelenmiş hindistancevizi, bal ve vanilya özütünü ekleyip kısa süreli karıştırın.",
         "Küçük toplar şeklinde yuvarlayın ve hindistancevizi ile kaplayın.",
         "Servis öncesi 20 dakika buzdolabında bekletin."
       ]
@@ -2180,6 +2200,10 @@
       "vanilla": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "dates": {
+        "amount": 40.0,
+        "unit": "g"
       }
     }
   },
@@ -2203,11 +2227,10 @@
     "ingredientIds": [
       "mixed_nuts",
       "dried_fruit",
-      "dark_chocolate",
-      "coconut_milk"
+      "dark_chocolate"
     ],
     "allergenTags": [
-      "tree_nuts"
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -2218,11 +2241,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 569,
-      "proteinG": 9,
-      "carbsG": 42,
-      "fatG": 44,
-      "fiberG": 8
+      "calories": 339,
+      "proteinG": 7,
+      "carbsG": 36,
+      "fatG": 20,
+      "fiberG": 6
     },
     "steps": {
       "en": [
@@ -2256,10 +2279,6 @@
       "dark_chocolate": {
         "amount": 15.0,
         "unit": "g"
-      },
-      "coconut_milk": {
-        "amount": 100.0,
-        "unit": "ml"
       }
     }
   },
@@ -2288,8 +2307,8 @@
     ],
     "allergenTags": [
       "dairy",
-      "gluten",
-      "eggs"
+      "eggs",
+      "gluten"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -2361,7 +2380,12 @@
     "ingredientIds": [
       "tortilla_chips",
       "potato_chips",
-      "crackers"
+      "crackers",
+      "tomato",
+      "onion",
+      "parsley",
+      "lemon",
+      "salt"
     ],
     "allergenTags": [
       "gluten"
@@ -2374,21 +2398,21 @@
     "fiberLevel": "low",
     "carbType": "simple",
     "macros": {
-      "calories": 536,
-      "proteinG": 9,
-      "carbsG": 68,
-      "fatG": 27,
-      "fiberG": 5
+      "calories": 591,
+      "proteinG": 11,
+      "carbsG": 80,
+      "fatG": 28,
+      "fiberG": 8
     },
     "steps": {
       "en": [
-        "Arrange tortilla chips on a large serving plate.",
-        "Dice tomatoes, onion, and cilantro; mix with lime juice and salt to make salsa.",
+        "Arrange the tortilla chips, potato chips and crackers on a large serving plate.",
+        "Dice the tomato, onion and parsley; mix with lemon juice and salt to make the salsa.",
         "Pour the salsa into a small bowl and place in the center of the plate.",
         "Dip and enjoy!"
       ],
       "tr": [
-        "Tortilla cipslerini büyük bir servis tabağına dizin.",
+        "Tortilla cipsi, patates cipsi ve krakerleri büyük bir servis tabağına dizin.",
         "Domates, soğan ve maydanozu doğrayın; limon suyu ve tuzla karıştırarak salsa yapın.",
         "Salsayı küçük bir kaseye koyun ve tabağın ortasına yerleştirin.",
         "Banarak keyfini çıkarın!"
@@ -2408,6 +2432,26 @@
       "crackers": {
         "amount": 30.0,
         "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
       }
     }
   },
@@ -2456,13 +2500,13 @@
     "steps": {
       "en": [
         "Break dark chocolate into pieces and melt in a heatproof bowl over simmering water.",
-        "Slice banana and wash berries; arrange on a plate alongside dried fruit.",
+        "Slice the banana and wash the blueberries and raspberries; arrange them on a plate alongside the dried fruit.",
         "Pour melted chocolate into a fondue pot or small bowl.",
         "Dip fruit pieces into the warm chocolate and enjoy."
       ],
       "tr": [
         "Bitter çikolatayı parçalayın ve hafif kaynayan suyun üzerinde ısıya dayanıklı kasede eritin.",
-        "Muzu dilimleyin ve meyveleri yıkayın; kuru meyve ile birlikte bir tabağa dizin.",
+        "Muzu dilimleyin, yaban mersini ve ahududuyu yıkayın; kuru meyveyle birlikte bir tabağa dizin.",
         "Eritilmiş çikolatayı fondü kabına veya küçük bir kaseye dökün.",
         "Meyve parçalarını sıcak çikolataya batırarak keyfini çıkarın."
       ]
@@ -2513,11 +2557,13 @@
       "popcorn",
       "mixed_nuts",
       "honey",
-      "crackers"
+      "crackers",
+      "salt",
+      "paprika"
     ],
     "allergenTags": [
-      "tree_nuts",
-      "gluten"
+      "gluten",
+      "nuts"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -2527,11 +2573,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 406,
-      "proteinG": 11,
-      "carbsG": 53,
-      "fatG": 18,
-      "fiberG": 7
+      "calories": 420,
+      "proteinG": 12,
+      "carbsG": 56,
+      "fatG": 19,
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -2565,6 +2611,14 @@
       "crackers": {
         "amount": 30.0,
         "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
       }
     }
   },
@@ -2594,7 +2648,8 @@
     ],
     "allergenTags": [
       "dairy",
-      "gluten"
+      "gluten",
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -2755,8 +2810,8 @@
       "honey"
     ],
     "allergenTags": [
-      "tree_nuts",
-      "gluten"
+      "gluten",
+      "nuts"
     ],
     "checkInTags": [
       "lowEnergy",
@@ -2832,14 +2887,14 @@
     "prepTimeMin": 10,
     "ingredientIds": [
       "tahini",
-      "pomegranate_molasses",
+      "molasses",
       "bread",
       "walnut"
     ],
     "allergenTags": [
       "gluten",
-      "sesame",
-      "nuts"
+      "nuts",
+      "sesame"
     ],
     "checkInTags": [
       "cravingSweets",
@@ -2850,9 +2905,9 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 357,
+      "calories": 367,
       "proteinG": 9,
-      "carbsG": 31,
+      "carbsG": 33,
       "fatG": 24,
       "fiberG": 4
     },
@@ -2881,10 +2936,6 @@
         "amount": 2.0,
         "unit": "tablespoon"
       },
-      "pomegranate_molasses": {
-        "amount": 1.0,
-        "unit": "tablespoon"
-      },
       "bread": {
         "amount": 1.0,
         "unit": "slice"
@@ -2892,6 +2943,10 @@
       "walnut": {
         "amount": 10.0,
         "unit": "g"
+      },
+      "molasses": {
+        "amount": 1.0,
+        "unit": "tablespoon"
       }
     }
   },
@@ -3091,6 +3146,7 @@
       "dates"
     ],
     "allergenTags": [
+      "gluten",
       "sesame"
     ],
     "checkInTags": [

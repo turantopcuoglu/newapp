@@ -1198,6 +1198,12 @@ const List<Ingredient> mockIngredients = [
     allergenTags: ['sesame'],
   ),
   Ingredient(
+    id: 'molasses',
+    name: {'en': 'Grape Molasses', 'tr': 'Pekmez'},
+    category: IngredientCategory.condiment,
+    allergenTags: [],
+  ),
+  Ingredient(
     id: 'pomegranate_molasses',
     name: {'en': 'Pomegranate Molasses', 'tr': 'Nar Ekşisi'},
     category: IngredientCategory.condiment,

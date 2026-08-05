@@ -18,6 +18,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:nutri_guide/core/enums.dart';
+import 'package:nutri_guide/data/allergens.dart';
 import 'package:nutri_guide/data/explore_data.dart';
 import 'package:nutri_guide/data/health_category_info.dart';
 import 'package:nutri_guide/data/ingredient_nutrition_data.dart';
@@ -58,6 +59,18 @@ const int minRecipesPerHealthCategory = 15;
 /// Fewer tiles than this and the category page looks empty under its
 /// explanation, so the ingredient lists need filling out.
 const int minIngredientTilesPerCategory = 6;
+
+/// Step wording that only makes sense when the recipe includes a dough.
+/// "Hamur" also means a nut paste, so the paste words are excluded below.
+const List<String> doughWords = [
+  'hamuru açın', 'hamur açıp', 'hamuru aç', 'yufka', 'roll out a thin sheet',
+  'roll the dough', 'knead the flour',
+];
+
+const Set<String> doughIngredients = {
+  'flour', 'whole_wheat_flour', 'semolina', 'cornmeal', 'phyllo_dough',
+  'puff_pastry', 'bread', 'pita_bread', 'tortilla_wrap', 'breadcrumbs',
+};
 
 const recipeFiles = [
   'assets/recipes/breakfast.json',
@@ -174,6 +187,50 @@ void main(List<String> args) {
         deviations.add(
             (recipe.id, name, recipe.macros.calories, computed, deviation));
       }
+    }
+  }
+
+  // ── Allergen safety ────────────────────────────────────────────────────
+  // A recipe's allergenTags are what the hard filter reads. If the tags say
+  // less than the ingredients do, an allergic user is shown the recipe — the
+  // one failure mode in this app that can actually hurt someone. Twelve
+  // recipes also carried a "tree_nuts" tag that no profile can ever select,
+  // so the nut filter passed straight over them.
+  final ingredientAllergens = {
+    for (final i in mockIngredients) i.id: i.allergenTags,
+  };
+  for (final recipe in allRecipes) {
+    final declared = recipe.allergenTags.toSet();
+    for (final tag in declared) {
+      if (!knownAllergenTags.contains(tag)) {
+        errors.add('${recipe.id}: unknown allergen tag "$tag" — the profile '
+            'cannot select it, so it filters nothing');
+      }
+    }
+    final implied = <String>{
+      for (final id in recipe.ingredientIds) ...?ingredientAllergens[id],
+    };
+    final gap = implied.difference(declared);
+    if (gap.isNotEmpty) {
+      errors.add('${recipe.id}: ingredients contain ${gap.join(", ")} but the '
+          'recipe does not declare it');
+    }
+  }
+
+  // ── Dough: named in the steps, missing from the list ───────────────────
+  // "Roll out a thin sheet of dough" with no flour anywhere is how Mantı
+  // shipped: the method assumed a component the ingredient list never had.
+  for (final recipe in allRecipes) {
+    final steps = [
+      ...?recipe.steps['tr'],
+      ...?recipe.steps['en'],
+    ].join(' ').toLowerCase();
+    final claimsDough = doughWords.any(steps.contains);
+    if (!claimsDough) continue;
+    final hasDough = recipe.ingredientIds.any(doughIngredients.contains);
+    if (!hasDough) {
+      errors.add('${recipe.id}: the steps work a dough but no dough '
+          'ingredient (flour, phyllo, …) is listed');
     }
   }
 
