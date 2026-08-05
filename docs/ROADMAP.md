@@ -39,7 +39,7 @@ Notlar:
 | Test | **119 test, tümü geçiyor** (16 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
-| Ortalama adım/tarif | 4.6 (kaynaklar 3-4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
+| Ortalama adım/tarif | 4.4 (kaynaklar 3-4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
 
 **Mutfak dağılımı:** international 242 · turkish 66 · american 52 ·
 mediterranean 46 · italian 39 · asian 35 · mexican 21 · middleEastern 17
