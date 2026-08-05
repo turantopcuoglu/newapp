@@ -22,6 +22,12 @@ class IngredientNutrition {
 }
 
 /// Map from ingredient id → nutrition per 100 g.
+///
+/// **Baz:** tahıl ve bakliyat değerleri, tariflerde miktarların yazıldığı
+/// hâle göre girilir. Pirinç, makarna, erişte, kuskus, kinoa, arpa, bulgur,
+/// mercimek, bakla ve yulaf **kuru**; nohut, kuru fasulye, siyah fasulye ve
+/// barbunya **pişmiş (haşlanmış/süzülmüş)** bazdadır — tarif verisi de
+/// miktarları böyle veriyor.
 const Map<String, IngredientNutrition> ingredientNutritionData = {
   // ── Protein ──────────────────────────────────────────────────────────
   'chicken_breast': IngredientNutrition(
@@ -213,20 +219,20 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
 
   // ── Grain ────────────────────────────────────────────────────────────
   'white_rice': IngredientNutrition(
-    caloriesPer100g: 130,
-    proteinPer100g: 2.7,
-    carbsPer100g: 28.0,
-    fatPer100g: 0.3,
-    fiberPer100g: 0.4,
-    defaultServingG: 150,
+    caloriesPer100g: 360,
+    proteinPer100g: 6.6,
+    carbsPer100g: 79.3,
+    fatPer100g: 0.6,
+    fiberPer100g: 1.3,
+    defaultServingG: 70,
   ),
   'pasta': IngredientNutrition(
-    caloriesPer100g: 131,
-    proteinPer100g: 5.0,
-    carbsPer100g: 25.0,
-    fatPer100g: 1.1,
-    fiberPer100g: 1.8,
-    defaultServingG: 200,
+    caloriesPer100g: 371,
+    proteinPer100g: 13.0,
+    carbsPer100g: 74.7,
+    fatPer100g: 1.5,
+    fiberPer100g: 3.2,
+    defaultServingG: 80,
   ),
   'bread': IngredientNutrition(
     caloriesPer100g: 265,
@@ -261,12 +267,12 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     defaultServingG: 80,
   ),
   'couscous': IngredientNutrition(
-    caloriesPer100g: 112,
-    proteinPer100g: 3.8,
-    carbsPer100g: 23.0,
-    fatPer100g: 0.2,
-    fiberPer100g: 1.4,
-    defaultServingG: 150,
+    caloriesPer100g: 376,
+    proteinPer100g: 12.8,
+    carbsPer100g: 77.4,
+    fatPer100g: 0.6,
+    fiberPer100g: 5.0,
+    defaultServingG: 60,
   ),
   'cornmeal': IngredientNutrition(
     caloriesPer100g: 362,
@@ -285,12 +291,12 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     defaultServingG: 150,
   ),
   'quinoa': IngredientNutrition(
-    caloriesPer100g: 120,
-    proteinPer100g: 4.4,
-    carbsPer100g: 21.0,
-    fatPer100g: 1.9,
-    fiberPer100g: 2.8,
-    defaultServingG: 150,
+    caloriesPer100g: 368,
+    proteinPer100g: 14.1,
+    carbsPer100g: 64.2,
+    fatPer100g: 6.1,
+    fiberPer100g: 7.0,
+    defaultServingG: 60,
   ),
 
   // ── Vegetable ────────────────────────────────────────────────────────
@@ -729,20 +735,20 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
 
   // ── Legume ───────────────────────────────────────────────────────────
   'red_lentil': IngredientNutrition(
-    caloriesPer100g: 116,
-    proteinPer100g: 9.0,
-    carbsPer100g: 20.0,
-    fatPer100g: 0.4,
-    fiberPer100g: 8.0,
-    defaultServingG: 100,
+    caloriesPer100g: 352,
+    proteinPer100g: 24.6,
+    carbsPer100g: 63.4,
+    fatPer100g: 1.1,
+    fiberPer100g: 10.7,
+    defaultServingG: 60,
   ),
   'green_lentil': IngredientNutrition(
-    caloriesPer100g: 116,
-    proteinPer100g: 9.0,
-    carbsPer100g: 20.0,
-    fatPer100g: 0.4,
-    fiberPer100g: 8.0,
-    defaultServingG: 100,
+    caloriesPer100g: 353,
+    proteinPer100g: 24.6,
+    carbsPer100g: 63.4,
+    fatPer100g: 1.1,
+    fiberPer100g: 10.7,
+    defaultServingG: 60,
   ),
   'chickpea': IngredientNutrition(
     caloriesPer100g: 164,
@@ -1209,12 +1215,12 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     defaultServingG: 20,
   ),
   'noodle': IngredientNutrition(
-    caloriesPer100g: 138,
-    proteinPer100g: 4.5,
-    carbsPer100g: 25.2,
-    fatPer100g: 2.1,
-    fiberPer100g: 1.2,
-    defaultServingG: 140,
+    caloriesPer100g: 372,
+    proteinPer100g: 8.0,
+    carbsPer100g: 76.0,
+    fatPer100g: 1.5,
+    fiberPer100g: 2.0,
+    defaultServingG: 70,
   ),
   'sardine': IngredientNutrition(
     caloriesPer100g: 208,
@@ -1395,12 +1401,12 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     defaultServingG: 15,
   ),
   'barley': IngredientNutrition(
-    caloriesPer100g: 123,
-    proteinPer100g: 2.3,
-    carbsPer100g: 28.2,
-    fatPer100g: 0.4,
-    fiberPer100g: 3.8,
-    defaultServingG: 150,
+    caloriesPer100g: 352,
+    proteinPer100g: 9.9,
+    carbsPer100g: 77.7,
+    fatPer100g: 1.2,
+    fiberPer100g: 15.6,
+    defaultServingG: 60,
   ),
   'basmati_rice': IngredientNutrition(
     caloriesPer100g: 130,
@@ -1523,12 +1529,12 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     defaultServingG: 20,
   ),
   'fava_bean': IngredientNutrition(
-    caloriesPer100g: 110,
-    proteinPer100g: 7.6,
-    carbsPer100g: 19.7,
-    fatPer100g: 0.4,
-    fiberPer100g: 5.4,
-    defaultServingG: 120,
+    caloriesPer100g: 341,
+    proteinPer100g: 26.1,
+    carbsPer100g: 58.3,
+    fatPer100g: 1.5,
+    fiberPer100g: 25.0,
+    defaultServingG: 60,
   ),
   'fennel_bulb': IngredientNutrition(
     caloriesPer100g: 31,
@@ -1913,5 +1919,77 @@ const Map<String, IngredientNutrition> ingredientNutritionData = {
     fatPer100g: 2.5,
     fiberPer100g: 10.7,
     defaultServingG: 30,
+  ),
+  'water': IngredientNutrition(
+    caloriesPer100g: 0,
+    proteinPer100g: 0.0,
+    carbsPer100g: 0.0,
+    fatPer100g: 0.0,
+    fiberPer100g: 0.0,
+    defaultServingG: 250,
+  ),
+  'coconut_water': IngredientNutrition(
+    caloriesPer100g: 19,
+    proteinPer100g: 0.7,
+    carbsPer100g: 3.7,
+    fatPer100g: 0.2,
+    fiberPer100g: 1.1,
+    defaultServingG: 250,
+  ),
+  'miso_paste': IngredientNutrition(
+    caloriesPer100g: 198,
+    proteinPer100g: 12.8,
+    carbsPer100g: 25.4,
+    fatPer100g: 6.0,
+    fiberPer100g: 5.4,
+    defaultServingG: 15,
+  ),
+  'grape_leaves': IngredientNutrition(
+    caloriesPer100g: 69,
+    proteinPer100g: 5.6,
+    carbsPer100g: 11.0,
+    fatPer100g: 2.1,
+    fiberPer100g: 11.0,
+    defaultServingG: 50,
+  ),
+  'pecorino': IngredientNutrition(
+    caloriesPer100g: 387,
+    proteinPer100g: 32.0,
+    carbsPer100g: 3.6,
+    fatPer100g: 26.9,
+    fiberPer100g: 0.0,
+    defaultServingG: 20,
+  ),
+  'granola': IngredientNutrition(
+    caloriesPer100g: 471,
+    proteinPer100g: 10.0,
+    carbsPer100g: 64.0,
+    fatPer100g: 20.0,
+    fiberPer100g: 7.0,
+    defaultServingG: 40,
+  ),
+  'dried_apricot': IngredientNutrition(
+    caloriesPer100g: 241,
+    proteinPer100g: 3.4,
+    carbsPer100g: 62.6,
+    fatPer100g: 0.5,
+    fiberPer100g: 7.3,
+    defaultServingG: 30,
+  ),
+  'raisins': IngredientNutrition(
+    caloriesPer100g: 299,
+    proteinPer100g: 3.1,
+    carbsPer100g: 79.2,
+    fatPer100g: 0.5,
+    fiberPer100g: 3.7,
+    defaultServingG: 30,
+  ),
+  'simit': IngredientNutrition(
+    caloriesPer100g: 330,
+    proteinPer100g: 9.5,
+    carbsPer100g: 60.0,
+    fatPer100g: 5.5,
+    fiberPer100g: 3.0,
+    defaultServingG: 100,
   ),
 };

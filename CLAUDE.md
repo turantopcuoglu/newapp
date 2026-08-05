@@ -70,6 +70,12 @@ Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
 
 ## Veri kuralları (tarif eklerken/düzenlerken)
 
+- **Tarif içeriğinin kaynağı `docs/tarif-duzeltme-raporu.md`.** 144 tarifin
+  adı, açıklaması, malzemesi, miktarı, hazırlanışı, mutfağı ve alerjeni oradan
+  gelir; `assets/recipes/*.json` `tool/recipe_import/` ile üretilir (sıra ve
+  tuzaklar: `tool/recipe_import/README.md`). Tarif metnini elle düzenlemen
+  gerekiyorsa raporu da güncelle, yoksa bir sonraki içe aktarma değişikliği
+  siler.
 - Tarif kaynağı YALNIZCA `assets/recipes/*.json`; Dart koduna tarif gömme.
 - **Kalori/makro elle yazılmaz**: `quantities` (porsiyon başına miktar) doldurulur,
   `dart run tool/data_report.dart --fix-macros` makroları üretir. Test,
@@ -98,8 +104,11 @@ Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
   Yogurt"). **"Yunan yoğurdu" / "Greek yogurt" hiçbir yerde geçmez** — ayrı
   bir süzme/Greek yoğurt girdisi de yoktur. Laktozsuz tariflerde biçim
   "laktozsuz yoğurt" / "lactose-free Turkish yogurt" olur.
-- Nutrition tablosunda tahıl/bakliyat değerleri pişmiş bazdadır
-  (rice/pasta/lentil), yulaf/bulgur/un kuru bazdadır — miktarları buna göre yaz.
+- **Nutrition tablosu baz ayrımı:** pirinç, makarna, erişte, kuskus, kinoa,
+  arpa, bulgur, mercimek, bakla, yulaf ve un **kuru**; nohut, kuru fasulye,
+  siyah fasulye ve barbunya **pişmiş (haşlanmış/süzülmüş)** bazdadır.
+  Miktarları buna göre yaz — karıştırırsan kalori üçe katlanır ya da üçte
+  birine düşer.
 
 ## Test politikası
 

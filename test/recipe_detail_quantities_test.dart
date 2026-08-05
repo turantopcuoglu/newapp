@@ -53,15 +53,15 @@ void main() {
       );
 
   testWidgets('ingredient amounts are shown, not just names', (tester) async {
-    // b001: 40 g oats, 200 ml milk, 1 tablespoon honey
+    // b001: 40 g oats, 200 ml milk, 1 teaspoon cinnamon
     final recipe = recipes.firstWhere((r) => r.id == 'b001');
     await tester.pumpWidget(host(recipe, const Locale('tr')));
     await tester.pumpAndSettle();
 
     expect(find.text('40 g'), findsOneWidget);
     expect(find.text('200 ml'), findsOneWidget);
-    // Turkish short unit for tablespoon
-    expect(find.text('1 yk'), findsOneWidget);
+    // Turkish short unit for teaspoon
+    expect(find.text('1 çk'), findsOneWidget);
   });
 
   testWidgets('units follow the app locale', (tester) async {
@@ -69,7 +69,7 @@ void main() {
     await tester.pumpWidget(host(recipe, const Locale('en')));
     await tester.pumpAndSettle();
 
-    expect(find.text('1 tbsp'), findsOneWidget);
+    expect(find.text('1 tsp'), findsOneWidget);
     expect(find.text('40 g'), findsOneWidget);
   });
 

@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-08-04 · Dal: `claude/recipe-save-ui-fixes-629z7x`
+> Son güncelleme: 2026-08-05 · Dal: `claude/pdf-recipe-list-toc-96vbm1`
 
 ---
 
@@ -34,21 +34,24 @@ Notlar:
 | Ölçüm | Değer |
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
-| Malzeme kataloğu | 232, **hepsinde** besin verisi var |
+| Tarif içeriği | `docs/tarif-duzeltme-raporu.md`'den içe aktarıldı (2026-08-05) |
+| Malzeme kataloğu | 241, **hepsinde** besin verisi var |
 | Test | **119 test, tümü geçiyor** (16 dosya) |
 | `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
-| `data_report --strict` | **0 hata**, 0 kalori sapması |
-| Ortalama adım/tarif | 7.8 |
+| `data_report --strict` | **1 hata** (s020/s036 kopyası, raporda da öyle), 0 kalori sapması |
+| Ortalama adım/tarif | 5.6 (rapor 4 yoğun adım veriyor, içe aktarıcı cümleden bölüyor) |
 
-**Mutfak dağılımı:** turkish 42 · american 29 · international 24 ·
-mediterranean 19 · middleEastern 13 · italian 11 · asian 11 · mexican 9
+**Mutfak dağılımı:** international 59 · turkish 44 · american 34 ·
+mediterranean 16 · middleEastern 12 · italian 11 · asian 10 · mexican 8
+(rapor birçok tarifi "… Esintili Füzyon" diye etiketliyor; bunlar hem kendi
+mutfağında hem Dünya & Füzyon'da görünüyor.)
 
-**Sağlık kategorisi kapsaması:** anemi 113 · insülin direnci 98 · B12 92 ·
-PCOS 90 · glutensiz 88 · laktozsuz 85 · magnezyum 79 · demir 71 · regl 55
+**Sağlık kategorisi kapsaması:** insülin direnci 119 · anemi 118 · PCOS 92 ·
+B12 91 · laktozsuz 82 · regl 81 · magnezyum 79 · glutensiz 77 · demir 73
 
-**Check-in kapsaması:** noSpecificIssue 96 · lowEnergy 65 · postWorkout 52 ·
-bloated 46 · cantFocus 44 · cravingSweets 44 · pms 38 ·
-**periodFatigue 12 · periodCramps 7** ← en zayıf halka
+**Check-in kapsaması:** noSpecificIssue 96 · postWorkout 68 · lowEnergy 65 ·
+pms 57 · bloated 46 · cantFocus 44 · periodFatigue 33 · periodCramps 30 ·
+cravingSweets 29 (regl etiketleri artık hedefin üstünde)
 
 ---
 
@@ -114,12 +117,23 @@ Kronolojik değil, konu bazlı. Detay için `git log` (28 commit).
 - **Günün önerileri araması** (2026-08-04): tarif adı, açıklaması *ve*
   malzeme adına göre arama.
 
+**144 tarifin düzeltilmiş sürümü içe aktarıldı (2026-08-05)** — kullanıcı
+`docs/tarif-duzeltme-raporu.md` ile bütün tariflerin düzeltilmiş hâlini verdi;
+ad, açıklama, malzeme, miktar, hazırlanış, mutfak ve alerjen artık oradan
+geliyor (`tool/recipe_import/`). Bu sırada çıkan kök nedenler:
+- **Kuru/pişmiş baz karışıklığı**: rapor tahılları kuru gramla veriyor, besin
+  tablosu pişmiş bazdaydı. Tablo hizalandı, kalori sapması 37 tariften 0'a indi.
+- Katalog 232 → 241: su, miso, asma yaprağı, pecorino, granola, hindistancevizi
+  suyu, kuru kayısı, kuru üzüm, simit eklendi (hiçbiri "yakınıyla" değiştirilmedi).
+- Besin seviyeleri (`proteinLevel`/`fiberLevel`/`carbType`) artık makrolardan
+  türetiliyor; eskiden elle yazılmıştı ve hiçbir kuralla tutarlı değildi.
+
 **Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
 tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**
 (içindekiler) + PDF yer imleri, sonra öğün türüne göre her tarif (künye,
 makro şeridi, miktarlı malzemeler, numaralı adımlar, alerjenler). Metin
 kaynağı JSON + Dart sözlükleri; PDF'e elle içerik yazılmıyor. Çıktı:
-`docs/NutriGuide-Tarif-Kitabi.pdf` (80 sayfa). Türkçe karakterler için
+`docs/NutriGuide-Tarif-Kitabi.pdf` (77 sayfa). Türkçe karakterler için
 DejaVu fontu gerekiyor, `--locale en` ile İngilizcesi üretilir.
 
 **İçerik denetimi (2026-08-05)** — kullanıcı mantı ve tahin-pekmez hatalarını

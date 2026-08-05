@@ -106,7 +106,7 @@ void main() {
     test('the salsa in Cips ve Sos has ingredients behind it', () {
       final recipe = byId('s028');
       expect(recipe.ingredientIds,
-          containsAll(['tomato', 'onion', 'parsley', 'lemon', 'salt']));
+          containsAll(['tomato', 'onion', 'coriander', 'lime', 'salt']));
     });
 
     test('nothing is listed that the trail mix never uses', () {

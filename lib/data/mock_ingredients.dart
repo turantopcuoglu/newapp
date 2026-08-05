@@ -1419,4 +1419,58 @@ const List<Ingredient> mockIngredients = [
     category: IngredientCategory.other,
     allergenTags: [],
   ),
+  Ingredient(
+    id: 'water',
+    name: {'en': 'Water', 'tr': 'Su'},
+    category: IngredientCategory.other,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'coconut_water',
+    name: {'en': 'Coconut Water', 'tr': 'Hindistancevizi Suyu'},
+    category: IngredientCategory.beverage,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'miso_paste',
+    name: {'en': 'Miso Paste', 'tr': 'Miso'},
+    category: IngredientCategory.condiment,
+    allergenTags: ['soy'],
+  ),
+  Ingredient(
+    id: 'grape_leaves',
+    name: {'en': 'Grape Leaves', 'tr': 'Asma Yaprağı'},
+    category: IngredientCategory.vegetable,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'pecorino',
+    name: {'en': 'Pecorino Romano', 'tr': 'Pecorino'},
+    category: IngredientCategory.dairy,
+    allergenTags: ['dairy'],
+  ),
+  Ingredient(
+    id: 'granola',
+    name: {'en': 'Granola', 'tr': 'Granola'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten'],
+  ),
+  Ingredient(
+    id: 'dried_apricot',
+    name: {'en': 'Dried Apricot', 'tr': 'Kuru Kayısı'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'raisins',
+    name: {'en': 'Raisins', 'tr': 'Kuru Üzüm'},
+    category: IngredientCategory.fruit,
+    allergenTags: [],
+  ),
+  Ingredient(
+    id: 'simit',
+    name: {'en': 'Simit', 'tr': 'Simit'},
+    category: IngredientCategory.grain,
+    allergenTags: ['gluten', 'sesame'],
+  ),
 ];

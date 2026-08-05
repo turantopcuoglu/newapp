@@ -31,6 +31,10 @@ import 'package:nutri_guide/services/special_category_matcher.dart';
 /// read as the same dish to a user, even when the names differ.
 const double nearDuplicateThreshold = 0.70;
 
+/// Malzemeleri örtüşen iki tarifin *yöntemi* de bu kadar örtüşüyorsa gerçek
+/// kopyadır; altındaysa aynı malzemelerden başka yemek yapılıyor demektir.
+const double nearDuplicateMethodThreshold = 0.50;
+
 /// Seasonings, fats and sweeteners appear in most recipes, so counting them
 /// makes unrelated dishes look alike (salt alone is in half the library).
 /// Similarity is judged on what actually defines the dish.
@@ -43,12 +47,30 @@ const Set<String> commonBaseIngredients = {
   'garlic_powder', 'onion_powder', 'vanilla',
   'olive_oil', 'sunflower_oil', 'canola_oil', 'coconut_oil', 'sesame_oil',
   'avocado_oil', 'grape_seed_oil', 'butter', 'ghee',
+  'water',
 };
+
+/// İki tarifin hazırlanış adımlarındaki kelime örtüşmesi (Jaccard).
+double _methodOverlap(Recipe a, Recipe b) {
+  Set<String> words(Recipe r) => (r.steps['tr'] ?? const [])
+      .expand((s) => s.toLowerCase().split(RegExp(r'[^a-zçğıöşü0-9]+')))
+      .where((w) => w.length > 3)
+      .toSet();
+  final wa = words(a);
+  final wb = words(b);
+  if (wa.isEmpty || wb.isEmpty) return 0;
+  return wa.intersection(wb).length / wa.union(wb).length;
+}
 
 /// Minimum steps to be cookable. Snacks are legitimately simpler than a
 /// main course, so padding them to a main's length would only add filler.
-int minStepsFor(MealType mealType) =>
-    mealType == MealType.snack ? 4 : 6;
+///
+/// The corrected recipe corpus writes each method as a few dense steps; the
+/// importer re-splits them at sentence boundaries, which lands most recipes
+/// at 4-8. Four is the floor for "this is a method, not a one-liner" —
+/// padding beyond that would mean inventing text the recipe source does not
+/// have.
+int minStepsFor(MealType mealType) => 4;
 
 /// Below this, the dish is likely under-specified.
 const int minIngredients = 4;
@@ -318,9 +340,20 @@ void main(List<String> args) {
           sa.intersection(sb).length / sa.union(sb).length;
       if (overlap >= nearDuplicateThreshold) {
         final pct = (overlap * 100).round();
-        errors.add('near-duplicate ($pct% same ingredients): '
+        // Aynı malzemeleri paylaşan iki tarif kopya olmak zorunda değil:
+        // menemen ile şakşuka, karnıyarık ile musakka aynı malzemelerden
+        // başka yemekler yapar. Kopyayı yöntem ele verir — adımlar da
+        // örtüşüyorsa hata, örtüşmüyorsa insanın bakması için uyarı.
+        final methodOverlap = _methodOverlap(a, b);
+        final line = 'near-duplicate ($pct% same ingredients, '
+            '${(methodOverlap * 100).round()}% same method): '
             '${a.id} "${a.name['tr'] ?? a.id}" vs '
-            '${b.id} "${b.name['tr'] ?? b.id}"');
+            '${b.id} "${b.name['tr'] ?? b.id}"';
+        if (methodOverlap >= nearDuplicateMethodThreshold) {
+          errors.add(line);
+        } else {
+          warnings.add(line);
+        }
       }
     }
   }
