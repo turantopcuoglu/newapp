@@ -21,6 +21,7 @@ import build_recipes as B  # noqa: E402
 from ing_map_pack import (COOKED_TO_DRY_FACTORS, MAP as PACK_MAP,  # noqa: E402
                           NEW_INGREDIENTS as PACK_NEW)
 from parse_pack import parse  # noqa: E402
+from step_rewrites import rewrite as rewrite_steps  # noqa: E402
 
 ROOT = B.ROOT
 MEALS = {'B': 'breakfast', 'L': 'lunch', 'D': 'dinner', 'S': 'snack'}
@@ -92,6 +93,13 @@ def build_recipe(rep: dict) -> dict:
     declared = B.allergens_from_text(
         f"{rep['allergens_tr']} {rep['allergens_en']}")
 
+    steps_tr = [B.fix_tr(s) for s in B.split_steps(rep['steps_tr'])]
+    steps_en = [B.fix_en(s) for s in B.split_steps(rep['steps_en'])]
+    steps_tr, steps_en = rewrite_steps(
+        code, steps_tr, steps_en,
+        f"{rep['name_tr']} {rep['desc_tr']} {' '.join(steps_tr)}",
+        f"{rep['name_en']} {rep['desc_en']} {' '.join(steps_en)}")
+
     macros = rep['macros'] or {}
     return {
         'id': code.lower(),
@@ -111,8 +119,7 @@ def build_recipe(rep: dict) -> dict:
         'fiberLevel': 'medium',
         'carbType': 'mixed',
         'macros': {k: int(round(v)) for k, v in macros.items()},
-        'steps': {'en': [B.fix_en(s) for s in B.split_steps(rep['steps_en'])],
-                  'tr': [B.fix_tr(s) for s in B.split_steps(rep['steps_tr'])]},
+        'steps': {'en': steps_en, 'tr': steps_tr},
         'imagePath': None,
         'isUserCreated': False,
         'quantities': quantities,

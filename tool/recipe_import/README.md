@@ -34,6 +34,7 @@ türetir, o yüzden `--fix-macros`'tan sonra çalışmalı.
 | `parse_pack.py` | 220 yeni tarif belgesini ayrıştırır (TR\|EN malzeme tablosu, TR+EN adım satırları). |
 | `ing_map_pack.py` | Yeni paketin malzeme adları + katalogda olmayanların besin verisi. Pişmiş→kuru çevrim katsayıları da burada. |
 | `build_pack.py` | Yeni tarifleri JSON'a **ekler** (mevcutlara dokunmaz), kopyaları alır dışarıda bırakır. |
+| `step_rewrites.py` | Adımları gündelik dile çeker: iç sıcaklık ölçütlerini gözle görülür işaretle değiştirir, pişirme adımı eksik 8 tarifi baştan yazar. |
 | `apply_tags.py` | Yeni makrolardan `proteinLevel`/`fiberLevel`/`carbType` türetir, check-in etiketlerini gözden geçirir. |
 
 ## Bilinmesi gerekenler
@@ -54,3 +55,7 @@ türetir, o yüzden `--fix-macros`'tan sonra çalışmalı.
   baharatını taşıyor. Bu yüzden tarif sayısı 143.
 - **Adımlar:** rapor her tarifi 4 yoğun adımda topluyor; içe aktarıcı bunları
   cümle sınırından bölerek 4-8 adıma çıkarır. Metin birebir korunur.
+- **Sıcaklık dili:** kaynaklar pişmeyi "merkez sıcaklığı 74°C'ye ulaşana
+  kadar" diye yazıyor. `step_rewrites.py` bunu ete göre gözle görülür işarete
+  çevirir. Deseni değiştirirken `_T` içindeki sayı sınırına dokunma: onsuz
+  "180°C" içindeki "80°C" yakalanıp fırın sıcaklığı bozuluyor.

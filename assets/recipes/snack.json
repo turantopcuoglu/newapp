@@ -886,14 +886,14 @@
         "Add the banana, egg and cinnamon and blend to a smooth batter; rest for 5 minutes.",
         "Heat a non-stick pan over medium-low heat and coat it thinly with the oil.",
         "Spoon in small portions of batter.",
-        "Flip when the bottoms set; cook until both sides brown, no wet batter remains in the centre and the egg mixture reaches about 71°C."
+        "Flip when the bottoms set; cook until both sides brown, no wet batter remains in the centre and the egg mixture reaches about until the centre is set."
       ],
       "tr": [
         "Yulafı ince un kıvamına gelene kadar çekin.",
         "Muz, yumurta ve tarçını ekleyip pürüzsüz hamur yapın; 5 dakika dinlendirin.",
         "Yapışmaz tavayı orta-kısık ateşte ısıtıp yağın ince bir tabakasını sürün.",
         "Hamuru küçük kaşıklarla dökün.",
-        "Altı tutunca çevirin; iki yüzü kızarıp ortasında ıslak hamur kalmayana ve yumurtalı karışım yaklaşık 71°C'ye ulaşana kadar pişirin."
+        "Altı tutunca çevirin; iki yüzü kızarıp ortasında ıslak hamur kalmayana ve yumurtalı karışım ortası oynamayana kadar pişirin."
       ]
     },
     "imagePath": null,
@@ -4212,15 +4212,21 @@
     },
     "steps": {
       "en": [
-        "Confirm the chicken previously reached 74°C and was refrigerated; cut into thin strips.",
+        "Put the chicken breast in a small pan and cover it with cold water.",
+        "Bring it close to a boil, lower the heat, cover and cook for 10-12 minutes, until the thickest part is white all the way through.",
+        "Lift it out, rest for 5 minutes, chill for 20 minutes in the fridge and cut into thin strips.",
         "Spread the hummus over the tortilla and add the lemon juice.",
-        "Place the chicken and finely cut vegetables in the centre.",
-        "Fold in the sides, roll tightly, cut in half and serve immediately."
+        "Cut the carrot and cucumber into thin strips and shred the lettuce.",
+        "Place the chicken and vegetables down the centre of the tortilla.",
+        "Fold in the sides, roll it tightly, cut in half and serve immediately."
       ],
       "tr": [
-        "Tavuğun önceden 74°C'ye ulaşmış ve soğukta saklanmış olduğundan emin olun; ince şerit kesin.",
+        "Tavuk göğsünü küçük bir tencereye koyup üzerini geçecek kadar soğuk su ekleyin.",
+        "Suyu kaynamaya yakın ısıtıp ateşi kısın; kapağı kapatarak 10-12 dakika, kestiğinizde içi tamamen beyaz olana kadar pişirin.",
+        "Tavuğu sudan alıp 5 dakika dinlendirin, buzdolabında 20 dakika soğutun ve ince şerit doğrayın.",
         "Tortillaya humusu sürüp limon suyu gezdirin.",
-        "Tavuk ve ince doğranmış sebzeleri ortasına yerleştirin.",
+        "Havuç ve salatalığı ince şerit doğrayın, marulu kıyın.",
+        "Tavuk ve sebzeleri tortillanın ortasına yerleştirin.",
         "Yanları içe katlayıp sıkıca sarın; ikiye kesip hemen servis edin."
       ]
     },
@@ -5101,12 +5107,12 @@
     },
     "steps": {
       "en": [
-        "Finely shred chicken that previously reached 74°C.",
+        "Finely shred chicken that is already cooked.",
         "Spread the chicken, corn and kashar over half the tortilla and fold.",
         "Cook in a dry pan for 2-3 minutes per side until the cheese melts; cut into four wedges and serve with salsa."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış tavuğu ince didikleyin.",
+        "Önceden iyice pişmiş tavuğu ince didikleyin.",
         "Tortillanın yarısına tavuk, mısır ve kaşarı yayın; katlayın.",
         "Kuru tavada iki yüzünü peynir eriyene kadar 2-3'er dakika pişirip dört dilime kesin; salsayla servis edin."
       ]
@@ -5371,14 +5377,22 @@
     },
     "steps": {
       "en": [
-        "Dice chicken that previously reached 74°C.",
-        "Mix the Turkish yogurt, mashed anchovy and lemon and combine with the chicken.",
-        "Divide among the lettuce leaves, add Parmesan and croutons and serve immediately."
+        "Put the chicken breast in a small pan and cover it with cold water.",
+        "Bring it close to a boil, lower the heat, cover and cook for 10-12 minutes, until the thickest part is white all the way through.",
+        "Rest it for 5 minutes, chill for 20 minutes in the fridge, then cut into small cubes.",
+        "Whisk the Turkish yogurt, the anchovy mashed with a fork and the lemon juice into a dressing.",
+        "Toss the chicken through the dressing.",
+        "Wash and dry the lettuce leaves and divide the chicken among them.",
+        "Scatter over the grated Parmesan and croutons and serve immediately."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış tavuğu küçük doğrayın.",
-        "Yoğurt, ezilmiş ançüez ve limonu karıştırıp tavukla birleştirin.",
-        "Marul yapraklarına paylaştırıp Parmesan ve krutonla hemen servis edin."
+        "Tavuk göğsünü küçük bir tencereye koyup üzerini geçecek kadar soğuk su ekleyin.",
+        "Kaynamaya yakın ısıtıp ateşi kısın; kapağı kapatarak 10-12 dakika, kestiğinizde içi tamamen beyaz olana kadar pişirin.",
+        "Tavuğu 5 dakika dinlendirip buzdolabında 20 dakika soğutun, sonra küçük küpler hâlinde doğrayın.",
+        "Yoğurt, çatalla ezilmiş ançüez ve limon suyunu çırpıp sosu hazırlayın.",
+        "Tavuğu sosla karıştırın.",
+        "Marul yapraklarını yıkayıp kurulayın ve tavuğu yapraklara paylaştırın.",
+        "Üzerine rendelenmiş Parmesan ve kruton serpip hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -6234,13 +6248,19 @@
     },
     "steps": {
       "en": [
-        "Spread the crispbread pieces with cream cheese.",
-        "Divide the salmon that previously reached 63°C and the cucumber among them.",
+        "Cook the salmon in a non-stick pan over medium heat for 3-4 minutes a side, until it flakes easily when pressed with a fork.",
+        "Chill it for 15 minutes in the fridge and break it into small pieces.",
+        "Spread cream cheese over the rye crackers.",
+        "Slice the cucumber thinly.",
+        "Divide the salmon and cucumber among the crackers.",
         "Finish with dill and serve immediately."
       ],
       "tr": [
-        "Galeta parçalarına krem peynir sürün.",
-        "Önceden 63°C'ye ulaşmış somonu ve salatalığı paylaştırın.",
+        "Somonu yapışmaz tavada orta ateşte her yüzü 3-4 dakika, çatalla bastırınca kolayca pul pul ayrılana kadar pişirin.",
+        "Balığı buzdolabında 15 dakika soğutup küçük parçalara ayırın.",
+        "Çavdar krakerlerin üzerine krem peynir sürün.",
+        "Salatalığı ince dilimleyin.",
+        "Her krakere somon ve salatalık paylaştırın.",
         "Dereotuyla tamamlayıp hemen servis edin."
       ]
     },
@@ -6400,14 +6420,22 @@
     },
     "steps": {
       "en": [
-        "Cut chicken that previously reached 74°C into bite-sized pieces.",
-        "Thread the chicken, mozzarella and tomatoes onto six short skewers.",
-        "Loosen the pesto with a little water, drizzle over and serve chilled with basil."
+        "Put the chicken breast in a small pan and cover it with cold water.",
+        "Bring it close to a boil, lower the heat, cover and cook for 10-12 minutes, until the thickest part is white all the way through.",
+        "Rest it for 5 minutes, chill for 20 minutes in the fridge and cut into bite-sized pieces.",
+        "Cut the mozzarella and tomato to the same size as the chicken.",
+        "Thread the chicken, mozzarella and tomato onto six short skewers.",
+        "Loosen the pesto with a teaspoon of water and drizzle it over the skewers.",
+        "Garnish with basil leaves and serve chilled."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış tavuğu lokmalık kesin.",
-        "Tavuk, mozzarella ve domatesi altı kısa şişe dizin.",
-        "Pestoyu çok az suyla inceltip gezdirin; fesleğenle soğuk servis edin."
+        "Tavuk göğsünü küçük bir tencereye koyup üzerini geçecek kadar soğuk su ekleyin.",
+        "Kaynamaya yakın ısıtıp ateşi kısın; kapağı kapatarak 10-12 dakika, kestiğinizde içi tamamen beyaz olana kadar pişirin.",
+        "Tavuğu 5 dakika dinlendirip buzdolabında 20 dakika soğutun ve lokmalık kesin.",
+        "Mozzarellayı ve domatesi tavukla aynı boyda doğrayın.",
+        "Tavuk, mozzarella ve domatesi sırayla altı kısa şişe dizin.",
+        "Pestoyu bir tatlı kaşığı suyla inceltip şişlerin üzerine gezdirin.",
+        "Fesleğen yapraklarıyla süsleyip soğuk servis edin."
       ]
     },
     "imagePath": null,
@@ -6985,12 +7013,12 @@
       "en": [
         "Heat the sucuk through in a small pan and drain excess fat.",
         "Mix the eggs, sucuk, kashar and diced vegetables and divide among four moulds.",
-        "Bake at 180°C for 15-18 minutes until the centres reach 71°C."
+        "Bake at 180°C for 15-18 minutes until the centre is set."
       ],
       "tr": [
         "Sucuğu küçük tavada tamamen ısıtıp fazla yağını süzün.",
         "Yumurta, sucuk, kaşar ve küçük doğranmış sebzeleri karıştırıp dört kalıba paylaştırın.",
-        "180°C'de merkezleri 71°C'ye ulaşana kadar 15-18 dakika pişirin."
+        "180°C'de ortası oynamayana kadar 15-18 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -7223,14 +7251,20 @@
     },
     "steps": {
       "en": [
-        "Dice chicken that previously reached 74°C.",
-        "Mash the avocado with lemon and spread over the crackers.",
-        "Add the chicken and tomato and serve immediately."
+        "Put the chicken breast in a small pan and cover it with cold water.",
+        "Bring it close to a boil, lower the heat, cover and cook for 10-12 minutes, until the thickest part is white all the way through.",
+        "Rest it for 5 minutes, chill for 20 minutes in the fridge, then dice it small.",
+        "Mash the avocado with the lemon juice and spread it over the crackers.",
+        "Cut the tomato into small cubes.",
+        "Divide the chicken and tomato among the crackers and serve immediately."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış tavuğu küçük doğrayın.",
-        "Avokadoyu limonla ezip krakerlere yayın.",
-        "Tavuk ve domatesi ekleyip hemen servis edin."
+        "Tavuk göğsünü küçük bir tencereye koyup üzerini geçecek kadar soğuk su ekleyin.",
+        "Kaynamaya yakın ısıtıp ateşi kısın; kapağı kapatarak 10-12 dakika, kestiğinizde içi tamamen beyaz olana kadar pişirin.",
+        "Tavuğu 5 dakika dinlendirip buzdolabında 20 dakika soğutun, sonra küçük doğrayın.",
+        "Avokadoyu limon suyuyla ezip krakerlere yayın.",
+        "Domatesi küçük küpler hâlinde doğrayın.",
+        "Tavuk ve domatesi krakerlere paylaştırıp hemen servis edin."
       ]
     },
     "imagePath": null,

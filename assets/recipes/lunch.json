@@ -47,7 +47,7 @@
         "Pat the chicken dry and make it an even thickness.",
         "Coat with one-third of the oil, salt and pepper.",
         "Heat a grill pan over medium-high heat.",
-        "Cook on both sides for about 8-12 minutes total, until the centre reaches 74°C.",
+        "Cook on both sides for about 8-12 minutes total until the thickest part is white all the way through.",
         "Rest the chicken on a clean plate for 5 minutes.",
         "Prepare the lettuce, cherry tomatoes and cucumber.",
         "Whisk the remaining oil with the lemon juice.",
@@ -57,7 +57,7 @@
         "Tavuğu kâğıt havluyla kurulayın; eşit kalınlığa getirin.",
         "Yağın üçte biri, tuz ve karabiberle kaplayın.",
         "Izgara tavayı orta-yüksek ateşte ısıtın.",
-        "Tavuğu iki yüzünü pişirerek merkez sıcaklığı 74°C'ye ulaşana kadar toplam yaklaşık 8-12 dakika pişirin.",
+        "Tavuğu iki yüzünü pişirerek en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar toplam yaklaşık 8-12 dakika pişirin.",
         "Tavuğu temiz bir tabakta 5 dakika dinlendirin.",
         "Marul, çeri domates ve salatalığı hazırlayın.",
         "Kalan yağ ile limon suyunu çırpın.",
@@ -384,7 +384,7 @@
       "en": [
         "Rinse and cook the rice according to its package ratio; rest for 5 minutes.",
         "Season the salmon with garlic, pepper and half the sesame oil.",
-        "Bake at 200°C for about 10-15 minutes, until the centre reaches 63°C.",
+        "Bake at 200°C for about 10-15 minutes until it flakes easily when pressed with a fork.",
         "Steam the broccoli for 4-5 minutes so it remains crisp-tender.",
         "Mix the soy sauce with the remaining sesame oil and lemon juice.",
         "Arrange the rice, broccoli and salmon in a bowl, add the sauce and omit extra salt."
@@ -392,7 +392,7 @@
       "tr": [
         "Pirinci yıkayıp paket oranına göre pişirin; 5 dakika dinlendirin.",
         "Somonu sarımsak, karabiber ve susam yağının yarısıyla tatlandırın.",
-        "200°C fırında merkez sıcaklığı 63°C'ye ulaşana kadar yaklaşık 10-15 dakika pişirin.",
+        "200°C fırında çatalla bastırınca kolayca pul pul ayrılana kadar yaklaşık 10-15 dakika pişirin.",
         "Brokoliyi 4-5 dakika buharda, diri kalacak şekilde pişirin.",
         "Soya sosunu kalan susam yağı ve limon suyuyla karıştırın.",
         "Pirinç, brokoli ve somonu kaseye alıp sosu gezdirin; ek tuz kullanmayın."
@@ -486,14 +486,14 @@
     "steps": {
       "en": [
         "Cut the chicken into strips and mix with the oil, spices, salt and pepper.",
-        "Cook in a hot pan in a single layer for 7-9 minutes, until the centre reaches 74°C.",
+        "Cook in a hot pan in a single layer for 7-9 minutes until the thickest part is white all the way through.",
         "Prepare the tomato, lettuce and onion.",
         "Warm the flatbread briefly in a dry pan.",
         "Spread the Turkish yogurt over the flatbread, add the chicken and vegetables, fold in the ends and roll tightly."
       ],
       "tr": [
         "Tavuğu şerit doğrayın; yağ, baharat, tuz ve karabiberle karıştırın.",
-        "Tavuğu sıcak tavada tek sıra hâlinde, merkez sıcaklığı 74°C'ye ulaşana kadar 7-9 dakika pişirin.",
+        "Tavuğu sıcak tavada tek sıra hâlinde en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar 7-9 dakika pişirin.",
         "Domates, marul ve soğanı hazırlayın.",
         "Lavaşı kuru tavada kısa süre ısıtın.",
         "Yoğurdu lavaşa yayın; tavuk ve sebzeleri ekleyip uçlarını kapatarak sıkıca sarın."
@@ -605,7 +605,7 @@
         "Preheat the oven to 200°C.",
         "Slice the eggplant and potato, coat with half the oil and bake in a single layer for 20-25 minutes.",
         "Soften the onion and pepper in the remaining oil.",
-        "Add the beef and cook to 71°C; add the garlic, tomato paste, tomato and seasonings and simmer for 8-10 minutes.",
+        "Add the beef and cook until no pink remains; add the garlic, tomato paste, tomato and seasonings and simmer for 8-10 minutes.",
         "Layer the eggplant and potato in a baking dish, spread over the meat sauce and bake at 180°C for 20 minutes.",
         "Rest for 5 minutes and serve with Turkish yogurt."
       ],
@@ -613,7 +613,7 @@
         "Fırını 200°C'ye ısıtın.",
         "Patlıcanı ve patatesi dilimleyip yağın yarısıyla kaplayın; tek sıra hâlinde 20-25 dakika fırınlayın.",
         "Kalan yağda soğan ve biberi yumuşatın.",
-        "Kıymayı ekleyip 71°C'ye ulaşana kadar pişirin; sarımsak, salça, domates ve baharatları ekleyip 8-10 dakika kaynatın.",
+        "Kıymayı ekleyip içinde pembelik kalmayana kadar pişirin; sarımsak, salça, domates ve baharatları ekleyip 8-10 dakika kaynatın.",
         "Patlıcan ve patatesi fırın kabına dizip kıymalı sosu üzerine yayın.",
         "180°C'de 20 dakika pişirin.",
         "5 dakika dinlendirip yanında yoğurtla servis edin."
@@ -936,7 +936,7 @@
       "en": [
         "Prepare the rice noodles according to the package, drain and set aside so they do not stick.",
         "Heat the sunflower oil in a wok over high heat.",
-        "Cook the shrimp in a single layer for 3-4 minutes total, until opaque and 63°C, then remove.",
+        "Cook the shrimp in a single layer for 3-4 minutes total, until opaque, then remove.",
         "Stir-fry the vegetables and garlic for 3-4 minutes.",
         "Return the shrimp, add the noodles, soy sauce and sesame oil and toss for 1-2 minutes.",
         "Serve immediately without extra salt."
@@ -944,7 +944,7 @@
       "tr": [
         "Pirinç noodle'ı paket talimatına göre yumuşatıp süzün; birbirine yapışmaması için kenara alın.",
         "Ayçiçek yağını wokta yüksek ateşte ısıtın.",
-        "Karidesleri tek sıra hâlinde, içleri opaklaşana ve 63°C'ye ulaşana kadar toplam 3-4 dakika pişirip alın.",
+        "Karidesleri tek sıra hâlinde, içleri opaklaşana kadar toplam 3-4 dakika pişirip alın.",
         "Sebzeleri ve sarımsağı 3-4 dakika soteleyin.",
         "Karides, noodle, soya sosu ve susam yağını ekleyip 1-2 dakika karıştırın.",
         "Ek tuz kullanmadan hemen servis edin."
@@ -1269,7 +1269,7 @@
         "Pat the steak dry and season it.",
         "Heat the remaining oil in a very hot pan and cook the steak on both sides.",
         "Add the butter and garlic and baste briefly.",
-        "When the centre reaches at least 63°C, transfer to a clean plate and rest for at least 3 minutes.",
+        "When it is cooked through, transfer to a clean plate and rest for at least 3 minutes.",
         "Boil the green beans for 4-6 minutes and serve with the steak and sweet potato."
       ],
       "tr": [
@@ -1278,7 +1278,7 @@
         "Bifteği kurutup baharatlayın.",
         "Kalan yağı çok sıcak tavada ısıtın; bifteği iki yüzünü pişirin.",
         "Tereyağı ve sarımsağı ekleyip kısa süre yağla sulayın.",
-        "Bifteğin merkezi en az 63°C'ye ulaştığında temiz tabağa alın ve en az 3 dakika dinlendirin.",
+        "İyice pişince temiz tabağa alın ve en az 3 dakika dinlendirin.",
         "Taze fasulyeyi 4-6 dakika haşlayın; biftek ve tatlı patatesle servis edin."
       ]
     },
@@ -1594,14 +1594,14 @@
         "Put the lamb in a saucepan, add the water and skim off any foam when it begins to boil.",
         "Add the onion, garlic and bay leaf.",
         "Simmer with the lid slightly ajar for 60-90 minutes, until the meat is tender.",
-        "Add the potato and carrot and cook for another 25-30 minutes, ensuring the lamb reaches at least 63°C and is tender.",
+        "Add the potato and carrot and cook for another 25-30 minutes, until the lamb is tender enough to pull apart with a fork.",
         "Season near the end, remove the bay leaf and serve hot with lemon."
       ],
       "tr": [
         "Kuzu etini tencereye alıp suyu ekleyin; kaynama başlayınca yüzeydeki köpüğü alın.",
         "Soğan, sarımsak ve defne yaprağını ekleyin.",
         "Kapağı aralık olarak kısık ateşte et yumuşayana kadar 60-90 dakika pişirin.",
-        "Patates ve havucu ekleyip 25-30 dakika daha pişirin; etin merkezinin en az 63°C'ye ulaşmasını ve dokusunun yumuşamasını sağlayın.",
+        "Patates ve havucu ekleyip 25-30 dakika daha pişirin; eti çatalla kolayca ayrılacak kadar yumuşatın.",
         "Tuz ve karabiberi son bölümde ekleyin; defneyi çıkarıp limonla sıcak servis edin."
       ]
     },
@@ -1819,7 +1819,7 @@
       "en": [
         "Cook the penne in salted water until al dente; reserve 100 ml pasta water and drain.",
         "Soften the onion and garlic in the oil.",
-        "Add the turkey, break up the lumps and cook until the centre reaches 74°C.",
+        "Add the turkey, break up the lumps and cook until the thickest part is white all the way through.",
         "Add the mushrooms and cook for 4-5 minutes until their moisture evaporates.",
         "Add the light cream and seasonings.",
         "Toss in the pasta and add reserved water gradually for consistency.",
@@ -1828,7 +1828,7 @@
       "tr": [
         "Makarnayı tuzlu suda al dente pişirin; 100 ml makarna suyu ayırıp süzün.",
         "Yağda soğan ve sarımsağı yumuşatın.",
-        "Hindi kıymayı ekleyip topaklarını ayırarak merkez sıcaklığı 74°C'ye ulaşana kadar pişirin.",
+        "Hindi kıymayı ekleyip topaklarını ayırarak içinde pembelik kalmayana kadar pişirin.",
         "Mantarı ekleyip suyunu çekene kadar 4-5 dakika pişirin.",
         "Hafif krema ve baharatları ekleyin.",
         "Makarnayı ve kıvam için azar azar makarna suyunu sosa katın.",
@@ -2034,7 +2034,7 @@
         "Toss with the warm potato and thinly sliced onion.",
         "Pat the chop dry and coat with the remaining oil, paprika, salt and pepper.",
         "Grill on both sides.",
-        "Transfer to a clean plate when the centre reaches 63°C and rest for at least 3 minutes.",
+        "Transfer to a clean plate when it is cooked through and rest for at least 3 minutes.",
         "Serve with the warm potato salad."
       ],
       "tr": [
@@ -2043,7 +2043,7 @@
         "Patates ve ince soğanı ılıkken sosla karıştırın.",
         "Pirzolayı kurulayın; kalan yağ, toz biber, tuz ve karabiberle kaplayın.",
         "Kızgın ızgarada iki yüzünü pişirin.",
-        "Merkez sıcaklığı 63°C'ye ulaştığında temiz tabağa alın ve en az 3 dakika dinlendirin.",
+        "İyice pişince temiz tabağa alın ve en az 3 dakika dinlendirin.",
         "Ilık patates salatasıyla servis edin."
       ]
     },
@@ -2141,7 +2141,7 @@
         "Preheat the oven to 180°C and grease a small ovenproof skillet.",
         "Saute the onion, pepper and mushrooms for 5-6 minutes; add the spinach and let it wilt.",
         "Whisk the eggs with the seasoning and half the kashar; pour over the vegetables and add the remaining cheese.",
-        "Bake for about 12-15 minutes, until the centre reaches 71°C and is fully set.",
+        "Bake for about 12-15 minutes, until the centre is fully set.",
         "Rest for 3 minutes before serving."
       ],
       "tr": [
@@ -2150,7 +2150,7 @@
         "Soğan, biber ve mantarı 5-6 dakika soteleyin; ıspanağı ekleyip soldurun.",
         "Yumurtaları baharat ve kaşarın yarısıyla çırpın; sebzelerin üzerine dökün.",
         "Kalan kaşarı serpin.",
-        "Merkezi 71°C'ye ulaşana ve tamamen katılaşana kadar yaklaşık 12-15 dakika fırınlayın; 3 dakika dinlendirip servis edin."
+        "Tamamen katılaşana kadar yaklaşık 12-15 dakika fırınlayın; 3 dakika dinlendirip servis edin."
       ]
     },
     "imagePath": null,
@@ -2354,7 +2354,7 @@
         "Cut the vegetables to a similar size.",
         "Thread chicken and vegetables loosely onto separate skewers; discard marinade that touched raw chicken.",
         "Grill the vegetables until tender.",
-        "Turn the chicken on all sides and cook until the centre reaches 74°C; brush the remaining oil on the vegetables if needed.",
+        "Turn the chicken on all sides and cook until the thickest part is white all the way through; brush the remaining oil on the vegetables if needed.",
         "Rest the chicken skewers on a clean plate for 3 minutes and serve with the vegetables."
       ],
       "tr": [
@@ -2362,7 +2362,7 @@
         "Tavuğu ekleyip buzdolabında 1-4 saat marine edin.",
         "Sebzeleri tavukla benzer boyda doğrayın.",
         "Tavuk ve sebzeleri ayrı şişlere gevşekçe dizin; çiğ tavukla temas eden marinadı atın.",
-        "Kızgın ızgarada sebzeleri yumuşayana, tavuğu ise her tarafını çevirerek merkez sıcaklığı 74°C'ye ulaşana kadar pişirin; gerekirse kalan yağı sebzelere sürün.",
+        "Kızgın ızgarada sebzeleri yumuşayana, tavuğu ise her tarafını çevirerek en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar pişirin; gerekirse kalan yağı sebzelere sürün.",
         "Tavuk şişleri temiz bir tabağa alıp 3 dakika dinlendirin ve sebzelerle servis edin."
       ]
     },
@@ -2594,7 +2594,7 @@
       "en": [
         "Pat the cod dry and season it.",
         "Heat the oil in a pan over medium-high heat.",
-        "Cook on both sides for about 5-7 minutes total, until the centre reaches 63°C; break into large flakes.",
+        "Cook on both sides for about 5-7 minutes total until it flakes easily when pressed with a fork; break into large flakes.",
         "Mash the avocado with the Turkish yogurt, lime juice, garlic and a pinch of salt to make the sauce; shred the cabbage finely.",
         "Warm the tortillas in a dry pan.",
         "Divide the cabbage, fish and avocado sauce between them and serve immediately."
@@ -2602,7 +2602,7 @@
       "tr": [
         "Morinayı kurutup baharatlayın.",
         "Yağı tavada orta-yüksek ateşte ısıtın.",
-        "Balığı iki yüzünü pişirerek merkez sıcaklığı 63°C'ye ulaşana kadar toplam yaklaşık 5-7 dakika pişirin; iri parçalara ayırın.",
+        "Balığı iki yüzünü pişirerek çatalla bastırınca kolayca pul pul ayrılana kadar toplam yaklaşık 5-7 dakika pişirin; iri parçalara ayırın.",
         "Avokado, yoğurt, misket limonu suyu, sarımsak ve bir tutam tuzu ezerek sos yapın; lahanayı ince kıyın.",
         "Tortillaları kuru tavada ısıtın.",
         "Lahana, balık ve avokado sosunu iki tortillaya bölüştürüp hemen servis edin."
@@ -3265,7 +3265,7 @@
         "Thinly slice the onion and toss it with the sumac, parsley and a pinch of salt.",
         "Dust the liver lightly with flour and shake off the excess.",
         "Heat the oil over medium-high heat without letting it smoke.",
-        "Do not crowd the pan; cook in two batches if needed, turning all sides until the centre reaches 75°C.",
+        "Do not crowd the pan; cook in two batches if needed, turning all sides until no pink remains.",
         "Season and serve immediately with the sumac onions."
       ],
       "tr": [
@@ -3273,7 +3273,7 @@
         "Soğanı ince yarım ay doğrayıp sumak, maydanoz ve bir tutam tuzla karıştırın.",
         "Ciğeri una hafifçe bulayıp fazlasını silkeleyin.",
         "Yağı orta-yüksek ateşte, duman çıkarmadan ısıtın.",
-        "Tavayı kalabalıklaştırmadan ciğeri gerekirse iki partide, her tarafını çevirerek merkez sıcaklığı 75°C'ye ulaşana kadar pişirin.",
+        "Tavayı kalabalıklaştırmadan ciğeri gerekirse iki partide, her tarafını çevirerek çatalla bastırınca kolayca pul pul ayrılana kadar pişirin.",
         "Baharatlayıp sumaklı soğanla hemen servis edin."
       ]
     },
@@ -3919,14 +3919,14 @@
     },
     "steps": {
       "en": [
-        "Even the chicken to a uniform thickness without flattening it excessively; grill until the centre reaches 74°C and rest for 5 minutes.",
+        "Even the chicken to a uniform thickness without flattening it excessively; grill until the centre rest for 5 minutes.",
         "Cube the bread and toast it in a dry pan.",
         "Wash and dry the lettuce thoroughly.",
         "Whisk the Turkish yogurt, oil, mashed anchovy, lemon, mustard, garlic and pepper.",
         "Toss the lettuce with the dressing and serve with the sliced chicken, croutons and grated Parmesan."
       ],
       "tr": [
-        "Tavuğu dövmeden eşit kalınlığa getirin; yapışmaz ızgarada merkezi 74°C'ye ulaşana kadar pişirip 5 dakika dinlendirin.",
+        "Tavuğu dövmeden eşit kalınlığa getirin; yapışmaz ızgarada en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar pişirip 5 dakika dinlendirin.",
         "Ekmeği küp doğrayıp kuru tavada çıtırlaştırın.",
         "Marulu yıkayıp tamamen kurutun.",
         "Yoğurt, yağ, ezilmiş ançüez, limon, hardal, sarımsak ve karabiberi çırpın.",
@@ -4034,13 +4034,13 @@
     "steps": {
       "en": [
         "Mix the beef with the cumin, salt, pepper and half the parsley and shape into 5 small meatballs.",
-        "Heat the oil over medium heat and cook the meatballs for 8-10 minutes, turning, until the centres reach 71°C.",
+        "Heat the oil over medium heat and cook the meatballs for 8-10 minutes, turning until no pink remains.",
         "Chop the tomato and cucumber and mix the Turkish yogurt with the remaining parsley.",
         "Add the couscous to a bowl and serve with the vegetables, meatballs and Turkish yogurt sauce."
       ],
       "tr": [
         "Kıyma, kimyon, tuz, karabiber ve maydanozun yarısını yoğurup 5 küçük köfte yapın.",
-        "Yağı tavada orta ateşte ısıtın; köfteleri çevirerek merkezleri 71°C'ye ulaşana kadar 8-10 dakika pişirin.",
+        "Yağı tavada orta ateşte ısıtın; köfteleri çevirerek içinde pembelik kalmayana kadar 8-10 dakika pişirin.",
         "Domates ve salatalığı doğrayın; yoğurdu kalan maydanozla karıştırın.",
         "Kuskusu kaseye alın; sebzeler, köfteler ve yoğurt sosla servis edin."
       ]
@@ -4142,14 +4142,14 @@
     },
     "steps": {
       "en": [
-        "Bake the salmon at 190°C for about 10-12 minutes until the centre reaches 63°C; flake coarsely.",
+        "Bake the salmon at 190°C for about 10-12 minutes until it flakes easily when pressed with a fork; flake coarsely.",
         "Boil the egg until the yolk and white are firm.",
         "Boil the green beans for 5-7 minutes until tender-crisp and cool.",
         "Whisk the oil, lemon, mustard and pepper.",
         "Arrange the potato, beans, tomato and olives; add the salmon and egg and serve with the dressing."
       ],
       "tr": [
-        "Somonu 190°C fırında merkezi 63°C'ye ulaşana kadar yaklaşık 10-12 dakika pişirin; iri parçalara ayırın.",
+        "Somonu 190°C fırında çatalla bastırınca kolayca pul pul ayrılana kadar yaklaşık 10-12 dakika pişirin; iri parçalara ayırın.",
         "Yumurtayı sarısı ve beyazı katılaşana kadar haşlayın.",
         "Taze fasulyeyi 5-7 dakika diri-yumuşak haşlayıp soğutun.",
         "Yağ, limon, hardal ve karabiberi çırpın.",
@@ -4452,13 +4452,13 @@
       "en": [
         "Heat the oil and cook the diced chicken and onion for 4 minutes.",
         "Add the tomato, stock and spices; bring to the boil and cook for 8 minutes.",
-        "Add the beans and corn and simmer for another 5-7 minutes until the chicken reaches 74°C.",
+        "Add the beans and corn and simmer for another 5-7 minutes until the thickest part is white all the way through.",
         "Cut the tortilla into strips, toast in a dry pan and add over the soup."
       ],
       "tr": [
         "Yağı tencerede ısıtıp küçük doğranmış tavuk ve soğanı 4 dakika çevirin.",
         "Domates, tavuk suyu ve baharatları ekleyin; kaynama noktasına getirip 8 dakika pişirin.",
-        "Fasulye ve mısırı ekleyin; tavuk parçaları 74°C'ye ulaşana kadar 5-7 dakika daha kaynatın.",
+        "Fasulye ve mısırı ekleyin; tavuk parçaları en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar 5-7 dakika daha kaynatın.",
         "Tortillayı şerit kesip kuru tavada kızartın; çorbanın üzerine ekleyin."
       ]
     },
@@ -4559,13 +4559,13 @@
     "steps": {
       "en": [
         "Mix the lamb with half the oil, oregano and pepper and thread onto a skewer.",
-        "Grill, turning, until the centre reaches at least 63°C; rest for 3 minutes.",
+        "Grill, turning until it is done to your liking; rest for 3 minutes.",
         "Chop the tomato and cucumber and mix with the bulgur, remaining oil, lemon and a little salt.",
         "Serve the lamb skewer with the bulgur salad and Turkish yogurt."
       ],
       "tr": [
         "Kuzu etini yağın yarısı, kekik ve karabiberle karıştırıp şişe dizin.",
-        "Izgarada çevirerek etin merkezi en az 63°C'ye ulaşana kadar pişirin; 3 dakika dinlendirin.",
+        "Izgarada çevirerek etin istediğiniz pişme derecesine gelene kadar pişirin; 3 dakika dinlendirin.",
         "Domates ve salatalığı doğrayıp bulgur, kalan yağ, limon ve az tuzla karıştırın.",
         "Kuzu şişi bulgurlu salata ve yoğurtla servis edin."
       ]
@@ -4982,12 +4982,12 @@
     },
     "steps": {
       "en": [
-        "Grill the chicken until it reaches 74°C and rest; hard-boil the egg.",
+        "Grill the chicken until the thickest part is white all the way through and rest; hard-boil the egg.",
         "Toast the bread, spread thinly with mayonnaise and divide the chicken, turkey, egg, tomato and lettuce between two layers.",
         "Stack all three slices, secure and cut diagonally; serve immediately."
       ],
       "tr": [
-        "Tavuğu merkezi 74°C'ye ulaşana kadar ızgara edip dinlendirin; yumurtayı tam katı haşlayın.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar ızgara edip dinlendirin; yumurtayı tam katı haşlayın.",
         "Ekmekleri kızartıp mayonezi ince sürün; tavuk, hindi füme, yumurta, domates ve marulu iki kata paylaştırın.",
         "Üç dilimi üst üste koyup kürdanla sabitleyin; çapraz kesip hemen servis edin."
       ]
@@ -5076,12 +5076,12 @@
     },
     "steps": {
       "en": [
-        "Cook the beef with the spices until it reaches 71°C; cut the tortilla into wedges and toast in a dry pan.",
+        "Cook the beef with the spices until no pink remains; cut the tortilla into wedges and toast in a dry pan.",
         "Add the lettuce, beans, corn and tomato to a bowl and top with the beef and avocado.",
         "Serve immediately with the Turkish yogurt and tortilla pieces."
       ],
       "tr": [
-        "Kıymayı baharatlarla merkezi 71°C'ye ulaşana kadar kavurun; tortillayı üçgen kesip kuru tavada kızartın.",
+        "Kıymayı baharatlarla içinde pembelik kalmayana kadar kavurun; tortillayı üçgen kesip kuru tavada kızartın.",
         "Marul, fasulye, mısır ve domatesi kaseye alın; kıyma ve avokadoyu ekleyin.",
         "Yoğurt ve tortilla parçalarıyla hemen servis edin."
       ]
@@ -5181,12 +5181,12 @@
     },
     "steps": {
       "en": [
-        "Bake the trout at 190°C for 10-12 minutes until it reaches 63°C, then cool.",
+        "Bake the trout at 190°C for 10-12 minutes until it flakes easily when pressed with a fork, then cool.",
         "Mix the Turkish yogurt, dill, lemon, mustard and pepper.",
         "Gently combine the potato, peas and flaked fish with the dressing and serve cold."
       ],
       "tr": [
-        "Alabalığı 190°C'de 63°C'ye ulaşana kadar 10-12 dakika pişirip soğutun.",
+        "Alabalığı 190°C'de çatalla bastırınca kolayca pul pul ayrılana kadar 10-12 dakika pişirip soğutun.",
         "Yoğurt, dereotu, limon, hardal ve karabiberi karıştırın.",
         "Patates, bezelye ve iri ayrılmış balığı sosla nazikçe birleştirip soğuk servis edin."
       ]
@@ -5382,12 +5382,12 @@
     },
     "steps": {
       "en": [
-        "Cook and cool the pasta completely; confirm the chicken previously reached 74°C.",
+        "Cook and cool the pasta completely; confirm the chicken is already cooked.",
         "Mix the pesto and lemon with the pasta.",
         "Add the chicken, mozzarella, tomatoes and rocket and serve, or refrigerate for up to 24 hours."
       ],
       "tr": [
-        "Makarnayı pişirip tamamen soğutun; tavuğun önceden 74°C'ye ulaştığından emin olun.",
+        "Makarnayı pişirip tamamen soğutun; tavuğun önceden iyice pişincen emin olun.",
         "Pesto ve limonu makarnayla karıştırın.",
         "Tavuk, mozzarella, domates ve rokayı ekleyip hemen servis edin veya 24 saat soğuk saklayın."
       ]
@@ -5474,12 +5474,12 @@
     },
     "steps": {
       "en": [
-        "Cook the lamb with the oil and spices over high heat for 5-7 minutes until it reaches at least 63°C; rest for 3 minutes.",
+        "Cook the lamb with the oil and spices over high heat for 5-7 minutes until it is done to your liking; rest for 3 minutes.",
         "Heat the rice thoroughly and chop the tomato, pickle and onion.",
         "Serve the rice, hummus, vegetables and lamb in sections in a bowl."
       ],
       "tr": [
-        "Kuzu etini yağ ve baharatla yüksek ateşte, en az 63°C'ye ulaşana kadar 5-7 dakika pişirip 3 dakika dinlendirin.",
+        "Kuzu etini yağ ve baharatla yüksek ateşte istediğiniz pişme derecesine gelene kadar 5-7 dakika pişirip 3 dakika dinlendirin.",
         "Pirinci tamamen ısıtın; domates, turşu ve soğanı doğrayın.",
         "Pirinç, humus, sebzeler ve eti kasede bölümler hâlinde servis edin."
       ]
@@ -5669,14 +5669,20 @@
     },
     "steps": {
       "en": [
-        "Confirm the salmon previously reached 63°C and flake into large pieces.",
-        "Mix the rice with the rice vinegar and finely cut the vegetables.",
-        "Arrange everything separately in a bowl and serve with the soy sauce and sesame."
+        "Cook the salmon in a non-stick pan over medium heat for 3-4 minutes a side, until it flakes easily when pressed with a fork.",
+        "Move it to a plate, chill for 15 minutes in the fridge, then break it into large pieces.",
+        "Boil the edamame for 3-4 minutes, drain and rinse under cold water.",
+        "Mix the rice with the rice vinegar; cut the cucumber and carrot into thin strips and slice the avocado.",
+        "Spread the rice over the base of a bowl and arrange the salmon, edamame and vegetables in separate sections.",
+        "Drizzle with the soy sauce, scatter over the sesame seeds and serve."
       ],
       "tr": [
-        "Somonun önceden 63°C'ye ulaştığından emin olup iri küpler hâlinde ayırın.",
-        "Pirinci pirinç sirkesiyle karıştırın; sebzeleri ince doğrayın.",
-        "Tüm malzemeleri kasede ayrı bölümlere yerleştirip soya sosu ve susamla servis edin."
+        "Somonu yapışmaz tavada orta ateşte her yüzü 3-4 dakika, çatalla bastırınca kolayca pul pul ayrılana kadar pişirin.",
+        "Balığı tabağa alıp buzdolabında 15 dakika soğutun, sonra iri parçalara ayırın.",
+        "Edamameyi kaynar suda 3-4 dakika haşlayıp süzün ve soğuk suyla durulayın.",
+        "Pirinci pirinç sirkesiyle karıştırın; salatalık ve havucu ince şerit, avokadoyu dilim doğrayın.",
+        "Pirinci kasenin tabanına yayıp somon, edamame ve sebzeleri ayrı bölümler hâlinde dizin.",
+        "Üzerine soya sosu gezdirip susam serperek servis edin."
       ]
     },
     "imagePath": null,
@@ -5771,12 +5777,12 @@
     "steps": {
       "en": [
         "Cut the potato into wedges, toss with half the oil and bake at 210°C for 25-30 minutes.",
-        "Shape and cook the beef patty until it reaches 71°C; melt the kashar over it and slice.",
+        "Shape and cook the beef patty until no pink remains; melt the kashar over it and slice.",
         "Add the lettuce, tomato, pickles and potato to a bowl; add the beef and serve with mustard and ketchup."
       ],
       "tr": [
         "Patatesi elma dilim kesip yağın yarısıyla 210°C'de 25-30 dakika fırınlayın.",
-        "Kıymaya şekil verip tavada merkezi 71°C'ye ulaşana kadar pişirin; kaşarı üzerine eritip dilimleyin.",
+        "Kıymaya şekil verip tavada içinde pembelik kalmayana kadar pişirin; kaşarı üzerine eritip dilimleyin.",
         "Marul, domates, turşu ve patatesi kaseye alın; eti ekleyip hardal-ketçapla servis edin."
       ]
     },
@@ -5871,12 +5877,12 @@
       "en": [
         "Cook the onion, carrot, celery and mushrooms in the oil for 5 minutes.",
         "Add the diced chicken, barley, stock and oregano and bring to the boil.",
-        "Simmer for 30-35 minutes until the barley is tender and the chicken reaches 74°C."
+        "Simmer for 30-35 minutes until the barley is until the thickest part is white all the way through."
       ],
       "tr": [
         "Yağda soğan, havuç, kereviz ve mantarı 5 dakika pişirin.",
         "Küçük doğranmış tavuk, arpa, et suyu ve kekiği ekleyip kaynatın.",
-        "Arpa yumuşayana ve tavuk 74°C'ye ulaşana kadar kısık ateşte 30-35 dakika pişirin."
+        "Arpa yumuşayana ve tavuk en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar kısık ateşte 30-35 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -5973,12 +5979,12 @@
     },
     "steps": {
       "en": [
-        "Grill the chicken until it reaches 74°C, then rest.",
+        "Grill the chicken until the thickest part is white all the way through, then rest.",
         "Whisk the Turkish yogurt with the mashed anchovy, mustard and a little water.",
         "Toss the cold pasta, lettuce and tomato with the dressing and serve with chicken and Parmesan."
       ],
       "tr": [
-        "Tavuğu 74°C'ye ulaşana kadar ızgarada pişirip dinlendirin.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar ızgarada pişirip dinlendirin.",
         "Yoğurt, ezilmiş ançüez, hardal ve az suyu çırpın.",
         "Soğuk makarna, marul ve domatesi sosla karıştırıp tavuk ve Parmesanla servis edin."
       ]
@@ -6073,12 +6079,12 @@
     "steps": {
       "en": [
         "Briefly sauté the vegetables separately.",
-        "Sear the thin beef until it reaches at least 63°C, rest for 3 minutes and cook the egg until firm.",
+        "Sear the thin beef until it is done to your liking, rest for 3 minutes and cook the egg until firm.",
         "Arrange the ingredients over the rice and serve with gochujang and sesame oil."
       ],
       "tr": [
         "Sebzeleri ayrı ayrı kısa süre soteleyin.",
-        "İnce eti çok sıcak tavada en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin; yumurtayı tamamen katı pişirin.",
+        "İnce eti çok sıcak tavada ortası oynamayana kadar pişirip 3 dakika dinlendirin; yumurtayı tamamen katı pişirin.",
         "Pirinç üzerine bileşenleri yerleştirip gochujang ve susam yağıyla servis edin."
       ]
     },
@@ -6534,12 +6540,12 @@
       "en": [
         "Brown the lamb in the oil.",
         "Add the onion and carrot and cook for 5 minutes; add the tomatoes and stock and simmer for 35 minutes.",
-        "Add the beans and cook for 10 more minutes until the lamb is tender and reaches at least 63°C."
+        "Add the beans and cook for 10 more minutes until it is done to your liking."
       ],
       "tr": [
         "Kuzu etini yağda renk alana kadar pişirin.",
         "Soğan ve havucu ekleyip 5 dakika çevirin; domates ve et suyunu ekleyip 35 dakika kısık ateşte pişirin.",
-        "Fasulyeyi ekleyip et yumuşayana ve en az 63°C'ye ulaşana kadar 10 dakika daha pişirin."
+        "Fasulyeyi ekleyip et yumuşayana kadar 10 dakika daha pişirin."
       ]
     },
     "imagePath": null,
@@ -6626,12 +6632,12 @@
     },
     "steps": {
       "en": [
-        "Cook the mackerel to 63°C, cool and flake coarsely.",
+        "Cook the mackerel until it flakes easily when pressed with a fork, cool and flake coarsely.",
         "Cook the soba according to the packet and rinse under cold water.",
         "Toss with the vegetables, edamame, soy sauce, vinegar and sesame and add the mackerel."
       ],
       "tr": [
-        "Uskumruyu 63°C'ye ulaşana kadar pişirip soğutun ve iri parçalara ayırın.",
+        "Uskumruyu çatalla bastırınca kolayca pul pul ayrılana kadar pişirip soğutun ve iri parçalara ayırın.",
         "Sobayı pakete göre haşlayıp soğuk suyla durulayın.",
         "Sebzeler, edamame, sos, sirke ve susamla karıştırıp uskumruyu ekleyin."
       ]
@@ -6720,12 +6726,12 @@
     },
     "steps": {
       "en": [
-        "Grill the chicken to 74°C, rest for 5 minutes and slice.",
+        "Grill the chicken until the thickest part is white all the way through, rest for 5 minutes and slice.",
         "Warm the pitta and spread the hummus inside.",
         "Fill with chicken, washed vegetables, parsley and lemon."
       ],
       "tr": [
-        "Tavuğu 74°C'ye ulaşana kadar ızgarada pişirip 5 dakika dinlendirin ve dilimleyin.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar ızgarada pişirip 5 dakika dinlendirin ve dilimleyin.",
         "Pideyi ısıtıp iç yüzeye humusu yayın.",
         "Tavuk, yıkanmış sebzeler, maydanoz ve limonla doldurun."
       ]
@@ -6901,12 +6907,12 @@
     },
     "steps": {
       "en": [
-        "Grill the chicken with half the oil until it reaches 74°C, then rest.",
+        "Grill the chicken with half the oil until the thickest part is white all the way through, then rest.",
         "Mix the Turkish yogurt and lemon and arrange the bulgur, chickpeas and vegetables in a bowl.",
         "Serve with the sliced chicken, remaining oil and Turkish yogurt sauce."
       ],
       "tr": [
-        "Tavuğu yağın yarısıyla 74°C'ye ulaşana kadar ızgarada pişirip dinlendirin.",
+        "Tavuğu yağın yarısıyla en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar ızgarada pişirip dinlendirin.",
         "Yoğurt ve limonu karıştırın; bulgur, nohut ve sebzeleri kaseye alın.",
         "Dilimlenmiş tavuk, kalan yağ ve yoğurt sosla servis edin."
       ]
@@ -6999,12 +7005,12 @@
     "steps": {
       "en": [
         "Simmer the stock with onion, ginger and star anise for 15 minutes and strain.",
-        "Prepare the noodles separately; sear the beef slices to at least 63°C and rest for 3 minutes.",
+        "Prepare the noodles separately; sear the beef slices until it is done to your liking and rest for 3 minutes.",
         "Place the noodles, beef and washed sprouts in a bowl, pour over the boiling broth and serve with lime and coriander."
       ],
       "tr": [
         "Et suyunu soğan, zencefil ve yıldız anasonla 15 dakika kaynatıp süzün.",
-        "Noodle'ı ayrı hazırlayın; dana dilimlerini tavada en az 63°C'ye ulaştırıp 3 dakika dinlendirin.",
+        "Noodle'ı ayrı hazırlayın; dana dilimlerini tavada istediğiniz pişme derecesine gelene kadar pişirip 3 dakika dinlendirin.",
         "Noodle, et ve yıkanmış filizleri kaseye alıp kaynar suyu dökün; limon ve kişnişle servis edin."
       ]
     },
@@ -7098,14 +7104,20 @@
     },
     "steps": {
       "en": [
-        "Confirm the salmon previously reached 63°C and cool it.",
-        "Split the bagel and spread with cream cheese.",
-        "Layer the salmon, cucumber, onion, dill and lemon and serve immediately."
+        "Cook the salmon in a non-stick pan over medium heat for 3-4 minutes a side, until it flakes easily when pressed with a fork.",
+        "Chill it for 15 minutes in the fridge, then break it into large pieces.",
+        "Split the bagel and spread cream cheese over both cut sides.",
+        "Slice the cucumber thinly, finely chop the red onion and chop the dill.",
+        "Layer the salmon, cucumber and onion on the bottom half and squeeze over the lemon juice.",
+        "Scatter with dill, close the bagel and serve immediately."
       ],
       "tr": [
-        "Somonun önceden 63°C'ye ulaştığından emin olup soğutun.",
-        "Bagel'ı açıp krem peynir sürün.",
-        "Somon, salatalık, soğan, dereotu ve limonu katmanlayıp hemen servis edin."
+        "Somonu yapışmaz tavada orta ateşte her yüzü 3-4 dakika, çatalla bastırınca kolayca pul pul ayrılana kadar pişirin.",
+        "Balığı 15 dakika buzdolabında soğutup iri parçalara ayırın.",
+        "Bagel'ı ikiye kesip iç yüzlerine krem peynir sürün.",
+        "Salatalığı ince dilimleyin, kırmızı soğanı ince doğrayın, dereotunu kıyın.",
+        "Somon, salatalık ve soğanı alt yarıya dizip limon suyu sıkın.",
+        "Dereotunu serpip bagelin üst yarısını kapatın ve hemen servis edin."
       ]
     },
     "imagePath": null,
@@ -7281,14 +7293,22 @@
     },
     "steps": {
       "en": [
-        "Cool and dice turkey that previously reached 74°C.",
-        "Whisk the Turkish yogurt and lemon and mix with the turkey, apple, grapes, celery and walnuts.",
-        "Serve chilled over washed lettuce."
+        "Put the turkey breast in a wide pan and cover it with cold water.",
+        "Heat over medium heat; as soon as the surface begins to tremble, lower the heat, cover and cook for 12-15 minutes.",
+        "The thickest part should be white all the way through when cut; give it 2-3 minutes more if any pink remains.",
+        "Lift the turkey out, rest it on a plate for 10 minutes, then chill it in the fridge for at least 30 minutes.",
+        "Dice the cooled turkey; cube the apple and celery, halve the grapes and roughly chop the walnuts.",
+        "Whisk the Turkish yogurt with the lemon juice, then fold in the turkey, apple, grapes, celery and walnuts.",
+        "Wash and dry the lettuce leaves and serve the salad chilled on top of them."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış hindiyi soğutup küp doğrayın.",
-        "Yoğurt ve limonu çırpıp hindi, elma, üzüm, kereviz ve cevizle karıştırın.",
-        "Yıkanmış marul üzerinde soğuk servis edin."
+        "Hindi göğsünü geniş bir tencereye koyup üzerini geçecek kadar soğuk su ekleyin.",
+        "Suyu orta ateşte ısıtın; kaynamaya yakın, yüzeyi hafif titreşirken ateşi kısın ve kapağı kapatarak 12-15 dakika pişirin.",
+        "En kalın yerinden kestiğinizde içi tamamen beyaz olmalı; pembe kalırsa 2-3 dakika daha pişirin.",
+        "Hindiyi sudan alıp tabakta 10 dakika dinlendirin, ardından buzdolabında en az 30 dakika soğutun.",
+        "Soğuyan hindiyi kuşbaşı doğrayın; elma ve kerevizi küp, üzümleri ikiye kesin, cevizi iri kıyın.",
+        "Yoğurt ile limon suyunu çırpın; hindi, elma, üzüm, kereviz ve cevizi ekleyip karıştırın.",
+        "Marul yapraklarını yıkayıp kurulayın ve salatayı üzerine alarak soğuk servis edin."
       ]
     },
     "imagePath": null,
@@ -7377,12 +7397,12 @@
     "steps": {
       "en": [
         "Bake the aubergine with half the oil at 210°C for 20 minutes until tender.",
-        "Cook the lamb in the remaining oil to at least 63°C and rest for 3 minutes.",
+        "Cook the lamb in the remaining oil until it is done to your liking and rest for 3 minutes.",
         "Fill the flatbread with aubergine, lamb, tomato, parsley and Turkish yogurt and roll."
       ],
       "tr": [
         "Patlıcanı yağın yarısıyla 210°C'de yumuşayana kadar 20 dakika fırınlayın.",
-        "Kuzuyu kalan yağla en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Kuzuyu kalan yağla istediğiniz pişme derecesine gelene kadar pişirip 3 dakika dinlendirin.",
         "Lavaşa patlıcan, kuzu, domates, maydanoz ve yoğurdu koyup sarın."
       ]
     },
@@ -7558,12 +7578,12 @@
     "steps": {
       "en": [
         "Soak the carrot in the vinegar for 15 minutes and drain.",
-        "Cook the chicken to 74°C, rest and slice.",
+        "Cook the chicken until the thickest part is white all the way through, rest and slice.",
         "Spread the baguette with mayonnaise and chilli sauce and add the chicken, carrot, cucumber and coriander."
       ],
       "tr": [
         "Havucu sirkeyle 15 dakika bekletip süzün.",
-        "Tavuğu 74°C'ye ulaşana kadar pişirip dinlendirin ve dilimleyin.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar pişirip dinlendirin ve dilimleyin.",
         "Bagete mayonez ve acı sos sürüp tavuk, havuç, salatalık ve kişnişi yerleştirin."
       ]
     },
@@ -7748,12 +7768,12 @@
     },
     "steps": {
       "en": [
-        "Cook the beef to at least 63°C, rest for 3 minutes and slice.",
+        "Cook the beef until it is done to your liking, rest for 3 minutes and slice.",
         "Toss the cooled orzo, tomato, cucumber and rocket with the oil and lemon.",
         "Serve with the beef and crumbled white cheese."
       ],
       "tr": [
-        "Dana etini en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin ve dilimleyin.",
+        "Dana etini istediğiniz pişme derecesine gelene kadar pişirip 3 dakika dinlendirin ve dilimleyin.",
         "Soğumuş şehriye, domates, salatalık ve rokayı yağ-limonla karıştırın.",
         "Dana eti ve ufalanmış beyaz peynirle servis edin."
       ]
@@ -7845,12 +7865,12 @@
     },
     "steps": {
       "en": [
-        "Cook the chicken to 74°C, cool and slice.",
+        "Cook the chicken until the thickest part is white all the way through, cool and slice.",
         "Prepare and cool the noodles; whisk the peanut butter, soy sauce and lime.",
         "Toss the noodles, vegetables and chicken with the dressing and serve chilled."
       ],
       "tr": [
-        "Tavuğu 74°C'ye ulaşana kadar pişirip soğutun ve dilimleyin.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar pişirip soğutun ve dilimleyin.",
         "Noodle'ı pakete göre hazırlayıp soğutun; fıstık ezmesi, soya ve limonu çırpın.",
         "Noodle, sebzeler ve tavuğu sosla karıştırıp soğuk servis edin."
       ]
@@ -7940,12 +7960,12 @@
     },
     "steps": {
       "en": [
-        "Cook the beef to at least 63°C and rest for 3 minutes.",
+        "Cook the beef until it is done to your liking and rest for 3 minutes.",
         "Cube and toast the bread in a dry pan.",
         "Toss the vegetables with the oil and vinegar and add the bread and sliced beef."
       ],
       "tr": [
-        "Dana etini en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Dana etini istediğiniz pişme derecesine gelene kadar pişirip 3 dakika dinlendirin.",
         "Ekmeği küp doğrayıp kuru tavada kızartın.",
         "Sebzeleri yağ ve sirkeyle karıştırıp ekmek ve dilimlenmiş eti ekleyin."
       ]
@@ -8037,12 +8057,12 @@
     },
     "steps": {
       "en": [
-        "Bake the salmon to 63°C and flake coarsely.",
+        "Bake the salmon until it flakes easily when pressed with a fork and flake coarsely.",
         "Simmer the water, mushrooms, tofu and wakame for 6 minutes; lower the heat.",
         "Loosen the miso with hot broth, add without boiling and finish with salmon and spring onion; serve with rice."
       ],
       "tr": [
-        "Somonu 63°C'ye ulaşana kadar fırınlayıp iri parçalara ayırın.",
+        "Somonu çatalla bastırınca kolayca pul pul ayrılana kadar fırınlayıp iri parçalara ayırın.",
         "Su, mantar, tofu ve wakameyi 6 dakika kaynatın; ateşi kısın.",
         "Misoyu ayrı sıcak suyla açıp çorbaya ekleyin; kaynatmadan somon ve taze soğanla tamamlayıp pirinçle servis edin."
       ]
@@ -8317,12 +8337,12 @@
     },
     "steps": {
       "en": [
-        "Mix the lamb with cumin, shape five meatballs and cook until the centres reach 71°C.",
+        "Mix the lamb with cumin, shape five meatballs and cook until no pink remains.",
         "Toss the lentils, pepper and rocket with the oil.",
         "Add the meatballs and serve with Turkish yogurt."
       ],
       "tr": [
-        "Kıymayı kimyonla yoğurup beş köfte yapın; merkezleri 71°C'ye ulaşana kadar pişirin.",
+        "Kıymayı kimyonla yoğurup beş köfte yapın; içinde pembelik kalmayana kadar pişirin.",
         "Mercimek, biber ve rokayı yağla karıştırın.",
         "Köfteleri salataya ekleyip yoğurtla servis edin."
       ]
@@ -8505,12 +8525,12 @@
     },
     "steps": {
       "en": [
-        "Cook the chicken to 74°C and shred; sauté the courgette until dry.",
+        "Cook the chicken until the thickest part is white all the way through and shred; sauté the courgette until dry.",
         "Spread the chicken, courgette and ricotta over cooked lasagne sheets and roll.",
         "Place in a sauced dish, add mozzarella and bake at 190°C for 20-25 minutes."
       ],
       "tr": [
-        "Tavuğu 74°C'ye ulaşana kadar pişirip didikleyin; kabağı suyunu çekene kadar soteleyin.",
+        "Tavuğu en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar pişirip didikleyin; kabağı suyunu çekene kadar soteleyin.",
         "Tavuk, kabak ve ricottayı haşlanmış lazanya yapraklarına yayıp sarın.",
         "Soslu kaba dizip mozzarella ekleyin; 190°C'de 20-25 dakika pişirin."
       ]
@@ -8688,12 +8708,12 @@
     },
     "steps": {
       "en": [
-        "Cook the beef with soy sauce to at least 63°C and rest for 3 minutes.",
+        "Cook the beef with soy sauce until it is done to your liking and rest for 3 minutes.",
         "Wilt the spinach, cook the egg until fully firm and heat the rice through.",
         "Arrange everything in a bowl and serve with sesame oil and sesame seeds."
       ],
       "tr": [
-        "Dana etini soya sosuyla en az 63°C'ye ulaşana kadar pişirip 3 dakika dinlendirin.",
+        "Dana etini soya sosuyla istediğiniz pişme derecesine gelene kadar pişirip 3 dakika dinlendirin.",
         "Ispanağı soldurun; yumurtayı tamamen katı pişirin; pirinci tamamen ısıtın.",
         "Tüm bileşenleri kaseye yerleştirip susam yağı ve susamla servis edin."
       ]

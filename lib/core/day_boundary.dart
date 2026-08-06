@@ -32,6 +32,18 @@ class DayBoundary {
   /// Key for the day that contains "now".
   static String today() => keyFor(DateTime.now());
 
+  /// The calendar date of the app-day that contains "now", at midday.
+  ///
+  /// Ekranlar "bugün"ü buradan almalı. `DateTime.now()` gece yarısı ile
+  /// 06:00 arasında bir sonraki takvim gününü gösterir; o saatlerde pişirilen
+  /// öğün günün kovasına düşmez ve listede görünmez.
+  static DateTime currentDay() {
+    final now = DateTime.now();
+    final effective =
+        now.hour < resetHour ? now.subtract(const Duration(days: 1)) : now;
+    return DateTime(effective.year, effective.month, effective.day, 12);
+  }
+
   /// Whether two moments fall on the same app-day.
   static bool sameDay(DateTime a, DateTime b) => keyFor(a) == keyFor(b);
 }

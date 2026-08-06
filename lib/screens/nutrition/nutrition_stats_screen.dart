@@ -78,7 +78,7 @@ class NutritionStatsScreen extends ConsumerStatefulWidget {
 class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  DateTime _selectedDate = DateTime.now();
+  DateTime _selectedDate = DayBoundary.currentDay();
 
   @override
   void initState() {

@@ -4405,13 +4405,13 @@
       "en": [
         "Cut the potato into 1 cm cubes, chop the vegetables and slice the sausage.",
         "Heat the oil and cook the potato for 10 minutes; add 2 tbsp water and cover briefly if needed.",
-        "Add the sausage and vegetables and cook for 8-10 minutes until the sausage reaches 74°C in the centre.",
+        "Add the sausage and vegetables and cook for 8-10 minutes until the thickest part is white all the way through in the centre.",
         "Make a well, add the egg, cover and cook until the white is fully set."
       ],
       "tr": [
         "Patatesi 1 cm küp, sebzeleri küçük parçalar hâlinde doğrayın; sosisi dilimleyin.",
         "Yağı tavada ısıtıp patatesi 10 dakika pişirin; gerekirse 2 yemek kaşığı su ekleyip kısa süre kapatın.",
-        "Sosis ve sebzeleri ekleyip sosisin merkezi 74°C'ye ulaşana kadar 8-10 dakika pişirin.",
+        "Sosis ve sebzeleri ekleyip sosisin en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar 8-10 dakika pişirin.",
         "Ortada yuva açıp yumurtayı kırın; kapağı kapalı olarak beyaz tamamen katılaşana kadar pişirin."
       ]
     },
@@ -4615,14 +4615,14 @@
       "en": [
         "Cut the potato into 1 cm cubes and finely chop the pepper and onion.",
         "Heat the oil and cook the potato for 10-12 minutes.",
-        "Add the beef and onion and cook until the beef reaches 71°C.",
+        "Add the beef and onion and cook until no pink remains.",
         "Add the pepper, tomato and paprika and cook for 4 minutes.",
         "Make a well, add the egg, cover and cook until the white is fully set."
       ],
       "tr": [
         "Patatesi 1 cm küp; biber ve soğanı küçük doğrayın.",
         "Yağı tavada ısıtıp patatesi 10-12 dakika pişirin.",
-        "Kıyma ve soğanı ekleyip kıyma 71°C'ye ulaşana kadar kavurun.",
+        "Kıyma ve soğanı ekleyip kıyma içinde pembelik kalmayana kadar kavurun.",
         "Biber, domates ve toz biberi ekleyip 4 dakika pişirin.",
         "Yuva açıp yumurtayı kırın; kapağı kapalı olarak beyaz tamamen katılaşana kadar pişirin."
       ]
@@ -5007,14 +5007,14 @@
         "Cook the sucuk in a small pan for 2 minutes and drain excess fat.",
         "Add the tomato and pepper to a small baking dish and pre-bake for 5 minutes; add the sucuk.",
         "Crack in the eggs and scatter over the kashar.",
-        "Bake for 10-14 minutes until the centre reaches 71°C and no liquid egg remains; serve with bread."
+        "Bake for 10-14 minutes until the centre no liquid egg remains; serve with bread."
       ],
       "tr": [
         "Fırını 190°C'ye ısıtın.",
         "Sucuğu küçük tavada 2 dakika çevirip fazla yağını süzün.",
         "Domates ve biberi küçük fırın kabına koyup 5 dakika ön pişirin; sucuğu ekleyin.",
         "Yumurtaları kırıp kaşarı serpin.",
-        "Merkez 71°C'ye ulaşana ve sıvı yumurta kalmayana kadar 10-14 dakika pişirip ekmekle servis edin."
+        "Sıvı yumurta kalmayana kadar 10-14 dakika pişirip ekmekle servis edin."
       ]
     },
     "imagePath": null,
@@ -5577,13 +5577,13 @@
     },
     "steps": {
       "en": [
-        "Cook the sausages, turning, until the centres reach 71°C.",
+        "Cook the sausages, turning until no pink remains.",
         "Brown the mushrooms in the oil for 4-5 minutes and heat the beans to a simmer in a small pan.",
         "Cook the egg until the white is fully set and toast the bread.",
         "Serve all components together on a hot plate."
       ],
       "tr": [
-        "Sosisleri tavada çevirerek merkezleri 71°C'ye ulaşana kadar pişirin.",
+        "Sosisleri tavada çevirerek içinde pembelik kalmayana kadar pişirin.",
         "Aynı tavada mantarı yağla 4-5 dakika kızartın; fasulyeyi küçük tencerede kaynama noktasına kadar ısıtın.",
         "Yumurtayı beyazı tamamen katılaşana kadar pişirin; ekmeği kızartın.",
         "Tüm bileşenleri sıcak tabakta birlikte servis edin."
@@ -5672,14 +5672,14 @@
         "Line two small tart tins with pastry, prick and pre-bake for 8 minutes.",
         "Cook the onion and spinach in the oil for 3-4 minutes until the moisture evaporates.",
         "Whisk the egg, milk and pepper; divide the vegetables and goat cheese between the shells and add the custard.",
-        "Bake for 16-20 minutes until the centres reach 71°C and are fully set."
+        "Bake for 16-20 minutes until the centre is set and are fully set."
       ],
       "tr": [
         "Fırını 190°C'ye ısıtın.",
         "Hamuru iki küçük tart kalıbına yerleştirip çatalla delin; 8 dakika ön pişirin.",
         "Soğan ve ıspanağı yağda suyu çekilene kadar 3-4 dakika pişirin.",
         "Yumurta, süt ve karabiberi çırpın; sebzeleri ve keçi peynirini hamurlara paylaştırıp karışımı dökün.",
-        "Merkezler 71°C'ye ulaşana ve tamamen katılaşana kadar 16-20 dakika pişirin."
+        "Tamamen katılaşana kadar 16-20 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -6031,12 +6031,12 @@
     },
     "steps": {
       "en": [
-        "Grill the chicken at an even thickness until it reaches 74°C.",
+        "Grill the chicken at an even thickness until the thickest part is white all the way through.",
         "Warm the waffles and spread one with mustard.",
         "Layer the chicken, kashar, tomato and lettuce and close with the other waffle."
       ],
       "tr": [
-        "Tavuğu eşit kalınlıkta hazırlayıp merkezi 74°C'ye ulaşana kadar ızgarada pişirin.",
+        "Tavuğu eşit kalınlıkta hazırlayıp en kalın yerinden kestiğinizde içi tamamen beyaz olana kadar ızgarada pişirin.",
         "Waffle'ları ısıtıp birine hardal sürün.",
         "Tavuk, kaşar, domates ve marulu katmanlayıp diğer waffle ile kapatın."
       ]
@@ -6296,13 +6296,13 @@
     "steps": {
       "en": [
         "Dice the potato and cook in the covered pan with the oil for 10 minutes.",
-        "Add the beef and pepper and cook until the beef reaches 71°C; add the tomato.",
-        "Add the eggs and cook until the centre reaches 71°C with no liquid egg remaining."
+        "Add the beef and pepper and cook until no pink remains; add the tomato.",
+        "Add the eggs and cook until the centre is set with no liquid egg remaining."
       ],
       "tr": [
         "Patatesi küçük küp kesip kapaklı tavada yağla 10 dakika pişirin.",
-        "Kıyma ve biberi ekleyip kıyma 71°C'ye ulaşana kadar pişirin; domatesi ekleyin.",
-        "Yumurtaları kırıp merkez 71°C'ye ulaşana ve sıvı yumurta kalmayana kadar pişirin."
+        "Kıyma ve biberi ekleyip kıyma içinde pembelik kalmayana kadar pişirin; domatesi ekleyin.",
+        "Yumurtaları kırıp sıvı yumurta kalmayana kadar pişirin."
       ]
     },
     "imagePath": null,
@@ -6649,12 +6649,12 @@
     "steps": {
       "en": [
         "Cook the pepper in the oil for 3 minutes; add the tomato and reduce.",
-        "Add the eggs and cook until no liquid egg remains and the centre reaches 71°C.",
+        "Add the eggs and cook until no liquid egg until the centre is set.",
         "Add the kashar and menemen to the tortilla and roll tightly."
       ],
       "tr": [
         "Biberi yağda 3 dakika pişirip domatesi ekleyin ve suyunu çektirin.",
-        "Yumurtaları ekleyip sıvı yumurta kalmayana ve merkez 71°C'ye ulaşana kadar pişirin.",
+        "Yumurtaları ekleyip sıvı yumurta kalmayana kadar pişirin.",
         "Tortillaya kaşar ve menemeni koyup sıkıca sarın."
       ]
     },
@@ -6736,12 +6736,12 @@
       "en": [
         "Briefly wilt and squeeze the spinach; flake the salmon.",
         "Mix the eggs, lor, dill, spinach and salmon and divide among four greased moulds.",
-        "Bake at 180°C for 16-20 minutes until the centres reach 71°C."
+        "Bake at 180°C for 16-20 minutes until it flakes easily when pressed with a fork."
       ],
       "tr": [
         "Ispanağı kısa süre soldurup suyunu sıkın; somonu iri parçalayın.",
         "Yumurta, lor, dereotu, ıspanak ve somonu karıştırıp yağlanmış dört kalıba paylaştırın.",
-        "180°C'de merkezleri 71°C'ye ulaşana kadar 16-20 dakika pişirin."
+        "180°C'de çatalla bastırınca kolayca pul pul ayrılana kadar 16-20 dakika pişirin."
       ]
     },
     "imagePath": null,
@@ -6920,12 +6920,12 @@
       "en": [
         "Dice the sweet potato and cook in the covered pan with oil for 10-12 minutes.",
         "Add the sausage, pepper and onion and cook for 6 minutes until the sausage is heated through.",
-        "Add the eggs and cook until the centre reaches 71°C."
+        "Add the eggs and cook until the centre is set."
       ],
       "tr": [
         "Tatlı patatesi küçük küp kesip kapaklı tavada yağla 10-12 dakika pişirin.",
         "Sosis, biber ve soğanı ekleyip sosis tamamen ısınana kadar 6 dakika pişirin.",
-        "Yumurtaları kırıp merkez 71°C'ye ulaşana kadar pişirin."
+        "Yumurtaları kırıp ortası oynamayana kadar pişirin."
       ]
     },
     "imagePath": null,
@@ -7093,12 +7093,12 @@
       "en": [
         "Boil the broccoli for 3 minutes and drain; soften the onion in the oil.",
         "Add the potato and broccoli, pour in the beaten eggs and scatter over the kashar.",
-        "Start over low heat and finish in a 190°C oven until the centre reaches 71°C."
+        "Start over low heat and finish in a 190°C oven until the centre is set."
       ],
       "tr": [
         "Brokoliyi 3 dakika haşlayıp süzün; soğanı yağda yumuşatın.",
         "Patates ve brokoliyi tavaya ekleyip çırpılmış yumurtayı dökün; kaşarı serpin.",
-        "Kısık ateşte başlayıp 190°C fırında merkez 71°C'ye ulaşana kadar tamamlayın."
+        "Kısık ateşte başlayıp 190°C fırında ortası oynamayana kadar tamamlayın."
       ]
     },
     "imagePath": null,
@@ -7991,12 +7991,12 @@
       "en": [
         "Grate and squeeze the potato very dry; mix with the egg and onion.",
         "Spread half in the oiled pan; add the pastirma and kashar and cover with the remaining potato.",
-        "Cook over low heat for 8-10 minutes per side until the centre reaches 71°C."
+        "Cook over low heat for 8-10 minutes per side until the centre is set."
       ],
       "tr": [
         "Patatesi rendeleyip suyunu iyice sıkın; yumurta ve soğanla karıştırın.",
         "Karışımın yarısını yağlı tavaya yayın; pastırma ve kaşarı ekleyip kalan patatesle kapatın.",
-        "Kısık ateşte iki yüzünü 8-10'ar dakika, merkez 71°C'ye ulaşana kadar pişirin."
+        "Kısık ateşte iki yüzünü 8-10'ar dakika ortası oynamayana kadar pişirin."
       ]
     },
     "imagePath": null,
@@ -8261,12 +8261,12 @@
     },
     "steps": {
       "en": [
-        "Shred chicken that previously reached 74°C; cook the pepper and egg until no liquid remains.",
+        "Shred chicken that is already cooked; cook the pepper and egg until no liquid remains.",
         "Spread the chicken, egg and kashar over one tortilla and cover with the other.",
         "Cook both sides in a dry pan until the cheese melts, cut into four wedges and serve with salsa."
       ],
       "tr": [
-        "Önceden 74°C'ye ulaşmış tavuğu didikleyin; biber ve yumurtayı sıvı kalmayana kadar pişirin.",
+        "Önceden iyice pişmiş tavuğu didikleyin; biber ve yumurtayı sıvı kalmayana kadar pişirin.",
         "Bir tortillaya tavuk, yumurta ve kaşarı yayıp diğeriyle kapatın.",
         "Kuru tavada iki yüzünü peynir eriyene kadar pişirip dört dilime kesin; salsayla servis edin."
       ]

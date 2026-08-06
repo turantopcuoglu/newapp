@@ -27,6 +27,14 @@ import 'package:nutri_guide/services/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  /// Testler saatten bağımsız olsun diye tarihler uygulama gününden
+  /// üretilir: 06:00 öncesinde takvim günü ile uygulama günü ayrışıyor.
+  DateTime appDay([int daysAgo = 0]) {
+    final parts = DayBoundary.today().split('-').map(int.parse).toList();
+    return DateTime(parts[0], parts[1], parts[2], 12)
+        .subtract(Duration(days: daysAgo));
+  }
+
   final recipes = <Recipe>[
     for (final path in RecipeRepository.bundleFiles)
       ...RecipeRepository.decodeRecipeList(File(path).readAsStringSync()),
@@ -83,7 +91,7 @@ void main() {
       addTearDown(() => tester.binding.setSurfaceSize(null));
 
       final recipe = recipes.first;
-      final today = DateTime.now();
+      final today = appDay();
       container.read(mealPlanProvider.notifier).addEntry(
             recipeId: recipe.id,
             date: today,
@@ -110,7 +118,7 @@ void main() {
 
     test('toggling on a past day lands on that day, not today', () {
       final recipe = recipes.first;
-      final yesterday = DateTime.now().subtract(const Duration(days: 1));
+      final yesterday = appDay(1);
 
       container.read(cookedProvider.notifier).toggleForDay(recipe, yesterday);
 

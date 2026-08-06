@@ -105,6 +105,12 @@ Tarif kitabı PDF'i tarif verisinden üretilir; içerik değiştiyse yeniden
   Yogurt"). **"Yunan yoğurdu" / "Greek yogurt" hiçbir yerde geçmez** — ayrı
   bir süzme/Greek yoğurt girdisi de yoktur. Laktozsuz tariflerde biçim
   "laktozsuz yoğurt" / "lactose-free Turkish yogurt" olur.
+- **Hazırlanış dili gündelik olmalı.** Uygulama uzman aşçılar için değil;
+  adımlar termometre ölçütü yerine gözle görülür işaret verir ("kestiğinizde
+  içi tamamen beyaz olana kadar", "çatalla bastırınca kolayca ayrılana
+  kadar"). Fırın sıcaklığı (180-220 °C) kalır, **iç sıcaklık (63/71/74 °C)
+  yazılmaz**. Bir tarif pişmiş malzeme kullanıyorsa onu pişirme ve soğutma
+  adımı tarifin içinde olmalı. Dönüşüm `tool/recipe_import/step_rewrites.py`.
 - **Nutrition tablosu baz ayrımı:** pirinç, makarna, erişte, kuskus, kinoa,
   arpa, bulgur, mercimek, bakla, yulaf ve un **kuru**; nohut, kuru fasulye,
   siyah fasulye ve barbunya **pişmiş (haşlanmış/süzülmüş)** bazdadır.

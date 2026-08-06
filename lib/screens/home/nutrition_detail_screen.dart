@@ -28,7 +28,7 @@ class _NutritionDetailScreenState
   List<_BarData> _computeData() {
     // Charts show what was actually eaten (cooked log), not what was planned.
     final cooked = ref.watch(cookedProvider);
-    final now = DateTime.now();
+    final now = DayBoundary.currentDay();
     final today = DateTime(now.year, now.month, now.day);
 
     switch (_period) {

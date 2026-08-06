@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ing_map import MAP, NEW_INGREDIENTS  # noqa: E402
 from parse_report import parse  # noqa: E402
+from step_rewrites import rewrite as rewrite_steps  # noqa: E402
 
 SP = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(SP))
@@ -349,10 +350,15 @@ def main():
             recipe['name'] = {'en': fix_en(name_en), 'tr': fix_tr(name_tr)}
             recipe['description'] = {'en': fix_en(rep['desc_en']),
                                      'tr': fix_tr(rep['desc_tr'])}
-            recipe['steps'] = {
-                'en': [fix_en(s) for s in split_steps(rep['steps_en'])],
-                'tr': [fix_tr(s) for s in split_steps(rep['steps_tr'])],
-            }
+            steps_tr = [fix_tr(s) for s in split_steps(rep['steps_tr'])]
+            steps_en = [fix_en(s) for s in split_steps(rep['steps_en'])]
+            # İç sıcaklık ölçütlerini gündelik dile çevir, pişirme adımı
+            # eksik olan tarifleri yeniden yaz.
+            steps_tr, steps_en = rewrite_steps(
+                code, steps_tr, steps_en,
+                f"{name_tr} {rep['desc_tr']} {' '.join(steps_tr)}",
+                f"{name_en} {rep['desc_en']} {' '.join(steps_en)}")
+            recipe['steps'] = {'en': steps_en, 'tr': steps_tr}
 
             # malzemeler + miktarlar
             ids, quantities = [], {}

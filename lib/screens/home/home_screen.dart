@@ -632,7 +632,7 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
   bool _slidingForward = true;
 
   DateTime get _selectedDate =>
-      DateTime.now().subtract(Duration(days: _dayOffset));
+      DayBoundary.currentDay().subtract(Duration(days: _dayOffset));
 
   String _getDateLabel() {
     final l10n = widget.l10n;
@@ -990,8 +990,9 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
     final cookedEntries = ref.watch(cookedProvider);
     final recipeMap = ref.watch(recipeMapProvider);
 
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
+    // "Bugün" gün sınırından gelir: 06:00 öncesinde takvim günü bir sonraki
+    // güne geçmiş oluyor ve o saatte pişirilen öğün listede görünmüyordu.
+    final today = DayBoundary.currentDay();
     final tomorrow = today.add(const Duration(days: 1));
 
     // Planned and cooked meals share one list: a recipe marked cooked from

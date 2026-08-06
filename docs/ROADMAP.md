@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-08-05 · Dal: `claude/pdf-recipe-list-toc-96vbm1`
+> Son güncelleme: 2026-08-06 · Dal: `claude/pdf-recipe-list-toc-96vbm1`
 
 ---
 
@@ -158,12 +158,36 @@ görünüyor, Dünya & Füzyon 96'ya indi. Uygulamada karşılığı olmayan eti
 (Fransız, Britanya, İskandinav, Rus, Macar…) orada kalıyor; Hint → Asya,
 Kuzey Amerika/Louisiana/Hawaii → Amerikan, Fas → Ortadoğu eşlendi.
 
+**Hazırlanış adımları gündelik dile çekildi (2026-08-06)** — kullanıcı bazı
+tariflerin uzman diliyle yazıldığını bildirdi (örnek: hindili Waldorf salatası
+hindiyi pişirmeden başlıyordu, "merkezi 63°C olana kadar" ifadesi her yerdeydi).
+- **129 tarifte 147 adım** yeniden yazıldı: iç sıcaklık ölçütü (63/71/74 °C)
+  yerine ete göre gözle görülür işaret ("kestiğinizde içi tamamen beyaz olana
+  kadar", "çatalla bastırınca kolayca pul pul ayrılana kadar", "içinde pembelik
+  kalmayana kadar"). Fırın sıcaklıkları duruyor.
+- **8 tarif baştan yazıldı** (l053, l068, l070, s051, s064, s074, s076, s086):
+  malzeme listesinde "pişmiş tavuk/somon/hindi" yazıyor ama etin nasıl
+  pişirileceği hiçbir adımda yoktu. Artık pişirme adımıyla başlıyor, dinlenme
+  ve buzdolabında soğutma süresi veriliyor.
+- Konserve ton balığı, füme somon/uskumru, hindi füme gibi hazır tüketilen 18
+  tarif kasten olduğu gibi bırakıldı — pişirme adımı gerekmiyor.
+- Dönüşüm `tool/recipe_import/step_rewrites.py`'de; yeniden içe aktarmada
+  korunuyor.
+
+**Gece yarısı–06:00 arası "Pişirdim" hatası (2026-08-06)** — doğrulama sırasında
+çıktı: ana sayfa ve beslenme ekranları "bugün"ü `DateTime.now()` takvim
+gününden alıyordu, `cookedProvider` ise 06:00 gün sınırından. 00:00-06:00
+arasında pişirilen öğün ne yemek listesinde ne günün özetinde görünüyordu.
+Tek kaynak eklendi: `DayBoundary.currentDay()`. Ana sayfa yemek listesi,
+beslenme günü kartı ve istatistik ekranı artık onu kullanıyor;
+`toggleForDay` da bakılan gün bugünse gün anahtarını sınırdan alıyor.
+
 **Tarif kitabı PDF (2026-08-05)** — `tool/generate_recipe_pdf.py` bütün
 tarifleri tek PDF'e basıyor: kapak, sayfa numaralı **tarif listesi**
 (içindekiler) + PDF yer imleri, sonra öğün türüne göre her tarif (künye,
 makro şeridi, miktarlı malzemeler, numaralı adımlar, alerjenler). Metin
 kaynağı JSON + Dart sözlükleri; PDF'e elle içerik yazılmıyor. Çıktı:
-`docs/NutriGuide-Tarif-Kitabi.pdf` (186 sayfa). Türkçe karakterler için
+`docs/NutriGuide-Tarif-Kitabi.pdf` (187 sayfa). Türkçe karakterler için
 DejaVu fontu gerekiyor, `--locale en` ile İngilizcesi üretilir.
 
 **İçerik denetimi (2026-08-05)** — kullanıcı mantı ve tahin-pekmez hatalarını

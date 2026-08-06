@@ -65,7 +65,13 @@ class CookedNotifier extends StateNotifier<List<CookedEntry>> {
   /// yesterday can still be marked without back-dating the whole log by hand:
   /// a past day is logged at midday, which lands inside that app-day.
   bool toggleForDay(Recipe recipe, DateTime date) {
-    final dayKey = DayBoundary.keyForDate(date);
+    // Liste, kullanıcının baktığı günü veriyor. Gece yarısı ile 06:00
+    // arasında uygulama günü hâlâ bir önceki takvim günü olduğu için ham
+    // takvim tarihi yarının kovasına düşer ve öğün bugünün özetinde
+    // görünmez. Bakılan gün "bugün" ise gün anahtarı gün sınırından alınır.
+    final dayKey = DayBoundary.sameDay(date, DateTime.now())
+        ? DayBoundary.today()
+        : DayBoundary.keyForDate(date);
     if (undoOn(recipe.id, dayKey)) return false;
     final isToday = dayKey == DayBoundary.today();
     markCooked(recipe, at: isToday ? DateTime.now() : DayBoundary.middayOf(date));
