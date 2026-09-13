@@ -23,15 +23,15 @@ const Map<BeverageType, IconData> _beverageIcons = {
   BeverageType.other: Icons.local_cafe_rounded,
 };
 
-const Map<BeverageType, Color> _beverageColors = {
-  BeverageType.water: Color(0xFF4FC3F7),
-  BeverageType.tea: Color(0xFFA1887F),
-  BeverageType.coffee: Color(0xFF795548),
-  BeverageType.juice: Color(0xFFFFB74D),
-  BeverageType.soda: Color(0xFFE57373),
+Map<BeverageType, Color> _beverageColors(BuildContext context) => {
+  BeverageType.water: const Color(0xFF4FC3F7),
+  BeverageType.tea: const Color(0xFFA1887F),
+  BeverageType.coffee: const Color(0xFF795548),
+  BeverageType.juice: const Color(0xFFFFB74D),
+  BeverageType.soda: const Color(0xFFE57373),
   BeverageType.milk: Colors.white,
-  BeverageType.smoothie: Color(0xFFBA68C8),
-  BeverageType.other: AppTheme.textLight,
+  BeverageType.smoothie: const Color(0xFFBA68C8),
+  BeverageType.other: context.palette.textLight,
 };
 
 const List<int> _presetAmounts = [100, 150, 200, 250, 330, 500];
@@ -102,8 +102,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
 
     final waterToday = notifier.totalWaterToday();
     final caloriesToday = notifier.totalCaloriesToday();
-    final waterProgress =
-        (waterToday / _dailyWaterTargetMl).clamp(0.0, 1.0);
+    final waterProgress = (waterToday / _dailyWaterTargetMl).clamp(0.0, 1.0);
 
     // Schedule animation after build
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -111,7 +110,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
     });
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         physics: const ClampingScrollPhysics(),
         slivers: [
@@ -149,38 +148,40 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppTheme.accentTeal.withAlpha(20),
+                      color: context.palette.accentTeal.withAlpha(20),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.history_rounded,
-                      color: AppTheme.accentTeal,
+                      color: context.palette.accentTeal,
                       size: 18,
                     ),
                   ),
                   const SizedBox(width: 10),
                   Text(
                     l10n.beverageTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                      color: AppTheme.textPrimary,
+                      color: context.palette.textPrimary,
                     ),
                   ),
                   const Spacer(),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
-                      color: AppTheme.softLavender.withAlpha(20),
+                      color: context.palette.softLavender.withAlpha(20),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
                       '${todayEntries.length}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.softLavender,
+                        color: context.palette.softLavender,
                       ),
                     ),
                   ),
@@ -200,14 +201,14 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                       Icon(
                         Icons.water_drop_outlined,
                         size: 56,
-                        color: AppTheme.textLight.withAlpha(80),
+                        color: context.palette.textLight.withAlpha(80),
                       ),
                       const SizedBox(height: 12),
                       Text(
                         l10n.noData,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 15,
-                          color: AppTheme.textSecondary,
+                          color: context.palette.textSecondary,
                         ),
                       ),
                     ],
@@ -219,24 +220,20 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(20, 8, 20, 100),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final entry = todayEntries[index];
-                    final info = beverageOptions.firstWhere(
-                      (b) => b.type == entry.type,
-                      orElse: () => beverageOptions.last,
-                    );
-                    return _BeverageEntryTile(
-                      entry: entry,
-                      info: info,
-                      locale: locale,
-                      l10n: l10n,
-                      onDismissed: () =>
-                          notifier.removeEntry(entry.id),
-                    );
-                  },
-                  childCount: todayEntries.length,
-                ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final entry = todayEntries[index];
+                  final info = beverageOptions.firstWhere(
+                    (b) => b.type == entry.type,
+                    orElse: () => beverageOptions.last,
+                  );
+                  return _BeverageEntryTile(
+                    entry: entry,
+                    info: info,
+                    locale: locale,
+                    l10n: l10n,
+                    onDismissed: () => notifier.removeEntry(entry.id),
+                  );
+                }, childCount: todayEntries.length),
               ),
             ),
         ],
@@ -252,7 +249,8 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
     String locale,
     AppLocalizations l10n,
   ) async {
-    final beverageColor = _beverageColors[info.type] ?? AppTheme.textLight;
+    final beverageColor =
+        _beverageColors(context)[info.type] ?? context.palette.textLight;
     final iconData = _beverageIcons[info.type] ?? Icons.local_cafe_rounded;
     final beverageName = info.name[locale] ?? info.name['en'] ?? '';
     final customController = TextEditingController();
@@ -269,9 +267,9 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(ctx).viewInsets.bottom,
               ),
-              decoration: const BoxDecoration(
-                color: AppTheme.surface,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+              decoration: BoxDecoration(
+                color: context.palette.surface,
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
               ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
@@ -283,7 +281,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                       width: 40,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: AppTheme.dividerColor,
+                        color: context.palette.dividerColor,
                         borderRadius: BorderRadius.circular(2),
                       ),
                     ),
@@ -299,7 +297,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                         shape: BoxShape.circle,
                         border: info.type == BeverageType.milk
                             ? Border.all(
-                                color: AppTheme.accentTeal.withAlpha(60),
+                                color: context.palette.accentTeal.withAlpha(60),
                                 width: 2,
                               )
                             : null,
@@ -308,26 +306,26 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                         iconData,
                         size: 36,
                         color: info.type == BeverageType.milk
-                            ? AppTheme.accentTeal
+                            ? context.palette.accentTeal
                             : beverageColor,
                       ),
                     ),
                     const SizedBox(height: 12),
                     Text(
                       beverageName,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
-                        color: AppTheme.textPrimary,
+                        color: context.palette.textPrimary,
                       ),
                     ),
                     if (info.caloriesPer100ml > 0) ...[
                       const SizedBox(height: 4),
                       Text(
                         '${info.caloriesPer100ml} kcal / 100ml',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 13,
-                          color: AppTheme.textSecondary,
+                          color: context.palette.textSecondary,
                         ),
                       ),
                     ],
@@ -356,21 +354,19 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                             decoration: BoxDecoration(
                               color: isSelected
                                   ? beverageColor.withAlpha(
-                                      info.type == BeverageType.milk
-                                          ? 30
-                                          : 180,
+                                      info.type == BeverageType.milk ? 30 : 180,
                                     )
-                                  : AppTheme.background,
+                                  : context.palette.background,
                               borderRadius: BorderRadius.circular(14),
                               border: isSelected
                                   ? Border.all(
                                       color: info.type == BeverageType.milk
-                                          ? AppTheme.accentTeal
+                                          ? context.palette.accentTeal
                                           : beverageColor,
                                       width: 2,
                                     )
                                   : Border.all(
-                                      color: AppTheme.dividerColor,
+                                      color: context.palette.dividerColor,
                                     ),
                             ),
                             child: Text(
@@ -380,9 +376,9 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                                 fontWeight: FontWeight.w600,
                                 color: isSelected
                                     ? (info.type == BeverageType.milk
-                                        ? AppTheme.accentTeal
-                                        : _contrastTextColor(beverageColor))
-                                    : AppTheme.textPrimary,
+                                          ? context.palette.accentTeal
+                                          : _contrastTextColor(beverageColor))
+                                    : context.palette.textPrimary,
                               ),
                             ),
                           ),
@@ -414,16 +410,16 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                             },
                             decoration: InputDecoration(
                               hintText: 'ml',
-                              hintStyle: const TextStyle(
-                                color: AppTheme.textLight,
+                              hintStyle: TextStyle(
+                                color: context.palette.textLight,
                               ),
-                              prefixIcon: const Icon(
+                              prefixIcon: Icon(
                                 Icons.edit_rounded,
-                                color: AppTheme.textLight,
+                                color: context.palette.textLight,
                                 size: 20,
                               ),
                               filled: true,
-                              fillColor: AppTheme.background,
+                              fillColor: context.palette.background,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(14),
                                 borderSide: BorderSide.none,
@@ -432,7 +428,7 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                                 borderRadius: BorderRadius.circular(14),
                                 borderSide: BorderSide(
                                   color: info.type == BeverageType.milk
-                                      ? AppTheme.accentTeal
+                                      ? context.palette.accentTeal
                                       : beverageColor,
                                   width: 1.5,
                                 ),
@@ -458,10 +454,10 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                             : null,
                         style: FilledButton.styleFrom(
                           backgroundColor: info.type == BeverageType.milk
-                              ? AppTheme.accentTeal
+                              ? context.palette.accentTeal
                               : beverageColor,
-                          disabledBackgroundColor:
-                              AppTheme.dividerColor.withAlpha(120),
+                          disabledBackgroundColor: context.palette.dividerColor
+                              .withAlpha(120),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
@@ -476,10 +472,10 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
                             color: selectedMl != null
                                 ? _contrastTextColor(
                                     info.type == BeverageType.milk
-                                        ? AppTheme.accentTeal
+                                        ? context.palette.accentTeal
                                         : beverageColor,
                                   )
-                                : AppTheme.textLight,
+                                : context.palette.textLight,
                           ),
                         ),
                       ),
@@ -495,17 +491,15 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
 
     if (result != null && result > 0) {
       final calories = (info.caloriesPer100ml * result / 100).round();
-      ref.read(beverageProvider.notifier).addEntry(
-            type: info.type,
-            milliliters: result,
-            calories: calories,
-          );
+      ref
+          .read(beverageProvider.notifier)
+          .addEntry(type: info.type, milliliters: result, calories: calories);
     }
   }
 
   Color _contrastTextColor(Color bg) {
     final luminance = bg.computeLuminance();
-    return luminance > 0.5 ? AppTheme.textPrimary : Colors.white;
+    return luminance > 0.5 ? context.palette.textPrimary : Colors.white;
   }
 }
 
@@ -565,8 +559,10 @@ class _BeverageHeader extends StatelessWidget {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white.withAlpha(25),
                   borderRadius: BorderRadius.circular(12),
@@ -574,9 +570,9 @@ class _BeverageHeader extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.local_fire_department_rounded,
-                      color: AppTheme.warningAmber,
+                      color: context.palette.warningAmber,
                       size: 16,
                     ),
                     const SizedBox(width: 4),
@@ -694,22 +690,22 @@ class _BeverageHeader extends StatelessWidget {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: AppTheme.successGreen.withAlpha(50),
+                              color: context.palette.successGreen.withAlpha(50),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: const Row(
+                            child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(
                                   Icons.check_circle_rounded,
-                                  color: AppTheme.successGreen,
+                                  color: context.palette.successGreen,
                                   size: 14,
                                 ),
-                                SizedBox(width: 4),
+                                const SizedBox(width: 4),
                                 Text(
                                   'Goal reached!',
                                   style: TextStyle(
-                                    color: AppTheme.successGreen,
+                                    color: context.palette.successGreen,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -878,7 +874,8 @@ class _BeverageTypeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = _beverageColors[info.type] ?? AppTheme.textLight;
+    final color =
+        _beverageColors(context)[info.type] ?? context.palette.textLight;
     final icon = _beverageIcons[info.type] ?? Icons.local_cafe_rounded;
     final isMilk = info.type == BeverageType.milk;
 
@@ -886,10 +883,13 @@ class _BeverageTypeButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: AppTheme.surface,
+          color: context.palette.surface,
           borderRadius: BorderRadius.circular(18),
           border: isMilk
-              ? Border.all(color: AppTheme.accentTeal.withAlpha(50), width: 1.5)
+              ? Border.all(
+                  color: context.palette.accentTeal.withAlpha(50),
+                  width: 1.5,
+                )
               : null,
           boxShadow: [
             BoxShadow(
@@ -906,13 +906,13 @@ class _BeverageTypeButton extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: isMilk
-                    ? AppTheme.accentTeal.withAlpha(20)
+                    ? context.palette.accentTeal.withAlpha(20)
                     : color.withAlpha(25),
                 borderRadius: BorderRadius.circular(14),
               ),
               child: Icon(
                 icon,
-                color: isMilk ? AppTheme.accentTeal : color,
+                color: isMilk ? context.palette.accentTeal : color,
                 size: 26,
               ),
             ),
@@ -924,10 +924,10 @@ class _BeverageTypeButton extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
-                  color: AppTheme.textPrimary,
+                  color: context.palette.textPrimary,
                 ),
               ),
             ),
@@ -957,10 +957,11 @@ class _BeverageEntryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = _beverageColors[entry.type] ?? AppTheme.textLight;
+    final color =
+        _beverageColors(context)[entry.type] ?? context.palette.textLight;
     final icon = _beverageIcons[entry.type] ?? Icons.local_cafe_rounded;
     final isMilk = entry.type == BeverageType.milk;
-    final displayColor = isMilk ? AppTheme.accentTeal : color;
+    final displayColor = isMilk ? context.palette.accentTeal : color;
     final name = info.name[locale] ?? info.name['en'] ?? '';
 
     return Padding(
@@ -985,7 +986,7 @@ class _BeverageEntryTile extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: AppTheme.surface,
+            color: context.palette.surface,
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
@@ -1005,7 +1006,7 @@ class _BeverageEntryTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   border: isMilk
                       ? Border.all(
-                          color: AppTheme.accentTeal.withAlpha(40),
+                          color: context.palette.accentTeal.withAlpha(40),
                         )
                       : null,
                 ),
@@ -1020,10 +1021,10 @@ class _BeverageEntryTile extends StatelessWidget {
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.textPrimary,
+                        color: context.palette.textPrimary,
                       ),
                     ),
                     const SizedBox(height: 3),
@@ -1032,14 +1033,14 @@ class _BeverageEntryTile extends StatelessWidget {
                         Icon(
                           Icons.access_time_rounded,
                           size: 13,
-                          color: AppTheme.textLight,
+                          color: context.palette.textLight,
                         ),
                         const SizedBox(width: 4),
                         Text(
                           entry.timeLabel,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 12,
-                            color: AppTheme.textSecondary,
+                            color: context.palette.textSecondary,
                           ),
                         ),
                         if (entry.calories > 0) ...[
@@ -1047,14 +1048,14 @@ class _BeverageEntryTile extends StatelessWidget {
                           Icon(
                             Icons.local_fire_department_rounded,
                             size: 13,
-                            color: AppTheme.warningAmber.withAlpha(180),
+                            color: context.palette.warningAmber.withAlpha(180),
                           ),
                           const SizedBox(width: 3),
                           Text(
                             '${entry.calories} kcal',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
-                              color: AppTheme.textSecondary,
+                              color: context.palette.textSecondary,
                             ),
                           ),
                         ],
@@ -1066,8 +1067,10 @@ class _BeverageEntryTile extends StatelessWidget {
 
               // ML amount
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: displayColor.withAlpha(15),
                   borderRadius: BorderRadius.circular(10),

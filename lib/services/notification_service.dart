@@ -38,7 +38,7 @@ class NotificationService {
   bool _initialized = false;
 
   NotificationService({FlutterLocalNotificationsPlugin? plugin})
-      : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
+    : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
 
   /// Prepares the plugin and timezone database. Returns false when the
   /// platform can't schedule notifications.
@@ -68,13 +68,17 @@ class NotificationService {
   /// Asks the OS for permission. Returns false when denied or unsupported.
   Future<bool> requestPermissions() async {
     try {
-      final ios = _plugin.resolvePlatformSpecificImplementation<
-          IOSFlutterLocalNotificationsPlugin>();
+      final ios = _plugin
+          .resolvePlatformSpecificImplementation<
+            IOSFlutterLocalNotificationsPlugin
+          >();
       if (ios != null) {
         return await ios.requestPermissions(alert: true, sound: true) ?? false;
       }
-      final android = _plugin.resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin>();
+      final android = _plugin
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >();
       if (android != null) {
         return await android.requestNotificationsPermission() ?? false;
       }
@@ -129,8 +133,14 @@ class NotificationService {
   /// The next time today's [hour]:[minute] occurs; tomorrow if already past.
   static tz.TZDateTime _nextOccurrence(int hour, int minute) {
     final now = tz.TZDateTime.now(tz.local);
-    var scheduled =
-        tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minute);
+    var scheduled = tz.TZDateTime(
+      tz.local,
+      now.year,
+      now.month,
+      now.day,
+      hour,
+      minute,
+    );
     if (!scheduled.isAfter(now)) {
       scheduled = scheduled.add(const Duration(days: 1));
     }
@@ -139,8 +149,7 @@ class NotificationService {
 
   /// Exposed for testing the roll-over rule without a device.
   static DateTime nextOccurrenceFrom(DateTime now, int hour, int minute) {
-    var scheduled =
-        DateTime(now.year, now.month, now.day, hour, minute);
+    var scheduled = DateTime(now.year, now.month, now.day, hour, minute);
     if (!scheduled.isAfter(now)) {
       scheduled = scheduled.add(const Duration(days: 1));
     }

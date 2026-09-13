@@ -15,6 +15,9 @@ import '../../providers/recipe_provider.dart';
 import '../../providers/shopping_provider.dart';
 import '../../services/diet_classifier.dart';
 import '../../services/recommendation_service.dart';
+import '../../services/preference_matcher.dart';
+import '../../services/recipe_timing.dart';
+import '../../providers/profile_provider.dart';
 
 class RecipeDetailScreen extends ConsumerWidget {
   final ScoredRecipe scoredRecipe;
@@ -26,12 +29,28 @@ class RecipeDetailScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final recipe = scoredRecipe.recipe;
+    if (recipeHasAllergenConflict(recipe, ref.watch(profileProvider))) {
+      return Scaffold(
+        appBar: AppBar(title: Text(recipe.localizedName(locale))),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              locale == 'tr'
+                  ? 'Bu tarif güncel alerji veya hassasiyet seçimlerine uygun değil ya da içeriği doğrulanamıyor. Beslen bölümünden başka bir tarif seçebilirsin.'
+                  : 'This recipe conflicts with your current allergy or sensitivity settings, or its ingredients cannot be verified. Choose another recipe in Nourish.',
+            ),
+          ),
+        ),
+      );
+    }
     final theme = Theme.of(context);
     final inventoryIds = ref.watch(inventoryIdsProvider);
 
     // Recalculate compatibility from current inventory
-    final currentAvailable =
-        recipe.ingredientIds.where((id) => inventoryIds.contains(id)).length;
+    final currentAvailable = recipe.ingredientIds
+        .where((id) => inventoryIds.contains(id))
+        .length;
     final totalIngredients = recipe.ingredientIds.length;
     final currentPercent = totalIngredients > 0
         ? ((currentAvailable / totalIngredients) * 100).round()
@@ -70,13 +89,16 @@ class RecipeDetailScreen extends ConsumerWidget {
                 MealTypeBadge(mealType: recipe.mealType),
                 const SizedBox(width: 10),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.successGreen.withAlpha(30),
+                    color: context.palette.successGreen.withAlpha(30),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                        color: AppTheme.successGreen.withAlpha(80)),
+                      color: context.palette.successGreen.withAlpha(80),
+                    ),
                   ),
                   child: Text(
                     '$currentPercent% ${l10n.recipeCompatibility}',
@@ -90,14 +112,28 @@ class RecipeDetailScreen extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: 14),
-            Text(recipe.localizedDescription(locale),
-                style: theme.textTheme.bodyLarge),
+            Text(
+              recipe.localizedDescription(locale),
+              style: theme.textTheme.bodyLarge,
+            ),
+            if (RecipeTiming.minutes(recipe) != null) ...[
+              const SizedBox(height: 12),
+              Text(
+                locale == 'tr'
+                    ? '${RecipeTiming.isEstimate(recipe) ? 'Tahmini toplam süre' : 'Hazırlık süresi'}: ${RecipeTiming.minutes(recipe)} dk'
+                    : '${RecipeTiming.isEstimate(recipe) ? 'Estimated total time' : 'Preparation time'}: ${RecipeTiming.minutes(recipe)} min',
+                style: theme.textTheme.bodyMedium,
+              ),
+            ],
 
             const SizedBox(height: 24),
 
             // Nutrition card
             _buildSectionTitle(
-                l10n.recipeNutrition, Icons.pie_chart_outline, theme),
+              l10n.recipeNutrition,
+              Icons.pie_chart_outline,
+              theme,
+            ),
             const SizedBox(height: 10),
             Card(
               shape: RoundedRectangleBorder(
@@ -105,7 +141,9 @@ class RecipeDetailScreen extends ConsumerWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 12, vertical: 18),
+                  horizontal: 12,
+                  vertical: 18,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -113,28 +151,28 @@ class RecipeDetailScreen extends ConsumerWidget {
                       l10n.recipeCalories,
                       '${recipe.macros.calories}',
                       'kcal',
-                      AppTheme.accentOrange,
+                      context.palette.accentOrange,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeProtein,
                       '${recipe.macros.proteinG}',
                       'g',
-                      AppTheme.softLavender,
+                      context.palette.softLavender,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeCarbs,
                       '${recipe.macros.carbsG}',
                       'g',
-                      AppTheme.accentTeal,
+                      context.palette.accentTeal,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeFiber,
                       '${recipe.macros.fiberG}',
                       'g',
-                      AppTheme.successGreen,
+                      context.palette.successGreen,
                     ),
                   ],
                 ),
@@ -142,62 +180,69 @@ class RecipeDetailScreen extends ConsumerWidget {
             ),
 
             // Diet suitability badges (derived from ingredients)
-            Builder(builder: (context) {
-              final tags =
-                  ref.watch(dietClassifierProvider).tagsFor(recipe);
-              if (tags.isEmpty) return const SizedBox.shrink();
-              final labels = {
-                DietClassifier.vegetarian: l10n.dietVegetarian,
-                DietClassifier.vegan: l10n.dietVegan,
-                DietClassifier.glutenFree: l10n.dietGlutenFree,
-                DietClassifier.dairyFree: l10n.dietDairyFree,
-              };
-              return Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: tags
-                      .where(labels.containsKey)
-                      .map((tag) => Container(
+            Builder(
+              builder: (context) {
+                final tags = ref.watch(dietClassifierProvider).tagsFor(recipe);
+                if (tags.isEmpty) return const SizedBox.shrink();
+                final labels = {
+                  DietClassifier.vegetarian: l10n.dietVegetarian,
+                  DietClassifier.vegan: l10n.dietVegan,
+                  DietClassifier.glutenFree: l10n.dietGlutenFree,
+                  DietClassifier.dairyFree: l10n.dietDairyFree,
+                };
+                return Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: tags
+                        .where(labels.containsKey)
+                        .map(
+                          (tag) => Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 5),
+                              horizontal: 10,
+                              vertical: 5,
+                            ),
                             decoration: BoxDecoration(
-                              color: AppTheme.successGreen.withAlpha(20),
+                              color: context.palette.successGreen.withAlpha(20),
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color:
-                                    AppTheme.successGreen.withAlpha(70),
+                                color: context.palette.successGreen.withAlpha(
+                                  70,
+                                ),
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                const Icon(Icons.eco_rounded,
-                                    size: 14,
-                                    color: AppTheme.successGreen),
+                                Icon(
+                                  Icons.eco_rounded,
+                                  size: 14,
+                                  color: context.palette.successGreen,
+                                ),
                                 const SizedBox(width: 4),
                                 Text(
                                   labels[tag]!,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
-                                    color: AppTheme.successGreen,
+                                    color: context.palette.successGreen,
                                   ),
                                 ),
                               ],
                             ),
-                          ))
-                      .toList(),
-                ),
-              );
-            }),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                );
+              },
+            ),
 
             const SizedBox(height: 24),
 
             // Ingredients
-            _buildSectionTitle(
-                l10n.recipeIngredients, Icons.kitchen, theme),
+            _buildSectionTitle(l10n.recipeIngredients, Icons.kitchen, theme),
             const SizedBox(height: 10),
             Card(
               shape: RoundedRectangleBorder(
@@ -205,7 +250,9 @@ class RecipeDetailScreen extends ConsumerWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 14, vertical: 6),
+                  horizontal: 14,
+                  vertical: 6,
+                ),
                 child: Column(
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
@@ -227,13 +274,12 @@ class RecipeDetailScreen extends ConsumerWidget {
 
             // Steps
             _buildSectionTitle(
-                l10n.recipeSteps, Icons.format_list_numbered, theme),
+              l10n.recipeSteps,
+              Icons.format_list_numbered,
+              theme,
+            ),
             const SizedBox(height: 10),
-            ...recipe
-                .localizedSteps(locale)
-                .asMap()
-                .entries
-                .map((entry) {
+            ...recipe.localizedSteps(locale).asMap().entries.map((entry) {
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
                 padding: const EdgeInsets.all(14),
@@ -241,7 +287,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                   color: theme.colorScheme.surface,
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(
-                    color: AppTheme.dividerColor,
+                    color: context.palette.dividerColor,
                     width: 1,
                   ),
                 ),
@@ -252,7 +298,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        gradient: AppTheme.accentGradient,
+                        gradient: context.palette.accentGradient,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       alignment: Alignment.center,
@@ -272,7 +318,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                         child: Text(
                           entry.value,
                           style: theme.textTheme.bodyMedium?.copyWith(
-                            color: AppTheme.textPrimary,
+                            color: context.palette.textPrimary,
                             height: 1.5,
                           ),
                         ),
@@ -295,8 +341,9 @@ class RecipeDetailScreen extends ConsumerWidget {
                   width: double.infinity,
                   child: OutlinedButton.icon(
                     onPressed: () {
-                      final shoppingNotifier =
-                          ref.read(shoppingProvider.notifier);
+                      final shoppingNotifier = ref.read(
+                        shoppingProvider.notifier,
+                      );
                       for (final id in currentMissing) {
                         final ingredient = ingredientMap[id];
                         final displayName =
@@ -309,7 +356,8 @@ class RecipeDetailScreen extends ConsumerWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                              l10n.recipeItemsAdded(currentMissing.length)),
+                            l10n.recipeItemsAdded(currentMissing.length),
+                          ),
                         ),
                       );
                     },
@@ -341,8 +389,7 @@ class RecipeDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildSectionTitle(
-      String title, IconData icon, ThemeData theme) {
+  Widget _buildSectionTitle(String title, IconData icon, ThemeData theme) {
     return Row(
       children: [
         Icon(icon, size: 20, color: theme.colorScheme.primary),
@@ -352,12 +399,8 @@ class RecipeDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _divider() {
-    return Container(
-      width: 1,
-      height: 36,
-      color: AppTheme.dividerColor,
-    );
+  Widget _divider(BuildContext context) {
+    return Container(width: 1, height: 36, color: context.palette.dividerColor);
   }
 
   void _showAddToPlanner(BuildContext context, WidgetRef ref) async {
@@ -374,25 +417,30 @@ class RecipeDetailScreen extends ConsumerWidget {
       builder: (ctx) => SimpleDialog(
         title: Text(AppLocalizations.of(context).plannerSelectMealType),
         children: MealType.values
-            .map((type) => SimpleDialogOption(
-                  onPressed: () => Navigator.pop(ctx, type),
-                  child:
-                      Text(type.name[0].toUpperCase() + type.name.substring(1)),
-                ))
+            .map(
+              (type) => SimpleDialogOption(
+                onPressed: () => Navigator.pop(ctx, type),
+                child: Text(
+                  type.name[0].toUpperCase() + type.name.substring(1),
+                ),
+              ),
+            )
             .toList(),
       ),
     );
     if (mealType == null || !context.mounted) return;
 
-    ref.read(mealPlanProvider.notifier).addEntry(
+    ref
+        .read(mealPlanProvider.notifier)
+        .addEntry(
           recipeId: scoredRecipe.recipe.id,
           date: date,
           mealType: mealType,
         );
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Added to planner')),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Added to planner')));
   }
 }
 
@@ -408,18 +456,19 @@ class _NutritionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(value,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: color,
-                )),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: color,
+          ),
+        ),
         Text(unit, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 2),
-        Text(label,
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall
-                ?.copyWith(fontSize: 11)),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 11),
+        ),
       ],
     );
   }
@@ -463,7 +512,7 @@ class _CookedButton extends ConsumerWidget {
                 );
               },
               style: FilledButton.styleFrom(
-                backgroundColor: AppTheme.successGreen,
+                backgroundColor: context.palette.successGreen,
               ),
               icon: const Icon(Icons.restaurant_rounded),
               label: Text(l10n.recipeMarkCooked),
@@ -499,8 +548,9 @@ class _IngredientRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color =
-        isAvailable ? AppTheme.successGreen : AppTheme.textSecondary;
+    final color = isAvailable
+        ? context.palette.successGreen
+        : context.palette.textSecondary;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 7),
@@ -517,9 +567,9 @@ class _IngredientRow extends StatelessWidget {
           Expanded(
             child: Text(
               name,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppTheme.textPrimary,
+                color: context.palette.textPrimary,
               ),
             ),
           ),
@@ -527,10 +577,10 @@ class _IngredientRow extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               quantity!,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: AppTheme.textPrimary,
+                color: context.palette.textPrimary,
               ),
             ),
           ],

@@ -54,24 +54,29 @@ List<DayMealItem> buildDayMealList({
   final items = <DayMealItem>[];
 
   for (final plan in dayPlans) {
-    final match =
-        unmatched.where((c) => c.recipeId == plan.recipeId).firstOrNull;
+    final match = unmatched
+        .where((c) => c.recipeId == plan.recipeId)
+        .firstOrNull;
     if (match != null) unmatched.remove(match);
-    items.add(DayMealItem(
-      recipeId: plan.recipeId,
-      mealType: plan.mealType,
-      timeLabel: plan.timeLabel,
-      planId: plan.id,
-      cookedEntryId: match?.id,
-    ));
+    items.add(
+      DayMealItem(
+        recipeId: plan.recipeId,
+        mealType: plan.mealType,
+        timeLabel: plan.timeLabel,
+        planId: plan.id,
+        cookedEntryId: match?.id,
+      ),
+    );
   }
 
   for (final entry in unmatched) {
-    items.add(DayMealItem(
-      recipeId: entry.recipeId,
-      mealType: entry.mealType,
-      cookedEntryId: entry.id,
-    ));
+    items.add(
+      DayMealItem(
+        recipeId: entry.recipeId,
+        mealType: entry.mealType,
+        cookedEntryId: entry.id,
+      ),
+    );
   }
 
   items.sort((a, b) {

@@ -16,11 +16,7 @@ class SaveRecipeButton extends ConsumerWidget {
   /// Size of the tappable square. 44 matches the explore cards.
   final double size;
 
-  const SaveRecipeButton({
-    super.key,
-    required this.recipeId,
-    this.size = 40,
-  });
+  const SaveRecipeButton({super.key, required this.recipeId, this.size = 40});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,19 +34,21 @@ class SaveRecipeButton extends ConsumerWidget {
           height: size,
           decoration: BoxDecoration(
             color: isSaved
-                ? AppTheme.warmCoral.withAlpha(20)
-                : AppTheme.background,
+                ? context.palette.warmCoral.withAlpha(20)
+                : context.palette.background,
             borderRadius: BorderRadius.circular(size * 0.32),
             border: Border.all(
               color: isSaved
-                  ? AppTheme.warmCoral.withAlpha(80)
-                  : AppTheme.dividerColor,
+                  ? context.palette.warmCoral.withAlpha(80)
+                  : context.palette.dividerColor,
               width: 1.5,
             ),
           ),
           child: Icon(
             isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
-            color: isSaved ? AppTheme.warmCoral : AppTheme.textLight,
+            color: isSaved
+                ? context.palette.warmCoral
+                : context.palette.textLight,
             size: size * 0.5,
           ),
         ),
@@ -80,9 +78,9 @@ class SaveRecipeWideButton extends ConsumerWidget {
         ),
         label: Text(isSaved ? l10n.recipeUnsave : l10n.recipeSave),
         style: OutlinedButton.styleFrom(
-          foregroundColor: isSaved ? AppTheme.warmCoral : null,
+          foregroundColor: isSaved ? context.palette.warmCoral : null,
           side: isSaved
-              ? const BorderSide(color: AppTheme.warmCoral, width: 1.5)
+              ? BorderSide(color: context.palette.warmCoral, width: 1.5)
               : null,
         ),
       ),

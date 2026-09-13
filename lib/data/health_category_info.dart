@@ -51,11 +51,13 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
   // ── Magnesium ───────────────────────────────────────────────────────────
   'magnesiumDeficiency': HealthCategoryInfo(
     summary: {
-      'tr': 'Magnezyum eksikliğini gidermek için günlük diyetinize kabak '
+      'tr':
+          'Magnezyum eksikliğini gidermek için günlük diyetinize kabak '
           'çekirdeği, ıspanak ve badem gibi zengin gıdaları eklemelisiniz. Bu '
           'minerali vücudun daha iyi kullanabilmesi için doğru besin '
           'gruplarından seçmek önemlidir.',
-      'en': 'To close a magnesium gap, build the day around pumpkin seeds, '
+      'en':
+          'To close a magnesium gap, build the day around pumpkin seeds, '
           'spinach and almonds. Choosing the right food groups matters as '
           'much as the amount, because that is what your body can actually '
           'absorb.',
@@ -101,23 +103,49 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'pumpkin_seeds', 'spinach', 'almond', 'dark_chocolate', 'avocado',
-      'banana', 'swiss_chard', 'kale', 'cashew', 'walnut', 'hazelnut',
-      'peanut', 'tahini', 'sesame_seeds', 'chia_seeds', 'flax_seeds',
-      'sunflower_seeds', 'oats', 'quinoa', 'buckwheat', 'bulgur',
-      'black_bean', 'kidney_bean', 'white_bean', 'red_lentil', 'green_lentil',
-      'chickpea', 'tofu', 'edamame', 'cocoa_powder',
+      'pumpkin_seeds',
+      'spinach',
+      'almond',
+      'dark_chocolate',
+      'avocado',
+      'banana',
+      'swiss_chard',
+      'kale',
+      'cashew',
+      'walnut',
+      'hazelnut',
+      'peanut',
+      'tahini',
+      'sesame_seeds',
+      'chia_seeds',
+      'flax_seeds',
+      'sunflower_seeds',
+      'oats',
+      'quinoa',
+      'buckwheat',
+      'bulgur',
+      'black_bean',
+      'kidney_bean',
+      'white_bean',
+      'red_lentil',
+      'green_lentil',
+      'chickpea',
+      'tofu',
+      'edamame',
+      'cocoa_powder',
     ],
   ),
 
   // ── Iron ────────────────────────────────────────────────────────────────
   'ironDeficiency': HealthCategoryInfo(
     summary: {
-      'tr': 'Demir eksikliğinde iki tür demir işinize yarar: ette bulunan hem '
+      'tr':
+          'Demir eksikliğinde iki tür demir işinize yarar: ette bulunan hem '
           'demir kolay emilir, bitkisel kaynaklardaki demir ise C vitamini ile '
           'birlikte alındığında çok daha iyi değerlendirilir. Tabağınızı bu '
           'ikiliyi bir araya getirecek şekilde kurun.',
-      'en': 'Two kinds of iron matter here: heme iron from meat is absorbed '
+      'en':
+          'Two kinds of iron matter here: heme iron from meat is absorbed '
           'easily, while plant iron needs vitamin C alongside it to be used '
           'well. Build the plate so the two meet.',
     },
@@ -160,10 +188,27 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'liver', 'ground_beef', 'beef_steak', 'lamb', 'veal', 'spinach',
-      'swiss_chard', 'red_lentil', 'green_lentil', 'chickpea', 'kidney_bean',
-      'white_bean', 'black_bean', 'fava_bean', 'pumpkin_seeds',
-      'sesame_seeds', 'eggs', 'quinoa', 'tofu', 'dark_chocolate', 'apricot',
+      'liver',
+      'ground_beef',
+      'beef_steak',
+      'lamb',
+      'veal',
+      'spinach',
+      'swiss_chard',
+      'red_lentil',
+      'green_lentil',
+      'chickpea',
+      'kidney_bean',
+      'white_bean',
+      'black_bean',
+      'fava_bean',
+      'pumpkin_seeds',
+      'sesame_seeds',
+      'eggs',
+      'quinoa',
+      'tofu',
+      'dark_chocolate',
+      'apricot',
       'dates',
     ],
   ),
@@ -171,10 +216,12 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
   // ── Vitamin B12 ─────────────────────────────────────────────────────────
   'vitaminB12': HealthCategoryInfo(
     summary: {
-      'tr': 'B12 yalnızca hayvansal gıdalarda doğal olarak bulunur: et, '
+      'tr':
+          'B12 yalnızca hayvansal gıdalarda doğal olarak bulunur: et, '
           'balık, yumurta ve süt ürünleri. Bitkisel beslenenlerin '
           'zenginleştirilmiş ürünlere veya takviyeye ihtiyacı olur.',
-      'en': 'B12 occurs naturally only in animal foods — meat, fish, eggs and '
+      'en':
+          'B12 occurs naturally only in animal foods — meat, fish, eggs and '
           'dairy. On a plant-based diet it has to come from fortified foods '
           'or a supplement.',
     },
@@ -215,28 +262,57 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'liver', 'salmon', 'tuna', 'sardine', 'mussel', 'anchovy', 'eggs',
-      'ground_beef', 'beef_steak', 'veal', 'lamb', 'chicken_breast',
-      'chicken_thigh', 'turkey_breast', 'cod', 'sea_bass', 'sea_bream',
-      'shrimp', 'squid', 'octopus', 'milk', 'yogurt', 'greek_yogurt',
-      'kefir', 'cheddar_cheese', 'feta_cheese', 'parmesan', 'mozzarella',
-      'goat_cheese', 'ricotta',
+      'liver',
+      'salmon',
+      'tuna',
+      'sardine',
+      'mussel',
+      'anchovy',
+      'eggs',
+      'ground_beef',
+      'beef_steak',
+      'veal',
+      'lamb',
+      'chicken_breast',
+      'chicken_thigh',
+      'turkey_breast',
+      'cod',
+      'sea_bass',
+      'sea_bream',
+      'shrimp',
+      'squid',
+      'octopus',
+      'milk',
+      'yogurt',
+      'greek_yogurt',
+      'kefir',
+      'cheddar_cheese',
+      'feta_cheese',
+      'parmesan',
+      'mozzarella',
+      'goat_cheese',
+      'ricotta',
     ],
   ),
 
   // ── Anemia ──────────────────────────────────────────────────────────────
   'anemia': HealthCategoryInfo(
     summary: {
-      'tr': 'Kansızlıkta demir tek başına yetmez: demiri taşıyan besinlerle C '
+      'tr':
+          'Kansızlıkta demir tek başına yetmez: demiri taşıyan besinlerle C '
           'vitamini kaynaklarını aynı öğünde buluşturmak, emilen demir '
           'miktarını kat kat artırır.',
-      'en': 'Iron alone is not enough with anemia: pairing iron-rich foods '
+      'en':
+          'Iron alone is not enough with anemia: pairing iron-rich foods '
           'with vitamin C in the same meal multiplies how much of it you '
           'actually absorb.',
     },
     sections: [
       HealthInfoSection(
-        title: {'tr': 'Tabakta olması gerekenler', 'en': 'What to put on the plate'},
+        title: {
+          'tr': 'Tabakta olması gerekenler',
+          'en': 'What to put on the plate',
+        },
         items: {
           'tr': [
             'Demir kaynağı: ciğer, kırmızı et, mercimek, nohut, ıspanak',
@@ -267,21 +343,46 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'liver', 'ground_beef', 'beef_steak', 'lamb', 'spinach', 'swiss_chard',
-      'red_lentil', 'green_lentil', 'chickpea', 'kidney_bean', 'white_bean',
-      'pomegranate', 'lemon', 'orange', 'tangerine', 'grapefruit', 'tomato',
-      'bell_pepper', 'broccoli', 'parsley', 'strawberry', 'eggs', 'quinoa',
-      'tofu', 'pumpkin_seeds', 'dark_chocolate', 'apricot', 'dates',
+      'liver',
+      'ground_beef',
+      'beef_steak',
+      'lamb',
+      'spinach',
+      'swiss_chard',
+      'red_lentil',
+      'green_lentil',
+      'chickpea',
+      'kidney_bean',
+      'white_bean',
+      'pomegranate',
+      'lemon',
+      'orange',
+      'tangerine',
+      'grapefruit',
+      'tomato',
+      'bell_pepper',
+      'broccoli',
+      'parsley',
+      'strawberry',
+      'eggs',
+      'quinoa',
+      'tofu',
+      'pumpkin_seeds',
+      'dark_chocolate',
+      'apricot',
+      'dates',
     ],
   ),
 
   // ── PCOS ────────────────────────────────────────────────────────────────
   'pcos': HealthCategoryInfo(
     summary: {
-      'tr': 'PCOS\'ta amaç kan şekerini dalgalandırmayan öğünler kurmak: '
+      'tr':
+          'PCOS\'ta amaç kan şekerini dalgalandırmayan öğünler kurmak: '
           'kompleks karbonhidratı protein, lif ve sağlıklı yağla birlikte '
           'yiyerek insülin yanıtını yumuşatırsınız.',
-      'en': 'With PCOS the goal is meals that keep blood sugar steady: pair '
+      'en':
+          'With PCOS the goal is meals that keep blood sugar steady: pair '
           'complex carbohydrates with protein, fibre and healthy fat to blunt '
           'the insulin response.',
     },
@@ -321,21 +422,44 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'oats', 'quinoa', 'buckwheat', 'bulgur', 'eggs', 'chicken_breast',
-      'salmon', 'greek_yogurt', 'chickpea', 'red_lentil', 'green_lentil',
-      'white_bean', 'avocado', 'olive_oil', 'walnut', 'almond', 'chia_seeds',
-      'flax_seeds', 'pumpkin_seeds', 'broccoli', 'spinach', 'cauliflower',
-      'zucchini', 'blueberry', 'cinnamon', 'tahini',
+      'oats',
+      'quinoa',
+      'buckwheat',
+      'bulgur',
+      'eggs',
+      'chicken_breast',
+      'salmon',
+      'greek_yogurt',
+      'chickpea',
+      'red_lentil',
+      'green_lentil',
+      'white_bean',
+      'avocado',
+      'olive_oil',
+      'walnut',
+      'almond',
+      'chia_seeds',
+      'flax_seeds',
+      'pumpkin_seeds',
+      'broccoli',
+      'spinach',
+      'cauliflower',
+      'zucchini',
+      'blueberry',
+      'cinnamon',
+      'tahini',
     ],
   ),
 
   // ── Insulin resistance ──────────────────────────────────────────────────
   'insulinResistance': HealthCategoryInfo(
     summary: {
-      'tr': 'İnsülin direncinde tabağın sırası önemlidir: lif ve proteinle '
+      'tr':
+          'İnsülin direncinde tabağın sırası önemlidir: lif ve proteinle '
           'başlayıp karbonhidrata sonra geçmek, kan şekerinin daha yavaş '
           'yükselmesini sağlar.',
-      'en': 'With insulin resistance the order on the plate matters: starting '
+      'en':
+          'With insulin resistance the order on the plate matters: starting '
           'with fibre and protein before the carbohydrate slows the rise in '
           'blood sugar.',
     },
@@ -358,7 +482,10 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
         },
       ),
       HealthInfoSection(
-        title: {'tr': 'Kan şekerini dengeleyen alışkanlıklar', 'en': 'Habits that steady blood sugar'},
+        title: {
+          'tr': 'Kan şekerini dengeleyen alışkanlıklar',
+          'en': 'Habits that steady blood sugar',
+        },
         items: {
           'tr': [
             'Meyveyi tek başına değil, bir avuç kuruyemişle birlikte yiyin.',
@@ -374,11 +501,33 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'oats', 'bulgur', 'quinoa', 'buckwheat', 'whole_wheat_flour',
-      'red_lentil', 'green_lentil', 'chickpea', 'white_bean', 'black_bean',
-      'eggs', 'greek_yogurt', 'yogurt', 'chicken_breast', 'salmon',
-      'walnut', 'almond', 'chia_seeds', 'flax_seeds', 'avocado', 'olive_oil',
-      'broccoli', 'spinach', 'cauliflower', 'apple', 'pear', 'blueberry',
+      'oats',
+      'bulgur',
+      'quinoa',
+      'buckwheat',
+      'whole_wheat_flour',
+      'red_lentil',
+      'green_lentil',
+      'chickpea',
+      'white_bean',
+      'black_bean',
+      'eggs',
+      'greek_yogurt',
+      'yogurt',
+      'chicken_breast',
+      'salmon',
+      'walnut',
+      'almond',
+      'chia_seeds',
+      'flax_seeds',
+      'avocado',
+      'olive_oil',
+      'broccoli',
+      'spinach',
+      'cauliflower',
+      'apple',
+      'pear',
+      'blueberry',
       'cinnamon',
     ],
   ),
@@ -386,16 +535,21 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
   // ── Gluten free ─────────────────────────────────────────────────────────
   'glutenFree': HealthCategoryInfo(
     summary: {
-      'tr': 'Glutensiz beslenmede buğday, arpa ve çavdar tamamen dışarıda '
+      'tr':
+          'Glutensiz beslenmede buğday, arpa ve çavdar tamamen dışarıda '
           'kalır. İyi haber şu ki karabuğday, kinoa, pirinç ve mısır gibi '
           'doğal olarak glutensiz tahıllar aynı doygunluğu verir.',
-      'en': 'A gluten-free diet leaves out wheat, barley and rye entirely. '
+      'en':
+          'A gluten-free diet leaves out wheat, barley and rye entirely. '
           'The good news: buckwheat, quinoa, rice and corn are naturally '
           'gluten-free and just as filling.',
     },
     sections: [
       HealthInfoSection(
-        title: {'tr': 'Güvenli tahıl ve nişastalar', 'en': 'Safe grains and starches'},
+        title: {
+          'tr': 'Güvenli tahıl ve nişastalar',
+          'en': 'Safe grains and starches',
+        },
         items: {
           'tr': [
             'Tahıllar: pirinç, kinoa, karabuğday, mısır unu',
@@ -428,21 +582,43 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'white_rice', 'brown_rice', 'basmati_rice', 'quinoa', 'buckwheat',
-      'cornmeal', 'corn', 'potato', 'sweet_potato', 'red_lentil',
-      'green_lentil', 'chickpea', 'white_bean', 'black_bean', 'eggs',
-      'almond', 'walnut', 'tahini', 'sesame_seeds', 'avocado', 'spinach',
-      'tomato', 'yogurt', 'chicken_breast', 'salmon',
+      'white_rice',
+      'brown_rice',
+      'basmati_rice',
+      'quinoa',
+      'buckwheat',
+      'cornmeal',
+      'corn',
+      'potato',
+      'sweet_potato',
+      'red_lentil',
+      'green_lentil',
+      'chickpea',
+      'white_bean',
+      'black_bean',
+      'eggs',
+      'almond',
+      'walnut',
+      'tahini',
+      'sesame_seeds',
+      'avocado',
+      'spinach',
+      'tomato',
+      'yogurt',
+      'chicken_breast',
+      'salmon',
     ],
   ),
 
   // ── Lactose free ────────────────────────────────────────────────────────
   'lactoseFree': HealthCategoryInfo(
     summary: {
-      'tr': 'Süt ürünlerini bıraktığınızda asıl dikkat edilecek şey kalsiyum: '
+      'tr':
+          'Süt ürünlerini bıraktığınızda asıl dikkat edilecek şey kalsiyum: '
           'tahin, susam, badem, kara lahana ve kılçığıyla yenen sardalya bu '
           'boşluğu doldurur.',
-      'en': 'When dairy goes, calcium is what needs watching: tahini, sesame, '
+      'en':
+          'When dairy goes, calcium is what needs watching: tahini, sesame, '
           'almonds, kale and bone-in sardines fill the gap.',
     },
     sections: [
@@ -480,20 +656,40 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'tahini', 'sesame_seeds', 'almond', 'kale', 'spinach', 'swiss_chard',
-      'broccoli', 'sardine', 'anchovy', 'salmon', 'chickpea', 'white_bean',
-      'tofu', 'chia_seeds', 'coconut_milk', 'olive_oil', 'avocado',
-      'eggs', 'quinoa', 'oats', 'fig', 'orange',
+      'tahini',
+      'sesame_seeds',
+      'almond',
+      'kale',
+      'spinach',
+      'swiss_chard',
+      'broccoli',
+      'sardine',
+      'anchovy',
+      'salmon',
+      'chickpea',
+      'white_bean',
+      'tofu',
+      'chia_seeds',
+      'coconut_milk',
+      'olive_oil',
+      'avocado',
+      'eggs',
+      'quinoa',
+      'oats',
+      'fig',
+      'orange',
     ],
   ),
 
   // ── Period support ──────────────────────────────────────────────────────
   'periodSupport': HealthCategoryInfo(
     summary: {
-      'tr': 'Regl döneminde kaybedilen demiri geri koymak ve kramplara iyi '
+      'tr':
+          'Regl döneminde kaybedilen demiri geri koymak ve kramplara iyi '
           'gelen magnezyumu artırmak iki temel hedeftir. Bunun üstüne sıcak, '
           'sindirimi kolay ve şeker dalgalanması yaratmayan öğünler ekleyin.',
-      'en': 'Two goals during your period: replace the iron you lose and lift '
+      'en':
+          'Two goals during your period: replace the iron you lose and lift '
           'the magnesium that eases cramps. On top of that, keep meals warm, '
           'easy to digest and free of sugar spikes.',
     },
@@ -532,10 +728,27 @@ const Map<String, HealthCategoryInfo> healthCategoryInfo = {
       ),
     ],
     ingredientIds: [
-      'pumpkin_seeds', 'dark_chocolate', 'tahini', 'spinach', 'swiss_chard',
-      'banana', 'oats', 'ginger', 'mint', 'salmon', 'walnut', 'chia_seeds',
-      'red_lentil', 'green_lentil', 'liver', 'ground_beef', 'dates',
-      'pomegranate', 'almond', 'yogurt', 'sweet_potato',
+      'pumpkin_seeds',
+      'dark_chocolate',
+      'tahini',
+      'spinach',
+      'swiss_chard',
+      'banana',
+      'oats',
+      'ginger',
+      'mint',
+      'salmon',
+      'walnut',
+      'chia_seeds',
+      'red_lentil',
+      'green_lentil',
+      'liver',
+      'ground_beef',
+      'dates',
+      'pomegranate',
+      'almond',
+      'yogurt',
+      'sweet_potato',
     ],
   ),
 };

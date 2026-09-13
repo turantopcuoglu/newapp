@@ -18,14 +18,10 @@ class CookedNotifier extends StateNotifier<List<CookedEntry>> {
   final NutritionCalculator _calculator;
 
   CookedNotifier(this._storage, this._calculator)
-      : super(List.of(_storage.getCookedEntries()));
+    : super(List.of(_storage.getCookedEntries()));
 
   /// Logs a recipe as cooked, snapshotting its per-serving macros.
-  CookedEntry markCooked(
-    Recipe recipe, {
-    double servings = 1,
-    DateTime? at,
-  }) {
+  CookedEntry markCooked(Recipe recipe, {double servings = 1, DateTime? at}) {
     final entry = CookedEntry(
       id: _uuid.v4(),
       recipeId: recipe.id,
@@ -68,7 +64,10 @@ class CookedNotifier extends StateNotifier<List<CookedEntry>> {
     final dayKey = DayBoundary.keyForDate(date);
     if (undoOn(recipe.id, dayKey)) return false;
     final isToday = dayKey == DayBoundary.today();
-    markCooked(recipe, at: isToday ? DateTime.now() : DayBoundary.middayOf(date));
+    markCooked(
+      recipe,
+      at: isToday ? DateTime.now() : DayBoundary.middayOf(date),
+    );
     return true;
   }
 
@@ -78,18 +77,18 @@ class CookedNotifier extends StateNotifier<List<CookedEntry>> {
   }
 
   List<CookedEntry> entriesBetween(DateTime start, DateTime end) => state
-      .where((e) =>
-          !e.dateTime.isBefore(start) && e.dateTime.isBefore(end))
+      .where((e) => !e.dateTime.isBefore(start) && e.dateTime.isBefore(end))
       .toList();
 }
 
-final cookedProvider =
-    StateNotifierProvider<CookedNotifier, List<CookedEntry>>((ref) {
-  return CookedNotifier(
-    ref.watch(storageProvider),
-    ref.watch(nutritionCalculatorProvider),
-  );
-});
+final cookedProvider = StateNotifierProvider<CookedNotifier, List<CookedEntry>>(
+  (ref) {
+    return CookedNotifier(
+      ref.watch(storageProvider),
+      ref.watch(nutritionCalculatorProvider),
+    );
+  },
+);
 
 /// Totals consumed on the current app-day.
 final consumedTodayProvider = Provider<ConsumedTotals>((ref) {

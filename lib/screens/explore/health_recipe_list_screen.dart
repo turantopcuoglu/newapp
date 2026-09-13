@@ -45,8 +45,9 @@ class HealthRecipeListScreen extends ConsumerWidget {
           : matchesCategoryIngredient(sr.recipe, category, id);
     }).toList();
 
-    final ingredient =
-        ingredientId == null ? null : ingredientById(ingredientId!);
+    final ingredient = ingredientId == null
+        ? null
+        : ingredientById(ingredientId!);
     final title = ingredient?.localizedName(locale) ?? l10n.healthAllRecipes;
 
     // The warning names the ingredient when there is one, otherwise it speaks
@@ -59,7 +60,7 @@ class HealthRecipeListScreen extends ConsumerWidget {
         cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       appBar: AppBar(
         backgroundColor: Color(gradientColors[0]),
         foregroundColor: Colors.white,
@@ -106,17 +107,17 @@ class HealthRecipeListScreen extends ConsumerWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.search_off_rounded,
-                      color: AppTheme.textLight,
+                      color: context.palette.textLight,
                       size: 48,
                     ),
                     const SizedBox(height: 16),
                     Text(
                       l10n.healthIngredientEmpty,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: AppTheme.textSecondary,
+                      style: TextStyle(
+                        color: context.palette.textSecondary,
                         fontSize: 14,
                       ),
                     ),

@@ -105,12 +105,10 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     setState(() {
       switch (_currentPeriod) {
         case _Period.daily:
-          _selectedDate =
-              _selectedDate.subtract(const Duration(days: 1));
+          _selectedDate = _selectedDate.subtract(const Duration(days: 1));
           break;
         case _Period.weekly:
-          _selectedDate =
-              _selectedDate.subtract(const Duration(days: 7));
+          _selectedDate = _selectedDate.subtract(const Duration(days: 7));
           break;
         case _Period.monthly:
           _selectedDate = DateTime(
@@ -184,7 +182,10 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     switch (_currentPeriod) {
       case _Period.daily:
         startDate = DateTime(
-            _selectedDate.year, _selectedDate.month, _selectedDate.day);
+          _selectedDate.year,
+          _selectedDate.month,
+          _selectedDate.day,
+        );
         endDate = startDate.add(const Duration(days: 1));
         break;
       case _Period.weekly:
@@ -204,14 +205,17 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     // bound back a day, and a meal cooked at 01:00 belongs to the previous
     // app-day the same way the daily card counts it.
     final rangeKeys = <String>{};
-    for (var d = startDate;
-        d.isBefore(endDate);
-        d = d.add(const Duration(days: 1))) {
+    for (
+      var d = startDate;
+      d.isBefore(endDate);
+      d = d.add(const Duration(days: 1))
+    ) {
       rangeKeys.add(DayBoundary.keyForDate(d));
     }
 
-    final filteredCooked =
-        cookedEntries.where((e) => rangeKeys.contains(e.dayKey)).toList();
+    final filteredCooked = cookedEntries
+        .where((e) => rangeKeys.contains(e.dayKey))
+        .toList();
 
     final consumed = ConsumedTotals.from(filteredCooked);
 
@@ -276,14 +280,14 @@ class _NutritionStatsScreenState extends ConsumerState<NutritionStatsScreen>
     final data = _computeData();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       appBar: AppBar(
         title: Text(l10n.summaryTitle),
         bottom: TabBar(
           controller: _tabController,
-          labelColor: AppTheme.accentOrange,
-          unselectedLabelColor: AppTheme.textSecondary,
-          indicatorColor: AppTheme.accentOrange,
+          labelColor: context.palette.accentOrange,
+          unselectedLabelColor: context.palette.textSecondary,
+          indicatorColor: context.palette.accentOrange,
           indicatorSize: TabBarIndicatorSize.label,
           labelStyle: const TextStyle(
             fontSize: 14,
@@ -350,7 +354,7 @@ class _DateNavigationBar extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(20, 16, 20, 4),
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -363,28 +367,28 @@ class _DateNavigationBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
+          WellnessIconButton(
             icon: const Icon(Icons.chevron_left_rounded, size: 28),
             onPressed: onBack,
-            color: AppTheme.textPrimary,
+            color: context.palette.textPrimary,
             splashRadius: 22,
           ),
           Expanded(
             child: Text(
               label,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w700,
-                color: AppTheme.textPrimary,
+                color: context.palette.textPrimary,
                 letterSpacing: -0.2,
               ),
             ),
           ),
-          IconButton(
+          WellnessIconButton(
             icon: const Icon(Icons.chevron_right_rounded, size: 28),
             onPressed: onForward,
-            color: AppTheme.textPrimary,
+            color: context.palette.textPrimary,
             splashRadius: 22,
           ),
         ],
@@ -455,30 +459,30 @@ class _EmptyState extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: AppTheme.accentOrange.withAlpha(15),
+              color: context.palette.accentOrange.withAlpha(15),
               shape: BoxShape.circle,
             ),
-            child: const Icon(
+            child: Icon(
               Icons.restaurant_menu_rounded,
               size: 48,
-              color: AppTheme.accentOrange,
+              color: context.palette.accentOrange,
             ),
           ),
           const SizedBox(height: 20),
           Text(
             l10n.noData,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w600,
-              color: AppTheme.textPrimary,
+              color: context.palette.textPrimary,
             ),
           ),
           const SizedBox(height: 8),
           Text(
             l10n.plannerEmpty,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
-              color: AppTheme.textSecondary,
+              color: context.palette.textSecondary,
             ),
           ),
         ],
@@ -502,11 +506,11 @@ class _CaloriesHeaderCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        gradient: AppTheme.accentGradient,
+        gradient: context.palette.accentGradient,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.accentOrange.withAlpha(50),
+            color: context.palette.accentOrange.withAlpha(50),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -546,10 +550,7 @@ class _CaloriesHeaderCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Container(
-            height: 1,
-            color: Colors.white.withAlpha(40),
-          ),
+          Container(height: 1, color: Colors.white.withAlpha(40)),
           const SizedBox(height: 14),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -636,7 +637,7 @@ class _MacroChartCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
@@ -651,10 +652,10 @@ class _MacroChartCard extends StatelessWidget {
         children: [
           Text(
             l10n.recipeNutrition,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w700,
-              color: AppTheme.textPrimary,
+              color: context.palette.textPrimary,
               letterSpacing: -0.3,
             ),
           ),
@@ -673,6 +674,7 @@ class _MacroChartCard extends StatelessWidget {
                     return CustomPaint(
                       size: const Size(140, 140),
                       painter: _DonutChartPainter(
+                        palette: context.palette,
                         proteinPercent: data.proteinPercent,
                         carbsPercent: data.carbsPercent,
                         fatPercent: data.fatPercent,
@@ -684,18 +686,18 @@ class _MacroChartCard extends StatelessWidget {
                           children: [
                             Text(
                               '${data.totalCalories}',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.w800,
-                                color: AppTheme.textPrimary,
+                                color: context.palette.textPrimary,
                                 letterSpacing: -0.5,
                               ),
                             ),
-                            const Text(
+                            Text(
                               'kcal',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: AppTheme.textSecondary,
+                                color: context.palette.textSecondary,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -713,14 +715,14 @@ class _MacroChartCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _LegendItem(
-                      color: AppTheme.accentTeal,
+                      color: context.palette.accentTeal,
                       label: l10n.recipeProtein,
                       grams: data.proteinG,
                       percent: data.proteinPercent,
                     ),
                     const SizedBox(height: 14),
                     _LegendItem(
-                      color: AppTheme.warningAmber,
+                      color: context.palette.warningAmber,
                       label: l10n.recipeCarbs,
                       grams: data.carbsG,
                       percent: data.carbsPercent,
@@ -734,7 +736,7 @@ class _MacroChartCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 14),
                     _LegendItem(
-                      color: AppTheme.successGreen,
+                      color: context.palette.successGreen,
                       label: l10n.recipeFiber,
                       grams: data.fiberG,
                       percent: -1, // no percentage for fiber
@@ -783,10 +785,10 @@ class _LegendItem extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: AppTheme.textPrimary,
+                  color: context.palette.textPrimary,
                 ),
               ),
               Text(
@@ -816,8 +818,10 @@ class _DonutChartPainter extends CustomPainter {
   final double carbsPercent;
   final double fatPercent;
   final double progress;
+  final MoodPalette palette;
 
   _DonutChartPainter({
+    required this.palette,
     required this.proteinPercent,
     required this.carbsPercent,
     required this.fatPercent,
@@ -836,7 +840,7 @@ class _DonutChartPainter extends CustomPainter {
 
     // Background track
     final bgPaint = Paint()
-      ..color = AppTheme.dividerColor.withAlpha(80)
+      ..color = palette.dividerColor.withAlpha(80)
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth
       ..strokeCap = StrokeCap.round;
@@ -852,7 +856,7 @@ class _DonutChartPainter extends CustomPainter {
     final fNorm = fatPercent / total;
 
     const gapAngle = 0.04; // radians gap between segments
-    final totalGap = gapAngle * 3;
+    const totalGap = gapAngle * 3;
     final availableAngle = (2 * math.pi - totalGap) * progress;
 
     final proteinAngle = pNorm * availableAngle;
@@ -862,22 +866,46 @@ class _DonutChartPainter extends CustomPainter {
     var startAngle = -math.pi / 2;
 
     // Draw protein arc
-    _drawArc(canvas, rect, startAngle, proteinAngle, AppTheme.accentTeal,
-        strokeWidth);
+    _drawArc(
+      canvas,
+      rect,
+      startAngle,
+      proteinAngle,
+      palette.accentTeal,
+      strokeWidth,
+    );
     startAngle += proteinAngle + gapAngle;
 
     // Draw carbs arc
-    _drawArc(canvas, rect, startAngle, carbsAngle, AppTheme.warningAmber,
-        strokeWidth);
+    _drawArc(
+      canvas,
+      rect,
+      startAngle,
+      carbsAngle,
+      palette.warningAmber,
+      strokeWidth,
+    );
     startAngle += carbsAngle + gapAngle;
 
     // Draw fat arc
-    _drawArc(canvas, rect, startAngle, fatAngle, const Color(0xFFE84393),
-        strokeWidth);
+    _drawArc(
+      canvas,
+      rect,
+      startAngle,
+      fatAngle,
+      const Color(0xFFE84393),
+      strokeWidth,
+    );
   }
 
-  void _drawArc(Canvas canvas, Rect rect, double startAngle,
-      double sweepAngle, Color color, double strokeWidth) {
+  void _drawArc(
+    Canvas canvas,
+    Rect rect,
+    double startAngle,
+    double sweepAngle,
+    Color color,
+    double strokeWidth,
+  ) {
     if (sweepAngle <= 0) return;
     final paint = Paint()
       ..color = color
@@ -891,6 +919,7 @@ class _DonutChartPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _DonutChartPainter oldDelegate) =>
       oldDelegate.progress != progress ||
+      oldDelegate.palette != palette ||
       oldDelegate.proteinPercent != proteinPercent ||
       oldDelegate.carbsPercent != carbsPercent ||
       oldDelegate.fatPercent != fatPercent;
@@ -908,14 +937,17 @@ class _MacroDetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final maxGrams = [data.proteinG, data.carbsG, data.fatG, data.fiberG]
-        .reduce((a, b) => a > b ? a : b)
-        .toDouble();
+    final maxGrams = [
+      data.proteinG,
+      data.carbsG,
+      data.fatG,
+      data.fiberG,
+    ].reduce((a, b) => a > b ? a : b).toDouble();
 
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
@@ -928,12 +960,12 @@ class _MacroDetailCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Macronutrients',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w700,
-              color: AppTheme.textPrimary,
+              color: context.palette.textPrimary,
               letterSpacing: -0.3,
             ),
           ),
@@ -942,7 +974,7 @@ class _MacroDetailCard extends StatelessWidget {
             label: l10n.recipeProtein,
             grams: data.proteinG,
             percent: data.proteinPercent,
-            color: AppTheme.accentTeal,
+            color: context.palette.accentTeal,
             icon: Icons.fitness_center_rounded,
             maxGrams: maxGrams,
           ),
@@ -951,7 +983,7 @@ class _MacroDetailCard extends StatelessWidget {
             label: l10n.recipeCarbs,
             grams: data.carbsG,
             percent: data.carbsPercent,
-            color: AppTheme.warningAmber,
+            color: context.palette.warningAmber,
             icon: Icons.grain_rounded,
             maxGrams: maxGrams,
           ),
@@ -969,7 +1001,7 @@ class _MacroDetailCard extends StatelessWidget {
             label: l10n.recipeFiber,
             grams: data.fiberG,
             percent: -1,
-            color: AppTheme.successGreen,
+            color: context.palette.successGreen,
             icon: Icons.eco_rounded,
             maxGrams: maxGrams,
           ),
@@ -1018,10 +1050,10 @@ class _MacroBarRow extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: AppTheme.textPrimary,
+                  color: context.palette.textPrimary,
                 ),
               ),
             ),
@@ -1086,7 +1118,7 @@ class _MealsAndBeveragesCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
@@ -1102,59 +1134,45 @@ class _MealsAndBeveragesCard extends StatelessWidget {
           Expanded(
             child: _SummaryTile(
               icon: Icons.restaurant_menu_rounded,
-              iconColor: AppTheme.accentOrange,
+              iconColor: context.palette.accentOrange,
               value: '${data.mealsLogged}',
               label: l10n.nutritionConsumed,
             ),
           ),
-          Container(
-            width: 1,
-            height: 56,
-            color: AppTheme.dividerColor,
-          ),
+          Container(width: 1, height: 56, color: context.palette.dividerColor),
           // Planned meals — an intention, not intake
           Expanded(
             child: _SummaryTile(
               icon: Icons.calendar_today_rounded,
-              iconColor: AppTheme.softLavender,
+              iconColor: context.palette.softLavender,
               value: '${data.mealsPlanned}',
               label: l10n.nutritionPlanned,
             ),
           ),
-          Container(
-            width: 1,
-            height: 56,
-            color: AppTheme.dividerColor,
-          ),
+          Container(width: 1, height: 56, color: context.palette.dividerColor),
           // Beverage calories — tapping opens the beverage log, which is
           // otherwise unreachable even though its calories show up here.
           Expanded(
             child: InkWell(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (_) => const BeveragesScreen(),
-                ),
+                MaterialPageRoute(builder: (_) => const BeveragesScreen()),
               ),
               borderRadius: BorderRadius.circular(12),
               child: _SummaryTile(
                 icon: Icons.local_cafe_rounded,
-                iconColor: AppTheme.warmCoral,
+                iconColor: context.palette.warmCoral,
                 value: '${data.beverageCalories}',
                 label: l10n.recipeCalories,
               ),
             ),
           ),
-          Container(
-            width: 1,
-            height: 56,
-            color: AppTheme.dividerColor,
-          ),
+          Container(width: 1, height: 56, color: context.palette.dividerColor),
           // Water intake
           Expanded(
             child: _SummaryTile(
               icon: Icons.water_drop_rounded,
-              iconColor: AppTheme.accentTeal,
+              iconColor: context.palette.accentTeal,
               value: '${waterLiters}L',
               label: 'Water',
             ),
@@ -1218,9 +1236,9 @@ class _SummaryTile extends StatelessWidget {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 11,
-            color: AppTheme.textSecondary,
+            color: context.palette.textSecondary,
             fontWeight: FontWeight.w500,
           ),
           maxLines: 1,

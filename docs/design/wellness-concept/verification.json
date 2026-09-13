@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "date": "2026-09-07",
+  "deliverable": "output/pdf/NutriGuide-Wellness-Stratejisi.pdf",
+  "pageCount": 14,
+  "clickableLinks": 51,
+  "visuals": 8,
+  "visualReview": {
+    "allPages": "Rendered using Poppler at 110 dpi; all 14 pages inspected in contact sheets",
+    "fullSizePages": [
+      2,
+      4,
+      11,
+      14
+    ],
+    "generatedBoards": "All four final boards inspected; breathing navigation and unstarted sleep checklist corrected in v2",
+    "issuesRemaining": []
+  },
+  "structuralReview": [
+    "No layout overflow; minimum content bottom 64 pt above page bottom",
+    "Turkish Arial fonts embedded",
+    "Page footers and link annotations checked",
+    "Sample insight plot has exactly five recorded days and two missing days"
+  ],
+  "limitations": [
+    "Concept visuals, not implemented software",
+    "No runtime app test or user study performed",
+    "Demand and monetization remain hypotheses"
+  ],
+  "plan": {
+    "scope": "Günlük iyi oluş isteyen yetişkinler için NutriGuide wellness dönüşümü; resmi ürün karşılaştırması, sağlık kanıtı, mevcut Flutter mimarisi; 8 ekran ve kaynaklı PDF.",
+    "assumptions": [
+      "Türkiye/Türkçe ilk pazar hipotezi, Android+iOS hedefi",
+      "Kod geliştirmesi yapılmayacak",
+      "Fiyat/pazar büyüklüğü/klinik etki iddiası üretilmeyecek"
+    ],
+    "steps": [
+      [
+        "Discovery",
+        "complete"
+      ],
+      [
+        "Follow-up and critical-source verification",
+        "complete"
+      ],
+      [
+        "Synthesis and artifact production",
+        "complete"
+      ],
+      [
+        "Visual and source QA",
+        "complete"
+      ]
+    ],
+    "planningTool": "update_plan tool metadata search returned no matching callable tool; plan maintained in session"
+  }
+}

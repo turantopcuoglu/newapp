@@ -43,9 +43,9 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen>
         title: Text(l10n.navMyKitchen),
         bottom: TabBar(
           controller: _tabController,
-          labelColor: AppTheme.accentOrange,
-          unselectedLabelColor: AppTheme.textSecondary,
-          indicatorColor: AppTheme.accentOrange,
+          labelColor: context.palette.accentOrange,
+          unselectedLabelColor: context.palette.textSecondary,
+          indicatorColor: context.palette.accentOrange,
           tabs: [
             Tab(
               icon: const Icon(Icons.kitchen_rounded, size: 20),
@@ -60,10 +60,7 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          _KitchenInventoryTab(),
-          _ShoppingListTab(),
-        ],
+        children: [_KitchenInventoryTab(), _ShoppingListTab()],
       ),
     );
   }
@@ -92,14 +89,14 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
     var results = mockIngredients.toList();
 
     if (_selectedCategory != null) {
-      results =
-          results.where((i) => i.category == _selectedCategory).toList();
+      results = results.where((i) => i.category == _selectedCategory).toList();
     }
 
     if (_searchQuery.isNotEmpty) {
       results = results.where((i) {
-        return i.name.values
-            .any((name) => TurkishStringHelper.containsTr(name, _searchQuery));
+        return i.name.values.any(
+          (name) => TurkishStringHelper.containsTr(name, _searchQuery),
+        );
       }).toList();
     }
 
@@ -112,16 +109,17 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
     final locale = l10n.locale.languageCode;
     final theme = Theme.of(context);
     final inventoryItems = ref.watch(inventoryProvider);
-    final inventoryIds =
-        inventoryItems.map((i) => i.ingredientId).toSet();
+    final inventoryIds = inventoryItems.map((i) => i.ingredientId).toSet();
 
     final filteredIngredients = _getFilteredIngredients(inventoryIds);
 
     // Separate into: in inventory vs not in inventory
-    final inInventory =
-        filteredIngredients.where((i) => inventoryIds.contains(i.id)).toList();
-    final notInInventory =
-        filteredIngredients.where((i) => !inventoryIds.contains(i.id)).toList();
+    final inInventory = filteredIngredients
+        .where((i) => inventoryIds.contains(i.id))
+        .toList();
+    final notInInventory = filteredIngredients
+        .where((i) => !inventoryIds.contains(i.id))
+        .toList();
 
     return Column(
       children: [
@@ -134,7 +132,7 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
               hintText: l10n.inventorySearch,
               prefixIcon: const Icon(Icons.search_rounded),
               suffixIcon: _searchQuery.isNotEmpty
-                  ? IconButton(
+                  ? WellnessIconButton(
                       icon: const Icon(Icons.clear_rounded, size: 20),
                       onPressed: () {
                         _searchController.clear();
@@ -156,29 +154,57 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
             children: [
               _buildCategoryChip(null, l10n.catAll, locale),
               _buildCategoryChip(
-                  IngredientCategory.protein, l10n.recipeProtein, locale),
+                IngredientCategory.protein,
+                l10n.recipeProtein,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.dairy, l10n.catDairy, locale),
+                IngredientCategory.dairy,
+                l10n.catDairy,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.grain, l10n.catGrain, locale),
+                IngredientCategory.grain,
+                l10n.catGrain,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.vegetable, l10n.catVegetable, locale),
+                IngredientCategory.vegetable,
+                l10n.catVegetable,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.fruit, l10n.catFruit, locale),
+                IngredientCategory.fruit,
+                l10n.catFruit,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.spice, l10n.catSpice, locale),
+                IngredientCategory.spice,
+                l10n.catSpice,
+                locale,
+              ),
+              _buildCategoryChip(IngredientCategory.oil, l10n.catOil, locale),
+              _buildCategoryChip(IngredientCategory.nut, l10n.catNut, locale),
               _buildCategoryChip(
-                  IngredientCategory.oil, l10n.catOil, locale),
+                IngredientCategory.legume,
+                l10n.catLegume,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.nut, l10n.catNut, locale),
+                IngredientCategory.condiment,
+                l10n.catCondiment,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.legume, l10n.catLegume, locale),
+                IngredientCategory.snackFood,
+                l10n.catSnackFood,
+                locale,
+              ),
               _buildCategoryChip(
-                  IngredientCategory.condiment, l10n.catCondiment, locale),
-              _buildCategoryChip(
-                  IngredientCategory.snackFood, l10n.catSnackFood, locale),
-              _buildCategoryChip(
-                  IngredientCategory.other, l10n.catOther, locale),
+                IngredientCategory.other,
+                l10n.catOther,
+                locale,
+              ),
             ],
           ),
         ),
@@ -191,18 +217,20 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
             child: Row(
               children: [
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.successGreen.withAlpha(20),
+                    color: context.palette.successGreen.withAlpha(20),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     '${inventoryIds.length} ${l10n.homeItemsInKitchen}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.successGreen,
+                      color: context.palette.successGreen,
                     ),
                   ),
                 ),
@@ -219,11 +247,16 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.search_off_rounded,
-                          size: 64, color: Colors.grey.shade300),
+                      Icon(
+                        Icons.search_off_rounded,
+                        size: 64,
+                        color: context.palette.dividerColor,
+                      ),
                       const SizedBox(height: 12),
-                      Text(l10n.recipeBookEmpty,
-                          style: theme.textTheme.bodyMedium),
+                      Text(
+                        l10n.recipeBookEmpty,
+                        style: theme.textTheme.bodyMedium,
+                      ),
                     ],
                   ),
                 )
@@ -232,16 +265,21 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
                   children: [
                     // Items in inventory first
                     if (inInventory.isNotEmpty) ...[
-                      ...inInventory.map((ingredient) =>
-                          _buildIngredientTile(
-                              ingredient, true, locale, l10n)),
-                      if (notInInventory.isNotEmpty)
-                        const Divider(height: 24),
+                      ...inInventory.map(
+                        (ingredient) => _buildIngredientTile(
+                          ingredient,
+                          true,
+                          locale,
+                          l10n,
+                        ),
+                      ),
+                      if (notInInventory.isNotEmpty) const Divider(height: 24),
                     ],
                     // Items not in inventory
-                    ...notInInventory.map((ingredient) =>
-                        _buildIngredientTile(
-                            ingredient, false, locale, l10n)),
+                    ...notInInventory.map(
+                      (ingredient) =>
+                          _buildIngredientTile(ingredient, false, locale, l10n),
+                    ),
                     const SizedBox(height: 16),
                   ],
                 ),
@@ -251,7 +289,10 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
   }
 
   Widget _buildCategoryChip(
-      IngredientCategory? category, String label, String locale) {
+    IngredientCategory? category,
+    String label,
+    String locale,
+  ) {
     final isSelected = _selectedCategory == category;
     return Padding(
       padding: const EdgeInsets.only(right: 8),
@@ -261,9 +302,11 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
         onSelected: (_) {
           setState(() => _selectedCategory = isSelected ? null : category);
         },
-        selectedColor: AppTheme.accentOrange.withAlpha(40),
+        selectedColor: context.palette.accentOrange.withAlpha(40),
         labelStyle: TextStyle(
-          color: isSelected ? AppTheme.accentOrange : AppTheme.textSecondary,
+          color: isSelected
+              ? context.palette.accentOrange
+              : context.palette.textSecondary,
           fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
           fontSize: 12,
         ),
@@ -271,23 +314,29 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
     );
   }
 
-  Widget _buildIngredientTile(Ingredient ingredient, bool isInInventory,
-      String locale, AppLocalizations l10n) {
+  Widget _buildIngredientTile(
+    Ingredient ingredient,
+    bool isInInventory,
+    String locale,
+    AppLocalizations l10n,
+  ) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 4),
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: isInInventory
-              ? AppTheme.successGreen.withAlpha(20)
-              : AppTheme.accentOrange.withAlpha(15),
+              ? context.palette.successGreen.withAlpha(20)
+              : context.palette.accentOrange.withAlpha(15),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(
           isInInventory
               ? Icons.check_circle_rounded
               : Icons.add_circle_outline_rounded,
-          color: isInInventory ? AppTheme.successGreen : AppTheme.accentOrange,
+          color: isInInventory
+              ? context.palette.successGreen
+              : context.palette.accentOrange,
           size: 22,
         ),
       ),
@@ -295,37 +344,41 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
         ingredient.localizedName(locale),
         style: TextStyle(
           fontWeight: isInInventory ? FontWeight.w600 : FontWeight.w400,
-          color:
-              isInInventory ? AppTheme.textPrimary : AppTheme.textSecondary,
+          color: isInInventory
+              ? context.palette.textPrimary
+              : context.palette.textSecondary,
         ),
       ),
       subtitle: Text(
         _categoryLabel(ingredient.category, l10n),
-        style: const TextStyle(fontSize: 11, color: AppTheme.textLight),
+        style: TextStyle(fontSize: 11, color: context.palette.textLight),
       ),
       trailing: isInInventory
-          ? IconButton(
-              icon: const Icon(Icons.remove_circle_outline_rounded,
-                  color: AppTheme.warmCoral, size: 22),
+          ? WellnessIconButton(
+              icon: Icon(
+                Icons.remove_circle_outline_rounded,
+                color: context.palette.warmCoral,
+                size: 22,
+              ),
               tooltip: l10n.remove,
               onPressed: () {
-                ref
-                    .read(inventoryProvider.notifier)
-                    .removeItem(ingredient.id);
+                ref.read(inventoryProvider.notifier).removeItem(ingredient.id);
               },
             )
-          : IconButton(
-              icon: const Icon(Icons.add_rounded,
-                  color: AppTheme.accentOrange, size: 22),
+          : WellnessIconButton(
+              icon: Icon(
+                Icons.add_rounded,
+                color: context.palette.accentOrange,
+                size: 22,
+              ),
               tooltip: l10n.inventoryAdd,
               onPressed: () {
-                ref
-                    .read(inventoryProvider.notifier)
-                    .addItem(ingredient.id);
+                ref.read(inventoryProvider.notifier).addItem(ingredient.id);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      '${ingredient.localizedName(l10n.locale.languageCode)} ${l10n.inventoryAdd.toLowerCase()}'),
+                      '${ingredient.localizedName(l10n.locale.languageCode)} ${l10n.inventoryAdd.toLowerCase()}',
+                    ),
                     duration: const Duration(seconds: 1),
                   ),
                 );
@@ -403,7 +456,7 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
                   controller: _controller,
                   decoration: InputDecoration(
                     hintText: l10n.shoppingItemHint,
-                    suffixIcon: IconButton(
+                    suffixIcon: WellnessIconButton(
                       icon: const Icon(Icons.add),
                       onPressed: _addItem,
                     ),
@@ -455,23 +508,40 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.shopping_bag_outlined,
-                          size: 64, color: Colors.grey.shade300),
+                      Icon(
+                        Icons.shopping_bag_outlined,
+                        size: 64,
+                        color: context.palette.dividerColor,
+                      ),
                       const SizedBox(height: 12),
-                      Text(l10n.shoppingEmpty,
-                          style: theme.textTheme.bodyMedium),
+                      Text(
+                        l10n.shoppingEmpty,
+                        style: theme.textTheme.bodyMedium,
+                      ),
                     ],
                   ),
                 )
               : ListView(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   children: [
-                    ...pending.map((item) => _buildItem(item.id, item.name,
-                        item.isPurchased, item.forRecipeId)),
+                    ...pending.map(
+                      (item) => _buildItem(
+                        item.id,
+                        item.name,
+                        item.isPurchased,
+                        item.forRecipeId,
+                      ),
+                    ),
                     if (purchased.isNotEmpty) ...[
                       const Divider(height: 32),
-                      ...purchased.map((item) => _buildItem(item.id,
-                          item.name, item.isPurchased, item.forRecipeId)),
+                      ...purchased.map(
+                        (item) => _buildItem(
+                          item.id,
+                          item.name,
+                          item.isPurchased,
+                          item.forRecipeId,
+                        ),
+                      ),
                     ],
                   ],
                 ),
@@ -481,15 +551,18 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
   }
 
   Widget _buildItem(
-      String id, String name, bool isPurchased, String? forRecipe) {
+    String id,
+    String name,
+    bool isPurchased,
+    String? forRecipe,
+  ) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
 
     return Dismissible(
       key: Key(id),
       direction: DismissDirection.endToStart,
-      onDismissed: (_) =>
-          ref.read(shoppingProvider.notifier).removeItem(id),
+      onDismissed: (_) => ref.read(shoppingProvider.notifier).removeItem(id),
       background: Container(
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20),
@@ -514,21 +587,17 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
             ? Text(forRecipe, style: theme.textTheme.bodySmall)
             : null,
         trailing: isPurchased
-            ? IconButton(
+            ? WellnessIconButton(
                 icon: const Icon(Icons.kitchen_outlined, size: 20),
                 tooltip: l10n.shoppingMoveToKitchen,
                 onPressed: () {
                   final ingredientId = _resolveIngredientId(name);
-                  ref
-                      .read(inventoryProvider.notifier)
-                      .addItem(ingredientId);
-                  ref
-                      .read(shoppingProvider.notifier)
-                      .removeItem(id);
+                  ref.read(inventoryProvider.notifier).addItem(ingredientId);
+                  ref.read(shoppingProvider.notifier).removeItem(id);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                        content: Text(
-                            '$name ${l10n.shoppingMoveToKitchen}')),
+                      content: Text('$name ${l10n.shoppingMoveToKitchen}'),
+                    ),
                   );
                 },
               )
@@ -541,8 +610,9 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
   /// the list — the same thing the per-item button does, without the tapping.
   void _movePurchasedToKitchen(List<ShoppingItem> purchased) {
     final l10n = AppLocalizations.of(context);
-    final ingredientIds =
-        purchased.map((item) => _resolveIngredientId(item.name)).toList();
+    final ingredientIds = purchased
+        .map((item) => _resolveIngredientId(item.name))
+        .toList();
 
     ref.read(inventoryProvider.notifier).addAll(ingredientIds);
     ref
@@ -551,9 +621,9 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
 
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(
-        content: Text(l10n.shoppingMovedToKitchen(purchased.length)),
-      ));
+      ..showSnackBar(
+        SnackBar(content: Text(l10n.shoppingMovedToKitchen(purchased.length))),
+      );
   }
 
   void _addItem() {

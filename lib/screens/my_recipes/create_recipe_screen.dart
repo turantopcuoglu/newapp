@@ -48,16 +48,16 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
 
   // ── helpers ──────────────────────────────────────────────────────────
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
@@ -90,9 +90,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       case NutrientLevel.low:
         return const Color(0xFFE57373);
       case NutrientLevel.medium:
-        return AppTheme.warningAmber;
+        return context.palette.warningAmber;
       case NutrientLevel.high:
-        return AppTheme.successGreen;
+        return context.palette.successGreen;
     }
   }
 
@@ -117,19 +117,19 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
           .where((id) => !result.contains(id))
           .toList()
           .forEach((id) {
-        _selectedIngredients.remove(id);
-        _gramControllers[id]?.dispose();
-        _gramControllers.remove(id);
-      });
+            _selectedIngredients.remove(id);
+            _gramControllers[id]?.dispose();
+            _gramControllers.remove(id);
+          });
 
       // Add newly selected
       for (final id in result) {
         if (!_selectedIngredients.containsKey(id)) {
-          final defaultG =
-              ingredientNutritionData[id]?.defaultServingG ?? 100;
+          final defaultG = ingredientNutritionData[id]?.defaultServingG ?? 100;
           _selectedIngredients[id] = defaultG;
-          _gramControllers[id] =
-              TextEditingController(text: defaultG.round().toString());
+          _gramControllers[id] = TextEditingController(
+            text: defaultG.round().toString(),
+          );
         }
       }
     });
@@ -190,7 +190,10 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
           children: [
             // ── Recipe name ──
             _buildSectionLabel(
-                l10n.myRecipesName, Icons.restaurant_menu, theme),
+              l10n.myRecipesName,
+              Icons.restaurant_menu,
+              theme,
+            ),
             const SizedBox(height: 8),
             TurkishTextField(
               controller: _nameController,
@@ -201,7 +204,10 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
 
             // ── Description ──
             _buildSectionLabel(
-                l10n.myRecipesDescription, Icons.description_outlined, theme),
+              l10n.myRecipesDescription,
+              Icons.description_outlined,
+              theme,
+            ),
             const SizedBox(height: 8),
             TurkishTextField(
               controller: _descController,
@@ -219,7 +225,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
               runSpacing: 8,
               children: MealType.values.map((type) {
                 final isSelected = _mealType == type;
-                final color = _mealTypeColor(type);
+                final color = _mealTypeColor(context, type);
                 return ChoiceChip(
                   label: Text(_mealTypeLabel(type, l10n)),
                   selected: isSelected,
@@ -239,16 +245,17 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                     ),
                   ),
                   showCheckmark: false,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                 );
               }).toList(),
             ),
             const SizedBox(height: 28),
 
             // ── Ingredients ──
-            _buildSectionLabel(
-                l10n.myRecipesIngredients, Icons.kitchen, theme),
+            _buildSectionLabel(l10n.myRecipesIngredients, Icons.kitchen, theme),
             const SizedBox(height: 12),
 
             // Add ingredient button
@@ -271,14 +278,17 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: AppTheme.background,
+                  color: context.palette.background,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppTheme.dividerColor),
+                  border: Border.all(color: context.palette.dividerColor),
                 ),
                 child: Column(
                   children: [
-                    Icon(Icons.restaurant,
-                        size: 40, color: AppTheme.textLight.withAlpha(120)),
+                    Icon(
+                      Icons.restaurant,
+                      size: 40,
+                      color: context.palette.textLight.withAlpha(120),
+                    ),
                     const SizedBox(height: 8),
                     Text(
                       l10n.ingredientNone,
@@ -300,7 +310,10 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
 
             // ── Steps ──
             _buildSectionLabel(
-                l10n.myRecipesSteps, Icons.format_list_numbered, theme),
+              l10n.myRecipesSteps,
+              Icons.format_list_numbered,
+              theme,
+            ),
             const SizedBox(height: 8),
             TurkishTextField(
               controller: _stepsController,
@@ -311,8 +324,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             const SizedBox(height: 24),
 
             // ── Protein level ──
-            _buildSectionLabel(
-                l10n.recipeProtein, Icons.fitness_center, theme),
+            _buildSectionLabel(l10n.recipeProtein, Icons.fitness_center, theme),
             const SizedBox(height: 10),
             _buildNutrientLevelChips(
               value: _proteinLevel,
@@ -399,28 +411,34 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
   // ── selected ingredients list ──
 
   Widget _buildSelectedIngredientsList(
-      String locale, AppLocalizations l10n, ThemeData theme) {
+    String locale,
+    AppLocalizations l10n,
+    ThemeData theme,
+  ) {
     final ids = _selectedIngredients.keys.toList();
 
     return Container(
       decoration: BoxDecoration(
-        color: AppTheme.background,
+        color: context.palette.background,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.dividerColor),
+        border: Border.all(color: context.palette.dividerColor),
       ),
       child: Column(
         children: [
           // Header
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: const BoxDecoration(
-              color: AppTheme.surface,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            decoration: BoxDecoration(
+              color: context.palette.surface,
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
             ),
             child: Row(
               children: [
-                const Icon(Icons.checklist_rounded,
-                    size: 18, color: AppTheme.accentOrange),
+                Icon(
+                  Icons.checklist_rounded,
+                  size: 18,
+                  color: context.palette.accentOrange,
+                ),
                 const SizedBox(width: 8),
                 Text(
                   l10n.ingredientSelected,
@@ -428,16 +446,18 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                 ),
                 const Spacer(),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentOrange.withAlpha(20),
+                    color: context.palette.accentOrange.withAlpha(20),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
                     '${ids.length}',
-                    style: const TextStyle(
-                      color: AppTheme.accentOrange,
+                    style: TextStyle(
+                      color: context.palette.accentOrange,
                       fontWeight: FontWeight.w700,
                       fontSize: 13,
                     ),
@@ -469,16 +489,21 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                 alignment: Alignment.centerRight,
                 padding: const EdgeInsets.only(right: 20),
                 color: Colors.red.withAlpha(30),
-                child: const Icon(Icons.delete_outline,
-                    color: Colors.red, size: 22),
+                child: const Icon(
+                  Icons.delete_outline,
+                  color: Colors.red,
+                  size: 22,
+                ),
               ),
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 16, vertical: 10),
+                  horizontal: 16,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: AppTheme.dividerColor.withAlpha(100),
+                      color: context.palette.dividerColor.withAlpha(100),
                     ),
                   ),
                 ),
@@ -499,9 +524,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                           const SizedBox(height: 2),
                           Text(
                             '$cals kcal',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
-                              color: AppTheme.accentOrange,
+                              color: context.palette.accentOrange,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -517,7 +542,7 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                         controller: _gramControllers[id],
                         keyboardType: TextInputType.number,
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
+                          FilteringTextInputFormatter.digitsOnly,
                         ],
                         textAlign: TextAlign.center,
                         style: const TextStyle(
@@ -526,34 +551,42 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                         ),
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 6),
+                            horizontal: 8,
+                            vertical: 6,
+                          ),
                           filled: true,
-                          fillColor: AppTheme.surface,
+                          fillColor: context.palette.surface,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                                color: AppTheme.dividerColor, width: 1),
+                              color: context.palette.dividerColor,
+                              width: 1,
+                            ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                                color: AppTheme.dividerColor, width: 1),
+                              color: context.palette.dividerColor,
+                              width: 1,
+                            ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                                color: AppTheme.accentOrange, width: 1.5),
+                            borderSide: BorderSide(
+                              color: context.palette.accentOrange,
+                              width: 1.5,
+                            ),
                           ),
                         ),
                         onChanged: (v) => _updateGrams(id, v),
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
+                    Text(
                       'g',
                       style: TextStyle(
                         fontSize: 13,
-                        color: AppTheme.textSecondary,
+                        color: context.palette.textSecondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -568,8 +601,11 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
                           color: Colors.red.withAlpha(15),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Icon(Icons.close,
-                            size: 16, color: Colors.red),
+                        child: const Icon(
+                          Icons.close,
+                          size: 16,
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                   ],

@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-07",
+  "scope": "8 conceptual mobile screens across 4 generated boards",
+  "reviewed": [
+    "Home and daily check-in: clear content hierarchy, correct selected responses; sans-serif revision selected",
+    "Ingredients and recipe: explicit pantry status and separate shopping action; pre-cooked ingredient assumption visible",
+    "Breathing and sleep: focused breathing navigation, pause/end controls, initially empty sleep tasks",
+    "Insights and profile: five recorded weekdays, two missing days, categorical chart, separated allergy/preferences"
+  ],
+  "finals": [
+    "screens/01-gunluk-rehber-v2.png",
+    "screens/02-besin-ve-tarif.png",
+    "screens/03-nefes-ve-uyku.png",
+    "screens/04-gelisim-ve-profil.png"
+  ],
+  "colorChecks": [
+    {
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 15.91
+    },
+    {
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.85
+    },
+    {
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 5.31
+    },
+    {
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 13.04
+    },
+    {
+      "foreground": "moon",
+      "background": "surface",
+      "ratio": 9.88
+    },
+    {
+      "foreground": "text",
+      "background": "elevated",
+      "ratio": 10.66
+    }
+  ],
+  "limitations": [
+    "Static AI-generated design references; animations specified only",
+    "Per-pixel token fidelity and finished-interface accessibility not certified",
+    "Small icon/dock and numeral variations should be unified in implementation",
+    "App source and behavior were not changed"
+  ]
+}

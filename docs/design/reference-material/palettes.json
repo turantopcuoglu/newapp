@@ -1,0 +1,146 @@
+{
+  "lowEnergy": {
+    "colors": {
+      "background": "#211625",
+      "surface": "#39283F",
+      "textPrimary": "#FFF1E7",
+      "textSecondary": "#DBC5D4",
+      "mint": "#FBD7B5",
+      "onAction": "#211625",
+      "dividerColor": "#B99FAF"
+    },
+    "base_color_contrast": {
+      "primary_text": 12.26,
+      "secondary_text": 8.36,
+      "action_text": 12.84
+    }
+  },
+  "bloated": {
+    "colors": {
+      "background": "#EDF3E4",
+      "surface": "#D2E4BC",
+      "textPrimary": "#183C29",
+      "textSecondary": "#4D634F",
+      "mint": "#226A44",
+      "onAction": "#F3F7EA",
+      "dividerColor": "#627857"
+    },
+    "base_color_contrast": {
+      "primary_text": 9.06,
+      "secondary_text": 4.84,
+      "action_text": 6.01
+    }
+  },
+  "cravingSweets": {
+    "colors": {
+      "background": "#29170F",
+      "surface": "#4C2B1C",
+      "textPrimary": "#FFF0DE",
+      "textSecondary": "#D4BAA8",
+      "mint": "#F0BA69",
+      "onAction": "#29170F",
+      "dividerColor": "#B59881"
+    },
+    "base_color_contrast": {
+      "primary_text": 11.24,
+      "secondary_text": 6.82,
+      "action_text": 9.75
+    }
+  },
+  "cantFocus": {
+    "colors": {
+      "background": "#101A35",
+      "surface": "#233565",
+      "textPrimary": "#F0F3FF",
+      "textSecondary": "#BFC9E3",
+      "mint": "#AEC4FF",
+      "onAction": "#101A35",
+      "dividerColor": "#8499CC"
+    },
+    "base_color_contrast": {
+      "primary_text": 10.73,
+      "secondary_text": 7.17,
+      "action_text": 9.94
+    }
+  },
+  "pms": {
+    "colors": {
+      "background": "#281921",
+      "surface": "#532D3A",
+      "textPrimary": "#FFF0EC",
+      "textSecondary": "#DFC4CF",
+      "mint": "#FFD4C5",
+      "onAction": "#281921",
+      "dividerColor": "#C799AA"
+    },
+    "base_color_contrast": {
+      "primary_text": 10.49,
+      "secondary_text": 7.17,
+      "action_text": 12.37
+    }
+  },
+  "periodCramps": {
+    "colors": {
+      "background": "#29170F",
+      "surface": "#5B3022",
+      "textPrimary": "#FFF0DF",
+      "textSecondary": "#F4CDB5",
+      "mint": "#FFD7A0",
+      "onAction": "#29170F",
+      "dividerColor": "#D7A991"
+    },
+    "base_color_contrast": {
+      "primary_text": 9.93,
+      "secondary_text": 7.53,
+      "action_text": 12.65
+    }
+  },
+  "periodFatigue": {
+    "colors": {
+      "background": "#211D30",
+      "surface": "#39304C",
+      "textPrimary": "#F2EFFA",
+      "textSecondary": "#CEC5E1",
+      "mint": "#E5D0FF",
+      "onAction": "#211D30",
+      "dividerColor": "#A99AC6"
+    },
+    "base_color_contrast": {
+      "primary_text": 10.88,
+      "secondary_text": 7.46,
+      "action_text": 11.53
+    }
+  },
+  "postWorkout": {
+    "colors": {
+      "background": "#082F38",
+      "surface": "#145564",
+      "textPrimary": "#EEF9F6",
+      "textSecondary": "#BEDBD9",
+      "mint": "#89E0E1",
+      "onAction": "#082F38",
+      "dividerColor": "#86B6BA"
+    },
+    "base_color_contrast": {
+      "primary_text": 7.77,
+      "secondary_text": 5.7,
+      "action_text": 9.37
+    }
+  },
+  "noSpecificIssue": {
+    "colors": {
+      "background": "#093336",
+      "surface": "#185348",
+      "textPrimary": "#EDF8EE",
+      "textSecondary": "#C0D9D4",
+      "mint": "#9FE0BC",
+      "onAction": "#093336",
+      "dividerColor": "#92B9B0"
+    },
+    "base_color_contrast": {
+      "primary_text": 8.13,
+      "secondary_text": 5.96,
+      "action_text": 9.01
+    }
+  }
+}

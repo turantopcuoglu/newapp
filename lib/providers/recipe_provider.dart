@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../data/mock_ingredients.dart';
+import '../data/moonlit_recipe.dart';
 import '../services/diet_classifier.dart';
 import '../services/nutrition_calculator.dart';
 import '../services/recommendation_service.dart';
@@ -14,14 +15,19 @@ import 'profile_provider.dart';
 /// via ProviderScope overrides in main.dart.
 final bundledRecipesProvider = Provider<List<Recipe>>((ref) {
   throw UnimplementedError(
-      'bundledRecipesProvider must be overridden at startup');
+    'bundledRecipesProvider must be overridden at startup',
+  );
 });
 
 /// All recipes: bundled + user-created.
 final allRecipesProvider = Provider<List<Recipe>>((ref) {
   final bundled = ref.watch(bundledRecipesProvider);
   final myRecipes = ref.watch(myRecipesProvider);
-  return [...bundled, ...myRecipes];
+  return [
+    if (!bundled.any((r) => r.id == moonlitBowl.id)) moonlitBowl,
+    ...bundled,
+    ...myRecipes,
+  ];
 });
 
 /// Map of recipe ID -> Recipe for quick lookup.
@@ -48,10 +54,17 @@ final recommendationServiceProvider = Provider<RecommendationService>((ref) {
   );
 });
 
+/// The application binds this to its persisted wellness check-in. Standalone
+/// legacy recipe surfaces keep their existing check-in contract.
+final activeRecipeContextProvider = Provider<CheckInType?>(
+  (ref) => ref.watch(checkInProvider),
+);
+
 /// Recommendations based on current check-in, profile, and inventory.
-final recommendationsProvider =
-    Provider<Map<MealType, List<ScoredRecipe>>?>((ref) {
-  final checkIn = ref.watch(checkInProvider);
+final recommendationsProvider = Provider<Map<MealType, List<ScoredRecipe>>?>((
+  ref,
+) {
+  final checkIn = ref.watch(activeRecipeContextProvider);
   if (checkIn == null) return null;
 
   final profile = ref.watch(profileProvider);

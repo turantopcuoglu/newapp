@@ -1,0 +1,98 @@
+{
+  "pms": {
+    "upper_left": {
+      "reference": "#663846",
+      "rendered": "#673B4A",
+      "mean_absolute_rgb_difference": 2.67
+    },
+    "top": {
+      "reference": "#59303E",
+      "rendered": "#5A3240",
+      "mean_absolute_rgb_difference": 1.67
+    },
+    "left_mid": {
+      "reference": "#5D3240",
+      "rendered": "#5D3341",
+      "mean_absolute_rgb_difference": 0.67
+    },
+    "inner_center": {
+      "reference": "#532D3A",
+      "rendered": "#532D39",
+      "mean_absolute_rgb_difference": 0.33
+    },
+    "right_mid": {
+      "reference": "#572F3D",
+      "rendered": "#562E3C",
+      "mean_absolute_rgb_difference": 1.0
+    },
+    "bottom": {
+      "reference": "#542E3A",
+      "rendered": "#522C39",
+      "mean_absolute_rgb_difference": 1.67
+    }
+  },
+  "periodCramps": {
+    "upper_left": {
+      "reference": "#6E392A",
+      "rendered": "#703E2E",
+      "mean_absolute_rgb_difference": 3.67
+    },
+    "top": {
+      "reference": "#633325",
+      "rendered": "#623526",
+      "mean_absolute_rgb_difference": 1.33
+    },
+    "left_mid": {
+      "reference": "#643425",
+      "rendered": "#663627",
+      "mean_absolute_rgb_difference": 2.0
+    },
+    "inner_center": {
+      "reference": "#5B3022",
+      "rendered": "#5B2F22",
+      "mean_absolute_rgb_difference": 0.33
+    },
+    "right_mid": {
+      "reference": "#5B2F22",
+      "rendered": "#5F3123",
+      "mean_absolute_rgb_difference": 2.33
+    },
+    "bottom": {
+      "reference": "#5D3022",
+      "rendered": "#5B2F22",
+      "mean_absolute_rgb_difference": 1.0
+    }
+  },
+  "periodFatigue": {
+    "upper_left": {
+      "reference": "#4C3D61",
+      "rendered": "#493E5F",
+      "mean_absolute_rgb_difference": 2.0
+    },
+    "top": {
+      "reference": "#443656",
+      "rendered": "#3F3552",
+      "mean_absolute_rgb_difference": 3.33
+    },
+    "left_mid": {
+      "reference": "#453759",
+      "rendered": "#403655",
+      "mean_absolute_rgb_difference": 3.33
+    },
+    "inner_center": {
+      "reference": "#39304C",
+      "rendered": "#382F4C",
+      "mean_absolute_rgb_difference": 0.67
+    },
+    "right_mid": {
+      "reference": "#3B304E",
+      "rendered": "#3B314F",
+      "mean_absolute_rgb_difference": 0.67
+    },
+    "bottom": {
+      "reference": "#3B314D",
+      "rendered": "#382F4B",
+      "mean_absolute_rgb_difference": 2.33
+    }
+  }
+}

@@ -78,7 +78,8 @@ List<String> healthCategoryIngredients(
   final info = healthCategoryInfo[category.id];
   if (info == null) return const [];
   return info.ingredientIds
-      .where((id) =>
-          recipes.any((r) => matchesCategoryIngredient(r, category, id)))
+      .where(
+        (id) => recipes.any((r) => matchesCategoryIngredient(r, category, id)),
+      )
       .toList();
 }

@@ -17,8 +17,7 @@ class NutritionDetailScreen extends ConsumerStatefulWidget {
       _NutritionDetailScreenState();
 }
 
-class _NutritionDetailScreenState
-    extends ConsumerState<NutritionDetailScreen> {
+class _NutritionDetailScreenState extends ConsumerState<NutritionDetailScreen> {
   _Period _period = _Period.weekly;
 
   /// Returns a list of (label, calories, protein, carbs, fat) for each bar.
@@ -43,16 +42,19 @@ class _NutritionDetailScreenState
         return List.generate(4, (i) {
           final weekEnd = today.subtract(Duration(days: (3 - i) * 7));
           final weekStart = weekEnd.subtract(const Duration(days: 6));
-          return _sumForRange(weekStart, weekEnd, cooked,
-              label: _weekLabel(i));
+          return _sumForRange(weekStart, weekEnd, cooked, label: _weekLabel(i));
         });
       case _Period.yearly:
         // Last 12 months
         return List.generate(12, (i) {
           final month = DateTime(now.year, now.month - 11 + i, 1);
           final monthEnd = DateTime(month.year, month.month + 1, 0);
-          return _sumForRange(month, monthEnd, cooked,
-              label: _monthLabel(month.month));
+          return _sumForRange(
+            month,
+            monthEnd,
+            cooked,
+            label: _monthLabel(month.month),
+          );
         });
     }
   }
@@ -67,8 +69,34 @@ class _NutritionDetailScreenState
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final months = locale == 'tr'
-        ? ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara']
-        : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        ? [
+            'Oca',
+            'Şub',
+            'Mar',
+            'Nis',
+            'May',
+            'Haz',
+            'Tem',
+            'Ağu',
+            'Eyl',
+            'Eki',
+            'Kas',
+            'Ara',
+          ]
+        : [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec',
+          ];
     return months[month - 1];
   }
 
@@ -78,8 +106,7 @@ class _NutritionDetailScreenState
     // current day's meals landed in no bucket at all and the charts read as
     // if nothing had been eaten.
     final dayKey = DayBoundary.keyForDate(date);
-    final totals =
-        ConsumedTotals.from(cooked.where((e) => e.dayKey == dayKey));
+    final totals = ConsumedTotals.from(cooked.where((e) => e.dayKey == dayKey));
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final dayNames = locale == 'tr'
@@ -104,8 +131,9 @@ class _NutritionDetailScreenState
     for (var d = start; !d.isAfter(end); d = d.add(const Duration(days: 1))) {
       keys.add(DayBoundary.keyForDate(d));
     }
-    final totals =
-        ConsumedTotals.from(cooked.where((e) => keys.contains(e.dayKey)));
+    final totals = ConsumedTotals.from(
+      cooked.where((e) => keys.contains(e.dayKey)),
+    );
     return _BarData(
       label: label,
       calories: totals.calories,
@@ -121,10 +149,10 @@ class _NutritionDetailScreenState
     final data = _computeData();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       appBar: AppBar(
         title: Text(l10n.summaryTitle),
-        leading: IconButton(
+        leading: WellnessIconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => Navigator.pop(context),
         ),
@@ -144,7 +172,7 @@ class _NutritionDetailScreenState
             // Calories chart
             _ChartCard(
               title: l10n.recipeCalories,
-              color: AppTheme.accentOrange,
+              color: context.palette.accentOrange,
               data: data,
               valueExtractor: (d) => d.calories.toDouble(),
               l10n: l10n,
@@ -154,7 +182,7 @@ class _NutritionDetailScreenState
             // Protein chart
             _ChartCard(
               title: l10n.recipeProtein,
-              color: AppTheme.accentTeal,
+              color: context.palette.accentTeal,
               data: data,
               valueExtractor: (d) => d.protein.toDouble(),
               l10n: l10n,
@@ -165,7 +193,7 @@ class _NutritionDetailScreenState
             // Carbs chart
             _ChartCard(
               title: l10n.recipeCarbs,
-              color: AppTheme.warningAmber,
+              color: context.palette.warningAmber,
               data: data,
               valueExtractor: (d) => d.carbs.toDouble(),
               l10n: l10n,
@@ -176,7 +204,7 @@ class _NutritionDetailScreenState
             // Fat chart
             _ChartCard(
               title: l10n.homeFat,
-              color: AppTheme.snackColor,
+              color: context.palette.snackColor,
               data: data,
               valueExtractor: (d) => d.fat.toDouble(),
               l10n: l10n,
@@ -222,7 +250,7 @@ class _PeriodSelector extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
@@ -234,15 +262,15 @@ class _PeriodSelector extends StatelessWidget {
       ),
       child: Row(
         children: [
-          _tabButton(l10n.nutritionPeriodWeekly, _Period.weekly),
-          _tabButton(l10n.nutritionPeriodMonthly, _Period.monthly),
-          _tabButton(l10n.nutritionPeriodYearly, _Period.yearly),
+          _tabButton(context, l10n.nutritionPeriodWeekly, _Period.weekly),
+          _tabButton(context, l10n.nutritionPeriodMonthly, _Period.monthly),
+          _tabButton(context, l10n.nutritionPeriodYearly, _Period.yearly),
         ],
       ),
     );
   }
 
-  Widget _tabButton(String label, _Period value) {
+  Widget _tabButton(BuildContext context, String label, _Period value) {
     final isActive = period == value;
     return Expanded(
       child: GestureDetector(
@@ -251,14 +279,14 @@ class _PeriodSelector extends StatelessWidget {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
-            color: isActive ? AppTheme.accentOrange : Colors.transparent,
+            color: isActive ? context.palette.accentOrange : Colors.transparent,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Text(
             label,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: isActive ? Colors.white : AppTheme.textSecondary,
+              color: isActive ? Colors.white : context.palette.textSecondary,
               fontSize: 14,
               fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
             ),
@@ -296,7 +324,7 @@ class _ChartCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -315,18 +343,15 @@ class _ChartCard extends StatelessWidget {
               Container(
                 width: 8,
                 height: 8,
-                decoration: BoxDecoration(
-                  color: color,
-                  shape: BoxShape.circle,
-                ),
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
               ),
               const SizedBox(width: 8),
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
-                  color: AppTheme.textPrimary,
+                  color: context.palette.textPrimary,
                 ),
               ),
               const Spacer(),
@@ -383,9 +408,9 @@ class _ChartCard extends StatelessWidget {
                         }
                         return Text(
                           value.round().toString(),
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 10,
-                            color: AppTheme.textLight,
+                            color: context.palette.textLight,
                           ),
                         );
                       },
@@ -403,10 +428,10 @@ class _ChartCard extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 8),
                           child: Text(
                             data[idx].label,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
-                              color: AppTheme.textSecondary,
+                              color: context.palette.textSecondary,
                             ),
                           ),
                         );
@@ -419,7 +444,7 @@ class _ChartCard extends StatelessWidget {
                   drawVerticalLine: false,
                   horizontalInterval: maxVal > 0 ? maxVal / 4 : 25,
                   getDrawingHorizontalLine: (_) => FlLine(
-                    color: AppTheme.dividerColor,
+                    color: context.palette.dividerColor,
                     strokeWidth: 1,
                   ),
                 ),

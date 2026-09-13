@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nutri_guide/components/recipe_visual.dart';
+import 'package:nutri_guide/components/atlas_image.dart';
+import 'package:nutri_guide/data/food_photo_catalog.dart';
 import 'package:nutri_guide/core/enums.dart';
 import 'package:nutri_guide/data/recipe_repository.dart';
 import 'package:nutri_guide/models/recipe.dart';
@@ -14,23 +16,23 @@ void main() {
   ];
 
   Widget host(Recipe recipe) => MaterialApp(
-        home: Scaffold(
-          body: SizedBox(
-            width: 300,
-            child: RecipeVisual(recipe: recipe),
-          ),
-        ),
-      );
+    home: Scaffold(
+      body: SizedBox(width: 300, child: RecipeVisual(recipe: recipe)),
+    ),
+  );
 
-  testWidgets('every bundled recipe renders a visual without error',
-      (tester) async {
+  testWidgets('every bundled recipe renders a visual without error', (
+    tester,
+  ) async {
     for (final recipe in recipes) {
       await tester.pumpWidget(host(recipe));
       expect(tester.takeException(), isNull, reason: recipe.id);
-      // The illustration draws the emoji twice (watermark + centred glyph),
-      // so finding it proves the placeholder actually painted.
-      expect(find.text(RecipeVisual(recipe: recipe).emoji), findsWidgets,
-          reason: recipe.id);
+      expect(
+        FoodPhotoCatalog.recipes.containsKey(recipe.id),
+        isTrue,
+        reason: recipe.id,
+      );
+      expect(find.byType(AtlasImage), findsOneWidget, reason: recipe.id);
     }
   });
 
@@ -50,7 +52,7 @@ void main() {
       ingredientIds: ['red_lentil'],
       cuisineIds: ['turkish'],
     );
-    expect(RecipeVisual(recipe: soup).emoji, '🍲');
+    expect(const RecipeVisual(recipe: soup).emoji, '🍲');
   });
 
   test('falls back to the meal-type emoji when nothing matches', () {
@@ -61,11 +63,12 @@ void main() {
       ingredientIds: ['salt'],
       mealType: MealType.breakfast,
     );
-    expect(RecipeVisual(recipe: plain).emoji, '🍳');
+    expect(const RecipeVisual(recipe: plain).emoji, '🍳');
   });
 
-  testWidgets('unknown cuisine still renders (gradient falls back)',
-      (tester) async {
+  testWidgets('unknown cuisine still renders (gradient falls back)', (
+    tester,
+  ) async {
     const orphan = Recipe(
       id: 'z',
       name: {'en': 'Orphan Dish'},

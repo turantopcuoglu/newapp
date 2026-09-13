@@ -43,14 +43,15 @@ class HomeScreen extends ConsumerWidget {
       // Group safe recipes by meal type
       final grouped = <MealType, List<ScoredRecipe>>{};
       for (final mealType in MealType.values) {
-        grouped[mealType] =
-            safeRecipes.where((s) => s.recipe.mealType == mealType).toList();
+        grouped[mealType] = safeRecipes
+            .where((s) => s.recipe.mealType == mealType)
+            .toList();
       }
       groupedRecommendations = grouped;
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
           // Header
@@ -99,16 +100,11 @@ class HomeScreen extends ConsumerWidget {
                 // screen stays focused on the day (check-in, plan, intake).
 
                 // Meal Recommendations by type
-                Text(
-                  l10n.homeMealOfDay,
-                  style: theme.textTheme.titleLarge,
-                ),
+                Text(l10n.homeMealOfDay, style: theme.textTheme.titleLarge),
                 const SizedBox(height: 12),
                 ...MealType.values.map((mealType) {
-                  final recipes =
-                      groupedRecommendations[mealType] ?? [];
-                  final topRecipe =
-                      recipes.isNotEmpty ? recipes.first : null;
+                  final recipes = groupedRecommendations[mealType] ?? [];
+                  final topRecipe = recipes.isNotEmpty ? recipes.first : null;
                   return _MealTypeHeaderCard(
                     mealType: mealType,
                     topRecipe: topRecipe,
@@ -185,9 +181,9 @@ class _DashboardHeader extends StatelessWidget {
         right: 20,
         bottom: 24,
       ),
-      decoration: const BoxDecoration(
-        gradient: AppTheme.headerGradient,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        gradient: context.palette.headerGradient,
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(28),
           bottomRight: Radius.circular(28),
         ),
@@ -233,7 +229,7 @@ class _DashboardHeader extends StatelessWidget {
                       ? _checkInIcon(checkIn!)
                       : Icons.sunny_snowing,
                   color: checkIn != null
-                      ? _checkInIconColor(checkIn!)
+                      ? _checkInIconColor(context, checkIn!)
                       : Colors.white.withAlpha(200),
                   size: 28,
                 ),
@@ -247,7 +243,7 @@ class _DashboardHeader extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               decoration: BoxDecoration(
                 color: checkIn != null
-                    ? AppTheme.successGreen.withAlpha(40)
+                    ? context.palette.successGreen.withAlpha(40)
                     : Colors.white.withAlpha(25),
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -257,7 +253,7 @@ class _DashboardHeader extends StatelessWidget {
                   Icon(
                     checkIn != null ? Icons.check_rounded : Icons.add_rounded,
                     color: checkIn != null
-                        ? AppTheme.successGreen
+                        ? context.palette.successGreen
                         : Colors.white.withAlpha(200),
                     size: 16,
                   ),
@@ -268,7 +264,7 @@ class _DashboardHeader extends StatelessWidget {
                         : l10n.homeStartCheckIn,
                     style: TextStyle(
                       color: checkIn != null
-                          ? AppTheme.successGreen
+                          ? context.palette.successGreen
                           : Colors.white.withAlpha(200),
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
@@ -278,7 +274,7 @@ class _DashboardHeader extends StatelessWidget {
                   Icon(
                     Icons.edit_rounded,
                     color: checkIn != null
-                        ? AppTheme.successGreen.withAlpha(180)
+                        ? context.palette.successGreen.withAlpha(180)
                         : Colors.white.withAlpha(150),
                     size: 14,
                   ),
@@ -314,7 +310,7 @@ class _DashboardHeader extends StatelessWidget {
     }
   }
 
-  Color _checkInIconColor(CheckInType type) {
+  Color _checkInIconColor(BuildContext context, CheckInType type) {
     switch (type) {
       case CheckInType.lowEnergy:
         return const Color(0xFFFF9800);
@@ -327,7 +323,7 @@ class _DashboardHeader extends StatelessWidget {
       case CheckInType.pms:
       case CheckInType.periodCramps:
       case CheckInType.periodFatigue:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
       case CheckInType.postWorkout:
         return const Color(0xFF26A69A);
       case CheckInType.noSpecificIssue:
@@ -403,7 +399,8 @@ class _HealthTipCarouselState extends State<_HealthTipCarousel> {
   }
 
   void _advance() {
-    final hasMoodTip = widget.checkInType != null &&
+    final hasMoodTip =
+        widget.checkInType != null &&
         getMoodFoodTip(widget.checkInType!) != null;
     final count = hasMoodTip ? 2 : 1;
     if (count <= 1) return;
@@ -424,8 +421,7 @@ class _HealthTipCarouselState extends State<_HealthTipCarousel> {
   @override
   Widget build(BuildContext context) {
     final tip = getTipOfTheDay();
-    final healthTitle =
-        tip.title[widget.locale] ?? tip.title['en'] ?? '';
+    final healthTitle = tip.title[widget.locale] ?? tip.title['en'] ?? '';
     final healthBody = tip.body[widget.locale] ?? tip.body['en'] ?? '';
 
     final moodTip = widget.checkInType != null
@@ -450,7 +446,7 @@ class _HealthTipCarouselState extends State<_HealthTipCarousel> {
       );
       icon = Icons.lightbulb_rounded;
       label = widget.l10n.healthTipTitle;
-      shadowColor = AppTheme.accentTeal;
+      shadowColor = context.palette.accentTeal;
     } else {
       title = moodTip.title[widget.locale] ?? moodTip.title['en'] ?? '';
       body = moodTip.body[widget.locale] ?? moodTip.body['en'] ?? '';
@@ -461,7 +457,7 @@ class _HealthTipCarouselState extends State<_HealthTipCarousel> {
       );
       icon = Icons.restaurant_rounded;
       label = widget.l10n.healthTipMoodTitle;
-      shadowColor = AppTheme.softLavender;
+      shadowColor = context.palette.softLavender;
     }
 
     return GestureDetector(
@@ -473,10 +469,8 @@ class _HealthTipCarouselState extends State<_HealthTipCarousel> {
       },
       child: AnimatedSwitcher(
         duration: const Duration(milliseconds: 500),
-        transitionBuilder: (child, animation) => FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
+        transitionBuilder: (child, animation) =>
+            FadeTransition(opacity: animation, child: child),
         child: Container(
           key: ValueKey('tip_$_currentIndex'),
           padding: const EdgeInsets.all(20),
@@ -642,12 +636,32 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
     final locale = l10n.locale.languageCode;
     final months = locale == 'tr'
         ? [
-            'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz',
-            'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara',
+            'Oca',
+            'Şub',
+            'Mar',
+            'Nis',
+            'May',
+            'Haz',
+            'Tem',
+            'Ağu',
+            'Eyl',
+            'Eki',
+            'Kas',
+            'Ara',
           ]
         : [
-            'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec',
           ];
     return '${date.day} ${months[date.month - 1]}';
   }
@@ -688,7 +702,7 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -707,12 +721,12 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: AppTheme.softLavender.withAlpha(25),
+                  color: context.palette.softLavender.withAlpha(25),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.insights_rounded,
-                  color: AppTheme.softLavender,
+                  color: context.palette.softLavender,
                   size: 22,
                 ),
               ),
@@ -729,18 +743,20 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
               ),
               const SizedBox(width: 8),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
-                  color: AppTheme.accentTeal.withAlpha(20),
+                  color: context.palette.accentTeal.withAlpha(20),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
                   '${meals.length} ${l10n.homeYesterdayMeals}',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.accentTeal,
+                    color: context.palette.accentTeal,
                   ),
                 ),
               ),
@@ -752,10 +768,10 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
           Center(
             child: Text(
               _getDateLabel(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
           ),
@@ -771,12 +787,12 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
                 child: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
-                    color: AppTheme.softLavender.withAlpha(15),
+                    color: context.palette.softLavender.withAlpha(15),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.chevron_left_rounded,
-                    color: AppTheme.softLavender,
+                    color: context.palette.softLavender,
                     size: 22,
                   ),
                 ),
@@ -790,23 +806,26 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
                     duration: const Duration(milliseconds: 350),
                     transitionBuilder:
                         (Widget child, Animation<double> animation) {
-                      final slideBegin = _slidingForward
-                          ? const Offset(0.3, 0)
-                          : const Offset(-0.3, 0);
-                      return FadeTransition(
-                        opacity: animation,
-                        child: SlideTransition(
-                          position: Tween<Offset>(
-                            begin: slideBegin,
-                            end: Offset.zero,
-                          ).animate(CurvedAnimation(
-                            parent: animation,
-                            curve: Curves.easeOut,
-                          )),
-                          child: child,
-                        ),
-                      );
-                    },
+                          final slideBegin = _slidingForward
+                              ? const Offset(0.3, 0)
+                              : const Offset(-0.3, 0);
+                          return FadeTransition(
+                            opacity: animation,
+                            child: SlideTransition(
+                              position:
+                                  Tween<Offset>(
+                                    begin: slideBegin,
+                                    end: Offset.zero,
+                                  ).animate(
+                                    CurvedAnimation(
+                                      parent: animation,
+                                      curve: Curves.easeOut,
+                                    ),
+                                  ),
+                              child: child,
+                            ),
+                          );
+                        },
                     child: _buildNutritionContent(
                       mealCount: meals.length,
                       totalCalories: totalCalories,
@@ -826,15 +845,15 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
                     color: _dayOffset > 0
-                        ? AppTheme.softLavender.withAlpha(15)
+                        ? context.palette.softLavender.withAlpha(15)
                         : Colors.transparent,
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.chevron_right_rounded,
                     color: _dayOffset > 0
-                        ? AppTheme.softLavender
-                        : AppTheme.textLight.withAlpha(80),
+                        ? context.palette.softLavender
+                        : context.palette.textLight.withAlpha(80),
                     size: 22,
                   ),
                 ),
@@ -877,18 +896,18 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
             children: [
               Text(
                 '$totalCalories',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w800,
-                  color: AppTheme.accentOrange,
+                  color: context.palette.accentOrange,
                   letterSpacing: -1,
                 ),
               ),
               Text(
                 l10n.recipeCalories,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
-                  color: AppTheme.textSecondary,
+                  color: context.palette.textSecondary,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -902,21 +921,21 @@ class _NutritionDayCardState extends ConsumerState<_NutritionDayCard> {
             _MacroItem(
               label: l10n.recipeProtein,
               value: '${totalProtein}g',
-              color: AppTheme.accentTeal,
+              color: context.palette.accentTeal,
               icon: Icons.fitness_center_rounded,
             ),
             const SizedBox(width: 12),
             _MacroItem(
               label: l10n.recipeCarbs,
               value: '${totalCarbs}g',
-              color: AppTheme.warningAmber,
+              color: context.palette.warningAmber,
               icon: Icons.grain_rounded,
             ),
             const SizedBox(width: 12),
             _MacroItem(
               label: l10n.homeFat,
               value: '${totalFat}g',
-              color: AppTheme.snackColor,
+              color: context.palette.snackColor,
               icon: Icons.water_drop_rounded,
             ),
           ],
@@ -963,9 +982,9 @@ class _MacroItem extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 11,
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -1016,7 +1035,7 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: AppTheme.surface,
+          color: context.palette.surface,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
@@ -1035,12 +1054,12 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentOrange.withAlpha(25),
+                    color: context.palette.accentOrange.withAlpha(25),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.restaurant_menu_rounded,
-                    color: AppTheme.accentOrange,
+                    color: context.palette.accentOrange,
                     size: 22,
                   ),
                 ),
@@ -1052,10 +1071,12 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
                   ),
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentOrange.withAlpha(20),
+                    color: context.palette.accentOrange.withAlpha(20),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
@@ -1063,16 +1084,16 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
                     children: [
                       Text(
                         l10n.homeMealListSeeAll,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.accentOrange,
+                          color: context.palette.accentOrange,
                         ),
                       ),
                       const SizedBox(width: 2),
-                      const Icon(
+                      Icon(
                         Icons.arrow_forward_ios_rounded,
-                        color: AppTheme.accentOrange,
+                        color: context.palette.accentOrange,
                         size: 10,
                       ),
                     ],
@@ -1083,10 +1104,7 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
             const SizedBox(height: 4),
             Text(
               l10n.mealListNutritionHint,
-              style: const TextStyle(
-                fontSize: 11,
-                color: AppTheme.textLight,
-              ),
+              style: TextStyle(fontSize: 11, color: context.palette.textLight),
             ),
             const SizedBox(height: 14),
 
@@ -1104,10 +1122,7 @@ class _TwoDayMealPlanCard extends ConsumerWidget {
             const SizedBox(height: 12),
 
             // Divider
-            Container(
-              height: 1,
-              color: AppTheme.dividerColor,
-            ),
+            Container(height: 1, color: context.palette.dividerColor),
 
             const SizedBox(height: 12),
 
@@ -1160,16 +1175,16 @@ class _DayMealSection extends ConsumerWidget {
     }
   }
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
@@ -1200,8 +1215,8 @@ class _DayMealSection extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
                 color: isToday
-                    ? AppTheme.accentOrange.withAlpha(20)
-                    : AppTheme.accentTeal.withAlpha(20),
+                    ? context.palette.accentOrange.withAlpha(20)
+                    : context.palette.accentTeal.withAlpha(20),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -1209,34 +1224,34 @@ class _DayMealSection extends ConsumerWidget {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
-                  color:
-                      isToday ? AppTheme.accentOrange : AppTheme.accentTeal,
+                  color: isToday
+                      ? context.palette.accentOrange
+                      : context.palette.accentTeal,
                 ),
               ),
             ),
             const SizedBox(width: 8),
             Text(
               '${meals.length} ${l10n.homeYesterdayMeals}',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12,
-                color: AppTheme.textLight,
+                color: context.palette.textLight,
                 fontWeight: FontWeight.w500,
               ),
             ),
             if (cookedCount > 0) ...[
               const SizedBox(width: 6),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppTheme.successGreen.withAlpha(22),
+                  color: context.palette.successGreen.withAlpha(22),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
                   l10n.mealListCookedCount(cookedCount),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 11,
-                    color: AppTheme.successGreen,
+                    color: context.palette.successGreen,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -1253,15 +1268,15 @@ class _DayMealSection extends ConsumerWidget {
               children: [
                 Icon(
                   Icons.info_outline_rounded,
-                  color: AppTheme.textLight.withAlpha(150),
+                  color: context.palette.textLight.withAlpha(150),
                   size: 16,
                 ),
                 const SizedBox(width: 8),
                 Text(
                   l10n.homeMealListEmpty,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: AppTheme.textLight,
+                    color: context.palette.textLight,
                     fontStyle: FontStyle.italic,
                   ),
                 ),
@@ -1272,7 +1287,7 @@ class _DayMealSection extends ConsumerWidget {
           ...meals.map((item) {
             final recipe = recipeMap[item.recipeId];
             final recipeName = recipe?.localizedName(locale) ?? '—';
-            final color = _mealTypeColor(item.mealType);
+            final color = _mealTypeColor(context, item.mealType);
 
             return Padding(
               padding: const EdgeInsets.only(bottom: 8),
@@ -1289,13 +1304,18 @@ class _DayMealSection extends ConsumerWidget {
                                 .toggleForDay(recipe, date);
                             ScaffoldMessenger.of(context)
                               ..hideCurrentSnackBar()
-                              ..showSnackBar(SnackBar(
-                                content: Text(nowCooked
-                                    ? l10n.recipeCookedLogged(
-                                        recipe.macros.calories)
-                                    : l10n.recipeCookedUndone),
-                                duration: const Duration(milliseconds: 1500),
-                              ));
+                              ..showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    nowCooked
+                                        ? l10n.recipeCookedLogged(
+                                            recipe.macros.calories,
+                                          )
+                                        : l10n.recipeCookedUndone,
+                                  ),
+                                  duration: const Duration(milliseconds: 1500),
+                                ),
+                              );
                           },
                     tooltip: item.isCooked
                         ? l10n.mealListMarkNotCooked
@@ -1328,8 +1348,8 @@ class _DayMealSection extends ConsumerWidget {
                           style: TextStyle(
                             fontSize: 13,
                             color: item.isCooked
-                                ? AppTheme.textSecondary
-                                : AppTheme.textPrimary,
+                                ? context.palette.textSecondary
+                                : context.palette.textPrimary,
                             fontWeight: FontWeight.w500,
                             decoration: item.isCooked
                                 ? TextDecoration.lineThrough
@@ -1339,7 +1359,7 @@ class _DayMealSection extends ConsumerWidget {
                         Text(
                           item.isUnplanned
                               ? '${_mealTypeLabel(item.mealType)} · '
-                                  '${l10n.mealListCookedNotPlanned}'
+                                    '${l10n.mealListCookedNotPlanned}'
                               : _mealTypeLabel(item.mealType),
                           style: TextStyle(
                             fontSize: 11,
@@ -1354,16 +1374,18 @@ class _DayMealSection extends ConsumerWidget {
                   if (item.timeLabel.isNotEmpty)
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 2),
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                       decoration: BoxDecoration(
-                        color: AppTheme.textLight.withAlpha(20),
+                        color: context.palette.textLight.withAlpha(20),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
                         item.timeLabel,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 11,
-                          color: AppTheme.textSecondary,
+                          color: context.palette.textSecondary,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -1398,7 +1420,7 @@ class _MealTypeHeaderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = _getMealColor();
+    final color = _getMealColor(context);
     final gradient = _getMealGradient();
 
     return Padding(
@@ -1427,11 +1449,7 @@ class _MealTypeHeaderCard extends StatelessWidget {
                     color: Colors.white.withAlpha(30),
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  child: Icon(
-                    _getMealIcon(),
-                    color: Colors.white,
-                    size: 26,
-                  ),
+                  child: Icon(_getMealIcon(), color: Colors.white, size: 26),
                 ),
                 const SizedBox(width: 14),
                 Expanded(
@@ -1516,16 +1534,16 @@ class _MealTypeHeaderCard extends StatelessWidget {
     }
   }
 
-  Color _getMealColor() {
+  Color _getMealColor(BuildContext context) {
     switch (mealType) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
@@ -1569,114 +1587,6 @@ class _MealTypeHeaderCard extends StatelessWidget {
       case MealType.snack:
         return Icons.cookie_rounded;
     }
-  }
-}
-
-// ─── Quick Actions ──────────────────────────────────────────────────────────
-
-class _QuickActionsRow extends StatelessWidget {
-  final CheckInType? checkIn;
-  final VoidCallback onCheckInTap;
-  final AppLocalizations l10n;
-
-  const _QuickActionsRow({
-    required this.checkIn,
-    required this.onCheckInTap,
-    required this.l10n,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.homeQuickActions,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 12),
-        Row(
-          children: [
-            Expanded(
-              child: _QuickActionCard(
-                icon: Icons.add_reaction_outlined,
-                label: checkIn != null
-                    ? l10n.homeChangeCheckIn
-                    : l10n.homeStartCheckIn,
-                color: AppTheme.softLavender,
-                onTap: onCheckInTap,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _QuickActionCard(
-                icon: Icons.restaurant_menu_rounded,
-                label: l10n.homeRecommendations,
-                color: AppTheme.accentTeal,
-                onTap: checkIn != null ? onCheckInTap : null,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class _QuickActionCard extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final Color color;
-  final VoidCallback? onTap;
-
-  const _QuickActionCard({
-    required this.icon,
-    required this.label,
-    required this.color,
-    this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(18),
-        decoration: BoxDecoration(
-          color: AppTheme.surface,
-          borderRadius: BorderRadius.circular(18),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withAlpha(6),
-              blurRadius: 12,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: color.withAlpha(20),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Icon(icon, color: color, size: 22),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.textPrimary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
 

@@ -27,18 +27,26 @@ class RecommendationList extends ConsumerWidget {
       if (recipes.isEmpty) continue;
 
       sections.add(SectionHeader(title: _mealTypeLabel(l10n, mealType)));
-      sections.addAll(recipes.take(5).map((sr) => RecipeCard(
-            scoredRecipe: sr,
-            onTap: () => _openDetail(context, sr),
-          )));
+      sections.addAll(
+        recipes
+            .take(5)
+            .map(
+              (sr) => RecipeCard(
+                scoredRecipe: sr,
+                onTap: () => _openDetail(context, sr),
+              ),
+            ),
+      );
     }
 
     if (sections.isEmpty) {
       return Padding(
         padding: const EdgeInsets.all(24),
-        child: Text(l10n.recipeNoResults,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium),
+        child: Text(
+          l10n.recipeNoResults,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
       );
     }
 
@@ -51,9 +59,7 @@ class RecommendationList extends ConsumerWidget {
   void _openDetail(BuildContext context, ScoredRecipe sr) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => RecipeDetailScreen(scoredRecipe: sr),
-      ),
+      MaterialPageRoute(builder: (_) => RecipeDetailScreen(scoredRecipe: sr)),
     );
   }
 

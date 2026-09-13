@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-08T22:13:31.606407+03:00",
+  "flutterAnalyze": "No issues found",
+  "unitAndWidgetTests": {
+    "passed": 152,
+    "failed": 0
+  },
+  "comparisonRenderer": "passed",
+  "android": {
+    "mode": "debug",
+    "target": "lib/main.dart",
+    "apk": "build\\app\\outputs\\flutter-apk\\app-debug.apk",
+    "sha256": "07c580866a548450a8d6300206d299f0c8b843f026091d8893c20935d9c1efc4",
+    "bundledAssetsVerified": {
+      "assets/materials/satin-neutral.png": true,
+      "assets/moods/period-reference-v2.png": true,
+      "assets/food/moonlit-bowl-hero-v2.png": true
+    }
+  },
+  "preview": "Rendered Flutter UI, not device recording",
+  "physicalDevicePerformance": "not measured"
+}

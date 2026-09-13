@@ -1,0 +1,26 @@
+{
+  "mode": "built-in image_gen",
+  "useCase": "logo-brand",
+  "finalAsset": "assets/branding/nutriguide-icon.png",
+  "finalGeneratedSource": "C:/Users/Superuser/.codex/generated_images/01a07ce2-9fdb-7a53-a303-67376d64d07e/exec-b73d54b2-d192-4980-a3fe-747564778ab8.png",
+  "styleReference": "output/reference-material/reference-match.png",
+  "prompts": [
+    {
+      "role": "initial mark",
+      "prompt": "Use case: logo-brand.\nCreate the final standalone app symbol for NutriGuide, a premium wellness app combining nourishing food, daily mood, calm, sleep and movement.\nReference image is for the existing product's palette, satin texture, crescent moon and soft lighting only. Do not reproduce the UI.\nDesign one original, exceptionally refined emblem: a generous upward cradling crescent that subtly reads as a nourishing bowl and one elegantly curved leaf rising inside its open upper-right space. The crescent and leaf form a unified, compact, memorable silhouette. Broad smooth organic forms, softly sculpted edges and ample negative space; instantly legible as a tiny phone launcher icon.\nMaterial: luminous satin porcelain, warm pale peach and ivory #FFDFC5, subtle rose-to-lavender shaded edges #C59FC3, delicate upper-left highlight and soft self-shadow, restrained tactile depth, modern and serene. Not metallic gold.\nComposition: square image, single centered emblem spanning approximately 62% of the width and 62% of the height, generous completely empty surrounding margin. No text, initials, stars, border, rounded-square tile, checkerboard, scenery, horizon, floor, or cast shadow outside the emblem.\nOutput a truly transparent PNG background (alpha zero outside the emblem). Only the crescent-leaf symbol, suitable as an Android adaptive icon foreground. Exceptionally polished iconic design, not a photograph.",
+      "selected": false,
+      "note": "RGB checkerboard; excluded from app"
+    },
+    {
+      "role": "alpha extraction attempt",
+      "prompt": "Use case: background-extraction. Edit target: the supplied crescent and leaf logo.\nRemove every gray checkerboard square and the entire rippled gray background. Output the identical peach-ivory crescent-leaf emblem cut out on REAL PNG transparency with an alpha channel; all pixels outside the emblem must have alpha=0. The gray checkerboard in the reference is unwanted background content, not part of the logo. Do not paint or represent a checkerboard.\nPreserve the exact silhouette, leaf, position, proportions, satin shading, highlight and peach-lavender colors of the logo. Preserve square canvas and existing margins. No border, tile, text, shadows outside emblem or additional items. This is an actual production foreground asset for Android, so the output must have real transparent alpha, never RGB gray background.",
+      "selected": false,
+      "note": "RGB checkerboard; excluded from app"
+    },
+    {
+      "role": "final opaque artwork",
+      "prompt": "Use case: precise-object-edit.\nMake the final 1024x1024 square app icon master for NutriGuide using this exact supplied crescent-leaf logo as the edit target. Keep the exact emblem design, silhouette, leaf relationship and pale peach-ivory/lavender satin material. Keep the emblem centered, occupying about 64% of canvas, with generous empty margin.\nReplace ALL gray checkerboard and ripple background with a beautifully subtle full-bleed opaque dark plum satin background: #211625 at the lower-right, softly lit #493044 toward upper-left, discreet warm lavender glow behind the mark, very fine even micrograin, sophisticated continuous shading. The backdrop should be smooth and quiet, no cloth folds or dunes. Preserve the bright sculpted upper-left highlight on the emblem. Lift it with a restrained close contact shadow, delicate rim reflection, tactile premium depth.\nSingle complete icon artwork only, perfectly square full-bleed opaque edge to edge. Do not draw rounded corners: the operating system will mask them. No phone, frame, wordmark, letters, captions, border, stars, checkerboard, UI or extra symbols. It must remain exceptionally clear at 48px.",
+      "selected": true
+    }
+  ]
+}

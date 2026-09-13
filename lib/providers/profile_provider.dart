@@ -8,7 +8,7 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
   final StorageService _storage;
 
   ProfileNotifier(this._storage)
-      : super(_storage.getProfile() ?? const UserProfile());
+    : super(_storage.getProfile() ?? const UserProfile());
 
   void updateName(String? name) {
     state = state.copyWith(name: name);
@@ -45,6 +45,11 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
     _save();
   }
 
+  void updateIntolerances(List<String> intolerances) {
+    state = state.copyWith(intolerances: intolerances);
+    _save();
+  }
+
   void addAllergy(String allergy) {
     final trimmed = allergy.trim().toLowerCase();
     if (trimmed.isEmpty || state.allergies.contains(trimmed)) return;
@@ -54,7 +59,8 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
 
   void removeAllergy(String allergy) {
     state = state.copyWith(
-        allergies: state.allergies.where((a) => a != allergy).toList());
+      allergies: state.allergies.where((a) => a != allergy).toList(),
+    );
     _save();
   }
 
@@ -71,15 +77,17 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
   void addDislikedIngredient(String ingredientId) {
     if (state.dislikedIngredients.contains(ingredientId)) return;
     state = state.copyWith(
-        dislikedIngredients: [...state.dislikedIngredients, ingredientId]);
+      dislikedIngredients: [...state.dislikedIngredients, ingredientId],
+    );
     _save();
   }
 
   void removeDislikedIngredient(String ingredientId) {
     state = state.copyWith(
-        dislikedIngredients: state.dislikedIngredients
-            .where((d) => d != ingredientId)
-            .toList());
+      dislikedIngredients: state.dislikedIngredients
+          .where((d) => d != ingredientId)
+          .toList(),
+    );
     _save();
   }
 
@@ -118,8 +126,9 @@ class ProfileNotifier extends StateNotifier<UserProfile> {
   void _save() => _storage.saveProfile(state);
 }
 
-final profileProvider =
-    StateNotifierProvider<ProfileNotifier, UserProfile>((ref) {
+final profileProvider = StateNotifierProvider<ProfileNotifier, UserProfile>((
+  ref,
+) {
   final storage = ref.watch(storageProvider);
   return ProfileNotifier(storage);
 });

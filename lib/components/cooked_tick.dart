@@ -34,20 +34,20 @@ class CookedTick extends StatelessWidget {
           height: size,
           decoration: BoxDecoration(
             color: isCooked
-                ? AppTheme.successGreen
-                : AppTheme.successGreen.withAlpha(12),
+                ? context.palette.successGreen
+                : context.palette.successGreen.withAlpha(12),
             shape: BoxShape.circle,
             border: Border.all(
               color: isCooked
-                  ? AppTheme.successGreen
-                  : AppTheme.dividerColor,
+                  ? context.palette.successGreen
+                  : context.palette.dividerColor,
               width: 1.5,
             ),
           ),
           child: Icon(
             isCooked ? Icons.check_rounded : Icons.restaurant_rounded,
             size: size * 0.58,
-            color: isCooked ? Colors.white : AppTheme.textLight,
+            color: isCooked ? Colors.white : context.palette.textLight,
           ),
         ),
       ),

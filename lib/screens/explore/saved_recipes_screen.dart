@@ -13,10 +13,7 @@ import '../recipe_detail/recipe_detail_screen.dart';
 class SavedRecipesScreen extends ConsumerWidget {
   final bool showAppBar;
 
-  const SavedRecipesScreen({
-    super.key,
-    this.showAppBar = true,
-  });
+  const SavedRecipesScreen({super.key, this.showAppBar = true});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,19 +23,24 @@ class SavedRecipesScreen extends ConsumerWidget {
     final recipeMap = ref.watch(recipeMapProvider);
     final scoredRecipes = ref.watch(safeScoredRecipesProvider);
 
-    final savedRecipes = favoriteIds.where((id) => recipeMap.containsKey(id)).map((id) {
-      final scored = scoredRecipes.where((sr) => sr.recipe.id == id).firstOrNull;
-      return scored ??
-          ScoredRecipe(
-            recipe: recipeMap[id]!,
-            compatibilityScore: 0,
-            availableIngredients: [],
-            missingIngredients: recipeMap[id]!.ingredientIds,
-          );
-    }).toList();
+    final savedRecipes = favoriteIds
+        .where((id) => recipeMap.containsKey(id))
+        .map((id) {
+          final scored = scoredRecipes
+              .where((sr) => sr.recipe.id == id)
+              .firstOrNull;
+          return scored ??
+              ScoredRecipe(
+                recipe: recipeMap[id]!,
+                compatibilityScore: 0,
+                availableIngredients: [],
+                missingIngredients: recipeMap[id]!.ingredientIds,
+              );
+        })
+        .toList();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       appBar: showAppBar ? AppBar(title: Text(l10n.exploreSavedRecipes)) : null,
       body: _SavedRecipesBody(
         savedRecipes: savedRecipes,
@@ -49,16 +51,16 @@ class SavedRecipesScreen extends ConsumerWidget {
   }
 }
 
-Color _mealTypeColor(MealType type) {
+Color _mealTypeColor(BuildContext context, MealType type) {
   switch (type) {
     case MealType.breakfast:
-      return AppTheme.breakfastColor;
+      return context.palette.breakfastColor;
     case MealType.lunch:
-      return AppTheme.lunchColor;
+      return context.palette.lunchColor;
     case MealType.dinner:
-      return AppTheme.dinnerColor;
+      return context.palette.dinnerColor;
     case MealType.snack:
-      return AppTheme.snackColor;
+      return context.palette.snackColor;
   }
 }
 
@@ -98,12 +100,12 @@ class _SavedRecipesBody extends ConsumerWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: AppTheme.warmCoral.withAlpha(15),
+                  color: context.palette.warmCoral.withAlpha(15),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.bookmark_border_rounded,
-                  color: AppTheme.warmCoral.withAlpha(120),
+                  color: context.palette.warmCoral.withAlpha(120),
                   size: 48,
                 ),
               ),
@@ -111,8 +113,8 @@ class _SavedRecipesBody extends ConsumerWidget {
               Text(
                 l10n.exploreSavedEmpty,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: AppTheme.textSecondary,
+                style: TextStyle(
+                  color: context.palette.textSecondary,
                   fontSize: 14,
                   height: 1.5,
                 ),
@@ -129,7 +131,7 @@ class _SavedRecipesBody extends ConsumerWidget {
       itemBuilder: (context, index) {
         final scored = savedRecipes[index];
         final recipe = scored.recipe;
-        final mealColor = _mealTypeColor(recipe.mealType);
+        final mealColor = _mealTypeColor(context, recipe.mealType);
 
         return Dismissible(
           key: Key(recipe.id),
@@ -148,7 +150,8 @@ class _SavedRecipesBody extends ConsumerWidget {
               size: 24,
             ),
           ),
-          onDismissed: (_) => ref.read(favoritesProvider.notifier).toggleFavorite(recipe.id),
+          onDismissed: (_) =>
+              ref.read(favoritesProvider.notifier).toggleFavorite(recipe.id),
           child: GestureDetector(
             onTap: () => Navigator.push(
               context,
@@ -159,7 +162,7 @@ class _SavedRecipesBody extends ConsumerWidget {
             child: Container(
               margin: const EdgeInsets.only(bottom: 12),
               decoration: BoxDecoration(
-                color: AppTheme.surface,
+                color: context.palette.surface,
                 borderRadius: BorderRadius.circular(18),
                 boxShadow: [
                   BoxShadow(
@@ -178,7 +181,10 @@ class _SavedRecipesBody extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 3,
+                            ),
                             decoration: BoxDecoration(
                               color: mealColor.withAlpha(25),
                               borderRadius: BorderRadius.circular(8),
@@ -195,8 +201,8 @@ class _SavedRecipesBody extends ConsumerWidget {
                           const SizedBox(height: 8),
                           Text(
                             recipe.localizedName(locale),
-                            style: const TextStyle(
-                              color: AppTheme.textPrimary,
+                            style: TextStyle(
+                              color: context.palette.textPrimary,
                               fontSize: 15,
                               fontWeight: FontWeight.w700,
                               height: 1.2,
@@ -209,12 +215,12 @@ class _SavedRecipesBody extends ConsumerWidget {
                             children: [
                               _MacroBadge(
                                 label: '${recipe.macros.calories} kcal',
-                                color: AppTheme.accentOrange,
+                                color: context.palette.accentOrange,
                               ),
                               const SizedBox(width: 6),
                               _MacroBadge(
                                 label: '${recipe.macros.proteinG}g P',
-                                color: AppTheme.accentTeal,
+                                color: context.palette.accentTeal,
                               ),
                             ],
                           ),

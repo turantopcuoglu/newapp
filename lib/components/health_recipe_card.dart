@@ -29,14 +29,14 @@ class HealthRecipeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipe = scored.recipe;
     final l10n = AppLocalizations.of(context);
-    final mealColor = _mealTypeColor(recipe.mealType);
+    final mealColor = _mealTypeColor(context, recipe.mealType);
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: AppTheme.surface,
+          color: context.palette.surface,
           borderRadius: BorderRadius.circular(18),
           boxShadow: [
             BoxShadow(
@@ -95,13 +95,13 @@ class HealthRecipeCard extends StatelessWidget {
                               vertical: 3,
                             ),
                             decoration: BoxDecoration(
-                              color: AppTheme.successGreen.withAlpha(20),
+                              color: context.palette.successGreen.withAlpha(20),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
                               l10n.exploreAllergenFree,
-                              style: const TextStyle(
-                                color: AppTheme.successGreen,
+                              style: TextStyle(
+                                color: context.palette.successGreen,
                                 fontSize: 10,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -112,8 +112,8 @@ class HealthRecipeCard extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       recipe.localizedName(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textPrimary,
+                      style: TextStyle(
+                        color: context.palette.textPrimary,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -124,8 +124,8 @@ class HealthRecipeCard extends StatelessWidget {
                     const SizedBox(height: 6),
                     Text(
                       recipe.localizedDescription(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textSecondary,
+                      style: TextStyle(
+                        color: context.palette.textSecondary,
                         fontSize: 12,
                         height: 1.3,
                       ),
@@ -141,15 +141,15 @@ class HealthRecipeCard extends StatelessWidget {
                       children: [
                         _MacroBadge(
                           label: '${recipe.macros.calories} kcal',
-                          color: AppTheme.accentOrange,
+                          color: context.palette.accentOrange,
                         ),
                         _MacroBadge(
                           label: '${recipe.macros.proteinG}g P',
-                          color: AppTheme.accentTeal,
+                          color: context.palette.accentTeal,
                         ),
                         _MacroBadge(
                           label: '${recipe.macros.fiberG}g ${l10n.recipeFiber}',
-                          color: AppTheme.successGreen,
+                          color: context.palette.successGreen,
                         ),
                         // Says why this card sits at the bottom of the list.
                         PreferenceMismatchChip(fit: scored.preferenceFit),
@@ -167,16 +167,16 @@ class HealthRecipeCard extends StatelessWidget {
     );
   }
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 

@@ -24,9 +24,7 @@ class SettingsScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.profileSettings),
-      ),
+      appBar: AppBar(title: Text(l10n.profileSettings)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -100,8 +98,10 @@ class _DataManagementSection extends StatelessWidget {
               children: [
                 Icon(Icons.storage, color: theme.colorScheme.primary),
                 const SizedBox(width: 8),
-                Text(l10n.profileDataManagement,
-                    style: theme.textTheme.titleMedium),
+                Text(
+                  l10n.profileDataManagement,
+                  style: theme.textTheme.titleMedium,
+                ),
               ],
             ),
             const SizedBox(height: 16),
@@ -113,11 +113,11 @@ class _DataManagementSection extends StatelessWidget {
                 onPressed: inventoryItems.isEmpty
                     ? null
                     : () => _showClearDialog(
-                          context,
-                          l10n.profileClearPantryTitle,
-                          l10n.profileClearPantryMsg,
-                          () => ref.read(inventoryProvider.notifier).clear(),
-                        ),
+                        context,
+                        l10n.profileClearPantryTitle,
+                        l10n.profileClearPantryMsg,
+                        () => ref.read(inventoryProvider.notifier).clear(),
+                      ),
                 child: Text(l10n.profileClear),
               ),
               onTap: () => _showPantryItemsSheet(context, locale, l10n),
@@ -131,11 +131,11 @@ class _DataManagementSection extends StatelessWidget {
                 onPressed: shoppingItems.isEmpty
                     ? null
                     : () => _showClearDialog(
-                          context,
-                          l10n.profileClearShoppingTitle,
-                          l10n.profileClearShoppingMsg,
-                          () => ref.read(shoppingProvider.notifier).clearAll(),
-                        ),
+                        context,
+                        l10n.profileClearShoppingTitle,
+                        l10n.profileClearShoppingMsg,
+                        () => ref.read(shoppingProvider.notifier).clearAll(),
+                      ),
                 child: Text(l10n.profileClear),
               ),
               onTap: () => _showShoppingItemsSheet(context, l10n),
@@ -176,7 +176,10 @@ class _DataManagementSection extends StatelessWidget {
   }
 
   void _showPantryItemsSheet(
-      BuildContext context, String locale, AppLocalizations l10n) {
+    BuildContext context,
+    String locale,
+    AppLocalizations l10n,
+  ) {
     final inventoryItems = ref.read(inventoryProvider);
     showModalBottomSheet(
       context: context,
@@ -184,9 +187,9 @@ class _DataManagementSection extends StatelessWidget {
       backgroundColor: Colors.transparent,
       builder: (_) => Container(
         height: MediaQuery.of(context).size.height * 0.6,
-        decoration: const BoxDecoration(
-          color: AppTheme.surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        decoration: BoxDecoration(
+          color: context.palette.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         ),
         child: Column(
           children: [
@@ -195,7 +198,7 @@ class _DataManagementSection extends StatelessWidget {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: AppTheme.dividerColor,
+                color: context.palette.dividerColor,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -203,7 +206,7 @@ class _DataManagementSection extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  const Icon(Icons.kitchen, color: AppTheme.accentTeal),
+                  Icon(Icons.kitchen, color: context.palette.accentTeal),
                   const SizedBox(width: 8),
                   Text(
                     l10n.profilePantryItems,
@@ -215,9 +218,9 @@ class _DataManagementSection extends StatelessWidget {
                   const Spacer(),
                   Text(
                     l10n.profileItemCount(inventoryItems.length),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
-                      color: AppTheme.textSecondary,
+                      color: context.palette.textSecondary,
                     ),
                   ),
                 ],
@@ -229,21 +232,23 @@ class _DataManagementSection extends StatelessWidget {
                   ? Center(
                       child: Text(
                         l10n.profileEmptyPantry,
-                        style: const TextStyle(color: AppTheme.textSecondary),
+                        style: TextStyle(color: context.palette.textSecondary),
                       ),
                     )
                   : ListView.builder(
                       itemCount: inventoryItems.length,
                       itemBuilder: (context, index) {
                         final item = inventoryItems[index];
-                        final ingredient =
-                            _ingredientMap[item.ingredientId];
+                        final ingredient = _ingredientMap[item.ingredientId];
                         final name =
                             ingredient?.localizedName(locale) ??
-                                item.ingredientId;
+                            item.ingredientId;
                         return ListTile(
-                          leading: const Icon(Icons.circle,
-                              size: 8, color: AppTheme.accentTeal),
+                          leading: Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: context.palette.accentTeal,
+                          ),
                           title: Text(name),
                         );
                       },
@@ -263,9 +268,9 @@ class _DataManagementSection extends StatelessWidget {
       backgroundColor: Colors.transparent,
       builder: (_) => Container(
         height: MediaQuery.of(context).size.height * 0.6,
-        decoration: const BoxDecoration(
-          color: AppTheme.surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        decoration: BoxDecoration(
+          color: context.palette.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
         ),
         child: Column(
           children: [
@@ -274,7 +279,7 @@ class _DataManagementSection extends StatelessWidget {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: AppTheme.dividerColor,
+                color: context.palette.dividerColor,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -282,8 +287,10 @@ class _DataManagementSection extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  const Icon(Icons.shopping_cart,
-                      color: AppTheme.accentOrange),
+                  Icon(
+                    Icons.shopping_cart,
+                    color: context.palette.accentOrange,
+                  ),
                   const SizedBox(width: 8),
                   Text(
                     l10n.profileShoppingList,
@@ -295,9 +302,9 @@ class _DataManagementSection extends StatelessWidget {
                   const Spacer(),
                   Text(
                     l10n.profileProductCount(shoppingItems.length),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
-                      color: AppTheme.textSecondary,
+                      color: context.palette.textSecondary,
                     ),
                   ),
                 ],
@@ -309,7 +316,7 @@ class _DataManagementSection extends StatelessWidget {
                   ? Center(
                       child: Text(
                         l10n.profileEmptyShopping,
-                        style: const TextStyle(color: AppTheme.textSecondary),
+                        style: TextStyle(color: context.palette.textSecondary),
                       ),
                     )
                   : ListView.builder(
@@ -323,8 +330,8 @@ class _DataManagementSection extends StatelessWidget {
                                 : Icons.circle_outlined,
                             size: 20,
                             color: item.isPurchased
-                                ? AppTheme.successGreen
-                                : AppTheme.accentOrange,
+                                ? context.palette.successGreen
+                                : context.palette.accentOrange,
                           ),
                           title: Text(
                             item.name,
@@ -333,8 +340,8 @@ class _DataManagementSection extends StatelessWidget {
                                   ? TextDecoration.lineThrough
                                   : null,
                               color: item.isPurchased
-                                  ? AppTheme.textSecondary
-                                  : AppTheme.textPrimary,
+                                  ? context.palette.textSecondary
+                                  : context.palette.textPrimary,
                             ),
                           ),
                         );
@@ -385,10 +392,10 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
   }
 
   Color _bmiColor(double bmi) {
-    if (bmi < 18.5) return AppTheme.accentTeal;
-    if (bmi < 25) return AppTheme.successGreen;
-    if (bmi < 30) return AppTheme.accentOrange;
-    return AppTheme.warmCoral;
+    if (bmi < 18.5) return context.palette.accentTeal;
+    if (bmi < 25) return context.palette.successGreen;
+    if (bmi < 30) return context.palette.accentOrange;
+    return context.palette.warmCoral;
   }
 
   String _genderLabel(Gender gender, AppLocalizations l10n) {
@@ -418,17 +425,19 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
             // Section title
             Row(
               children: [
-                Icon(Icons.person_rounded, color: AppTheme.accentOrange),
+                Icon(Icons.person_rounded, color: context.palette.accentOrange),
                 const SizedBox(width: 8),
-                Text(l10n.profilePersonalInfo,
-                    style: theme.textTheme.titleMedium),
+                Text(
+                  l10n.profilePersonalInfo,
+                  style: theme.textTheme.titleMedium,
+                ),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               l10n.profilePersonalInfoHint,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
             const SizedBox(height: 16),
@@ -436,10 +445,10 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
             // Gender selection
             Text(
               l10n.profileGender,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: AppTheme.textPrimary,
+                color: context.palette.textPrimary,
               ),
             ),
             const SizedBox(height: 8),
@@ -456,19 +465,18 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                       notifier.updateGender(gender);
                     }
                   },
-                  selectedColor: AppTheme.accentOrange.withAlpha(40),
-                  checkmarkColor: AppTheme.accentOrange,
+                  selectedColor: context.palette.accentOrange.withAlpha(40),
+                  checkmarkColor: context.palette.accentOrange,
                   labelStyle: TextStyle(
                     color: isSelected
-                        ? AppTheme.accentOrange
-                        : AppTheme.textSecondary,
-                    fontWeight:
-                        isSelected ? FontWeight.w600 : FontWeight.w400,
+                        ? context.palette.accentOrange
+                        : context.palette.textSecondary,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                   ),
                   side: BorderSide(
                     color: isSelected
-                        ? AppTheme.accentOrange.withAlpha(100)
-                        : AppTheme.dividerColor,
+                        ? context.palette.accentOrange.withAlpha(100)
+                        : context.palette.dividerColor,
                   ),
                 );
               }).toList(),
@@ -481,10 +489,10 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
               children: [
                 Text(
                   l10n.profileAge,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.textPrimary,
+                    color: context.palette.textPrimary,
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -495,13 +503,17 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: l10n.profileAge,
-                      labelStyle: const TextStyle(
-                          fontSize: 13, color: AppTheme.textSecondary),
+                      labelStyle: TextStyle(
+                        fontSize: 13,
+                        color: context.palette.textSecondary,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                     ),
                     onChanged: (value) {
                       final parsed = int.tryParse(value);
@@ -521,16 +533,16 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
               children: [
                 Text(
                   l10n.profileShowBmi,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: AppTheme.textPrimary,
+                    color: context.palette.textPrimary,
                   ),
                 ),
                 const Spacer(),
                 Switch(
                   value: profile.showBmi,
-                  activeColor: AppTheme.accentTeal,
+                  activeThumbColor: context.palette.accentTeal,
                   onChanged: (value) => notifier.updateShowBmi(value),
                 ),
               ],
@@ -558,10 +570,10 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                         children: [
                           Text(
                             '${l10n.profileBmi}: ',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
-                              color: AppTheme.textPrimary,
+                              color: context.palette.textPrimary,
                             ),
                           ),
                           Text(
@@ -579,9 +591,9 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                         children: [
                           Text(
                             '${l10n.profileBmiCategory}: ',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 13,
-                              color: AppTheme.textSecondary,
+                              color: context.palette.textSecondary,
                             ),
                           ),
                           Text(
@@ -601,7 +613,7 @@ class _PersonalInfoSectionState extends State<_PersonalInfoSection> {
                 Text(
                   l10n.profileBmiNeedData,
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: AppTheme.textSecondary,
+                    color: context.palette.textSecondary,
                     fontStyle: FontStyle.italic,
                   ),
                 ),
@@ -662,17 +674,22 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
             // Section title
             Row(
               children: [
-                Icon(Icons.straighten_rounded, color: AppTheme.accentTeal),
+                Icon(
+                  Icons.straighten_rounded,
+                  color: context.palette.accentTeal,
+                ),
                 const SizedBox(width: 8),
-                Text(l10n.profileBodyMetrics,
-                    style: theme.textTheme.titleMedium),
+                Text(
+                  l10n.profileBodyMetrics,
+                  style: theme.textTheme.titleMedium,
+                ),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               l10n.profileBodyMetricsHint,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
             const SizedBox(height: 16),
@@ -683,17 +700,22 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
                 Expanded(
                   child: TextField(
                     controller: _heightController,
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: false),
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: false,
+                    ),
                     decoration: InputDecoration(
                       labelText: l10n.profileHeight,
-                      labelStyle: const TextStyle(
-                          fontSize: 13, color: AppTheme.textSecondary),
+                      labelStyle: TextStyle(
+                        fontSize: 13,
+                        color: context.palette.textSecondary,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                     ),
                     onChanged: (value) {
                       final parsed = double.tryParse(value);
@@ -707,17 +729,22 @@ class _BodyMetricsSectionState extends State<_BodyMetricsSection> {
                 Expanded(
                   child: TextField(
                     controller: _weightController,
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: true,
+                    ),
                     decoration: InputDecoration(
                       labelText: l10n.profileWeight,
-                      labelStyle: const TextStyle(
-                          fontSize: 13, color: AppTheme.textSecondary),
+                      labelStyle: TextStyle(
+                        fontSize: 13,
+                        color: context.palette.textSecondary,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                     ),
                     onChanged: (value) {
                       final parsed = double.tryParse(value);
@@ -753,8 +780,7 @@ class _ReminderSectionState extends State<_ReminderSection> {
   static const int _dinnerHour = 17;
 
   final _notifications = NotificationService();
-  late bool _enabled =
-      widget.ref.read(storageProvider).areRemindersEnabled();
+  late bool _enabled = widget.ref.read(storageProvider).areRemindersEnabled();
   bool _busy = false;
 
   Future<void> _toggle(bool value) async {
@@ -765,7 +791,12 @@ class _ReminderSectionState extends State<_ReminderSection> {
     if (!value) {
       await _notifications.cancelAll();
       await storage.setRemindersEnabled(false);
-      if (mounted) setState(() { _enabled = false; _busy = false; });
+      if (mounted) {
+        setState(() {
+          _enabled = false;
+          _busy = false;
+        });
+      }
       return;
     }
 
@@ -774,9 +805,13 @@ class _ReminderSectionState extends State<_ReminderSection> {
     if (!granted) {
       await storage.setRemindersEnabled(false);
       if (!mounted) return;
-      setState(() { _enabled = false; _busy = false; });
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(l10n.remindersDenied)));
+      setState(() {
+        _enabled = false;
+        _busy = false;
+      });
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.remindersDenied)));
       return;
     }
 
@@ -793,7 +828,12 @@ class _ReminderSectionState extends State<_ReminderSection> {
       hour: _dinnerHour,
     );
     await storage.setRemindersEnabled(true);
-    if (mounted) setState(() { _enabled = true; _busy = false; });
+    if (mounted) {
+      setState(() {
+        _enabled = true;
+        _busy = false;
+      });
+    }
   }
 
   @override
@@ -809,18 +849,19 @@ class _ReminderSectionState extends State<_ReminderSection> {
           children: [
             Row(
               children: [
-                Icon(Icons.notifications_active_rounded,
-                    color: AppTheme.accentTeal),
+                Icon(
+                  Icons.notifications_active_rounded,
+                  color: context.palette.accentTeal,
+                ),
                 const SizedBox(width: 8),
-                Text(l10n.remindersTitle,
-                    style: theme.textTheme.titleMedium),
+                Text(l10n.remindersTitle, style: theme.textTheme.titleMedium),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               l10n.remindersHint,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
             SwitchListTile(
@@ -869,17 +910,19 @@ class _DietPreferenceSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.eco_rounded, color: AppTheme.successGreen),
+                Icon(Icons.eco_rounded, color: context.palette.successGreen),
                 const SizedBox(width: 8),
-                Text(l10n.dietPreferencesTitle,
-                    style: theme.textTheme.titleMedium),
+                Text(
+                  l10n.dietPreferencesTitle,
+                  style: theme.textTheme.titleMedium,
+                ),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               l10n.dietPreferencesHint,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
             const SizedBox(height: 12),
@@ -887,18 +930,17 @@ class _DietPreferenceSection extends StatelessWidget {
               spacing: 8,
               runSpacing: 8,
               children: options.entries.map((entry) {
-                final selected =
-                    profile.dietPreferences.contains(entry.key);
+                final selected = profile.dietPreferences.contains(entry.key);
                 return FilterChip(
                   label: Text(entry.value),
                   selected: selected,
                   onSelected: (_) => ref
                       .read(profileProvider.notifier)
                       .toggleDietPreference(entry.key),
-                  selectedColor: AppTheme.successGreen.withAlpha(40),
-                  checkmarkColor: AppTheme.successGreen,
-                  labelStyle: const TextStyle(
-                    color: AppTheme.textPrimary,
+                  selectedColor: context.palette.successGreen.withAlpha(40),
+                  checkmarkColor: context.palette.successGreen,
+                  labelStyle: TextStyle(
+                    color: context.palette.textPrimary,
                     fontSize: 13,
                   ),
                 );
@@ -912,7 +954,6 @@ class _DietPreferenceSection extends StatelessWidget {
 }
 
 // ─── Allergy & Disliked Ingredients Section ─────────────────────────────────
-
 
 class _AllergyDislikedSection extends StatelessWidget {
   final WidgetRef ref;
@@ -939,18 +980,22 @@ class _AllergyDislikedSection extends StatelessWidget {
             // Section title
             Row(
               children: [
-                Icon(Icons.health_and_safety_rounded,
-                    color: AppTheme.warmCoral),
+                Icon(
+                  Icons.health_and_safety_rounded,
+                  color: context.palette.warmCoral,
+                ),
                 const SizedBox(width: 8),
-                Text(l10n.profileAllergiesAndAvoided,
-                    style: theme.textTheme.titleMedium),
+                Text(
+                  l10n.profileAllergiesAndAvoided,
+                  style: theme.textTheme.titleMedium,
+                ),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               l10n.profileAllergiesHint,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.textSecondary,
+                color: context.palette.textSecondary,
               ),
             ),
             const SizedBox(height: 16),
@@ -960,10 +1005,10 @@ class _AllergyDislikedSection extends StatelessWidget {
               children: [
                 Text(
                   l10n.profileAllergies,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.warmCoral,
+                    color: context.palette.warmCoral,
                   ),
                 ),
                 const Spacer(),
@@ -972,15 +1017,18 @@ class _AllergyDislikedSection extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.add_rounded,
-                          size: 16, color: AppTheme.warmCoral),
+                      Icon(
+                        Icons.add_rounded,
+                        size: 16,
+                        color: context.palette.warmCoral,
+                      ),
                       const SizedBox(width: 2),
                       Text(
                         l10n.add,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.warmCoral,
+                          color: context.palette.warmCoral,
                         ),
                       ),
                     ],
@@ -990,10 +1038,7 @@ class _AllergyDislikedSection extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             if (profile.allergies.isEmpty)
-              Text(
-                l10n.profileNoAllergies,
-                style: theme.textTheme.bodySmall,
-              )
+              Text(l10n.profileNoAllergies, style: theme.textTheme.bodySmall)
             else
               Wrap(
                 spacing: 8,
@@ -1005,22 +1050,18 @@ class _AllergyDislikedSection extends StatelessWidget {
                       tag;
                   return Chip(
                     label: Text(label),
-                    deleteIcon:
-                        const Icon(Icons.close_rounded, size: 16),
+                    deleteIcon: const Icon(Icons.close_rounded, size: 16),
                     onDeleted: () {
-                      ref
-                          .read(profileProvider.notifier)
-                          .removeAllergy(tag);
+                      ref.read(profileProvider.notifier).removeAllergy(tag);
                     },
-                    backgroundColor:
-                        AppTheme.warmCoral.withAlpha(20),
-                    deleteIconColor: AppTheme.warmCoral,
-                    labelStyle: const TextStyle(
-                      color: AppTheme.textPrimary,
+                    backgroundColor: context.palette.warmCoral.withAlpha(20),
+                    deleteIconColor: context.palette.warmCoral,
+                    labelStyle: TextStyle(
+                      color: context.palette.textPrimary,
                       fontSize: 13,
                     ),
                     side: BorderSide(
-                      color: AppTheme.warmCoral.withAlpha(60),
+                      color: context.palette.warmCoral.withAlpha(60),
                     ),
                   );
                 }).toList(),
@@ -1032,10 +1073,10 @@ class _AllergyDislikedSection extends StatelessWidget {
               children: [
                 Text(
                   l10n.profileDisliked,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.softLavender,
+                    color: context.palette.softLavender,
                   ),
                 ),
                 const Spacer(),
@@ -1044,15 +1085,18 @@ class _AllergyDislikedSection extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.add_rounded,
-                          size: 16, color: AppTheme.softLavender),
+                      Icon(
+                        Icons.add_rounded,
+                        size: 16,
+                        color: context.palette.softLavender,
+                      ),
                       const SizedBox(width: 2),
                       Text(
                         l10n.add,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.softLavender,
+                          color: context.palette.softLavender,
                         ),
                       ),
                     ],
@@ -1062,10 +1106,7 @@ class _AllergyDislikedSection extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             if (profile.dislikedIngredients.isEmpty)
-              Text(
-                l10n.profileNoDisliked,
-                style: theme.textTheme.bodySmall,
-              )
+              Text(l10n.profileNoDisliked, style: theme.textTheme.bodySmall)
             else
               Wrap(
                 spacing: 8,
@@ -1081,14 +1122,14 @@ class _AllergyDislikedSection extends StatelessWidget {
                           .read(profileProvider.notifier)
                           .removeDislikedIngredient(id);
                     },
-                    backgroundColor: AppTheme.softLavender.withAlpha(20),
-                    deleteIconColor: AppTheme.softLavender,
-                    labelStyle: const TextStyle(
-                      color: AppTheme.textPrimary,
+                    backgroundColor: context.palette.softLavender.withAlpha(20),
+                    deleteIconColor: context.palette.softLavender,
+                    labelStyle: TextStyle(
+                      color: context.palette.textPrimary,
                       fontSize: 13,
                     ),
                     side: BorderSide(
-                      color: AppTheme.softLavender.withAlpha(60),
+                      color: context.palette.softLavender.withAlpha(60),
                     ),
                   );
                 }).toList(),
@@ -1105,11 +1146,7 @@ class _AllergyDislikedSection extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (_) => _AddAllergenSheet(
-        ref: ref,
-        locale: locale,
-        l10n: l10n,
-      ),
+      builder: (_) => _AddAllergenSheet(ref: ref, locale: locale, l10n: l10n),
     );
   }
 
@@ -1119,11 +1156,8 @@ class _AllergyDislikedSection extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (_) => _AddDislikedIngredientSheet(
-        ref: ref,
-        locale: locale,
-        l10n: l10n,
-      ),
+      builder: (_) =>
+          _AddDislikedIngredientSheet(ref: ref, locale: locale, l10n: l10n),
     );
   }
 }
@@ -1152,9 +1186,9 @@ class _AddAllergenSheet extends StatelessWidget {
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
-      decoration: const BoxDecoration(
-        color: AppTheme.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      decoration: BoxDecoration(
+        color: context.palette.surface,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: Column(
         children: [
@@ -1163,7 +1197,7 @@ class _AddAllergenSheet extends StatelessWidget {
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: AppTheme.dividerColor,
+              color: context.palette.dividerColor,
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -1171,8 +1205,10 @@ class _AddAllergenSheet extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                const Icon(Icons.health_and_safety_rounded,
-                    color: AppTheme.warmCoral),
+                Icon(
+                  Icons.health_and_safety_rounded,
+                  color: context.palette.warmCoral,
+                ),
                 const SizedBox(width: 8),
                 Text(
                   l10n.profileSelectAllergen,
@@ -1190,21 +1226,19 @@ class _AddAllergenSheet extends StatelessWidget {
                 ? Center(
                     child: Text(
                       l10n.profileNoAllergies,
-                      style: const TextStyle(color: AppTheme.textSecondary),
+                      style: TextStyle(color: context.palette.textSecondary),
                     ),
                   )
                 : ListView.builder(
                     itemCount: available.length,
                     itemBuilder: (context, index) {
                       final entry = available[index];
-                      final label =
-                          entry.value[locale] ?? entry.value['en']!;
+                      final label = entry.value[locale] ?? entry.value['en']!;
                       return ListTile(
                         title: Text(label),
-                        trailing: IconButton(
-                          icon: const Icon(
-                              Icons.add_circle_outline_rounded),
-                          color: AppTheme.warmCoral,
+                        trailing: WellnessIconButton(
+                          icon: const Icon(Icons.add_circle_outline_rounded),
+                          color: context.palette.warmCoral,
                           onPressed: () {
                             ref
                                 .read(profileProvider.notifier)
@@ -1258,9 +1292,9 @@ class _AddDislikedIngredientSheetState
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
-      decoration: const BoxDecoration(
-        color: AppTheme.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      decoration: BoxDecoration(
+        color: context.palette.surface,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: Column(
         children: [
@@ -1269,7 +1303,7 @@ class _AddDislikedIngredientSheetState
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: AppTheme.dividerColor,
+              color: context.palette.dividerColor,
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -1290,9 +1324,9 @@ class _AddDislikedIngredientSheetState
                 final ingredient = filtered[index];
                 return ListTile(
                   title: Text(ingredient.localizedName(widget.locale)),
-                  trailing: IconButton(
+                  trailing: WellnessIconButton(
                     icon: const Icon(Icons.add_circle_outline_rounded),
-                    color: AppTheme.softLavender,
+                    color: context.palette.softLavender,
                     onPressed: () {
                       widget.ref
                           .read(profileProvider.notifier)
@@ -1331,10 +1365,12 @@ class _LanguageSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.language_rounded, color: AppTheme.softLavender),
+                Icon(
+                  Icons.language_rounded,
+                  color: context.palette.softLavender,
+                ),
                 const SizedBox(width: 8),
-                Text(l10n.profileLanguage,
-                    style: theme.textTheme.titleMedium),
+                Text(l10n.profileLanguage, style: theme.textTheme.titleMedium),
               ],
             ),
             const SizedBox(height: 16),
@@ -1350,20 +1386,20 @@ class _LanguageSection extends StatelessWidget {
                       ref.read(localeProvider.notifier).setLocale('tr');
                     }
                   },
-                  selectedColor: AppTheme.softLavender.withAlpha(40),
-                  checkmarkColor: AppTheme.softLavender,
+                  selectedColor: context.palette.softLavender.withAlpha(40),
+                  checkmarkColor: context.palette.softLavender,
                   labelStyle: TextStyle(
                     color: currentLocale.languageCode == 'tr'
-                        ? AppTheme.softLavender
-                        : AppTheme.textSecondary,
+                        ? context.palette.softLavender
+                        : context.palette.textSecondary,
                     fontWeight: currentLocale.languageCode == 'tr'
                         ? FontWeight.w600
                         : FontWeight.w400,
                   ),
                   side: BorderSide(
                     color: currentLocale.languageCode == 'tr'
-                        ? AppTheme.softLavender.withAlpha(100)
-                        : AppTheme.dividerColor,
+                        ? context.palette.softLavender.withAlpha(100)
+                        : context.palette.dividerColor,
                   ),
                 ),
                 ChoiceChip(
@@ -1374,20 +1410,20 @@ class _LanguageSection extends StatelessWidget {
                       ref.read(localeProvider.notifier).setLocale('en');
                     }
                   },
-                  selectedColor: AppTheme.softLavender.withAlpha(40),
-                  checkmarkColor: AppTheme.softLavender,
+                  selectedColor: context.palette.softLavender.withAlpha(40),
+                  checkmarkColor: context.palette.softLavender,
                   labelStyle: TextStyle(
                     color: currentLocale.languageCode == 'en'
-                        ? AppTheme.softLavender
-                        : AppTheme.textSecondary,
+                        ? context.palette.softLavender
+                        : context.palette.textSecondary,
                     fontWeight: currentLocale.languageCode == 'en'
                         ? FontWeight.w600
                         : FontWeight.w400,
                   ),
                   side: BorderSide(
                     color: currentLocale.languageCode == 'en'
-                        ? AppTheme.softLavender.withAlpha(100)
-                        : AppTheme.dividerColor,
+                        ? context.palette.softLavender.withAlpha(100)
+                        : context.palette.dividerColor,
                   ),
                 ),
               ],

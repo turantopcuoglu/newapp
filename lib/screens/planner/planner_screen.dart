@@ -59,10 +59,7 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
       appBar: AppBar(
         title: Text(l10n.plannerTitle),
         actions: [
-          TextButton(
-            onPressed: _goToToday,
-            child: Text(l10n.plannerToday),
-          ),
+          TextButton(onPressed: _goToToday, child: Text(l10n.plannerToday)),
         ],
       ),
       body: Column(
@@ -73,16 +70,18 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                    icon: const Icon(Icons.chevron_left),
-                    onPressed: _prevWeek),
+                WellnessIconButton(
+                  icon: const Icon(Icons.chevron_left),
+                  onPressed: _prevWeek,
+                ),
                 Text(
                   '${l10n.plannerWeekOf} ${dateFormat.format(_weekStart)}',
                   style: theme.textTheme.titleMedium,
                 ),
-                IconButton(
-                    icon: const Icon(Icons.chevron_right),
-                    onPressed: _nextWeek),
+                WellnessIconButton(
+                  icon: const Icon(Icons.chevron_right),
+                  onPressed: _nextWeek,
+                ),
               ],
             ),
           ),
@@ -123,26 +122,36 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
                               ),
                             ),
                             const SizedBox(width: 8),
-                            Text(dateFormat.format(day),
-                                style: theme.textTheme.bodySmall),
+                            Text(
+                              dateFormat.format(day),
+                              style: theme.textTheme.bodySmall,
+                            ),
                             if (isToday) ...[
                               const SizedBox(width: 8),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 8, vertical: 2),
+                                  horizontal: 8,
+                                  vertical: 2,
+                                ),
                                 decoration: BoxDecoration(
                                   color: theme.colorScheme.primary,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Text(l10n.plannerToday,
-                                    style: const TextStyle(
-                                        color: Colors.white, fontSize: 10)),
+                                child: Text(
+                                  l10n.plannerToday,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                  ),
+                                ),
                               ),
                             ],
                             const Spacer(),
-                            IconButton(
-                              icon: Icon(Icons.add_circle_outline,
-                                  color: theme.colorScheme.primary),
+                            WellnessIconButton(
+                              icon: Icon(
+                                Icons.add_circle_outline,
+                                color: theme.colorScheme.primary,
+                              ),
                               onPressed: () => _addMeal(context, day),
                               iconSize: 22,
                             ),
@@ -151,12 +160,16 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
                         if (dayEntries.isEmpty)
                           Padding(
                             padding: const EdgeInsets.only(top: 4),
-                            child: Text(l10n.plannerEmpty,
-                                style: theme.textTheme.bodySmall),
+                            child: Text(
+                              l10n.plannerEmpty,
+                              style: theme.textTheme.bodySmall,
+                            ),
                           )
                         else
-                          ...dayEntries.map((item) =>
-                              _buildEntry(context, day, item, recipeMap)),
+                          ...dayEntries.map(
+                            (item) =>
+                                _buildEntry(context, day, item, recipeMap),
+                          ),
                       ],
                     ),
                   ),
@@ -169,8 +182,12 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
     );
   }
 
-  Widget _buildEntry(BuildContext context, DateTime day, DayMealItem item,
-      Map<String, Recipe> recipeMap) {
+  Widget _buildEntry(
+    BuildContext context,
+    DateTime day,
+    DayMealItem item,
+    Map<String, Recipe> recipeMap,
+  ) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final theme = Theme.of(context);
@@ -189,8 +206,8 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
             onTap: recipe == null
                 ? null
                 : () => ref
-                    .read(cookedProvider.notifier)
-                    .toggleForDay(recipe, day),
+                      .read(cookedProvider.notifier)
+                      .toggleForDay(recipe, day),
           ),
           const SizedBox(width: 8),
           MealTypeBadge(mealType: item.mealType),
@@ -220,17 +237,18 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
                 Text(
                   recipe?.localizedName(locale) ?? item.recipeId,
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    decoration:
-                        item.isCooked ? TextDecoration.lineThrough : null,
-                    color: item.isCooked ? AppTheme.textSecondary : null,
+                    decoration: item.isCooked
+                        ? TextDecoration.lineThrough
+                        : null,
+                    color: item.isCooked ? context.palette.textSecondary : null,
                   ),
                 ),
                 if (item.isUnplanned)
                   Text(
                     l10n.mealListCookedNotPlanned,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 11,
-                      color: AppTheme.successGreen,
+                      color: context.palette.successGreen,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -240,7 +258,7 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
           // A cooked-only line has no plan entry to remove; unticking it is
           // what takes it off the list.
           if (item.planId != null)
-            IconButton(
+            WellnessIconButton(
               icon: const Icon(Icons.close, size: 18),
               onPressed: () =>
                   ref.read(mealPlanProvider.notifier).removeEntry(item.planId!),
@@ -263,18 +281,23 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
       builder: (ctx) => SimpleDialog(
         title: Text(l10n.plannerSelectMealType),
         children: MealType.values
-            .map((type) => SimpleDialogOption(
-                  onPressed: () => Navigator.pop(ctx, type),
-                  child: Text(type.name[0].toUpperCase() + type.name.substring(1)),
-                ))
+            .map(
+              (type) => SimpleDialogOption(
+                onPressed: () => Navigator.pop(ctx, type),
+                child: Text(
+                  type.name[0].toUpperCase() + type.name.substring(1),
+                ),
+              ),
+            )
             .toList(),
       ),
     );
     if (mealType == null || !context.mounted) return;
 
     // Filter recipes by meal type
-    final filtered =
-        allSafe.where((sr) => sr.recipe.mealType == mealType).toList();
+    final filtered = allSafe
+        .where((sr) => sr.recipe.mealType == mealType)
+        .toList();
 
     if (!context.mounted) return;
 
@@ -284,10 +307,12 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
       builder: (ctx) => SimpleDialog(
         title: Text(l10n.plannerSelectRecipe),
         children: filtered
-            .map((sr) => SimpleDialogOption(
-                  onPressed: () => Navigator.pop(ctx, sr),
-                  child: Text(sr.recipe.localizedName(locale)),
-                ))
+            .map(
+              (sr) => SimpleDialogOption(
+                onPressed: () => Navigator.pop(ctx, sr),
+                child: Text(sr.recipe.localizedName(locale)),
+              ),
+            )
             .toList(),
       ),
     );
@@ -302,7 +327,9 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
       confirmText: l10n.confirm,
     );
 
-    ref.read(mealPlanProvider.notifier).addEntry(
+    ref
+        .read(mealPlanProvider.notifier)
+        .addEntry(
           recipeId: selected.recipe.id,
           date: date,
           mealType: mealType,

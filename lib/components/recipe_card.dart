@@ -11,11 +11,7 @@ class RecipeCard extends StatelessWidget {
   final ScoredRecipe scoredRecipe;
   final VoidCallback? onTap;
 
-  const RecipeCard({
-    super.key,
-    required this.scoredRecipe,
-    this.onTap,
-  });
+  const RecipeCard({super.key, required this.scoredRecipe, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -70,18 +66,22 @@ class RecipeCard extends StatelessWidget {
                   ),
                   const Spacer(),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
-                      color: _compatibilityColor(scoredRecipe.compatibilityScore)
-                          .withAlpha(30),
+                      color: _compatibilityColor(
+                        scoredRecipe.compatibilityScore,
+                      ).withAlpha(30),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
                       '${scoredRecipe.compatibilityPercent}% ${l10n.recipeCompatibility}',
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: _compatibilityColor(
-                            scoredRecipe.compatibilityScore),
+                          scoredRecipe.compatibilityScore,
+                        ),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -138,11 +138,7 @@ class RecipeSelectCard extends StatelessWidget {
   final Recipe recipe;
   final VoidCallback? onTap;
 
-  const RecipeSelectCard({
-    super.key,
-    required this.recipe,
-    this.onTap,
-  });
+  const RecipeSelectCard({super.key, required this.recipe, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -151,10 +147,15 @@ class RecipeSelectCard extends StatelessWidget {
 
     return Card(
       child: ListTile(
-        title: Text(recipe.localizedName(locale),
-            style: theme.textTheme.titleMedium),
-        subtitle: Text(recipe.localizedDescription(locale),
-            maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(
+          recipe.localizedName(locale),
+          style: theme.textTheme.titleMedium,
+        ),
+        subtitle: Text(
+          recipe.localizedDescription(locale),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         trailing: MealTypeBadge(mealType: recipe.mealType),
         onTap: onTap,
       ),

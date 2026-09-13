@@ -54,8 +54,9 @@ class RecommendationService {
     required Set<String> inventoryIds,
   }) {
     // Step 1: Exclude allergens, disliked ingredients, diet mismatches
-    final safeRecipes =
-        allRecipes.where((recipe) => _isSafe(recipe, profile)).toList();
+    final safeRecipes = allRecipes
+        .where((recipe) => _isSafe(recipe, profile))
+        .toList();
 
     // Step 2: Check-in match as a soft bonus instead of a hard filter.
     // With a hard filter, sparse (check-in x meal type) combinations produce
@@ -85,8 +86,9 @@ class RecommendationService {
           ? 0.0
           : available.length / recipe.ingredientIds.length;
 
-      final checkInMatch = recipe.checkInTags
-          .any((tag) => checkInTypes.contains(tag));
+      final checkInMatch = recipe.checkInTags.any(
+        (tag) => checkInTypes.contains(tag),
+      );
 
       // Health conditions are a standing need, not a mood: a recipe that
       // suits every declared condition ranks highest, one that suits none
@@ -99,7 +101,8 @@ class RecommendationService {
       if (recipe.fiberLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.carbType == CarbType.complex) nutritionBonus += 0.03;
 
-      final score = (ingredientScore * 0.45) +
+      final score =
+          (ingredientScore * 0.45) +
           (checkInMatch ? 0.28 : 0.0) +
           (healthMatch * 0.20) +
           (nutritionBonus * 0.07);
@@ -118,8 +121,9 @@ class RecommendationService {
     // Group by meal type
     final result = <MealType, List<ScoredRecipe>>{};
     for (final mealType in MealType.values) {
-      result[mealType] =
-          scored.where((s) => s.recipe.mealType == mealType).toList();
+      result[mealType] = scored
+          .where((s) => s.recipe.mealType == mealType)
+          .toList();
     }
 
     return result;
@@ -132,31 +136,31 @@ class RecommendationService {
     required UserProfile profile,
     required Set<String> inventoryIds,
   }) {
-    final safeRecipes =
-        allRecipes.where((recipe) => _isSafe(recipe, profile)).toList();
+    final safeRecipes = allRecipes
+        .where((recipe) => _isSafe(recipe, profile))
+        .toList();
 
     return safeRecipes.map((recipe) {
-      final available = <String>[];
-      final missing = <String>[];
-      for (final id in recipe.ingredientIds) {
-        if (inventoryIds.contains(id)) {
-          available.add(id);
-        } else {
-          missing.add(id);
+        final available = <String>[];
+        final missing = <String>[];
+        for (final id in recipe.ingredientIds) {
+          if (inventoryIds.contains(id)) {
+            available.add(id);
+          } else {
+            missing.add(id);
+          }
         }
-      }
-      final score = recipe.ingredientIds.isEmpty
-          ? 0.0
-          : available.length / recipe.ingredientIds.length;
-      return ScoredRecipe(
-        recipe: recipe,
-        compatibilityScore: score,
-        availableIngredients: available,
-        missingIngredients: missing,
-      );
-    }).toList()
-      ..sort(
-          (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+        final score = recipe.ingredientIds.isEmpty
+            ? 0.0
+            : available.length / recipe.ingredientIds.length;
+        return ScoredRecipe(
+          recipe: recipe,
+          compatibilityScore: score,
+          availableIngredients: available,
+          missingIngredients: missing,
+        );
+      }).toList()
+      ..sort((a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
   }
 
   /// Everything the user may safely see while browsing, ordered by fit.
@@ -173,36 +177,38 @@ class RecommendationService {
     final classifier = dietClassifier;
 
     final scored = allRecipes
-        .where((recipe) => !hasAllergenConflict(recipe.allergenTags, profile))
+        .where((recipe) => !recipeHasAllergenConflict(recipe, profile))
         .map((recipe) {
-      final available = <String>[];
-      final missing = <String>[];
-      for (final id in recipe.ingredientIds) {
-        if (inventoryIds.contains(id)) {
-          available.add(id);
-        } else {
-          missing.add(id);
-        }
-      }
-      final score = recipe.ingredientIds.isEmpty
-          ? 0.0
-          : available.length / recipe.ingredientIds.length;
+          final available = <String>[];
+          final missing = <String>[];
+          for (final id in recipe.ingredientIds) {
+            if (inventoryIds.contains(id)) {
+              available.add(id);
+            } else {
+              missing.add(id);
+            }
+          }
+          final score = recipe.ingredientIds.isEmpty
+              ? 0.0
+              : available.length / recipe.ingredientIds.length;
 
-      return ScoredRecipe(
-        recipe: recipe,
-        compatibilityScore: score,
-        availableIngredients: available,
-        missingIngredients: missing,
-        preferenceFit: classifier == null
-            ? PreferenceFit.clean
-            : recipePreferenceFit(recipe, profile, classifier),
-      );
-    }).toList();
+          return ScoredRecipe(
+            recipe: recipe,
+            compatibilityScore: score,
+            availableIngredients: available,
+            missingIngredients: missing,
+            preferenceFit: classifier == null
+                ? PreferenceFit.clean
+                : recipePreferenceFit(recipe, profile, classifier),
+          );
+        })
+        .toList();
 
     scored.sort((a, b) {
       // What the user can eat first, then the pantry match inside each group.
-      final byFit =
-          a.preferenceFit.demotion.compareTo(b.preferenceFit.demotion);
+      final byFit = a.preferenceFit.demotion.compareTo(
+        b.preferenceFit.demotion,
+      );
       if (byFit != 0) return byFit;
       return b.compatibilityScore.compareTo(a.compatibilityScore);
     });
@@ -231,15 +237,18 @@ class RecommendationService {
   /// Hard safety/suitability filter: allergens, disliked ingredients, and
   /// diet preferences (a recipe must satisfy every selected preference).
   bool _isSafe(Recipe recipe, UserProfile profile) {
+    if (recipeHasAllergenConflict(recipe, profile)) return false;
     for (final allergen in recipe.allergenTags) {
-      if (profile.allergies
-          .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
+      if (profile.allergies.any(
+        (a) => a.toLowerCase() == allergen.toLowerCase(),
+      )) {
         return false;
       }
     }
     for (final ingredientId in recipe.ingredientIds) {
-      if (profile.dislikedIngredients
-          .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
+      if (profile.dislikedIngredients.any(
+        (d) => d.toLowerCase() == ingredientId.toLowerCase(),
+      )) {
         return false;
       }
     }

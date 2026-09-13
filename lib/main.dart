@@ -8,32 +8,79 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme.dart';
 import 'data/recipe_repository.dart';
 import 'l10n/app_localizations.dart';
-import 'providers/daily_mode_provider.dart';
+import 'providers/wellness_provider.dart';
 import 'providers/locale_provider.dart';
 import 'providers/recipe_provider.dart';
 import 'providers/storage_provider.dart';
 import 'screens/disclaimer_screen.dart';
 import 'screens/main_shell.dart';
-import 'screens/mode_selection_screen.dart';
+import 'screens/wellness/health_connections_screen.dart';
+import 'services/wellness_store.dart';
+import 'services/private_storage.dart';
 import 'screens/onboarding_screen.dart';
 import 'services/storage_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
-  final storage = StorageService(prefs);
+  late final StorageService storage;
+  late final WellnessStore wellnessStore;
+  try {
+    wellnessStore = await EncryptedWellnessStore.open(prefs);
+    storage = StorageService(
+      prefs,
+      privateData: await PrivateStorage.open(prefs),
+    );
+  } catch (_) {
+    runApp(
+      MaterialApp(
+        theme: AppTheme.dark,
+        home: const Scaffold(
+          body: SafeArea(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.lock_outline, size: 48),
+                    SizedBox(height: 20),
+                    Text(
+                      'Kayıtların güvenli biçimde açılamadı. Cihaz kilidini açıp tekrar dene.\nYour records could not be opened securely. Unlock your device and try again.',
+                    ),
+                    SizedBox(height: 20),
+                    FilledButton(
+                      onPressed: main,
+                      child: Text('Tekrar dene / Retry'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    return;
+  }
   final recipeRepository = RecipeRepository();
   final bundledRecipes = await recipeRepository.loadLatest();
 
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light,
-  ));
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
 
   runApp(
     ProviderScope(
       overrides: [
         storageProvider.overrideWithValue(storage),
+        wellnessStoreProvider.overrideWithValue(wellnessStore),
+        activeRecipeContextProvider.overrideWith(
+          (ref) => ref.watch(todayCheckInProvider)?.focus,
+        ),
         bundledRecipesProvider.overrideWithValue(bundledRecipes),
       ],
       child: const MyApp(),
@@ -52,19 +99,55 @@ class _NoStretchScrollBehavior extends ScrollBehavior {
   }
 }
 
-class MyApp extends ConsumerWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
+  @override
+  ConsumerState<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  void didChangeAccessibilityFeatures() {
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final locale = ref.watch(localeProvider);
+    final palette = ref.watch(moodPaletteProvider);
 
     return MaterialApp(
       title: 'NutriGuide',
       debugShowCheckedModeBanner: false,
       scrollBehavior: _NoStretchScrollBehavior(),
-      theme: AppTheme.light,
-      themeMode: ThemeMode.light,
+      theme: AppTheme.forPalette(palette),
+      themeAnimationDuration:
+          WidgetsBinding
+              .instance
+              .platformDispatcher
+              .accessibilityFeatures
+              .disableAnimations
+          ? Duration.zero
+          : const Duration(milliseconds: 700),
+      themeAnimationCurve: Curves.easeInOutCubic,
+      builder: (context, child) => AnnotatedRegion<SystemUiOverlayStyle>(
+        value: palette.brightness == Brightness.dark
+            ? SystemUiOverlayStyle.light
+            : SystemUiOverlayStyle.dark,
+        child: child!,
+      ),
       locale: locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [
@@ -74,6 +157,7 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       home: const _DisclaimerGate(),
+      routes: {'/health-privacy': (_) => const HealthPrivacyScreen()},
     );
   }
 }
@@ -110,38 +194,8 @@ class _DisclaimerGateState extends ConsumerState<_DisclaimerGate> {
 
     final storage = ref.read(storageProvider);
     if (storage.isOnboardingCompleted()) {
-      return const _AppGate();
-    }
-    return const OnboardingScreen();
-  }
-}
-
-/// Gates the app behind daily mode selection.
-/// Shows ModeSelectionScreen if mode hasn't been selected today (resets at 6 AM).
-class _AppGate extends ConsumerStatefulWidget {
-  const _AppGate();
-
-  @override
-  ConsumerState<_AppGate> createState() => _AppGateState();
-}
-
-class _AppGateState extends ConsumerState<_AppGate> {
-  bool _modeJustSelected = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final dailyMode = ref.watch(dailyModeProvider);
-
-    if (dailyMode != null || _modeJustSelected) {
       return const MainShell();
     }
-
-    return ModeSelectionScreen(
-      onModeSelected: () {
-        setState(() {
-          _modeJustSelected = true;
-        });
-      },
-    );
+    return const OnboardingScreen();
   }
 }

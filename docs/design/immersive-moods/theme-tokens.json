@@ -1,0 +1,348 @@
+{
+  "status": "Proposal only; not installed in Flutter",
+  "date": "2026-09-08",
+  "themes": {
+    "tired": {
+      "name": "Kadife akşam",
+      "selection": "Yorgunum",
+      "brightness": "dark",
+      "canvas": "#241C2C",
+      "surface": "#3B2E45",
+      "elevated": "#49384F",
+      "text": "#FFF1E7",
+      "secondary": "#DBC5D4",
+      "action": "#E8C6AE",
+      "onAction": "#241C2C",
+      "icon": "#E8C6AE",
+      "outline": "#B99FAF",
+      "nav": "#34283D",
+      "modal": "#49384F",
+      "scrim": "#170F20",
+      "error": "#FFC0B7",
+      "warning": "#F8D69B",
+      "success": "#D4E3C8",
+      "scene": "velvet-dune",
+      "celestial": "honey-crescent",
+      "breathing": "champagne-loop",
+      "transitionMs": 360,
+      "feedbackMs": 220
+    },
+    "calm": {
+      "name": "Durgun su",
+      "selection": "Sakinim",
+      "brightness": "dark",
+      "canvas": "#0D3033",
+      "surface": "#19464A",
+      "elevated": "#245358",
+      "text": "#EDF8EE",
+      "secondary": "#C0D9D4",
+      "action": "#B9DFCF",
+      "onAction": "#0D3033",
+      "icon": "#B9DFCF",
+      "outline": "#92B9B0",
+      "nav": "#123C40",
+      "modal": "#245358",
+      "scrim": "#041D20",
+      "error": "#FFC2B7",
+      "warning": "#F4D8A4",
+      "success": "#B9DFCF",
+      "scene": "still-water",
+      "celestial": "pearl-crescent",
+      "breathing": "jade-loop",
+      "transitionMs": 280,
+      "feedbackMs": 180
+    },
+    "energized": {
+      "name": "Kayısı şafağı",
+      "selection": "Enerjik",
+      "brightness": "light",
+      "canvas": "#FFF0DA",
+      "surface": "#F8DAB8",
+      "elevated": "#FFE5C7",
+      "text": "#352318",
+      "secondary": "#704A36",
+      "action": "#944523",
+      "onAction": "#FFF4E8",
+      "icon": "#82401F",
+      "outline": "#9B6246",
+      "nav": "#FFE5C7",
+      "modal": "#FFF0DA",
+      "scrim": "#352318",
+      "error": "#9C2526",
+      "warning": "#744009",
+      "success": "#275C3A",
+      "scene": "apricot-dune",
+      "celestial": "sunrise-disc",
+      "breathing": "honey-loop",
+      "transitionMs": 220,
+      "feedbackMs": 140
+    }
+  },
+  "shared": {
+    "cardRadius": 22,
+    "iconSize": 56,
+    "touchTarget": 48,
+    "textScaleTest": 2,
+    "reduceMotion": {
+      "transitionMs": 0,
+      "decorativeMotion": false
+    },
+    "navigation": [
+      "Bugün",
+      "Keşfet",
+      "Plan",
+      "Gelişim",
+      "Profil"
+    ],
+    "foodImageTreatment": "Natural colors; themed surrounding surfaces only",
+    "themeSwitchRebuildsSession": false
+  },
+  "scopeExceptions": [
+    "OS-owned permission dialogs and keyboard",
+    "Provider-owned brand marks",
+    "Natural food imagery"
+  ],
+  "checks": [
+    {
+      "theme": "tired",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 11.42,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.788,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "text",
+      "background": "elevated",
+      "ratio": 9.679,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "secondary",
+      "background": "elevated",
+      "ratio": 6.6,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 10.27,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "icon",
+      "background": "surface",
+      "ratio": 7.891,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 5.197,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "error",
+      "background": "surface",
+      "ratio": 8.105,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 9.072,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "tired",
+      "foreground": "success",
+      "background": "surface",
+      "ratio": 9.395,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 9.553,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.002,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "text",
+      "background": "elevated",
+      "ratio": 7.852,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "secondary",
+      "background": "elevated",
+      "ratio": 5.755,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.759,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "icon",
+      "background": "surface",
+      "ratio": 7.201,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.855,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "error",
+      "background": "surface",
+      "ratio": 6.771,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 7.541,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "calm",
+      "foreground": "success",
+      "background": "surface",
+      "ratio": 7.201,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 11.183,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 5.773,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "text",
+      "background": "elevated",
+      "ratio": 12.302,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "secondary",
+      "background": "elevated",
+      "ratio": 6.351,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 6.175,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "icon",
+      "background": "surface",
+      "ratio": 5.814,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 3.715,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "error",
+      "background": "surface",
+      "ratio": 5.806,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "warning",
+      "background": "surface",
+      "ratio": 6.336,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "theme": "energized",
+      "foreground": "success",
+      "background": "surface",
+      "ratio": 5.867,
+      "minimum": 4.5,
+      "passes": true
+    }
+  ],
+  "limitations": "Solid token pairs only. Generated raster images and alpha/gradient combinations need separate runtime inspection. Energized dark-locked companion palette remains a later design deliverable."
+}

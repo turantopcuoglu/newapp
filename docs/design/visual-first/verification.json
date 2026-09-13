@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-08",
+  "scope": "Design artifacts only; no app code changes, build or new app test run",
+  "featureAudit": {
+    "total": 115,
+    "core": 8,
+    "partial": 34,
+    "connectionFoundation": 5,
+    "absent": 68
+  },
+  "review": {
+    "boards": 3,
+    "views": 7,
+    "visualInspected": true,
+    "findings": "Turkish labels readable; large cards and optional information sheet; same navigation and layout across mood variants. Raster design references, not pixel-certified implemented UI.",
+    "limitations": "Renders show proposed features such as home customization, mood themes and unified Plan. Current app status is in feature-audit.json. Board images do not certify exact touch-target or contrast compliance."
+  },
+  "solidColorChecks": [
+    {
+      "name": "Primary text",
+      "fg": "#F1F6FA",
+      "bg": "#082337",
+      "ratio": 14.78,
+      "target": 4.5,
+      "passes": true
+    },
+    {
+      "name": "Secondary text",
+      "fg": "#B7CCDA",
+      "bg": "#082337",
+      "ratio": 9.7,
+      "target": 4.5,
+      "passes": true
+    },
+    {
+      "name": "Rest selected label",
+      "fg": "#001426",
+      "bg": "#C8B9EE",
+      "ratio": 10.31,
+      "target": 4.5,
+      "passes": true
+    },
+    {
+      "name": "Balance selected label",
+      "fg": "#001426",
+      "bg": "#9DE3D0",
+      "ratio": 12.71,
+      "target": 4.5,
+      "passes": true
+    },
+    {
+      "name": "Lively selected label",
+      "fg": "#001426",
+      "bg": "#94DFE4",
+      "ratio": 12.35,
+      "target": 4.5,
+      "passes": true
+    }
+  ],
+  "imageGeneration": {
+    "tool": "built-in image_gen",
+    "prompts": "image-prompts.json",
+    "files": [
+      "01-bugun-kesfet.png",
+      "02-beslenme-bilgi.png",
+      "03-mod-atmosferleri.png"
+    ]
+  }
+}

@@ -13,10 +13,7 @@ class SectionHeader extends StatelessWidget {
       child: Row(
         children: [
           Text(title, style: Theme.of(context).textTheme.titleMedium),
-          if (trailing != null) ...[
-            const Spacer(),
-            trailing!,
-          ],
+          if (trailing != null) ...[const Spacer(), trailing!],
         ],
       ),
     );

@@ -43,28 +43,29 @@ class CookedEntry {
   int get fiberG => (macrosPerServing.fiberG * servings).round();
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'recipeId': recipeId,
-        'dateTime': dateTime.toIso8601String(),
-        'mealType': mealType.name,
-        'servings': servings,
-        'macrosPerServing': macrosPerServing.toJson(),
-      };
+    'id': id,
+    'recipeId': recipeId,
+    'dateTime': dateTime.toIso8601String(),
+    'mealType': mealType.name,
+    'servings': servings,
+    'macrosPerServing': macrosPerServing.toJson(),
+  };
 
   factory CookedEntry.fromJson(Map<String, dynamic> json) => CookedEntry(
-        id: json['id'] as String,
-        recipeId: json['recipeId'] as String,
-        dateTime: DateTime.parse(json['dateTime'] as String),
-        mealType: MealType.values.firstWhere(
-          (e) => e.name == json['mealType'],
-          orElse: () => MealType.lunch,
-        ),
-        servings: (json['servings'] as num?)?.toDouble() ?? 1,
-        macrosPerServing: json['macrosPerServing'] != null
-            ? MacroEstimation.fromJson(
-                json['macrosPerServing'] as Map<String, dynamic>)
-            : const MacroEstimation(),
-      );
+    id: json['id'] as String,
+    recipeId: json['recipeId'] as String,
+    dateTime: DateTime.parse(json['dateTime'] as String),
+    mealType: MealType.values.firstWhere(
+      (e) => e.name == json['mealType'],
+      orElse: () => MealType.lunch,
+    ),
+    servings: (json['servings'] as num?)?.toDouble() ?? 1,
+    macrosPerServing: json['macrosPerServing'] != null
+        ? MacroEstimation.fromJson(
+            json['macrosPerServing'] as Map<String, dynamic>,
+          )
+        : const MacroEstimation(),
+  );
 
   String encode() => jsonEncode(toJson());
   factory CookedEntry.decode(String s) =>

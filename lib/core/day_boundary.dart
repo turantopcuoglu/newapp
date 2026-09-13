@@ -6,8 +6,9 @@ class DayBoundary {
 
   /// The calendar date a moment belongs to, e.g. "2026-08-02".
   static String keyFor(DateTime dt) {
-    final effective =
-        dt.hour < resetHour ? dt.subtract(const Duration(days: 1)) : dt;
+    final effective = dt.hour < resetHour
+        ? dt.subtract(const Duration(days: 1))
+        : dt;
     return '${effective.year}-'
         '${effective.month.toString().padLeft(2, '0')}-'
         '${effective.day.toString().padLeft(2, '0')}';

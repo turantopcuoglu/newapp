@@ -1,0 +1,84 @@
+{
+  "plan": {
+    "scope": "Günlük iyi oluş isteyen yetişkinler için NutriGuide wellness dönüşümü; resmi ürün karşılaştırması, sağlık kanıtı, mevcut Flutter mimarisi; 8 ekran ve kaynaklı PDF.",
+    "assumptions": [
+      "Türkiye/Türkçe ilk pazar hipotezi, Android+iOS hedefi",
+      "Kod geliştirmesi yapılmayacak",
+      "Fiyat/pazar büyüklüğü/klinik etki iddiası üretilmeyecek"
+    ],
+    "steps": [
+      [
+        "Discovery",
+        "complete"
+      ],
+      [
+        "Follow-up and critical-source verification",
+        "complete"
+      ],
+      [
+        "Synthesis and artifact production",
+        "in_progress"
+      ],
+      [
+        "Visual and source QA",
+        "pending"
+      ]
+    ],
+    "planningTool": "update_plan tool metadata search returned no matching callable tool; plan maintained in session"
+  },
+  "gaps": [
+    {
+      "claim": "Besin + wellness benzersiz değildir",
+      "support": [
+        "Oura Meals",
+        "Lifesum Nutrition & Sleep",
+        "Samsung Health"
+      ],
+      "confidence": "high feature presence; no exhaustive uniqueness conclusion"
+    },
+    {
+      "claim": "Günlük moddan spesifik besinle tedavi",
+      "support": [
+        "SMILES",
+        "MooDFOOD"
+      ],
+      "confidence": "not established; product should not claim"
+    },
+    {
+      "claim": "Türkiye demand and willingness to pay",
+      "support": [],
+      "confidence": "unmeasured hypothesis; pilot required"
+    },
+    {
+      "claim": "Device integration",
+      "support": [
+        "Apple HealthKit",
+        "Android Health Connect"
+      ],
+      "confidence": "official types and permissions; exact device/region implementation not tested"
+    },
+    {
+      "claim": "Code readiness",
+      "support": [
+        "local Flutter sources"
+      ],
+      "confidence": "source inspection only; no runtime or performance claims"
+    }
+  ],
+  "stop": "8 competitors with first-party evidence, core scientific claim bounded with positive/negative trial evidence, platform permissions checked, repo gaps inspected. Further broad search unlikely to change product architecture. Demand/pricing remain deliberately unmeasured.",
+  "criticalParentSources": [
+    "turn15view0",
+    "turn15view1",
+    "turn15view2",
+    "turn15view3",
+    "turn15view4",
+    "turn16view0",
+    "turn16view1",
+    "turn16view2",
+    "turn16view3",
+    "turn11view1",
+    "turn13view1",
+    "turn14search1"
+  ],
+  "accessDate": "2026-09-07"
+}

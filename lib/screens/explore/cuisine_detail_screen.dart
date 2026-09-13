@@ -31,11 +31,11 @@ class CuisineDetailScreen extends ConsumerWidget {
         .toList();
     final hasDemoted = cuisineRecipes.any((sr) => !sr.preferenceFit.fits);
 
-    final gradientColors = cuisineGradients[cuisine.gradient] ??
-        cuisineGradients['healthy']!;
+    final gradientColors =
+        cuisineGradients[cuisine.gradient] ?? cuisineGradients['healthy']!;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
           // Header
@@ -51,10 +51,7 @@ class CuisineDetailScreen extends ConsumerWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    Color(gradientColors[0]),
-                    Color(gradientColors[1]),
-                  ],
+                  colors: [Color(gradientColors[0]), Color(gradientColors[1])],
                 ),
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(28),
@@ -83,10 +80,7 @@ class CuisineDetailScreen extends ConsumerWidget {
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      Text(
-                        cuisine.emoji,
-                        style: const TextStyle(fontSize: 40),
-                      ),
+                      Text(cuisine.emoji, style: const TextStyle(fontSize: 40)),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Column(
@@ -130,8 +124,8 @@ class CuisineDetailScreen extends ConsumerWidget {
                   child: Text(
                     l10n.recipeBookEmpty,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: AppTheme.textSecondary,
+                    style: TextStyle(
+                      color: context.palette.textSecondary,
                       fontSize: 14,
                     ),
                   ),
@@ -143,32 +137,27 @@ class CuisineDetailScreen extends ConsumerWidget {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: PreferenceWarningCard(
-                    fit: _listFitOf(cuisineRecipes),
-                  ),
+                  child: PreferenceWarningCard(fit: _listFitOf(cuisineRecipes)),
                 ),
               ),
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final scored = cuisineRecipes[index];
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final scored = cuisineRecipes[index];
 
-                    return _RecipeCard(
-                      scored: scored,
-                      locale: locale,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              RecipeDetailScreen(scoredRecipe: scored),
-                        ),
+                  return _RecipeCard(
+                    scored: scored,
+                    locale: locale,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            RecipeDetailScreen(scoredRecipe: scored),
                       ),
-                    );
-                  },
-                  childCount: cuisineRecipes.length,
-                ),
+                    ),
+                  );
+                }, childCount: cuisineRecipes.length),
               ),
             ),
           ],
@@ -209,14 +198,14 @@ class _RecipeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipe = scored.recipe;
     final l10n = AppLocalizations.of(context);
-    final mealColor = _mealTypeColor(recipe.mealType);
+    final mealColor = _mealTypeColor(context, recipe.mealType);
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: AppTheme.surface,
+          color: context.palette.surface,
           borderRadius: BorderRadius.circular(18),
           boxShadow: [
             BoxShadow(
@@ -236,8 +225,7 @@ class _RecipeCard extends StatelessWidget {
                 child: RecipeVisual(
                   recipe: recipe,
                   height: 64,
-                  borderRadius:
-                      const BorderRadius.all(Radius.circular(12)),
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
                 ),
               ),
               const SizedBox(width: 14),
@@ -269,8 +257,8 @@ class _RecipeCard extends StatelessWidget {
                     // Title
                     Text(
                       recipe.localizedName(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textPrimary,
+                      style: TextStyle(
+                        color: context.palette.textPrimary,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -282,8 +270,8 @@ class _RecipeCard extends StatelessWidget {
                     // Description
                     Text(
                       recipe.localizedDescription(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textSecondary,
+                      style: TextStyle(
+                        color: context.palette.textSecondary,
                         fontSize: 12,
                         height: 1.3,
                       ),
@@ -296,18 +284,19 @@ class _RecipeCard extends StatelessWidget {
                       children: [
                         _MacroBadge(
                           label: '${recipe.macros.calories} kcal',
-                          color: AppTheme.accentOrange,
+                          color: context.palette.accentOrange,
                         ),
                         const SizedBox(width: 6),
                         _MacroBadge(
                           label: '${recipe.macros.proteinG}g P',
-                          color: AppTheme.accentTeal,
+                          color: context.palette.accentTeal,
                         ),
                         const SizedBox(width: 6),
                         if (scored.compatibilityPercent > 0)
                           _MacroBadge(
-                            label: '${scored.compatibilityPercent}% ${l10n.recipeCompatibility}',
-                            color: AppTheme.successGreen,
+                            label:
+                                '${scored.compatibilityPercent}% ${l10n.recipeCompatibility}',
+                            color: context.palette.successGreen,
                           ),
                       ],
                     ),
@@ -328,16 +317,16 @@ class _RecipeCard extends StatelessWidget {
     );
   }
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 

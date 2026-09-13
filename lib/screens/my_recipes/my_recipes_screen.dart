@@ -12,16 +12,16 @@ import 'create_recipe_screen.dart';
 class MyRecipesScreen extends ConsumerWidget {
   const MyRecipesScreen({super.key});
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
@@ -60,17 +60,20 @@ class MyRecipesScreen extends ConsumerWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.menu_book_outlined,
-                      size: 64, color: Colors.grey.shade300),
+                  Icon(
+                    Icons.menu_book_outlined,
+                    size: 64,
+                    color: context.palette.dividerColor,
+                  ),
                   const SizedBox(height: 12),
-                  Text(l10n.myRecipesEmpty,
-                      style: theme.textTheme.bodyMedium),
+                  Text(l10n.myRecipesEmpty, style: theme.textTheme.bodyMedium),
                   const SizedBox(height: 16),
                   FilledButton.icon(
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => const CreateRecipeScreen()),
+                        builder: (_) => const CreateRecipeScreen(),
+                      ),
                     ),
                     icon: const Icon(Icons.add),
                     label: Text(l10n.myRecipesCreate),
@@ -83,7 +86,7 @@ class MyRecipesScreen extends ConsumerWidget {
               itemCount: recipes.length,
               itemBuilder: (context, index) {
                 final recipe = recipes[index];
-                final mealColor = _mealTypeColor(recipe.mealType);
+                final mealColor = _mealTypeColor(context, recipe.mealType);
                 return Card(
                   margin: const EdgeInsets.only(bottom: 12),
                   shape: RoundedRectangleBorder(
@@ -124,11 +127,12 @@ class MyRecipesScreen extends ConsumerWidget {
                                   children: [
                                     Container(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 8, vertical: 2),
+                                        horizontal: 8,
+                                        vertical: 2,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: mealColor.withAlpha(30),
-                                        borderRadius:
-                                            BorderRadius.circular(8),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Text(
                                         _mealTypeLabel(recipe.mealType, l10n),
@@ -139,7 +143,8 @@ class MyRecipesScreen extends ConsumerWidget {
                                         ),
                                       ),
                                     ),
-                                    if (recipe.localizedDescription(locale)
+                                    if (recipe
+                                        .localizedDescription(locale)
                                         .isNotEmpty) ...[
                                       const SizedBox(width: 8),
                                       Expanded(
@@ -157,11 +162,13 @@ class MyRecipesScreen extends ConsumerWidget {
                             ),
                           ),
                           const SizedBox(width: 8),
-                          IconButton(
-                            icon: Icon(Icons.delete_outline,
-                                color: Colors.red.shade300),
-                            onPressed: () => _confirmDelete(
-                                context, ref, recipe, l10n),
+                          WellnessIconButton(
+                            icon: Icon(
+                              Icons.delete_outline,
+                              color: Colors.red.shade300,
+                            ),
+                            onPressed: () =>
+                                _confirmDelete(context, ref, recipe, l10n),
                           ),
                         ],
                       ),
@@ -202,13 +209,18 @@ class MyRecipesScreen extends ConsumerWidget {
   }
 
   void _confirmDelete(
-      BuildContext context, WidgetRef ref, Recipe recipe, AppLocalizations l10n) {
+    BuildContext context,
+    WidgetRef ref,
+    Recipe recipe,
+    AppLocalizations l10n,
+  ) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(l10n.delete),
         content: Text(
-            '${recipe.localizedName(l10n.locale.languageCode)} - ${l10n.confirm}?'),
+          '${recipe.localizedName(l10n.locale.languageCode)} - ${l10n.confirm}?',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
@@ -216,13 +228,10 @@ class MyRecipesScreen extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () {
-              ref
-                  .read(myRecipesProvider.notifier)
-                  .removeRecipe(recipe.id);
+              ref.read(myRecipesProvider.notifier).removeRecipe(recipe.id);
               Navigator.pop(ctx);
             },
-            child: Text(l10n.delete,
-                style: const TextStyle(color: Colors.red)),
+            child: Text(l10n.delete, style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),

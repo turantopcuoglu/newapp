@@ -1,0 +1,1297 @@
+{
+  "date": "2026-09-08",
+  "method": "Static code review; no new device validation",
+  "counts": {
+    "Çekirdek var": 8,
+    "Kısmi": 34,
+    "Yok": 68,
+    "Bağlantı altyapısı": 5
+  },
+  "features": [
+    {
+      "id": "KIS-01",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Ruh hali, enerji ve öznel stres kaydı",
+      "phase": "F1",
+      "dataAndConditions": "K; tarihli geçmiş, atlama hakkı",
+      "status": "Çekirdek var",
+      "auditNote": "Tarihli ruh hali, enerji, stres; kayıt isteğe bağlı.",
+      "evidenceFiles": [
+        "lib/models/wellness.dart",
+        "lib/screens/wellness/check_in_screen.dart"
+      ]
+    },
+    {
+      "id": "KIS-02",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Uyku hissi, açlık ve tokluk kaydı",
+      "phase": "F1",
+      "dataAndConditions": "K; cihaz ölçümünden ayrı",
+      "status": "Kısmi",
+      "auditNote": "Uyku hissi var; açlık/tokluk yeni wellness kaydında yok.",
+      "evidenceFiles": [
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "KIS-03",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Hedef, alışkanlık, zaman ve bütçe profili",
+      "phase": "F1",
+      "dataAndConditions": "K; az sorulu, aşamalı kurulum",
+      "status": "Kısmi",
+      "auditNote": "Hedefler, alışkanlıklar ve hazırlık zamanı var; bütçe profili yok.",
+      "evidenceFiles": [
+        "lib/models/wellness.dart",
+        "lib/models/user_profile.dart"
+      ]
+    },
+    {
+      "id": "KIS-04",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Sabah, gün içi ve akşam için günlük plan",
+      "phase": "F1",
+      "dataAndConditions": "K/C; tek plan, en fazla üç ana öneri",
+      "status": "Kısmi",
+      "auditNote": "Günlük yemek ve sabit iki rutin sunuluyor; birleşik sabah/gün/akşam planı yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/today_screen.dart"
+      ]
+    },
+    {
+      "id": "KIS-05",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Öneri gerekçesi ve alternatif seçimi",
+      "phase": "F1",
+      "dataAndConditions": "K/C; kullanılan veri ve güncellik görünür",
+      "status": "Kısmi",
+      "auditNote": "Gerekçe metni ve alternatif var; tüm önerilerin bağlam/provenans açıklaması yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/nourish_screen.dart",
+        "lib/providers/wellness_provider.dart"
+      ]
+    },
+    {
+      "id": "KIS-06",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Seyahat, vardiya ve yoğun gün bağlamı",
+      "phase": "F2",
+      "dataAndConditions": "K; saat dilimi ve kullanılabilir süre",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "KIS-07",
+      "area": "Günlük durum ve kişiselleştirme",
+      "feature": "Öneri geri bildirimi ve tercih öğrenme",
+      "phase": "F2",
+      "dataAndConditions": "K; atlamak başarısızlık sayılmaz",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "BES-01",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Bugün tüketilebilecek besin önerileri",
+      "phase": "F1",
+      "dataAndConditions": "K/İ; zaman, tercih ve çeşitlilik odaklı",
+      "status": "Kısmi",
+      "auditNote": "Alerji, tercih, süre, öğün ve mutfak temeli var. Referans kasesinin sıralamada sabit önceliği kişiselleştirmeyi zayıflatıyor.",
+      "evidenceFiles": [
+        "lib/providers/wellness_provider.dart",
+        "lib/providers/recipe_provider.dart"
+      ]
+    },
+    {
+      "id": "BES-02",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Alerji, intolerans ve tercih için ayrı filtreler",
+      "phase": "F0",
+      "dataAndConditions": "K/V; zorunlu eleme ve belirsiz içerik yönetimi",
+      "status": "Çekirdek var",
+      "auditNote": "Ayrı alerji, laktoz intoleransı ve diyet filtresi; belirsiz malzeme eleme. Katalog doğrulaması ayrıca sürmeli.",
+      "evidenceFiles": [
+        "lib/services/recommendation_service.dart",
+        "lib/services/preference_matcher.dart",
+        "lib/data/allergens.dart"
+      ]
+    },
+    {
+      "id": "BES-03",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Öğün ve porsiyon tüketim kaydı",
+      "phase": "F1",
+      "dataAndConditions": "K; planlanan öğünden ayrı",
+      "status": "Çekirdek var",
+      "auditNote": "Porsiyonlu tüketim kaydı; plan ve tüketim ayrı, açık pişirme eylemi gerekiyor.",
+      "evidenceFiles": [
+        "lib/providers/cooked_provider.dart",
+        "lib/screens/wellness/moonlit_recipe_screen.dart"
+      ]
+    },
+    {
+      "id": "BES-04",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "İsteğe bağlı enerji ve makro takibi",
+      "phase": "F2",
+      "dataAndConditions": "K/V; miktar ve veri kaynağı görünür",
+      "status": "Kısmi",
+      "auditNote": "Eski beslenme ekranında kayıtlı öğünlerden enerji/makro hesapları var; wellness ana akışına entegre tercihli modül değil.",
+      "evidenceFiles": [
+        "lib/screens/nutrition/nutrition_stats_screen.dart",
+        "lib/services/nutrition_calculator.dart"
+      ]
+    },
+    {
+      "id": "BES-05",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Lif, besin grupları ve haftalık çeşitlilik",
+      "phase": "F2",
+      "dataAndConditions": "K/V; eksik günlükte eksiksiz alım iddiası yok",
+      "status": "Kısmi",
+      "auditNote": "Lif hesabı var; haftalık besin grubu/çeşitlilik deneyimi yok.",
+      "evidenceFiles": [
+        "lib/providers/cooked_provider.dart",
+        "lib/services/nutrition_calculator.dart"
+      ]
+    },
+    {
+      "id": "BES-06",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Mikrobesin alım tahmini",
+      "phase": "F3",
+      "dataAndConditions": "K/V/İ; beslenme kaydından tahmin, eksiklik tanısı değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "BES-07",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Barkod ve ürün etiketi okuma",
+      "phase": "F2",
+      "dataAndConditions": "V/K; ülke kapsamı, etiket doğrulama, veri lisansı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "BES-08",
+      "area": "Besin seçimi ve beslenme takibi",
+      "feature": "Fotoğraftan öğün taslağı oluşturma",
+      "phase": "F3",
+      "dataAndConditions": "K/V; porsiyon ve içerik kullanıcı onayından geçer",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "TAR-01",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Profile ve günlük bağlama uygun tarif bulma",
+      "phase": "F1",
+      "dataAndConditions": "K/İ; mevcut tarif tabanı geliştirilebilir",
+      "status": "Kısmi",
+      "auditNote": "Alerji, tercih, süre, öğün ve mutfak temeli var. Referans kasesinin sıralamada sabit önceliği kişiselleştirmeyi zayıflatıyor.",
+      "evidenceFiles": [
+        "lib/providers/wellness_provider.dart",
+        "lib/providers/recipe_provider.dart"
+      ]
+    },
+    {
+      "id": "TAR-02",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Besin ve malzeme alternatifi önerme",
+      "phase": "F1",
+      "dataAndConditions": "K/V; her alternatif yeniden alerjen kontrolü",
+      "status": "Kısmi",
+      "auditNote": "Malzemeyi dışlayan güvenli başka tarif seçiliyor; aynı tarifte miktarlı malzeme ikamesi değil.",
+      "evidenceFiles": [
+        "lib/screens/wellness/nourish_screen.dart"
+      ]
+    },
+    {
+      "id": "TAR-03",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Haftalık öğün planlama ve hazırlık planı",
+      "phase": "F1",
+      "dataAndConditions": "K/İ; tüketim sayılmaz",
+      "status": "Kısmi",
+      "auditNote": "Öğün planlayıcı var; kapsamlı ön hazırlık planı yok.",
+      "evidenceFiles": [
+        "lib/screens/planner/planner_screen.dart",
+        "lib/providers/meal_plan_provider.dart"
+      ]
+    },
+    {
+      "id": "TAR-04",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Mutfak envanteri ve son kullanım hatırlatması",
+      "phase": "F2",
+      "dataAndConditions": "K; kayıtlı tarihe dayanır",
+      "status": "Kısmi",
+      "auditNote": "Mutfak envanteri var; son kullanım tarihi ve hatırlatması yok.",
+      "evidenceFiles": [
+        "lib/providers/inventory_provider.dart",
+        "lib/screens/shopping/shopping_screen.dart"
+      ]
+    },
+    {
+      "id": "TAR-05",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Birleşik alışveriş listesi ve bütçe",
+      "phase": "F1",
+      "dataAndConditions": "K/V; fiyat yoksa kesin toplam gösterilmez",
+      "status": "Kısmi",
+      "auditNote": "Birleşik alışveriş listesi var; fiyat/bütçe hesabı yok.",
+      "evidenceFiles": [
+        "lib/providers/shopping_provider.dart",
+        "lib/screens/shopping/shopping_screen.dart"
+      ]
+    },
+    {
+      "id": "TAR-06",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Aile için ortak yemek, kişi başına ayrı kısıtlar",
+      "phase": "F3",
+      "dataAndConditions": "K; her yetişkinin verisi ve izni ayrı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "TAR-07",
+      "area": "Tarif, mutfak ve alışveriş",
+      "feature": "Doğrulanmış malzemelerle kişiye özel tarif üretme",
+      "phase": "F3",
+      "dataAndConditions": "V/İ; yapılandırılmış çıktı, miktar ve güvenlik denetimi",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ICE-01",
+      "area": "Su ve içecekler",
+      "feature": "Su ve içecek miktarı günlüğü",
+      "phase": "F1",
+      "dataAndConditions": "K/C; dışarıdan gelen tekrarlar ayıklanır",
+      "status": "Çekirdek var",
+      "auditNote": "Manuel su ve içecek miktarı/tarih kaydı; otomatik cihazdan içecek aktarımı yok.",
+      "evidenceFiles": [
+        "lib/providers/beverage_provider.dart",
+        "lib/screens/beverages/beverages_screen.dart"
+      ]
+    },
+    {
+      "id": "ICE-02",
+      "area": "Su ve içecekler",
+      "feature": "Kullanıcının ayarladığı su hedefi ve hatırlatma",
+      "phase": "F1",
+      "dataAndConditions": "K; sıvı kısıtında otomatik artırma yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ICE-03",
+      "area": "Su ve içecekler",
+      "feature": "Kafein miktarı ve tüketim saati",
+      "phase": "F2",
+      "dataAndConditions": "K/V; ürün miktarları tahmin olarak etiketlenir",
+      "status": "Kısmi",
+      "auditNote": "Kahve/çay türü, miktarı ve tüketim zamanı var; mg cinsinden kafein hesabı yok.",
+      "evidenceFiles": [
+        "lib/models/beverage_entry.dart",
+        "lib/providers/beverage_provider.dart"
+      ]
+    },
+    {
+      "id": "ICE-04",
+      "area": "Su ve içecekler",
+      "feature": "Kafein ile uyku günlüğünü birlikte inceleme",
+      "phase": "F2",
+      "dataAndConditions": "K/C; kişisel kayıt ilişkisi, nedensellik değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ICE-05",
+      "area": "Su ve içecekler",
+      "feature": "İsteğe bağlı alkol kaydı ve azaltma hedefi",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; gizli varsayılan, yargılayıcı dil yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "UYK-01",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Manuel veya cihazdan uyku günlüğü",
+      "phase": "F1",
+      "dataAndConditions": "K/C; oturum başlangıcı, bitişi ve kaynak",
+      "status": "Kısmi",
+      "auditNote": "Manuel oturum var; cihaz okuma kodu mevcut fakat fiziksel cihaz doğrulaması tamamlanmadı.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart",
+        "lib/services/health_connection_service.dart"
+      ]
+    },
+    {
+      "id": "UYK-02",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Süre ve yatış/kalkış düzeni eğilimleri",
+      "phase": "F1",
+      "dataAndConditions": "K/C; veri olmayan gece açıkça işaretlenir",
+      "status": "Kısmi",
+      "auditNote": "Uyku süre özeti var; yatış/kalkış düzeni eğilimi tamamlanmış değil.",
+      "evidenceFiles": [
+        "lib/screens/wellness/progress_screen.dart"
+      ]
+    },
+    {
+      "id": "UYK-03",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Uyku evreleri, bölünme ve kestirme görünümü",
+      "phase": "F2",
+      "dataAndConditions": "C/K; evreler cihaz tahmini, tanı değil",
+      "status": "Kısmi",
+      "auditNote": "Uyku evreleri okunup toplam süreye birleştiriliyor; evre, bölünme ve kestirme arayüzü yok.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "UYK-04",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Kişisel akşam hazırlık rutini",
+      "phase": "F1",
+      "dataAndConditions": "K/İ; tamamlamak uyumuş olmak değildir",
+      "status": "Çekirdek var",
+      "auditNote": "Üç maddelik akşam kontrolü, yatış saati ve nefes oturumuna geçiş.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "UYK-05",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Uyku sesleri, hikâyeleri ve zamanlayıcı",
+      "phase": "F2",
+      "dataAndConditions": "İ; lisans, çevrimdışı oynatma, otomatik durdurma",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "UYK-06",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Sabah ışık ve günlük ritim hatırlatmaları",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; kullanıcının programına göre",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "UYK-07",
+      "area": "Uyku ve günlük ritim",
+      "feature": "Vardiya ve seyahat için esnek uyku planı",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; standart yatış saati zorlanmaz",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "HAR-01",
+      "area": "Hareket ve egzersiz",
+      "feature": "Adım, aktif süre ve antrenman geçmişi",
+      "phase": "F1",
+      "dataAndConditions": "C/K; manuel aktivite adım ölçümü gibi sunulmaz",
+      "status": "Bağlantı altyapısı",
+      "auditNote": "Adım ve antrenman süresi okuma var; fiziksel kaynak/doğrulama ve kapsamlı geçmiş eksik.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/screens/wellness/health_connections_screen.dart"
+      ]
+    },
+    {
+      "id": "HAR-02",
+      "area": "Hareket ve egzersiz",
+      "feature": "Oturma molası ve kısa yürüyüş rutini",
+      "phase": "F1",
+      "dataAndConditions": "K/İ; kullanıcı saat ve sıklık seçer",
+      "status": "Kısmi",
+      "auditNote": "Kısa yürüyüş ve tek esneme zamanlayıcısı/metni var; mola sıklığı, filtreli kütüphane ve uyarlama motoru yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "HAR-03",
+      "area": "Hareket ve egzersiz",
+      "feature": "Esneme ve mobilite kütüphanesi",
+      "phase": "F2",
+      "dataAndConditions": "İ; süre ve hareket düzeyi filtreleri",
+      "status": "Kısmi",
+      "auditNote": "Kısa yürüyüş ve tek esneme zamanlayıcısı/metni var; mola sıklığı, filtreli kütüphane ve uyarlama motoru yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "HAR-04",
+      "area": "Hareket ve egzersiz",
+      "feature": "Başlangıç kuvvet, kardiyo, yoga ve pilates planları",
+      "phase": "F2",
+      "dataAndConditions": "İ/K; kapasite ve tercih seçimi",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "HAR-05",
+      "area": "Hareket ve egzersiz",
+      "feature": "Ekipmana, zamana ve erişilebilirliğe göre uyarlama",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; oturarak yapılabilen seçenekler",
+      "status": "Kısmi",
+      "auditNote": "Kısa yürüyüş ve tek esneme zamanlayıcısı/metni var; mola sıklığı, filtreli kütüphane ve uyarlama motoru yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "HAR-06",
+      "area": "Hareket ve egzersiz",
+      "feature": "Antrenman sonrası algılanan efor ve toparlanma kaydı",
+      "phase": "F2",
+      "dataAndConditions": "K/C; öznel ve ölçülen veriler ayrı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "HAR-07",
+      "area": "Hareket ve egzersiz",
+      "feature": "Saatten antrenman başlatma ve canlı oturum",
+      "phase": "F3",
+      "dataAndConditions": "C; watchOS/Wear OS uygulaması ve cihaz yeteneği",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ZIH-01",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Rehberli rahat nefes oturumları",
+      "phase": "F1",
+      "dataAndConditions": "İ; duraklat/bitir, zorunlu nefes tutma yok",
+      "status": "Kısmi",
+      "auditNote": "Birer kısa metinli nefes/farkındalık oturumu var; uzman incelemeli sesli içerik kütüphanesi yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "ZIH-02",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Kısa meditasyon ve farkındalık",
+      "phase": "F1",
+      "dataAndConditions": "İ; metin/ses ve erişilebilirlik",
+      "status": "Kısmi",
+      "auditNote": "Birer kısa metinli nefes/farkındalık oturumu var; uzman incelemeli sesli içerik kütüphanesi yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "ZIH-03",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Beden taraması ve gevşeme oturumları",
+      "phase": "F2",
+      "dataAndConditions": "İ; isteğe bağlı, durdurulabilir",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ZIH-04",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Günlük yazma, duygu etiketleme, şükran günlüğü",
+      "phase": "F2",
+      "dataAndConditions": "K; özel içerik, dış paylaşım varsayılan kapalı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ZIH-05",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Duyusal odaklanma ve zor anlar için sakinleşme araçları",
+      "phase": "F2",
+      "dataAndConditions": "İ; terapi veya acil yardım olarak sunulmaz",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ZIH-06",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Stres bağlamı ile izinli cihaz göstergelerini inceleme",
+      "phase": "F3",
+      "dataAndConditions": "K/C; cihaz stresi psikolojik tanı değildir",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ZIH-07",
+      "area": "Zihinsel iyi oluş ve stres",
+      "feature": "Profesyonel destek kaynaklarına erişim",
+      "phase": "F2",
+      "dataAndConditions": "V/İ; ülkeye göre doğrulanmış, güncel yönlendirme",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ALI-01",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Kişisel alışkanlık oluşturma ve takip",
+      "phase": "F1",
+      "dataAndConditions": "K; kaçırılan gün için ceza yok",
+      "status": "Çekirdek var",
+      "auditNote": "Kişisel alışkanlık ekle, işaretle, sil; tarihli yerel kayıt.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart",
+        "lib/providers/wellness_provider.dart"
+      ]
+    },
+    {
+      "id": "ALI-02",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Esnek haftalık hedef ve hatırlatma",
+      "phase": "F1",
+      "dataAndConditions": "K; sessiz saatler ve erteleme",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ALI-03",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Alışkanlıkları mevcut rutinlere bağlama",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; ör. öğle sonrası kısa mola",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ALI-04",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Odak zamanlayıcısı ve dinlenme araları",
+      "phase": "F2",
+      "dataAndConditions": "K; çevrimdışı çalışabilir",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "ALI-05",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Dijital mola ve ekran kullanımını gözden geçirme",
+      "phase": "F3",
+      "dataAndConditions": "K/V; OS erişimi ayrıca araştırılır, manuel seçenek vardır",
+      "status": "Kısmi",
+      "auditNote": "Akşam ekran molası işaretlemesi var; ekran süresi erişimi ve inceleme aracı yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "ALI-06",
+      "area": "Alışkanlıklar ve odak",
+      "feature": "Sigarayı azaltma/bırakma hedefi ve kaynaklar",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; tedavi dozu veya başarı garantisi yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "VUC-01",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "İsteğe bağlı kilo ve vücut ölçüsü günlüğü",
+      "phase": "F2",
+      "dataAndConditions": "K/C; kilo odaklı olmayan kullanım mümkün",
+      "status": "Kısmi",
+      "auditNote": "Profilde tek kilo/boy değeri var; tarihli vücut ölçüsü günlüğü yok.",
+      "evidenceFiles": [
+        "lib/models/user_profile.dart",
+        "lib/screens/settings_screen.dart"
+      ]
+    },
+    {
+      "id": "VUC-02",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "Akıllı tartıdan vücut bileşimi eğilimleri",
+      "phase": "F2",
+      "dataAndConditions": "C; üretici tahmini ve kaynak belirtilir",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "VUC-03",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "Dinlenik nabız ve kişisel geçmiş",
+      "phase": "F2",
+      "dataAndConditions": "C; ölçüm bağlamı korunur",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "VUC-04",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "HRV eğilimi ve veri kapsamı",
+      "phase": "F2",
+      "dataAndConditions": "C; SDNN/RMSSD ve kaynak ayrı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "VUC-05",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "Üreticinin toparlanma/enerji skorunu gösterme",
+      "phase": "F2",
+      "dataAndConditions": "C; marka adıyla, ortak sağlık puanına çevrilmez",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "VUC-06",
+      "area": "Vücut ölçümleri ve toparlanma",
+      "feature": "Ağrı, kas yorgunluğu ve dinlenme kaydı",
+      "phase": "F2",
+      "dataAndConditions": "K; semptom günlüğü, tanı değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SIN-01",
+      "area": "Sindirim ve bedensel rahatlık",
+      "feature": "Şişkinlik, rahatsızlık ve sindirim günlüğü",
+      "phase": "F2",
+      "dataAndConditions": "K; isteğe bağlı hassas kayıt",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SIN-02",
+      "area": "Sindirim ve bedensel rahatlık",
+      "feature": "Bağırsak düzeni kaydı",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; dil ve sınıflama uzman incelemesi",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SIN-03",
+      "area": "Sindirim ve bedensel rahatlık",
+      "feature": "Öğün ve belirti zaman çizelgesi",
+      "phase": "F2",
+      "dataAndConditions": "K; zaman ilişkisini görünür kılar",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SIN-04",
+      "area": "Sindirim ve bedensel rahatlık",
+      "feature": "Olası kişisel örüntüleri inceleme",
+      "phase": "F3",
+      "dataAndConditions": "K; otomatik alerji veya intolerans tanısı yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SIN-05",
+      "area": "Sindirim ve bedensel rahatlık",
+      "feature": "Uzmanla paylaşılabilir sindirim özeti",
+      "phase": "F3",
+      "dataAndConditions": "K; kullanıcı tarih ve alan seçer",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-01",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "İsteğe bağlı adet döngüsü takvimi",
+      "phase": "F2",
+      "dataAndConditions": "K/C; ayrı izin, varsayılan kapalı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-02",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "Döngüyle birlikte belirti, enerji ve uyku kaydı",
+      "phase": "F2",
+      "dataAndConditions": "K/C; günlük durum kişiden sorulur",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-03",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "Döngü dönemi tahmin aralığı",
+      "phase": "F3",
+      "dataAndConditions": "K; belirsizlik görünür, gebelikten korunma aracı değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-04",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "Perimenopoz/menopoz günlüğü ve eğitim",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; herkes için aynı program önerilmez",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-05",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "Gebelik ve doğum sonrası iyi oluş programı",
+      "phase": "F4",
+      "dataAndConditions": "K/İ; ayrı uygunluk ve uzman içerik süreci",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "DON-06",
+      "area": "Döngü ve yaşam dönemleri",
+      "feature": "Cinsel iyi oluş, beden farkındalığı ve eğitim",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; yetişkin, mahremiyet ve içerik kontrolleri",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SOS-01",
+      "area": "Sosyal ve duygusal iyi oluş",
+      "feature": "Sosyal bağ kurma niyeti ve küçük hatırlatmalar",
+      "phase": "F2",
+      "dataAndConditions": "K; rehbere erişim zorunlu değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SOS-02",
+      "area": "Sosyal ve duygusal iyi oluş",
+      "feature": "Bir arkadaşla gönüllü rutin hedefi",
+      "phase": "F3",
+      "dataAndConditions": "K; karşılıklı katılım, sağlık verisi paylaşılmaz",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SOS-03",
+      "area": "Sosyal ve duygusal iyi oluş",
+      "feature": "Küçük grup etkinlikleri ve meydan okumalar",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; kilo/kalori rekabeti varsayılan değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SOS-04",
+      "area": "Sosyal ve duygusal iyi oluş",
+      "feature": "Moderasyonlu topluluk",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; raporla, engelle ve insan moderasyonu",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SOS-05",
+      "area": "Sosyal ve duygusal iyi oluş",
+      "feature": "Değerler, amaç ve haftalık kişisel değerlendirme",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; hassas metinler özel kalır",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CEV-01",
+      "area": "Çevresel iyi oluş",
+      "feature": "Hava durumu ve dışarıda aktivite bağlamı",
+      "phase": "F3",
+      "dataAndConditions": "V/K; şehir seçimi, konum isteğe bağlı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CEV-02",
+      "area": "Çevresel iyi oluş",
+      "feature": "Hava kalitesi, polen ve UV bilgisi",
+      "phase": "F3",
+      "dataAndConditions": "V; bölgesel kapsam ve güncellik görünür",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CEV-03",
+      "area": "Çevresel iyi oluş",
+      "feature": "Gün ışığı ve doğada geçirilen süre günlüğü",
+      "phase": "F2",
+      "dataAndConditions": "K/C; desteklenmeyen ölçüm manuel kalır",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CEV-04",
+      "area": "Çevresel iyi oluş",
+      "feature": "Gürültü ve uyku ortamını gözden geçirme",
+      "phase": "F3",
+      "dataAndConditions": "K/C; mikrofon/cihaz yetkisi ayrı, sürekli kayıt yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CEV-05",
+      "area": "Çevresel iyi oluş",
+      "feature": "İş ortamı, ergonomi ve dinlenme düzeni",
+      "phase": "F2",
+      "dataAndConditions": "K/İ; kısa kontrol listeleri",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-01",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "İlaç ve takviye günlüğü/hatırlatması",
+      "phase": "F2",
+      "dataAndConditions": "K; doz kullanıcı/reçete girdisi, otomatik doz önerilmez",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-02",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "Tansiyon, glikoz ve ek ölçümlerin günlüğü",
+      "phase": "F3",
+      "dataAndConditions": "K/C; kaynak, birim ve ölçüm zamanı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-03",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "Laboratuvar belgelerini saklama ve yapılandırılmış aktarım",
+      "phase": "F4",
+      "dataAndConditions": "K/V; belge doğrulama, klinik yorum ayrı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-04",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "Uzmanla randevu ve izinli rapor paylaşımı",
+      "phase": "F4",
+      "dataAndConditions": "K/V; süreli erişim, yetki yönetimi",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-05",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "CGM ve ECG gibi gelişmiş kayıt bağlantıları",
+      "phase": "F4",
+      "dataAndConditions": "C/V; cihaz/ülke/API ve kullanım amacı incelemesi",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "SAG-06",
+      "area": "Sağlık kayıtları ve uzman desteği",
+      "feature": "Uzman tarafından hazırlanan kişisel planı takip",
+      "phase": "F4",
+      "dataAndConditions": "K/İ; uzman kimliği, sürüm ve kapsam görünür",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CIH-01",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Apple HealthKit bağlantısı",
+      "phase": "F1",
+      "dataAndConditions": "C; veri tipi bazında okuma izni",
+      "status": "Bağlantı altyapısı",
+      "auditNote": "Seçili alanlarda salt okuma, kaynak/izin/yenileme ve tekrar ayıklama kodu var. iOS derlenmedi; gerçek saat/yüzükle uçtan uca doğrulanmadı.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/screens/wellness/health_connections_screen.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "CIH-02",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Android Health Connect bağlantısı",
+      "phase": "F1",
+      "dataAndConditions": "C; özellik ve sürüm kontrolü",
+      "status": "Bağlantı altyapısı",
+      "auditNote": "Seçili alanlarda salt okuma, kaynak/izin/yenileme ve tekrar ayıklama kodu var. iOS derlenmedi; gerçek saat/yüzükle uçtan uca doğrulanmadı.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/screens/wellness/health_connections_screen.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "CIH-03",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Oura, WHOOP ve diğer marka hesap bağlantıları",
+      "phase": "F2",
+      "dataAndConditions": "C/V; ayrı bağlayıcılar, OAuth ve erişim koşulları",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CIH-04",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Kaynak, son eşitleme ve izin yönetimi ekranı",
+      "phase": "F1",
+      "dataAndConditions": "C/K; bağlantı yok/eksik/eski veri durumları",
+      "status": "Bağlantı altyapısı",
+      "auditNote": "Seçili alanlarda salt okuma, kaynak/izin/yenileme ve tekrar ayıklama kodu var. iOS derlenmedi; gerçek saat/yüzükle uçtan uca doğrulanmadı.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/screens/wellness/health_connections_screen.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "CIH-05",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Çoklu cihazda tekrar ayıklama ve tercih edilen kaynak",
+      "phase": "F1",
+      "dataAndConditions": "C/K; aynı adım veya uyku iki kez sayılmaz",
+      "status": "Bağlantı altyapısı",
+      "auditNote": "Seçili alanlarda salt okuma, kaynak/izin/yenileme ve tekrar ayıklama kodu var. iOS derlenmedi; gerçek saat/yüzükle uçtan uca doğrulanmadı.",
+      "evidenceFiles": [
+        "lib/services/health_connection_service.dart",
+        "lib/screens/wellness/health_connections_screen.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "CIH-06",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Kullanıcının seçtiği kendi kayıtlarını sağlık merkezine yazma",
+      "phase": "F2",
+      "dataAndConditions": "K/C; okuma izninden ayrı ve geri döngü engelli",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "CIH-07",
+      "area": "Cihazlar ve sağlık bağlantıları",
+      "feature": "Saatte hızlı kayıt, nefes ve günlük plan",
+      "phase": "F3",
+      "dataAndConditions": "C/K; telefon uygulamasına ek yardımcı uygulamalar",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "GEL-01",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Günlük/haftalık özet ve eksik kayıt görünümü",
+      "phase": "F1",
+      "dataAndConditions": "K/C; sayıların yanında veri kapsamı",
+      "status": "Çekirdek var",
+      "auditNote": "Hafta/ay enerji grafiği, eksik günler ve gerçek tüketim/rutin sayıları.",
+      "evidenceFiles": [
+        "lib/screens/wellness/progress_screen.dart"
+      ]
+    },
+    {
+      "id": "GEL-02",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Kullanıcının kendi geçmişine göre eğilimler",
+      "phase": "F2",
+      "dataAndConditions": "K/C; yeterli geçmiş ve aynı ölçüm yöntemi",
+      "status": "Kısmi",
+      "auditNote": "Geçmiş nokta grafiği var; yeterli veri eşiğiyle kişisel baz çizgisi/ileri eğilim motoru yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/progress_screen.dart"
+      ]
+    },
+    {
+      "id": "GEL-03",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Uyku, hareket, öğün ve ruh halini birlikte inceleme",
+      "phase": "F3",
+      "dataAndConditions": "K/C; ilişki ile neden-sonuç ayrılır",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "GEL-04",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Tek alışkanlığa odaklanan kişisel denemeler",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; deneysel, bilimsel kanıt diye sunulmaz",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "GEL-05",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Bağlamı açıklayan sohbetli iyi oluş rehberi",
+      "phase": "F3",
+      "dataAndConditions": "K/C/İ; izinli özet, kaynak ve kapsam kontrolü",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "GEL-06",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "CSV/PDF kişisel raporu ve taşınabilir veri dışa aktarımı",
+      "phase": "F2",
+      "dataAndConditions": "K/C; seçilen kayıtlar, kaynak ve birimler",
+      "status": "Kısmi",
+      "auditNote": "Wellness JSON önizleme/kopyalama var; seçilebilir CSV/PDF raporu yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/profile_screen.dart"
+      ]
+    },
+    {
+      "id": "GEL-07",
+      "area": "Gelişim, içgörü ve koç",
+      "feature": "Gerekçeli günlük tempo önerisi",
+      "phase": "F3",
+      "dataAndConditions": "K/C/İ; klinik hazır oluş puanı veya başarı baskısı yok",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "PRG-01",
+      "area": "Programlar ve içerik",
+      "feature": "7/14/28 günlük uyku, hareket ve beslenme programları",
+      "phase": "F2",
+      "dataAndConditions": "İ/K; süreler ürün formatı, sonuç garantisi değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "PRG-02",
+      "area": "Programlar ve içerik",
+      "feature": "Süre/amaç/zorluk filtresi ve favoriler",
+      "phase": "F1",
+      "dataAndConditions": "İ/K; küçük başlangıç kütüphanesi",
+      "status": "Kısmi",
+      "auditNote": "Tarif arama/favoriler var; wellness içeriklerinde amaç/süre/zorluk kataloğu yok.",
+      "evidenceFiles": [
+        "lib/screens/recipe_book/recipe_book_screen.dart",
+        "lib/providers/favorites_provider.dart",
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "PRG-03",
+      "area": "Programlar ve içerik",
+      "feature": "Çevrimdışı içerik ve ses indirme",
+      "phase": "F2",
+      "dataAndConditions": "İ; lisans ve indirme yönetimi",
+      "status": "Kısmi",
+      "auditNote": "Paketlenmiş kısa rutin metinleri çevrimdışı çalışır; ses içeriği, indirme/lisans yönetimi yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/routines_screen.dart"
+      ]
+    },
+    {
+      "id": "PRG-04",
+      "area": "Programlar ve içerik",
+      "feature": "Uzman içerik yönetimi, sürüm ve inceleme tarihi",
+      "phase": "F1",
+      "dataAndConditions": "İ; yayınlama ve geri çekme akışı",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "PRG-05",
+      "area": "Programlar ve içerik",
+      "feature": "Eğitim içerikleri ve küçük bilgi adımları",
+      "phase": "F2",
+      "dataAndConditions": "İ; korkutucu veya aşırı kesin dil yok",
+      "status": "Yok",
+      "auditNote": "Eski HomeScreen için ipucu metinleri kaynakta duruyor; yeni wellness akışında eğitim modülü ve editoryal inceleme süreci yok.",
+      "evidenceFiles": [
+        "lib/data/health_tips_data.dart",
+        "lib/screens/home/home_screen.dart",
+        "lib/screens/main_shell.dart"
+      ]
+    },
+    {
+      "id": "PRG-06",
+      "area": "Programlar ve içerik",
+      "feature": "İsteğe bağlı öğün penceresi/oruç takibi",
+      "phase": "F3",
+      "dataAndConditions": "K/İ; uygunluk incelemesi; kısıtlayıcı beslenme varsayılan değil",
+      "status": "Yok",
+      "auditNote": "Bu katalog işlevine karşılık gelen ürün akışı/veri modeli mevcut kodda bulunmadı.",
+      "evidenceFiles": []
+    },
+    {
+      "id": "KON-01",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Modül seçimi ve ana ekran kişiselleştirme",
+      "phase": "F1",
+      "dataAndConditions": "K; ilgisiz hassas modüller gizli",
+      "status": "Kısmi",
+      "auditNote": "Hedef seçimi var; modül gizleme ve ana ekran kart düzenleme yok.",
+      "evidenceFiles": [
+        "lib/screens/wellness/today_screen.dart",
+        "lib/models/wellness.dart"
+      ]
+    },
+    {
+      "id": "KON-02",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Veri tipi ve amaç bazında izin merkezi",
+      "phase": "F0",
+      "dataAndConditions": "K; cihaz, bulut ve AI için ayrı kontroller",
+      "status": "Kısmi",
+      "auditNote": "Sağlık alanı izinleri var; kapsamlı cihaz/bulut/AI amaç merkezi yok; bulut/AI servisi henüz eklenmedi.",
+      "evidenceFiles": [
+        "lib/screens/wellness/health_connections_screen.dart"
+      ]
+    },
+    {
+      "id": "KON-03",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Veriyi düzeltme, silme ve hesabı kapatma",
+      "phase": "F1",
+      "dataAndConditions": "K; kapsam, ilerleme ve tamamlanma görünür",
+      "status": "Kısmi",
+      "auditNote": "Günlük kaydı düzenleme/silme ve wellness silme var; bulut hesabı ve hesap kapatma bulunmuyor.",
+      "evidenceFiles": [
+        "lib/screens/wellness/profile_screen.dart",
+        "lib/screens/wellness/progress_screen.dart"
+      ]
+    },
+    {
+      "id": "KON-04",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Şifreli saklama ve isteğe bağlı uygulama kilidi",
+      "phase": "F1",
+      "dataAndConditions": "K; anahtarlar güvenli cihaz depolamasında",
+      "status": "Kısmi",
+      "auditNote": "Şifreli depo ve güvenli anahtar var; isteğe bağlı biyometrik uygulama kilidi yok.",
+      "evidenceFiles": [
+        "lib/services/private_storage.dart",
+        "lib/services/wellness_store.dart"
+      ]
+    },
+    {
+      "id": "KON-05",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Büyük yazı, ekran okuyucu ve hareket azaltma",
+      "phase": "F1",
+      "dataAndConditions": "K; tasarım bileşenlerinde baştan destek",
+      "status": "Kısmi",
+      "auditNote": "Büyük yazı testleri, semantik ve azaltılmış hareket desteği var; tam ekran okuyucu/cihaz denetimi yapılmadı.",
+      "evidenceFiles": [
+        "test/wellness_ui_test.dart",
+        "lib/screens/wellness/wellness_ui.dart"
+      ]
+    },
+    {
+      "id": "KON-06",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Sessiz saatler, bildirim sınırı ve kilit ekranı gizliliği",
+      "phase": "F1",
+      "dataAndConditions": "K; sağlık içeriği bildirimde varsayılan gizli",
+      "status": "Kısmi",
+      "auditNote": "Yerel günlük durum/akşam yemeği hatırlatması var; tam sessiz saat, sınır ve gizlilik merkezi yok.",
+      "evidenceFiles": [
+        "lib/services/notification_service.dart",
+        "lib/screens/settings_screen.dart"
+      ]
+    },
+    {
+      "id": "KON-07",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Türkçe/İngilizce, birim ve saat dilimi tercihleri",
+      "phase": "F1",
+      "dataAndConditions": "K; tarih ve ölçümlerde tutarlılık",
+      "status": "Kısmi",
+      "auditNote": "Türkçe/İngilizce ve yerel saat kullanımı var; kullanıcı seçilebilir bütün birim/saat dilimi tercihleri yok.",
+      "evidenceFiles": [
+        "lib/providers/locale_provider.dart",
+        "lib/core/day_boundary.dart"
+      ]
+    },
+    {
+      "id": "KON-08",
+      "area": "Kullanıcı kontrolü ve erişilebilirlik",
+      "feature": "Cihazsız ve bulutsuz temel kullanım",
+      "phase": "F1",
+      "dataAndConditions": "K; otomatik ölçüm yokken manuel deneyim",
+      "status": "Çekirdek var",
+      "auditNote": "Cihaz ve bulut hesabı olmadan temel manuel kullanım.",
+      "evidenceFiles": [
+        "lib/main.dart",
+        "lib/services/wellness_store.dart"
+      ]
+    }
+  ]
+}

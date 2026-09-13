@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
+import '../core/wellness_motion.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
 import '../widgets/turkish_text_field.dart';
@@ -30,10 +31,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
       vsync: this,
       duration: const Duration(milliseconds: 800),
     );
-    _fadeAnim = CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animController, curve: Curves.easeOut);
     _animController.forward();
   }
 
@@ -59,11 +57,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
 
     if (mounted) {
       Navigator.of(context).push(
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const OnboardingIngredientsScreen(),
-          transitionsBuilder: (_, anim, __, child) =>
-              FadeTransition(opacity: anim, child: child),
-          transitionDuration: const Duration(milliseconds: 500),
+        MaterialPageRoute<void>(
+          builder: (_) => const OnboardingIngredientsScreen(),
         ),
       );
     }
@@ -78,20 +73,16 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF1B2838),
-              Color(0xFF2D3E50),
-              Color(0xFF1B2838),
-            ],
+            colors: [context.palette.background, context.palette.surface, context.palette.background],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: _fadeAnim,
+            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(
@@ -103,19 +94,19 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                     width: 90,
                     height: 90,
                     decoration: BoxDecoration(
-                      gradient: AppTheme.accentGradient,
+                      gradient: context.palette.accentGradient,
                       borderRadius: BorderRadius.circular(28),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.accentOrange.withAlpha(80),
+                          color: context.palette.accentOrange.withAlpha(80),
                           blurRadius: 30,
                           offset: const Offset(0, 10),
                         ),
                       ],
                     ),
-                    child: const Icon(
+                    child:  Icon(
                       Icons.restaurant_rounded,
-                      color: Colors.white,
+                      color: context.palette.textPrimary,
                       size: 44,
                     ),
                   ),
@@ -124,8 +115,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                   // Welcome text
                   Text(
                     l10n.onboardingWelcome,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style:  TextStyle(
+                      color: context.palette.textPrimary,
                       fontSize: 28,
                       fontWeight: FontWeight.w800,
                       letterSpacing: -0.5,
@@ -136,7 +127,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                   Text(
                     l10n.onboardingWelcomeSubtitle,
                     style: TextStyle(
-                      color: Colors.white.withAlpha(160),
+                      color: context.palette.textPrimary.withAlpha(160),
                       fontSize: 15,
                       height: 1.4,
                     ),
@@ -149,11 +140,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                   Container(
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(15),
+                      color: context.palette.textPrimary.withAlpha(15),
                       borderRadius: BorderRadius.circular(24),
-                      border: Border.all(
-                        color: Colors.white.withAlpha(20),
-                      ),
+                      border: Border.all(color: context.palette.textPrimary.withAlpha(20)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,20 +152,22 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: AppTheme.accentOrange.withAlpha(30),
+                                color: context.palette.accentOrange.withAlpha(
+                                  30,
+                                ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.person_rounded,
-                                color: AppTheme.accentOrange,
+                                color: context.palette.accentOrange,
                                 size: 20,
                               ),
                             ),
                             const SizedBox(width: 12),
                             Text(
                               l10n.onboardingNameLabel,
-                              style: const TextStyle(
-                                color: Colors.white,
+                              style:  TextStyle(
+                                color: context.palette.textPrimary,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -186,25 +177,25 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                         const SizedBox(height: 16),
                         TurkishTextField(
                           controller: _nameController,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style:  TextStyle(
+                            color: context.palette.textPrimary,
                             fontSize: 16,
                           ),
                           decoration: InputDecoration(
                             hintText: l10n.onboardingNameHint,
                             hintStyle: TextStyle(
-                              color: Colors.white.withAlpha(80),
+                              color: context.palette.textPrimary.withAlpha(80),
                             ),
                             filled: true,
-                            fillColor: Colors.white.withAlpha(12),
+                            fillColor: context.palette.textPrimary.withAlpha(12),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(14),
                               borderSide: BorderSide.none,
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(14),
-                              borderSide: const BorderSide(
-                                color: AppTheme.accentOrange,
+                              borderSide: BorderSide(
+                                color: context.palette.accentOrange,
                                 width: 1.5,
                               ),
                             ),
@@ -212,10 +203,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               horizontal: 18,
                               vertical: 14,
                             ),
-                            errorText:
-                                _showNameError ? l10n.onboardingNameRequired : null,
-                            errorStyle: const TextStyle(
-                              color: AppTheme.warmCoral,
+                            errorText: _showNameError
+                                ? l10n.onboardingNameRequired
+                                : null,
+                            errorStyle: TextStyle(
+                              color: context.palette.warmCoral,
                             ),
                           ),
                           onChanged: (_) {
@@ -234,12 +226,12 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                   Container(
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(15),
+                      color: context.palette.textPrimary.withAlpha(15),
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(
                         color: _showGenderError
-                            ? AppTheme.warmCoral.withAlpha(120)
-                            : Colors.white.withAlpha(20),
+                            ? context.palette.warmCoral.withAlpha(120)
+                            : context.palette.textPrimary.withAlpha(20),
                       ),
                     ),
                     child: Column(
@@ -250,12 +242,14 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: AppTheme.softLavender.withAlpha(30),
+                                color: context.palette.softLavender.withAlpha(
+                                  30,
+                                ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.wc_rounded,
-                                color: AppTheme.softLavender,
+                                color: context.palette.softLavender,
                                 size: 20,
                               ),
                             ),
@@ -266,8 +260,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                                 children: [
                                   Text(
                                     l10n.onboardingGenderTitle,
-                                    style: const TextStyle(
-                                      color: Colors.white,
+                                    style:  TextStyle(
+                                      color: context.palette.textPrimary,
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -276,7 +270,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                                   Text(
                                     l10n.onboardingGenderSubtitle,
                                     style: TextStyle(
-                                      color: Colors.white.withAlpha(120),
+                                      color: context.palette.textPrimary.withAlpha(120),
                                       fontSize: 12,
                                     ),
                                   ),
@@ -292,7 +286,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               child: _GenderCard(
                                 icon: Icons.male_rounded,
                                 label: l10n.onboardingMale,
-                                color: AppTheme.accentTeal,
+                                color: context.palette.accentTeal,
                                 isSelected: _selectedGender == Gender.male,
                                 onTap: () => setState(() {
                                   _selectedGender = Gender.male;
@@ -305,7 +299,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               child: _GenderCard(
                                 icon: Icons.female_rounded,
                                 label: l10n.onboardingFemale,
-                                color: AppTheme.snackColor,
+                                color: context.palette.snackColor,
                                 isSelected: _selectedGender == Gender.female,
                                 onTap: () => setState(() {
                                   _selectedGender = Gender.female;
@@ -318,7 +312,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               child: _GenderCard(
                                 icon: Icons.transgender_rounded,
                                 label: l10n.onboardingOther,
-                                color: AppTheme.softLavender,
+                                color: context.palette.softLavender,
                                 isSelected: _selectedGender == Gender.other,
                                 onTap: () => setState(() {
                                   _selectedGender = Gender.other;
@@ -332,8 +326,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                           const SizedBox(height: 10),
                           Text(
                             l10n.onboardingGenderRequired,
-                            style: const TextStyle(
-                              color: AppTheme.warmCoral,
+                            style: TextStyle(
+                              color: context.palette.warmCoral,
                               fontSize: 12,
                             ),
                           ),
@@ -351,8 +345,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                     child: FilledButton(
                       onPressed: _onContinue,
                       style: FilledButton.styleFrom(
-                        backgroundColor: AppTheme.accentOrange,
-                        foregroundColor: Colors.white,
+                        backgroundColor: context.palette.accentOrange,
+                        foregroundColor: context.palette.background,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
@@ -406,10 +400,10 @@ class _GenderCard extends StatelessWidget {
         duration: const Duration(milliseconds: 250),
         padding: const EdgeInsets.symmetric(vertical: 18),
         decoration: BoxDecoration(
-          color: isSelected ? color.withAlpha(30) : Colors.white.withAlpha(8),
+          color: isSelected ? color.withAlpha(30) : context.palette.textPrimary.withAlpha(8),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isSelected ? color : Colors.white.withAlpha(15),
+            color: isSelected ? color : context.palette.textPrimary.withAlpha(15),
             width: isSelected ? 2 : 1,
           ),
         ),
@@ -417,14 +411,14 @@ class _GenderCard extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: isSelected ? color : Colors.white.withAlpha(120),
+              color: isSelected ? color : context.palette.textPrimary.withAlpha(120),
               size: 32,
             ),
             const SizedBox(height: 8),
             Text(
               label,
               style: TextStyle(
-                color: isSelected ? color : Colors.white.withAlpha(160),
+                color: isSelected ? color : context.palette.textPrimary.withAlpha(160),
                 fontSize: 13,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
               ),

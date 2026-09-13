@@ -39,19 +39,22 @@ class PreferenceMismatchChip extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
         decoration: BoxDecoration(
-          color: AppTheme.warningAmber.withAlpha(22),
+          color: context.palette.warningAmber.withAlpha(22),
           borderRadius: BorderRadius.circular(6),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.info_outline_rounded,
-                size: 11, color: AppTheme.warningAmber),
+            Icon(
+              Icons.info_outline_rounded,
+              size: 11,
+              color: context.palette.warningAmber,
+            ),
             const SizedBox(width: 4),
             Text(
               l10n.preferenceMismatchShort,
-              style: const TextStyle(
-                color: AppTheme.warningAmber,
+              style: TextStyle(
+                color: context.palette.warningAmber,
                 fontSize: 10,
                 fontWeight: FontWeight.w600,
               ),
@@ -71,11 +74,7 @@ class PreferenceWarningCard extends StatelessWidget {
   /// Named ingredient the warning is about; null for a whole list.
   final String? subject;
 
-  const PreferenceWarningCard({
-    super.key,
-    required this.fit,
-    this.subject,
-  });
+  const PreferenceWarningCard({super.key, required this.fit, this.subject});
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +85,9 @@ class PreferenceWarningCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: AppTheme.warningAmber.withAlpha(18),
+        color: context.palette.warningAmber.withAlpha(18),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: AppTheme.warningAmber.withAlpha(60)),
+        border: Border.all(color: context.palette.warningAmber.withAlpha(60)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,19 +95,22 @@ class PreferenceWarningCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(Icons.info_outline_rounded,
-                  size: 18, color: AppTheme.warningAmber),
+              Icon(
+                Icons.info_outline_rounded,
+                size: 18,
+                color: context.palette.warningAmber,
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
                   subject == null
                       ? l10n.preferenceWarningList
                       : l10n.preferenceWarningIngredient(subject!),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     height: 1.4,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.textPrimary,
+                    color: context.palette.textPrimary,
                   ),
                 ),
               ),
@@ -120,9 +122,9 @@ class PreferenceWarningCard extends StatelessWidget {
               padding: const EdgeInsets.only(left: 28),
               child: Text(
                 reasons,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
-                  color: AppTheme.textSecondary,
+                  color: context.palette.textSecondary,
                 ),
               ),
             ),
@@ -141,15 +143,18 @@ class PreferenceWarningCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       l10n.preferenceChangeCta,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w700,
-                        color: AppTheme.accentTeal,
+                        color: context.palette.accentTeal,
                       ),
                     ),
                   ),
-                  const Icon(Icons.chevron_right_rounded,
-                      size: 20, color: AppTheme.accentTeal),
+                  Icon(
+                    Icons.chevron_right_rounded,
+                    size: 20,
+                    color: context.palette.accentTeal,
+                  ),
                 ],
               ),
             ),

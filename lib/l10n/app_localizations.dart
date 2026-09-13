@@ -13,10 +13,7 @@ class AppLocalizations {
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationsDelegate();
 
-  static const List<Locale> supportedLocales = [
-    Locale('en'),
-    Locale('tr'),
-  ];
+  static const List<Locale> supportedLocales = [Locale('en'), Locale('tr')];
 
   static final Map<String, Map<String, String>> _translations = {
     'en': enTranslations,
@@ -292,9 +289,11 @@ class AppLocalizations {
   String get onboardingGenderRequired => _t('onboardingGenderRequired');
   String get onboardingSkip => _t('onboardingSkip');
   String get onboardingIngredientsTitle => _t('onboardingIngredientsTitle');
-  String get onboardingIngredientsSubtitle => _t('onboardingIngredientsSubtitle');
+  String get onboardingIngredientsSubtitle =>
+      _t('onboardingIngredientsSubtitle');
   String get onboardingIngredientsAdd => _t('onboardingIngredientsAdd');
-  String get onboardingIngredientsAddLater => _t('onboardingIngredientsAddLater');
+  String get onboardingIngredientsAddLater =>
+      _t('onboardingIngredientsAddLater');
   String get onboardingAllergiesTitle => _t('onboardingAllergiesTitle');
   String get onboardingAllergiesSubtitle => _t('onboardingAllergiesSubtitle');
   String get onboardingAllergensSection => _t('onboardingAllergensSection');
@@ -427,7 +426,8 @@ class AppLocalizations {
 
   // Health Conditions
   String get healthConditionSelectTitle => _t('healthConditionSelectTitle');
-  String get healthConditionSelectSubtitle => _t('healthConditionSelectSubtitle');
+  String get healthConditionSelectSubtitle =>
+      _t('healthConditionSelectSubtitle');
   String get healthConditionClearAll => _t('healthConditionClearAll');
 
   // Quantity units
@@ -445,8 +445,10 @@ class AppLocalizations {
   String get quantityUnit => _t('quantityUnit');
   String get quantityAmount => _t('quantityAmount');
 
-  String localizedUnit(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
-  String localizedUnitFull(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
+  String localizedUnit(String unitName) =>
+      _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
+  String localizedUnitFull(String unitName) =>
+      _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
 
   // General
   String get save => _t('save');
@@ -467,8 +469,7 @@ class _AppLocalizationsDelegate
   const _AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) =>
-      ['en', 'tr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'tr'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) async =>

@@ -1,0 +1,681 @@
+{
+  "date": "2026-09-08",
+  "status": "Design only; no application implementation",
+  "sourceEnum": "lib/core/enums.dart#CheckInType",
+  "sourceLabels": "lib/l10n/translations/tr.dart",
+  "existingContextCount": 9,
+  "contexts": [
+    {
+      "id": "lowEnergy",
+      "label": "Düşük Enerji",
+      "group": "daily",
+      "theme": {
+        "name": "Kadife akşam",
+        "brightness": "dark",
+        "canvas": "#241C2C",
+        "surface": "#3B2E45",
+        "text": "#FFF1E7",
+        "secondary": "#DBC5D4",
+        "action": "#E8C6AE",
+        "onAction": "#241C2C",
+        "outline": "#B99FAF",
+        "iconColor": "#E8C6AE",
+        "nav": "#3B2E45",
+        "modal": "#3B2E45",
+        "input": "#3B2E45",
+        "chartBackground": "#3B2E45",
+        "scene": "velvet-dune"
+      },
+      "icon": "battery-low",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "bloated",
+      "label": "Şişkinlik",
+      "group": "daily",
+      "theme": {
+        "name": "Adaçayı",
+        "brightness": "light",
+        "canvas": "#EEF2E6",
+        "surface": "#D7E3CB",
+        "text": "#233B2E",
+        "secondary": "#4D634F",
+        "action": "#355D46",
+        "onAction": "#F3F7EA",
+        "outline": "#627857",
+        "iconColor": "#233B2E",
+        "nav": "#D7E3CB",
+        "modal": "#D7E3CB",
+        "input": "#D7E3CB",
+        "chartBackground": "#D7E3CB",
+        "scene": "sage-dune"
+      },
+      "icon": "soft-waist",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "cravingSweets",
+      "label": "Tatlı İsteği",
+      "group": "daily",
+      "theme": {
+        "name": "Kakao",
+        "brightness": "dark",
+        "canvas": "#251A17",
+        "surface": "#3B2924",
+        "text": "#FFF0DE",
+        "secondary": "#D4BAA8",
+        "action": "#E3BC87",
+        "onAction": "#251A17",
+        "outline": "#B59881",
+        "iconColor": "#E3BC87",
+        "nav": "#3B2924",
+        "modal": "#3B2924",
+        "input": "#3B2924",
+        "chartBackground": "#3B2924",
+        "scene": "cocoa-dune"
+      },
+      "icon": "cookie",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "cantFocus",
+      "label": "Odaklanamıyorum",
+      "group": "daily",
+      "theme": {
+        "name": "Mürekkep",
+        "brightness": "dark",
+        "canvas": "#111C33",
+        "surface": "#202E50",
+        "text": "#F0F3FF",
+        "secondary": "#BFC9E3",
+        "action": "#C0CBF4",
+        "onAction": "#111C33",
+        "outline": "#8499CC",
+        "iconColor": "#C0CBF4",
+        "nav": "#202E50",
+        "modal": "#202E50",
+        "input": "#202E50",
+        "chartBackground": "#202E50",
+        "scene": "ink-horizon"
+      },
+      "icon": "focus-rings",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "pms",
+      "label": "PMS / Adet Öncesi",
+      "group": "period",
+      "theme": {
+        "name": "Gül akşamı",
+        "brightness": "dark",
+        "canvas": "#34242D",
+        "surface": "#573945",
+        "text": "#FFF0EC",
+        "secondary": "#DFC4CF",
+        "action": "#F1C7B5",
+        "onAction": "#34242D",
+        "outline": "#C799AA",
+        "iconColor": "#F1C7B5",
+        "nav": "#573945",
+        "modal": "#573945",
+        "input": "#573945",
+        "chartBackground": "#573945",
+        "scene": "rose-dune"
+      },
+      "icon": "calendar-heart",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "periodCramps",
+      "label": "Regl Krampları",
+      "group": "period",
+      "theme": {
+        "name": "Sıcak kil",
+        "brightness": "dark",
+        "canvas": "#422821",
+        "surface": "#713F32",
+        "text": "#FFF0DF",
+        "secondary": "#F4CDB5",
+        "action": "#F6CEA2",
+        "onAction": "#422821",
+        "outline": "#D7A991",
+        "iconColor": "#F6CEA2",
+        "nav": "#713F32",
+        "modal": "#713F32",
+        "input": "#713F32",
+        "chartBackground": "#713F32",
+        "scene": "clay-dune"
+      },
+      "icon": "rounded-waves",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "periodFatigue",
+      "label": "Regl Yorgunluğu",
+      "group": "period",
+      "theme": {
+        "name": "Gece leylak",
+        "brightness": "dark",
+        "canvas": "#231F35",
+        "surface": "#38334F",
+        "text": "#F2EFFA",
+        "secondary": "#CEC5E1",
+        "action": "#D4C7EF",
+        "onAction": "#231F35",
+        "outline": "#A99AC6",
+        "iconColor": "#D4C7EF",
+        "nav": "#38334F",
+        "modal": "#38334F",
+        "input": "#38334F",
+        "chartBackground": "#38334F",
+        "scene": "lilac-dune"
+      },
+      "icon": "moon-battery",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "postWorkout",
+      "label": "Egzersiz Sonrası",
+      "group": "daily",
+      "theme": {
+        "name": "Mineral",
+        "brightness": "dark",
+        "canvas": "#0C3038",
+        "surface": "#16474D",
+        "text": "#EEF9F6",
+        "secondary": "#BEDBD9",
+        "action": "#ACDFDD",
+        "onAction": "#0C3038",
+        "outline": "#86B6BA",
+        "iconColor": "#ACDFDD",
+        "nav": "#16474D",
+        "modal": "#16474D",
+        "input": "#16474D",
+        "chartBackground": "#16474D",
+        "scene": "mineral-horizon"
+      },
+      "icon": "dumbbell",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    },
+    {
+      "id": "noSpecificIssue",
+      "label": "Belirli Bir Sorun Yok",
+      "group": "daily",
+      "theme": {
+        "name": "Durgun su",
+        "brightness": "dark",
+        "canvas": "#0D3033",
+        "surface": "#19464A",
+        "text": "#EDF8EE",
+        "secondary": "#C0D9D4",
+        "action": "#B9DFCF",
+        "onAction": "#0D3033",
+        "outline": "#92B9B0",
+        "iconColor": "#B9DFCF",
+        "nav": "#19464A",
+        "modal": "#19464A",
+        "input": "#19464A",
+        "chartBackground": "#19464A",
+        "scene": "still-water"
+      },
+      "icon": "balance-leaf",
+      "status": "proposed appearance for existing enum",
+      "scope": "All app-owned surfaces; natural food photos and OS-owned dialogs excluded"
+    }
+  ],
+  "selection": {
+    "primary": "One explicit choice",
+    "secondary": "Optional addition proposed; not yet implemented",
+    "noSpecificIssueExclusive": true,
+    "skipIsNotNoSpecificIssue": true
+  },
+  "existingAppearanceExamples": {
+    "Yorgunum": "lowEnergy design example",
+    "Sakinim": "Appearance example, not CheckInType enum",
+    "Enerjik": "Appearance/energy example, not CheckInType enum",
+    "apricotSunrise": "Retained as optional manual appearance preset"
+  },
+  "checks": [
+    {
+      "id": "lowEnergy",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 11.42,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "lowEnergy",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.788,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "lowEnergy",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 14.864,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "lowEnergy",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 10.27,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "lowEnergy",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 5.197,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "lowEnergy",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 7.891,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 9.064,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 4.898,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 10.641,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 6.88,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 3.624,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "bloated",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 9.064,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 12.28,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.45,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 15.153,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.533,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 5.085,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "cravingSweets",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 7.726,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 12.097,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 8.086,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 15.326,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 10.576,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.725,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "cantFocus",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 8.348,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 9.115,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 6.229,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 13.178,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.453,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.125,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "pms",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 6.539,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 7.637,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 5.793,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 12.062,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.164,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.056,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "periodCramps",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 5.802,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 10.545,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.237,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 14.029,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 10.02,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.631,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "periodFatigue",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 7.532,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 9.555,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.013,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 13.05,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.598,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.609,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "postWorkout",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 7.027,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "text",
+      "background": "surface",
+      "ratio": 9.553,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.002,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 12.948,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 9.759,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "outline",
+      "background": "surface",
+      "ratio": 4.855,
+      "minimum": 3,
+      "passes": true
+    },
+    {
+      "id": "noSpecificIssue",
+      "foreground": "iconColor",
+      "background": "surface",
+      "ratio": 7.201,
+      "minimum": 3,
+      "passes": true
+    }
+  ],
+  "limits": "Solid palette checks only. Generated boards are approximate designs, not accessibility-certified pixels. Full semantic state palettes require implementation review."
+}

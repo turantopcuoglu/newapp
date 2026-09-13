@@ -26,8 +26,9 @@ class RecipeRepository {
 
   /// Remote bundle root configured at build time, e.g.
   /// `--dart-define=RECIPE_BUNDLE_URL=https://cdn.example.com/recipes`
-  static const String configuredBaseUrl =
-      String.fromEnvironment('RECIPE_BUNDLE_URL');
+  static const String configuredBaseUrl = String.fromEnvironment(
+    'RECIPE_BUNDLE_URL',
+  );
 
   static const String _cacheDirName = 'recipe_bundle';
   static const String _versionFileName = 'version.txt';
@@ -42,9 +43,9 @@ class RecipeRepository {
     http.Client? client,
     Future<Directory> Function()? cacheDirProvider,
     String? baseUrl,
-  })  : _client = client ?? http.Client(),
-        _cacheDirProvider = cacheDirProvider ?? getApplicationSupportDirectory,
-        baseUrl = baseUrl ?? configuredBaseUrl;
+  }) : _client = client ?? http.Client(),
+       _cacheDirProvider = cacheDirProvider ?? getApplicationSupportDirectory,
+       baseUrl = baseUrl ?? configuredBaseUrl;
 
   bool get hasRemote => baseUrl.isNotEmpty;
 
@@ -71,9 +72,7 @@ class RecipeRepository {
   /// Decodes a JSON array of recipe objects.
   static List<Recipe> decodeRecipeList(String raw) {
     final list = jsonDecode(raw) as List<dynamic>;
-    return list
-        .map((e) => Recipe.fromJson(e as Map<String, dynamic>))
-        .toList();
+    return list.map((e) => Recipe.fromJson(e as Map<String, dynamic>)).toList();
   }
 
   Future<List<Recipe>?> _loadFromCache() async {
@@ -114,8 +113,9 @@ class RecipeRepository {
   Future<bool> refreshFromRemote() async {
     if (!hasRemote) return false;
     try {
-      final manifestResponse =
-          await _client.get(Uri.parse('$baseUrl/manifest.json'));
+      final manifestResponse = await _client.get(
+        Uri.parse('$baseUrl/manifest.json'),
+      );
       if (manifestResponse.statusCode != 200) return false;
 
       final manifest =
@@ -129,8 +129,7 @@ class RecipeRepository {
       final payloads = <String, String>{};
       for (final path in bundleFiles) {
         final name = _basename(path);
-        final response =
-            await _client.get(Uri.parse('$baseUrl/$name'));
+        final response = await _client.get(Uri.parse('$baseUrl/$name'));
         if (response.statusCode != 200) return false;
         final body = utf8.decode(response.bodyBytes);
         final parsed = decodeRecipeList(body); // throws on malformed JSON
@@ -143,8 +142,7 @@ class RecipeRepository {
       for (final entry in payloads.entries) {
         await File('${dir.path}/${entry.key}').writeAsString(entry.value);
       }
-      await File('${dir.path}/$_versionFileName')
-          .writeAsString(remoteVersion);
+      await File('${dir.path}/$_versionFileName').writeAsString(remoteVersion);
       return true;
     } catch (e) {
       debugPrint('RecipeRepository: bundle refresh failed ($e)');

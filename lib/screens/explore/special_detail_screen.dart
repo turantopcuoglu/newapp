@@ -52,14 +52,16 @@ class SpecialDetailScreen extends ConsumerWidget {
             : ingredientPreferenceFit(ingredientById(id)!, profile),
     };
     final ingredientIds = ingredientFits.keys.toList()
-      ..sort((a, b) =>
-          ingredientFits[a]!.demotion.compareTo(ingredientFits[b]!.demotion));
+      ..sort(
+        (a, b) =>
+            ingredientFits[a]!.demotion.compareTo(ingredientFits[b]!.demotion),
+      );
 
     final gradientColors =
         cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
           // Header — unchanged: emoji, name, subtitle and the recipe count.
@@ -105,8 +107,8 @@ class SpecialDetailScreen extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             l10n.healthIngredientsHint,
-                            style: const TextStyle(
-                              color: AppTheme.textSecondary,
+                            style: TextStyle(
+                              color: context.palette.textSecondary,
                               fontSize: 12,
                             ),
                           ),
@@ -150,31 +152,27 @@ class SpecialDetailScreen extends ConsumerWidget {
                   crossAxisSpacing: 14,
                   childAspectRatio: 1.05,
                 ),
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final id = ingredientIds[index];
-                    final count = browsable
-                        .where(
-                            (r) => matchesCategoryIngredient(r, category, id))
-                        .length;
-                    return _IngredientTile(
-                      ingredientId: id,
-                      locale: locale,
-                      recipeCount: count,
-                      fit: ingredientFits[id]!,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => HealthRecipeListScreen(
-                            category: category,
-                            ingredientId: id,
-                          ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final id = ingredientIds[index];
+                  final count = browsable
+                      .where((r) => matchesCategoryIngredient(r, category, id))
+                      .length;
+                  return _IngredientTile(
+                    ingredientId: id,
+                    locale: locale,
+                    recipeCount: count,
+                    fit: ingredientFits[id]!,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => HealthRecipeListScreen(
+                          category: category,
+                          ingredientId: id,
                         ),
                       ),
-                    );
-                  },
-                  childCount: ingredientIds.length,
-                ),
+                    ),
+                  );
+                }, childCount: ingredientIds.length),
               ),
             ),
           ] else
@@ -183,23 +181,20 @@ class SpecialDetailScreen extends ConsumerWidget {
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final scored = filteredRecipes[index];
-                    return HealthRecipeCard(
-                      scored: scored,
-                      locale: locale,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              RecipeDetailScreen(scoredRecipe: scored),
-                        ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final scored = filteredRecipes[index];
+                  return HealthRecipeCard(
+                    scored: scored,
+                    locale: locale,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            RecipeDetailScreen(scoredRecipe: scored),
                       ),
-                    );
-                  },
-                  childCount: filteredRecipes.length,
-                ),
+                    ),
+                  );
+                }, childCount: filteredRecipes.length),
               ),
             ),
         ],
@@ -337,7 +332,7 @@ class _HealthInfoCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: AppTheme.surface,
+        color: context.palette.surface,
         borderRadius: BorderRadius.circular(18),
         boxShadow: [
           BoxShadow(
@@ -376,10 +371,10 @@ class _HealthInfoCard extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             info.localizedSummary(locale),
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
               height: 1.5,
-              color: AppTheme.textPrimary,
+              color: context.palette.textPrimary,
             ),
           ),
           for (final section in info.sections) ...[
@@ -393,7 +388,9 @@ class _HealthInfoCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 6),
-            ...section.localizedItems(locale).map(
+            ...section
+                .localizedItems(locale)
+                .map(
                   (item) => Padding(
                     padding: const EdgeInsets.only(bottom: 6),
                     child: Row(
@@ -414,10 +411,10 @@ class _HealthInfoCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             item,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 13,
                               height: 1.45,
-                              color: AppTheme.textSecondary,
+                              color: context.palette.textSecondary,
                             ),
                           ),
                         ),
@@ -429,10 +426,10 @@ class _HealthInfoCard extends StatelessWidget {
           const SizedBox(height: 14),
           Text(
             l10n.healthInfoDisclaimer,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 11,
               fontStyle: FontStyle.italic,
-              color: AppTheme.textLight,
+              color: context.palette.textLight,
             ),
           ),
         ],
@@ -555,7 +552,9 @@ class _IngredientTile extends StatelessWidget {
                     const SizedBox(height: 6),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 3),
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.white.withAlpha(45),
                         borderRadius: BorderRadius.circular(8),

@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../core/enums.dart';
-import '../data/explore_data.dart';
+import '../data/food_photo_catalog.dart';
+import 'atlas_image.dart';
+import 'ingredient_image.dart';
+import '../screens/wellness/moonlit_assets.dart';
 import '../models/recipe.dart';
 
-/// Illustration stand-in for recipe photography.
+/// Recipe photography, with ingredient imagery for recipes without a photo.
 ///
-/// Recipes ship without images, and bundling ~120 photos would balloon the
-/// app. Instead every recipe gets a deterministic cuisine-coloured gradient
-/// with a dish emoji picked from its name/ingredients, so cards and detail
-/// headers always render something recognisable. A real [Recipe.imagePath]
-/// takes precedence whenever one exists.
 class RecipeVisual extends StatelessWidget {
   final Recipe recipe;
   final double height;
@@ -25,70 +23,67 @@ class RecipeVisual extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image = recipe.imagePath;
-    if (image != null && image.isNotEmpty) {
-      return ClipRRect(
+    final path = recipe.imagePath;
+    final photo = path != null && path.isNotEmpty
+        ? Image.asset(
+            path,
+            fit: BoxFit.cover,
+            errorBuilder: (_, __, ___) => _photo(),
+          )
+        : _photo();
+    return Semantics(
+      image: true,
+      label: recipe.localizedName(Localizations.localeOf(context).languageCode),
+      child: ClipRRect(
         borderRadius: borderRadius,
-        child: Image.asset(
-          image,
-          height: height,
-          width: double.infinity,
-          fit: BoxFit.cover,
-          // A missing/renamed asset must not break the screen.
-          errorBuilder: (_, __, ___) => _illustration(),
-        ),
-      );
-    }
-    return _illustration();
-  }
-
-  Widget _illustration() {
-    final colors = _gradientColors();
-    return Container(
-      height: height,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: borderRadius,
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: colors,
-        ),
-      ),
-      child: Stack(
-        children: [
-          // Oversized watermark emoji bleeding off the corner
-          Positioned(
-            right: -height * 0.12,
-            bottom: -height * 0.18,
-            child: Text(
-              emoji,
-              style: TextStyle(
-                fontSize: height * 0.72,
-                color: Colors.white.withAlpha(38),
-              ),
-            ),
-          ),
-          Center(
-            child: Text(
-              emoji,
-              style: TextStyle(fontSize: height * 0.38),
-            ),
-          ),
-        ],
+        child: SizedBox(height: height, width: double.infinity, child: photo),
       ),
     );
   }
 
-  List<Color> _gradientColors() {
-    for (final id in recipe.cuisineIds) {
-      final gradient = cuisineGradients[id];
-      if (gradient != null) {
-        return [Color(gradient[0]), Color(gradient[1])];
-      }
+  Widget _photo() {
+    if (recipe.id == 'moonlit_bulgur_bowl') {
+      return const OriginalFoodPhoto(detail: true);
     }
-    final fallback = cuisineGradients['international']!;
-    return [Color(fallback[0]), Color(fallback[1])];
+    final entry = FoodPhotoCatalog.recipes[recipe.id];
+    if (entry != null) {
+      return AtlasImage(
+        asset: 'assets/food/recipes-${entry.$1}.png',
+        columns: 4,
+        rows: 4,
+        index: entry.$2,
+      );
+    }
+    // A user-created/new recipe has no invented finished-dish photograph.
+    final id = recipe.ingredientIds
+        .where(FoodPhotoCatalog.ingredients.containsKey)
+        .firstOrNull;
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        if (id != null)
+          IngredientImage(id: id)
+        else
+          const ColoredBox(color: Color(0xFFECE2D7)),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Builder(
+            builder: (context) => Container(
+              width: double.infinity,
+              color: Colors.black54,
+              padding: const EdgeInsets.all(6),
+              child: Text(
+                Localizations.localeOf(context).languageCode == 'tr'
+                    ? 'Tarifindeki besin'
+                    : 'An ingredient in your recipe',
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white, fontSize: 11),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   /// Dish emoji: name keywords first (most specific), then a signature

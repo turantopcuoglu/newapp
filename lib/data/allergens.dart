@@ -8,7 +8,7 @@
 /// is not in here.
 const Map<String, Map<String, String>> allergenLabels = {
   'gluten': {'en': 'Gluten', 'tr': 'Gluten'},
-  'dairy': {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
+  'dairy': {'en': 'Milk / Dairy allergy', 'tr': 'Süt / Süt ürünleri alerjisi'},
   'eggs': {'en': 'Eggs', 'tr': 'Yumurta'},
   'nuts': {'en': 'Tree Nuts', 'tr': 'Kabuklu Yemişler'},
   'peanuts': {'en': 'Peanuts', 'tr': 'Yer Fıstığı'},

@@ -1,0 +1,2192 @@
+[
+  {
+    "atlas": "recipes-0.png",
+    "prompt": "Create a premium food photography texture atlas for a real mobile wellness app. SQUARE image, 4 columns by 4 rows, exactly sixteen equally sized SQUARE cells, edge-to-edge aligned, absolutely no gutters, borders, labels, text, UI, watermarks or numbers. Each cell is a separate photorealistic studio food photograph. Each dish must be centered, entirely inside its own cell with generous room around it, photographed at 45 degrees on warm taupe linen with handmade ceramic bowls/plates and natural warm side light. Rich appetizing ingredient details, editorial culinary photography, natural colors, no hands or people. Each cell must depict precisely the named dish and its listed main ingredients; never add decorative unrelated food. Order from top-left, left-to-right then next row:\nCell 1: Oatmeal with Banana and Honey; ingredients oats, banana, honey, milk, cinnamon, walnut.\nCell 2: Scrambled Eggs with Spinach and Feta; ingredients eggs, spinach, feta_cheese, olive_oil, salt, black_pepper.\nCell 3: Berry Banana Smoothie; ingredients strawberry, banana, yogurt, honey, chia_seeds.\nCell 4: Avocado Toast with Egg; ingredients bread, avocado, eggs, olive_oil, red_pepper_flakes, salt, lemon.\nCell 5: Greek Yogurt Parfait with Nuts and Berries; ingredients yogurt, hazelnut, blueberry, honey, oats.\nCell 6: Turkish Menemen; ingredients eggs, tomato, bell_pepper, onion, olive_oil, salt, black_pepper, red_pepper_flakes.\nCell 7: Peanut Butter Banana Toast; ingredients bread, peanut, banana, cinnamon, honey.\nCell 8: Chia Seed Pudding with Mango; ingredients chia_seeds, milk, mango, honey, vanilla.\nCell 9: Mushroom and Cheese Omelette; ingredients eggs, mushroom, cheddar_cheese, butter, salt, black_pepper.\nCell 10: Fluffy Pancakes with Maple Syrup; ingredients flour, eggs, milk, butter, maple_syrup, vanilla.\nCell 11: Quinoa Breakfast Bowl; ingredients quinoa, almond, strawberry, honey, milk, cinnamon.\nCell 12: Smoked Salmon on Toast; ingredients bread, salmon, cream, lemon, salt, black_pepper.\nCell 13: Sweet Potato and Egg Breakfast Hash; ingredients sweet_potato, eggs, onion, olive_oil, paprika, salt, black_pepper.\nCell 14: Overnight Oats with Blueberries; ingredients oats, yogurt, blueberry, flax_seeds, honey.\nCell 15: Veggie Breakfast Wrap; ingredients tortilla_wrap, eggs, bell_pepper, spinach, mozzarella, olive_oil, salt.\nCell 16: Banana Oat Smoothie; ingredients banana, oats, almond, milk, honey, cinnamon, yogurt.",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-3d98f394-170e-40f9-b904-3ab600685ecc.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "b001",
+        "name": "Oatmeal with Banana and Honey",
+        "ingredients": [
+          "oats",
+          "banana",
+          "honey",
+          "milk",
+          "cinnamon",
+          "walnut"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "b002",
+        "name": "Scrambled Eggs with Spinach and Feta",
+        "ingredients": [
+          "eggs",
+          "spinach",
+          "feta_cheese",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "b003",
+        "name": "Berry Banana Smoothie",
+        "ingredients": [
+          "strawberry",
+          "banana",
+          "yogurt",
+          "honey",
+          "chia_seeds"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "b004",
+        "name": "Avocado Toast with Egg",
+        "ingredients": [
+          "bread",
+          "avocado",
+          "eggs",
+          "olive_oil",
+          "red_pepper_flakes",
+          "salt",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "b005",
+        "name": "Greek Yogurt Parfait with Nuts and Berries",
+        "ingredients": [
+          "yogurt",
+          "hazelnut",
+          "blueberry",
+          "honey",
+          "oats"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "b006",
+        "name": "Turkish Menemen",
+        "ingredients": [
+          "eggs",
+          "tomato",
+          "bell_pepper",
+          "onion",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "red_pepper_flakes"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "b007",
+        "name": "Peanut Butter Banana Toast",
+        "ingredients": [
+          "bread",
+          "peanut",
+          "banana",
+          "cinnamon",
+          "honey"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "b008",
+        "name": "Chia Seed Pudding with Mango",
+        "ingredients": [
+          "chia_seeds",
+          "milk",
+          "mango",
+          "honey",
+          "vanilla"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "b009",
+        "name": "Mushroom and Cheese Omelette",
+        "ingredients": [
+          "eggs",
+          "mushroom",
+          "cheddar_cheese",
+          "butter",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "b010",
+        "name": "Fluffy Pancakes with Maple Syrup",
+        "ingredients": [
+          "flour",
+          "eggs",
+          "milk",
+          "butter",
+          "maple_syrup",
+          "vanilla"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "b011",
+        "name": "Quinoa Breakfast Bowl",
+        "ingredients": [
+          "quinoa",
+          "almond",
+          "strawberry",
+          "honey",
+          "milk",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "b012",
+        "name": "Smoked Salmon on Toast",
+        "ingredients": [
+          "bread",
+          "salmon",
+          "cream",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "b013",
+        "name": "Sweet Potato and Egg Breakfast Hash",
+        "ingredients": [
+          "sweet_potato",
+          "eggs",
+          "onion",
+          "olive_oil",
+          "paprika",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "b014",
+        "name": "Overnight Oats with Blueberries",
+        "ingredients": [
+          "oats",
+          "yogurt",
+          "blueberry",
+          "flax_seeds",
+          "honey"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "b015",
+        "name": "Veggie Breakfast Wrap",
+        "ingredients": [
+          "tortilla_wrap",
+          "eggs",
+          "bell_pepper",
+          "spinach",
+          "mozzarella",
+          "olive_oil",
+          "salt"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "b016",
+        "name": "Banana Oat Smoothie",
+        "ingredients": [
+          "banana",
+          "oats",
+          "almond",
+          "milk",
+          "honey",
+          "cinnamon",
+          "yogurt"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-1.png",
+    "prompt": "Create a premium food photography texture atlas for a real mobile wellness app. SQUARE image, 4 columns by 4 rows, exactly sixteen equally sized SQUARE cells, edge-to-edge aligned, absolutely no gutters, borders, labels, text, UI, watermarks or numbers. Each cell is a separate photorealistic studio food photograph. Each dish must be centered, entirely inside its own cell with generous room around it, photographed at 45 degrees on warm taupe linen with handmade ceramic bowls/plates and natural warm side light. Rich appetizing ingredient details, editorial culinary photography, natural colors, no hands or people. Each cell must depict precisely the named dish and its listed main ingredients; never add decorative unrelated food. Order from top-left, left-to-right then next row:\nCell 1: Turkish Simit with Feta and Tomato; ingredients bread, feta_cheese, tomato, cucumber, olive_oil.\nCell 2: Tofu Scramble with Vegetables; ingredients tofu, spinach, bell_pepper, onion, turmeric, olive_oil, salt, black_pepper.\nCell 3: Apple Cinnamon Oatmeal; ingredients oats, apple, cinnamon, maple_syrup, milk.\nCell 4: Egg and Cheese Breakfast Sandwich; ingredients bread, eggs, cheddar_cheese, tomato, butter, salt, black_pepper.\nCell 5: Tropical Green Smoothie; ingredients spinach, pineapple, banana, coconut_oil, honey.\nCell 6: Shakshuka; ingredients eggs, tomato, bell_pepper, onion, garlic, cumin, paprika, olive_oil, salt, eggplant, zucchini, yogurt.\nCell 7: Cottage Cheese Bowl with Walnuts and Honey; ingredients cottage_cheese, walnut, honey, flax_seeds, banana.\nCell 8: Cornmeal Porridge with Berries; ingredients cornmeal, milk, strawberry, blueberry, honey, butter.\nCell 9: Egg Muffin Cups with Broccoli and Cheese; ingredients eggs, broccoli, parmesan, olive_oil, salt, black_pepper.\nCell 10: Turkish Village Breakfast Plate; ingredients eggs, feta_cheese, olives, tomato, cucumber, bread, butter, honey.\nCell 11: Turkish Semolina Halva Breakfast Bowl; ingredients semolina, butter, milk, honey, walnut, cinnamon.\nCell 12: Turkish Herb Omelette (Kaygana); ingredients eggs, parsley, dill, spring_onion, flour, olive_oil, salt, black_pepper.\nCell 13: Labneh Bowl with Sumac and Olive Oil; ingredients labne, sumac, olive_oil, tomato, cucumber, mint, pita_bread, salt.\nCell 14: Ricotta and Honey Toast with Figs; ingredients ricotta, bread, honey, walnut, black_pepper, lemon.\nCell 15: Savoury Miso Oat Bowl; ingredients oats, eggs, soy_sauce, sesame_oil, spring_onion, spinach, ginger, sesame_seeds.\nCell 16: Mexican Egg and Bean Tortilla; ingredients tortilla_wrap, eggs, black_bean, avocado, tomato, lime, coriander, cheddar_cheese, paprika.",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-0388d2a4-a699-47c2-b907-6ee8dfa2730c.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "b017",
+        "name": "Turkish Simit with Feta and Tomato",
+        "ingredients": [
+          "bread",
+          "feta_cheese",
+          "tomato",
+          "cucumber",
+          "olive_oil"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "b018",
+        "name": "Tofu Scramble with Vegetables",
+        "ingredients": [
+          "tofu",
+          "spinach",
+          "bell_pepper",
+          "onion",
+          "turmeric",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "b019",
+        "name": "Apple Cinnamon Oatmeal",
+        "ingredients": [
+          "oats",
+          "apple",
+          "cinnamon",
+          "maple_syrup",
+          "milk"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "b020",
+        "name": "Egg and Cheese Breakfast Sandwich",
+        "ingredients": [
+          "bread",
+          "eggs",
+          "cheddar_cheese",
+          "tomato",
+          "butter",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "b021",
+        "name": "Tropical Green Smoothie",
+        "ingredients": [
+          "spinach",
+          "pineapple",
+          "banana",
+          "coconut_oil",
+          "honey"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "b022",
+        "name": "Shakshuka",
+        "ingredients": [
+          "eggs",
+          "tomato",
+          "bell_pepper",
+          "onion",
+          "garlic",
+          "cumin",
+          "paprika",
+          "olive_oil",
+          "salt",
+          "eggplant",
+          "zucchini",
+          "yogurt"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "b023",
+        "name": "Cottage Cheese Bowl with Walnuts and Honey",
+        "ingredients": [
+          "cottage_cheese",
+          "walnut",
+          "honey",
+          "flax_seeds",
+          "banana"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "b024",
+        "name": "Cornmeal Porridge with Berries",
+        "ingredients": [
+          "cornmeal",
+          "milk",
+          "strawberry",
+          "blueberry",
+          "honey",
+          "butter"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "b025",
+        "name": "Egg Muffin Cups with Broccoli and Cheese",
+        "ingredients": [
+          "eggs",
+          "broccoli",
+          "parmesan",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "b026",
+        "name": "Turkish Village Breakfast Plate",
+        "ingredients": [
+          "eggs",
+          "feta_cheese",
+          "olives",
+          "tomato",
+          "cucumber",
+          "bread",
+          "butter",
+          "honey"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "b027",
+        "name": "Turkish Semolina Halva Breakfast Bowl",
+        "ingredients": [
+          "semolina",
+          "butter",
+          "milk",
+          "honey",
+          "walnut",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "b028",
+        "name": "Turkish Herb Omelette (Kaygana)",
+        "ingredients": [
+          "eggs",
+          "parsley",
+          "dill",
+          "spring_onion",
+          "flour",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "b029",
+        "name": "Labneh Bowl with Sumac and Olive Oil",
+        "ingredients": [
+          "labne",
+          "sumac",
+          "olive_oil",
+          "tomato",
+          "cucumber",
+          "mint",
+          "pita_bread",
+          "salt"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "b030",
+        "name": "Ricotta and Honey Toast with Figs",
+        "ingredients": [
+          "ricotta",
+          "bread",
+          "honey",
+          "walnut",
+          "black_pepper",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "b031",
+        "name": "Savoury Miso Oat Bowl",
+        "ingredients": [
+          "oats",
+          "eggs",
+          "soy_sauce",
+          "sesame_oil",
+          "spring_onion",
+          "spinach",
+          "ginger",
+          "sesame_seeds"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "b032",
+        "name": "Mexican Egg and Bean Tortilla",
+        "ingredients": [
+          "tortilla_wrap",
+          "eggs",
+          "black_bean",
+          "avocado",
+          "tomato",
+          "lime",
+          "coriander",
+          "cheddar_cheese",
+          "paprika"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-2.png",
+    "prompt": "Create a premium food photography texture atlas for a real mobile wellness app. SQUARE image, 4 columns by 4 rows, exactly sixteen equally sized SQUARE cells, edge-to-edge aligned, absolutely no gutters, borders, labels, text, UI, watermarks or numbers. Each cell is a separate photorealistic studio food photograph. Each dish must be centered, entirely inside its own cell with generous room around it, photographed at 45 degrees on warm taupe linen with handmade ceramic bowls/plates and natural warm side light. Rich appetizing ingredient details, editorial culinary photography, natural colors, no hands or people. Each cell must depict precisely the named dish and its listed main ingredients; never add decorative unrelated food. Order from top-left, left-to-right then next row:\nCell 1: Buckwheat Porridge with Apricots; ingredients buckwheat, milk, apricot, pumpkin_seeds, honey, cinnamon.\nCell 2: Mediterranean Tomato and Feta Baked Eggs; ingredients eggs, tomato, feta_cheese, garlic, red_onion, olive_oil, oregano, bread, salt, black_pepper.\nCell 3: Baked Salmon with Vegetables; ingredients salmon, broccoli, carrot, olive_oil, lemon, garlic, salt, black_pepper.\nCell 4: Lentil Soup; ingredients red_lentil, onion, carrot, potato, olive_oil, cumin, salt, black_pepper, lemon.\nCell 5: Chicken Stir-Fry with Rice; ingredients chicken_breast, white_rice, bell_pepper, onion, garlic, soy_sauce, olive_oil, salt, black_pepper.\nCell 6: Vegetable Pasta; ingredients pasta, zucchini, tomato, garlic, olive_oil, parmesan, basil, salt, black_pepper, mushroom, broccoli, bell_pepper.\nCell 7: Stuffed Bell Peppers; ingredients bell_pepper, ground_beef, white_rice, onion, tomato, parsley, olive_oil, salt, black_pepper, cumin.\nCell 8: Turkish Karnıyarık (Stuffed Eggplant); ingredients eggplant, ground_beef, onion, tomato, garlic, bell_pepper, parsley, olive_oil, salt, black_pepper.\nCell 9: Grilled Meatballs (Köfte); ingredients ground_beef, onion, parsley, garlic, cumin, salt, black_pepper, bread.\nCell 10: Spinach and Feta Börek; ingredients spinach, feta_cheese, eggs, onion, olive_oil, salt, black_pepper, phyllo_dough, yogurt.\nCell 11: Shepherd's Stew (Güveç); ingredients lamb, potato, tomato, bell_pepper, onion, garlic, olive_oil, salt, black_pepper, cumin.\nCell 12: Turkish Pide (Meat Flatbread); ingredients ground_beef, tomato, bell_pepper, onion, parsley, salt, black_pepper, cumin, flour, yeast.\nCell 13: Stuffed Grape Leaves (Sarma); ingredients white_rice, ground_beef, onion, tomato, parsley, olive_oil, lemon, salt, black_pepper.\nCell 14: Creamy Mushroom Risotto; ingredients white_rice, mushroom, onion, garlic, parmesan, olive_oil, salt, black_pepper.\nCell 15: Turkish İmam Bayıldı; ingredients eggplant, onion, tomato, garlic, parsley, olive_oil, salt, black_pepper.\nCell 16: Chicken Shawarma Bowl; ingredients chicken_breast, white_rice, yogurt, lettuce, tomato, cucumber, garlic, olive_oil, lemon, cumin, salt, black_pepper.",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-fdb5c47c-19eb-4fab-b5ac-f91ad80efc81.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "b033",
+        "name": "Buckwheat Porridge with Apricots",
+        "ingredients": [
+          "buckwheat",
+          "milk",
+          "apricot",
+          "pumpkin_seeds",
+          "honey",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "b034",
+        "name": "Mediterranean Tomato and Feta Baked Eggs",
+        "ingredients": [
+          "eggs",
+          "tomato",
+          "feta_cheese",
+          "garlic",
+          "red_onion",
+          "olive_oil",
+          "oregano",
+          "bread",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "d001",
+        "name": "Baked Salmon with Vegetables",
+        "ingredients": [
+          "salmon",
+          "broccoli",
+          "carrot",
+          "olive_oil",
+          "lemon",
+          "garlic",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "d002",
+        "name": "Lentil Soup",
+        "ingredients": [
+          "red_lentil",
+          "onion",
+          "carrot",
+          "potato",
+          "olive_oil",
+          "cumin",
+          "salt",
+          "black_pepper",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "d003",
+        "name": "Chicken Stir-Fry with Rice",
+        "ingredients": [
+          "chicken_breast",
+          "white_rice",
+          "bell_pepper",
+          "onion",
+          "garlic",
+          "soy_sauce",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "d004",
+        "name": "Vegetable Pasta",
+        "ingredients": [
+          "pasta",
+          "zucchini",
+          "tomato",
+          "garlic",
+          "olive_oil",
+          "parmesan",
+          "basil",
+          "salt",
+          "black_pepper",
+          "mushroom",
+          "broccoli",
+          "bell_pepper"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "d005",
+        "name": "Stuffed Bell Peppers",
+        "ingredients": [
+          "bell_pepper",
+          "ground_beef",
+          "white_rice",
+          "onion",
+          "tomato",
+          "parsley",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "cumin"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "d006",
+        "name": "Turkish Karnıyarık (Stuffed Eggplant)",
+        "ingredients": [
+          "eggplant",
+          "ground_beef",
+          "onion",
+          "tomato",
+          "garlic",
+          "bell_pepper",
+          "parsley",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "d007",
+        "name": "Grilled Meatballs (Köfte)",
+        "ingredients": [
+          "ground_beef",
+          "onion",
+          "parsley",
+          "garlic",
+          "cumin",
+          "salt",
+          "black_pepper",
+          "bread"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "d008",
+        "name": "Spinach and Feta Börek",
+        "ingredients": [
+          "spinach",
+          "feta_cheese",
+          "eggs",
+          "onion",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "phyllo_dough",
+          "yogurt"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "d009",
+        "name": "Shepherd's Stew (Güveç)",
+        "ingredients": [
+          "lamb",
+          "potato",
+          "tomato",
+          "bell_pepper",
+          "onion",
+          "garlic",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "cumin"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "d010",
+        "name": "Turkish Pide (Meat Flatbread)",
+        "ingredients": [
+          "ground_beef",
+          "tomato",
+          "bell_pepper",
+          "onion",
+          "parsley",
+          "salt",
+          "black_pepper",
+          "cumin",
+          "flour",
+          "yeast"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "d011",
+        "name": "Stuffed Grape Leaves (Sarma)",
+        "ingredients": [
+          "white_rice",
+          "ground_beef",
+          "onion",
+          "tomato",
+          "parsley",
+          "olive_oil",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "d012",
+        "name": "Creamy Mushroom Risotto",
+        "ingredients": [
+          "white_rice",
+          "mushroom",
+          "onion",
+          "garlic",
+          "parmesan",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "d013",
+        "name": "Turkish İmam Bayıldı",
+        "ingredients": [
+          "eggplant",
+          "onion",
+          "tomato",
+          "garlic",
+          "parsley",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "d014",
+        "name": "Chicken Shawarma Bowl",
+        "ingredients": [
+          "chicken_breast",
+          "white_rice",
+          "yogurt",
+          "lettuce",
+          "tomato",
+          "cucumber",
+          "garlic",
+          "olive_oil",
+          "lemon",
+          "cumin",
+          "salt",
+          "black_pepper"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-3.png",
+    "prompt": "Premium culinary photography atlas for a mobile wellness app. Square image, EXACT 4x4 evenly aligned grid of sixteen square photographs, no gaps, no lines, no labels, no text. Photograph each dish centered and fully contained in its cell, overhead three-quarter angle, handmade ceramics, warm taupe linen background, natural afternoon light, crisp rich natural ingredients. Follow the precise dishes in ROW MAJOR order left to right then top to bottom; do not replace any dish. Each cell independent with no objects crossing boundaries:\n1. Turkish Mantı (Dumplings), made from ground_beef, onion, yogurt, garlic, salt, black_pepper, cumin, flour, eggs, butter\n2. Baked Chicken with Vegetables, made from chicken_breast, potato, carrot, bell_pepper, onion, olive_oil, thyme, salt, black_pepper\n3. Green Beans in Olive Oil, made from green_beans, tomato, onion, garlic, olive_oil, salt, black_pepper\n4. Chickpea Stew with Beef, made from chickpea, ground_beef, onion, tomato_paste, olive_oil, cumin, salt, black_pepper\n5. Bulgur Pilaf with Vegetables, made from bulgur, tomato, bell_pepper, onion, tomato_paste, olive_oil, salt, black_pepper\n6. Chicken Skewers with Yogurt Sauce, made from chicken_breast, yogurt, garlic, paprika, olive_oil, lemon, salt, black_pepper\n7. Turkish Spinach with Eggs, made from spinach, eggs, onion, olive_oil, red_pepper_flakes, salt, black_pepper, yogurt, garlic\n8. Zucchini Fritters, made from zucchini, eggs, flour, feta_cheese, dill, spring_onion, olive_oil, salt, black_pepper, yogurt\n9. Steamed Sea Bass with Vegetables, made from sea_bass, tomato, onion, garlic, lemon, parsley, olive_oil, salt, black_pepper\n10. Penne Arrabbiata, made from pasta, tomato, garlic, olive_oil, red_pepper_flakes, basil, parmesan, salt\n11. Chicken Pesto Pasta, made from pasta, chicken_breast, basil, pine_nut, parmesan, olive_oil, garlic, salt\n12. Minestrone Soup, made from white_bean, pasta, tomato, carrot, celery, zucchini, onion, garlic, olive_oil, salt, black_pepper\n13. Tuna Pasta, made from pasta, tuna, tomato, garlic, olive_oil, parsley, lemon, salt, black_pepper\n14. Chicken Fajitas, made from chicken_breast, bell_pepper, onion, tortilla_wrap, olive_oil, paprika, cumin, lime, salt\n15. Chili con Carne, made from ground_beef, kidney_bean, tomato, onion, garlic, cumin, paprika, hot_pepper, olive_oil, salt\n16. Veggie Burrito Bowl, made from white_rice, black_bean, corn, avocado, tomato, lime, coriander, olive_oil, salt",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-d4630521-d1a9-4fe0-a88f-f3f58d6d8ac0.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "d015",
+        "name": "Turkish Mantı (Dumplings)",
+        "ingredients": [
+          "ground_beef",
+          "onion",
+          "yogurt",
+          "garlic",
+          "salt",
+          "black_pepper",
+          "cumin",
+          "flour",
+          "eggs",
+          "butter"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "d016",
+        "name": "Baked Chicken with Vegetables",
+        "ingredients": [
+          "chicken_breast",
+          "potato",
+          "carrot",
+          "bell_pepper",
+          "onion",
+          "olive_oil",
+          "thyme",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "d017",
+        "name": "Green Beans in Olive Oil",
+        "ingredients": [
+          "green_beans",
+          "tomato",
+          "onion",
+          "garlic",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "d018",
+        "name": "Chickpea Stew with Beef",
+        "ingredients": [
+          "chickpea",
+          "ground_beef",
+          "onion",
+          "tomato_paste",
+          "olive_oil",
+          "cumin",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "d019",
+        "name": "Bulgur Pilaf with Vegetables",
+        "ingredients": [
+          "bulgur",
+          "tomato",
+          "bell_pepper",
+          "onion",
+          "tomato_paste",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "d020",
+        "name": "Chicken Skewers with Yogurt Sauce",
+        "ingredients": [
+          "chicken_breast",
+          "yogurt",
+          "garlic",
+          "paprika",
+          "olive_oil",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "d021",
+        "name": "Turkish Spinach with Eggs",
+        "ingredients": [
+          "spinach",
+          "eggs",
+          "onion",
+          "olive_oil",
+          "red_pepper_flakes",
+          "salt",
+          "black_pepper",
+          "yogurt",
+          "garlic"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "d022",
+        "name": "Zucchini Fritters",
+        "ingredients": [
+          "zucchini",
+          "eggs",
+          "flour",
+          "feta_cheese",
+          "dill",
+          "spring_onion",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "yogurt"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "d023",
+        "name": "Steamed Sea Bass with Vegetables",
+        "ingredients": [
+          "sea_bass",
+          "tomato",
+          "onion",
+          "garlic",
+          "lemon",
+          "parsley",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "d024",
+        "name": "Penne Arrabbiata",
+        "ingredients": [
+          "pasta",
+          "tomato",
+          "garlic",
+          "olive_oil",
+          "red_pepper_flakes",
+          "basil",
+          "parmesan",
+          "salt"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "d025",
+        "name": "Chicken Pesto Pasta",
+        "ingredients": [
+          "pasta",
+          "chicken_breast",
+          "basil",
+          "pine_nut",
+          "parmesan",
+          "olive_oil",
+          "garlic",
+          "salt"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "d026",
+        "name": "Minestrone Soup",
+        "ingredients": [
+          "white_bean",
+          "pasta",
+          "tomato",
+          "carrot",
+          "celery",
+          "zucchini",
+          "onion",
+          "garlic",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "d027",
+        "name": "Tuna Pasta",
+        "ingredients": [
+          "pasta",
+          "tuna",
+          "tomato",
+          "garlic",
+          "olive_oil",
+          "parsley",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "d028",
+        "name": "Chicken Fajitas",
+        "ingredients": [
+          "chicken_breast",
+          "bell_pepper",
+          "onion",
+          "tortilla_wrap",
+          "olive_oil",
+          "paprika",
+          "cumin",
+          "lime",
+          "salt"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "d029",
+        "name": "Chili con Carne",
+        "ingredients": [
+          "ground_beef",
+          "kidney_bean",
+          "tomato",
+          "onion",
+          "garlic",
+          "cumin",
+          "paprika",
+          "hot_pepper",
+          "olive_oil",
+          "salt"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "d030",
+        "name": "Veggie Burrito Bowl",
+        "ingredients": [
+          "white_rice",
+          "black_bean",
+          "corn",
+          "avocado",
+          "tomato",
+          "lime",
+          "coriander",
+          "olive_oil",
+          "salt"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-4.png",
+    "prompt": "Square food photography atlas. Exactly 4 columns and 4 rows: sixteen equal square photos, no borders, text, gaps, numbers or labels. Each cell an independent centered dish on warm taupe linen, handmade ceramic plate/bowl, natural soft golden window light. Realistic editorial food photography with crisp recognizable ingredients. Follow these sixteen recipes precisely left to right, top to bottom:\n1. Teriyaki Salmon with Rice; salmon, white_rice, soy_sauce, honey, ginger, garlic, sesame_seeds, spring_onion\n2. Vegetable Tofu Curry; tofu, coconut_milk, curry_powder, broccoli, carrot, onion, garlic, ginger, white_rice, salt\n3. Chicken Noodle Stir-Fry; noodle, chicken_breast, bell_pepper, carrot, soy_sauce, sesame_oil, garlic, ginger, spring_onion\n4. Shrimp Fried Rice; shrimp, white_rice, eggs, peas, carrot, soy_sauce, sesame_oil, spring_onion, garlic\n5. Greek Baked Vegetables with Feta; eggplant, zucchini, potato, tomato, onion, garlic, olive_oil, oregano, feta_cheese, salt, black_pepper\n6. Herb Roast Chicken with Root Vegetables; chicken_thigh, potato, carrot, turnip, red_onion, rosemary, garlic, olive_oil, salt, black_pepper\n7. Beef and Barley Stew; beef_steak, barley, carrot, celery, onion, garlic, tomato_paste, olive_oil, thyme, salt, black_pepper\n8. Turkey Meatloaf with Roasted Vegetables; ground_turkey, breadcrumbs, eggs, onion, carrot, zucchini, tomato_paste, garlic, olive_oil, oregano, salt, black_pepper\n9. Baked Cod with Potatoes and Olives; cod, potato, olives, tomato, red_onion, lemon, olive_oil, oregano, garlic, salt, black_pepper\n10. Chicken Mole with Rice; chicken_breast, dark_chocolate, almond, hot_pepper, tomato, onion, garlic, sesame_seeds, cinnamon, cumin, white_rice, olive_oil, salt\n11. Lentil and Spinach Stew with Lemon; green_lentil, spinach, onion, garlic, carrot, lemon, cumin, coriander, olive_oil, salt, black_pepper\n12. Pumpkin Seed Crusted Salmon with Greens; salmon, pumpkin_seeds, swiss_chard, garlic, lemon, olive_oil, black_pepper, salt\n13. Grilled Chicken Salad; chicken_breast, lettuce, tomato, cucumber, lemon, olive_oil, salt, black_pepper\n14. Ezogelin Soup; red_lentil, bulgur, white_rice, onion, tomato_paste, mint, butter, red_pepper_flakes, salt, lemon\n15. Quinoa & Black Bean Bowl; quinoa, black_bean, corn, avocado, tomato, onion, lemon, olive_oil, cumin, salt, black_pepper\n16. Salmon & Broccoli Rice Bowl; salmon, white_rice, broccoli, soy_sauce, sesame_oil, garlic, lemon, salt, black_pepper",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-0af1dad2-b72b-4971-ac52-569448e50a83.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "d031",
+        "name": "Teriyaki Salmon with Rice",
+        "ingredients": [
+          "salmon",
+          "white_rice",
+          "soy_sauce",
+          "honey",
+          "ginger",
+          "garlic",
+          "sesame_seeds",
+          "spring_onion"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "d032",
+        "name": "Vegetable Tofu Curry",
+        "ingredients": [
+          "tofu",
+          "coconut_milk",
+          "curry_powder",
+          "broccoli",
+          "carrot",
+          "onion",
+          "garlic",
+          "ginger",
+          "white_rice",
+          "salt"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "d033",
+        "name": "Chicken Noodle Stir-Fry",
+        "ingredients": [
+          "noodle",
+          "chicken_breast",
+          "bell_pepper",
+          "carrot",
+          "soy_sauce",
+          "sesame_oil",
+          "garlic",
+          "ginger",
+          "spring_onion"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "d034",
+        "name": "Shrimp Fried Rice",
+        "ingredients": [
+          "shrimp",
+          "white_rice",
+          "eggs",
+          "peas",
+          "carrot",
+          "soy_sauce",
+          "sesame_oil",
+          "spring_onion",
+          "garlic"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "d035",
+        "name": "Greek Baked Vegetables with Feta",
+        "ingredients": [
+          "eggplant",
+          "zucchini",
+          "potato",
+          "tomato",
+          "onion",
+          "garlic",
+          "olive_oil",
+          "oregano",
+          "feta_cheese",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "d036",
+        "name": "Herb Roast Chicken with Root Vegetables",
+        "ingredients": [
+          "chicken_thigh",
+          "potato",
+          "carrot",
+          "turnip",
+          "red_onion",
+          "rosemary",
+          "garlic",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "d037",
+        "name": "Beef and Barley Stew",
+        "ingredients": [
+          "beef_steak",
+          "barley",
+          "carrot",
+          "celery",
+          "onion",
+          "garlic",
+          "tomato_paste",
+          "olive_oil",
+          "thyme",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "d038",
+        "name": "Turkey Meatloaf with Roasted Vegetables",
+        "ingredients": [
+          "ground_turkey",
+          "breadcrumbs",
+          "eggs",
+          "onion",
+          "carrot",
+          "zucchini",
+          "tomato_paste",
+          "garlic",
+          "olive_oil",
+          "oregano",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "d039",
+        "name": "Baked Cod with Potatoes and Olives",
+        "ingredients": [
+          "cod",
+          "potato",
+          "olives",
+          "tomato",
+          "red_onion",
+          "lemon",
+          "olive_oil",
+          "oregano",
+          "garlic",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "d040",
+        "name": "Chicken Mole with Rice",
+        "ingredients": [
+          "chicken_breast",
+          "dark_chocolate",
+          "almond",
+          "hot_pepper",
+          "tomato",
+          "onion",
+          "garlic",
+          "sesame_seeds",
+          "cinnamon",
+          "cumin",
+          "white_rice",
+          "olive_oil",
+          "salt"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "d041",
+        "name": "Lentil and Spinach Stew with Lemon",
+        "ingredients": [
+          "green_lentil",
+          "spinach",
+          "onion",
+          "garlic",
+          "carrot",
+          "lemon",
+          "cumin",
+          "coriander",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "d042",
+        "name": "Pumpkin Seed Crusted Salmon with Greens",
+        "ingredients": [
+          "salmon",
+          "pumpkin_seeds",
+          "swiss_chard",
+          "garlic",
+          "lemon",
+          "olive_oil",
+          "black_pepper",
+          "salt"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "l001",
+        "name": "Grilled Chicken Salad",
+        "ingredients": [
+          "chicken_breast",
+          "lettuce",
+          "tomato",
+          "cucumber",
+          "lemon",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "l002",
+        "name": "Ezogelin Soup",
+        "ingredients": [
+          "red_lentil",
+          "bulgur",
+          "white_rice",
+          "onion",
+          "tomato_paste",
+          "mint",
+          "butter",
+          "red_pepper_flakes",
+          "salt",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "l003",
+        "name": "Quinoa & Black Bean Bowl",
+        "ingredients": [
+          "quinoa",
+          "black_bean",
+          "corn",
+          "avocado",
+          "tomato",
+          "onion",
+          "lemon",
+          "olive_oil",
+          "cumin",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "l004",
+        "name": "Salmon & Broccoli Rice Bowl",
+        "ingredients": [
+          "salmon",
+          "white_rice",
+          "broccoli",
+          "soy_sauce",
+          "sesame_oil",
+          "garlic",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-5.png",
+    "prompt": "Premium culinary photography atlas for a mobile wellness app. Square image, EXACT 4x4 evenly aligned grid of sixteen square photographs, no gaps, no lines, no labels, no text. Photograph each dish centered and fully contained in its cell, overhead three-quarter angle, handmade ceramics, warm taupe linen background, natural afternoon light, crisp rich natural ingredients. Follow the precise dishes in ROW MAJOR order left to right then top to bottom; do not replace any dish. Each cell independent with no objects crossing boundaries:\n1. Turkish Chicken Wrap, made from chicken_breast, tortilla_wrap, yogurt, tomato, lettuce, onion, paprika, cumin, olive_oil, salt, black_pepper\n2. Eggplant Moussaka, made from eggplant, ground_beef, tomato, onion, garlic, bell_pepper, tomato_paste, olive_oil, salt, black_pepper, oregano, potato, yogurt\n3. Tuna & Avocado Sandwich, made from tuna, avocado, bread, lettuce, lemon, onion, olive_oil, salt, black_pepper\n4. Bulgur Pilaf with Chickpeas, made from bulgur, chickpea, onion, tomato_paste, butter, salt, black_pepper, red_pepper_flakes\n5. Shrimp Stir-Fry with Rice Noodles, made from shrimp, noodle, bell_pepper, carrot, zucchini, garlic, soy_sauce, sesame_oil, sunflower_oil, salt\n6. Kısır (Bulgur Salad), made from bulgur, tomato_paste, pomegranate_molasses, spring_onion, parsley, cucumber, lemon, olive_oil, red_pepper_flakes, salt, lettuce\n7. Mediterranean Chickpea Salad, made from chickpea, cucumber, tomato, feta_cheese, onion, lemon, olive_oil, oregano, salt, black_pepper\n8. Beef Steak with Sweet Potato, made from beef_steak, sweet_potato, green_beans, olive_oil, garlic, salt, black_pepper, butter\n9. Borlotti Beans in Olive Oil, made from kidney_bean, carrot, potato, tomato, onion, tomato_paste, olive_oil, sugar, salt, lemon\n10. Tofu & Vegetable Stir-Fry, made from tofu, white_rice, broccoli, bell_pepper, carrot, mushroom, soy_sauce, garlic, sesame_oil, sunflower_oil, salt\n11. Turkish Lamb Stew, made from lamb, potato, carrot, onion, garlic, tomato, tomato_paste, butter, salt, black_pepper, oregano\n12. Couscous with Grilled Vegetables, made from couscous, zucchini, bell_pepper, eggplant, tomato, olive_oil, lemon, garlic, cumin, salt, black_pepper\n13. Turkey & Mushroom Pasta, made from ground_turkey, pasta, mushroom, onion, garlic, cream, parmesan, olive_oil, salt, black_pepper, oregano\n14. Kale & Walnut Salad, made from kale, walnut, pomegranate, lemon, olive_oil, garlic, salt, black_pepper\n15. Grilled Pork Chop with Potato Salad, made from pork_chop, potato, onion, mustard, white_vinegar, olive_oil, salt, black_pepper, paprika\n16. Egg & Vegetable Frittata, made from eggs, spinach, bell_pepper, mushroom, cheddar_cheese, onion, olive_oil, salt, black_pepper",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-36a9c9d7-5710-4453-b6d4-fa458e4bb637.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "l005",
+        "name": "Turkish Chicken Wrap",
+        "ingredients": [
+          "chicken_breast",
+          "tortilla_wrap",
+          "yogurt",
+          "tomato",
+          "lettuce",
+          "onion",
+          "paprika",
+          "cumin",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "l006",
+        "name": "Eggplant Moussaka",
+        "ingredients": [
+          "eggplant",
+          "ground_beef",
+          "tomato",
+          "onion",
+          "garlic",
+          "bell_pepper",
+          "tomato_paste",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "oregano",
+          "potato",
+          "yogurt"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "l007",
+        "name": "Tuna & Avocado Sandwich",
+        "ingredients": [
+          "tuna",
+          "avocado",
+          "bread",
+          "lettuce",
+          "lemon",
+          "onion",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "l008",
+        "name": "Bulgur Pilaf with Chickpeas",
+        "ingredients": [
+          "bulgur",
+          "chickpea",
+          "onion",
+          "tomato_paste",
+          "butter",
+          "salt",
+          "black_pepper",
+          "red_pepper_flakes"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "l009",
+        "name": "Shrimp Stir-Fry with Rice Noodles",
+        "ingredients": [
+          "shrimp",
+          "noodle",
+          "bell_pepper",
+          "carrot",
+          "zucchini",
+          "garlic",
+          "soy_sauce",
+          "sesame_oil",
+          "sunflower_oil",
+          "salt"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "l010",
+        "name": "Kısır (Bulgur Salad)",
+        "ingredients": [
+          "bulgur",
+          "tomato_paste",
+          "pomegranate_molasses",
+          "spring_onion",
+          "parsley",
+          "cucumber",
+          "lemon",
+          "olive_oil",
+          "red_pepper_flakes",
+          "salt",
+          "lettuce"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "l011",
+        "name": "Mediterranean Chickpea Salad",
+        "ingredients": [
+          "chickpea",
+          "cucumber",
+          "tomato",
+          "feta_cheese",
+          "onion",
+          "lemon",
+          "olive_oil",
+          "oregano",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "l012",
+        "name": "Beef Steak with Sweet Potato",
+        "ingredients": [
+          "beef_steak",
+          "sweet_potato",
+          "green_beans",
+          "olive_oil",
+          "garlic",
+          "salt",
+          "black_pepper",
+          "butter"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "l013",
+        "name": "Borlotti Beans in Olive Oil",
+        "ingredients": [
+          "kidney_bean",
+          "carrot",
+          "potato",
+          "tomato",
+          "onion",
+          "tomato_paste",
+          "olive_oil",
+          "sugar",
+          "salt",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "l014",
+        "name": "Tofu & Vegetable Stir-Fry",
+        "ingredients": [
+          "tofu",
+          "white_rice",
+          "broccoli",
+          "bell_pepper",
+          "carrot",
+          "mushroom",
+          "soy_sauce",
+          "garlic",
+          "sesame_oil",
+          "sunflower_oil",
+          "salt"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "l015",
+        "name": "Turkish Lamb Stew",
+        "ingredients": [
+          "lamb",
+          "potato",
+          "carrot",
+          "onion",
+          "garlic",
+          "tomato",
+          "tomato_paste",
+          "butter",
+          "salt",
+          "black_pepper",
+          "oregano"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "l016",
+        "name": "Couscous with Grilled Vegetables",
+        "ingredients": [
+          "couscous",
+          "zucchini",
+          "bell_pepper",
+          "eggplant",
+          "tomato",
+          "olive_oil",
+          "lemon",
+          "garlic",
+          "cumin",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "l017",
+        "name": "Turkey & Mushroom Pasta",
+        "ingredients": [
+          "ground_turkey",
+          "pasta",
+          "mushroom",
+          "onion",
+          "garlic",
+          "cream",
+          "parmesan",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "oregano"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "l018",
+        "name": "Kale & Walnut Salad",
+        "ingredients": [
+          "kale",
+          "walnut",
+          "pomegranate",
+          "lemon",
+          "olive_oil",
+          "garlic",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "l019",
+        "name": "Grilled Pork Chop with Potato Salad",
+        "ingredients": [
+          "pork_chop",
+          "potato",
+          "onion",
+          "mustard",
+          "white_vinegar",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "paprika"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "l020",
+        "name": "Egg & Vegetable Frittata",
+        "ingredients": [
+          "eggs",
+          "spinach",
+          "bell_pepper",
+          "mushroom",
+          "cheddar_cheese",
+          "onion",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-6.png",
+    "prompt": "Production food photography sprite atlas: exact FOUR columns by FOUR rows, sixteen equal square cells, square overall image. Absolutely NO text, numbers, gutters, frames, margins, watermarks, UI, or people. Each cell is a different food photograph fully contained in its own square, centered dish in handmade ceramics on warm taupe linen, warm natural window light, editorial culinary texture, true natural colors. Left-to-right and then top-to-bottom depict EXACTLY these recipes and listed ingredients:\n1: Sardine & White Bean Salad; sardine, white_bean, celery, onion, lemon, olive_oil, salt, black_pepper, red_pepper_flakes\n2: Chicken Thigh & Vegetable Kebab; chicken_thigh, bell_pepper, onion, zucchini, tomato, yogurt, olive_oil, paprika, cumin, garlic, salt, black_pepper\n3: Lentil & Vegetable Stew; green_lentil, carrot, celery, spinach, onion, garlic, tomato_paste, olive_oil, cumin, salt, black_pepper\n4: Cod Fish Tacos; cod, tortilla_wrap, cabbage, avocado, lemon, yogurt, garlic, paprika, cumin, olive_oil, salt, black_pepper\n5: Turkish White Bean Stew with Rice; white_bean, white_rice, onion, garlic, tomato_paste, tomato, bell_pepper, butter, olive_oil, paprika, salt, black_pepper\n6: Purslane Salad with Yoghurt; purslane, yogurt, garlic, olive_oil, lemon, walnut, salt\n7: Barley Salad with Roasted Vegetables; barley, bell_pepper, zucchini, red_onion, tomato, parsley, lemon, olive_oil, sumac, salt, black_pepper\n8: Fava Bean Purée with Dill; fava_bean, onion, olive_oil, dill, lemon, sugar, salt\n9: Red Lentil Balls (Mercimek Köftesi); red_lentil, bulgur, spring_onion, tomato_paste, parsley, lemon, cumin, olive_oil, red_pepper_flakes, lettuce, salt\n10: Liver Sauté with Onions and Sumac; liver, red_onion, sumac, flour, parsley, olive_oil, red_pepper_flakes, salt, black_pepper\n11: Banana Almond Energy Balls; oats, banana, almond, honey, cinnamon, dates\n12: Spinach Banana Smoothie; spinach, banana, yogurt, honey, milk\n13: Mixed Berry Chia Pudding; chia_seeds, milk, strawberry, blueberry, honey\n14: Classic Hummus with Veggie Sticks; chickpea, tahini, lemon, garlic, olive_oil, carrot, cucumber, bell_pepper, salt\n15: Apple Slices with Peanut Butter; apple, peanut, cinnamon\n16: Cucumber Feta Bites; cucumber, feta_cheese, olive_oil, oregano, black_pepper",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-1cfac22d-47d8-42ce-b844-4b2134248fa7.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "l021",
+        "name": "Sardine & White Bean Salad",
+        "ingredients": [
+          "sardine",
+          "white_bean",
+          "celery",
+          "onion",
+          "lemon",
+          "olive_oil",
+          "salt",
+          "black_pepper",
+          "red_pepper_flakes"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "l022",
+        "name": "Chicken Thigh & Vegetable Kebab",
+        "ingredients": [
+          "chicken_thigh",
+          "bell_pepper",
+          "onion",
+          "zucchini",
+          "tomato",
+          "yogurt",
+          "olive_oil",
+          "paprika",
+          "cumin",
+          "garlic",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "l023",
+        "name": "Lentil & Vegetable Stew",
+        "ingredients": [
+          "green_lentil",
+          "carrot",
+          "celery",
+          "spinach",
+          "onion",
+          "garlic",
+          "tomato_paste",
+          "olive_oil",
+          "cumin",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "l024",
+        "name": "Cod Fish Tacos",
+        "ingredients": [
+          "cod",
+          "tortilla_wrap",
+          "cabbage",
+          "avocado",
+          "lemon",
+          "yogurt",
+          "garlic",
+          "paprika",
+          "cumin",
+          "olive_oil",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "l025",
+        "name": "Turkish White Bean Stew with Rice",
+        "ingredients": [
+          "white_bean",
+          "white_rice",
+          "onion",
+          "garlic",
+          "tomato_paste",
+          "tomato",
+          "bell_pepper",
+          "butter",
+          "olive_oil",
+          "paprika",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "l026",
+        "name": "Purslane Salad with Yoghurt",
+        "ingredients": [
+          "purslane",
+          "yogurt",
+          "garlic",
+          "olive_oil",
+          "lemon",
+          "walnut",
+          "salt"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "l027",
+        "name": "Barley Salad with Roasted Vegetables",
+        "ingredients": [
+          "barley",
+          "bell_pepper",
+          "zucchini",
+          "red_onion",
+          "tomato",
+          "parsley",
+          "lemon",
+          "olive_oil",
+          "sumac",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "l028",
+        "name": "Fava Bean Purée with Dill",
+        "ingredients": [
+          "fava_bean",
+          "onion",
+          "olive_oil",
+          "dill",
+          "lemon",
+          "sugar",
+          "salt"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "l029",
+        "name": "Red Lentil Balls (Mercimek Köftesi)",
+        "ingredients": [
+          "red_lentil",
+          "bulgur",
+          "spring_onion",
+          "tomato_paste",
+          "parsley",
+          "lemon",
+          "cumin",
+          "olive_oil",
+          "red_pepper_flakes",
+          "lettuce",
+          "salt"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "l030",
+        "name": "Liver Sauté with Onions and Sumac",
+        "ingredients": [
+          "liver",
+          "red_onion",
+          "sumac",
+          "flour",
+          "parsley",
+          "olive_oil",
+          "red_pepper_flakes",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "s001",
+        "name": "Banana Almond Energy Balls",
+        "ingredients": [
+          "oats",
+          "banana",
+          "almond",
+          "honey",
+          "cinnamon",
+          "dates"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "s002",
+        "name": "Spinach Banana Smoothie",
+        "ingredients": [
+          "spinach",
+          "banana",
+          "yogurt",
+          "honey",
+          "milk"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "s003",
+        "name": "Mixed Berry Chia Pudding",
+        "ingredients": [
+          "chia_seeds",
+          "milk",
+          "strawberry",
+          "blueberry",
+          "honey"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "s004",
+        "name": "Classic Hummus with Veggie Sticks",
+        "ingredients": [
+          "chickpea",
+          "tahini",
+          "lemon",
+          "garlic",
+          "olive_oil",
+          "carrot",
+          "cucumber",
+          "bell_pepper",
+          "salt"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "s005",
+        "name": "Apple Slices with Peanut Butter",
+        "ingredients": [
+          "apple",
+          "peanut",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "s006",
+        "name": "Cucumber Feta Bites",
+        "ingredients": [
+          "cucumber",
+          "feta_cheese",
+          "olive_oil",
+          "oregano",
+          "black_pepper"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-7.png",
+    "prompt": "Production food photography sprite atlas: exact FOUR columns by FOUR rows, sixteen equal square cells, square overall image. Absolutely NO text, numbers, gutters, frames, margins, watermarks, UI, or people. Each cell is a different food photograph fully contained in its own square, centered dish in handmade ceramics on warm taupe linen, warm natural window light, editorial culinary texture, true natural colors. Left-to-right and then top-to-bottom depict EXACTLY these recipes and listed ingredients:\n1: Oat and Walnut Protein Bars; oats, walnut, peanut, honey, vanilla\n2: Yogurt with Honey and Walnuts; yogurt, honey, walnut\n3: Mango Coconut Smoothie; mango, coconut, yogurt, honey\n4: Trail Mix with Almonds and Dark Chocolate; almond, walnut, cocoa_powder, honey\n5: Oat Banana Pancake Bites; oats, banana, eggs, cinnamon, coconut_oil\n6: Egg and Avocado Toast Bites; bread, avocado, eggs, lemon, salt, black_pepper, red_pepper_flakes, cream_cheese, cucumber\n7: Chocolate Peanut Butter Energy Balls; cocoa_powder, peanut, oats, honey, flax_seeds\n8: Kale Cashew Pesto Dip; kale, cashew, garlic, olive_oil, lemon, carrot, bell_pepper, salt\n9: Strawberry Yogurt Parfait; yogurt, strawberry, oats, honey\n10: Sweet Potato Bites with Tahini; sweet_potato, tahini, olive_oil, salt, cumin, lemon\n11: Blueberry Flax Smoothie; blueberry, flax_seeds, banana, milk\n12: Lentil Tomato Bruschetta; bread, green_lentil, tomato, onion, olive_oil, basil, garlic\n13: Pomegranate Orange Fruit Bowl; pomegranate, orange, honey, cinnamon\n14: Spiced Chickpea Crunch; chickpea, olive_oil, cumin, paprika, salt, garlic\n15: Avocado Almond Dip; avocado, almond, lemon, garlic, olive_oil, salt, celery, cucumber\n16: Tuna Cucumber Rolls; tuna, cucumber, lemon, mustard, black_pepper, salt",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-4c2621e4-be76-47d9-b9b3-9de145d3fc66.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "s007",
+        "name": "Oat and Walnut Protein Bars",
+        "ingredients": [
+          "oats",
+          "walnut",
+          "peanut",
+          "honey",
+          "vanilla"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "s008",
+        "name": "Yogurt with Honey and Walnuts",
+        "ingredients": [
+          "yogurt",
+          "honey",
+          "walnut"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "s009",
+        "name": "Mango Coconut Smoothie",
+        "ingredients": [
+          "mango",
+          "coconut",
+          "yogurt",
+          "honey"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "s010",
+        "name": "Trail Mix with Almonds and Dark Chocolate",
+        "ingredients": [
+          "almond",
+          "walnut",
+          "cocoa_powder",
+          "honey"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "s011",
+        "name": "Oat Banana Pancake Bites",
+        "ingredients": [
+          "oats",
+          "banana",
+          "eggs",
+          "cinnamon",
+          "coconut_oil"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "s012",
+        "name": "Egg and Avocado Toast Bites",
+        "ingredients": [
+          "bread",
+          "avocado",
+          "eggs",
+          "lemon",
+          "salt",
+          "black_pepper",
+          "red_pepper_flakes",
+          "cream_cheese",
+          "cucumber"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "s013",
+        "name": "Chocolate Peanut Butter Energy Balls",
+        "ingredients": [
+          "cocoa_powder",
+          "peanut",
+          "oats",
+          "honey",
+          "flax_seeds"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "s014",
+        "name": "Kale Cashew Pesto Dip",
+        "ingredients": [
+          "kale",
+          "cashew",
+          "garlic",
+          "olive_oil",
+          "lemon",
+          "carrot",
+          "bell_pepper",
+          "salt"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "s015",
+        "name": "Strawberry Yogurt Parfait",
+        "ingredients": [
+          "yogurt",
+          "strawberry",
+          "oats",
+          "honey"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "s016",
+        "name": "Sweet Potato Bites with Tahini",
+        "ingredients": [
+          "sweet_potato",
+          "tahini",
+          "olive_oil",
+          "salt",
+          "cumin",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "s017",
+        "name": "Blueberry Flax Smoothie",
+        "ingredients": [
+          "blueberry",
+          "flax_seeds",
+          "banana",
+          "milk"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "s018",
+        "name": "Lentil Tomato Bruschetta",
+        "ingredients": [
+          "bread",
+          "green_lentil",
+          "tomato",
+          "onion",
+          "olive_oil",
+          "basil",
+          "garlic"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "s019",
+        "name": "Pomegranate Orange Fruit Bowl",
+        "ingredients": [
+          "pomegranate",
+          "orange",
+          "honey",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "s020",
+        "name": "Spiced Chickpea Crunch",
+        "ingredients": [
+          "chickpea",
+          "olive_oil",
+          "cumin",
+          "paprika",
+          "salt",
+          "garlic"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "s021",
+        "name": "Avocado Almond Dip",
+        "ingredients": [
+          "avocado",
+          "almond",
+          "lemon",
+          "garlic",
+          "olive_oil",
+          "salt",
+          "celery",
+          "cucumber"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "s022",
+        "name": "Tuna Cucumber Rolls",
+        "ingredients": [
+          "tuna",
+          "cucumber",
+          "lemon",
+          "mustard",
+          "black_pepper",
+          "salt"
+        ]
+      }
+    ]
+  },
+  {
+    "atlas": "recipes-8.png",
+    "prompt": "Production food photography sprite atlas: exact FOUR columns by FOUR rows, sixteen equal square cells, square overall image. Absolutely NO text, numbers, gutters, frames, margins, watermarks, UI, or people. Each cell is a different food photograph fully contained in its own square, centered dish in handmade ceramics on warm taupe linen, warm natural window light, editorial culinary texture, true natural colors. Left-to-right and then top-to-bottom depict EXACTLY these recipes and listed ingredients:\n1: Cinnamon Baked Apple Chips; apple, cinnamon, lemon\n2: Edamame with Sea Salt and Lemon; edamame, soy_sauce, lemon, salt, black_pepper\n3: Cashew Date Bliss Balls; cashew, coconut, honey, vanilla, dates\n4: Trail Mix with Nuts and Dried Fruits; mixed_nuts, dried_fruit, dark_chocolate\n5: Ice Cream Sundae; ice_cream, chocolate_bar, banana, cookies\n6: Chips and Salsa; tortilla_chips, potato_chips, crackers, tomato, onion, parsley, lemon, salt\n7: Chocolate Fondue with Fruit; dark_chocolate, banana, blueberry, raspberry, dried_fruit\n8: Popcorn Party Mix; popcorn, mixed_nuts, honey, crackers, salt, paprika\n9: Greek Yogurt Parfait with Berries; greek_yogurt, blueberry, raspberry, granola_bar, honey\n10: Peanut Butter Rice Cakes; rice_cake, peanut_butter, banana, honey\n11: Date and Nut Energy Bites; dates, mixed_nuts, oats, dark_chocolate, honey\n12: Tahini and Molasses on Bread; tahini, molasses, bread, walnut\n13: Dried Apricots with Almonds; apricot, almond, cinnamon\n14: Roasted Chickpeas with Sumac; chickpea, olive_oil, sumac, cumin, paprika, salt\n15: Sesame Halva Bites with Cocoa; tahini, cocoa_powder, oats, honey, sesame_seeds, dates\n16: Whipped Ricotta with Honey and Pistachio; ricotta, honey, pistachio, lemon, cinnamon",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-0376ef94-a55a-4cfc-8900-5b50fd80e390.png",
+    "cells": [
+      {
+        "cell": 0,
+        "id": "s023",
+        "name": "Cinnamon Baked Apple Chips",
+        "ingredients": [
+          "apple",
+          "cinnamon",
+          "lemon"
+        ]
+      },
+      {
+        "cell": 1,
+        "id": "s024",
+        "name": "Edamame with Sea Salt and Lemon",
+        "ingredients": [
+          "edamame",
+          "soy_sauce",
+          "lemon",
+          "salt",
+          "black_pepper"
+        ]
+      },
+      {
+        "cell": 2,
+        "id": "s025",
+        "name": "Cashew Date Bliss Balls",
+        "ingredients": [
+          "cashew",
+          "coconut",
+          "honey",
+          "vanilla",
+          "dates"
+        ]
+      },
+      {
+        "cell": 3,
+        "id": "s026",
+        "name": "Trail Mix with Nuts and Dried Fruits",
+        "ingredients": [
+          "mixed_nuts",
+          "dried_fruit",
+          "dark_chocolate"
+        ]
+      },
+      {
+        "cell": 4,
+        "id": "s027",
+        "name": "Ice Cream Sundae",
+        "ingredients": [
+          "ice_cream",
+          "chocolate_bar",
+          "banana",
+          "cookies"
+        ]
+      },
+      {
+        "cell": 5,
+        "id": "s028",
+        "name": "Chips and Salsa",
+        "ingredients": [
+          "tortilla_chips",
+          "potato_chips",
+          "crackers",
+          "tomato",
+          "onion",
+          "parsley",
+          "lemon",
+          "salt"
+        ]
+      },
+      {
+        "cell": 6,
+        "id": "s029",
+        "name": "Chocolate Fondue with Fruit",
+        "ingredients": [
+          "dark_chocolate",
+          "banana",
+          "blueberry",
+          "raspberry",
+          "dried_fruit"
+        ]
+      },
+      {
+        "cell": 7,
+        "id": "s030",
+        "name": "Popcorn Party Mix",
+        "ingredients": [
+          "popcorn",
+          "mixed_nuts",
+          "honey",
+          "crackers",
+          "salt",
+          "paprika"
+        ]
+      },
+      {
+        "cell": 8,
+        "id": "s031",
+        "name": "Greek Yogurt Parfait with Berries",
+        "ingredients": [
+          "greek_yogurt",
+          "blueberry",
+          "raspberry",
+          "granola_bar",
+          "honey"
+        ]
+      },
+      {
+        "cell": 9,
+        "id": "s032",
+        "name": "Peanut Butter Rice Cakes",
+        "ingredients": [
+          "rice_cake",
+          "peanut_butter",
+          "banana",
+          "honey"
+        ]
+      },
+      {
+        "cell": 10,
+        "id": "s033",
+        "name": "Date and Nut Energy Bites",
+        "ingredients": [
+          "dates",
+          "mixed_nuts",
+          "oats",
+          "dark_chocolate",
+          "honey"
+        ]
+      },
+      {
+        "cell": 11,
+        "id": "s034",
+        "name": "Tahini and Molasses on Bread",
+        "ingredients": [
+          "tahini",
+          "molasses",
+          "bread",
+          "walnut"
+        ]
+      },
+      {
+        "cell": 12,
+        "id": "s035",
+        "name": "Dried Apricots with Almonds",
+        "ingredients": [
+          "apricot",
+          "almond",
+          "cinnamon"
+        ]
+      },
+      {
+        "cell": 13,
+        "id": "s036",
+        "name": "Roasted Chickpeas with Sumac",
+        "ingredients": [
+          "chickpea",
+          "olive_oil",
+          "sumac",
+          "cumin",
+          "paprika",
+          "salt"
+        ]
+      },
+      {
+        "cell": 14,
+        "id": "s037",
+        "name": "Sesame Halva Bites with Cocoa",
+        "ingredients": [
+          "tahini",
+          "cocoa_powder",
+          "oats",
+          "honey",
+          "sesame_seeds",
+          "dates"
+        ]
+      },
+      {
+        "cell": 15,
+        "id": "s038",
+        "name": "Whipped Ricotta with Honey and Pistachio",
+        "ingredients": [
+          "ricotta",
+          "honey",
+          "pistachio",
+          "lemon",
+          "cinnamon"
+        ]
+      }
+    ]
+  }
+]

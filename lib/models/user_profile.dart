@@ -9,6 +9,7 @@ class UserProfile {
   final Gender? gender;
   final ActivityLevel activityLevel;
   final List<String> allergies;
+  final List<String> intolerances;
   final List<String> dislikedIngredients;
   final bool showBmi;
   final List<HealthCondition> healthConditions;
@@ -25,6 +26,7 @@ class UserProfile {
     this.gender,
     this.activityLevel = ActivityLevel.moderate,
     this.allergies = const [],
+    this.intolerances = const [],
     this.dislikedIngredients = const [],
     this.showBmi = false,
     this.healthConditions = const [],
@@ -47,63 +49,70 @@ class UserProfile {
     Gender? gender,
     ActivityLevel? activityLevel,
     List<String>? allergies,
+    List<String>? intolerances,
     List<String>? dislikedIngredients,
     bool? showBmi,
     List<HealthCondition>? healthConditions,
     List<String>? dietPreferences,
-  }) =>
-      UserProfile(
-        name: name ?? this.name,
-        age: age ?? this.age,
-        weight: weight ?? this.weight,
-        height: height ?? this.height,
-        gender: gender ?? this.gender,
-        activityLevel: activityLevel ?? this.activityLevel,
-        allergies: allergies ?? this.allergies,
-        dislikedIngredients: dislikedIngredients ?? this.dislikedIngredients,
-        showBmi: showBmi ?? this.showBmi,
-        healthConditions: healthConditions ?? this.healthConditions,
-        dietPreferences: dietPreferences ?? this.dietPreferences,
-      );
+  }) => UserProfile(
+    name: name ?? this.name,
+    age: age ?? this.age,
+    weight: weight ?? this.weight,
+    height: height ?? this.height,
+    gender: gender ?? this.gender,
+    activityLevel: activityLevel ?? this.activityLevel,
+    allergies: allergies ?? this.allergies,
+    intolerances: intolerances ?? this.intolerances,
+    dislikedIngredients: dislikedIngredients ?? this.dislikedIngredients,
+    showBmi: showBmi ?? this.showBmi,
+    healthConditions: healthConditions ?? this.healthConditions,
+    dietPreferences: dietPreferences ?? this.dietPreferences,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'age': age,
-        'weight': weight,
-        'height': height,
-        'gender': gender?.name,
-        'activityLevel': activityLevel.name,
-        'allergies': allergies,
-        'dislikedIngredients': dislikedIngredients,
-        'showBmi': showBmi,
-        'healthConditions': healthConditions.map((e) => e.name).toList(),
-        'dietPreferences': dietPreferences,
-      };
+    'name': name,
+    'age': age,
+    'weight': weight,
+    'height': height,
+    'gender': gender?.name,
+    'activityLevel': activityLevel.name,
+    'allergies': allergies,
+    'intolerances': intolerances,
+    'dislikedIngredients': dislikedIngredients,
+    'showBmi': showBmi,
+    'healthConditions': healthConditions.map((e) => e.name).toList(),
+    'dietPreferences': dietPreferences,
+  };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) => UserProfile(
-        name: json['name'] as String?,
-        age: json['age'] as int?,
-        weight: (json['weight'] as num?)?.toDouble(),
-        height: (json['height'] as num?)?.toDouble(),
-        gender: json['gender'] != null
-            ? Gender.values.firstWhere((e) => e.name == json['gender'])
-            : null,
-        activityLevel: json['activityLevel'] != null
-            ? ActivityLevel.values
-                .firstWhere((e) => e.name == json['activityLevel'])
-            : ActivityLevel.moderate,
-        allergies: List<String>.from(json['allergies'] ?? []),
-        dislikedIngredients:
-            List<String>.from(json['dislikedIngredients'] ?? []),
-        showBmi: json['showBmi'] as bool? ?? false,
-        healthConditions: (json['healthConditions'] as List?)
-                ?.map((e) => HealthCondition.values
-                    .firstWhere((v) => v.name == e,
-                        orElse: () => HealthCondition.pcos))
-                .toList() ??
-            [],
-        dietPreferences: List<String>.from(json['dietPreferences'] ?? []),
-      );
+    name: json['name'] as String?,
+    age: json['age'] as int?,
+    weight: (json['weight'] as num?)?.toDouble(),
+    height: (json['height'] as num?)?.toDouble(),
+    gender: json['gender'] != null
+        ? Gender.values.firstWhere((e) => e.name == json['gender'])
+        : null,
+    activityLevel: json['activityLevel'] != null
+        ? ActivityLevel.values.firstWhere(
+            (e) => e.name == json['activityLevel'],
+          )
+        : ActivityLevel.moderate,
+    allergies: List<String>.from(json['allergies'] ?? []),
+    intolerances: List<String>.from(json['intolerances'] ?? []),
+    dislikedIngredients: List<String>.from(json['dislikedIngredients'] ?? []),
+    showBmi: json['showBmi'] as bool? ?? false,
+    healthConditions:
+        (json['healthConditions'] as List?)
+            ?.map(
+              (e) => HealthCondition.values.firstWhere(
+                (v) => v.name == e,
+                orElse: () => HealthCondition.pcos,
+              ),
+            )
+            .toList() ??
+        [],
+    dietPreferences: List<String>.from(json['dietPreferences'] ?? []),
+  );
 
   String encode() => jsonEncode(toJson());
 

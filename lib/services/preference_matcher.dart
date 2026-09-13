@@ -2,6 +2,7 @@ import '../models/ingredient.dart';
 import '../models/recipe.dart';
 import '../models/user_profile.dart';
 import 'diet_classifier.dart';
+import '../data/mock_ingredients.dart';
 
 /// How well something fits the profile's *preferences* — disliked foods and
 /// diet choices. Allergens are not in here on purpose: those are a safety
@@ -36,11 +37,34 @@ class PreferenceFit {
 /// Whether an allergen the profile declared appears in [allergenTags].
 bool hasAllergenConflict(Iterable<String> allergenTags, UserProfile profile) {
   for (final tag in allergenTags) {
+    // Lactose amounts are not yet known: conservatively exclude dairy.
+    if (tag.toLowerCase() == 'dairy' &&
+        profile.intolerances.contains('lactose')) {
+      return true;
+    }
     if (profile.allergies.any((a) => a.toLowerCase() == tag.toLowerCase())) {
       return true;
     }
   }
   return false;
+}
+
+bool recipeHasAllergenConflict(Recipe recipe, UserProfile profile) {
+  if (recipe.ingredientIds.isEmpty &&
+      (profile.allergies.isNotEmpty || profile.intolerances.isNotEmpty)) {
+    return true;
+  }
+  final catalog = {for (final i in mockIngredients) i.id: i};
+  final tags = {...recipe.allergenTags};
+  for (final id in recipe.ingredientIds) {
+    final ingredient = catalog[id];
+    if (ingredient == null &&
+        (profile.allergies.isNotEmpty || profile.intolerances.isNotEmpty)) {
+      return true; // Unknown ingredients cannot be certified as suitable.
+    }
+    if (ingredient != null) tags.addAll(ingredient.allergenTags);
+  }
+  return hasAllergenConflict(tags, profile);
 }
 
 PreferenceFit recipePreferenceFit(
@@ -49,8 +73,11 @@ PreferenceFit recipePreferenceFit(
   DietClassifier classifier,
 ) {
   final disliked = recipe.ingredientIds
-      .where((id) => profile.dislikedIngredients
-          .any((d) => d.toLowerCase() == id.toLowerCase()))
+      .where(
+        (id) => profile.dislikedIngredients.any(
+          (d) => d.toLowerCase() == id.toLowerCase(),
+        ),
+      )
       .toList();
 
   final tags = classifier.tagsFor(recipe);
@@ -73,16 +100,20 @@ PreferenceFit ingredientPreferenceFit(
   Ingredient ingredient,
   UserProfile profile,
 ) {
-  final disliked = profile.dislikedIngredients
-          .any((d) => d.toLowerCase() == ingredient.id.toLowerCase())
+  final disliked =
+      profile.dislikedIngredients.any(
+        (d) => d.toLowerCase() == ingredient.id.toLowerCase(),
+      )
       ? [ingredient.id]
       : <String>[];
 
   final allergens = ingredient.allergenTags;
-  final isMeatOrFish = DietClassifier.isMeatOrFish(ingredient.id) ||
+  final isMeatOrFish =
+      DietClassifier.isMeatOrFish(ingredient.id) ||
       allergens.contains('fish') ||
       allergens.contains('shellfish');
-  final isAnimalProduct = DietClassifier.isAnimalProduct(ingredient.id) ||
+  final isAnimalProduct =
+      DietClassifier.isAnimalProduct(ingredient.id) ||
       allergens.contains('eggs') ||
       allergens.contains('dairy');
 

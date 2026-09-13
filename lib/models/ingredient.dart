@@ -18,11 +18,11 @@ class Ingredient {
       name[locale] ?? name['en'] ?? name.values.firstOrNull ?? id;
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'category': category.name,
-        'allergenTags': allergenTags,
-      };
+    'id': id,
+    'name': name,
+    'category': category.name,
+    'allergenTags': allergenTags,
+  };
 
   factory Ingredient.fromJson(Map<String, dynamic> json) {
     final nameValue = json['name'];
@@ -39,8 +39,9 @@ class Ingredient {
       id: json['id'] as String,
       name: parsedName,
       category: IngredientCategory.values.firstWhere(
-          (e) => e.name == json['category'],
-          orElse: () => IngredientCategory.other),
+        (e) => e.name == json['category'],
+        orElse: () => IngredientCategory.other,
+      ),
       allergenTags: List<String>.from(json['allergenTags'] ?? []),
     );
   }
@@ -48,9 +49,7 @@ class Ingredient {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Ingredient &&
-          runtimeType == other.runtimeType &&
-          id == other.id;
+      other is Ingredient && runtimeType == other.runtimeType && id == other.id;
 
   @override
   int get hashCode => id.hashCode;

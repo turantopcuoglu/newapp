@@ -40,7 +40,7 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen>
     final locale = l10n.locale.languageCode;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverToBoxAdapter(
@@ -189,8 +189,8 @@ class _CuisineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = cuisineGradients[cuisine.gradient] ??
-        cuisineGradients['healthy']!;
+    final colors =
+        cuisineGradients[cuisine.gradient] ?? cuisineGradients['healthy']!;
 
     return GestureDetector(
       onTap: onTap,
@@ -334,16 +334,16 @@ class _SpecialCategoryGrid extends ConsumerWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.medical_information_outlined,
-                      color: AppTheme.textSecondary,
+                      color: context.palette.textSecondary,
                       size: 18,
                     ),
                     const SizedBox(width: 8),
                     Text(
                       l10n.healthConditionSelectTitle,
-                      style: const TextStyle(
-                        color: AppTheme.textPrimary,
+                      style: TextStyle(
+                        color: context.palette.textPrimary,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -353,8 +353,8 @@ class _SpecialCategoryGrid extends ConsumerWidget {
                 const SizedBox(height: 4),
                 Text(
                   l10n.healthConditionSelectSubtitle,
-                  style: const TextStyle(
-                    color: AppTheme.textSecondary,
+                  style: TextStyle(
+                    color: context.palette.textSecondary,
                     fontSize: 12,
                   ),
                 ),
@@ -383,26 +383,29 @@ class _SpecialCategoryGrid extends ConsumerWidget {
                         decoration: BoxDecoration(
                           color: isSelected
                               ? Color(colors[0]).withAlpha(25)
-                              : AppTheme.surface,
+                              : context.palette.surface,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: isSelected
                                 ? Color(colors[0])
-                                : AppTheme.dividerColor,
+                                : context.palette.dividerColor,
                             width: isSelected ? 1.5 : 1,
                           ),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(cat.emoji, style: const TextStyle(fontSize: 14)),
+                            Text(
+                              cat.emoji,
+                              style: const TextStyle(fontSize: 14),
+                            ),
                             const SizedBox(width: 6),
                             Text(
                               cat.localizedName(locale),
                               style: TextStyle(
                                 color: isSelected
                                     ? Color(colors[0])
-                                    : AppTheme.textSecondary,
+                                    : context.palette.textSecondary,
                                 fontSize: 12,
                                 fontWeight: isSelected
                                     ? FontWeight.w700
@@ -432,7 +435,7 @@ class _SpecialCategoryGrid extends ConsumerWidget {
                     child: Text(
                       l10n.healthConditionClearAll,
                       style: TextStyle(
-                        color: AppTheme.accentTeal,
+                        color: context.palette.accentTeal,
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),
@@ -445,10 +448,10 @@ class _SpecialCategoryGrid extends ConsumerWidget {
         ),
 
         // Divider
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Divider(color: AppTheme.dividerColor, height: 1),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Divider(color: context.palette.dividerColor, height: 1),
           ),
         ),
 
@@ -464,29 +467,25 @@ class _SpecialCategoryGrid extends ConsumerWidget {
               // count under the subtitle and must not clip it.
               childAspectRatio: 0.72,
             ),
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                final category = visibleCategories[index];
-                return _SpecialTile(
-                  category: category,
-                  locale: locale,
-                  isMine: mineIds.contains(category.id),
-                  // Same matcher the detail screen uses, so the count on the
-                  // tile is exactly the list the user lands on.
-                  recipeCount: recipes
-                      .where((r) => matchesSpecialCategory(r, category))
-                      .length,
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          SpecialDetailScreen(category: category),
-                    ),
+            delegate: SliverChildBuilderDelegate((context, index) {
+              final category = visibleCategories[index];
+              return _SpecialTile(
+                category: category,
+                locale: locale,
+                isMine: mineIds.contains(category.id),
+                // Same matcher the detail screen uses, so the count on the
+                // tile is exactly the list the user lands on.
+                recipeCount: recipes
+                    .where((r) => matchesSpecialCategory(r, category))
+                    .length,
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => SpecialDetailScreen(category: category),
                   ),
-                );
-              },
-              childCount: visibleCategories.length,
-            ),
+                ),
+              );
+            }, childCount: visibleCategories.length),
           ),
         ),
       ],
@@ -512,8 +511,8 @@ class _SpecialTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = cuisineGradients[category.gradient] ??
-        cuisineGradients['healthy']!;
+    final colors =
+        cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
 
     return GestureDetector(
       onTap: onTap,
@@ -612,8 +611,10 @@ class _SpecialTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 3,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white.withAlpha(45),
                       borderRadius: BorderRadius.circular(8),

@@ -24,8 +24,7 @@ class MealRecommendationsScreen extends StatefulWidget {
       _MealRecommendationsScreenState();
 }
 
-class _MealRecommendationsScreenState
-    extends State<MealRecommendationsScreen> {
+class _MealRecommendationsScreenState extends State<MealRecommendationsScreen> {
   final _searchController = TextEditingController();
   String _query = '';
 
@@ -45,7 +44,9 @@ class _MealRecommendationsScreenState
     final recipe = scored.recipe;
     if (TurkishStringHelper.containsTr(recipe.localizedName(locale), _query) ||
         TurkishStringHelper.containsTr(
-            recipe.localizedDescription(locale), _query)) {
+          recipe.localizedDescription(locale),
+          _query,
+        )) {
       return true;
     }
     for (final id in recipe.ingredientIds) {
@@ -60,14 +61,13 @@ class _MealRecommendationsScreenState
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final recipes =
-        widget.recipes.where((sr) => _matches(sr, locale)).toList();
+    final recipes = widget.recipes.where((sr) => _matches(sr, locale)).toList();
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       appBar: AppBar(
         title: Text(_getMealTitle(l10n)),
-        backgroundColor: AppTheme.background,
+        backgroundColor: context.palette.background,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(64),
           child: Padding(
@@ -77,11 +77,13 @@ class _MealRecommendationsScreenState
               onChanged: (value) => setState(() => _query = value),
               decoration: InputDecoration(
                 hintText: l10n.recommendationsSearchHint,
-                prefixIcon:
-                    const Icon(Icons.search, color: AppTheme.textLight),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: context.palette.textLight,
+                ),
                 suffixIcon: _query.isEmpty
                     ? null
-                    : IconButton(
+                    : WellnessIconButton(
                         icon: const Icon(Icons.clear, size: 20),
                         onPressed: () {
                           _searchController.clear();
@@ -103,7 +105,7 @@ class _MealRecommendationsScreenState
                     Icon(
                       Icons.restaurant_menu_rounded,
                       size: 64,
-                      color: AppTheme.textLight.withAlpha(120),
+                      color: context.palette.textLight.withAlpha(120),
                     ),
                     const SizedBox(height: 16),
                     Text(
@@ -111,9 +113,9 @@ class _MealRecommendationsScreenState
                           ? l10n.recipeNoResults
                           : l10n.recommendationsSearchEmpty,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 14,
-                        color: AppTheme.textSecondary,
+                        color: context.palette.textSecondary,
                         height: 1.5,
                       ),
                     ),
@@ -138,14 +140,13 @@ class _MealRecommendationsScreenState
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) =>
-                          RecipeDetailScreen(scoredRecipe: scored),
+                      builder: (_) => RecipeDetailScreen(scoredRecipe: scored),
                     ),
                   ),
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
-                      color: AppTheme.surface,
+                      color: context.palette.surface,
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
@@ -161,7 +162,9 @@ class _MealRecommendationsScreenState
                         // Top colored bar with rank
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 14),
+                            horizontal: 20,
+                            vertical: 14,
+                          ),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
@@ -198,20 +201,22 @@ class _MealRecommendationsScreenState
                               Expanded(
                                 child: Text(
                                   recipe.localizedName(locale),
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
-                                    color: AppTheme.textPrimary,
+                                    color: context.palette.textPrimary,
                                   ),
                                 ),
                               ),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
+                                  horizontal: 10,
+                                  vertical: 5,
+                                ),
                                 decoration: BoxDecoration(
                                   color: _getCompatibilityColor(
-                                          scored.compatibilityPercent)
-                                      .withAlpha(25),
+                                    scored.compatibilityPercent,
+                                  ).withAlpha(25),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Text(
@@ -220,15 +225,13 @@ class _MealRecommendationsScreenState
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
                                     color: _getCompatibilityColor(
-                                        scored.compatibilityPercent),
+                                      scored.compatibilityPercent,
+                                    ),
                                   ),
                                 ),
                               ),
                               const SizedBox(width: 8),
-                              SaveRecipeButton(
-                                recipeId: recipe.id,
-                                size: 34,
-                              ),
+                              SaveRecipeButton(recipeId: recipe.id, size: 34),
                             ],
                           ),
                         ),
@@ -243,9 +246,9 @@ class _MealRecommendationsScreenState
                                 recipe.localizedDescription(locale),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 13,
-                                  color: AppTheme.textSecondary,
+                                  color: context.palette.textSecondary,
                                   height: 1.4,
                                 ),
                               ),
@@ -257,20 +260,21 @@ class _MealRecommendationsScreenState
                                   _MacroChip(
                                     icon: Icons.local_fire_department_rounded,
                                     label: '${macros.calories} kcal',
-                                    color: AppTheme.accentOrange,
+                                    color: context.palette.accentOrange,
                                   ),
                                   const SizedBox(width: 8),
                                   _MacroChip(
                                     icon: Icons.fitness_center_rounded,
                                     label:
                                         '${macros.proteinG}g ${l10n.recipeProtein.toLowerCase()}',
-                                    color: AppTheme.accentTeal,
+                                    color: context.palette.accentTeal,
                                   ),
                                   const SizedBox(width: 8),
                                   _MacroChip(
                                     icon: Icons.eco_rounded,
-                                    label: '${macros.fiberG}g ${l10n.recipeFiber.toLowerCase()}',
-                                    color: AppTheme.successGreen,
+                                    label:
+                                        '${macros.fiberG}g ${l10n.recipeFiber.toLowerCase()}',
+                                    color: context.palette.successGreen,
                                   ),
                                 ],
                               ),
@@ -282,7 +286,7 @@ class _MealRecommendationsScreenState
                                   Icon(
                                     Icons.kitchen_rounded,
                                     size: 16,
-                                    color: AppTheme.textLight,
+                                    color: context.palette.textLight,
                                   ),
                                   const SizedBox(width: 6),
                                   Expanded(
@@ -290,12 +294,14 @@ class _MealRecommendationsScreenState
                                       borderRadius: BorderRadius.circular(4),
                                       child: LinearProgressIndicator(
                                         value: totalCount > 0
-                                            ? availableCount / totalCount.toDouble()
+                                            ? availableCount /
+                                                  totalCount.toDouble()
                                             : 0,
                                         backgroundColor:
-                                            AppTheme.dividerColor,
-                                        valueColor:
-                                            AlwaysStoppedAnimation(color),
+                                            context.palette.dividerColor,
+                                        valueColor: AlwaysStoppedAnimation(
+                                          color,
+                                        ),
                                         minHeight: 6,
                                       ),
                                     ),
@@ -303,17 +309,17 @@ class _MealRecommendationsScreenState
                                   const SizedBox(width: 8),
                                   Text(
                                     '$availableCount/$totalCount',
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600,
-                                      color: AppTheme.textSecondary,
+                                      color: context.palette.textSecondary,
                                     ),
                                   ),
                                   const SizedBox(width: 12),
                                   Icon(
                                     Icons.arrow_forward_ios_rounded,
                                     size: 14,
-                                    color: AppTheme.textLight,
+                                    color: context.palette.textLight,
                                   ),
                                 ],
                               ),
@@ -345,20 +351,20 @@ class _MealRecommendationsScreenState
   Color _getMealColor() {
     switch (mealType) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
   Color _getCompatibilityColor(int percent) {
-    if (percent >= 70) return AppTheme.successGreen;
-    if (percent >= 40) return AppTheme.warningAmber;
-    return AppTheme.warmCoral;
+    if (percent >= 70) return context.palette.successGreen;
+    if (percent >= 40) return context.palette.warningAmber;
+    return context.palette.warmCoral;
   }
 }
 

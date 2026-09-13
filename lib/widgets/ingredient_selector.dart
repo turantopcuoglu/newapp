@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
+import '../components/ingredient_image.dart';
 import '../core/turkish_string_helper.dart';
 import '../data/ingredient_nutrition_data.dart';
 import '../data/mock_ingredients.dart';
@@ -141,9 +142,9 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
       expand: false,
       builder: (context, scrollController) {
         return Container(
-          decoration: const BoxDecoration(
-            color: AppTheme.surface,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+          decoration: BoxDecoration(
+            color: context.palette.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
           ),
           child: Column(
             children: [
@@ -153,19 +154,24 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                 width: 40,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: AppTheme.dividerColor,
+                  color: context.palette.dividerColor,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
 
               // Header
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8,
+                ),
                 child: Row(
                   children: [
-                    const Icon(Icons.kitchen,
-                        color: AppTheme.accentOrange, size: 24),
+                    Icon(
+                      Icons.kitchen,
+                      color: context.palette.accentOrange,
+                      size: 24,
+                    ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
@@ -176,9 +182,11 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                     if (_selected.isNotEmpty)
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 4),
+                          horizontal: 10,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
-                          color: AppTheme.accentOrange,
+                          color: context.palette.accentOrange,
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Text(
@@ -196,15 +204,17 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
 
               // Search
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 4,
+                ),
                 child: TurkishTextField(
                   controller: _searchController,
                   decoration: InputDecoration(
                     hintText: l10n.inventorySearch,
                     prefixIcon: const Icon(Icons.search, size: 22),
                     suffixIcon: _query.isNotEmpty
-                        ? IconButton(
+                        ? WellnessIconButton(
                             icon: const Icon(Icons.clear, size: 20),
                             onPressed: () {
                               _searchController.clear();
@@ -213,7 +223,9 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                           )
                         : null,
                     contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 12),
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
                   ),
                   onChanged: (v) => setState(() => _query = v),
                 ),
@@ -229,7 +241,11 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   children: [
                     _buildCategoryChip(
-                        null, l10n.catAll, Icons.restaurant, theme),
+                      null,
+                      l10n.catAll,
+                      Icons.restaurant,
+                      theme,
+                    ),
                     ...IngredientCategory.values.map(
                       (cat) => _buildCategoryChip(
                         cat,
@@ -252,11 +268,16 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(Icons.search_off,
-                                size: 48, color: AppTheme.textLight),
+                            Icon(
+                              Icons.search_off,
+                              size: 48,
+                              color: context.palette.textLight,
+                            ),
                             const SizedBox(height: 8),
-                            Text(l10n.noData,
-                                style: theme.textTheme.bodyMedium),
+                            Text(
+                              l10n.noData,
+                              style: theme.textTheme.bodyMedium,
+                            ),
                           ],
                         ),
                       )
@@ -266,8 +287,7 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
                         itemCount: filtered.length,
                         itemBuilder: (context, index) {
                           final ingredient = filtered[index];
-                          final isSelected =
-                              _selected.contains(ingredient.id);
+                          final isSelected = _selected.contains(ingredient.id);
                           final nutrition =
                               ingredientNutritionData[ingredient.id];
 
@@ -292,10 +312,12 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
 
               // Done button
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 decoration: BoxDecoration(
-                  color: AppTheme.surface,
+                  color: context.palette.surface,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withAlpha(15),
@@ -339,19 +361,21 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
         label: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon,
-                size: 15,
-                color: isSelected ? Colors.white : AppTheme.accentOrange),
+            Icon(
+              icon,
+              size: 15,
+              color: isSelected ? Colors.white : context.palette.accentOrange,
+            ),
             const SizedBox(width: 4),
             Text(label),
           ],
         ),
         selected: isSelected,
         onSelected: (_) => setState(() => _selectedCategory = cat),
-        backgroundColor: AppTheme.accentOrange.withAlpha(20),
-        selectedColor: AppTheme.accentOrange,
+        backgroundColor: context.palette.accentOrange.withAlpha(20),
+        selectedColor: context.palette.accentOrange,
         labelStyle: TextStyle(
-          color: isSelected ? Colors.white : AppTheme.textPrimary,
+          color: isSelected ? Colors.white : context.palette.textPrimary,
           fontSize: 12,
           fontWeight: FontWeight.w600,
         ),
@@ -359,8 +383,8 @@ class _IngredientSelectorSheetState extends State<IngredientSelectorSheet> {
           borderRadius: BorderRadius.circular(20),
           side: BorderSide(
             color: isSelected
-                ? AppTheme.accentOrange
-                : AppTheme.accentOrange.withAlpha(60),
+                ? context.palette.accentOrange
+                : context.palette.accentOrange.withAlpha(60),
             width: 1,
           ),
         ),
@@ -397,39 +421,29 @@ class _IngredientTile extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-      leading: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          color: isSelected
-              ? AppTheme.accentOrange
-              : AppTheme.accentOrange.withAlpha(20),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Icon(
-          isSelected ? Icons.check_rounded : Icons.add_rounded,
-          color: isSelected ? Colors.white : AppTheme.accentOrange,
-          size: 22,
-        ),
-      ),
+      leading: SizedBox(width:54,height:54,child:IngredientImage(id:ingredient.id)),
       title: Text(
         name,
         style: TextStyle(
           fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
           fontSize: 15,
-          color: isSelected ? AppTheme.accentOrange : AppTheme.textPrimary,
+          color: isSelected
+              ? context.palette.accentOrange
+              : context.palette.textPrimary,
         ),
       ),
       subtitle: nutrition != null
           ? Text(
               '$cals kcal  ·  ${protein}g protein  /  100g',
-              style: const TextStyle(fontSize: 12, color: AppTheme.textLight),
+              style: TextStyle(fontSize: 12, color: context.palette.textLight),
             )
           : null,
       trailing: isSelected
-          ? const Icon(Icons.check_circle,
-              color: AppTheme.accentOrange, size: 22)
+          ? Icon(
+              Icons.check_circle,
+              color: context.palette.accentOrange,
+              size: 22,
+            )
           : null,
     );
   }
