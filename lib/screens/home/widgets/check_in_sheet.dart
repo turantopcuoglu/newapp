@@ -17,18 +17,50 @@ class CheckInSheet extends ConsumerWidget {
     final theme = Theme.of(context);
 
     final generalOptions = <_CheckInOption>[
-      _CheckInOption(CheckInType.lowEnergy, l10n.checkInLowEnergy, Icons.battery_1_bar),
-      _CheckInOption(CheckInType.bloated, l10n.checkInBloated, Icons.water_drop_outlined),
-      _CheckInOption(CheckInType.cravingSweets, l10n.checkInCravingSweets, Icons.cookie_outlined),
-      _CheckInOption(CheckInType.cantFocus, l10n.checkInCantFocus, Icons.psychology_outlined),
-      _CheckInOption(CheckInType.postWorkout, l10n.checkInPostWorkout, Icons.fitness_center),
-      _CheckInOption(CheckInType.noSpecificIssue, l10n.checkInNoSpecificIssue, Icons.check_circle_outline),
+      _CheckInOption(
+        CheckInType.lowEnergy,
+        l10n.checkInLowEnergy,
+        Icons.battery_1_bar,
+      ),
+      _CheckInOption(
+        CheckInType.bloated,
+        l10n.checkInBloated,
+        Icons.water_drop_outlined,
+      ),
+      _CheckInOption(
+        CheckInType.cravingSweets,
+        l10n.checkInCravingSweets,
+        Icons.cookie_outlined,
+      ),
+      _CheckInOption(
+        CheckInType.cantFocus,
+        l10n.checkInCantFocus,
+        Icons.psychology_outlined,
+      ),
+      _CheckInOption(
+        CheckInType.postWorkout,
+        l10n.checkInPostWorkout,
+        Icons.fitness_center,
+      ),
+      _CheckInOption(
+        CheckInType.noSpecificIssue,
+        l10n.checkInNoSpecificIssue,
+        Icons.check_circle_outline,
+      ),
     ];
 
     final periodOptions = <_CheckInOption>[
       _CheckInOption(CheckInType.pms, l10n.checkInPms, Icons.favorite_border),
-      _CheckInOption(CheckInType.periodCramps, l10n.checkInPeriodCramps, Icons.healing_rounded),
-      _CheckInOption(CheckInType.periodFatigue, l10n.checkInPeriodFatigue, Icons.nightlight_round),
+      _CheckInOption(
+        CheckInType.periodCramps,
+        l10n.checkInPeriodCramps,
+        Icons.healing_rounded,
+      ),
+      _CheckInOption(
+        CheckInType.periodFatigue,
+        l10n.checkInPeriodFatigue,
+        Icons.nightlight_round,
+      ),
     ];
 
     Widget buildChip(_CheckInOption opt) {
@@ -37,9 +69,11 @@ class CheckInSheet extends ConsumerWidget {
         label: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(opt.icon,
-                size: 18,
-                color: isSelected ? Colors.white : theme.colorScheme.primary),
+            Icon(
+              opt.icon,
+              size: 18,
+              color: isSelected ? Colors.white : theme.colorScheme.primary,
+            ),
             const SizedBox(width: 6),
             Text(opt.label),
           ],
@@ -69,7 +103,7 @@ class CheckInSheet extends ConsumerWidget {
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: Colors.grey.shade300,
+              color: context.palette.dividerColor,
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -87,13 +121,13 @@ class CheckInSheet extends ConsumerWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppTheme.snackColor.withAlpha(15),
-                    AppTheme.snackColor.withAlpha(8),
+                    context.palette.snackColor.withAlpha(15),
+                    context.palette.snackColor.withAlpha(8),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: AppTheme.snackColor.withAlpha(40),
+                  color: context.palette.snackColor.withAlpha(40),
                 ),
               ),
               child: Column(
@@ -101,18 +135,18 @@ class CheckInSheet extends ConsumerWidget {
                 children: [
                   Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.favorite_rounded,
-                        color: AppTheme.snackColor,
+                        color: context.palette.snackColor,
                         size: 18,
                       ),
                       const SizedBox(width: 8),
                       Text(
                         l10n.checkInPeriodSection,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.snackColor,
+                          color: context.palette.snackColor,
                         ),
                       ),
                     ],

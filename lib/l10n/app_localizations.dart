@@ -13,10 +13,7 @@ class AppLocalizations {
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationsDelegate();
 
-  static const List<Locale> supportedLocales = [
-    Locale('en'),
-    Locale('tr'),
-  ];
+  static const List<Locale> supportedLocales = [Locale('en'), Locale('tr')];
 
   static final Map<String, Map<String, String>> _translations = {
     'en': enTranslations,
@@ -66,12 +63,20 @@ class AppLocalizations {
   String get homeMealDinnerTitle => _t('homeMealDinnerTitle');
   String get homeMealSnackTitle => _t('homeMealSnackTitle');
   String get homeMealRecipeCount => _t('homeMealRecipeCount');
+  String get recommendationsSearchHint => _t('recommendationsSearchHint');
+  String get recommendationsSearchEmpty => _t('recommendationsSearchEmpty');
   String get homeQuickActions => _t('homeQuickActions');
   String get homeFat => _t('homeFat');
   String get homeMealListTitle => _t('homeMealListTitle');
   String get homeTomorrow => _t('homeTomorrow');
   String get homeMealListEmpty => _t('homeMealListEmpty');
   String get homeMealListSeeAll => _t('homeMealListSeeAll');
+  String get mealListMarkCooked => _t('mealListMarkCooked');
+  String get mealListMarkNotCooked => _t('mealListMarkNotCooked');
+  String mealListCookedCount(int n) =>
+      _t('mealListCookedCount').replaceFirst('{n}', '$n');
+  String get mealListCookedNotPlanned => _t('mealListCookedNotPlanned');
+  String get mealListNutritionHint => _t('mealListNutritionHint');
 
   // Check-in
   String get checkInTitle => _t('checkInTitle');
@@ -102,6 +107,23 @@ class AppLocalizations {
   String get recipeCalories => _t('recipeCalories');
   String get recipeAddToPlanner => _t('recipeAddToPlanner');
   String get recipeAddMissing => _t('recipeAddMissing');
+  String get recipeMarkCooked => _t('recipeMarkCooked');
+  String get recipeUndoCooked => _t('recipeUndoCooked');
+  String recipeCookedLogged(int n) =>
+      _t('recipeCookedLogged').replaceFirst('{n}', '$n');
+  String get recipeCookedUndone => _t('recipeCookedUndone');
+  String get recipeSave => _t('recipeSave');
+  String get recipeUnsave => _t('recipeUnsave');
+  String get recipeSaved => _t('recipeSaved');
+  String get recipeUnsaved => _t('recipeUnsaved');
+  String recipeItemsAdded(int n) =>
+      _t('recipeItemsAdded').replaceFirst('{n}', '$n');
+  String get nutritionConsumed => _t('nutritionConsumed');
+  String get nutritionPlanned => _t('nutritionPlanned');
+  String get nutritionConsumedToday => _t('nutritionConsumedToday');
+  String get nutritionNoConsumed => _t('nutritionNoConsumed');
+  String nutritionMealsLogged(int n) =>
+      _t('nutritionMealsLogged').replaceFirst('{n}', '$n');
   String get recipeCompatibility => _t('recipeCompatibility');
   String get recipeNoResults => _t('recipeNoResults');
 
@@ -121,6 +143,10 @@ class AppLocalizations {
   String get shoppingAddItem => _t('shoppingAddItem');
   String get shoppingClearPurchased => _t('shoppingClearPurchased');
   String get shoppingMoveToKitchen => _t('shoppingMoveToKitchen');
+  String shoppingMovePurchasedToKitchen(int n) =>
+      _t('shoppingMovePurchasedToKitchen').replaceFirst('{n}', '$n');
+  String shoppingMovedToKitchen(int n) =>
+      _t('shoppingMovedToKitchen').replaceFirst('{n}', '$n');
   String get shoppingItemHint => _t('shoppingItemHint');
 
   // My Recipes
@@ -149,6 +175,39 @@ class AppLocalizations {
   String get profileDisliked => _t('profileDisliked');
   String get profileAllergiesAndAvoided => _t('profileAllergiesAndAvoided');
   String get profileAllergiesHint => _t('profileAllergiesHint');
+  String get healthForYouTitle => _t('healthForYouTitle');
+  String get healthForYouHint => _t('healthForYouHint');
+  String get healthExploreTitle => _t('healthExploreTitle');
+  String get healthExploreHint => _t('healthExploreHint');
+  String get healthSetUpPrompt => _t('healthSetUpPrompt');
+  String healthRecipeCount(int n) =>
+      _t('healthRecipeCount').replaceFirst('{n}', '$n');
+  String get healthAboutTitle => _t('healthAboutTitle');
+  String get healthIngredientsTitle => _t('healthIngredientsTitle');
+  String get healthIngredientsHint => _t('healthIngredientsHint');
+  String get healthAllRecipes => _t('healthAllRecipes');
+  String get healthIngredientEmpty => _t('healthIngredientEmpty');
+  String get healthInfoDisclaimer => _t('healthInfoDisclaimer');
+  String get remindersTitle => _t('remindersTitle');
+  String get remindersHint => _t('remindersHint');
+  String get remindersEnable => _t('remindersEnable');
+  String get remindersDenied => _t('remindersDenied');
+  String get reminderCheckInTitle => _t('reminderCheckInTitle');
+  String get reminderCheckInBody => _t('reminderCheckInBody');
+  String get reminderDinnerTitle => _t('reminderDinnerTitle');
+  String get reminderDinnerBody => _t('reminderDinnerBody');
+  String get dietPreferencesTitle => _t('dietPreferencesTitle');
+  String get dietPreferencesHint => _t('dietPreferencesHint');
+  String get dietVegetarian => _t('dietVegetarian');
+  String get dietVegan => _t('dietVegan');
+  String get dietGlutenFree => _t('dietGlutenFree');
+  String get dietDairyFree => _t('dietDairyFree');
+  String preferenceWarningIngredient(String name) =>
+      _t('preferenceWarningIngredient').replaceFirst('{name}', name);
+  String get preferenceWarningList => _t('preferenceWarningList');
+  String get preferenceReasonDisliked => _t('preferenceReasonDisliked');
+  String get preferenceChangeCta => _t('preferenceChangeCta');
+  String get preferenceMismatchShort => _t('preferenceMismatchShort');
   String get profileNoDisliked => _t('profileNoDisliked');
   String get profileLanguage => _t('profileLanguage');
   String get profileSave => _t('profileSave');
@@ -230,9 +289,11 @@ class AppLocalizations {
   String get onboardingGenderRequired => _t('onboardingGenderRequired');
   String get onboardingSkip => _t('onboardingSkip');
   String get onboardingIngredientsTitle => _t('onboardingIngredientsTitle');
-  String get onboardingIngredientsSubtitle => _t('onboardingIngredientsSubtitle');
+  String get onboardingIngredientsSubtitle =>
+      _t('onboardingIngredientsSubtitle');
   String get onboardingIngredientsAdd => _t('onboardingIngredientsAdd');
-  String get onboardingIngredientsAddLater => _t('onboardingIngredientsAddLater');
+  String get onboardingIngredientsAddLater =>
+      _t('onboardingIngredientsAddLater');
   String get onboardingAllergiesTitle => _t('onboardingAllergiesTitle');
   String get onboardingAllergiesSubtitle => _t('onboardingAllergiesSubtitle');
   String get onboardingAllergensSection => _t('onboardingAllergensSection');
@@ -365,7 +426,8 @@ class AppLocalizations {
 
   // Health Conditions
   String get healthConditionSelectTitle => _t('healthConditionSelectTitle');
-  String get healthConditionSelectSubtitle => _t('healthConditionSelectSubtitle');
+  String get healthConditionSelectSubtitle =>
+      _t('healthConditionSelectSubtitle');
   String get healthConditionClearAll => _t('healthConditionClearAll');
 
   // Quantity units
@@ -383,8 +445,10 @@ class AppLocalizations {
   String get quantityUnit => _t('quantityUnit');
   String get quantityAmount => _t('quantityAmount');
 
-  String localizedUnit(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
-  String localizedUnitFull(String unitName) => _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
+  String localizedUnit(String unitName) =>
+      _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}');
+  String localizedUnitFull(String unitName) =>
+      _t('unit${unitName[0].toUpperCase()}${unitName.substring(1)}Full');
 
   // General
   String get save => _t('save');
@@ -405,8 +469,7 @@ class _AppLocalizationsDelegate
   const _AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) =>
-      ['en', 'tr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'tr'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) async =>

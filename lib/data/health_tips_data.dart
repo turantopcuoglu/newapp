@@ -5,11 +5,7 @@ class HealthTip {
   final Map<String, String> body;
   final String icon;
 
-  const HealthTip({
-    required this.title,
-    required this.body,
-    this.icon = '',
-  });
+  const HealthTip({required this.title, required this.body, this.icon = ''});
 }
 
 class MoodFoodTip {
@@ -27,10 +23,7 @@ class MoodFoodTip {
 /// Daily health tips - rotating based on day of year
 const List<HealthTip> dailyHealthTips = [
   HealthTip(
-    title: {
-      'en': 'Hydration Matters',
-      'tr': 'Su İçmeyi Unutmayın',
-    },
+    title: {'en': 'Hydration Matters', 'tr': 'Su İçmeyi Unutmayın'},
     body: {
       'en':
           'Drinking at least 2 liters of water daily supports metabolism, brain function, and skin health. Try starting your morning with a glass of warm water and lemon.',
@@ -51,10 +44,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Reduce Salt Intake',
-      'tr': 'Tuz Tüketiminizi Azaltın',
-    },
+    title: {'en': 'Reduce Salt Intake', 'tr': 'Tuz Tüketiminizi Azaltın'},
     body: {
       'en':
           'The WHO recommends less than 5g of salt per day. Excess sodium raises blood pressure and increases cardiovascular risk. Enhance flavors with herbs and spices instead.',
@@ -63,10 +53,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'The Power of Fiber',
-      'tr': 'Lifin Gücü',
-    },
+    title: {'en': 'The Power of Fiber', 'tr': 'Lifin Gücü'},
     body: {
       'en':
           'A diet rich in fiber (25-30g daily) supports digestive health, helps control blood sugar, and promotes satiety. Include whole grains, legumes, and vegetables in every meal.',
@@ -75,10 +62,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Eat the Rainbow',
-      'tr': 'Gökkuşağı Gibi Beslenin',
-    },
+    title: {'en': 'Eat the Rainbow', 'tr': 'Gökkuşağı Gibi Beslenin'},
     body: {
       'en':
           'Different colored fruits and vegetables contain unique antioxidants and phytochemicals. Aim for at least 5 different colors on your plate daily for optimal micronutrient intake.',
@@ -87,10 +71,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Mindful Eating',
-      'tr': 'Bilinçli Beslenme',
-    },
+    title: {'en': 'Mindful Eating', 'tr': 'Bilinçli Beslenme'},
     body: {
       'en':
           'Eating slowly and chewing thoroughly can reduce calorie intake by up to 15%. Put your fork down between bites, savor the flavors, and listen to your body\'s satiety signals.',
@@ -99,10 +80,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Protein at Every Meal',
-      'tr': 'Her Öğünde Protein',
-    },
+    title: {'en': 'Protein at Every Meal', 'tr': 'Her Öğünde Protein'},
     body: {
       'en':
           'Distributing protein intake throughout the day (20-30g per meal) maximizes muscle protein synthesis and helps maintain muscle mass. Include eggs, yogurt, legumes, or lean meat.',
@@ -111,10 +89,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Healthy Fats Are Essential',
-      'tr': 'Sağlıklı Yağlar Şart',
-    },
+    title: {'en': 'Healthy Fats Are Essential', 'tr': 'Sağlıklı Yağlar Şart'},
     body: {
       'en':
           'Omega-3 fatty acids found in fish, walnuts, and flaxseeds reduce inflammation and support brain health. Include healthy fats in your diet—they help absorb vitamins A, D, E, and K.',
@@ -123,10 +98,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Don\'t Skip Breakfast',
-      'tr': 'Kahvaltıyı Atlamayın',
-    },
+    title: {'en': 'Don\'t Skip Breakfast', 'tr': 'Kahvaltıyı Atlamayın'},
     body: {
       'en':
           'A balanced breakfast stabilizes blood sugar, improves concentration, and prevents overeating later. Combine complex carbs, protein, and healthy fats for sustained energy.',
@@ -159,10 +131,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'The Importance of Magnesium',
-      'tr': 'Magnezyumun Önemi',
-    },
+    title: {'en': 'The Importance of Magnesium', 'tr': 'Magnezyumun Önemi'},
     body: {
       'en':
           'Magnesium supports over 300 enzyme reactions, including energy production and muscle function. Dark chocolate, avocado, nuts, and leafy greens are excellent sources.',
@@ -171,10 +140,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Portion Control Tips',
-      'tr': 'Porsiyon Kontrolü İpuçları',
-    },
+    title: {'en': 'Portion Control Tips', 'tr': 'Porsiyon Kontrolü İpuçları'},
     body: {
       'en':
           'Use smaller plates to naturally reduce portions. A protein serving should be palm-sized, carbs should fit in your cupped hand, and fats should be about a thumb-size.',
@@ -183,10 +149,7 @@ const List<HealthTip> dailyHealthTips = [
     },
   ),
   HealthTip(
-    title: {
-      'en': 'Vitamin D and Sunlight',
-      'tr': 'D Vitamini ve Güneş Işığı',
-    },
+    title: {'en': 'Vitamin D and Sunlight', 'tr': 'D Vitamini ve Güneş Işığı'},
     body: {
       'en':
           'Vitamin D is crucial for bone health and immunity. Spend 15-20 minutes in sunlight daily when possible. Fatty fish, eggs, and fortified foods can supplement your intake.',
@@ -239,10 +202,7 @@ const List<MoodFoodTip> moodFoodTips = [
   ),
   MoodFoodTip(
     checkInType: CheckInType.cantFocus,
-    title: {
-      'en': 'Brain-Boosting Foods',
-      'tr': 'Beyin Güçlendiren Besinler',
-    },
+    title: {'en': 'Brain-Boosting Foods', 'tr': 'Beyin Güçlendiren Besinler'},
     body: {
       'en':
           'For better concentration, focus on omega-3 rich foods like salmon and walnuts, which support brain cell communication. Blueberries are loaded with antioxidants that improve memory. Green tea contains L-theanine for calm focus. Avoid heavy meals that redirect blood flow to digestion.',
@@ -304,10 +264,7 @@ const List<MoodFoodTip> moodFoodTips = [
   ),
   MoodFoodTip(
     checkInType: CheckInType.noSpecificIssue,
-    title: {
-      'en': 'Daily Nutrition Wisdom',
-      'tr': 'Günlük Beslenme Bilgeliği',
-    },
+    title: {'en': 'Daily Nutrition Wisdom', 'tr': 'Günlük Beslenme Bilgeliği'},
     body: {
       'en':
           'Even without specific issues, small nutrition habits make big differences. Eat a variety of colorful vegetables, include a source of protein at every meal, stay hydrated throughout the day, and don\'t forget healthy fats from olive oil, avocado, or nuts.',
@@ -319,13 +276,13 @@ const List<MoodFoodTip> moodFoodTips = [
 
 /// Get the tip of the day (rotates daily)
 HealthTip getTipOfTheDay() {
-  final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+  final dayOfYear = DateTime.now()
+      .difference(DateTime(DateTime.now().year, 1, 1))
+      .inDays;
   return dailyHealthTips[dayOfYear % dailyHealthTips.length];
 }
 
 /// Get mood food tip for a specific check-in type
 MoodFoodTip? getMoodFoodTip(CheckInType type) {
-  return moodFoodTips
-      .where((t) => t.checkInType == type)
-      .firstOrNull;
+  return moodFoodTips.where((t) => t.checkInType == type).firstOrNull;
 }

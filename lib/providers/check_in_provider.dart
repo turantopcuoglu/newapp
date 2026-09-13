@@ -18,8 +18,9 @@ class CheckInNotifier extends StateNotifier<CheckInType?> {
   }
 }
 
-final checkInProvider =
-    StateNotifierProvider<CheckInNotifier, CheckInType?>((ref) {
+final checkInProvider = StateNotifierProvider<CheckInNotifier, CheckInType?>((
+  ref,
+) {
   final storage = ref.watch(storageProvider);
   return CheckInNotifier(storage);
 });

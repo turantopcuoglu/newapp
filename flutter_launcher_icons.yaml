@@ -1,0 +1,14 @@
+# Rebuild with: dart run flutter_launcher_icons
+# Keep brand artwork out of runtime Flutter assets; it is compiled into native icons.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/branding/nutriguide-icon.png
+  min_sdk_android: 26
+  adaptive_icon_background: "#2C2034"
+  # Preserve the generated satin tile; its edges sit outside the launcher mask.
+  adaptive_icon_foreground: assets/branding/nutriguide-icon.png
+  adaptive_icon_foreground_inset: 14
+  # API 33 uses the native silhouette in mipmap-anydpi-v33/ic_launcher.xml.
+  remove_alpha_ios: true
+  background_color_ios: "#2C2034"

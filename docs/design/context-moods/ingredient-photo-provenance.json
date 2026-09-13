@@ -1,0 +1,983 @@
+[
+  {
+    "atlas": "ingredients-0.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Chicken Breast\n2: Ground Beef\n3: Salmon\n4: Eggs\n5: Shrimp\n6: Turkey Breast\n7: Lamb\n8: Tuna\n9: Chicken Thigh\n10: Beef Steak\n11: Cod\n12: Tofu\n13: Pork Chop\n14: Duck Breast\n15: Anchovy\n16: Veal\n17: Ground Turkey\n18: Sea Bass\n19: Sardine\n20: Squid\n21: Mussel\n22: Octopus\n23: Liver\n24: Chicken Wing\n25: Sea Bream\n26: Milk\n27: Yogurt\n28: Cheddar Cheese\n29: Feta Cheese\n30: Butter\n31: Heavy Cream\n32: Mozzarella\n33: Parmesan\n34: Cottage Cheese\n35: Kefir\n36: Greek Yogurt",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-8f056236-af77-4ac2-89c2-4f8c498caaf8.png",
+    "cells": [
+      {
+        "id": "chicken_breast",
+        "name": "Chicken Breast"
+      },
+      {
+        "id": "ground_beef",
+        "name": "Ground Beef"
+      },
+      {
+        "id": "salmon",
+        "name": "Salmon"
+      },
+      {
+        "id": "eggs",
+        "name": "Eggs"
+      },
+      {
+        "id": "shrimp",
+        "name": "Shrimp"
+      },
+      {
+        "id": "turkey_breast",
+        "name": "Turkey Breast"
+      },
+      {
+        "id": "lamb",
+        "name": "Lamb"
+      },
+      {
+        "id": "tuna",
+        "name": "Tuna"
+      },
+      {
+        "id": "chicken_thigh",
+        "name": "Chicken Thigh"
+      },
+      {
+        "id": "beef_steak",
+        "name": "Beef Steak"
+      },
+      {
+        "id": "cod",
+        "name": "Cod"
+      },
+      {
+        "id": "tofu",
+        "name": "Tofu"
+      },
+      {
+        "id": "pork_chop",
+        "name": "Pork Chop"
+      },
+      {
+        "id": "duck_breast",
+        "name": "Duck Breast"
+      },
+      {
+        "id": "anchovy",
+        "name": "Anchovy"
+      },
+      {
+        "id": "veal",
+        "name": "Veal"
+      },
+      {
+        "id": "ground_turkey",
+        "name": "Ground Turkey"
+      },
+      {
+        "id": "sea_bass",
+        "name": "Sea Bass"
+      },
+      {
+        "id": "sardine",
+        "name": "Sardine"
+      },
+      {
+        "id": "squid",
+        "name": "Squid"
+      },
+      {
+        "id": "mussel",
+        "name": "Mussel"
+      },
+      {
+        "id": "octopus",
+        "name": "Octopus"
+      },
+      {
+        "id": "liver",
+        "name": "Liver"
+      },
+      {
+        "id": "chicken_wing",
+        "name": "Chicken Wing"
+      },
+      {
+        "id": "sea_bream",
+        "name": "Sea Bream"
+      },
+      {
+        "id": "milk",
+        "name": "Milk"
+      },
+      {
+        "id": "yogurt",
+        "name": "Yogurt"
+      },
+      {
+        "id": "cheddar_cheese",
+        "name": "Cheddar Cheese"
+      },
+      {
+        "id": "feta_cheese",
+        "name": "Feta Cheese"
+      },
+      {
+        "id": "butter",
+        "name": "Butter"
+      },
+      {
+        "id": "cream",
+        "name": "Heavy Cream"
+      },
+      {
+        "id": "mozzarella",
+        "name": "Mozzarella"
+      },
+      {
+        "id": "parmesan",
+        "name": "Parmesan"
+      },
+      {
+        "id": "cottage_cheese",
+        "name": "Cottage Cheese"
+      },
+      {
+        "id": "kefir",
+        "name": "Kefir"
+      },
+      {
+        "id": "greek_yogurt",
+        "name": "Greek Yogurt"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-1.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Cream Cheese\n2: Ricotta\n3: Goat Cheese\n4: Labne\n5: Sour Cream\n6: Condensed Milk\n7: Whipped Cream\n8: White Rice\n9: Pasta\n10: Bread\n11: All-Purpose Flour\n12: Oats\n13: Bulgur\n14: Couscous\n15: Cornmeal\n16: Brown Rice\n17: Quinoa\n18: Whole Wheat Flour\n19: Semolina\n20: Tortilla Wrap\n21: Noodle\n22: Pita Bread\n23: Basmati Rice\n24: Buckwheat\n25: Barley\n26: Phyllo Dough\n27: Puff Pastry\n28: Tomato\n29: Onion\n30: Garlic\n31: Potato\n32: Carrot\n33: Bell Pepper\n34: Cucumber\n35: Spinach\n36: Broccoli",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-00d8fca4-bc3f-4b07-b633-eeb11e46a9b7.png",
+    "cells": [
+      {
+        "id": "cream_cheese",
+        "name": "Cream Cheese"
+      },
+      {
+        "id": "ricotta",
+        "name": "Ricotta"
+      },
+      {
+        "id": "goat_cheese",
+        "name": "Goat Cheese"
+      },
+      {
+        "id": "labne",
+        "name": "Labne"
+      },
+      {
+        "id": "sour_cream",
+        "name": "Sour Cream"
+      },
+      {
+        "id": "condensed_milk",
+        "name": "Condensed Milk"
+      },
+      {
+        "id": "whipped_cream",
+        "name": "Whipped Cream"
+      },
+      {
+        "id": "white_rice",
+        "name": "White Rice"
+      },
+      {
+        "id": "pasta",
+        "name": "Pasta"
+      },
+      {
+        "id": "bread",
+        "name": "Bread"
+      },
+      {
+        "id": "flour",
+        "name": "All-Purpose Flour"
+      },
+      {
+        "id": "oats",
+        "name": "Oats"
+      },
+      {
+        "id": "bulgur",
+        "name": "Bulgur"
+      },
+      {
+        "id": "couscous",
+        "name": "Couscous"
+      },
+      {
+        "id": "cornmeal",
+        "name": "Cornmeal"
+      },
+      {
+        "id": "brown_rice",
+        "name": "Brown Rice"
+      },
+      {
+        "id": "quinoa",
+        "name": "Quinoa"
+      },
+      {
+        "id": "whole_wheat_flour",
+        "name": "Whole Wheat Flour"
+      },
+      {
+        "id": "semolina",
+        "name": "Semolina"
+      },
+      {
+        "id": "tortilla_wrap",
+        "name": "Tortilla Wrap"
+      },
+      {
+        "id": "noodle",
+        "name": "Noodle"
+      },
+      {
+        "id": "pita_bread",
+        "name": "Pita Bread"
+      },
+      {
+        "id": "basmati_rice",
+        "name": "Basmati Rice"
+      },
+      {
+        "id": "buckwheat",
+        "name": "Buckwheat"
+      },
+      {
+        "id": "barley",
+        "name": "Barley"
+      },
+      {
+        "id": "phyllo_dough",
+        "name": "Phyllo Dough"
+      },
+      {
+        "id": "puff_pastry",
+        "name": "Puff Pastry"
+      },
+      {
+        "id": "tomato",
+        "name": "Tomato"
+      },
+      {
+        "id": "onion",
+        "name": "Onion"
+      },
+      {
+        "id": "garlic",
+        "name": "Garlic"
+      },
+      {
+        "id": "potato",
+        "name": "Potato"
+      },
+      {
+        "id": "carrot",
+        "name": "Carrot"
+      },
+      {
+        "id": "bell_pepper",
+        "name": "Bell Pepper"
+      },
+      {
+        "id": "cucumber",
+        "name": "Cucumber"
+      },
+      {
+        "id": "spinach",
+        "name": "Spinach"
+      },
+      {
+        "id": "broccoli",
+        "name": "Broccoli"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-2.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Zucchini\n2: Eggplant\n3: Lettuce\n4: Mushroom\n5: Green Beans\n6: Cauliflower\n7: Celery\n8: Sweet Potato\n9: Leek\n10: Cabbage\n11: Artichoke\n12: Corn\n13: Green Peas\n14: Asparagus\n15: Radish\n16: Beetroot\n17: Okra\n18: Spring Onion\n19: Red Cabbage\n20: Kale\n21: Arugula\n22: Swiss Chard\n23: Turnip\n24: Fresh Ginger\n25: Hot Pepper\n26: Brussels Sprouts\n27: Red Onion\n28: Fennel\n29: Celeriac\n30: Watercress\n31: Purslane\n32: Apple\n33: Banana\n34: Lemon\n35: Orange\n36: Strawberry",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-11020eb9-7a0d-4c46-9f6c-ed6c40ecfc69.png",
+    "cells": [
+      {
+        "id": "zucchini",
+        "name": "Zucchini"
+      },
+      {
+        "id": "eggplant",
+        "name": "Eggplant"
+      },
+      {
+        "id": "lettuce",
+        "name": "Lettuce"
+      },
+      {
+        "id": "mushroom",
+        "name": "Mushroom"
+      },
+      {
+        "id": "green_beans",
+        "name": "Green Beans"
+      },
+      {
+        "id": "cauliflower",
+        "name": "Cauliflower"
+      },
+      {
+        "id": "celery",
+        "name": "Celery"
+      },
+      {
+        "id": "sweet_potato",
+        "name": "Sweet Potato"
+      },
+      {
+        "id": "leek",
+        "name": "Leek"
+      },
+      {
+        "id": "cabbage",
+        "name": "Cabbage"
+      },
+      {
+        "id": "artichoke",
+        "name": "Artichoke"
+      },
+      {
+        "id": "corn",
+        "name": "Corn"
+      },
+      {
+        "id": "peas",
+        "name": "Green Peas"
+      },
+      {
+        "id": "asparagus",
+        "name": "Asparagus"
+      },
+      {
+        "id": "radish",
+        "name": "Radish"
+      },
+      {
+        "id": "beet",
+        "name": "Beetroot"
+      },
+      {
+        "id": "okra",
+        "name": "Okra"
+      },
+      {
+        "id": "spring_onion",
+        "name": "Spring Onion"
+      },
+      {
+        "id": "red_cabbage",
+        "name": "Red Cabbage"
+      },
+      {
+        "id": "kale",
+        "name": "Kale"
+      },
+      {
+        "id": "arugula",
+        "name": "Arugula"
+      },
+      {
+        "id": "swiss_chard",
+        "name": "Swiss Chard"
+      },
+      {
+        "id": "turnip",
+        "name": "Turnip"
+      },
+      {
+        "id": "ginger",
+        "name": "Fresh Ginger"
+      },
+      {
+        "id": "hot_pepper",
+        "name": "Hot Pepper"
+      },
+      {
+        "id": "brussels_sprouts",
+        "name": "Brussels Sprouts"
+      },
+      {
+        "id": "red_onion",
+        "name": "Red Onion"
+      },
+      {
+        "id": "fennel_bulb",
+        "name": "Fennel"
+      },
+      {
+        "id": "celeriac",
+        "name": "Celeriac"
+      },
+      {
+        "id": "watercress",
+        "name": "Watercress"
+      },
+      {
+        "id": "purslane",
+        "name": "Purslane"
+      },
+      {
+        "id": "apple",
+        "name": "Apple"
+      },
+      {
+        "id": "banana",
+        "name": "Banana"
+      },
+      {
+        "id": "lemon",
+        "name": "Lemon"
+      },
+      {
+        "id": "orange",
+        "name": "Orange"
+      },
+      {
+        "id": "strawberry",
+        "name": "Strawberry"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-3.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Avocado\n2: Pomegranate\n3: Grape\n4: Watermelon\n5: Peach\n6: Cherry\n7: Fig\n8: Mango\n9: Pineapple\n10: Kiwi\n11: Pear\n12: Blueberry\n13: Raspberry\n14: Dates\n15: Apricot\n16: Plum\n17: Melon\n18: Tangerine\n19: Grapefruit\n20: Coconut\n21: Blackberry\n22: Lime\n23: Quince\n24: Black Pepper\n25: Cumin\n26: Paprika\n27: Red Pepper Flakes\n28: Cinnamon\n29: Oregano\n30: Turmeric\n31: Dried Mint\n32: Parsley\n33: Bay Leaf\n34: Dill\n35: Thyme\n36: Rosemary",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-e92312db-4685-4d36-b14c-0f2bf977b828.png",
+    "cells": [
+      {
+        "id": "avocado",
+        "name": "Avocado"
+      },
+      {
+        "id": "pomegranate",
+        "name": "Pomegranate"
+      },
+      {
+        "id": "grape",
+        "name": "Grape"
+      },
+      {
+        "id": "watermelon",
+        "name": "Watermelon"
+      },
+      {
+        "id": "peach",
+        "name": "Peach"
+      },
+      {
+        "id": "cherry",
+        "name": "Cherry"
+      },
+      {
+        "id": "fig",
+        "name": "Fig"
+      },
+      {
+        "id": "mango",
+        "name": "Mango"
+      },
+      {
+        "id": "pineapple",
+        "name": "Pineapple"
+      },
+      {
+        "id": "kiwi",
+        "name": "Kiwi"
+      },
+      {
+        "id": "pear",
+        "name": "Pear"
+      },
+      {
+        "id": "blueberry",
+        "name": "Blueberry"
+      },
+      {
+        "id": "raspberry",
+        "name": "Raspberry"
+      },
+      {
+        "id": "dates",
+        "name": "Dates"
+      },
+      {
+        "id": "apricot",
+        "name": "Apricot"
+      },
+      {
+        "id": "plum",
+        "name": "Plum"
+      },
+      {
+        "id": "melon",
+        "name": "Melon"
+      },
+      {
+        "id": "tangerine",
+        "name": "Tangerine"
+      },
+      {
+        "id": "grapefruit",
+        "name": "Grapefruit"
+      },
+      {
+        "id": "coconut",
+        "name": "Coconut"
+      },
+      {
+        "id": "blackberry",
+        "name": "Blackberry"
+      },
+      {
+        "id": "lime",
+        "name": "Lime"
+      },
+      {
+        "id": "quince",
+        "name": "Quince"
+      },
+      {
+        "id": "black_pepper",
+        "name": "Black Pepper"
+      },
+      {
+        "id": "cumin",
+        "name": "Cumin"
+      },
+      {
+        "id": "paprika",
+        "name": "Paprika"
+      },
+      {
+        "id": "red_pepper_flakes",
+        "name": "Red Pepper Flakes"
+      },
+      {
+        "id": "cinnamon",
+        "name": "Cinnamon"
+      },
+      {
+        "id": "oregano",
+        "name": "Oregano"
+      },
+      {
+        "id": "turmeric",
+        "name": "Turmeric"
+      },
+      {
+        "id": "mint",
+        "name": "Dried Mint"
+      },
+      {
+        "id": "parsley",
+        "name": "Parsley"
+      },
+      {
+        "id": "bay_leaf",
+        "name": "Bay Leaf"
+      },
+      {
+        "id": "dill",
+        "name": "Dill"
+      },
+      {
+        "id": "thyme",
+        "name": "Thyme"
+      },
+      {
+        "id": "rosemary",
+        "name": "Rosemary"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-4.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Basil\n2: Coriander\n3: Nutmeg\n4: Clove\n5: Cardamom\n6: Sumac\n7: Curry Powder\n8: Ginger Powder\n9: Garlic Powder\n10: Onion Powder\n11: White Pepper\n12: Vanilla\n13: Olive Oil\n14: Sunflower Oil\n15: Coconut Oil\n16: Sesame Oil\n17: Canola Oil\n18: Avocado Oil\n19: Grape Seed Oil\n20: Ghee\n21: Walnut\n22: Almond\n23: Hazelnut\n24: Pistachio\n25: Peanut\n26: Cashew\n27: Pine Nut\n28: Chestnut\n29: Sesame Seeds\n30: Sunflower Seeds\n31: Pumpkin Seeds\n32: Flax Seeds\n33: Chia Seeds\n34: Poppy Seeds\n35: Red Lentil\n36: Green Lentil",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-8e7bac33-88bf-4296-8d7d-c91cc0310557.png",
+    "cells": [
+      {
+        "id": "basil",
+        "name": "Basil"
+      },
+      {
+        "id": "coriander",
+        "name": "Coriander"
+      },
+      {
+        "id": "nutmeg",
+        "name": "Nutmeg"
+      },
+      {
+        "id": "clove",
+        "name": "Clove"
+      },
+      {
+        "id": "cardamom",
+        "name": "Cardamom"
+      },
+      {
+        "id": "sumac",
+        "name": "Sumac"
+      },
+      {
+        "id": "curry_powder",
+        "name": "Curry Powder"
+      },
+      {
+        "id": "ginger_powder",
+        "name": "Ginger Powder"
+      },
+      {
+        "id": "garlic_powder",
+        "name": "Garlic Powder"
+      },
+      {
+        "id": "onion_powder",
+        "name": "Onion Powder"
+      },
+      {
+        "id": "white_pepper",
+        "name": "White Pepper"
+      },
+      {
+        "id": "vanilla",
+        "name": "Vanilla"
+      },
+      {
+        "id": "olive_oil",
+        "name": "Olive Oil"
+      },
+      {
+        "id": "sunflower_oil",
+        "name": "Sunflower Oil"
+      },
+      {
+        "id": "coconut_oil",
+        "name": "Coconut Oil"
+      },
+      {
+        "id": "sesame_oil",
+        "name": "Sesame Oil"
+      },
+      {
+        "id": "canola_oil",
+        "name": "Canola Oil"
+      },
+      {
+        "id": "avocado_oil",
+        "name": "Avocado Oil"
+      },
+      {
+        "id": "grape_seed_oil",
+        "name": "Grape Seed Oil"
+      },
+      {
+        "id": "ghee",
+        "name": "Ghee"
+      },
+      {
+        "id": "walnut",
+        "name": "Walnut"
+      },
+      {
+        "id": "almond",
+        "name": "Almond"
+      },
+      {
+        "id": "hazelnut",
+        "name": "Hazelnut"
+      },
+      {
+        "id": "pistachio",
+        "name": "Pistachio"
+      },
+      {
+        "id": "peanut",
+        "name": "Peanut"
+      },
+      {
+        "id": "cashew",
+        "name": "Cashew"
+      },
+      {
+        "id": "pine_nut",
+        "name": "Pine Nut"
+      },
+      {
+        "id": "chestnut",
+        "name": "Chestnut"
+      },
+      {
+        "id": "sesame_seeds",
+        "name": "Sesame Seeds"
+      },
+      {
+        "id": "sunflower_seeds",
+        "name": "Sunflower Seeds"
+      },
+      {
+        "id": "pumpkin_seeds",
+        "name": "Pumpkin Seeds"
+      },
+      {
+        "id": "flax_seeds",
+        "name": "Flax Seeds"
+      },
+      {
+        "id": "chia_seeds",
+        "name": "Chia Seeds"
+      },
+      {
+        "id": "poppy_seeds",
+        "name": "Poppy Seeds"
+      },
+      {
+        "id": "red_lentil",
+        "name": "Red Lentil"
+      },
+      {
+        "id": "green_lentil",
+        "name": "Green Lentil"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-5.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Chickpea\n2: White Bean\n3: Black-Eyed Pea\n4: Black Bean\n5: Kidney Bean\n6: Fava Bean\n7: Edamame\n8: Split Pea\n9: Salt\n10: Sugar\n11: Soy Sauce\n12: Tomato Paste\n13: Apple Cider Vinegar\n14: Mustard\n15: Honey\n16: Tahini\n17: Grape Molasses\n18: Pomegranate Molasses\n19: Peanut Butter\n20: Coconut Milk\n21: Ketchup\n22: Mayonnaise\n23: Balsamic Vinegar\n24: White Vinegar\n25: Hot Sauce\n26: Maple Syrup\n27: Brown Sugar\n28: Olives\n29: Pickles\n30: Sun-Dried Tomatoes\n31: Almond Butter\n32: Potato Chips\n33: Tortilla Chips\n34: Popcorn\n35: Chocolate Bar\n36: Dark Chocolate",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-281cf9de-0b7b-427c-aa89-a5e246d8b78e.png",
+    "cells": [
+      {
+        "id": "chickpea",
+        "name": "Chickpea"
+      },
+      {
+        "id": "white_bean",
+        "name": "White Bean"
+      },
+      {
+        "id": "black_eyed_pea",
+        "name": "Black-Eyed Pea"
+      },
+      {
+        "id": "black_bean",
+        "name": "Black Bean"
+      },
+      {
+        "id": "kidney_bean",
+        "name": "Kidney Bean"
+      },
+      {
+        "id": "fava_bean",
+        "name": "Fava Bean"
+      },
+      {
+        "id": "edamame",
+        "name": "Edamame"
+      },
+      {
+        "id": "split_pea",
+        "name": "Split Pea"
+      },
+      {
+        "id": "salt",
+        "name": "Salt"
+      },
+      {
+        "id": "sugar",
+        "name": "Sugar"
+      },
+      {
+        "id": "soy_sauce",
+        "name": "Soy Sauce"
+      },
+      {
+        "id": "tomato_paste",
+        "name": "Tomato Paste"
+      },
+      {
+        "id": "apple_cider_vinegar",
+        "name": "Apple Cider Vinegar"
+      },
+      {
+        "id": "mustard",
+        "name": "Mustard"
+      },
+      {
+        "id": "honey",
+        "name": "Honey"
+      },
+      {
+        "id": "tahini",
+        "name": "Tahini"
+      },
+      {
+        "id": "molasses",
+        "name": "Grape Molasses"
+      },
+      {
+        "id": "pomegranate_molasses",
+        "name": "Pomegranate Molasses"
+      },
+      {
+        "id": "peanut_butter",
+        "name": "Peanut Butter"
+      },
+      {
+        "id": "coconut_milk",
+        "name": "Coconut Milk"
+      },
+      {
+        "id": "ketchup",
+        "name": "Ketchup"
+      },
+      {
+        "id": "mayonnaise",
+        "name": "Mayonnaise"
+      },
+      {
+        "id": "balsamic_vinegar",
+        "name": "Balsamic Vinegar"
+      },
+      {
+        "id": "white_vinegar",
+        "name": "White Vinegar"
+      },
+      {
+        "id": "hot_sauce",
+        "name": "Hot Sauce"
+      },
+      {
+        "id": "maple_syrup",
+        "name": "Maple Syrup"
+      },
+      {
+        "id": "brown_sugar",
+        "name": "Brown Sugar"
+      },
+      {
+        "id": "olives",
+        "name": "Olives"
+      },
+      {
+        "id": "pickles",
+        "name": "Pickles"
+      },
+      {
+        "id": "dried_tomatoes",
+        "name": "Sun-Dried Tomatoes"
+      },
+      {
+        "id": "almond_butter",
+        "name": "Almond Butter"
+      },
+      {
+        "id": "potato_chips",
+        "name": "Potato Chips"
+      },
+      {
+        "id": "tortilla_chips",
+        "name": "Tortilla Chips"
+      },
+      {
+        "id": "popcorn",
+        "name": "Popcorn"
+      },
+      {
+        "id": "chocolate_bar",
+        "name": "Chocolate Bar"
+      },
+      {
+        "id": "dark_chocolate",
+        "name": "Dark Chocolate"
+      }
+    ]
+  },
+  {
+    "atlas": "ingredients-6.png",
+    "prompt": "Create a photographic ingredient texture atlas for a real recipe app. EXACT SIX columns by SIX rows, 36 equal square cells, square overall image. NO TEXT, labels, numbers, grid lines, gutters, margins, packaging, logos, or UI. Perfectly aligned edge-to-edge independent cells. Each cell one specific raw food ingredient by itself centered on identical warm off-white stone countertop, neatly styled in small beige ceramic dish when needed, appetizing clear natural texture, overhead angle, soft warm window light. Do not mix ingredients, add garnish or include multiple different products inside a cell. The ingredient is recognizable at small thumbnail size. Left-to-right top-to-bottom cells:\n1: Ice Cream\n2: Cookies\n3: Crackers\n4: Mixed Nuts\n5: Dried Fruit Mix\n6: Granola Bar\n7: Rice Cake\n8: Baking Powder\n9: Yeast\n10: Baking Soda\n11: Cornstarch\n12: Gelatin\n13: Breadcrumbs\n14: Cocoa Powder\n15: Coconut Flakes\n16: Powdered Sugar\n17: Rose Water\n18: empty warm off-white stone countertop\n19: empty warm off-white stone countertop\n20: empty warm off-white stone countertop\n21: empty warm off-white stone countertop\n22: empty warm off-white stone countertop\n23: empty warm off-white stone countertop\n24: empty warm off-white stone countertop\n25: empty warm off-white stone countertop\n26: empty warm off-white stone countertop\n27: empty warm off-white stone countertop\n28: empty warm off-white stone countertop\n29: empty warm off-white stone countertop\n30: empty warm off-white stone countertop\n31: empty warm off-white stone countertop\n32: empty warm off-white stone countertop\n33: empty warm off-white stone countertop\n34: empty warm off-white stone countertop\n35: empty warm off-white stone countertop\n36: empty warm off-white stone countertop",
+    "source": "C:\\Users\\Superuser\\.codex\\generated_images\\01a07ce2-9fdb-7a53-a303-67376d64d07e\\exec-247bcfde-0ebf-4037-a871-010d23e31325.png",
+    "cells": [
+      {
+        "id": "ice_cream",
+        "name": "Ice Cream"
+      },
+      {
+        "id": "cookies",
+        "name": "Cookies"
+      },
+      {
+        "id": "crackers",
+        "name": "Crackers"
+      },
+      {
+        "id": "mixed_nuts",
+        "name": "Mixed Nuts"
+      },
+      {
+        "id": "dried_fruit",
+        "name": "Dried Fruit Mix"
+      },
+      {
+        "id": "granola_bar",
+        "name": "Granola Bar"
+      },
+      {
+        "id": "rice_cake",
+        "name": "Rice Cake"
+      },
+      {
+        "id": "baking_powder",
+        "name": "Baking Powder"
+      },
+      {
+        "id": "yeast",
+        "name": "Yeast"
+      },
+      {
+        "id": "baking_soda",
+        "name": "Baking Soda"
+      },
+      {
+        "id": "cornstarch",
+        "name": "Cornstarch"
+      },
+      {
+        "id": "gelatin",
+        "name": "Gelatin"
+      },
+      {
+        "id": "breadcrumbs",
+        "name": "Breadcrumbs"
+      },
+      {
+        "id": "cocoa_powder",
+        "name": "Cocoa Powder"
+      },
+      {
+        "id": "coconut_flakes",
+        "name": "Coconut Flakes"
+      },
+      {
+        "id": "powdered_sugar",
+        "name": "Powdered Sugar"
+      },
+      {
+        "id": "rose_water",
+        "name": "Rose Water"
+      }
+    ]
+  }
+]

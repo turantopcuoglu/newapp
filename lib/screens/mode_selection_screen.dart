@@ -56,7 +56,7 @@ class ModeSelectionScreen extends ConsumerWidget {
         CheckInType.noSpecificIssue,
         l10n.checkInNoSpecificIssue,
         Icons.check_circle_outline_rounded,
-        AppTheme.textSecondary,
+        context.palette.textSecondary,
         l10n.modeDescNoSpecificIssue,
       ),
     ];
@@ -66,7 +66,7 @@ class ModeSelectionScreen extends ConsumerWidget {
         CheckInType.pms,
         l10n.checkInPms,
         Icons.favorite_border_rounded,
-        AppTheme.snackColor,
+        context.palette.snackColor,
         l10n.modeDescPms,
       ),
       _ModeOption(
@@ -89,15 +89,11 @@ class ModeSelectionScreen extends ConsumerWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF1B2838),
-              Color(0xFF2D3E50),
-              Color(0xFF1B2838),
-            ],
+            colors: [context.palette.background, context.palette.surface, context.palette.background],
           ),
         ),
         child: SafeArea(
@@ -112,29 +108,29 @@ class ModeSelectionScreen extends ConsumerWidget {
                       width: 64,
                       height: 64,
                       decoration: BoxDecoration(
-                        gradient: AppTheme.accentGradient,
+                        gradient: context.palette.accentGradient,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.accentOrange.withAlpha(80),
+                            color: context.palette.accentOrange.withAlpha(80),
                             blurRadius: 20,
                             offset: const Offset(0, 8),
                           ),
                         ],
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.sunny_snowing,
-                        color: Colors.white,
+                        color: context.palette.textPrimary,
                         size: 32,
                       ),
                     ),
                     const SizedBox(height: 20),
                     Text(
                       l10n.modeSelectionTitle,
-                      style: const TextStyle(
+                      style:  TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.w800,
-                        color: Colors.white,
+                        color: context.palette.textPrimary,
                         letterSpacing: -0.5,
                       ),
                     ),
@@ -144,7 +140,7 @@ class ModeSelectionScreen extends ConsumerWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.white.withAlpha(160),
+                        color: context.palette.textPrimary.withAlpha(160),
                         height: 1.4,
                       ),
                     ),
@@ -169,7 +165,9 @@ class ModeSelectionScreen extends ConsumerWidget {
                             children: [
                               Icon(
                                 Icons.favorite_rounded,
-                                color: AppTheme.snackColor.withAlpha(200),
+                                color: context.palette.snackColor.withAlpha(
+                                  200,
+                                ),
                                 size: 16,
                               ),
                               const SizedBox(width: 6),
@@ -178,7 +176,9 @@ class ModeSelectionScreen extends ConsumerWidget {
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w600,
-                                  color: AppTheme.snackColor.withAlpha(200),
+                                  color: context.palette.snackColor.withAlpha(
+                                    200,
+                                  ),
                                   letterSpacing: 0.5,
                                 ),
                               ),
@@ -199,7 +199,7 @@ class ModeSelectionScreen extends ConsumerWidget {
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white.withAlpha(140),
+                              color: context.palette.textPrimary.withAlpha(140),
                               letterSpacing: 0.5,
                             ),
                           ),
@@ -237,7 +237,13 @@ class _ModeOption {
   final Color color;
   final String description;
 
-  const _ModeOption(this.type, this.label, this.icon, this.color, this.description);
+  const _ModeOption(
+    this.type,
+    this.label,
+    this.icon,
+    this.color,
+    this.description,
+  );
 }
 
 class _ModeCard extends StatelessWidget {
@@ -258,11 +264,9 @@ class _ModeCard extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             decoration: BoxDecoration(
-              color: Colors.white.withAlpha(12),
+              color: context.palette.textPrimary.withAlpha(12),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: Colors.white.withAlpha(15),
-              ),
+              border: Border.all(color: context.palette.textPrimary.withAlpha(15)),
             ),
             child: Row(
               children: [
@@ -273,11 +277,7 @@ class _ModeCard extends StatelessWidget {
                     color: option.color.withAlpha(30),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Icon(
-                    option.icon,
-                    color: option.color,
-                    size: 22,
-                  ),
+                  child: Icon(option.icon, color: option.color, size: 22),
                 ),
                 const SizedBox(width: 14),
                 Expanded(
@@ -286,10 +286,10 @@ class _ModeCard extends StatelessWidget {
                     children: [
                       Text(
                         option.label,
-                        style: const TextStyle(
+                        style:  TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: context.palette.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 2),
@@ -297,7 +297,7 @@ class _ModeCard extends StatelessWidget {
                         option.description,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.white.withAlpha(120),
+                          color: context.palette.textPrimary.withAlpha(120),
                           height: 1.3,
                         ),
                       ),
@@ -308,7 +308,7 @@ class _ModeCard extends StatelessWidget {
                 Icon(
                   Icons.arrow_forward_ios_rounded,
                   size: 14,
-                  color: Colors.white.withAlpha(60),
+                  color: context.palette.textPrimary.withAlpha(60),
                 ),
               ],
             ),

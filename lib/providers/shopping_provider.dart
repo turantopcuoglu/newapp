@@ -15,8 +15,7 @@ class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
     final trimmed = name.trim();
     if (trimmed.isEmpty) return;
     // Prevent duplicates
-    if (state.any(
-        (i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
+    if (state.any((i) => i.name.toLowerCase() == trimmed.toLowerCase())) {
       return;
     }
     final item = ShoppingItem(
@@ -28,8 +27,10 @@ class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
     _storage.addShoppingItem(item);
   }
 
-  void addMissingIngredients(List<String> ingredientIds,
-      {String? forRecipeId}) {
+  void addMissingIngredients(
+    List<String> ingredientIds, {
+    String? forRecipeId,
+  }) {
     for (final id in ingredientIds) {
       addItem(id, forRecipeId: forRecipeId);
     }
@@ -51,6 +52,15 @@ class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
     _storage.removeShoppingItem(id);
   }
 
+  void removeItems(Iterable<String> ids) {
+    final toRemove = ids.toSet();
+    if (toRemove.isEmpty) return;
+    for (final id in toRemove) {
+      _storage.removeShoppingItem(id);
+    }
+    state = state.where((i) => !toRemove.contains(i.id)).toList();
+  }
+
   void clearPurchased() {
     final toRemove = state.where((i) => i.isPurchased).toList();
     for (final item in toRemove) {
@@ -67,6 +77,6 @@ class ShoppingNotifier extends StateNotifier<List<ShoppingItem>> {
 
 final shoppingProvider =
     StateNotifierProvider<ShoppingNotifier, List<ShoppingItem>>((ref) {
-  final storage = ref.watch(storageProvider);
-  return ShoppingNotifier(storage);
-});
+      final storage = ref.watch(storageProvider);
+      return ShoppingNotifier(storage);
+    });

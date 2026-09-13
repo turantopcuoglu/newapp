@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-08",
+  "status": "Design revision only",
+  "sourceReview": {
+    "enum": "lib/core/enums.dart",
+    "labels": "lib/l10n/translations/tr.dart",
+    "oldPicker": "lib/screens/mode_selection_screen.dart",
+    "currentPicker": "lib/screens/wellness/check_in_screen.dart",
+    "existingContexts": 9,
+    "designedContexts": 9,
+    "idSetDifferences": 0
+  },
+  "design": {
+    "boards": 4,
+    "phoneViews": 11,
+    "contextsShown": 9,
+    "visualReview": "All nine contexts represented, including three separate menstrual contexts; palette shifts cover large surfaces and navigation; long labels reviewed.",
+    "preserved": "Approved immersive visual language, large cards, short labels, optional information.",
+    "knownHandoffNotes": [
+      "Generated decorative headlines/tagline and secondary copy are drafts, not new product claims.",
+      "Canonical vector icon shapes must be unified across picker and home at implementation.",
+      "Food hero photos and any displayed duration are sample design content, not recommendations for each symptom.",
+      "Full-app interior screens, theme states and combined-context controls are specified but not all redrawn for every palette."
+    ]
+  },
+  "validation": {
+    "solidPaletteChecks": 54,
+    "passed": 54,
+    "scope": "Declared solid color pairs only; not raster-image or runtime conformance"
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "prompts": "image-prompts.json"
+  },
+  "appCodeChanged": false,
+  "appBuildRun": false,
+  "appTestsRun": false
+}

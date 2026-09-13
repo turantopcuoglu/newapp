@@ -11,6 +11,11 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        // flutter_local_notifications schedules through java.time APIs that
+        // are not in older Android runtimes, so it requires desugaring even
+        // when the app itself never touches them. Without this the build
+        // fails at checkDebugAarMetadata.
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -24,10 +29,13 @@ android {
         applicationId = "com.example.ai_recipe_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        // Health Connect integration requires Android 8.0 or later.
+        minSdk = 26
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // Desugaring adds methods; cheap insurance against the 64K limit.
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -41,4 +49,10 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Version must match what flutter_local_notifications itself builds
+    // against; a lower one still fails the AAR metadata check.
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

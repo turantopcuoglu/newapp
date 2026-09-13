@@ -1,0 +1,3307 @@
+[
+  {
+    "id": "s001",
+    "name": {
+      "en": "Banana Almond Energy Balls",
+      "tr": "Muzlu Bademli Enerji Topları"
+    },
+    "description": {
+      "en": "No-bake energy balls made with oats, banana, and almonds for a quick nutrient-dense snack.",
+      "tr": "Yulaf, muz ve bademle hazırlanan, pişirme gerektirmeyen besleyici enerji topları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "banana",
+      "almond",
+      "honey",
+      "cinnamon",
+      "dates"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 421,
+      "proteinG": 10,
+      "carbsG": 81,
+      "fatG": 10,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Pit the dates and soak them in hot water for 10 minutes to soften.",
+        "Blitz the oats and almonds into a coarse meal.",
+        "Add the drained dates, banana, honey and cinnamon and blend to a sticky paste.",
+        "If the mixture is too wet to hold, add a spoonful more oats.",
+        "Chill the mixture for 20 minutes so it firms up and stops sticking to your hands.",
+        "Roll into walnut-sized balls with damp palms.",
+        "Refrigerate for at least 1 hour before eating.",
+        "They keep in an airtight container for up to five days."
+      ],
+      "tr": [
+        "Hurmaların çekirdeğini çıkarıp yumuşasınlar diye 10 dakika sıcak suda bekletin.",
+        "Yulaf ve bademi iri taneli un olana dek çekin.",
+        "Süzülmüş hurma, muz, bal ve tarçını ekleyip yapışkan bir harç olana dek çekin.",
+        "Harç şekil almayacak kadar ıslaksa bir kaşık daha yulaf ekleyin.",
+        "Sertleşip ele yapışmaması için harcı 20 dakika buzdolabında bekletin.",
+        "Nemli avuçla ceviz büyüklüğünde toplar yapın.",
+        "Yemeden önce en az 1 saat buzdolabında dinlendirin.",
+        "Ağzı kapalı kapta beş gün saklanır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "dates": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s002",
+    "name": {
+      "en": "Spinach Banana Smoothie",
+      "tr": "Ispanaklı Muzlu Smoothie"
+    },
+    "description": {
+      "en": "A creamy green smoothie packed with spinach, banana, and yogurt for sustained energy.",
+      "tr": "Ispanak, muz ve yoğurtla hazırlanan kremamsı yeşil smoothie ile enerjinizi koruyun."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "spinach",
+      "banana",
+      "yogurt",
+      "honey",
+      "milk"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "bloated",
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 267,
+      "proteinG": 19,
+      "carbsG": 46,
+      "fatG": 3,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Wash the spinach well; young leaves blend smoothest.",
+        "Blend the spinach with the milk alone first — this stops stringy bits in the drink.",
+        "Add the banana, yoghurt and honey.",
+        "Blend on high for 45 seconds until the colour is even.",
+        "Taste and add a little more honey if the spinach still comes through.",
+        "Pour into a glass and drink straight away, before it separates."
+      ],
+      "tr": [
+        "Ispanağı iyice yıkayın; taze yapraklar en pürüzsüz sonucu verir.",
+        "Önce ıspanağı sadece sütle çekin — içecekte lif parçacığı kalmasını bu önler.",
+        "Muz, yoğurt ve balı ekleyin.",
+        "Rengi eşitlenene dek yüksek devirde 45 saniye çekin.",
+        "Tadına bakın, ıspanak tadı geliyorsa biraz daha bal ekleyin.",
+        "Bardağa döküp ayrışmadan hemen için."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "spinach": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "milk": {
+        "amount": 150.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s003",
+    "name": {
+      "en": "Mixed Berry Chia Pudding",
+      "tr": "Karışık Meyveli Chia Puding"
+    },
+    "description": {
+      "en": "Chia seeds soaked in milk and topped with fresh strawberries and blueberries for a fiber-rich treat.",
+      "tr": "Sütte bekletilmiş chia tohumları, taze çilek ve yaban mersini ile lif açısından zengin bir atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chia_seeds",
+      "milk",
+      "strawberry",
+      "blueberry",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 247,
+      "proteinG": 10,
+      "carbsG": 37,
+      "fatG": 8,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Whisk the milk and honey together in a bowl.",
+        "Add the chia seeds and stir for a full minute so none clump.",
+        "Rest for 10 minutes, then stir again — this second stir is what prevents lumps.",
+        "Cover and refrigerate for at least 4 hours or overnight.",
+        "It is ready when the pudding holds its shape on a spoon.",
+        "Wash the strawberries and blueberries, halving the strawberries, just before serving.",
+        "Spoon into glasses and top with the fruit.",
+        "Serve cold."
+      ],
+      "tr": [
+        "Süt ve balı bir kasede çırpın.",
+        "Chia tohumlarını ekleyip topaklanmasın diye tam bir dakika karıştırın.",
+        "10 dakika bekletip tekrar karıştırın — topaklanmayı asıl önleyen bu ikinci karıştırmadır.",
+        "Üzerini kapatıp en az 4 saat ya da bir gece buzdolabında bekletin.",
+        "Kaşıkta şeklini koruduğunda hazırdır.",
+        "Çilek ve yaban mersinlerini yıkayın, çilekleri ikiye bölün.",
+        "Bardaklara paylaştırıp meyveleri üzerine ekleyin.",
+        "Soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chia_seeds": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "milk": {
+        "amount": 150.0,
+        "unit": "ml"
+      },
+      "strawberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s004",
+    "name": {
+      "en": "Classic Hummus with Veggie Sticks",
+      "tr": "Sebze Çubuklu Klasik Humus"
+    },
+    "description": {
+      "en": "Smooth chickpea hummus served with crunchy carrot, cucumber, and bell pepper sticks.",
+      "tr": "Havuç, salatalık ve biber çubuklarıyla servis edilen pürüzsüz nohut humusu."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea",
+      "tahini",
+      "lemon",
+      "garlic",
+      "olive_oil",
+      "carrot",
+      "cucumber",
+      "bell_pepper",
+      "salt"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 347,
+      "proteinG": 12,
+      "carbsG": 44,
+      "fatG": 16,
+      "fiberG": 12
+    },
+    "steps": {
+      "en": [
+        "Drain the chickpeas, keeping a little of their liquid.",
+        "For a smoother hummus, rub off the skins between your fingers.",
+        "Blend the chickpeas with tahini, lemon juice and garlic.",
+        "Add the reserved liquid a spoonful at a time until it turns pale and creamy.",
+        "Blend for a full 2 minutes — patience here is what makes it fluffy rather than grainy.",
+        "Season with salt and adjust the lemon to taste.",
+        "Cut the carrot, cucumber and pepper into sticks.",
+        "Spread the hummus in a bowl, pool olive oil in the middle and serve with the sticks."
+      ],
+      "tr": [
+        "Nohutu süzün, suyundan bir miktar ayırın.",
+        "Daha pürüzsüz humus için nohutların kabuklarını parmaklarınız arasında ovup çıkarın.",
+        "Nohutu tahin, limon suyu ve sarımsakla çekin.",
+        "Ayırdığınız suyu kaşık kaşık ekleyip rengi açılıp kremamsı olana dek çekin.",
+        "Tam 2 dakika çekin — pütürlü değil kabarık olmasını bu sabır sağlar.",
+        "Tuzunu ayarlayıp limonu damak tadınıza göre dengeleyin.",
+        "Havuç, salatalık ve biberi çubuk şeklinde doğrayın.",
+        "Humusu kaseye yayın, ortasına zeytinyağı gölü açın ve çubuklarla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tahini": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s005",
+    "name": {
+      "en": "Apple Slices with Peanut Butter",
+      "tr": "Fıstık Ezmeli Elma Dilimleri"
+    },
+    "description": {
+      "en": "Crisp apple slices paired with creamy peanut butter for a satisfying sweet-and-savory snack.",
+      "tr": "Tatlı ve tuzlu dengesinde, kremamsı fıstık ezmesiyle eşleştirilmiş çıtır elma dilimleri."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "apple",
+      "peanut",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "peanuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "pms"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 191,
+      "proteinG": 5,
+      "carbsG": 32,
+      "fatG": 8,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Grind the peanuts into a coarse butter, or use ready-made peanut butter.",
+        "Core the apple and cut it into rings about 1 cm thick.",
+        "Brush the cut surfaces with a little lemon juice so they do not brown.",
+        "Spread peanut butter over each ring.",
+        "Dust with cinnamon.",
+        "Serve straight away while the apple is still crisp."
+      ],
+      "tr": [
+        "Yer fıstıklarını iri taneli ezme olana dek çekin ya da hazır fıstık ezmesi kullanın.",
+        "Elmanın çekirdek evini çıkarıp 1 cm kalınlığında halkalar hâlinde kesin.",
+        "Kararmasın diye kesik yüzeyleri az limon suyuyla fırçalayın.",
+        "Her halkanın üzerine fıstık ezmesi sürün.",
+        "Tarçın serpin.",
+        "Elma diriliğini kaybetmeden hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apple": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "peanut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s006",
+    "name": {
+      "en": "Cucumber Feta Bites",
+      "tr": "Beyaz Peynirli Salatalık Dilimleri"
+    },
+    "description": {
+      "en": "Refreshing cucumber rounds topped with crumbled feta, olive oil, and a hint of oregano.",
+      "tr": "Ufalanmış beyaz peynir, zeytinyağı ve bir tutam kekik ile taze salatalık dilimleri."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cucumber",
+      "feta_cheese",
+      "olive_oil",
+      "oregano",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 150,
+      "proteinG": 5,
+      "carbsG": 8,
+      "fatG": 12,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Wash the cucumber and slice it into rounds about 1 cm thick.",
+        "Pat the slices dry so the topping does not slide off.",
+        "Crumble or slice the feta into pieces that sit on the rounds.",
+        "Top each cucumber round with feta.",
+        "Drizzle with olive oil and grind over black pepper.",
+        "Scatter oregano over the top and serve cold."
+      ],
+      "tr": [
+        "Salatalığı yıkayıp 1 cm kalınlığında yuvarlak dilimleyin.",
+        "Üzerindeki malzeme kaymasın diye dilimleri kurulayın.",
+        "Beyaz peyniri dilimlerin üzerinde duracak parçalar hâlinde ufalayın ya da kesin.",
+        "Her salatalık diliminin üzerine peyniri yerleştirin.",
+        "Zeytinyağı gezdirip karabiber öğütün.",
+        "Üzerine kekik serpip soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "feta_cheese": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "oregano": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s007",
+    "name": {
+      "en": "Oat and Walnut Protein Bars",
+      "tr": "Yulaflı Cevizli Protein Bar"
+    },
+    "description": {
+      "en": "No-bake protein bars made with oats, walnuts, honey, and peanut butter for sustained fuel.",
+      "tr": "Yulaf, ceviz, bal ve fıstık ezmesiyle hazırlanan pişirme gerektirmeyen protein barları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "walnut",
+      "peanut",
+      "honey",
+      "vanilla"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 329,
+      "proteinG": 11,
+      "carbsG": 29,
+      "fatG": 19,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Toast the oats in a dry pan for 4 minutes until they smell nutty.",
+        "Chop the walnuts and peanuts roughly.",
+        "Warm the honey gently so it pours easily and coats everything.",
+        "Mix the oats, nuts, honey and vanilla until evenly coated.",
+        "Press the mixture very firmly into a lined tin — loose packing makes the bars crumble.",
+        "Chill for at least 2 hours until set.",
+        "Lift out and cut into bars with a sharp knife.",
+        "Keep refrigerated and eat within a week."
+      ],
+      "tr": [
+        "Yulafı kuru tavada kokusu çıkana dek 4 dakika kavurun.",
+        "Ceviz ve yer fıstığını iri kıyın.",
+        "Balı kolay dökülüp her şeyi kaplasın diye hafifçe ısıtın.",
+        "Yulaf, kuruyemiş, bal ve vanilyayı eşit dağılana dek karıştırın.",
+        "Harcı kağıt serili kalıba çok sıkı bastırın — gevşek basılırsa barlar dağılır.",
+        "En az 2 saat, donana dek buzdolabında bekletin.",
+        "Kalıptan çıkarıp keskin bıçakla bar şeklinde kesin.",
+        "Buzdolabında saklayıp bir hafta içinde tüketin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "peanut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "vanilla": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s008",
+    "name": {
+      "en": "Yogurt with Honey and Walnuts",
+      "tr": "Ballı Cevizli Yoğurt"
+    },
+    "description": {
+      "en": "Creamy yogurt drizzled with honey and topped with crunchy walnuts for a balanced snack.",
+      "tr": "Bal ve çıtır cevizle zenginleştirilmiş kremamsı yoğurt atıştırmalığı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "honey",
+      "walnut"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 172,
+      "proteinG": 12,
+      "carbsG": 10,
+      "fatG": 10,
+      "fiberG": 1
+    },
+    "steps": {
+      "en": [
+        "Drain the yoghurt in a sieve for 15 minutes if you want it thicker.",
+        "Toast the walnuts in a dry pan for 3 minutes to bring out their oils.",
+        "Let the walnuts cool, then chop them roughly.",
+        "Spoon the yoghurt into a bowl and smooth the surface.",
+        "Scatter the walnuts over the top.",
+        "Drizzle with honey just before serving so it stays on the surface."
+      ],
+      "tr": [
+        "Daha kıvamlı isterseniz yoğurdu süzgeçte 15 dakika süzün.",
+        "Cevizleri yağı açığa çıksın diye kuru tavada 3 dakika kavurun.",
+        "Cevizleri soğutup iri kıyın.",
+        "Yoğurdu kaseye alıp yüzeyini düzeltin.",
+        "Cevizleri üzerine serpin.",
+        "Yüzeyde kalsın diye balı servis etmeden hemen önce gezdirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s009",
+    "name": {
+      "en": "Mango Coconut Smoothie",
+      "tr": "Mangolu Hindistancevizli Smoothie"
+    },
+    "description": {
+      "en": "A tropical smoothie blending mango, coconut, and yogurt for a refreshing pick-me-up.",
+      "tr": "Mango, hindistancevizi ve yoğurdun harmanlandığı tropikal bir smoothie."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "mango",
+      "coconut",
+      "yogurt",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "medium",
+    "carbType": "simple",
+    "macros": {
+      "calories": 205,
+      "proteinG": 11,
+      "carbsG": 26,
+      "fatG": 8,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Chill the mango beforehand — cold fruit gives a thicker smoothie without ice.",
+        "Peel the mango and cut the flesh away from the stone.",
+        "Put the yoghurt in the blender first so the blades turn freely.",
+        "Add the mango, coconut and honey.",
+        "Blend on high for 45 seconds until completely smooth.",
+        "Pour into a glass and serve cold."
+      ],
+      "tr": [
+        "Mangoyu önceden soğutun — soğuk meyve, buz koymadan kıvamlı smoothie verir.",
+        "Mangoyu soyup çekirdeğinden ayırın.",
+        "Bıçaklar rahat dönsün diye önce yoğurdu blendıra koyun.",
+        "Mango, hindistan cevizi ve balı ekleyin.",
+        "Tamamen pürüzsüz olana dek yüksek devirde 45 saniye çekin.",
+        "Bardağa döküp soğuk servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "mango": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "coconut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s010",
+    "name": {
+      "en": "Trail Mix with Almonds and Dark Chocolate",
+      "tr": "Bademli ve Bitter Çikolatalı Karışık Kuruyemiş"
+    },
+    "description": {
+      "en": "A balanced trail mix of almonds, walnuts, pumpkin seeds, and dark chocolate chips.",
+      "tr": "Badem, ceviz, kabak çekirdeği ve bitter çikolata parçalarından oluşan dengeli bir kuruyemiş karışımı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "almond",
+      "walnut",
+      "cocoa_powder",
+      "honey"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 234,
+      "proteinG": 8,
+      "carbsG": 18,
+      "fatG": 19,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Toast the almonds and walnuts in a dry pan for 4 minutes, shaking often.",
+        "Let them cool completely — warm nuts will make the coating melt and clump.",
+        "Mix the cocoa powder with the honey into a thick paste.",
+        "Toss the cooled nuts through the cocoa paste until evenly coated.",
+        "Spread them on baking paper in a single layer to set.",
+        "Break apart once dry and store in an airtight jar."
+      ],
+      "tr": [
+        "Badem ve cevizi kuru tavada sık sık sallayarak 4 dakika kavurun.",
+        "Tamamen soğutun — sıcak kuruyemiş kaplamayı eritip topaklaştırır.",
+        "Kakao tozunu balla koyu bir karışım olana dek karıştırın.",
+        "Soğumuş kuruyemişleri bu karışımla eşit kaplanana dek harmanlayın.",
+        "Donması için pişirme kağıdına tek sıra hâlinde yayın.",
+        "Kuruyunca parçalara ayırıp ağzı kapalı kavanozda saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "walnut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cocoa_powder": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s011",
+    "name": {
+      "en": "Oat Banana Pancake Bites",
+      "tr": "Yulaflı Muzlu Mini Pankekler"
+    },
+    "description": {
+      "en": "Mini pancakes made with mashed banana, oats, and egg for a wholesome, naturally sweet snack.",
+      "tr": "Ezilmiş muz, yulaf ve yumurtayla yapılan doğal tatlılıkta mini pankekler."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "oats",
+      "banana",
+      "eggs",
+      "cinnamon",
+      "coconut_oil"
+    ],
+    "allergenTags": [
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 458,
+      "proteinG": 14,
+      "carbsG": 52,
+      "fatG": 24,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Blitz the oats into a coarse flour.",
+        "Mash the banana thoroughly with a fork until no lumps remain.",
+        "Beat in the eggs, then stir in the oat flour and cinnamon.",
+        "Rest the batter for 10 minutes so the oats absorb the liquid and thicken it.",
+        "Heat a non-stick pan over medium-low heat with a little coconut oil.",
+        "Drop small spoonfuls in and cook until bubbles form on top, about 2 minutes.",
+        "Flip and cook 1 minute more until golden.",
+        "Serve warm, stacked."
+      ],
+      "tr": [
+        "Yulafı iri taneli un olana dek çekin.",
+        "Muzu çatalla, topak kalmayana dek iyice ezin.",
+        "Yumurtaları çırparak ekleyin, sonra yulaf ununu ve tarçını karıştırın.",
+        "Yulafın sıvıyı çekip kıvam alması için harcı 10 dakika dinlendirin.",
+        "Yapışmaz tavayı az hindistan cevizi yağıyla orta-kısık ateşte ısıtın.",
+        "Küçük kaşıklarla harç dökün, üstünde kabarcık çıkana dek yaklaşık 2 dakika pişirin.",
+        "Çevirip altın rengi olana dek 1 dakika daha pişirin.",
+        "Üst üste dizip ılık servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "coconut_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
+  },
+  {
+    "id": "s012",
+    "name": {
+      "en": "Egg and Avocado Toast Bites",
+      "tr": "Yumurtalı Avokadolu Tost Lokmaları"
+    },
+    "description": {
+      "en": "Bite-sized toasts topped with mashed avocado and sliced boiled egg for a protein-packed snack.",
+      "tr": "Ezilmiş avokado ve dilimlenmiş haşlanmış yumurta ile protein açısından zengin tost lokmaları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "avocado",
+      "eggs",
+      "lemon",
+      "salt",
+      "black_pepper",
+      "red_pepper_flakes",
+      "cream_cheese",
+      "cucumber"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 324,
+      "proteinG": 13,
+      "carbsG": 24,
+      "fatG": 21,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Toast bread slices and cut into bite-sized squares.",
+        "Mash avocado with lemon juice, salt, and black pepper.",
+        "Spread cream cheese on each toast square, then the avocado mixture on top.",
+        "Layer thin cucumber slices and boiled egg slices over the avocado.",
+        "Finish with a sprinkle of chili flakes."
+      ],
+      "tr": [
+        "Ekmek dilimlerini kızartın ve lokma büyüklüğünde kareler halinde kesin.",
+        "Avokadoyu limon suyu, tuz ve karabiberle ezin.",
+        "Her tost karesine krem peyniri, üzerine de avokado karışımını sürün.",
+        "İnce dilimlenmiş salatalık ve haşlanmış yumurta dilimlerini üzerine dizin.",
+        "Pul biber serperek servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 1.0,
+        "unit": "slice"
+      },
+      "avocado": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "eggs": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "red_pepper_flakes": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cream_cheese": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "s013",
+    "name": {
+      "en": "Chocolate Peanut Butter Energy Balls",
+      "tr": "Çikolatalı Fıstık Ezmeli Enerji Topları"
+    },
+    "description": {
+      "en": "Rich no-bake energy balls combining cocoa, peanut butter, oats, and honey.",
+      "tr": "Kakao, fıstık ezmesi, yulaf ve bal ile hazırlanan pişirme gerektirmeyen enerji topları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cocoa_powder",
+      "peanut",
+      "oats",
+      "honey",
+      "flax_seeds"
+    ],
+    "allergenTags": [
+      "gluten",
+      "peanuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 305,
+      "proteinG": 14,
+      "carbsG": 38,
+      "fatG": 16,
+      "fiberG": 13
+    },
+    "steps": {
+      "en": [
+        "Grind the peanuts into a coarse butter.",
+        "Blitz the oats into a coarse flour.",
+        "Mix the peanut butter, oats, cocoa powder, flaxseed and honey into a stiff paste.",
+        "If it crumbles, add a teaspoon of water; if it is too soft, add more oats.",
+        "Chill for 20 minutes so the mixture firms up.",
+        "Roll into small balls with damp hands.",
+        "Refrigerate for 1 hour before eating.",
+        "They keep for up to five days in a sealed container."
+      ],
+      "tr": [
+        "Yer fıstıklarını iri taneli ezme olana dek çekin.",
+        "Yulafı iri taneli un olana dek çekin.",
+        "Fıstık ezmesi, yulaf, kakao, keten tohumu ve balı katı bir harç olana dek karıştırın.",
+        "Dağılıyorsa bir çay kaşığı su, çok yumuşaksa biraz daha yulaf ekleyin.",
+        "Harcın sertleşmesi için 20 dakika buzdolabında bekletin.",
+        "Nemli elle küçük toplar yapın.",
+        "Yemeden önce 1 saat buzdolabında dinlendirin.",
+        "Ağzı kapalı kapta beş gün saklanır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cocoa_powder": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "peanut": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "flax_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s014",
+    "name": {
+      "en": "Kale Cashew Pesto Dip",
+      "tr": "Karalahanalı Kaju Pesto Dip"
+    },
+    "description": {
+      "en": "A vibrant dip made with kale, cashews, garlic, and olive oil, served with fresh vegetables.",
+      "tr": "Karalahana, kaju, sarımsak ve zeytinyağından yapılan canlı bir dip; taze sebzelerle servis edilir."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "kale",
+      "cashew",
+      "garlic",
+      "olive_oil",
+      "lemon",
+      "carrot",
+      "bell_pepper",
+      "salt"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 230,
+      "proteinG": 8,
+      "carbsG": 27,
+      "fatG": 13,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Strip the kale leaves from their stems and blanch them for 1 minute.",
+        "Drain and squeeze the kale dry — wet leaves make a watery pesto.",
+        "Toast the cashews in a dry pan for 3 minutes, then cool.",
+        "Blend the kale, cashews, garlic and lemon juice.",
+        "Pour in the olive oil in a thin stream while the blender runs, so the dip emulsifies.",
+        "Season with salt and loosen with water if it is too thick to scoop.",
+        "Cut the carrot and pepper into sticks.",
+        "Serve the dip with the vegetable sticks."
+      ],
+      "tr": [
+        "Karalahana yapraklarını saplarından ayırıp 1 dakika haşlayın.",
+        "Süzüp suyunu iyice sıkın — ıslak yaprak sulu bir pesto verir.",
+        "Kajuları kuru tavada 3 dakika kavurup soğutun.",
+        "Karalahana, kaju, sarımsak ve limon suyunu çekin.",
+        "Blendır dönerken zeytinyağını ince bir şerit hâlinde dökün ki sos kıvam tutsun.",
+        "Tuzunu ayarlayın, alınamayacak kadar koyuysa suyla açın.",
+        "Havuç ve biberi çubuk şeklinde doğrayın.",
+        "Dipi sebze çubuklarıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "kale": {
+        "amount": 65.0,
+        "unit": "g"
+      },
+      "cashew": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "carrot": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "bell_pepper": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s015",
+    "name": {
+      "en": "Strawberry Yogurt Parfait",
+      "tr": "Çilekli Yoğurt Parfesi"
+    },
+    "description": {
+      "en": "Layers of yogurt, fresh strawberries, and oats for a light and satisfying parfait.",
+      "tr": "Yoğurt, taze çilek ve yulaf katmanlarından oluşan hafif ve doyurucu bir parfe."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "yogurt",
+      "strawberry",
+      "oats",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten"
+    ],
+    "checkInTags": [
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 216,
+      "proteinG": 16,
+      "carbsG": 34,
+      "fatG": 3,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Toast the oats in a dry pan for 3 minutes and let them cool.",
+        "Hull the strawberries and slice them.",
+        "Spoon a third of the yoghurt into the base of a glass.",
+        "Add a layer of oats and strawberries.",
+        "Repeat the layers, finishing with yoghurt.",
+        "Drizzle with honey just before serving so the layers stay distinct."
+      ],
+      "tr": [
+        "Yulafı kuru tavada 3 dakika kavurup soğutun.",
+        "Çilekleri sapından ayırıp dilimleyin.",
+        "Yoğurdun üçte birini bardağın dibine yayın.",
+        "Üzerine bir kat yulaf ve çilek ekleyin.",
+        "Katları tekrarlayın, en üste yoğurt gelsin.",
+        "Katlar dağılmasın diye balı servis öncesi gezdirin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "strawberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s016",
+    "name": {
+      "en": "Sweet Potato Bites with Tahini",
+      "tr": "Tahinli Tatlı Patates Dilimleri"
+    },
+    "description": {
+      "en": "Roasted sweet potato rounds drizzled with tahini and a sprinkle of sesame seeds.",
+      "tr": "Fırınlanmış tatlı patates dilimleri, tahin ve susam ile servis edilir."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "sweet_potato",
+      "tahini",
+      "olive_oil",
+      "salt",
+      "cumin",
+      "lemon"
+    ],
+    "allergenTags": [
+      "sesame"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 243,
+      "proteinG": 5,
+      "carbsG": 27,
+      "fatG": 14,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Scrub the sweet potato and cut it into 1 cm thick rounds.",
+        "Toss the rounds with olive oil, cumin and salt.",
+        "Spread them in a single layer so they roast rather than steam.",
+        "Bake for 25 minutes, turning once halfway.",
+        "They are done when the edges are caramelised and a fork slides in easily.",
+        "Loosen the tahini with a little water and lemon until it pours.",
+        "Drizzle the tahini over the warm slices and serve."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Tatlı patatesi iyice fırçalayıp 1 cm kalınlığında yuvarlak dilimleyin.",
+        "Dilimleri zeytinyağı, kimyon ve tuzla harmanlayın.",
+        "Buharda pişmemeleri için tek sıra hâlinde yayın.",
+        "Ortasında bir kez çevirerek 25 dakika pişirin.",
+        "Kenarları karamelize olup çatal kolayca giriyorsa hazırdır.",
+        "Tahini biraz su ve limonla akıcı kıvama getirin.",
+        "Tahin sosunu ılık dilimlerin üzerine gezdirip servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "sweet_potato": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "tahini": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "s017",
+    "name": {
+      "en": "Blueberry Flax Smoothie",
+      "tr": "Yaban Mersinli Keten Tohumlu Smoothie"
+    },
+    "description": {
+      "en": "An antioxidant-rich smoothie with blueberries, flaxseeds, banana, and milk.",
+      "tr": "Yaban mersini, keten tohumu, muz ve sütle hazırlanan antioksidan açısından zengin smoothie."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "blueberry",
+      "flax_seeds",
+      "banana",
+      "milk"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 269,
+      "proteinG": 9,
+      "carbsG": 49,
+      "fatG": 6,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Freeze the banana in slices beforehand for a thicker, colder drink.",
+        "Grind the flaxseed — whole seeds pass through undigested.",
+        "Put the milk in the blender first.",
+        "Add the frozen banana, blueberries and ground flaxseed.",
+        "Blend on high for 45 seconds until smooth and evenly purple.",
+        "Pour into a glass and drink immediately."
+      ],
+      "tr": [
+        "Daha kıvamlı ve soğuk olsun diye muzu önceden dilimleyip dondurun.",
+        "Keten tohumunu öğütün — bütün tohum sindirilmeden geçer.",
+        "Önce sütü blendıra koyun.",
+        "Donmuş muz, yaban mersini ve öğütülmüş keten tohumunu ekleyin.",
+        "Pürüzsüz ve rengi eşit mor olana dek yüksek devirde 45 saniye çekin.",
+        "Bardağa döküp hemen için."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "flax_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "milk": {
+        "amount": 150.0,
+        "unit": "ml"
+      }
+    }
+  },
+  {
+    "id": "s018",
+    "name": {
+      "en": "Lentil Tomato Bruschetta",
+      "tr": "Mercimekli Domatesli Bruschetta"
+    },
+    "description": {
+      "en": "Toasted bread topped with seasoned lentils and fresh diced tomatoes for a fiber-rich snack.",
+      "tr": "Baharatlı mercimek ve taze doğranmış domatesle kaplı kızarmış ekmek dilimleri."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "bread",
+      "green_lentil",
+      "tomato",
+      "onion",
+      "olive_oil",
+      "basil",
+      "garlic"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 280,
+      "proteinG": 13,
+      "carbsG": 45,
+      "fatG": 7,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Cook lentils until tender and drain excess water.",
+        "Mix lentils with diced tomato, minced onion, garlic, olive oil, and basil.",
+        "Toast bread slices and spoon the lentil-tomato mixture on top.",
+        "Serve at room temperature."
+      ],
+      "tr": [
+        "Mercimekleri yumuşayana kadar pişirin ve fazla suyu süzün.",
+        "Mercimekleri doğranmış domates, kıyılmış soğan, sarımsak, zeytinyağı ve fesleğenle karıştırın.",
+        "Ekmek dilimlerini kızartın ve üzerine mercimek-domates karışımını koyun.",
+        "Oda sıcaklığında servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "bread": {
+        "amount": 1.0,
+        "unit": "slice"
+      },
+      "green_lentil": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "basil": {
+        "amount": 5.0,
+        "unit": "g"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      }
+    }
+  },
+  {
+    "id": "s019",
+    "name": {
+      "en": "Pomegranate Orange Fruit Bowl",
+      "tr": "Narlı Portakallı Meyve Kasesi"
+    },
+    "description": {
+      "en": "A vibrant fruit bowl with pomegranate seeds, orange segments, and a drizzle of honey.",
+      "tr": "Nar taneleri, portakal dilimleri ve bal ile hazırlanan canlı bir meyve kasesi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "pomegranate",
+      "orange",
+      "honey",
+      "cinnamon"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "medium",
+    "carbType": "simple",
+    "macros": {
+      "calories": 179,
+      "proteinG": 3,
+      "carbsG": 45,
+      "fatG": 1,
+      "fiberG": 10
+    },
+    "steps": {
+      "en": [
+        "Roll the pomegranate firmly on the counter to loosen the seeds.",
+        "Halve it and tap the back with a spoon to release the seeds into a bowl.",
+        "Peel the orange and separate the segments, removing the pith.",
+        "Combine the orange segments and pomegranate seeds.",
+        "Drizzle with honey and dust with cinnamon.",
+        "Chill for 15 minutes before serving so the juices mingle."
+      ],
+      "tr": [
+        "Narı tezgâhta bastırarak yuvarlayın ki taneler gevşesin.",
+        "İkiye bölüp arkasına kaşıkla vurarak taneleri kaseye dökün.",
+        "Portakalı soyup dilimlerine ayırın, beyaz zarlarını temizleyin.",
+        "Portakal dilimleriyle nar tanelerini birleştirin.",
+        "Bal gezdirip tarçın serpin.",
+        "Suları birbirine karışsın diye servis öncesi 15 dakika soğutun."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "pomegranate": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "orange": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s020",
+    "name": {
+      "en": "Spiced Chickpea Crunch",
+      "tr": "Baharatlı Çıtır Nohut"
+    },
+    "description": {
+      "en": "Oven-roasted chickpeas seasoned with cumin and paprika for a crunchy, protein-packed snack.",
+      "tr": "Kimyon ve kırmızı biberle tatlandırılmış, fırında kavrulmuş çıtır nohut atıştırmalığı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "chickpea",
+      "olive_oil",
+      "cumin",
+      "paprika",
+      "salt",
+      "garlic"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "cantFocus",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 223,
+      "proteinG": 9,
+      "carbsG": 30,
+      "fatG": 9,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Drain and pat dry canned chickpeas thoroughly.",
+        "Toss with olive oil, cumin, paprika, garlic powder, and salt.",
+        "Spread on a baking tray and roast at 200°C for 25-30 minutes until crispy.",
+        "Let cool before serving for extra crunch."
+      ],
+      "tr": [
+        "Konserve nohutları süzün ve iyice kurulayın.",
+        "Zeytinyağı, kimyon, kırmızı biber, sarımsak tozu ve tuzla karıştırın.",
+        "Fırın tepsisine yayın ve 200°C'de 25-30 dakika çıtır olana kadar pişirin.",
+        "Ekstra çıtırlık için servis öncesi soğumaya bırakın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      }
+    }
+  },
+  {
+    "id": "s021",
+    "name": {
+      "en": "Avocado Almond Dip",
+      "tr": "Avokadolu Bademli Dip"
+    },
+    "description": {
+      "en": "A creamy dip blending ripe avocado with almonds, lemon, and garlic, perfect with veggie sticks.",
+      "tr": "Olgun avokado, badem, limon ve sarımsakla hazırlanan kremamsı dip; sebze çubuklarıyla mükemmel."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "avocado",
+      "almond",
+      "lemon",
+      "garlic",
+      "olive_oil",
+      "salt",
+      "celery",
+      "cucumber"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 234,
+      "proteinG": 6,
+      "carbsG": 16,
+      "fatG": 19,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Toast the almonds in a dry pan for 3 minutes and let them cool.",
+        "Halve the avocados and scoop the flesh into a bowl.",
+        "Mash with lemon juice straight away — the acid stops it browning.",
+        "Blend the avocado with the almonds, garlic and olive oil until creamy.",
+        "Season with salt and add more lemon to taste.",
+        "Cut the celery and cucumber into sticks.",
+        "Press cling film onto the surface of the dip if not serving at once.",
+        "Serve with the vegetable sticks."
+      ],
+      "tr": [
+        "Bademleri kuru tavada 3 dakika kavurup soğutun.",
+        "Avokadoları ikiye bölüp içlerini bir kaseye alın.",
+        "Hemen limon suyuyla ezin — asit kararmayı önler.",
+        "Avokadoyu badem, sarımsak ve zeytinyağıyla kremamsı olana dek çekin.",
+        "Tuzunu ayarlayıp damak tadınıza göre limon ekleyin.",
+        "Kereviz sapı ve salatalığı çubuk şeklinde doğrayın.",
+        "Hemen servis etmeyecekseniz streç filmi dipin yüzeyine yapıştırın.",
+        "Sebze çubuklarıyla servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "avocado": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "garlic": {
+        "amount": 2.0,
+        "unit": "clove"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "celery": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "s022",
+    "name": {
+      "en": "Tuna Cucumber Rolls",
+      "tr": "Ton Balıklı Salatalık Ruloları"
+    },
+    "description": {
+      "en": "Light cucumber rolls filled with seasoned tuna, lemon, and a touch of mustard.",
+      "tr": "Baharatlı ton balığı, limon ve bir tutam hardalla doldurulan hafif salatalık ruloları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tuna",
+      "cucumber",
+      "lemon",
+      "mustard",
+      "black_pepper",
+      "salt"
+    ],
+    "allergenTags": [
+      "fish",
+      "mustard"
+    ],
+    "checkInTags": [
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 125,
+      "proteinG": 24,
+      "carbsG": 5,
+      "fatG": 1,
+      "fiberG": 1
+    },
+    "steps": {
+      "en": [
+        "Drain the tuna thoroughly, pressing out the liquid.",
+        "Mix it with mustard, lemon juice, salt and pepper.",
+        "Peel the cucumber into long ribbons with a vegetable peeler.",
+        "Lay the ribbons on paper towel and pat them dry so the rolls hold.",
+        "Place a small spoon of the tuna mixture at one end of each ribbon.",
+        "Roll up firmly and secure with a cocktail stick.",
+        "Chill for 15 minutes before serving.",
+        "Serve cold, within a few hours of making."
+      ],
+      "tr": [
+        "Ton balığının suyunu bastırarak iyice süzün.",
+        "Hardal, limon suyu, tuz ve karabiberle karıştırın.",
+        "Salatalığı sebze soyacağıyla uzun şeritler hâlinde soyun.",
+        "Rulolar dağılmasın diye şeritleri kağıt havluya yayıp kurulayın.",
+        "Her şeridin bir ucuna küçük bir kaşık ton balıklı harç koyun.",
+        "Sıkıca sarıp kürdanla sabitleyin.",
+        "Servis öncesi 15 dakika buzdolabında bekletin.",
+        "Yaptıktan sonra birkaç saat içinde, soğuk olarak tüketin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tuna": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "cucumber": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "mustard": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s023",
+    "name": {
+      "en": "Cinnamon Baked Apple Chips",
+      "tr": "Tarçınlı Fırın Elma Cipsleri"
+    },
+    "description": {
+      "en": "Thin apple slices baked until crispy with a dusting of cinnamon for a guilt-free chip alternative.",
+      "tr": "Tarçın serpilmiş ince elma dilimleri, çıtır olana kadar fırınlanmış sağlıklı cips alternatifi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "apple",
+      "cinnamon",
+      "lemon"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "lowEnergy",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "medium",
+    "carbType": "simple",
+    "macros": {
+      "calories": 110,
+      "proteinG": 1,
+      "carbsG": 31,
+      "fatG": 0,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 120°C — low heat is what dries the slices instead of baking them.",
+        "Core the apples and slice them as thinly as you can, ideally 2-3 mm.",
+        "Toss the slices with lemon juice to keep their colour.",
+        "Pat them dry and lay them out on baking paper without overlapping.",
+        "Dust with cinnamon.",
+        "Bake for 1 hour, then turn the slices over.",
+        "Bake 45-60 minutes more until they feel dry and leathery.",
+        "Cool completely on a rack — they crisp up as they cool."
+      ],
+      "tr": [
+        "Fırını 120°C'ye ısıtın — dilimleri pişirmek yerine kurutan şey bu düşük ısıdır.",
+        "Elmaların çekirdek evini çıkarıp olabildiğince ince, ideal olarak 2-3 mm dilimleyin.",
+        "Renklerini korusun diye dilimleri limon suyuyla harmanlayın.",
+        "Kurulayıp pişirme kağıdına birbirine değmeyecek şekilde dizin.",
+        "Üzerlerine tarçın serpin.",
+        "1 saat pişirdikten sonra dilimleri ters çevirin.",
+        "Kuru ve deri kıvamında hissedene dek 45-60 dakika daha pişirin.",
+        "Telin üzerinde tamamen soğutun — çıtırlıklarını soğurken kazanırlar."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apple": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      }
+    }
+  },
+  {
+    "id": "s024",
+    "name": {
+      "en": "Edamame with Sea Salt and Lemon",
+      "tr": "Limonlu Tuzlu Soya Fasulyesi"
+    },
+    "description": {
+      "en": "Steamed edamame (young soybeans) finished with sea salt and a squeeze of fresh lemon.",
+      "tr": "Buharda pişirilmiş soya fasulyesi, deniz tuzu ve taze limon sıkılarak servis edilir."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "asian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "edamame",
+      "soy_sauce",
+      "lemon",
+      "salt",
+      "black_pepper"
+    ],
+    "allergenTags": [
+      "gluten",
+      "soy"
+    ],
+    "checkInTags": [
+      "bloated",
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "complex",
+    "macros": {
+      "calories": 159,
+      "proteinG": 16,
+      "carbsG": 13,
+      "fatG": 6,
+      "fiberG": 7
+    },
+    "steps": {
+      "en": [
+        "Bring a pot of salted water to a rolling boil.",
+        "Add the edamame pods and cook for 4-5 minutes.",
+        "They are ready when a pod pops open easily and the beans are tender but not soft.",
+        "Drain and rinse briefly under cold water to stop the cooking and keep the colour.",
+        "Toss the warm pods with soy sauce, lemon juice and pepper.",
+        "Sprinkle with salt and serve warm, popping the beans straight from the pods."
+      ],
+      "tr": [
+        "Bir tencerede tuzlu suyu fokur fokur kaynatın.",
+        "Soya fasulyesi kabuklarını ekleyip 4-5 dakika haşlayın.",
+        "Kabuk kolayca açılıp taneler yumuşak ama dağılmamışsa hazırdır.",
+        "Süzüp pişmeyi durdurmak ve rengi korumak için kısaca soğuk sudan geçirin.",
+        "Ilık kabukları soya sosu, limon suyu ve karabiberle harmanlayın.",
+        "Tuz serpip ılık servis edin, taneleri doğrudan kabuğundan çıkararak yiyin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "soy_sauce": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "black_pepper": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "edamame": {
+        "amount": 120.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s025",
+    "name": {
+      "en": "Cashew Date Bliss Balls",
+      "tr": "Kajulu Hurmalı Mutluluk Topları"
+    },
+    "description": {
+      "en": "Naturally sweet bliss balls made from cashews, dates, coconut, and a hint of vanilla.",
+      "tr": "Kaju, hurma, hindistancevizi ve vanilya ile doğal tatlılıkta mutluluk topları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "cashew",
+      "coconut",
+      "honey",
+      "vanilla",
+      "dates"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 294,
+      "proteinG": 4,
+      "carbsG": 42,
+      "fatG": 13,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Blend cashews and pitted dates in a food processor until a sticky dough forms.",
+        "Add the shredded coconut, honey and vanilla extract; pulse to combine.",
+        "Roll into small balls and coat with extra shredded coconut.",
+        "Refrigerate for 20 minutes before serving."
+      ],
+      "tr": [
+        "Kaju ve çekirdeksiz hurmaları mutfak robotunda yapışkan bir hamur oluşana kadar karıştırın.",
+        "Rendelenmiş hindistancevizi, bal ve vanilya özütünü ekleyip kısa süreli karıştırın.",
+        "Küçük toplar şeklinde yuvarlayın ve hindistancevizi ile kaplayın.",
+        "Servis öncesi 20 dakika buzdolabında bekletin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "cashew": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "coconut": {
+        "amount": 20.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "vanilla": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "dates": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s026",
+    "name": {
+      "en": "Trail Mix with Nuts and Dried Fruits",
+      "tr": "Kuruyemişli Karışım"
+    },
+    "description": {
+      "en": "A crunchy and chewy mix of mixed nuts, dried fruit, and dark chocolate chips — perfect grab-and-go junk-food-style snack.",
+      "tr": "Karışık kuruyemiş, kuru meyve ve bitter çikolata parçalarından oluşan çıtır ve lezzetli bir abur cubur karışımı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "mixed_nuts",
+      "dried_fruit",
+      "dark_chocolate"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cantFocus",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 339,
+      "proteinG": 7,
+      "carbsG": 36,
+      "fatG": 20,
+      "fiberG": 6
+    },
+    "steps": {
+      "en": [
+        "Toast the mixed nuts in a dry pan for 4 minutes, shaking often so they colour evenly.",
+        "Let them cool completely before mixing — warm nuts melt the chocolate.",
+        "Chop the dark chocolate into small chunks.",
+        "Cut any large dried fruit into bite-sized pieces.",
+        "Toss the nuts, dried fruit and chocolate together.",
+        "Store in an airtight jar away from heat so the chocolate keeps its snap."
+      ],
+      "tr": [
+        "Karışık kuruyemişi kuru tavada, eşit kızarsın diye sık sallayarak 4 dakika kavurun.",
+        "Karıştırmadan önce tamamen soğutun — sıcak kuruyemiş çikolatayı eritir.",
+        "Bitter çikolatayı küçük parçalar hâlinde doğrayın.",
+        "İri kuru meyveleri lokmalık boyutta kesin.",
+        "Kuruyemiş, kuru meyve ve çikolatayı harmanlayın.",
+        "Çikolata çıtırlığını korusun diye ağzı kapalı kavanozda, sıcaktan uzakta saklayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "mixed_nuts": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "dried_fruit": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "dark_chocolate": {
+        "amount": 15.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s027",
+    "name": {
+      "en": "Ice Cream Sundae",
+      "tr": "Dondurmalı Kase"
+    },
+    "description": {
+      "en": "A classic junk food treat — scoops of ice cream topped with chocolate, banana slices, and crushed cookies.",
+      "tr": "Klasik bir abur cubur keyfi — çikolata sosu, muz dilimleri ve ufalanmış kurabiye ile süslenmiş dondurma kasesi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "ice_cream",
+      "chocolate_bar",
+      "banana",
+      "cookies"
+    ],
+    "allergenTags": [
+      "dairy",
+      "eggs",
+      "gluten"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "pms",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 621,
+      "proteinG": 9,
+      "carbsG": 89,
+      "fatG": 28,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Place two scoops of ice cream in a bowl.",
+        "Melt chocolate and drizzle it over the ice cream.",
+        "Add banana slices on the side and crush cookies over the top.",
+        "Serve immediately before melting."
+      ],
+      "tr": [
+        "Bir kaseye iki top dondurma koyun.",
+        "Çikolatayı eritin ve dondurmanın üzerine gezdirin.",
+        "Kenarlara muz dilimleri ekleyin ve üzerine ufalanmış kurabiye serpin.",
+        "Erimeden hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ice_cream": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "chocolate_bar": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "cookies": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s028",
+    "name": {
+      "en": "Chips and Salsa",
+      "tr": "Cips ve Sos"
+    },
+    "description": {
+      "en": "Tortilla chips served with a quick homemade tomato salsa — the ultimate casual junk food snack.",
+      "tr": "Ev yapımı domates sosu ile servis edilen tortilla cipsleri — en klasik abur cubur atıştırmalığı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mexican"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "tortilla_chips",
+      "potato_chips",
+      "crackers",
+      "tomato",
+      "onion",
+      "parsley",
+      "lemon",
+      "salt"
+    ],
+    "allergenTags": [
+      "gluten"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 591,
+      "proteinG": 11,
+      "carbsG": 80,
+      "fatG": 28,
+      "fiberG": 8
+    },
+    "steps": {
+      "en": [
+        "Arrange the tortilla chips, potato chips and crackers on a large serving plate.",
+        "Dice the tomato, onion and parsley; mix with lemon juice and salt to make the salsa.",
+        "Pour the salsa into a small bowl and place in the center of the plate.",
+        "Dip and enjoy!"
+      ],
+      "tr": [
+        "Tortilla cipsi, patates cipsi ve krakerleri büyük bir servis tabağına dizin.",
+        "Domates, soğan ve maydanozu doğrayın; limon suyu ve tuzla karıştırarak salsa yapın.",
+        "Salsayı küçük bir kaseye koyun ve tabağın ortasına yerleştirin.",
+        "Banarak keyfini çıkarın!"
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tortilla_chips": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "potato_chips": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "crackers": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "tomato": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "onion": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "parsley": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s029",
+    "name": {
+      "en": "Chocolate Fondue with Fruit",
+      "tr": "Çikolata Fondüsü"
+    },
+    "description": {
+      "en": "Melted dark chocolate served as a dipping fondue with fresh banana slices, strawberries, and dried fruit.",
+      "tr": "Taze muz dilimleri, çilek ve kuru meyve ile servis edilen eritilmiş bitter çikolata fondüsü."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "dark_chocolate",
+      "banana",
+      "blueberry",
+      "raspberry",
+      "dried_fruit"
+    ],
+    "allergenTags": [
+      "dairy"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "pms",
+      "periodCramps"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "medium",
+    "carbType": "simple",
+    "macros": {
+      "calories": 381,
+      "proteinG": 5,
+      "carbsG": 79,
+      "fatG": 8,
+      "fiberG": 14
+    },
+    "steps": {
+      "en": [
+        "Break dark chocolate into pieces and melt in a heatproof bowl over simmering water.",
+        "Slice the banana and wash the blueberries and raspberries; arrange them on a plate alongside the dried fruit.",
+        "Pour melted chocolate into a fondue pot or small bowl.",
+        "Dip fruit pieces into the warm chocolate and enjoy."
+      ],
+      "tr": [
+        "Bitter çikolatayı parçalayın ve hafif kaynayan suyun üzerinde ısıya dayanıklı kasede eritin.",
+        "Muzu dilimleyin, yaban mersini ve ahududuyu yıkayın; kuru meyveyle birlikte bir tabağa dizin.",
+        "Eritilmiş çikolatayı fondü kabına veya küçük bir kaseye dökün.",
+        "Meyve parçalarını sıcak çikolataya batırarak keyfini çıkarın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "dark_chocolate": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "dried_fruit": {
+        "amount": 30.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s030",
+    "name": {
+      "en": "Popcorn Party Mix",
+      "tr": "Baharatlı Patlamış Mısır"
+    },
+    "description": {
+      "en": "Freshly popped popcorn tossed with mixed nuts and a sweet-savory seasoning for a fun party snack.",
+      "tr": "Taze patlamış mısır, karışık kuruyemiş ve tatlı-tuzlu baharatlarla harmanlanmış eğlenceli parti atıştırmalığı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "popcorn",
+      "mixed_nuts",
+      "honey",
+      "crackers",
+      "salt",
+      "paprika"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 420,
+      "proteinG": 12,
+      "carbsG": 56,
+      "fatG": 19,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Pop popcorn kernels in a large pot with a little oil over medium-high heat.",
+        "In a small saucepan, warm honey with a pinch of salt and a dash of paprika.",
+        "Toss the popcorn with mixed nuts and crushed crackers in a large bowl.",
+        "Drizzle the honey mixture over everything and toss until evenly coated."
+      ],
+      "tr": [
+        "Mısır patlatma tanelerini büyük bir tencerede az yağ ile orta-yüksek ateşte patlatın.",
+        "Küçük bir tavada balı bir tutam tuz ve biraz kırmızı biberle ısıtın.",
+        "Patlamış mısırı karışık kuruyemiş ve ufalanmış krakerlerle büyük bir kasede karıştırın.",
+        "Bal karışımını her şeyin üzerine gezdirin ve eşit kaplanana kadar karıştırın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "popcorn": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "mixed_nuts": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "crackers": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s031",
+    "name": {
+      "en": "Greek Yogurt Parfait with Berries",
+      "tr": "Meyveli Yoğurt Parfesi"
+    },
+    "description": {
+      "en": "Thick Greek yogurt layered with fresh blueberries, raspberries, granola, and a drizzle of honey.",
+      "tr": "Taze yaban mersini, ahududu, granola ve bal ile katman katman hazırlanan koyu Yunan yoğurdu parfesi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "mediterranean"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "greek_yogurt",
+      "blueberry",
+      "raspberry",
+      "granola_bar",
+      "honey"
+    ],
+    "allergenTags": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 364,
+      "proteinG": 14,
+      "carbsG": 51,
+      "fatG": 13,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Spoon a thick layer of Greek yogurt into the bottom of a glass or jar.",
+        "Add a layer of fresh blueberries and raspberries.",
+        "Crumble granola bar pieces over the berries.",
+        "Repeat layers and finish with a drizzle of honey on top."
+      ],
+      "tr": [
+        "Bir bardak veya kavanozun altına kalın bir katman Yunan yoğurdu koyun.",
+        "Üzerine taze yaban mersini ve ahududu katmanı ekleyin.",
+        "Meyvelerin üzerine ufalanmış granola bar parçaları serpin.",
+        "Katmanları tekrarlayın ve üzerine bal gezdirerek servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "greek_yogurt": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "blueberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "raspberry": {
+        "amount": 80.0,
+        "unit": "g"
+      },
+      "granola_bar": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s032",
+    "name": {
+      "en": "Peanut Butter Rice Cakes",
+      "tr": "Fıstık Ezmeli Pirinç Patlağı"
+    },
+    "description": {
+      "en": "Light rice cakes spread with peanut butter, topped with banana slices and a drizzle of honey — a quick junk-food-style fix.",
+      "tr": "Fıstık ezmesi sürülmüş pirinç patlağı, muz dilimleri ve bal ile — hızlı bir abur cubur alternatifi."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "american"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "rice_cake",
+      "peanut_butter",
+      "banana",
+      "honey"
+    ],
+    "allergenTags": [
+      "peanuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "low",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 280,
+      "proteinG": 7,
+      "carbsG": 49,
+      "fatG": 8,
+      "fiberG": 5
+    },
+    "steps": {
+      "en": [
+        "Spread the peanut butter over the rice cakes right to the edges.",
+        "Slice the banana into thin rounds.",
+        "Arrange the banana slices over the peanut butter in a single layer.",
+        "Drizzle with honey.",
+        "Assemble just before eating — rice cakes soften quickly once topped.",
+        "Serve immediately."
+      ],
+      "tr": [
+        "Fıstık ezmesini pirinç patlaklarının üzerine kenarlara kadar sürün.",
+        "Muzu ince yuvarlak dilimleyin.",
+        "Muz dilimlerini ezmenin üzerine tek sıra dizin.",
+        "Üzerine bal gezdirin.",
+        "Yemeden hemen önce hazırlayın — pirinç patlağı üzeri kaplanınca çabuk yumuşar.",
+        "Hemen servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "rice_cake": {
+        "amount": 2.0,
+        "unit": "piece"
+      },
+      "peanut_butter": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "banana": {
+        "amount": 1.0,
+        "unit": "piece"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s033",
+    "name": {
+      "en": "Date and Nut Energy Bites",
+      "tr": "Hurmalı Enerji Topları"
+    },
+    "description": {
+      "en": "Chewy no-bake energy bites made from dates, mixed nuts, oats, and a touch of dark chocolate — naturally sweet junk food.",
+      "tr": "Hurma, karışık kuruyemiş, yulaf ve bitter çikolata ile hazırlanan pişirme gerektirmeyen doğal tatlılıkta enerji topları."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": null,
+    "ingredientIds": [
+      "dates",
+      "mixed_nuts",
+      "oats",
+      "dark_chocolate",
+      "honey"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts"
+    ],
+    "checkInTags": [
+      "lowEnergy",
+      "periodFatigue",
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 456,
+      "proteinG": 12,
+      "carbsG": 59,
+      "fatG": 22,
+      "fiberG": 9
+    },
+    "steps": {
+      "en": [
+        "Pit the dates and place them in a food processor with mixed nuts.",
+        "Pulse until a chunky, sticky dough forms.",
+        "Add oats, chopped dark chocolate, and a drizzle of honey; pulse a few more times.",
+        "Roll into bite-sized balls and refrigerate for at least 30 minutes before serving."
+      ],
+      "tr": [
+        "Hurmaların çekirdeklerini çıkarın ve karışık kuruyemişle birlikte mutfak robotuna koyun.",
+        "Parçalı ve yapışkan bir hamur oluşana kadar çalıştırın.",
+        "Yulaf, doğranmış bitter çikolata ve bir miktar bal ekleyin; birkaç kez daha çalıştırın.",
+        "Lokma büyüklüğünde toplar halinde yuvarlayın ve servis öncesi en az 30 dakika buzdolabında bekletin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "dates": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "mixed_nuts": {
+        "amount": 25.0,
+        "unit": "g"
+      },
+      "oats": {
+        "amount": 30.0,
+        "unit": "g"
+      },
+      "dark_chocolate": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      }
+    }
+  },
+  {
+    "id": "s034",
+    "name": {
+      "en": "Tahini and Molasses on Bread",
+      "tr": "Tahin Pekmezli Ekmek"
+    },
+    "description": {
+      "en": "The Turkish winter classic: tahini and grape molasses stirred together on fresh bread.",
+      "tr": "Türk kışının klasiği: ekmek üzerinde birlikte çırpılmış tahin ve pekmez."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "tahini",
+      "molasses",
+      "bread",
+      "walnut"
+    ],
+    "allergenTags": [
+      "gluten",
+      "nuts",
+      "sesame"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "lowEnergy",
+      "periodCramps"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "medium",
+    "carbType": "mixed",
+    "macros": {
+      "calories": 367,
+      "proteinG": 9,
+      "carbsG": 33,
+      "fatG": 24,
+      "fiberG": 4
+    },
+    "steps": {
+      "en": [
+        "Stir the tahini in its jar first — the oil always separates on top.",
+        "Spoon the tahini and molasses into a small bowl.",
+        "Mix them until the colour is completely even and glossy.",
+        "The mixture should be thick enough to hold on the bread, not runny.",
+        "Spread it over the bread right to the edges.",
+        "Chop the walnuts and scatter them on top."
+      ],
+      "tr": [
+        "Önce kavanozdaki tahini karıştırın — yağı hep üstte ayrışır.",
+        "Tahin ve pekmezi küçük bir kaseye alın.",
+        "Rengi tamamen eşitlenip parlayana dek karıştırın.",
+        "Karışım akıcı değil, ekmekte duracak kıvamda olmalı.",
+        "Ekmeğin üzerine kenarlara kadar sürün.",
+        "Cevizleri kıyıp üzerine serpin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tahini": {
+        "amount": 2.0,
+        "unit": "tablespoon"
+      },
+      "bread": {
+        "amount": 1.0,
+        "unit": "slice"
+      },
+      "walnut": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "molasses": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      }
+    }
+  },
+  {
+    "id": "s035",
+    "name": {
+      "en": "Dried Apricots with Almonds",
+      "tr": "Bademli Kuru Kayısı"
+    },
+    "description": {
+      "en": "Dried apricots stuffed with almonds — iron and magnesium in two bites.",
+      "tr": "Bademle doldurulmuş kuru kayısı — iki lokmada demir ve magnezyum."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "apricot",
+      "almond",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "nuts"
+    ],
+    "checkInTags": [
+      "periodFatigue",
+      "cravingSweets",
+      "lowEnergy"
+    ],
+    "proteinLevel": "low",
+    "fiberLevel": "high",
+    "carbType": "simple",
+    "macros": {
+      "calories": 112,
+      "proteinG": 4,
+      "carbsG": 9,
+      "fatG": 8,
+      "fiberG": 3
+    },
+    "steps": {
+      "en": [
+        "Toast the almonds in a dry pan for 3 minutes until fragrant, then cool.",
+        "If the apricots are very dry, soak them in warm water for 5 minutes and pat dry.",
+        "Open each apricot along its natural seam without splitting it in two.",
+        "Tuck one or two almonds inside each.",
+        "Dust lightly with cinnamon.",
+        "Serve at room temperature; they keep in a sealed jar for a week."
+      ],
+      "tr": [
+        "Bademleri kuru tavada kokusu çıkana dek 3 dakika kavurup soğutun.",
+        "Kayısılar çok kuruysa ılık suda 5 dakika bekletip kurulayın.",
+        "Her kayısıyı ikiye ayırmadan, doğal çizgisinden açın.",
+        "İçine bir ya da iki badem yerleştirin.",
+        "Üzerine hafifçe tarçın serpin.",
+        "Oda sıcaklığında servis edin; ağzı kapalı kavanozda bir hafta durur."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "apricot": {
+        "amount": 50.0,
+        "unit": "g"
+      },
+      "almond": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s036",
+    "name": {
+      "en": "Roasted Chickpeas with Sumac",
+      "tr": "Sumaklı Fırın Nohut"
+    },
+    "description": {
+      "en": "Chickpeas roasted until crisp and dusted with sumac — a savoury crunch.",
+      "tr": "Çıtır çıtır kavrulup sumakla tatlandırılan nohut — tuzlu bir atıştırmalık."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "middleEastern"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 40,
+    "ingredientIds": [
+      "chickpea",
+      "olive_oil",
+      "sumac",
+      "cumin",
+      "paprika",
+      "salt"
+    ],
+    "allergenTags": [],
+    "checkInTags": [
+      "bloated",
+      "postWorkout",
+      "noSpecificIssue"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 425,
+      "proteinG": 15,
+      "carbsG": 49,
+      "fatG": 21,
+      "fiberG": 16
+    },
+    "steps": {
+      "en": [
+        "Preheat the oven to 200°C.",
+        "Drain the chickpeas and dry them thoroughly on a towel.",
+        "Any moisture left here will steam them soft instead of crisping them.",
+        "Toss with olive oil, cumin and paprika but not yet the sumac.",
+        "Spread in a single layer and roast for 30-35 minutes, shaking twice.",
+        "They are done when they rattle in the tray and crack when pressed.",
+        "Toss with sumac and salt while still hot so it sticks.",
+        "Cool completely before storing, or they will go soft."
+      ],
+      "tr": [
+        "Fırını 200°C'ye ısıtın.",
+        "Nohutları süzüp bir bezle iyice kurulayın.",
+        "Kalan nem çıtırlaşmayı engeller, nohutları buharda yumuşatır.",
+        "Zeytinyağı, kimyon ve toz biberle harmanlayın; sumağı henüz eklemeyin.",
+        "Tek sıra hâlinde yayıp iki kez sallayarak 30-35 dakika kavurun.",
+        "Tepside şıkırdayıp bastırınca çatlıyorsa hazırdır.",
+        "Sumak ve tuzu sıcakken ekleyin ki tutunsun.",
+        "Yumuşamamaları için tamamen soğutmadan kaba koymayın."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "chickpea": {
+        "amount": 150.0,
+        "unit": "g"
+      },
+      "olive_oil": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sumac": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "cumin": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  },
+  {
+    "id": "s037",
+    "name": {
+      "en": "Sesame Halva Bites with Cocoa",
+      "tr": "Kakaolu Tahin Topları"
+    },
+    "description": {
+      "en": "Tahini, cocoa and oats rolled into bites — magnesium in a sweet form.",
+      "tr": "Tahin, kakao ve yulafın top hâline geldiği tatlı bir magnezyum kaynağı."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "turkish",
+      "international"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 35,
+    "ingredientIds": [
+      "tahini",
+      "cocoa_powder",
+      "oats",
+      "honey",
+      "sesame_seeds",
+      "dates"
+    ],
+    "allergenTags": [
+      "gluten",
+      "sesame"
+    ],
+    "checkInTags": [
+      "periodCramps",
+      "cravingSweets",
+      "lowEnergy"
+    ],
+    "proteinLevel": "medium",
+    "fiberLevel": "high",
+    "carbType": "complex",
+    "macros": {
+      "calories": 582,
+      "proteinG": 17,
+      "carbsG": 86,
+      "fatG": 26,
+      "fiberG": 17
+    },
+    "steps": {
+      "en": [
+        "Pit the dates and soak them in hot water for 10 minutes.",
+        "Blitz the oats into a coarse flour.",
+        "Blend the drained dates into a sticky paste.",
+        "Stir the tahini well before measuring — its oil always separates.",
+        "Mix the tahini, cocoa, honey, oat flour and date paste into a stiff dough.",
+        "Chill for 20 minutes so it firms up enough to roll.",
+        "Roll into small balls with damp hands.",
+        "Roll each ball in sesame seeds to coat.",
+        "Refrigerate for 1 hour before eating; they keep for five days."
+      ],
+      "tr": [
+        "Hurmaların çekirdeğini çıkarıp 10 dakika sıcak suda bekletin.",
+        "Yulafı iri taneli un olana dek çekin.",
+        "Süzülmüş hurmaları yapışkan bir macun olana dek çekin.",
+        "Tahini ölçmeden önce iyice karıştırın — yağı hep ayrışır.",
+        "Tahin, kakao, bal, yulaf unu ve hurma macununu katı bir hamur olana dek karıştırın.",
+        "Şekil alacak kıvama gelmesi için 20 dakika buzdolabında bekletin.",
+        "Nemli elle küçük toplar yapın.",
+        "Her topu susama bulayın.",
+        "Yemeden önce 1 saat buzdolabında bekletin; beş gün dayanır."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "tahini": {
+        "amount": 2.0,
+        "unit": "tablespoon"
+      },
+      "cocoa_powder": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "oats": {
+        "amount": 40.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "sesame_seeds": {
+        "amount": 10.0,
+        "unit": "g"
+      },
+      "dates": {
+        "amount": 40.0,
+        "unit": "g"
+      }
+    }
+  },
+  {
+    "id": "s038",
+    "name": {
+      "en": "Whipped Ricotta with Honey and Pistachio",
+      "tr": "Fıstıklı Ballı Ricotta"
+    },
+    "description": {
+      "en": "Ricotta whipped light, topped with pistachio and honey.",
+      "tr": "Hafifçe çırpılmış ricotta, üzerinde Antep fıstığı ve bal."
+    },
+    "mealType": "snack",
+    "cuisineIds": [
+      "italian"
+    ],
+    "dietTags": [],
+    "servings": 1,
+    "prepTimeMin": 10,
+    "ingredientIds": [
+      "ricotta",
+      "honey",
+      "pistachio",
+      "lemon",
+      "cinnamon"
+    ],
+    "allergenTags": [
+      "dairy",
+      "nuts"
+    ],
+    "checkInTags": [
+      "cravingSweets",
+      "postWorkout"
+    ],
+    "proteinLevel": "high",
+    "fiberLevel": "low",
+    "carbType": "simple",
+    "macros": {
+      "calories": 309,
+      "proteinG": 15,
+      "carbsG": 21,
+      "fatG": 20,
+      "fiberG": 2
+    },
+    "steps": {
+      "en": [
+        "Take the ricotta out of the fridge 15 minutes ahead so it whips smoothly.",
+        "Whisk it hard for 2 minutes until it lightens and loses its grain.",
+        "Grate in a little lemon zest and whisk once more.",
+        "Chop the pistachios roughly.",
+        "Spoon the ricotta into a bowl and swirl the surface.",
+        "Scatter the pistachios over the top and drizzle with honey.",
+        "Finish with a pinch of cinnamon and serve cool."
+      ],
+      "tr": [
+        "Ricottayı kolay çırpılsın diye 15 dakika önceden buzdolabından çıkarın.",
+        "Hafifleyip tanesi kaybolana dek 2 dakika güçlüce çırpın.",
+        "Biraz limon kabuğu rendeleyip bir kez daha çırpın.",
+        "Antep fıstıklarını iri kıyın.",
+        "Ricottayı kaseye alıp yüzeyinde dalgalar oluşturun.",
+        "Üzerine fıstıkları serpip bal gezdirin.",
+        "Bir tutam tarçınla tamamlayıp serin servis edin."
+      ]
+    },
+    "imagePath": null,
+    "isUserCreated": false,
+    "quantities": {
+      "ricotta": {
+        "amount": 100.0,
+        "unit": "g"
+      },
+      "honey": {
+        "amount": 1.0,
+        "unit": "tablespoon"
+      },
+      "pistachio": {
+        "amount": 15.0,
+        "unit": "g"
+      },
+      "lemon": {
+        "amount": 0.5,
+        "unit": "piece"
+      },
+      "cinnamon": {
+        "amount": 1.0,
+        "unit": "pinch"
+      }
+    }
+  }
+]

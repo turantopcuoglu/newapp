@@ -1,0 +1,26 @@
+{
+  "pms": {
+    "upper_left": "#663846",
+    "top": "#59303E",
+    "left_mid": "#5D3240",
+    "inner_center": "#532D3A",
+    "right_mid": "#572F3D",
+    "bottom": "#542E3A"
+  },
+  "periodCramps": {
+    "upper_left": "#6E392A",
+    "top": "#633325",
+    "left_mid": "#643425",
+    "inner_center": "#5B3022",
+    "right_mid": "#5B2F22",
+    "bottom": "#5D3022"
+  },
+  "periodFatigue": {
+    "upper_left": "#4C3D61",
+    "top": "#443656",
+    "left_mid": "#453759",
+    "inner_center": "#39304C",
+    "right_mid": "#3B304E",
+    "bottom": "#3B314D"
+  }
+}

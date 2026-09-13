@@ -55,11 +55,14 @@ class NutritionLiveCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppTheme.accentOrange.withAlpha(40),
+                  color: context.palette.accentOrange.withAlpha(40),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Icon(Icons.local_fire_department,
-                    color: AppTheme.accentOrange, size: 20),
+                child: Icon(
+                  Icons.local_fire_department,
+                  color: context.palette.accentOrange,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -76,8 +79,8 @@ class NutritionLiveCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       '${servings.length} ${l10n.recipeIngredients.toLowerCase()}',
-                      style: const TextStyle(
-                        color: AppTheme.textLight,
+                      style: TextStyle(
+                        color: context.palette.textLight,
                         fontSize: 12,
                       ),
                     ),
@@ -95,8 +98,8 @@ class NutritionLiveCard extends StatelessWidget {
               children: [
                 Text(
                   '${totalCal.round()}',
-                  style: const TextStyle(
-                    color: AppTheme.accentOrange,
+                  style: TextStyle(
+                    color: context.palette.accentOrange,
                     fontSize: 42,
                     fontWeight: FontWeight.w800,
                     letterSpacing: -1,
@@ -104,8 +107,8 @@ class NutritionLiveCard extends StatelessWidget {
                 ),
                 Text(
                   l10n.recipeCalories,
-                  style: const TextStyle(
-                    color: AppTheme.textLight,
+                  style: TextStyle(
+                    color: context.palette.textLight,
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
                   ),
@@ -129,21 +132,21 @@ class NutritionLiveCard extends StatelessWidget {
               _MacroItem(
                 label: l10n.recipeCarbs,
                 value: totalCarbs,
-                color: AppTheme.warningAmber,
+                color: context.palette.warningAmber,
                 icon: Icons.bolt,
               ),
               const SizedBox(width: 8),
               _MacroItem(
                 label: l10n.recipeFat,
                 value: totalFat,
-                color: AppTheme.warmCoral,
+                color: context.palette.warmCoral,
                 icon: Icons.opacity,
               ),
               const SizedBox(width: 8),
               _MacroItem(
                 label: l10n.recipeFiber,
                 value: totalFiber,
-                color: AppTheme.successGreen,
+                color: context.palette.successGreen,
                 icon: Icons.eco,
               ),
             ],

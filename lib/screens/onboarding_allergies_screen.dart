@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/theme.dart';
+import '../core/wellness_motion.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
 import '../providers/storage_provider.dart';
+import '../services/diet_classifier.dart';
 import 'main_shell.dart';
-import 'mode_selection_screen.dart';
 
 /// Common allergens mapped to their allergenTag keys used in the system.
 class _AllergenItem {
@@ -31,7 +32,7 @@ const List<_AllergenItem> _commonAllergens = [
   ),
   _AllergenItem(
     tag: 'dairy',
-    label: {'en': 'Dairy / Lactose', 'tr': 'Süt Ürünleri / Laktoz'},
+    label: {'en': 'Milk / Dairy allergy', 'tr': 'Süt / Süt ürünleri alerjisi'},
     icon: Icons.water_drop_rounded,
     color: Color(0xFF3498DB),
   ),
@@ -170,6 +171,7 @@ class _OnboardingAllergiesScreenState
     with SingleTickerProviderStateMixin {
   final Set<String> _selectedAllergens = {};
   final Set<String> _selectedAvoidedFoods = {};
+  final Set<String> _selectedDietPrefs = {};
   late final AnimationController _animController;
   late final Animation<double> _fadeAnim;
 
@@ -180,10 +182,7 @@ class _OnboardingAllergiesScreenState
       vsync: this,
       duration: const Duration(milliseconds: 800),
     );
-    _fadeAnim = CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animController, curve: Curves.easeOut);
     _animController.forward();
   }
 
@@ -213,6 +212,16 @@ class _OnboardingAllergiesScreenState
     });
   }
 
+  void _toggleDietPref(String tag) {
+    setState(() {
+      if (_selectedDietPrefs.contains(tag)) {
+        _selectedDietPrefs.remove(tag);
+      } else {
+        _selectedDietPrefs.add(tag);
+      }
+    });
+  }
+
   void _onContinue() async {
     final notifier = ref.read(profileProvider.notifier);
 
@@ -224,6 +233,11 @@ class _OnboardingAllergiesScreenState
     // Save avoided foods as disliked ingredients
     if (_selectedAvoidedFoods.isNotEmpty) {
       notifier.updateDislikedIngredients(_selectedAvoidedFoods.toList());
+    }
+
+    // Save diet preferences
+    for (final pref in _selectedDietPrefs) {
+      notifier.toggleDietPreference(pref);
     }
 
     final storage = ref.read(storageProvider);
@@ -245,11 +259,8 @@ class _OnboardingAllergiesScreenState
 
   void _navigateToMoodCheck() {
     Navigator.of(context).pushAndRemoveUntil(
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const _OnboardingMoodGate(),
-        transitionsBuilder: (_, anim, __, child) =>
-            FadeTransition(opacity: anim, child: child),
-        transitionDuration: const Duration(milliseconds: 500),
+      MaterialPageRoute<void>(
+        builder: (_) => const MainShell(),
       ),
       (_) => false,
     );
@@ -264,20 +275,16 @@ class _OnboardingAllergiesScreenState
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF1B2838),
-              Color(0xFF2D3E50),
-              Color(0xFF1B2838),
-            ],
+            colors: [context.palette.background, context.palette.surface, context.palette.background],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: _fadeAnim,
+            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
             child: Column(
               children: [
                 const SizedBox(height: 20),
@@ -290,23 +297,23 @@ class _OnboardingAllergiesScreenState
                         width: 64,
                         height: 64,
                         decoration: BoxDecoration(
-                          color: AppTheme.warmCoral.withAlpha(30),
+                          color: context.palette.warmCoral.withAlpha(30),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
-                            color: AppTheme.warmCoral.withAlpha(60),
+                            color: context.palette.warmCoral.withAlpha(60),
                           ),
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.health_and_safety_rounded,
-                          color: AppTheme.warmCoral,
+                          color: context.palette.warmCoral,
                           size: 32,
                         ),
                       ),
                       const SizedBox(height: 20),
                       Text(
                         l10n.onboardingAllergiesTitle,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style:  TextStyle(
+                          color: context.palette.textPrimary,
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.5,
@@ -317,7 +324,7 @@ class _OnboardingAllergiesScreenState
                       Text(
                         l10n.onboardingAllergiesSubtitle,
                         style: TextStyle(
-                          color: Colors.white.withAlpha(160),
+                          color: context.palette.textPrimary.withAlpha(160),
                           fontSize: 14,
                           height: 1.4,
                         ),
@@ -339,10 +346,11 @@ class _OnboardingAllergiesScreenState
                         Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withAlpha(10),
+                            color: context.palette.textPrimary.withAlpha(10),
                             borderRadius: BorderRadius.circular(20),
-                            border:
-                                Border.all(color: Colors.white.withAlpha(15)),
+                            border: Border.all(
+                              color: context.palette.textPrimary.withAlpha(15),
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -352,21 +360,21 @@ class _OnboardingAllergiesScreenState
                                   Container(
                                     padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color:
-                                          AppTheme.warmCoral.withAlpha(30),
+                                      color: context.palette.warmCoral
+                                          .withAlpha(30),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.warning_amber_rounded,
-                                      color: AppTheme.warmCoral,
+                                      color: context.palette.warmCoral,
                                       size: 18,
                                     ),
                                   ),
                                   const SizedBox(width: 10),
                                   Text(
                                     l10n.onboardingAllergensSection,
-                                    style: const TextStyle(
-                                      color: AppTheme.warmCoral,
+                                    style: TextStyle(
+                                      color: context.palette.warmCoral,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -378,13 +386,14 @@ class _OnboardingAllergiesScreenState
                                 spacing: 8,
                                 runSpacing: 8,
                                 children: _commonAllergens.map((item) {
-                                  final isSelected =
-                                      _selectedAllergens.contains(item.tag);
+                                  final isSelected = _selectedAllergens
+                                      .contains(item.tag);
                                   return GestureDetector(
                                     onTap: () => _toggleAllergen(item.tag),
                                     child: AnimatedContainer(
-                                      duration:
-                                          const Duration(milliseconds: 200),
+                                      duration: const Duration(
+                                        milliseconds: 200,
+                                      ),
                                       padding: const EdgeInsets.symmetric(
                                         horizontal: 14,
                                         vertical: 8,
@@ -392,13 +401,12 @@ class _OnboardingAllergiesScreenState
                                       decoration: BoxDecoration(
                                         color: isSelected
                                             ? item.color.withAlpha(40)
-                                            : Colors.white.withAlpha(8),
-                                        borderRadius:
-                                            BorderRadius.circular(12),
+                                            : context.palette.textPrimary.withAlpha(8),
+                                        borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
                                           color: isSelected
                                               ? item.color.withAlpha(150)
-                                              : Colors.white.withAlpha(25),
+                                              : context.palette.textPrimary.withAlpha(25),
                                           width: isSelected ? 1.5 : 1,
                                         ),
                                       ),
@@ -411,7 +419,7 @@ class _OnboardingAllergiesScreenState
                                                 : item.icon,
                                             color: isSelected
                                                 ? item.color
-                                                : Colors.white.withAlpha(150),
+                                                : context.palette.textPrimary.withAlpha(150),
                                             size: 16,
                                           ),
                                           const SizedBox(width: 6),
@@ -421,8 +429,7 @@ class _OnboardingAllergiesScreenState
                                             style: TextStyle(
                                               color: isSelected
                                                   ? item.color
-                                                  : Colors.white
-                                                      .withAlpha(200),
+                                                  : context.palette.textPrimary.withAlpha(200),
                                               fontSize: 13,
                                               fontWeight: isSelected
                                                   ? FontWeight.w600
@@ -444,10 +451,11 @@ class _OnboardingAllergiesScreenState
                         Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withAlpha(10),
+                            color: context.palette.textPrimary.withAlpha(10),
                             borderRadius: BorderRadius.circular(20),
-                            border:
-                                Border.all(color: Colors.white.withAlpha(15)),
+                            border: Border.all(
+                              color: context.palette.textPrimary.withAlpha(15),
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -457,21 +465,21 @@ class _OnboardingAllergiesScreenState
                                   Container(
                                     padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color: AppTheme.softLavender
+                                      color: context.palette.softLavender
                                           .withAlpha(30),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.block_rounded,
-                                      color: AppTheme.softLavender,
+                                      color: context.palette.softLavender,
                                       size: 18,
                                     ),
                                   ),
                                   const SizedBox(width: 10),
                                   Text(
                                     l10n.onboardingAvoidedSection,
-                                    style: const TextStyle(
-                                      color: AppTheme.softLavender,
+                                    style: TextStyle(
+                                      color: context.palette.softLavender,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -489,8 +497,9 @@ class _OnboardingAllergiesScreenState
                                     onTap: () =>
                                         _toggleAvoidedFood(item.ingredientId),
                                     child: AnimatedContainer(
-                                      duration:
-                                          const Duration(milliseconds: 200),
+                                      duration: const Duration(
+                                        milliseconds: 200,
+                                      ),
                                       padding: const EdgeInsets.symmetric(
                                         horizontal: 14,
                                         vertical: 8,
@@ -498,13 +507,12 @@ class _OnboardingAllergiesScreenState
                                       decoration: BoxDecoration(
                                         color: isSelected
                                             ? item.color.withAlpha(40)
-                                            : Colors.white.withAlpha(8),
-                                        borderRadius:
-                                            BorderRadius.circular(12),
+                                            : context.palette.textPrimary.withAlpha(8),
+                                        borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
                                           color: isSelected
                                               ? item.color.withAlpha(150)
-                                              : Colors.white.withAlpha(25),
+                                              : context.palette.textPrimary.withAlpha(25),
                                           width: isSelected ? 1.5 : 1,
                                         ),
                                       ),
@@ -520,8 +528,9 @@ class _OnboardingAllergiesScreenState
                                           else
                                             Icon(
                                               item.icon,
-                                              color:
-                                                  Colors.white.withAlpha(150),
+                                              color: context.palette.textPrimary.withAlpha(
+                                                150,
+                                              ),
                                               size: 16,
                                             ),
                                           const SizedBox(width: 6),
@@ -531,8 +540,7 @@ class _OnboardingAllergiesScreenState
                                             style: TextStyle(
                                               color: isSelected
                                                   ? item.color
-                                                  : Colors.white
-                                                      .withAlpha(200),
+                                                  : context.palette.textPrimary.withAlpha(200),
                                               fontSize: 13,
                                               fontWeight: isSelected
                                                   ? FontWeight.w600
@@ -550,11 +558,136 @@ class _OnboardingAllergiesScreenState
                         ),
                         const SizedBox(height: 16),
 
+                        // Diet preferences section
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: context.palette.textPrimary.withAlpha(10),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                              color: context.palette.textPrimary.withAlpha(15),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(6),
+                                    decoration: BoxDecoration(
+                                      color: context.palette.successGreen
+                                          .withAlpha(30),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Icon(
+                                      Icons.eco_rounded,
+                                      color: context.palette.successGreen,
+                                      size: 18,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    l10n.dietPreferencesTitle,
+                                    style: TextStyle(
+                                      color: context.palette.successGreen,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 12),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children:
+                                    {
+                                      DietClassifier.vegetarian:
+                                          l10n.dietVegetarian,
+                                      DietClassifier.vegan: l10n.dietVegan,
+                                      DietClassifier.glutenFree:
+                                          l10n.dietGlutenFree,
+                                      DietClassifier.dairyFree:
+                                          l10n.dietDairyFree,
+                                    }.entries.map((entry) {
+                                      final isSelected = _selectedDietPrefs
+                                          .contains(entry.key);
+                                      return GestureDetector(
+                                        onTap: () => _toggleDietPref(entry.key),
+                                        child: AnimatedContainer(
+                                          duration: const Duration(
+                                            milliseconds: 200,
+                                          ),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 14,
+                                            vertical: 8,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: isSelected
+                                                ? context.palette.successGreen
+                                                      .withAlpha(40)
+                                                : context.palette.textPrimary.withAlpha(8),
+                                            borderRadius: BorderRadius.circular(
+                                              12,
+                                            ),
+                                            border: Border.all(
+                                              color: isSelected
+                                                  ? context.palette.successGreen
+                                                        .withAlpha(150)
+                                                  : context.palette.textPrimary.withAlpha(25),
+                                              width: isSelected ? 1.5 : 1,
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                isSelected
+                                                    ? Icons.check_rounded
+                                                    : Icons.eco_rounded,
+                                                color: isSelected
+                                                    ? context
+                                                          .palette
+                                                          .successGreen
+                                                    : context.palette.textPrimary.withAlpha(
+                                                        150,
+                                                      ),
+                                                size: 16,
+                                              ),
+                                              const SizedBox(width: 6),
+                                              Text(
+                                                entry.value,
+                                                style: TextStyle(
+                                                  color: isSelected
+                                                      ? context
+                                                            .palette
+                                                            .successGreen
+                                                      : context.palette.textPrimary.withAlpha(
+                                                          200,
+                                                        ),
+                                                  fontSize: 13,
+                                                  fontWeight: isSelected
+                                                      ? FontWeight.w600
+                                                      : FontWeight.w400,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    }).toList(),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+
                         // Info hint
                         Text(
                           l10n.onboardingAllergiesEditLater,
                           style: TextStyle(
-                            color: Colors.white.withAlpha(120),
+                            color: context.palette.textPrimary.withAlpha(120),
                             fontSize: 13,
                           ),
                           textAlign: TextAlign.center,
@@ -577,14 +710,11 @@ class _OnboardingAllergiesScreenState
           bottom: MediaQuery.of(context).padding.bottom + 16,
           top: 12,
         ),
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0x001B2838),
-              Color(0xFF1B2838),
-            ],
+            colors: [const Color(0x001B2838), context.palette.background],
           ),
         ),
         child: Row(
@@ -595,7 +725,7 @@ class _OnboardingAllergiesScreenState
               child: Text(
                 l10n.onboardingSkip,
                 style: TextStyle(
-                  color: Colors.white.withAlpha(180),
+                  color: context.palette.textPrimary.withAlpha(180),
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -609,8 +739,8 @@ class _OnboardingAllergiesScreenState
                 child: FilledButton(
                   onPressed: _onContinue,
                   style: FilledButton.styleFrom(
-                    backgroundColor: AppTheme.accentOrange,
-                    foregroundColor: Colors.white,
+                    backgroundColor: context.palette.accentOrange,
+                    foregroundColor: context.palette.background,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -633,33 +763,6 @@ class _OnboardingAllergiesScreenState
           ],
         ),
       ),
-    );
-  }
-}
-
-/// Wrapper that shows ModeSelectionScreen after onboarding completes,
-/// then navigates to MainShell once the user selects their mood.
-class _OnboardingMoodGate extends ConsumerStatefulWidget {
-  const _OnboardingMoodGate();
-
-  @override
-  ConsumerState<_OnboardingMoodGate> createState() =>
-      _OnboardingMoodGateState();
-}
-
-class _OnboardingMoodGateState extends ConsumerState<_OnboardingMoodGate> {
-  bool _modeSelected = false;
-
-  @override
-  Widget build(BuildContext context) {
-    if (_modeSelected) {
-      return const MainShell();
-    }
-
-    return ModeSelectionScreen(
-      onModeSelected: () {
-        setState(() => _modeSelected = true);
-      },
     );
   }
 }

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-08T21:11:06.0501568+03:00",
+  "unitAndWidgetTests": {
+    "passed": 152,
+    "failed": 0
+  },
+  "flutterAnalyze": "No issues found",
+  "androidBuild": {
+    "target": "lib/main.dart",
+    "apk": "build/app/outputs/flutter-apk/app-debug.apk",
+    "sha256": "F4459F68976E5EF7DB24EE0E94A23BDF8C3DC2EFBBD55DFAECDA32A5A290B2BE",
+    "mode": "debug"
+  },
+  "nativeEndToEnd": {
+    "status": "incomplete",
+    "reason": "Android emulator host process exited; ADB device offline"
+  },
+  "physicalDevicePerformance": "not measured",
+  "previews": {
+    "routineFrames": 450,
+    "fps": 30,
+    "uiFrames": 496,
+    "type": "Flutter frame render, not device recording"
+  }
+}

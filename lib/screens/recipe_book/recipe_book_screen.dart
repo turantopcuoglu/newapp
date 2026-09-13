@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/turkish_string_helper.dart';
@@ -49,7 +50,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
         appBar: AppBar(
           title: Text(l10n.recipeBookTitle),
           actions: [
-            IconButton(
+            WellnessIconButton(
               icon: const Icon(Icons.add),
               onPressed: () => Navigator.push(
                 context,
@@ -59,7 +60,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
           ],
           bottom: TabBar(
             labelColor: theme.colorScheme.primary,
-            unselectedLabelColor: AppTheme.textLight,
+            unselectedLabelColor: context.palette.textLight,
             indicatorColor: theme.colorScheme.primary,
             dividerColor: Colors.transparent,
             isScrollable: true,
@@ -123,27 +124,29 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
     }
 
     // Score recipes by inventory
-    final scoredRecipes = filteredRecipes.map((recipe) {
-      final available = <String>[];
-      final missing = <String>[];
-      for (final id in recipe.ingredientIds) {
-        if (inventoryIds.contains(id)) {
-          available.add(id);
-        } else {
-          missing.add(id);
-        }
-      }
-      final score = recipe.ingredientIds.isEmpty
-          ? 0.0
-          : available.length / recipe.ingredientIds.length;
-      return ScoredRecipe(
-        recipe: recipe,
-        compatibilityScore: score,
-        availableIngredients: available,
-        missingIngredients: missing,
-      );
-    }).toList()
-      ..sort((a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+    final scoredRecipes =
+        filteredRecipes.map((recipe) {
+          final available = <String>[];
+          final missing = <String>[];
+          for (final id in recipe.ingredientIds) {
+            if (inventoryIds.contains(id)) {
+              available.add(id);
+            } else {
+              missing.add(id);
+            }
+          }
+          final score = recipe.ingredientIds.isEmpty
+              ? 0.0
+              : available.length / recipe.ingredientIds.length;
+          return ScoredRecipe(
+            recipe: recipe,
+            compatibilityScore: score,
+            availableIngredients: available,
+            missingIngredients: missing,
+          );
+        }).toList()..sort(
+          (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore),
+        );
 
     return Column(
       children: [
@@ -155,10 +158,9 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
             onChanged: (value) => setState(() => _searchQuery = value),
             decoration: InputDecoration(
               hintText: l10n.recipeBookSearch,
-              prefixIcon:
-                  const Icon(Icons.search, color: AppTheme.textLight),
+              prefixIcon: Icon(Icons.search, color: context.palette.textLight),
               suffixIcon: _searchQuery.isNotEmpty
-                  ? IconButton(
+                  ? WellnessIconButton(
                       icon: const Icon(Icons.clear, size: 20),
                       onPressed: () {
                         _searchController.clear();
@@ -176,17 +178,17 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
-              _FilterChip(
+              _FilterChip(icon:Icons.restaurant_menu_rounded,
                 label: l10n.recipeBookAll,
                 isSelected: _selectedMealType == null,
-                color: AppTheme.accentOrange,
+                color: context.palette.accentOrange,
                 onTap: () => setState(() => _selectedMealType = null),
               ),
               const SizedBox(width: 8),
               _FilterChip(
                 label: l10n.recipeBreakfast,
                 isSelected: _selectedMealType == MealType.breakfast,
-                color: AppTheme.breakfastColor,
+                color: context.palette.breakfastColor,
                 onTap: () =>
                     setState(() => _selectedMealType = MealType.breakfast),
               ),
@@ -194,15 +196,14 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
               _FilterChip(
                 label: l10n.recipeLunch,
                 isSelected: _selectedMealType == MealType.lunch,
-                color: AppTheme.lunchColor,
-                onTap: () =>
-                    setState(() => _selectedMealType = MealType.lunch),
+                color: context.palette.lunchColor,
+                onTap: () => setState(() => _selectedMealType = MealType.lunch),
               ),
               const SizedBox(width: 8),
               _FilterChip(
                 label: l10n.recipeDinner,
                 isSelected: _selectedMealType == MealType.dinner,
-                color: AppTheme.dinnerColor,
+                color: context.palette.dinnerColor,
                 onTap: () =>
                     setState(() => _selectedMealType = MealType.dinner),
               ),
@@ -210,9 +211,8 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
               _FilterChip(
                 label: l10n.recipeBookSnacks,
                 isSelected: _selectedMealType == MealType.snack,
-                color: AppTheme.snackColor,
-                onTap: () =>
-                    setState(() => _selectedMealType = MealType.snack),
+                color: context.palette.snackColor,
+                onTap: () => setState(() => _selectedMealType = MealType.snack),
               ),
             ],
           ),
@@ -245,7 +245,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                             ? Icons.restaurant_menu
                             : Icons.search_off,
                         size: 64,
-                        color: Colors.grey.shade300,
+                        color: context.palette.dividerColor,
                       ),
                       const SizedBox(height: 12),
                       Text(
@@ -261,7 +261,8 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const CreateRecipeScreen()),
+                              builder: (_) => const CreateRecipeScreen(),
+                            ),
                           ),
                           icon: const Icon(Icons.add, size: 18),
                           label: Text(l10n.myRecipesCreate),
@@ -341,11 +342,14 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
       builder: (ctx) => SimpleDialog(
         title: Text(l10n.plannerSelectMealType),
         children: MealType.values
-            .map((type) => SimpleDialogOption(
-                  onPressed: () => Navigator.pop(ctx, type),
-                  child: Text(
-                      type.name[0].toUpperCase() + type.name.substring(1)),
-                ))
+            .map(
+              (type) => SimpleDialogOption(
+                onPressed: () => Navigator.pop(ctx, type),
+                child: Text(
+                  type.name[0].toUpperCase() + type.name.substring(1),
+                ),
+              ),
+            )
             .toList(),
       ),
     );
@@ -360,7 +364,9 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
       confirmText: l10n.confirm,
     );
 
-    ref.read(mealPlanProvider.notifier).addEntry(
+    ref
+        .read(mealPlanProvider.notifier)
+        .addEntry(
           recipeId: scored.recipe.id,
           date: date,
           mealType: mealType,
@@ -369,9 +375,9 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
         );
 
     if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.recipeBookAddToPlanner)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.recipeBookAddToPlanner)));
     }
   }
 
@@ -412,7 +418,7 @@ class _FilterChip extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? color.withAlpha(30) : Colors.grey.shade100,
+          color: isSelected ? color.withAlpha(30) : context.palette.elevated,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected ? color : Colors.transparent,
@@ -426,7 +432,7 @@ class _FilterChip extends StatelessWidget {
               Icon(
                 icon,
                 size: 15,
-                color: isSelected ? color : AppTheme.textSecondary,
+                color: isSelected ? color : context.palette.textSecondary,
               ),
               const SizedBox(width: 5),
             ],
@@ -435,7 +441,7 @@ class _FilterChip extends StatelessWidget {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                color: isSelected ? color : AppTheme.textSecondary,
+                color: isSelected ? color : context.palette.textSecondary,
               ),
             ),
           ],
@@ -462,16 +468,16 @@ class _RecipeBookCard extends StatelessWidget {
     this.onDelete,
   });
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 
@@ -492,7 +498,7 @@ class _RecipeBookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipe = scoredRecipe.recipe;
     final theme = Theme.of(context);
-    final mealColor = _mealTypeColor(recipe.mealType);
+    final mealColor = _mealTypeColor(context, recipe.mealType);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
@@ -544,16 +550,23 @@ class _RecipeBookCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              Row(
+              // Badges wrap instead of sharing one row with the actions: the
+              // labels are translated and the meal-type/kcal/own-recipe trio
+              // used to push the buttons off the card in Turkish.
+              Wrap(
+                spacing: 8,
+                runSpacing: 6,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   MealTypeBadge(mealType: recipe.mealType),
-                  const SizedBox(width: 8),
                   if (recipe.macros.calories > 0)
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 3),
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
+                        color: context.palette.elevated,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
@@ -564,13 +577,14 @@ class _RecipeBookCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  if (recipe.isUserCreated) ...[
-                    const SizedBox(width: 8),
+                  if (recipe.isUserCreated)
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 3),
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
-                        color: AppTheme.softLavender.withAlpha(30),
+                        color: context.palette.softLavender.withAlpha(30),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
@@ -578,18 +592,26 @@ class _RecipeBookCard extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.softLavender,
+                          color: context.palette.softLavender,
                         ),
                       ),
                     ),
-                  ],
+                ],
+              ),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  SaveRecipeButton(recipeId: recipe.id, size: 34),
                   const Spacer(),
                   if (onDelete != null)
                     SizedBox(
                       height: 32,
-                      child: IconButton(
+                      child: WellnessIconButton(
                         onPressed: onDelete,
-                        icon: const Icon(Icons.delete_outline_rounded, size: 18),
+                        icon: const Icon(
+                          Icons.delete_outline_rounded,
+                          size: 18,
+                        ),
                         color: Colors.red.shade400,
                         padding: const EdgeInsets.symmetric(horizontal: 6),
                         constraints: const BoxConstraints(),
@@ -597,18 +619,22 @@ class _RecipeBookCard extends StatelessWidget {
                       ),
                     ),
                   // Add to planner button
-                  SizedBox(
-                    height: 32,
-                    child: TextButton.icon(
-                      onPressed: onAddToPlanner,
-                      icon: const Icon(Icons.calendar_today, size: 14),
-                      label: Text(
-                        l10n.recipeBookAddToPlanner,
-                        style: const TextStyle(fontSize: 11),
-                      ),
-                      style: TextButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        minimumSize: Size.zero,
+                  Flexible(
+                    child: SizedBox(
+                      height: 32,
+                      child: TextButton.icon(
+                        onPressed: onAddToPlanner,
+                        icon: const Icon(Icons.calendar_today, size: 14),
+                        label: Text(
+                          l10n.recipeBookAddToPlanner,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontSize: 11),
+                        ),
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          minimumSize: Size.zero,
+                        ),
                       ),
                     ),
                   ),

@@ -1,0 +1,109 @@
+{
+  "name": "NutriGuide / Gece mavisi",
+  "status": "Design specification, not app implementation",
+  "colors": {
+    "canvas": "#091B2B",
+    "surface": "#112D43",
+    "elevated": "#193B54",
+    "text": "#F2F5F4",
+    "secondary": "#ADC4D3",
+    "muted": "#86A2B7",
+    "action": "#B8E9D8",
+    "onAction": "#091B2B",
+    "moon": "#EAD5AE",
+    "border": "#34546B",
+    "focus": "#C8FAEA",
+    "danger": "#FFB4A8"
+  },
+  "typography": {
+    "display": {
+      "size": 34,
+      "height": 1.12,
+      "weight": 600
+    },
+    "heading": {
+      "size": 26,
+      "height": 1.18,
+      "weight": 600
+    },
+    "section": {
+      "size": 20,
+      "height": 1.25,
+      "weight": 600
+    },
+    "body": {
+      "size": 16,
+      "height": 1.5,
+      "weight": 400
+    },
+    "secondary": {
+      "size": 14,
+      "height": 1.45,
+      "weight": 400
+    },
+    "caption": {
+      "size": 12,
+      "height": 1.4,
+      "weight": 500
+    }
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    32,
+    40
+  ],
+  "radii": {
+    "small": 12,
+    "control": 18,
+    "card": 28,
+    "sheet": 32,
+    "dock": 28
+  },
+  "touchTargetMin": 48,
+  "primaryActionHeight": 54,
+  "screenInset": 24,
+  "motion": {
+    "selectionMs": 180,
+    "navigationMs": 220,
+    "sheetMs": 280,
+    "ambientLoopMs": 9000,
+    "reducedMotion": "disable ambient and scale effects; state changes remain immediate"
+  },
+  "contrast": [
+    {
+      "foreground": "text",
+      "background": "canvas",
+      "ratio": 15.91
+    },
+    {
+      "foreground": "secondary",
+      "background": "surface",
+      "ratio": 7.85
+    },
+    {
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 5.31
+    },
+    {
+      "foreground": "onAction",
+      "background": "action",
+      "ratio": 13.04
+    },
+    {
+      "foreground": "moon",
+      "background": "surface",
+      "ratio": 9.88
+    },
+    {
+      "foreground": "text",
+      "background": "elevated",
+      "ratio": 10.66
+    }
+  ]
+}

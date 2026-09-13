@@ -1,6 +1,10 @@
 import '../core/enums.dart';
 import '../models/recipe.dart';
 import '../models/user_profile.dart';
+import '../data/explore_data.dart';
+import 'diet_classifier.dart';
+import 'preference_matcher.dart';
+import 'special_category_matcher.dart';
 
 class ScoredRecipe {
   final Recipe recipe;
@@ -8,11 +12,16 @@ class ScoredRecipe {
   final List<String> availableIngredients;
   final List<String> missingIngredients;
 
+  /// Why this recipe sits low in a browsing list, if it does. Always
+  /// [PreferenceFit.clean] on lists that hard-filter preferences.
+  final PreferenceFit preferenceFit;
+
   const ScoredRecipe({
     required this.recipe,
     required this.compatibilityScore,
     required this.availableIngredients,
     required this.missingIngredients,
+    this.preferenceFit = PreferenceFit.clean,
   });
 
   int get compatibilityPercent {
@@ -23,10 +32,18 @@ class ScoredRecipe {
 }
 
 class RecommendationService {
+  /// Used to honor diet preferences (vegetarian etc.). When null, diet
+  /// preferences are ignored.
+  final DietClassifier? dietClassifier;
+
+  RecommendationService({this.dietClassifier});
+
   /// Main recommendation algorithm.
   /// Filtering order:
-  /// 1. Exclude recipes with allergens or disliked ingredients
-  /// 2. Filter by check-in category
+  /// 1. Exclude recipes with allergens, disliked ingredients, or that don't
+  ///    satisfy the profile's diet preferences (hard filter)
+  /// 2. Score by check-in and health-condition match (soft bonus, never
+  ///    excludes)
   /// 3. Compare with kitchen inventory
   /// 4. Calculate compatibility score
   /// 5. Sort by compatibility, meal type relevance, nutritional balance
@@ -36,39 +53,24 @@ class RecommendationService {
     required CheckInType checkIn,
     required Set<String> inventoryIds,
   }) {
-    // Step 1: Exclude allergens and disliked ingredients
-    final safeRecipes = allRecipes.where((recipe) {
-      // Check allergens
-      for (final allergen in recipe.allergenTags) {
-        if (profile.allergies
-            .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
-          return false;
-        }
-      }
-      // Check disliked ingredients
-      for (final ingredientId in recipe.ingredientIds) {
-        if (profile.dislikedIngredients
-            .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
-          return false;
-        }
-      }
-      return true;
-    }).toList();
+    // Step 1: Exclude allergens, disliked ingredients, diet mismatches
+    final safeRecipes = allRecipes
+        .where((recipe) => _isSafe(recipe, profile))
+        .toList();
 
-    // Step 2: Filter by check-in category
-    // Period-related types also match PMS-tagged recipes
+    // Step 2: Check-in match as a soft bonus instead of a hard filter.
+    // With a hard filter, sparse (check-in x meal type) combinations produce
+    // empty recommendation lists; here non-matching recipes stay eligible but
+    // rank below matching ones.
+    // Period-related types also match PMS-tagged recipes.
     final checkInTypes = <CheckInType>{checkIn};
     if (checkIn == CheckInType.periodCramps ||
         checkIn == CheckInType.periodFatigue) {
       checkInTypes.add(CheckInType.pms);
     }
-    final matchingRecipes = safeRecipes
-        .where((recipe) =>
-            recipe.checkInTags.any((tag) => checkInTypes.contains(tag)))
-        .toList();
 
-    // Step 3 & 4: Score by inventory compatibility
-    final scored = matchingRecipes.map((recipe) {
+    // Step 3 & 4: Score by check-in match + inventory compatibility
+    final scored = safeRecipes.map((recipe) {
       final available = <String>[];
       final missing = <String>[];
 
@@ -84,13 +86,26 @@ class RecommendationService {
           ? 0.0
           : available.length / recipe.ingredientIds.length;
 
+      final checkInMatch = recipe.checkInTags.any(
+        (tag) => checkInTypes.contains(tag),
+      );
+
+      // Health conditions are a standing need, not a mood: a recipe that
+      // suits every declared condition ranks highest, one that suits none
+      // gets no bonus. Soft like the check-in, so nothing disappears.
+      final healthMatch = _healthMatchRatio(recipe, profile);
+
       // Nutritional balance bonus (small weight)
       double nutritionBonus = 0;
       if (recipe.proteinLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.fiberLevel == NutrientLevel.high) nutritionBonus += 0.05;
       if (recipe.carbType == CarbType.complex) nutritionBonus += 0.03;
 
-      final score = (ingredientScore * 0.85) + (nutritionBonus * 0.15);
+      final score =
+          (ingredientScore * 0.45) +
+          (checkInMatch ? 0.28 : 0.0) +
+          (healthMatch * 0.20) +
+          (nutritionBonus * 0.07);
 
       return ScoredRecipe(
         recipe: recipe,
@@ -106,8 +121,9 @@ class RecommendationService {
     // Group by meal type
     final result = <MealType, List<ScoredRecipe>>{};
     for (final mealType in MealType.values) {
-      result[mealType] =
-          scored.where((s) => s.recipe.mealType == mealType).toList();
+      result[mealType] = scored
+          .where((s) => s.recipe.mealType == mealType)
+          .toList();
     }
 
     return result;
@@ -120,43 +136,129 @@ class RecommendationService {
     required UserProfile profile,
     required Set<String> inventoryIds,
   }) {
-    final safeRecipes = allRecipes.where((recipe) {
-      for (final allergen in recipe.allergenTags) {
-        if (profile.allergies
-            .any((a) => a.toLowerCase() == allergen.toLowerCase())) {
-          return false;
-        }
-      }
-      for (final ingredientId in recipe.ingredientIds) {
-        if (profile.dislikedIngredients
-            .any((d) => d.toLowerCase() == ingredientId.toLowerCase())) {
-          return false;
-        }
-      }
-      return true;
-    }).toList();
+    final safeRecipes = allRecipes
+        .where((recipe) => _isSafe(recipe, profile))
+        .toList();
 
     return safeRecipes.map((recipe) {
-      final available = <String>[];
-      final missing = <String>[];
-      for (final id in recipe.ingredientIds) {
-        if (inventoryIds.contains(id)) {
-          available.add(id);
-        } else {
-          missing.add(id);
+        final available = <String>[];
+        final missing = <String>[];
+        for (final id in recipe.ingredientIds) {
+          if (inventoryIds.contains(id)) {
+            available.add(id);
+          } else {
+            missing.add(id);
+          }
         }
-      }
-      final score = recipe.ingredientIds.isEmpty
-          ? 0.0
-          : available.length / recipe.ingredientIds.length;
-      return ScoredRecipe(
-        recipe: recipe,
-        compatibilityScore: score,
-        availableIngredients: available,
-        missingIngredients: missing,
+        final score = recipe.ingredientIds.isEmpty
+            ? 0.0
+            : available.length / recipe.ingredientIds.length;
+        return ScoredRecipe(
+          recipe: recipe,
+          compatibilityScore: score,
+          availableIngredients: available,
+          missingIngredients: missing,
+        );
+      }).toList()
+      ..sort((a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+  }
+
+  /// Everything the user may safely see while browsing, ordered by fit.
+  ///
+  /// Allergens are still a hard exclusion — those are a safety matter.
+  /// Disliked foods and unmet diet preferences only demote: the recipe stays
+  /// visible at the bottom of the list, tagged with the reason, because
+  /// silently emptying a category the user just opened looks broken.
+  List<ScoredRecipe> getBrowsableRecipes({
+    required List<Recipe> allRecipes,
+    required UserProfile profile,
+    required Set<String> inventoryIds,
+  }) {
+    final classifier = dietClassifier;
+
+    final scored = allRecipes
+        .where((recipe) => !recipeHasAllergenConflict(recipe, profile))
+        .map((recipe) {
+          final available = <String>[];
+          final missing = <String>[];
+          for (final id in recipe.ingredientIds) {
+            if (inventoryIds.contains(id)) {
+              available.add(id);
+            } else {
+              missing.add(id);
+            }
+          }
+          final score = recipe.ingredientIds.isEmpty
+              ? 0.0
+              : available.length / recipe.ingredientIds.length;
+
+          return ScoredRecipe(
+            recipe: recipe,
+            compatibilityScore: score,
+            availableIngredients: available,
+            missingIngredients: missing,
+            preferenceFit: classifier == null
+                ? PreferenceFit.clean
+                : recipePreferenceFit(recipe, profile, classifier),
+          );
+        })
+        .toList();
+
+    scored.sort((a, b) {
+      // What the user can eat first, then the pantry match inside each group.
+      final byFit = a.preferenceFit.demotion.compareTo(
+        b.preferenceFit.demotion,
       );
-    }).toList()
-      ..sort(
-          (a, b) => b.compatibilityScore.compareTo(a.compatibilityScore));
+      if (byFit != 0) return byFit;
+      return b.compatibilityScore.compareTo(a.compatibilityScore);
+    });
+
+    return scored;
+  }
+
+  /// Fraction of the profile's health conditions a recipe suits, 0..1.
+  /// Returns 0 when no condition is declared, so the term drops out for
+  /// users who have not filled that in.
+  static double _healthMatchRatio(Recipe recipe, UserProfile profile) {
+    final conditions = profile.healthConditions;
+    if (conditions.isEmpty) return 0;
+
+    var matches = 0;
+    for (final condition in conditions) {
+      final category = specialCategories
+          .where((c) => c.healthCondition == condition)
+          .firstOrNull;
+      if (category == null) continue;
+      if (matchesSpecialCategory(recipe, category)) matches++;
+    }
+    return matches / conditions.length;
+  }
+
+  /// Hard safety/suitability filter: allergens, disliked ingredients, and
+  /// diet preferences (a recipe must satisfy every selected preference).
+  bool _isSafe(Recipe recipe, UserProfile profile) {
+    if (recipeHasAllergenConflict(recipe, profile)) return false;
+    for (final allergen in recipe.allergenTags) {
+      if (profile.allergies.any(
+        (a) => a.toLowerCase() == allergen.toLowerCase(),
+      )) {
+        return false;
+      }
+    }
+    for (final ingredientId in recipe.ingredientIds) {
+      if (profile.dislikedIngredients.any(
+        (d) => d.toLowerCase() == ingredientId.toLowerCase(),
+      )) {
+        return false;
+      }
+    }
+    final classifier = dietClassifier;
+    if (classifier != null && profile.dietPreferences.isNotEmpty) {
+      final tags = classifier.tagsFor(recipe);
+      for (final preference in profile.dietPreferences) {
+        if (!tags.contains(preference)) return false;
+      }
+    }
+    return true;
   }
 }

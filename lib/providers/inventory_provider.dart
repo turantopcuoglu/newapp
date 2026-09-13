@@ -15,6 +15,20 @@ class InventoryNotifier extends StateNotifier<List<InventoryItem>> {
     _storage.addInventoryItem(item);
   }
 
+  /// Adds several ingredients at once, skipping the ones already there.
+  /// Returns how many were actually added.
+  int addAll(Iterable<String> ingredientIds) {
+    final existing = state.map((i) => i.ingredientId).toSet();
+    final fresh = ingredientIds.toSet().difference(existing);
+    if (fresh.isEmpty) return 0;
+    final items = fresh.map((id) => InventoryItem(ingredientId: id)).toList();
+    state = [...state, ...items];
+    for (final item in items) {
+      _storage.addInventoryItem(item);
+    }
+    return items.length;
+  }
+
   void removeItem(String ingredientId) {
     state = state
         .where((item) => item.ingredientId != ingredientId)

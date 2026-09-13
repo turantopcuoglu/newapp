@@ -5,15 +5,9 @@ class IngredientQuantity {
   final double amount;
   final QuantityUnit unit;
 
-  const IngredientQuantity({
-    required this.amount,
-    this.unit = QuantityUnit.g,
-  });
+  const IngredientQuantity({required this.amount, this.unit = QuantityUnit.g});
 
-  Map<String, dynamic> toJson() => {
-        'amount': amount,
-        'unit': unit.name,
-      };
+  Map<String, dynamic> toJson() => {'amount': amount, 'unit': unit.name};
 
   factory IngredientQuantity.fromJson(Map<String, dynamic> json) =>
       IngredientQuantity(
@@ -25,8 +19,9 @@ class IngredientQuantity {
       );
 
   String formatted() {
-    final displayAmount =
-        amount == amount.roundToDouble() ? amount.toInt().toString() : amount.toStringAsFixed(1);
+    final displayAmount = amount == amount.roundToDouble()
+        ? amount.toInt().toString()
+        : amount.toStringAsFixed(1);
     return '$displayAmount ${unit.name}';
   }
 }
@@ -47,12 +42,12 @@ class MacroEstimation {
   });
 
   Map<String, dynamic> toJson() => {
-        'calories': calories,
-        'proteinG': proteinG,
-        'carbsG': carbsG,
-        'fatG': fatG,
-        'fiberG': fiberG,
-      };
+    'calories': calories,
+    'proteinG': proteinG,
+    'carbsG': carbsG,
+    'fatG': fatG,
+    'fiberG': fiberG,
+  };
 
   factory MacroEstimation.fromJson(Map<String, dynamic> json) =>
       MacroEstimation(
@@ -69,6 +64,17 @@ class Recipe {
   final Map<String, String> name;
   final Map<String, String> description;
   final MealType mealType;
+
+  /// Cuisine category ids (see [worldCuisines] in explore_data.dart).
+  /// A recipe may belong to more than one cuisine.
+  final List<String> cuisineIds;
+
+  /// Diet suitability tags: 'vegetarian', 'vegan', 'glutenFree', 'dairyFree'.
+  /// Empty means "derive automatically from ingredients" (DietClassifier).
+  final List<String> dietTags;
+
+  final int servings;
+  final int? prepTimeMin;
   final List<String> ingredientIds;
   final List<String> allergenTags;
   final List<CheckInType> checkInTags;
@@ -86,6 +92,10 @@ class Recipe {
     required this.name,
     required this.description,
     this.mealType = MealType.lunch,
+    this.cuisineIds = const [],
+    this.dietTags = const [],
+    this.servings = 1,
+    this.prepTimeMin,
     this.ingredientIds = const [],
     this.allergenTags = const [],
     this.checkInTags = const [],
@@ -112,23 +122,26 @@ class Recipe {
       steps[locale] ?? steps['en'] ?? [];
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'description': description,
-        'mealType': mealType.name,
-        'ingredientIds': ingredientIds,
-        'allergenTags': allergenTags,
-        'checkInTags': checkInTags.map((e) => e.name).toList(),
-        'proteinLevel': proteinLevel.name,
-        'fiberLevel': fiberLevel.name,
-        'carbType': carbType.name,
-        'macros': macros.toJson(),
-        'steps': steps,
-        'imagePath': imagePath,
-        'isUserCreated': isUserCreated,
-        'quantities': quantities
-            .map((k, v) => MapEntry(k, v.toJson())),
-      };
+    'id': id,
+    'name': name,
+    'description': description,
+    'mealType': mealType.name,
+    'cuisineIds': cuisineIds,
+    'dietTags': dietTags,
+    'servings': servings,
+    'prepTimeMin': prepTimeMin,
+    'ingredientIds': ingredientIds,
+    'allergenTags': allergenTags,
+    'checkInTags': checkInTags.map((e) => e.name).toList(),
+    'proteinLevel': proteinLevel.name,
+    'fiberLevel': fiberLevel.name,
+    'carbType': carbType.name,
+    'macros': macros.toJson(),
+    'steps': steps,
+    'imagePath': imagePath,
+    'isUserCreated': isUserCreated,
+    'quantities': quantities.map((k, v) => MapEntry(k, v.toJson())),
+  };
 
   static Map<String, String> _parseLocalizedString(dynamic value) {
     if (value is Map) return Map<String, String>.from(value);
@@ -145,47 +158,59 @@ class Recipe {
   }
 
   factory Recipe.fromJson(Map<String, dynamic> json) => Recipe(
-        id: json['id'] as String? ??
-            DateTime.now().millisecondsSinceEpoch.toString(),
-        name: _parseLocalizedString(json['name']),
-        description: _parseLocalizedString(json['description']),
-        mealType: MealType.values.firstWhere(
-            (e) => e.name == json['mealType'],
-            orElse: () => MealType.lunch),
-        ingredientIds: List<String>.from(
-            json['ingredientIds'] ?? json['ingredients'] ?? []),
-        allergenTags: List<String>.from(json['allergenTags'] ?? []),
-        checkInTags: (json['checkInTags'] as List?)
-                ?.map((e) =>
-                    CheckInType.values.firstWhere((v) => v.name == e))
-                .toList() ??
-            [],
-        proteinLevel: NutrientLevel.values.firstWhere(
-            (e) => e.name == json['proteinLevel'],
-            orElse: () => NutrientLevel.medium),
-        fiberLevel: NutrientLevel.values.firstWhere(
-            (e) => e.name == json['fiberLevel'],
-            orElse: () => NutrientLevel.medium),
-        carbType: CarbType.values.firstWhere(
-            (e) => e.name == json['carbType'],
-            orElse: () => CarbType.mixed),
-        macros: json['macros'] != null
-            ? MacroEstimation.fromJson(json['macros'])
-            : const MacroEstimation(),
-        steps: _parseLocalizedSteps(json['steps']),
-        imagePath: json['imagePath'] as String?,
-        isUserCreated: json['isUserCreated'] as bool? ?? false,
-        quantities: _parseQuantities(json['quantities']),
-      );
+    id:
+        json['id'] as String? ??
+        DateTime.now().millisecondsSinceEpoch.toString(),
+    name: _parseLocalizedString(json['name']),
+    description: _parseLocalizedString(json['description']),
+    mealType: MealType.values.firstWhere(
+      (e) => e.name == json['mealType'],
+      orElse: () => MealType.lunch,
+    ),
+    cuisineIds: List<String>.from(json['cuisineIds'] ?? []),
+    dietTags: List<String>.from(json['dietTags'] ?? []),
+    servings: json['servings'] as int? ?? 1,
+    prepTimeMin: json['prepTimeMin'] as int?,
+    ingredientIds: List<String>.from(
+      json['ingredientIds'] ?? json['ingredients'] ?? [],
+    ),
+    allergenTags: List<String>.from(json['allergenTags'] ?? []),
+    checkInTags:
+        (json['checkInTags'] as List?)
+            ?.map((e) => CheckInType.values.firstWhere((v) => v.name == e))
+            .toList() ??
+        [],
+    proteinLevel: NutrientLevel.values.firstWhere(
+      (e) => e.name == json['proteinLevel'],
+      orElse: () => NutrientLevel.medium,
+    ),
+    fiberLevel: NutrientLevel.values.firstWhere(
+      (e) => e.name == json['fiberLevel'],
+      orElse: () => NutrientLevel.medium,
+    ),
+    carbType: CarbType.values.firstWhere(
+      (e) => e.name == json['carbType'],
+      orElse: () => CarbType.mixed,
+    ),
+    macros: json['macros'] != null
+        ? MacroEstimation.fromJson(json['macros'])
+        : const MacroEstimation(),
+    steps: _parseLocalizedSteps(json['steps']),
+    imagePath: json['imagePath'] as String?,
+    isUserCreated: json['isUserCreated'] as bool? ?? false,
+    quantities: _parseQuantities(json['quantities']),
+  );
 
   static Map<String, IngredientQuantity> _parseQuantities(dynamic value) {
     if (value is Map) {
-      return value.map((k, v) => MapEntry(
-            k as String,
-            v is Map<String, dynamic>
-                ? IngredientQuantity.fromJson(v)
-                : const IngredientQuantity(amount: 0),
-          ));
+      return value.map(
+        (k, v) => MapEntry(
+          k as String,
+          v is Map<String, dynamic>
+              ? IngredientQuantity.fromJson(v)
+              : const IngredientQuantity(amount: 0),
+        ),
+      );
     }
     return {};
   }

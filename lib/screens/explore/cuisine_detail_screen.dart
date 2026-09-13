@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../components/preference_warning.dart';
+import '../../components/recipe_visual.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
 import '../../l10n/app_localizations.dart';
-import '../../providers/favorites_provider.dart';
 import '../../providers/recipe_provider.dart';
+import '../../services/preference_matcher.dart';
 import '../../services/recommendation_service.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 
@@ -18,32 +21,21 @@ class CuisineDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final allRecipes = ref.watch(recipeMapProvider);
-    final favorites = ref.watch(favoritesProvider);
-    final scoredRecipes = ref.watch(safeScoredRecipesProvider);
+    // Recipes belong to a cuisine via their cuisineIds tags. The browsable
+    // list is already ordered by diet fit first and pantry match second, so
+    // what the user can eat sits at the top and what they avoid at the bottom
+    // — visible, with the reason, instead of missing.
+    final cuisineRecipes = ref
+        .watch(browsableScoredRecipesProvider)
+        .where((sr) => sr.recipe.cuisineIds.contains(cuisine.id))
+        .toList();
+    final hasDemoted = cuisineRecipes.any((sr) => !sr.preferenceFit.fits);
 
-    // Get recipes matching this cuisine's recipe IDs
-    final cuisineRecipes = cuisine.recipeIds
-        .where((id) => allRecipes.containsKey(id))
-        .map((id) {
-      // Find scored version if available
-      final scored = scoredRecipes
-          .where((sr) => sr.recipe.id == id)
-          .firstOrNull;
-      return scored ??
-          ScoredRecipe(
-            recipe: allRecipes[id]!,
-            compatibilityScore: 0,
-            availableIngredients: [],
-            missingIngredients: allRecipes[id]!.ingredientIds,
-          );
-    }).toList();
-
-    final gradientColors = cuisineGradients[cuisine.gradient] ??
-        cuisineGradients['healthy']!;
+    final gradientColors =
+        cuisineGradients[cuisine.gradient] ?? cuisineGradients['healthy']!;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
           // Header
@@ -59,10 +51,7 @@ class CuisineDetailScreen extends ConsumerWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    Color(gradientColors[0]),
-                    Color(gradientColors[1]),
-                  ],
+                  colors: [Color(gradientColors[0]), Color(gradientColors[1])],
                 ),
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(28),
@@ -91,10 +80,7 @@ class CuisineDetailScreen extends ConsumerWidget {
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      Text(
-                        cuisine.emoji,
-                        style: const TextStyle(fontSize: 40),
-                      ),
+                      Text(cuisine.emoji, style: const TextStyle(fontSize: 40)),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Column(
@@ -138,46 +124,59 @@ class CuisineDetailScreen extends ConsumerWidget {
                   child: Text(
                     l10n.recipeBookEmpty,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: AppTheme.textSecondary,
+                    style: TextStyle(
+                      color: context.palette.textSecondary,
                       fontSize: 14,
                     ),
                   ),
                 ),
               ),
             )
-          else
+          else ...[
+            if (hasDemoted)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                  child: PreferenceWarningCard(fit: _listFitOf(cuisineRecipes)),
+                ),
+              ),
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final scored = cuisineRecipes[index];
-                    final recipe = scored.recipe;
-                    final isFav = favorites.contains(recipe.id);
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final scored = cuisineRecipes[index];
 
-                    return _RecipeCard(
-                      scored: scored,
-                      locale: locale,
-                      isFavorite: isFav,
-                      onFavoriteTap: () => ref
-                          .read(favoritesProvider.notifier)
-                          .toggleFavorite(recipe.id),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              RecipeDetailScreen(scoredRecipe: scored),
-                        ),
+                  return _RecipeCard(
+                    scored: scored,
+                    locale: locale,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            RecipeDetailScreen(scoredRecipe: scored),
                       ),
-                    );
-                  },
-                  childCount: cuisineRecipes.length,
-                ),
+                    ),
+                  );
+                }, childCount: cuisineRecipes.length),
               ),
             ),
+          ],
         ],
       ),
+    );
+  }
+
+  /// Reasons gathered from the demoted recipes, for the banner above them.
+  PreferenceFit _listFitOf(List<ScoredRecipe> recipes) {
+    final diets = <String>{};
+    final disliked = <String>{};
+    for (final sr in recipes) {
+      diets.addAll(sr.preferenceFit.unmetDietPreferences);
+      disliked.addAll(sr.preferenceFit.dislikedIngredientIds);
+    }
+    return PreferenceFit(
+      dislikedIngredientIds: disliked.toList(),
+      unmetDietPreferences: diets.toList(),
     );
   }
 }
@@ -187,15 +186,11 @@ class CuisineDetailScreen extends ConsumerWidget {
 class _RecipeCard extends StatelessWidget {
   final ScoredRecipe scored;
   final String locale;
-  final bool isFavorite;
-  final VoidCallback onFavoriteTap;
   final VoidCallback onTap;
 
   const _RecipeCard({
     required this.scored,
     required this.locale,
-    required this.isFavorite,
-    required this.onFavoriteTap,
     required this.onTap,
   });
 
@@ -203,14 +198,14 @@ class _RecipeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipe = scored.recipe;
     final l10n = AppLocalizations.of(context);
-    final mealColor = _mealTypeColor(recipe.mealType);
+    final mealColor = _mealTypeColor(context, recipe.mealType);
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: AppTheme.surface,
+          color: context.palette.surface,
           borderRadius: BorderRadius.circular(18),
           boxShadow: [
             BoxShadow(
@@ -224,6 +219,16 @@ class _RecipeCard extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Row(
             children: [
+              // Leading thumbnail
+              SizedBox(
+                width: 64,
+                child: RecipeVisual(
+                  recipe: recipe,
+                  height: 64,
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                ),
+              ),
+              const SizedBox(width: 14),
               // Left: recipe info
               Expanded(
                 child: Column(
@@ -252,8 +257,8 @@ class _RecipeCard extends StatelessWidget {
                     // Title
                     Text(
                       recipe.localizedName(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textPrimary,
+                      style: TextStyle(
+                        color: context.palette.textPrimary,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -265,8 +270,8 @@ class _RecipeCard extends StatelessWidget {
                     // Description
                     Text(
                       recipe.localizedDescription(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textSecondary,
+                      style: TextStyle(
+                        color: context.palette.textSecondary,
                         fontSize: 12,
                         height: 1.3,
                       ),
@@ -279,60 +284,32 @@ class _RecipeCard extends StatelessWidget {
                       children: [
                         _MacroBadge(
                           label: '${recipe.macros.calories} kcal',
-                          color: AppTheme.accentOrange,
+                          color: context.palette.accentOrange,
                         ),
                         const SizedBox(width: 6),
                         _MacroBadge(
                           label: '${recipe.macros.proteinG}g P',
-                          color: AppTheme.accentTeal,
+                          color: context.palette.accentTeal,
                         ),
                         const SizedBox(width: 6),
                         if (scored.compatibilityPercent > 0)
                           _MacroBadge(
-                            label: '${scored.compatibilityPercent}% ${l10n.recipeCompatibility}',
-                            color: AppTheme.successGreen,
+                            label:
+                                '${scored.compatibilityPercent}% ${l10n.recipeCompatibility}',
+                            color: context.palette.successGreen,
                           ),
                       ],
                     ),
+                    if (!scored.preferenceFit.fits) ...[
+                      const SizedBox(height: 6),
+                      PreferenceMismatchChip(fit: scored.preferenceFit),
+                    ],
                   ],
                 ),
               ),
               const SizedBox(width: 12),
-              // Right: favorite button
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: onFavoriteTap,
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 250),
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        color: isFavorite
-                            ? AppTheme.warmCoral.withAlpha(20)
-                            : AppTheme.background,
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: isFavorite
-                              ? AppTheme.warmCoral.withAlpha(80)
-                              : AppTheme.dividerColor,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Icon(
-                        isFavorite
-                            ? Icons.bookmark_rounded
-                            : Icons.bookmark_border_rounded,
-                        color: isFavorite
-                            ? AppTheme.warmCoral
-                            : AppTheme.textLight,
-                        size: 22,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // Right: save button
+              SaveRecipeButton(recipeId: recipe.id, size: 44),
             ],
           ),
         ),
@@ -340,16 +317,16 @@ class _RecipeCard extends StatelessWidget {
     );
   }
 
-  Color _mealTypeColor(MealType type) {
+  Color _mealTypeColor(BuildContext context, MealType type) {
     switch (type) {
       case MealType.breakfast:
-        return AppTheme.breakfastColor;
+        return context.palette.breakfastColor;
       case MealType.lunch:
-        return AppTheme.lunchColor;
+        return context.palette.lunchColor;
       case MealType.dinner:
-        return AppTheme.dinnerColor;
+        return context.palette.dinnerColor;
       case MealType.snack:
-        return AppTheme.snackColor;
+        return context.palette.snackColor;
     }
   }
 

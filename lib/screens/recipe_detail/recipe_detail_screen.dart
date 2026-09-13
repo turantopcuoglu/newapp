@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../components/ingredient_chip.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/recipe_visual.dart';
+import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
+import '../../models/recipe.dart';
+import '../../providers/cooked_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
+import '../../providers/recipe_provider.dart';
 import '../../providers/shopping_provider.dart';
+import '../../services/diet_classifier.dart';
 import '../../services/recommendation_service.dart';
+import '../../services/preference_matcher.dart';
+import '../../services/recipe_timing.dart';
+import '../../providers/profile_provider.dart';
 
 class RecipeDetailScreen extends ConsumerWidget {
   final ScoredRecipe scoredRecipe;
@@ -21,12 +29,28 @@ class RecipeDetailScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
     final recipe = scoredRecipe.recipe;
+    if (recipeHasAllergenConflict(recipe, ref.watch(profileProvider))) {
+      return Scaffold(
+        appBar: AppBar(title: Text(recipe.localizedName(locale))),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              locale == 'tr'
+                  ? 'Bu tarif güncel alerji veya hassasiyet seçimlerine uygun değil ya da içeriği doğrulanamıyor. Beslen bölümünden başka bir tarif seçebilirsin.'
+                  : 'This recipe conflicts with your current allergy or sensitivity settings, or its ingredients cannot be verified. Choose another recipe in Nourish.',
+            ),
+          ),
+        ),
+      );
+    }
     final theme = Theme.of(context);
     final inventoryIds = ref.watch(inventoryIdsProvider);
 
     // Recalculate compatibility from current inventory
-    final currentAvailable =
-        recipe.ingredientIds.where((id) => inventoryIds.contains(id)).length;
+    final currentAvailable = recipe.ingredientIds
+        .where((id) => inventoryIds.contains(id))
+        .length;
     final totalIngredients = recipe.ingredientIds.length;
     final currentPercent = totalIngredients > 0
         ? ((currentAvailable / totalIngredients) * 100).round()
@@ -37,25 +61,44 @@ class RecipeDetailScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.localizedName(locale)),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: Center(
+              child: SaveRecipeButton(recipeId: recipe.id, size: 38),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Hero illustration
+            RecipeVisual(
+              recipe: recipe,
+              height: 170,
+              borderRadius: const BorderRadius.all(Radius.circular(18)),
+            ),
+            const SizedBox(height: 16),
+
             // Header badges
             Row(
               children: [
                 MealTypeBadge(mealType: recipe.mealType),
                 const SizedBox(width: 10),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.successGreen.withAlpha(30),
+                    color: context.palette.successGreen.withAlpha(30),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                        color: AppTheme.successGreen.withAlpha(80)),
+                      color: context.palette.successGreen.withAlpha(80),
+                    ),
                   ),
                   child: Text(
                     '$currentPercent% ${l10n.recipeCompatibility}',
@@ -69,14 +112,28 @@ class RecipeDetailScreen extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: 14),
-            Text(recipe.localizedDescription(locale),
-                style: theme.textTheme.bodyLarge),
+            Text(
+              recipe.localizedDescription(locale),
+              style: theme.textTheme.bodyLarge,
+            ),
+            if (RecipeTiming.minutes(recipe) != null) ...[
+              const SizedBox(height: 12),
+              Text(
+                locale == 'tr'
+                    ? '${RecipeTiming.isEstimate(recipe) ? 'Tahmini toplam süre' : 'Hazırlık süresi'}: ${RecipeTiming.minutes(recipe)} dk'
+                    : '${RecipeTiming.isEstimate(recipe) ? 'Estimated total time' : 'Preparation time'}: ${RecipeTiming.minutes(recipe)} min',
+                style: theme.textTheme.bodyMedium,
+              ),
+            ],
 
             const SizedBox(height: 24),
 
             // Nutrition card
             _buildSectionTitle(
-                l10n.recipeNutrition, Icons.pie_chart_outline, theme),
+              l10n.recipeNutrition,
+              Icons.pie_chart_outline,
+              theme,
+            ),
             const SizedBox(height: 10),
             Card(
               shape: RoundedRectangleBorder(
@@ -84,7 +141,9 @@ class RecipeDetailScreen extends ConsumerWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 12, vertical: 18),
+                  horizontal: 12,
+                  vertical: 18,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -92,56 +151,120 @@ class RecipeDetailScreen extends ConsumerWidget {
                       l10n.recipeCalories,
                       '${recipe.macros.calories}',
                       'kcal',
-                      AppTheme.accentOrange,
+                      context.palette.accentOrange,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeProtein,
                       '${recipe.macros.proteinG}',
                       'g',
-                      AppTheme.softLavender,
+                      context.palette.softLavender,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeCarbs,
                       '${recipe.macros.carbsG}',
                       'g',
-                      AppTheme.accentTeal,
+                      context.palette.accentTeal,
                     ),
-                    _divider(),
+                    _divider(context),
                     _NutritionItem(
                       l10n.recipeFiber,
                       '${recipe.macros.fiberG}',
                       'g',
-                      AppTheme.successGreen,
+                      context.palette.successGreen,
                     ),
                   ],
                 ),
               ),
             ),
 
+            // Diet suitability badges (derived from ingredients)
+            Builder(
+              builder: (context) {
+                final tags = ref.watch(dietClassifierProvider).tagsFor(recipe);
+                if (tags.isEmpty) return const SizedBox.shrink();
+                final labels = {
+                  DietClassifier.vegetarian: l10n.dietVegetarian,
+                  DietClassifier.vegan: l10n.dietVegan,
+                  DietClassifier.glutenFree: l10n.dietGlutenFree,
+                  DietClassifier.dairyFree: l10n.dietDairyFree,
+                };
+                return Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: tags
+                        .where(labels.containsKey)
+                        .map(
+                          (tag) => Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 5,
+                            ),
+                            decoration: BoxDecoration(
+                              color: context.palette.successGreen.withAlpha(20),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: context.palette.successGreen.withAlpha(
+                                  70,
+                                ),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.eco_rounded,
+                                  size: 14,
+                                  color: context.palette.successGreen,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  labels[tag]!,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: context.palette.successGreen,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                );
+              },
+            ),
+
             const SizedBox(height: 24),
 
             // Ingredients
-            _buildSectionTitle(
-                l10n.recipeIngredients, Icons.kitchen, theme),
+            _buildSectionTitle(l10n.recipeIngredients, Icons.kitchen, theme),
             const SizedBox(height: 10),
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 6,
+                ),
+                child: Column(
                   children: recipe.ingredientIds.map((id) {
                     final ingredient = ingredientMap[id];
-                    final name =
-                        ingredient?.localizedName(locale) ?? id;
+                    final name = ingredient?.localizedName(locale) ?? id;
                     final inKitchen = inventoryIds.contains(id);
-                    return IngredientChip(
-                        label: name, isAvailable: inKitchen);
+                    return _IngredientRow(
+                      name: name,
+                      // Quantities are per serving and live in the recipe
+                      // data; showing them is what makes a recipe cookable.
+                      quantity: _formatQuantity(recipe.quantities[id], l10n),
+                      isAvailable: inKitchen,
+                    );
                   }).toList(),
                 ),
               ),
@@ -151,13 +274,12 @@ class RecipeDetailScreen extends ConsumerWidget {
 
             // Steps
             _buildSectionTitle(
-                l10n.recipeSteps, Icons.format_list_numbered, theme),
+              l10n.recipeSteps,
+              Icons.format_list_numbered,
+              theme,
+            ),
             const SizedBox(height: 10),
-            ...recipe
-                .localizedSteps(locale)
-                .asMap()
-                .entries
-                .map((entry) {
+            ...recipe.localizedSteps(locale).asMap().entries.map((entry) {
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
                 padding: const EdgeInsets.all(14),
@@ -165,7 +287,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                   color: theme.colorScheme.surface,
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(
-                    color: AppTheme.dividerColor,
+                    color: context.palette.dividerColor,
                     width: 1,
                   ),
                 ),
@@ -176,7 +298,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        gradient: AppTheme.accentGradient,
+                        gradient: context.palette.accentGradient,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       alignment: Alignment.center,
@@ -196,7 +318,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                         child: Text(
                           entry.value,
                           style: theme.textTheme.bodyMedium?.copyWith(
-                            color: AppTheme.textPrimary,
+                            color: context.palette.textPrimary,
                             height: 1.5,
                           ),
                         ),
@@ -219,8 +341,9 @@ class RecipeDetailScreen extends ConsumerWidget {
                   width: double.infinity,
                   child: OutlinedButton.icon(
                     onPressed: () {
-                      final shoppingNotifier =
-                          ref.read(shoppingProvider.notifier);
+                      final shoppingNotifier = ref.read(
+                        shoppingProvider.notifier,
+                      );
                       for (final id in currentMissing) {
                         final ingredient = ingredientMap[id];
                         final displayName =
@@ -232,8 +355,10 @@ class RecipeDetailScreen extends ConsumerWidget {
                       }
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                            content: Text(
-                                '${currentMissing.length} items added')),
+                          content: Text(
+                            l10n.recipeItemsAdded(currentMissing.length),
+                          ),
+                        ),
                       );
                     },
                     icon: const Icon(Icons.shopping_cart_outlined),
@@ -243,6 +368,8 @@ class RecipeDetailScreen extends ConsumerWidget {
               }(),
             ],
             const SizedBox(height: 10),
+            SaveRecipeWideButton(recipeId: recipe.id),
+            const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: FilledButton.icon(
@@ -251,6 +378,10 @@ class RecipeDetailScreen extends ConsumerWidget {
                 label: Text(l10n.recipeAddToPlanner),
               ),
             ),
+            const SizedBox(height: 10),
+
+            // Cooked log: this — not the planner — drives consumed calories.
+            _CookedButton(recipe: recipe),
             const SizedBox(height: 40),
           ],
         ),
@@ -258,8 +389,7 @@ class RecipeDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildSectionTitle(
-      String title, IconData icon, ThemeData theme) {
+  Widget _buildSectionTitle(String title, IconData icon, ThemeData theme) {
     return Row(
       children: [
         Icon(icon, size: 20, color: theme.colorScheme.primary),
@@ -269,12 +399,8 @@ class RecipeDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget _divider() {
-    return Container(
-      width: 1,
-      height: 36,
-      color: AppTheme.dividerColor,
-    );
+  Widget _divider(BuildContext context) {
+    return Container(width: 1, height: 36, color: context.palette.dividerColor);
   }
 
   void _showAddToPlanner(BuildContext context, WidgetRef ref) async {
@@ -291,25 +417,30 @@ class RecipeDetailScreen extends ConsumerWidget {
       builder: (ctx) => SimpleDialog(
         title: Text(AppLocalizations.of(context).plannerSelectMealType),
         children: MealType.values
-            .map((type) => SimpleDialogOption(
-                  onPressed: () => Navigator.pop(ctx, type),
-                  child:
-                      Text(type.name[0].toUpperCase() + type.name.substring(1)),
-                ))
+            .map(
+              (type) => SimpleDialogOption(
+                onPressed: () => Navigator.pop(ctx, type),
+                child: Text(
+                  type.name[0].toUpperCase() + type.name.substring(1),
+                ),
+              ),
+            )
             .toList(),
       ),
     );
     if (mealType == null || !context.mounted) return;
 
-    ref.read(mealPlanProvider.notifier).addEntry(
+    ref
+        .read(mealPlanProvider.notifier)
+        .addEntry(
           recipeId: scoredRecipe.recipe.id,
           date: date,
           mealType: mealType,
         );
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Added to planner')),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Added to planner')));
   }
 }
 
@@ -325,19 +456,136 @@ class _NutritionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(value,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w700,
-                  color: color,
-                )),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: color,
+          ),
+        ),
         Text(unit, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 2),
-        Text(label,
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall
-                ?.copyWith(fontSize: 11)),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 11),
+        ),
       ],
+    );
+  }
+}
+
+/// Logs the recipe into the cooked log (consumed calories). Flips to an undo
+/// action once the recipe is already logged for the current app-day.
+class _CookedButton extends ConsumerWidget {
+  final Recipe recipe;
+
+  const _CookedButton({required this.recipe});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final cookedToday = ref.watch(cookedTodayIdsProvider).contains(recipe.id);
+    final notifier = ref.read(cookedProvider.notifier);
+    final messenger = ScaffoldMessenger.of(context);
+
+    return SizedBox(
+      width: double.infinity,
+      child: cookedToday
+          ? OutlinedButton.icon(
+              onPressed: () {
+                if (notifier.undoToday(recipe.id)) {
+                  messenger.showSnackBar(
+                    SnackBar(content: Text(l10n.recipeCookedUndone)),
+                  );
+                }
+              },
+              icon: const Icon(Icons.undo_rounded),
+              label: Text(l10n.recipeUndoCooked),
+            )
+          : FilledButton.icon(
+              onPressed: () {
+                final entry = notifier.markCooked(recipe);
+                messenger.showSnackBar(
+                  SnackBar(
+                    content: Text(l10n.recipeCookedLogged(entry.calories)),
+                  ),
+                );
+              },
+              style: FilledButton.styleFrom(
+                backgroundColor: context.palette.successGreen,
+              ),
+              icon: const Icon(Icons.restaurant_rounded),
+              label: Text(l10n.recipeMarkCooked),
+            ),
+    );
+  }
+}
+
+/// Formats a per-serving quantity with a localized unit, e.g. "200 ml",
+/// "1 yemek kaşığı". Returns null when the recipe declares no amount.
+String? _formatQuantity(IngredientQuantity? quantity, AppLocalizations l10n) {
+  if (quantity == null || quantity.amount <= 0) return null;
+  final amount = quantity.amount;
+  // Whole numbers read better without a trailing ".0"; halves keep one digit.
+  final text = amount == amount.roundToDouble()
+      ? amount.toInt().toString()
+      : amount.toStringAsFixed(1);
+  return '$text ${l10n.localizedUnit(quantity.unit.name)}';
+}
+
+/// One ingredient line: name on the left, amount on the right, with a marker
+/// showing whether it is already in the user's kitchen.
+class _IngredientRow extends StatelessWidget {
+  final String name;
+  final String? quantity;
+  final bool isAvailable;
+
+  const _IngredientRow({
+    required this.name,
+    required this.quantity,
+    required this.isAvailable,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = isAvailable
+        ? context.palette.successGreen
+        : context.palette.textSecondary;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 7),
+      child: Row(
+        children: [
+          Icon(
+            isAvailable
+                ? Icons.check_circle_rounded
+                : Icons.radio_button_unchecked_rounded,
+            size: 17,
+            color: color,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              name,
+              style: TextStyle(
+                fontSize: 14,
+                color: context.palette.textPrimary,
+              ),
+            ),
+          ),
+          if (quantity != null) ...[
+            const SizedBox(width: 10),
+            Text(
+              quantity!,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: context.palette.textPrimary,
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
+import '../core/wellness_motion.dart';
 import '../data/mock_ingredients.dart';
 import '../l10n/app_localizations.dart';
 import '../models/ingredient.dart';
@@ -112,10 +113,7 @@ class _OnboardingIngredientsScreenState
       vsync: this,
       duration: const Duration(milliseconds: 800),
     );
-    _fadeAnim = CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animController, curve: Curves.easeOut);
     _animController.forward();
   }
 
@@ -143,22 +141,16 @@ class _OnboardingIngredientsScreenState
     }
 
     Navigator.of(context).push(
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const OnboardingAllergiesScreen(),
-        transitionsBuilder: (_, anim, __, child) =>
-            FadeTransition(opacity: anim, child: child),
-        transitionDuration: const Duration(milliseconds: 500),
+      MaterialPageRoute<void>(
+        builder: (_) => const OnboardingAllergiesScreen(),
       ),
     );
   }
 
   void _onSkip() {
     Navigator.of(context).push(
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const OnboardingAllergiesScreen(),
-        transitionsBuilder: (_, anim, __, child) =>
-            FadeTransition(opacity: anim, child: child),
-        transitionDuration: const Duration(milliseconds: 500),
+      MaterialPageRoute<void>(
+        builder: (_) => const OnboardingAllergiesScreen(),
       ),
     );
   }
@@ -172,20 +164,16 @@ class _OnboardingIngredientsScreenState
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF1B2838),
-              Color(0xFF2D3E50),
-              Color(0xFF1B2838),
-            ],
+            colors: [context.palette.background, context.palette.surface, context.palette.background],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: _fadeAnim,
+            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
             child: Column(
               children: [
                 const SizedBox(height: 20),
@@ -198,27 +186,27 @@ class _OnboardingIngredientsScreenState
                         width: 64,
                         height: 64,
                         decoration: BoxDecoration(
-                          gradient: AppTheme.accentGradient,
+                          gradient: context.palette.accentGradient,
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: AppTheme.accentOrange.withAlpha(60),
+                              color: context.palette.accentOrange.withAlpha(60),
                               blurRadius: 20,
                               offset: const Offset(0, 8),
                             ),
                           ],
                         ),
-                        child: const Icon(
+                        child:  Icon(
                           Icons.kitchen_rounded,
-                          color: Colors.white,
+                          color: context.palette.textPrimary,
                           size: 32,
                         ),
                       ),
                       const SizedBox(height: 20),
                       Text(
                         l10n.onboardingIngredientsTitle,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style:  TextStyle(
+                          color: context.palette.textPrimary,
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.5,
@@ -229,7 +217,7 @@ class _OnboardingIngredientsScreenState
                       Text(
                         l10n.onboardingIngredientsSubtitle,
                         style: TextStyle(
-                          color: Colors.white.withAlpha(160),
+                          color: context.palette.textPrimary.withAlpha(160),
                           fontSize: 14,
                           height: 1.4,
                         ),
@@ -262,7 +250,7 @@ class _OnboardingIngredientsScreenState
                         Text(
                           l10n.onboardingIngredientsAddLater,
                           style: TextStyle(
-                            color: Colors.white.withAlpha(120),
+                            color: context.palette.textPrimary.withAlpha(120),
                             fontSize: 13,
                           ),
                           textAlign: TextAlign.center,
@@ -285,14 +273,11 @@ class _OnboardingIngredientsScreenState
           bottom: MediaQuery.of(context).padding.bottom + 16,
           top: 12,
         ),
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0x001B2838),
-              Color(0xFF1B2838),
-            ],
+            colors: [const Color(0x001B2838), context.palette.background],
           ),
         ),
         child: Row(
@@ -303,7 +288,7 @@ class _OnboardingIngredientsScreenState
               child: Text(
                 l10n.onboardingSkip,
                 style: TextStyle(
-                  color: Colors.white.withAlpha(180),
+                  color: context.palette.textPrimary.withAlpha(180),
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -317,8 +302,8 @@ class _OnboardingIngredientsScreenState
                 child: FilledButton(
                   onPressed: _onContinue,
                   style: FilledButton.styleFrom(
-                    backgroundColor: AppTheme.accentOrange,
-                    foregroundColor: Colors.white,
+                    backgroundColor: context.palette.accentOrange,
+                    foregroundColor: context.palette.background,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -462,9 +447,9 @@ class _CategorySection extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white.withAlpha(10),
+          color: context.palette.textPrimary.withAlpha(10),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.white.withAlpha(15)),
+          border: Border.all(color: context.palette.textPrimary.withAlpha(15)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -511,12 +496,12 @@ class _CategorySection extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isSelected
                           ? color.withAlpha(40)
-                          : Colors.white.withAlpha(8),
+                          : context.palette.textPrimary.withAlpha(8),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
                         color: isSelected
                             ? color.withAlpha(150)
-                            : Colors.white.withAlpha(25),
+                            : context.palette.textPrimary.withAlpha(25),
                         width: isSelected ? 1.5 : 1,
                       ),
                     ),
@@ -524,11 +509,7 @@ class _CategorySection extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         if (isSelected) ...[
-                          Icon(
-                            Icons.check_rounded,
-                            color: color,
-                            size: 16,
-                          ),
+                          Icon(Icons.check_rounded, color: color, size: 16),
                           const SizedBox(width: 4),
                         ],
                         Text(
@@ -536,10 +517,11 @@ class _CategorySection extends StatelessWidget {
                           style: TextStyle(
                             color: isSelected
                                 ? color
-                                : Colors.white.withAlpha(200),
+                                : context.palette.textPrimary.withAlpha(200),
                             fontSize: 13,
-                            fontWeight:
-                                isSelected ? FontWeight.w600 : FontWeight.w400,
+                            fontWeight: isSelected
+                                ? FontWeight.w600
+                                : FontWeight.w400,
                           ),
                         ),
                       ],

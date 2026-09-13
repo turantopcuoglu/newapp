@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Native silhouette of the generated crescent/leaf; no background tile. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1254"
+    android:viewportHeight="1254">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M646,216 C656,217 644,224 631,230 C514,285 441,376 441,501 C439,668 560,783 715,792 C855,805 978,750 1025,638 C1030,627 1037,633 1034,651 C1022,851 875,1023 664,1025 C410,1025 220,868 221,626 C223,406 391,228 646,216 Z M999,342 C1001,334 1005,344 1008,355 C1063,533 1015,661 862,713 C755,749 712,748 701,786 C690,801 684,784 679,769 C603,618 699,466 844,427 C922,406 973,387 999,342 Z" />
+</vector>

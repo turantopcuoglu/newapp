@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../core/enums.dart';
+
+import '../../components/health_recipe_card.dart';
+import '../../components/preference_warning.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
+import '../../data/health_category_info.dart';
+import '../../data/ingredient_visual.dart';
 import '../../l10n/app_localizations.dart';
-import '../../providers/favorites_provider.dart';
+import '../../providers/profile_provider.dart';
 import '../../providers/recipe_provider.dart';
-import '../../services/recommendation_service.dart';
+import '../../services/preference_matcher.dart';
+import '../../services/special_category_matcher.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
+import 'health_recipe_list_screen.dart';
 
+/// One health category: what the condition means, then its recipes grouped by
+/// the ingredient that carries them.
+///
+/// The flat recipe list this screen used to be never explained *why* those
+/// recipes were picked, and scrolling 100 cards is not browsing. Now the page
+/// reads top to bottom: header → explanation → ingredient tiles, each tile
+/// opening the recipes that contain that ingredient and match the condition.
 class SpecialDetailScreen extends ConsumerWidget {
   final SpecialCategory category;
 
@@ -18,319 +31,517 @@ class SpecialDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final locale = l10n.locale.languageCode;
-    final favorites = ref.watch(favoritesProvider);
-    final scoredRecipes = ref.watch(safeScoredRecipesProvider);
+    // Browsable: allergens are out, preferences only reorder. Counting from
+    // the same list the tiles open means the numbers cannot lie.
+    final scoredRecipes = ref.watch(browsableScoredRecipesProvider);
+    final profile = ref.watch(profileProvider);
+    final browsable = scoredRecipes.map((sr) => sr.recipe).toList();
 
-    // Filter recipes based on the special category
-    final filteredRecipes = _filterRecipes(scoredRecipes);
+    final filteredRecipes = scoredRecipes
+        .where((sr) => matchesSpecialCategory(sr.recipe, category))
+        .toList();
 
-    final gradientColors = cuisineGradients[category.gradient] ??
-        cuisineGradients['healthy']!;
+    final info = healthCategoryInfo[category.id];
+
+    // Ingredients the user avoids stay on the page, they just move to the
+    // end and carry a warning — the tile disappearing was the bug.
+    final ingredientFits = {
+      for (final id in healthCategoryIngredients(category, browsable))
+        id: ingredientById(id) == null
+            ? PreferenceFit.clean
+            : ingredientPreferenceFit(ingredientById(id)!, profile),
+    };
+    final ingredientIds = ingredientFits.keys.toList()
+      ..sort(
+        (a, b) =>
+            ingredientFits[a]!.demotion.compareTo(ingredientFits[b]!.demotion),
+      );
+
+    final gradientColors =
+        cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
 
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
-          // Header
+          // Header — unchanged: emoji, name, subtitle and the recipe count.
           SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top + 8,
-                left: 20,
-                right: 20,
-                bottom: 24,
-              ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color(gradientColors[0]),
-                    Color(gradientColors[1]),
-                  ],
-                ),
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(28),
-                  bottomRight: Radius.circular(28),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withAlpha(30),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Icon(
-                        Icons.arrow_back_rounded,
-                        color: Colors.white,
-                        size: 22,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Text(
-                        category.emoji,
-                        style: const TextStyle(fontSize: 40),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              category.localizedName(locale),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: -0.3,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              category.localizedSubtitle(locale),
-                              style: TextStyle(
-                                color: Colors.white.withAlpha(200),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  // Recipe count badge
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 6,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withAlpha(30),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      '${filteredRecipes.length} ${l10n.recipeBookTotalRecipes}',
-                      style: TextStyle(
-                        color: Colors.white.withAlpha(230),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            child: _CategoryHeader(
+              category: category,
+              locale: locale,
+              recipeCount: filteredRecipes.length,
+              gradientColors: gradientColors,
             ),
           ),
 
-          // Recipe list
-          if (filteredRecipes.isEmpty)
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(32),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.search_off_rounded,
-                        color: AppTheme.textLight,
-                        size: 48,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        l10n.recipeBookEmpty,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: AppTheme.textSecondary,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
+          // Explanation of the condition.
+          if (info != null)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 18, 16, 0),
+                child: _HealthInfoCard(
+                  info: info,
+                  locale: locale,
+                  l10n: l10n,
+                  accent: Color(gradientColors[0]),
                 ),
               ),
-            )
-          else
-            SliverPadding(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final scored = filteredRecipes[index];
-                    final recipe = scored.recipe;
-                    final isFav = favorites.contains(recipe.id);
+            ),
 
-                    return _SpecialRecipeCard(
-                      scored: scored,
-                      locale: locale,
-                      isFavorite: isFav,
-                      onFavoriteTap: () => ref
-                          .read(favoritesProvider.notifier)
-                          .toggleFavorite(recipe.id),
-                      onTap: () => Navigator.push(
+          // Ingredient tiles, in the world-cuisine card style.
+          if (ingredientIds.isNotEmpty) ...[
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 24, 16, 12),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.healthIngredientsTitle,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            l10n.healthIngredientsHint,
+                            style: TextStyle(
+                              color: context.palette.textSecondary,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    // The tiles cover the ingredients we wrote about; this
+                    // keeps the whole category reachable in one tap.
+                    TextButton(
+                      onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (_) =>
-                              RecipeDetailScreen(scoredRecipe: scored),
+                              HealthRecipeListScreen(category: category),
                         ),
                       ),
-                    );
-                  },
-                  childCount: filteredRecipes.length,
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        minimumSize: Size.zero,
+                        foregroundColor: Color(gradientColors[0]),
+                      ),
+                      child: Text(
+                        l10n.healthAllRecipes,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
+              sliver: SliverGrid(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 14,
+                  crossAxisSpacing: 14,
+                  childAspectRatio: 1.05,
+                ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final id = ingredientIds[index];
+                  final count = browsable
+                      .where((r) => matchesCategoryIngredient(r, category, id))
+                      .length;
+                  return _IngredientTile(
+                    ingredientId: id,
+                    locale: locale,
+                    recipeCount: count,
+                    fit: ingredientFits[id]!,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => HealthRecipeListScreen(
+                          category: category,
+                          ingredientId: id,
+                        ),
+                      ),
+                    ),
+                  );
+                }, childCount: ingredientIds.length),
+              ),
+            ),
+          ] else
+            // No editorial ingredients for this category yet: fall back to the
+            // plain list rather than showing an empty page.
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final scored = filteredRecipes[index];
+                  return HealthRecipeCard(
+                    scored: scored,
+                    locale: locale,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            RecipeDetailScreen(scoredRecipe: scored),
+                      ),
+                    ),
+                  );
+                }, childCount: filteredRecipes.length),
               ),
             ),
         ],
       ),
     );
   }
+}
 
-  List<ScoredRecipe> _filterRecipes(List<ScoredRecipe> allScored) {
-    final condition = category.healthCondition;
-    if (condition == null) return allScored;
+// ── Header ────────────────────────────────────────────────────────────────
 
-    switch (condition) {
-      case HealthCondition.pcos:
-        // PCOS: complex carbs, medium-high fiber, medium-high protein, no simple carbs
-        return allScored.where((sr) {
-          final r = sr.recipe;
-          return r.carbType != CarbType.simple &&
-              (r.fiberLevel == NutrientLevel.medium ||
-                  r.fiberLevel == NutrientLevel.high) &&
-              (r.proteinLevel == NutrientLevel.medium ||
-                  r.proteinLevel == NutrientLevel.high);
-        }).toList();
+class _CategoryHeader extends StatelessWidget {
+  final SpecialCategory category;
+  final String locale;
+  final int recipeCount;
+  final List<int> gradientColors;
 
-      case HealthCondition.insulinResistance:
-        // Insulin resistance: complex carbs, medium-high fiber, no simple carbs
-        return allScored.where((sr) {
-          final r = sr.recipe;
-          return r.carbType != CarbType.simple &&
-              (r.fiberLevel == NutrientLevel.medium ||
-                  r.fiberLevel == NutrientLevel.high);
-        }).toList();
+  const _CategoryHeader({
+    required this.category,
+    required this.locale,
+    required this.recipeCount,
+    required this.gradientColors,
+  });
 
-      case HealthCondition.ironDeficiency:
-      case HealthCondition.vitaminB12Deficiency:
-      case HealthCondition.magnesiumDeficiency:
-      case HealthCondition.anemia:
-        // Ingredient-based filtering
-        final targetIngredients =
-            healthConditionIngredients[condition] ?? [];
-        return allScored.where((sr) {
-          return sr.recipe.ingredientIds
-              .any((id) => targetIngredients.contains(id));
-        }).toList();
-    }
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
+    return Container(
+      padding: EdgeInsets.only(
+        top: MediaQuery.of(context).padding.top + 8,
+        left: 20,
+        right: 20,
+        bottom: 24,
+      ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(gradientColors[0]), Color(gradientColors[1])],
+        ),
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(28),
+          bottomRight: Radius.circular(28),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(30),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(
+                Icons.arrow_back_rounded,
+                color: Colors.white,
+                size: 22,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: [
+              Text(category.emoji, style: const TextStyle(fontSize: 40)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      category.localizedName(locale),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: -0.3,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      category.localizedSubtitle(locale),
+                      style: TextStyle(
+                        color: Colors.white.withAlpha(200),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.white.withAlpha(30),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+              '$recipeCount ${l10n.recipeBookTotalRecipes}',
+              style: TextStyle(
+                color: Colors.white.withAlpha(230),
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
-// ── Recipe Card for Special Categories ────────────────────────────────────
+// ── Condition explanation ─────────────────────────────────────────────────
 
-class _SpecialRecipeCard extends StatelessWidget {
-  final ScoredRecipe scored;
+class _HealthInfoCard extends StatelessWidget {
+  final HealthCategoryInfo info;
   final String locale;
-  final bool isFavorite;
-  final VoidCallback onFavoriteTap;
+  final AppLocalizations l10n;
+  final Color accent;
+
+  const _HealthInfoCard({
+    required this.info,
+    required this.locale,
+    required this.l10n,
+    required this.accent,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: context.palette.surface,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(8),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: accent.withAlpha(28),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Icon(
+                  Icons.health_and_safety_rounded,
+                  color: accent,
+                  size: 18,
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  l10n.healthAboutTitle,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            info.localizedSummary(locale),
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: context.palette.textPrimary,
+            ),
+          ),
+          for (final section in info.sections) ...[
+            const SizedBox(height: 16),
+            Text(
+              section.localizedTitle(locale),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w700,
+                color: accent,
+              ),
+            ),
+            const SizedBox(height: 6),
+            ...section
+                .localizedItems(locale)
+                .map(
+                  (item) => Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: Container(
+                            width: 5,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              color: accent.withAlpha(150),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            item,
+                            style: TextStyle(
+                              fontSize: 13,
+                              height: 1.45,
+                              color: context.palette.textSecondary,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+          ],
+          const SizedBox(height: 14),
+          Text(
+            l10n.healthInfoDisclaimer,
+            style: TextStyle(
+              fontSize: 11,
+              fontStyle: FontStyle.italic,
+              color: context.palette.textLight,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Ingredient tile ───────────────────────────────────────────────────────
+
+class _IngredientTile extends StatelessWidget {
+  final String ingredientId;
+  final String locale;
+  final int recipeCount;
+  final PreferenceFit fit;
   final VoidCallback onTap;
 
-  const _SpecialRecipeCard({
-    required this.scored,
+  const _IngredientTile({
+    required this.ingredientId,
     required this.locale,
-    required this.isFavorite,
-    required this.onFavoriteTap,
+    required this.recipeCount,
+    required this.fit,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    final recipe = scored.recipe;
     final l10n = AppLocalizations.of(context);
-    final mealColor = _mealTypeColor(recipe.mealType);
+    final colors = ingredientGradient(ingredientId);
+    final name =
+        ingredientById(ingredientId)?.localizedName(locale) ?? ingredientId;
 
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        decoration: BoxDecoration(
-          color: AppTheme.surface,
-          borderRadius: BorderRadius.circular(18),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withAlpha(8),
-              blurRadius: 12,
-              offset: const Offset(0, 3),
+      child: Opacity(
+        // Still tappable, just visibly out of the way.
+        opacity: fit.fits ? 1 : 0.55,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(colors[0]), Color(colors[1])],
             ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Color(colors[0]).withAlpha(55),
+                blurRadius: 14,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Stack(
             children: [
-              Expanded(
+              // Oversized watermark, same trick the cuisine tiles use.
+              Positioned(
+                right: -6,
+                bottom: -10,
+                child: Text(
+                  ingredientEmoji(ingredientId),
+                  style: TextStyle(
+                    fontSize: 64,
+                    color: Colors.white.withAlpha(35),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(14),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Badges row
                     Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 3,
-                          ),
+                          width: 40,
+                          height: 40,
                           decoration: BoxDecoration(
-                            color: mealColor.withAlpha(25),
-                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.white.withAlpha(40),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Text(
-                            _mealTypeName(recipe.mealType, l10n),
-                            style: TextStyle(
-                              color: mealColor,
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
+                          child: Center(
+                            child: Text(
+                              ingredientEmoji(ingredientId),
+                              style: const TextStyle(fontSize: 22),
                             ),
                           ),
                         ),
-                        if (recipe.allergenTags.isEmpty) ...[
-                          const SizedBox(width: 6),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 3,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppTheme.successGreen.withAlpha(20),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              l10n.exploreAllergenFree,
-                              style: TextStyle(
-                                color: AppTheme.successGreen,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
+                        const Spacer(),
+                        if (!fit.fits)
+                          Tooltip(
+                            message: preferenceReasons(fit, l10n).join(' · '),
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withAlpha(50),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: const Icon(
+                                Icons.info_outline_rounded,
+                                color: Colors.white,
+                                size: 14,
                               ),
                             ),
                           ),
-                        ],
                       ],
                     ),
-                    const SizedBox(height: 8),
+                    const Spacer(),
                     Text(
-                      recipe.localizedName(locale),
+                      name,
                       style: const TextStyle(
-                        color: AppTheme.textPrimary,
+                        color: Colors.white,
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
@@ -339,122 +550,29 @@ class _SpecialRecipeCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 6),
-                    Text(
-                      recipe.localizedDescription(locale),
-                      style: const TextStyle(
-                        color: AppTheme.textSecondary,
-                        fontSize: 12,
-                        height: 1.3,
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
                       ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(height: 8),
-                    // Macros
-                    Row(
-                      children: [
-                        _MacroBadge(
-                          label: '${recipe.macros.calories} kcal',
-                          color: AppTheme.accentOrange,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(45),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        l10n.healthRecipeCount(recipeCount),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
                         ),
-                        const SizedBox(width: 6),
-                        _MacroBadge(
-                          label: '${recipe.macros.proteinG}g P',
-                          color: AppTheme.accentTeal,
-                        ),
-                        const SizedBox(width: 6),
-                        _MacroBadge(
-                          label: '${recipe.macros.fiberG}g ${l10n.recipeFiber}',
-                          color: AppTheme.successGreen,
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(width: 12),
-              GestureDetector(
-                onTap: onFavoriteTap,
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 250),
-                  width: 44,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    color: isFavorite
-                        ? AppTheme.warmCoral.withAlpha(20)
-                        : AppTheme.background,
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                      color: isFavorite
-                          ? AppTheme.warmCoral.withAlpha(80)
-                          : AppTheme.dividerColor,
-                      width: 1.5,
-                    ),
-                  ),
-                  child: Icon(
-                    isFavorite
-                        ? Icons.bookmark_rounded
-                        : Icons.bookmark_border_rounded,
-                    color:
-                        isFavorite ? AppTheme.warmCoral : AppTheme.textLight,
-                    size: 22,
-                  ),
-                ),
-              ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Color _mealTypeColor(MealType type) {
-    switch (type) {
-      case MealType.breakfast:
-        return AppTheme.breakfastColor;
-      case MealType.lunch:
-        return AppTheme.lunchColor;
-      case MealType.dinner:
-        return AppTheme.dinnerColor;
-      case MealType.snack:
-        return AppTheme.snackColor;
-    }
-  }
-
-  String _mealTypeName(MealType type, AppLocalizations l10n) {
-    switch (type) {
-      case MealType.breakfast:
-        return l10n.recipeBreakfast;
-      case MealType.lunch:
-        return l10n.recipeLunch;
-      case MealType.dinner:
-        return l10n.recipeDinner;
-      case MealType.snack:
-        return l10n.recipeSnack;
-    }
-  }
-}
-
-class _MacroBadge extends StatelessWidget {
-  final String label;
-  final Color color;
-
-  const _MacroBadge({required this.label, required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
-      decoration: BoxDecoration(
-        color: color.withAlpha(18),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: color,
-          fontSize: 10,
-          fontWeight: FontWeight.w600,
         ),
       ),
     );

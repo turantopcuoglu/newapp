@@ -1,0 +1,29 @@
+{
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "path": "assets/materials/satin-neutral.png",
+      "sha256": "c926600c9a93eaa195595f9cbdbf20db3e3053942ab626f50775c6fd9361eaf8",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "path": "assets/moods/period-reference-v2.png",
+      "sha256": "4d9daa9e76fc89d94e014e9af9f38498aaa6b79312a678806769a56fc1f5aba0",
+      "dimensions": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "path": "assets/food/moonlit-bowl-hero-v2.png",
+      "sha256": "94b9aa720cbb5670717094c008ec3e10204d1f7f7f99acd8af94209009314522",
+      "dimensions": [
+        1774,
+        887
+      ]
+    }
+  ]
+}

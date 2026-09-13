@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/theme.dart';
+import '../core/wellness_motion.dart';
 import '../providers/storage_provider.dart';
 
 class DisclaimerScreen extends ConsumerStatefulWidget {
@@ -25,10 +26,7 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
       vsync: this,
       duration: const Duration(milliseconds: 800),
     );
-    _fadeAnim = CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animController, curve: Curves.easeOut);
     _animController.forward();
   }
 
@@ -48,16 +46,16 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF1B2838), Color(0xFF2D3E50)],
+            colors: [context.palette.background, context.palette.surface],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: _fadeAnim,
+            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
@@ -69,25 +67,25 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: AppTheme.warningAmber.withAlpha(30),
+                      color: context.palette.warningAmber.withAlpha(30),
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.health_and_safety_rounded,
                       size: 40,
-                      color: AppTheme.warningAmber,
+                      color: context.palette.warningAmber,
                     ),
                   ),
 
                   const SizedBox(height: 24),
 
                   // Title
-                  const Text(
+                   Text(
                     'Yasal Uyarı',
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
-                      color: Colors.white,
+                      color: context.palette.textPrimary,
                       letterSpacing: -0.5,
                     ),
                   ),
@@ -99,11 +97,9 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withAlpha(15),
+                        color: context.palette.textPrimary.withAlpha(15),
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: Colors.white.withAlpha(20),
-                        ),
+                        border: Border.all(color: context.palette.textPrimary.withAlpha(20)),
                       ),
                       child: SingleChildScrollView(
                         child: Column(
@@ -155,16 +151,18 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
                     onTap: () => setState(() => _accepted = !_accepted),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 12),
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
                       decoration: BoxDecoration(
                         color: _accepted
-                            ? AppTheme.successGreen.withAlpha(25)
-                            : Colors.white.withAlpha(10),
+                            ? context.palette.successGreen.withAlpha(25)
+                            : context.palette.textPrimary.withAlpha(10),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
                           color: _accepted
-                              ? AppTheme.successGreen.withAlpha(100)
-                              : Colors.white.withAlpha(30),
+                              ? context.palette.successGreen.withAlpha(100)
+                              : context.palette.textPrimary.withAlpha(30),
                         ),
                       ),
                       child: Row(
@@ -175,27 +173,30 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
                             height: 24,
                             decoration: BoxDecoration(
                               color: _accepted
-                                  ? AppTheme.successGreen
+                                  ? context.palette.successGreen
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(6),
                               border: Border.all(
                                 color: _accepted
-                                    ? AppTheme.successGreen
-                                    : Colors.white54,
+                                    ? context.palette.successGreen
+                                    : context.palette.textSecondary,
                                 width: 2,
                               ),
                             ),
                             child: _accepted
-                                ? const Icon(Icons.check,
-                                    size: 16, color: Colors.white)
+                                ?  Icon(
+                                    Icons.check,
+                                    size: 16,
+                                    color: context.palette.textPrimary,
+                                  )
                                 : null,
                           ),
                           const SizedBox(width: 12),
-                          const Expanded(
+                           Expanded(
                             child: Text(
                               'Yukarıdaki yasal uyarıyı okudum ve anladım.',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: context.palette.textPrimary,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -217,8 +218,8 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
                       child: FilledButton(
                         onPressed: _accepted ? _onContinue : null,
                         style: FilledButton.styleFrom(
-                          backgroundColor: AppTheme.accentOrange,
-                          foregroundColor: Colors.white,
+                          backgroundColor: context.palette.accentOrange,
+                          foregroundColor: context.palette.background,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
@@ -251,10 +252,10 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
       children: [
         Text(
           title,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w700,
-            color: AppTheme.warningAmber,
+            color: context.palette.warningAmber,
           ),
         ),
         const SizedBox(height: 6),
@@ -263,7 +264,7 @@ class _DisclaimerScreenState extends ConsumerState<DisclaimerScreen>
           style: TextStyle(
             fontSize: 13,
             height: 1.6,
-            color: Colors.white.withAlpha(200),
+            color: context.palette.textPrimary.withAlpha(200),
           ),
         ),
       ],
