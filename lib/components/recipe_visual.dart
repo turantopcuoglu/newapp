@@ -7,6 +7,11 @@ import 'ingredient_image.dart';
 import '../screens/wellness/moonlit_assets.dart';
 import '../models/recipe.dart';
 
+/// Hero tag shared by a recipe's card and its detail page, so the photo
+/// carries across the navigation. Only use it where a recipe appears at most
+/// once per page: two heroes with one tag on the same route is an error.
+Object recipeHeroTag(String recipeId) => 'recipe-visual-$recipeId';
+
 /// Recipe photography, with ingredient imagery for recipes without a photo.
 ///
 class RecipeVisual extends StatelessWidget {

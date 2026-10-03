@@ -72,7 +72,7 @@ class HorizonScene extends StatelessWidget {
             child: AnimatedSwitcher(
               duration: reducedMotion(context)
                   ? Duration.zero
-                  : const Duration(milliseconds: 950),
+                  : const Duration(milliseconds: 600),
               switchInCurve: Curves.easeOutCubic,
               switchOutCurve: Curves.easeInCubic,
               layoutBuilder: (current, previous) => Stack(

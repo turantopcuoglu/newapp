@@ -57,9 +57,12 @@ class MoonlitRecipeScreen extends ConsumerWidget {
                       right: -16,
                       top: 130,
                       bottom: 0,
-                      child: featured
-                          ? const OriginalFoodPhoto(detail: true)
-                          : RecipeVisual(recipe: recipe, height: 220),
+                      child: Hero(
+                        tag: recipeHeroTag(recipe.id),
+                        child: featured
+                            ? const OriginalFoodPhoto(detail: true)
+                            : RecipeVisual(recipe: recipe, height: 220),
+                      ),
                     ),
                     if (large)
                       Positioned.fill(

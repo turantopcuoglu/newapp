@@ -140,7 +140,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
               .accessibilityFeatures
               .disableAnimations
           ? Duration.zero
-          : const Duration(milliseconds: 700),
+          : const Duration(milliseconds: 450),
       themeAnimationCurve: Curves.easeInOutCubic,
       builder: (context, child) => AnnotatedRegion<SystemUiOverlayStyle>(
         value: palette.brightness == Brightness.dark

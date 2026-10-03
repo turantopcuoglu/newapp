@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'mood_palette.dart';
@@ -58,10 +59,12 @@ abstract class AppTheme {
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.android: WellnessPageTransitions(),
-        TargetPlatform.iOS: WellnessPageTransitions(),
+        // Cupertino's builder owns the edge swipe-back gesture; replacing it
+        // left iOS users with no way back except the app bar button.
+        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
         TargetPlatform.windows: WellnessPageTransitions(),
         TargetPlatform.linux: WellnessPageTransitions(),
-        TargetPlatform.macOS: WellnessPageTransitions(),
       },
     ),
     iconTheme: IconThemeData(color: p.mint),

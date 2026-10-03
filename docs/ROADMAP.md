@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-08-04 · Dal: `claude/recipe-save-ui-fixes-629z7x`
+> Son güncelleme: 2026-10-03 · Dal: `claude/recipe-save-ui-fixes-629z7x`
 
 ---
 
@@ -22,7 +22,11 @@ Script SDK'yı indirir (varsa atlar), `pub get` çalıştırır ve `PATH`'i ayar
 kendin çalıştır. Kurulum dizinini `FLUTTER_INSTALL_ROOT` ile değiştirebilirsin.
 
 Notlar:
-- Sürüm **3.32.5** olmalı; 3.24.x sabitlenmiş `intl 0.20.2` ile çakışıyor.
+- Wellness sürümünden (2026-09) beri pubspec `flutter: ">=3.38.0"` istiyor;
+  kullanıcının Windows makinesinde **3.44.6** kurulu. 3.24.x `intl 0.20.2`
+  ile çakışır. 3.44+ `CupertinoPageTransitionsBuilder`'ı `material.dart`'tan
+  değil `cupertino.dart`'tan verir.
+- Web önizleme: `.claude/launch.json` içindeki `web` (port 8099).
 - `flutter` root olarak çalışınca uyarı basar, sorun değil.
 - Yeni bir Bash çağrısında `PATH` sıfırlanır; `export PATH="$FLUTTER_DIR/bin:$PATH"`
   satırını her komutun başına eklemen gerekebilir.
@@ -35,8 +39,8 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **119 test, tümü geçiyor** (16 dosya) |
-| `flutter analyze` | **0 hata** (22 kozmetik info/warning kaldı) |
+| Test | **151 test, tümü geçiyor** |
+| `flutter analyze` | **0 sorun** |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
 
@@ -137,7 +141,57 @@ bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 
 ---
 
-## 3. Sıradaki iş — Görev 27 (devam ediyor)
+## 3. Sıradaki iş — Wellness yeniden düzenleme (2026-10-03'te başladı)
+
+Kullanıcı Eylül'de uygulamayı wellness yönüne çevirdi (commit `c5af4db`:
+ay ışığı teması, 9 mod paleti, Bugün/Keşfet/Plan/Gelişim/Profil sekmeleri,
+rutinler, Health Connect/HealthKit). Şikâyeti: animasyonlar kötü, akış
+anlaşılmıyor, özellikler az hissediliyor. Eşi hekim; sağlık içeriği onun
+incelemesinden geçecek. Gezinti incelemesinde bulunanlar:
+
+- Nefes/Uyku/Hareket/Su kutucukları üç sekmede tekrar ediyor.
+- **İki kopuk check-in**: `MoodPickerScreen` (focus: lowEnergy…) ve
+  `WellnessCheckInScreen` (mood/energy/sleep/stress). Düşük Enerji seçilince
+  Gelişim "enerji 0/7 gün" gösteriyor.
+- Mod→yemek bağı görünmüyor: "Neden bu besinler?" yalnız alerji/tercihten
+  söz ediyor. `lib/data/health_tips_data.dart` içindeki `MoodFoodTip`
+  (her mod için gerekçe metni) tam bunun için yazılmış ama kullanılmıyor —
+  silinmedi, faz 2'de bağlanacak.
+- Sağlık durumu (PCOS, anemi…) yalnız eski `ExploreScreen`'den seçilebiliyor;
+  oraya Bugün → Beslenme → en alt → "Tüm tarifleri keşfet" ile gidiliyor.
+- Yasal uyarı "hiçbir tıbbi kaynağa dayanmaz" diyor; hekim incelemesiyle
+  çelişecek.
+
+**Faz sırası:**
+
+1. ✅ **Animasyon + temizlik** (2026-10-03). Dokunuşlar artık bekletilmiyor
+   (`MotionTap`/`WellnessIconButton` 90-100 ms gecikmesi kaldırıldı, yerine
+   300 ms çift dokunuş koruması); sekme geçişi 520 ms çapraz solmadan 260 ms
+   fade-through'ya indi (iki sayfa üst üste görünmüyor); `LiftIn` 630 ms
+   yaylı → 320 ms düz; iOS/macOS'ta Cupertino geçişi (kenardan geri kaydırma
+   geri geldi); tarif kartı → detay `Hero` (`recipeHeroTag`); tema geçişi
+   700 → 450 ms. Silinen ölü ekranlar: `HomeScreen`, `NutritionDetailScreen`,
+   `MealRecommendationsScreen`, `CheckInSheet`, `recommendation_list`,
+   `ModeSelectionScreen`, `MyRecipesScreen`, `SectionHeader`, `WellnessPage`,
+   `BreathingOrb`.
+2. **Döngüyü görünür yap**: tek check-in (iki sistemi birleştir), Bugün
+   ekranını karar ekranı olarak yeniden kur (gerekçeli öneri + 2-3 küçük
+   adım + satır içi su + **pişirdim tikli öğün listesi** — eski HomeScreen'le
+   birlikte gitti, `CookedTick` + `buildDayMealList` hazır), sağlık durumunu
+   kayıt akışına ve Profil'e taşı, kayıt akışını yeniden sırala (hedef →
+   sağlık → alerji; mutfak sonra). Malzeme adıyla tarif arama da eski ekranla
+   gitti; Beslen'deki arama yalnız tarif adına bakıyor, geri getir.
+   Görsel gerekirse prompt'ları `docs/design/<konu>/image-prompts.md`'ye yaz;
+   kullanıcı GPT ile çizdiriyor, referans görsel yolu ver.
+3. **Akşam kapanışı + haftalık gözlem** ("pişirdiğin günlerde enerjin…";
+   ilişki, nedensellik değil).
+4. **Uzman paketi**: hekim için inceleme tablosu (durum · kural · metin ·
+   kaynak · kanıt düzeyi · onay), kırmızı bayrak yönlendirmeleri, güncel
+   yasal uyarı. Dil: "PCOS için" değil "PCOS'ta beslenmeyi destekleyen"
+   (TİTCK tıbbi cihaz sınırı); hekim adını "incelendi" diye koymadan önce
+   tanıtım kısıtlarını kontrol et.
+
+### Görev 27 — sağlık odaklı tarif partileri (faz 4 ile birlikte sürecek)
 
 **Sağlık odaklı tarif partisi.** Kullanıcı dört alana da ağırlık verilmesini
 istedi:
@@ -232,6 +286,20 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
    desugaring" hatası verdi ve testler yeşilken kullanıcıya kadar gitti.
    Platform yapılandırması isteyen eklentiler Dart tarafında **sessizdir** —
    bağımlılık eklediysen mutlaka APK derle.
+12. **Testte "bugün/dün" = `DateTime.now()` yazma.** Gün 06:00'da döndüğü
+   için gece 00-06 arası koşan test bir gün kayar ve düşer (gece 03:43'te
+   3 test böyle kırmızıydı). App-günü için `DateTime.parse(DayBoundary.today())`.
+13. **Widget zamanlamasında duvar saati kullanma.** Çift dokunuş korumasını
+   `DateTime.now()` farkıyla yazmak testlerde Başlat→Duraklat'ı yuttu: test
+   saati sahte, `DateTime.now()` ilerlemiyor. `Timer` kullan, `dispose`'ta
+   iptal et.
+14. **Eylemi animasyon bitsin diye geciktirme.** 90 ms bile her dokunuşu
+   "geç" hissettiriyordu; animasyon eylemle *aynı anda* oynar.
+15. **Şeffaf sayfalar arasında çapraz solma yapma.** Sekmeler ortak arka
+   plan üstünde şeffaf; ikisi aynı anda yarı görünür olunca üst üste biniyor.
+   Fade-through kullan (önce eski kaybolur, sonra yeni gelir). Gizli
+   sekmeler `HeroMode(enabled: false)` içinde — yoksa aynı `Hero` etiketi
+   iki sekmede çakışır.
 
 ---
 
@@ -239,7 +307,7 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 
 ```bash
 flutter analyze                              # 0 error
-flutter test                                 # 119+ test, tümü geçmeli
+flutter test                                 # 151+ test, tümü geçmeli
 dart run tool/data_report.dart --strict      # 0 hata, 0 sapma
 git push -u origin claude/recipe-save-ui-fixes-629z7x
 ```

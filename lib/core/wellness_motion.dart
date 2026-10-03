@@ -9,14 +9,6 @@ bool reducedMotion(BuildContext context) =>
     MediaQuery.disableAnimationsOf(context) ||
     MediaQuery.accessibleNavigationOf(context);
 
-/// An under-damped response for space; opacity always uses a bounded curve.
-class WellnessSpring extends Curve {
-  const WellnessSpring();
-  @override
-  double transformInternal(double t) =>
-      1 - math.exp(-7.8 * t) * math.cos(9.5 * t);
-}
-
 double atmosphereTempo(BuildContext context) => switch (context.palette.mode) {
   CheckInType.postWorkout => .88,
   CheckInType.lowEnergy || CheckInType.periodFatigue || CheckInType.pms => 1.14,
@@ -39,8 +31,15 @@ class MotionSize extends StatelessWidget {
       : AnimatedSize(duration: duration, curve: curve, child: child);
 }
 
+/// Tab switch duration. Kept short: a tab change is navigation, not a scene.
+const Duration wellnessTabDuration = Duration(milliseconds: 260);
+
 /// Keeps the departing tab on screen until its exit finishes, while preserving
 /// each tab's scroll and form state. Hidden pages have neither focus nor tickers.
+///
+/// Fade-through: the departing tab is gone within the first 40% of the switch
+/// and the arriving one starts at 35%. Tabs sit on a shared transparent
+/// backdrop, so letting both fade at once showed two pages stacked.
 class WellnessTabScene extends StatefulWidget {
   final Widget child;
   final bool visible;
@@ -60,7 +59,7 @@ class _WellnessTabSceneState extends State<WellnessTabScene>
   late final AnimationController motion = AnimationController(
     vsync: this,
     value: widget.visible ? 1 : 0,
-    duration: const Duration(milliseconds: 520),
+    duration: wellnessTabDuration,
   );
   bool still = false;
   @override
@@ -97,26 +96,32 @@ class _WellnessTabSceneState extends State<WellnessTabScene>
     animation: motion,
     child: TickerMode(enabled: widget.visible, child: widget.child),
     builder: (context, child) {
-      // Complementary fades prevent two full-bright scenes accumulating.
       final v = widget.visible
-          ? Curves.easeOutCubic.transform(motion.value)
-          : Curves.easeInCubic.transform(motion.value);
+          ? const Interval(.35, 1, curve: Curves.easeOutCubic)
+              .transform(motion.value)
+          : const Interval(.6, 1, curve: Curves.easeIn)
+              .transform(motion.value);
       return Offstage(
         offstage: !widget.visible && motion.value == 0,
-        child: IgnorePointer(
-          ignoring: !widget.visible,
-          child: ExcludeFocus(
-            excluding: !widget.visible,
-            child: ExcludeSemantics(
+        child: HeroMode(
+          enabled: widget.visible,
+          child: IgnorePointer(
+            ignoring: !widget.visible,
+            child: ExcludeFocus(
               excluding: !widget.visible,
-              child: Opacity(
-                opacity: v,
-                child: Transform.translate(
-                  offset: Offset(
-                    (1 - v) * 28 * widget.direction * (widget.visible ? 1 : -1),
-                    0,
+              child: ExcludeSemantics(
+                excluding: !widget.visible,
+                child: Opacity(
+                  opacity: v,
+                  // Same widget shape in both states, or the tab would remount
+                  // and lose its scroll position.
+                  child: Transform.translate(
+                    offset: Offset(
+                      widget.visible ? (1 - v) * 12 * widget.direction : 0,
+                      0,
+                    ),
+                    child: child,
                   ),
-                  child: Transform.scale(scale: .986 + v * .014, child: child),
                 ),
               ),
             ),
@@ -181,10 +186,10 @@ class WellnessIconButton extends StatefulWidget {
 
 class _WellnessIconButtonState extends State<WellnessIconButton>
     with SingleTickerProviderStateMixin {
-  Timer? activationTimer;
+  final guard = _RepeatGuard();
   late final AnimationController pulse = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 480),
+    duration: const Duration(milliseconds: 320),
   );
   @override
   void didChangeDependencies() {
@@ -196,20 +201,14 @@ class _WellnessIconButtonState extends State<WellnessIconButton>
   }
 
   void handlePress() {
-    if (widget.onPressed == null || activationTimer?.isActive == true) return;
-    if (reducedMotion(context)) {
-      widget.onPressed!();
-      return;
-    }
-    pulse.forward(from: 0);
-    activationTimer = Timer(const Duration(milliseconds: 100), () {
-      if (mounted) widget.onPressed?.call();
-    });
+    if (widget.onPressed == null || !guard.tryActivate()) return;
+    if (!reducedMotion(context)) pulse.forward(from: 0);
+    widget.onPressed!();
   }
 
   @override
   void dispose() {
-    activationTimer?.cancel();
+    guard.dispose();
     pulse.dispose();
     super.dispose();
   }
@@ -294,18 +293,16 @@ class WellnessPageTransitions extends PageTransitionsBuilder {
     return AnimatedBuilder(
       animation: Listenable.merge([animation, secondaryAnimation]),
       child: child,
+      // The arriving page is opaque by mid-flight, so the page beneath shows
+      // through only briefly. No scaling: scaled text shimmers while moving.
       builder: (context, child) {
         final enter = Curves.easeOutCubic.transform(animation.value);
+        final fade = const Interval(0, .55, curve: Curves.easeOut)
+            .transform(animation.value);
         final leave = Curves.easeInOutCubic.transform(secondaryAnimation.value);
         return Transform.translate(
-          offset: Offset(0, (1 - enter) * 30 - leave * 9),
-          child: Transform.scale(
-            scale: (0.96 + enter * .04) * (1 - leave * .025),
-            child: Opacity(
-              opacity: (enter * (1 - leave * .16)).clamp(0, 1),
-              child: child,
-            ),
-          ),
+          offset: Offset(0, (1 - enter) * 18 - leave * 6),
+          child: Opacity(opacity: fade, child: child),
         );
       },
     );
@@ -324,25 +321,39 @@ class LiftIn extends StatelessWidget {
           tween: Tween(begin: 0, end: 1),
           duration: Duration(
             milliseconds:
-                ((630 + order.clamp(0, 8) * 45) * atmosphereTempo(context))
+                ((320 + order.clamp(0, 6) * 40) * atmosphereTempo(context))
                     .round(),
           ),
-          builder: (_, t, child) {
-            final v = const WellnessSpring().transform(t);
-            return Opacity(
-              opacity: Curves.easeOut.transform((t * 2).clamp(0, 1)),
-              child: Transform.translate(
-                offset: Offset(0, (1 - v) * 23),
-                child: Transform.scale(scale: .97 + .03 * v, child: child),
-              ),
-            );
-          },
+          curve: Curves.easeOutCubic,
+          builder: (_, t, child) => Opacity(
+            opacity: t,
+            child: Transform.translate(
+              offset: Offset(0, (1 - t) * 12),
+              child: child,
+            ),
+          ),
           child: child,
         );
 }
 
+/// Taps closer together than this are treated as one, so a quick double tap
+/// can't push the same page twice. The action itself always fires at once:
+/// delaying it to let a flourish play made every control feel late.
+///
+/// A timer rather than wall-clock time, so widget tests' fake clock applies.
+class _RepeatGuard {
+  Timer? _window;
+  bool tryActivate() {
+    if (_window?.isActive ?? false) return false;
+    _window = Timer(const Duration(milliseconds: 300), () {});
+    return true;
+  }
+
+  void dispose() => _window?.cancel();
+}
+
 /// InkWell retains keyboard activation, focus, semantics and ripple support.
-/// One activation per gesture; the short flourish precedes navigation.
+/// One activation per gesture; the flourish plays alongside the action.
 class MotionTap extends StatefulWidget {
   final VoidCallback? onTap;
   final Widget Function(BuildContext, double) builder;
@@ -358,22 +369,21 @@ class MotionTap extends StatefulWidget {
 }
 
 class _MotionTapState extends State<MotionTap> with TickerProviderStateMixin {
-  Timer? activationTimer;
+  final guard = _RepeatGuard();
   late final AnimationController pulse = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 760),
+    duration: const Duration(milliseconds: 420),
   );
   late final AnimationController pressure = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 85),
     reverseDuration: const Duration(milliseconds: 320),
   );
-  bool busy = false;
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     pulse.duration = Duration(
-      milliseconds: (760 * atmosphereTempo(context)).round(),
+      milliseconds: (420 * atmosphereTempo(context)).round(),
     );
     if (reducedMotion(context)) {
       pulse.stop();
@@ -384,29 +394,18 @@ class _MotionTapState extends State<MotionTap> with TickerProviderStateMixin {
   }
 
   void handleTap() {
-    if (busy || widget.onTap == null) return;
-    if (reducedMotion(context)) {
-      widget.onTap!();
-      return;
+    if (widget.onTap == null || !guard.tryActivate()) return;
+    if (!reducedMotion(context)) {
+      HapticFeedback.selectionClick();
+      pulse.forward(from: 0);
+      pressure.reverse();
     }
-    busy = true;
-    HapticFeedback.selectionClick();
-    pulse.forward(from: 0);
-    pressure.reverse();
-    activationTimer = Timer(const Duration(milliseconds: 90), () {
-      if (!mounted) return;
-      try {
-        widget.onTap?.call();
-      } finally {
-        // The flourish may continue, but must never block an immediate pause.
-        if (mounted) busy = false;
-      }
-    });
+    widget.onTap!();
   }
 
   @override
   void dispose() {
-    activationTimer?.cancel();
+    guard.dispose();
     pulse.dispose();
     pressure.dispose();
     super.dispose();

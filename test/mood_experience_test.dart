@@ -430,7 +430,8 @@ void main() {
     await tester.pumpWidget(const SizedBox());
   });
 
-  testWidgets('cancelled and disposed presses never perform their action', (
+  testWidgets(
+    'cancelled presses never act; a tap acts at once and a double tap once', (
     tester,
   ) async {
     phone(tester);
@@ -459,11 +460,18 @@ void main() {
     await gesture.cancel();
     await tester.pumpAndSettle();
     expect(count, 0);
+    // No waiting for the flourish: the action runs on the tap itself.
     await tester.tap(find.text('Activate'));
+    expect(count, 1);
+    // A second tap right after is the same intent (e.g. pushing a page twice).
+    await tester.pump(const Duration(milliseconds: 60));
+    await tester.tap(find.text('Activate'));
+    expect(count, 1);
+    // Disposing mid-flourish neither repeats the action nor throws.
     await tester.pump(const Duration(milliseconds: 35));
     await tester.pumpWidget(const SizedBox());
     await tester.pump(const Duration(seconds: 1));
-    expect(count, 0);
+    expect(count, 1);
     expect(tester.takeException(), isNull);
   });
 

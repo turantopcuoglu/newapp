@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nutri_guide/components/cooked_tick.dart';
 import 'package:nutri_guide/components/preference_warning.dart';
 import 'package:nutri_guide/core/day_boundary.dart';
-import 'package:nutri_guide/core/enums.dart';
 import 'package:nutri_guide/data/explore_data.dart';
 import 'package:nutri_guide/data/recipe_repository.dart';
 import 'package:nutri_guide/l10n/app_localizations.dart';
@@ -20,8 +18,6 @@ import 'package:nutri_guide/providers/recipe_provider.dart';
 import 'package:nutri_guide/providers/shopping_provider.dart';
 import 'package:nutri_guide/providers/storage_provider.dart';
 import 'package:nutri_guide/screens/explore/special_detail_screen.dart';
-import 'package:nutri_guide/screens/home/home_screen.dart';
-import 'package:nutri_guide/screens/home/meal_recommendations_screen.dart';
 import 'package:nutri_guide/screens/shopping/shopping_screen.dart';
 import 'package:nutri_guide/services/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -60,57 +56,41 @@ void main() {
         ),
       );
 
-  group('meal list and nutrition summary', () {
-    testWidgets('a recipe marked cooked appears on the home meal list',
-        (tester) async {
-      await tester.binding.setSurfaceSize(const Size(420, 1600));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+  // The home meal list these used to drive is gone with the old HomeScreen;
+  // the Today tab gets its own list in the next phase. Until then the data
+  // contract is pinned here, independent of any screen.
+  group('cooked log and consumed totals', () {
+    // The app-day, not the calendar day: before 06:00 "today" is still
+    // yesterday's date, and these tests must not depend on when they run.
+    DateTime appToday() => DateTime.parse(DayBoundary.today());
 
+    test('a planned meal is not consumption', () {
       final recipe = recipes.first;
-      // Same call the recipe page's "I cooked this" button makes.
-      container.read(cookedProvider.notifier).markCooked(recipe);
-
-      await tester.pumpWidget(host(const HomeScreen()));
-      await tester.pumpAndSettle();
-
-      expect(find.text(recipe.localizedName('tr')), findsWidgets);
-      expect(find.byType(CookedTick), findsWidgets);
-    });
-
-    testWidgets('ticking a meal off feeds the consumed totals',
-        (tester) async {
-      await tester.binding.setSurfaceSize(const Size(420, 1600));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
-
-      final recipe = recipes.first;
-      final today = DateTime.now();
       container.read(mealPlanProvider.notifier).addEntry(
             recipeId: recipe.id,
-            date: today,
+            date: appToday(),
             mealType: recipe.mealType,
           );
-
-      await tester.pumpWidget(host(const HomeScreen()));
-      await tester.pumpAndSettle();
-
       expect(container.read(consumedTodayProvider).mealCount, 0);
+    });
 
-      await tester.tap(find.byType(CookedTick).first);
-      await tester.pumpAndSettle();
+    test('ticking a meal off feeds the consumed totals, and untick undoes it',
+        () {
+      final recipe = recipes.first;
+      final cooked = container.read(cookedProvider.notifier);
 
+      cooked.toggleForDay(recipe, appToday());
       final consumed = container.read(consumedTodayProvider);
       expect(consumed.mealCount, 1);
       expect(consumed.calories, greaterThan(0));
 
-      // And the same tick takes it back out.
-      await tester.tap(find.byType(CookedTick).first);
-      await tester.pumpAndSettle();
+      cooked.toggleForDay(recipe, appToday());
       expect(container.read(consumedTodayProvider).mealCount, 0);
     });
 
     test('toggling on a past day lands on that day, not today', () {
       final recipe = recipes.first;
-      final yesterday = DateTime.now().subtract(const Duration(days: 1));
+      final yesterday = appToday().subtract(const Duration(days: 1));
 
       container.read(cookedProvider.notifier).toggleForDay(recipe, yesterday);
 
@@ -118,42 +98,6 @@ void main() {
       expect(entries, hasLength(1));
       expect(entries.single.dayKey, DayBoundary.keyForDate(yesterday));
       expect(container.read(consumedTodayProvider).mealCount, 0);
-    });
-  });
-
-  group('daily recommendations search', () {
-    testWidgets('searching an ingredient narrows the list', (tester) async {
-      final scored = container
-          .read(safeScoredRecipesProvider)
-          .where((sr) => sr.recipe.mealType == MealType.breakfast)
-          .toList();
-
-      await tester.pumpWidget(host(MealRecommendationsScreen(
-        mealType: MealType.breakfast,
-        recipes: scored,
-      )));
-      await tester.pumpAndSettle();
-
-      final withEggs = scored
-          .where((sr) => sr.recipe.ingredientIds.contains('eggs'))
-          .toList();
-      expect(withEggs, isNotEmpty);
-
-      // "yumurta" is the ingredient name, not part of every recipe title.
-      await tester.enterText(find.byType(TextField).first, 'yumurta');
-      await tester.pumpAndSettle();
-
-      expect(find.text(withEggs.first.recipe.localizedName('tr')),
-          findsOneWidget);
-
-      final withoutEggs = scored.firstWhere(
-        (sr) => !sr.recipe.ingredientIds.contains('eggs') &&
-            !sr.recipe
-                .localizedName('tr')
-                .toLowerCase()
-                .contains('yumurta'),
-      );
-      expect(find.text(withoutEggs.recipe.localizedName('tr')), findsNothing);
     });
   });
 

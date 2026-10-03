@@ -87,7 +87,7 @@ class _MainShellState extends ConsumerState<MainShell>
     ];
     final duration = reducedMotion(context)
         ? Duration.zero
-        : const Duration(milliseconds: 520);
+        : wellnessTabDuration;
     return AtmosphereBackdrop(
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -122,7 +122,7 @@ class _MainShellState extends ConsumerState<MainShell>
                         Positioned.fill(
                           child: AnimatedAlign(
                             duration: duration,
-                            curve: const WellnessSpring(),
+                            curve: Curves.easeOutCubic,
                             alignment: Alignment(-1 + index * .5, 0),
                             child: const FractionallySizedBox(
                               widthFactor: .2,

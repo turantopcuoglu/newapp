@@ -75,10 +75,13 @@ class WellnessFoodCard extends StatelessWidget {
         child: Stack(
           children: [
             Positioned.fill(
-              child: RecipeVisual(
-                recipe: recipe,
-                height: h,
-                borderRadius: BorderRadius.zero,
+              child: Hero(
+                tag: recipeHeroTag(recipe.id),
+                child: RecipeVisual(
+                  recipe: recipe,
+                  height: h,
+                  borderRadius: BorderRadius.zero,
+                ),
               ),
             ),
             Positioned.fill(

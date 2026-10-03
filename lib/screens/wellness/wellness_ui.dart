@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../../core/theme.dart';
 import '../../core/atmosphere_surface.dart';
@@ -30,69 +29,6 @@ Future<void> saveWellness(
   } catch (_) {
     if (context.mounted) wellnessError(context);
   }
-}
-
-class WellnessPage extends StatelessWidget {
-  final String eyebrow;
-  final String title;
-  final String? subtitle;
-  final Widget? action;
-  final List<Widget> children;
-  const WellnessPage({
-    super.key,
-    required this.eyebrow,
-    required this.title,
-    this.subtitle,
-    this.action,
-    required this.children,
-  });
-  @override
-  Widget build(BuildContext context) => Scaffold(
-    body: SafeArea(
-      child: SingleChildScrollView(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 720),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(24, 24, 24, 28),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          eyebrow.toUpperCase(),
-                          style: TextStyle(
-                            color: context.palette.moon,
-                            letterSpacing: 2.2,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      if (action != null) action!,
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Text(title, style: Theme.of(context).textTheme.headlineLarge),
-                  if (subtitle != null) ...[
-                    const SizedBox(height: 10),
-                    Text(
-                      subtitle!,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                  ],
-                  const SizedBox(height: 28),
-                  ...children,
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
 }
 
 class WellnessCard extends StatelessWidget {
@@ -237,48 +173,4 @@ class MetricPill extends StatelessWidget {
       ],
     ),
   );
-}
-
-class BreathingOrb extends StatelessWidget {
-  final double progress;
-  const BreathingOrb({super.key, required this.progress});
-  @override
-  Widget build(BuildContext context) {
-    final reduced = MediaQuery.disableAnimationsOf(context);
-    final scale = reduced ? 1.0 : .96 + .04 * math.sin(progress * math.pi);
-    return Semantics(
-      label: context.w(
-        'Kendi ritminde. Rahatça nefes al.',
-        'At your rhythm. Breathe comfortably.',
-      ),
-      child: Transform.scale(
-        scale: scale,
-        child: AspectRatio(
-          aspectRatio: 1,
-          child: Stack(
-            children: [
-              const Positioned.fill(
-                child: ReferenceCrop(
-                  board: 'ritual',
-                  crop: Rect.fromLTWH(358, 296, 376, 376),
-                ),
-              ),
-              if (Localizations.localeOf(context).languageCode != 'tr')
-                Center(
-                  child: Container(
-                    padding: const EdgeInsets.all(12),
-                    color: context.palette.surface,
-                    child: const Text(
-                      'At your rhythm\nBreathe comfortably',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }
