@@ -118,17 +118,17 @@ void main() {
       addTearDown(tester.view.resetDevicePixelRatio);
       await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
       await tester.pumpAndSettle();
-      expect(find.text('Durumu değiştir'), findsOneWidget);
+      expect(find.text('Bugün senin için'), findsOneWidget);
       await capture(tester, '01-today');
-      for (final tab in ['Keşfet', 'Plan', 'Gelişim', 'Profil']) {
+      for (final tab in ['Beslen', 'İyi oluş', 'Gelişim', 'Profil']) {
         await tester.tap(find.text(tab).last);
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull, reason: tab);
         await capture(
           tester,
-          tab == 'Keşfet'
+          tab == 'Beslen'
               ? '02-nourish'
-              : tab == 'Plan'
+              : tab == 'İyi oluş'
               ? '03-routines'
               : tab == 'Gelişim'
               ? '04-progress'
@@ -197,11 +197,11 @@ void main() {
       await tester.tap(find.text('Düşük').first);
       await tester.pumpAndSettle();
       await tester.scrollUntilVisible(
-        find.text('Bugünkü planımı hazırla'),
+        find.text('Günümü hazırla'),
         300,
         scrollable: find.byType(Scrollable).first,
       );
-      await tester.tap(find.text('Bugünkü planımı hazırla'));
+      await tester.tap(find.text('Günümü hazırla'));
       await tester.pumpAndSettle();
       expect(store.initial.checkIns.single.energy, 1);
       expect(store.initial.checkIns.single.mood, isNull);
@@ -239,13 +239,13 @@ void main() {
       await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
       await tester.pumpAndSettle();
       await capture(tester, 'reference-01-today');
-      for (final tab in ['Keşfet', 'Plan', 'Gelişim', 'Profil']) {
+      for (final tab in ['Beslen', 'İyi oluş', 'Gelişim', 'Profil']) {
         await tester.tap(find.text(tab).last);
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull, reason: tab);
         await capture(
           tester,
-          'reference-${['Keşfet', 'Plan', 'Gelişim', 'Profil'].indexOf(tab) + 2}',
+          'reference-${['Beslen', 'İyi oluş', 'Gelişim', 'Profil'].indexOf(tab) + 2}',
         );
       }
       final chosen = container
@@ -323,7 +323,7 @@ void main() {
       host(const MainShell(promptOnOpen: false), locale: 'en', scale: 1.6),
     );
     await tester.pumpAndSettle();
-    for (final tab in ['Explore', 'Plan', 'Progress', 'Profile']) {
+    for (final tab in ['Nourish', 'Wellbeing', 'Progress', 'Profile']) {
       await tester.tap(find.text(tab).last);
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull, reason: tab);

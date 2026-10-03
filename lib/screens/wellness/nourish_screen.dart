@@ -10,11 +10,11 @@ import '../../providers/profile_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/shopping_provider.dart';
 import '../../services/recipe_timing.dart';
+import '../../services/recipe_search.dart';
 import '../../services/recommendation_service.dart';
 import '../shopping/shopping_screen.dart';
 import '../planner/planner_screen.dart';
 import '../recipe_book/recipe_book_screen.dart';
-import '../beverages/beverages_screen.dart';
 import '../explore/explore_screen.dart';
 import 'moonlit_recipe_screen.dart';
 import 'moonlit_assets.dart';
@@ -465,15 +465,18 @@ class NourishScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        prepared
-                            ? context.w(
-                                'Hazır malzemelerle pratik bir öğün.\nBaklagil, tahıl ve sebze bir arada.',
-                                'A practical meal with prepared ingredients.\nLegumes, grains and vegetables, together.',
-                              )
-                            : context.w(
-                                'Alerji ve tercih filtrelerine uygun. ${minutes == null ? 'Mutfağındaki malzemeler öncelikli.' : '$minutes dakikalık hazırlık.'}',
-                                'Matches your allergy and preference filters. ${minutes == null ? 'Your pantry comes first.' : '$minutes-minute preparation.'}',
-                              ),
+                        [
+                          recommendationReason(
+                            chosen.recipe,
+                            check?.focus,
+                            locale,
+                          ),
+                          if (minutes != null)
+                            context.w(
+                              'Hazırlık ~$minutes dk.',
+                              'About $minutes min to make.',
+                            ),
+                        ].join(' '),
                         style: const TextStyle(fontSize: 12, height: 1.3),
                       ),
                     ],
@@ -499,6 +502,17 @@ class NourishScreen extends ConsumerWidget {
           ),
           onTap: () => _choose(context, ref, recipes),
         ),
+        // Health areas used to sit last in this list, four screens deep —
+        // the content the app is built around should not be the hardest
+        // thing to find.
+        FineRow(
+          icon: Icons.health_and_safety_outlined,
+          title: context.w(
+            'Sağlık alanları ve dünya mutfakları',
+            'Health areas and world cuisines',
+          ),
+          onTap: () => open(const ExploreScreen()),
+        ),
         FineRow(
           icon: Icons.calendar_month_outlined,
           title: context.w('Öğün planım', 'My meal plan'),
@@ -510,19 +524,9 @@ class NourishScreen extends ConsumerWidget {
           onTap: () => open(const ShoppingScreen()),
         ),
         FineRow(
-          icon: Icons.water_drop_outlined,
-          title: context.w('Su ve içecekler', 'Water & drinks'),
-          onTap: () => open(const BeveragesScreen()),
-        ),
-        FineRow(
           icon: Icons.auto_stories_outlined,
           title: context.w('Tarif defterim', 'My recipe book'),
           onTap: () => open(const RecipeBookScreen()),
-        ),
-        FineRow(
-          icon: Icons.explore_outlined,
-          title: context.w('Tüm tarifleri keşfet', 'Explore all recipes'),
-          onTap: () => open(const ExploreScreen()),
         ),
       ],
     );
@@ -560,7 +564,10 @@ class NourishScreen extends ConsumerWidget {
                     onChanged: (s) => update(() => query = s),
                     decoration: InputDecoration(
                       prefixIcon: const Icon(Icons.search),
-                      hintText: context.w('Tarif ara', 'Search recipes'),
+                      hintText: context.w(
+                        'Tarif ya da malzeme ara',
+                        'Search a recipe or ingredient',
+                      ),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -573,14 +580,11 @@ class NourishScreen extends ConsumerWidget {
                                     !s.recipe.ingredientIds.contains(
                                       excluded,
                                     )) &&
-                                s.recipe
-                                    .localizedName(
-                                      Localizations.localeOf(
-                                        context,
-                                      ).languageCode,
-                                    )
-                                    .toLowerCase()
-                                    .contains(query.toLowerCase()),
+                                recipeMatchesQuery(
+                                  s.recipe,
+                                  query,
+                                  Localizations.localeOf(context).languageCode,
+                                ),
                           )
                           .map(
                             (s) => ListTile(

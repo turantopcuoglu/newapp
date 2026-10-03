@@ -11,7 +11,8 @@ import 'package:nutri_guide/providers/storage_provider.dart';
 import 'package:nutri_guide/providers/wellness_provider.dart';
 import 'package:nutri_guide/screens/main_shell.dart';
 import 'package:nutri_guide/screens/onboarding_screen.dart';
-import 'package:nutri_guide/screens/onboarding_ingredients_screen.dart';
+import 'package:nutri_guide/screens/onboarding_health_screen.dart';
+import 'package:nutri_guide/screens/wellness/today_screen.dart';
 import 'package:nutri_guide/screens/onboarding_allergies_screen.dart';
 import 'package:nutri_guide/screens/wellness/mood_picker_screen.dart';
 import 'package:nutri_guide/services/storage_service.dart';
@@ -56,7 +57,7 @@ void main() {
     await tester.ensureVisible(find.text('Devam Et'));
     await tester.tap(find.text('Devam Et'));
     await tester.pumpAndSettle();
-    expect(find.byType(OnboardingIngredientsScreen), findsOneWidget);
+    expect(find.byType(OnboardingHealthScreen), findsOneWidget);
     await tester.ensureVisible(find.text('Atla'));
     await tester.tap(find.text('Atla'));
     await tester.pumpAndSettle();
@@ -72,6 +73,9 @@ void main() {
     await tester.tap(find.text('Şişkinlik'));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
+    await tester.ensureVisible(find.text('Şimdilik atla'));
+    await tester.tap(find.text('Şimdilik atla'));
+    await tester.pumpAndSettle();
     expect(find.byType(MainShell), findsOneWidget);
     expect(container.read(moodPaletteProvider).mode, CheckInType.bloated);
     expect(
@@ -79,9 +83,12 @@ void main() {
       MoodPalette.all[CheckInType.bloated]!.background,
     );
     // A second change and system accessibility rebuild exercise the retained route.
-    await tester.tap(find.text('Durumu değiştir'));
+    await tester.tap(find.byKey(todayCheckInKey));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Düşük Enerji'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Şimdilik atla'));
+    await tester.tap(find.text('Şimdilik atla'));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     tester.binding.platformDispatcher.accessibilityFeaturesTestValue =

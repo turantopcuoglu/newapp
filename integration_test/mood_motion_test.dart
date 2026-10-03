@@ -14,6 +14,7 @@ import 'package:nutri_guide/providers/wellness_provider.dart';
 import 'package:nutri_guide/screens/main_shell.dart';
 import 'package:nutri_guide/screens/wellness/mood_picker_screen.dart';
 import 'package:nutri_guide/screens/wellness/routines_screen.dart';
+import 'package:nutri_guide/screens/wellness/today_screen.dart';
 import 'package:nutri_guide/services/storage_service.dart';
 import 'package:nutri_guide/services/wellness_store.dart';
 
@@ -61,17 +62,22 @@ void main() {
       expect(find.byType(MoodPickerScreen), findsOneWidget);
       await tester.tap(find.text('Şişkinlik'));
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Şimdilik atla'));
+      await tester.tap(find.text('Şimdilik atla'));
+      await tester.pumpAndSettle();
       expect(find.byType(MainShell), findsOneWidget);
       expect(container.read(moodPaletteProvider).mode, CheckInType.bloated);
       expect(tester.takeException(), isNull);
-      for (final tab in ['Keşfet', 'Plan', 'Gelişim', 'Profil', 'Bugün']) {
+      for (final tab in ['Beslen', 'İyi oluş', 'Gelişim', 'Profil', 'Bugün']) {
         await tester.tap(find.text(tab).last);
         await tester.pumpAndSettle();
       }
-      await tester.ensureVisible(find.text('Durumu değiştir'));
-      await tester.tap(find.text('Durumu değiştir'));
+      await tester.tap(find.byKey(todayCheckInKey));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Düşük Enerji'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Şimdilik atla'));
+      await tester.tap(find.text('Şimdilik atla'));
       await tester.pumpAndSettle();
       expect(container.read(moodPaletteProvider).mode, CheckInType.lowEnergy);
       expect(tester.takeException(), isNull);
@@ -114,7 +120,7 @@ void main() {
       await binding.convertFlutterSurfaceToImage();
       await tester.pumpAndSettle();
       await binding.takeScreenshot('android-home');
-      await tester.tap(find.text('Keşfet').last);
+      await tester.tap(find.text('Beslen').last);
       await tester.pumpAndSettle();
       await binding.takeScreenshot('android-discover');
       navigator.push(

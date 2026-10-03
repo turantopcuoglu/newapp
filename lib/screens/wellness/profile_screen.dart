@@ -8,7 +8,7 @@ import '../../providers/wellness_provider.dart';
 import '../../data/allergens.dart';
 import '../settings_screen.dart';
 import 'health_connections_screen.dart';
-import 'today_screen.dart';
+import '../../components/health_condition_chips.dart';
 import 'wellness_ui.dart';
 import 'mood_widgets.dart';
 import 'mood_picker_screen.dart';
@@ -95,10 +95,17 @@ class WellnessProfileScreen extends ConsumerWidget {
                 ),
               ),
             ),
+            // Replaces a goal picker whose answers nothing ever read.
             FeatureTile(
-              title: context.w('İyi oluş alanları', 'Wellbeing focus'),
+              title: context.w('Sağlık durumum', 'My health'),
               kind: 'leaf',
-              onTap: () => showGoalPicker(context, ref),
+              detail: profile.healthConditions.isEmpty
+                  ? context.w('Belirtmedin', 'Not specified')
+                  : context.w(
+                      '${profile.healthConditions.length} seçili',
+                      '${profile.healthConditions.length} selected',
+                    ),
+              onTap: () => showHealthConditionSheet(context),
             ),
           ],
         ),
@@ -133,17 +140,6 @@ class WellnessProfileScreen extends ConsumerWidget {
                       style: TextStyle(
                         fontSize: 23,
                         color: context.palette.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    InkWell(
-                      onTap: () => showGoalPicker(context, ref),
-                      child: Text(
-                        context.w(
-                          'Hedefin: günlük iyi oluş',
-                          'Your goal: everyday wellbeing',
-                        ),
-                        style: const TextStyle(fontSize: 13),
                       ),
                     ),
                   ],

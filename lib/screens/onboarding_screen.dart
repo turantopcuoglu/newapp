@@ -6,7 +6,7 @@ import '../core/wellness_motion.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/profile_provider.dart';
 import '../widgets/turkish_text_field.dart';
-import 'onboarding_ingredients_screen.dart';
+import 'onboarding_health_screen.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -58,7 +58,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
     if (mounted) {
       Navigator.of(context).push(
         MaterialPageRoute<void>(
-          builder: (_) => const OnboardingIngredientsScreen(),
+          builder: (_) => const OnboardingHealthScreen(),
         ),
       );
     }

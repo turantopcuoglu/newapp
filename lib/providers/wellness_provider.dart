@@ -2,6 +2,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/day_boundary.dart';
 import '../core/enums.dart';
 import '../core/mood_palette.dart';
+import '../data/explore_data.dart';
+import '../data/focus_guidance.dart';
+import '../data/ingredient_visual.dart';
+import '../models/recipe.dart';
 import '../models/wellness.dart';
 import '../services/wellness_store.dart';
 import '../services/recipe_timing.dart';
@@ -108,6 +112,64 @@ final moodPaletteProvider = Provider<MoodPalette>((ref) {
   return MoodPalette.all[mode]!;
 });
 
+/// Whether [recipe] is one the day's check-in pushes up the list. Ranking and
+/// the "why this recipe" sentence both ask this, so the sentence can never
+/// claim a priority the ranking did not apply. Period-specific contexts keep
+/// the PMS tag as a fallback.
+bool recipeMatchesFocus(Recipe recipe, CheckInType? focus) =>
+    focus != null &&
+    (recipe.checkInTags.contains(focus) ||
+        ((focus == CheckInType.periodCramps ||
+                focus == CheckInType.periodFatigue) &&
+            recipe.checkInTags.contains(CheckInType.pms)));
+
+/// The sentence under the day's recommendation. Everything specific in it
+/// comes from the recipe's own data, never from the focus alone.
+String recommendationReason(
+  Recipe recipe,
+  CheckInType? focus,
+  String locale,
+) {
+  final tr = locale == 'tr';
+  final guidance = focusGuidance[focus];
+  if (guidance == null || !recipeMatchesFocus(recipe, focus)) {
+    return tr ? genericReasonTr : genericReasonEn;
+  }
+  final parts = [guidance.reason(locale)];
+  final source = guidance.nutrientSource;
+  if (source != null) {
+    final listed = healthConditionIngredients[source] ?? const <String>[];
+    final names = recipe.ingredientIds
+        .where(listed.contains)
+        .take(2)
+        .map((id) => ingredientById(id)?.localizedName(locale) ?? id)
+        .toList();
+    if (names.isNotEmpty) {
+      final joined = names.join(tr ? ' ve ' : ' and ');
+      final one = names.length == 1;
+      parts.add(
+        tr
+            ? 'Bu tarifteki ${guidance.nutrientTr} '
+                  '${one ? 'kaynağı' : 'kaynakları'}: $joined.'
+            : '${one ? 'Source' : 'Sources'} of ${guidance.nutrientEn} '
+                  'here: $joined.',
+      );
+    }
+  }
+  if (guidance.mentionsProteinFibre) {
+    final protein = recipe.proteinLevel == NutrientLevel.high;
+    final fibre = recipe.fiberLevel == NutrientLevel.high;
+    if (protein && fibre) {
+      parts.add(tr ? 'Protein ve lifi yüksek.' : 'High in protein and fibre.');
+    } else if (protein) {
+      parts.add(tr ? 'Proteini yüksek.' : 'High in protein.');
+    } else if (fibre) {
+      parts.add(tr ? 'Lifi yüksek.' : 'High in fibre.');
+    }
+  }
+  return parts.join(' ');
+}
+
 final wellnessRecipeChoiceProvider = StateProvider<String?>((ref) => null);
 final wellnessRecipesProvider = Provider<List<ScoredRecipe>>((ref) {
   final selectedRecipe = ref.watch(wellnessRecipeChoiceProvider);
@@ -135,13 +197,8 @@ final wellnessRecipesProvider = Provider<List<ScoredRecipe>>((ref) {
         (a.recipe.id == selectedRecipe ? 1 : 0);
     if (selected != 0) return selected;
     // Context affects ranking only after the mandatory allergy/diet filters.
-    // Period-specific contexts retain the existing PMS tag fallback.
     bool matches(ScoredRecipe item) =>
-        checkIn?.focus != null &&
-        (item.recipe.checkInTags.contains(checkIn!.focus) ||
-            ((checkIn.focus == CheckInType.periodCramps ||
-                    checkIn.focus == CheckInType.periodFatigue) &&
-                item.recipe.checkInTags.contains(CheckInType.pms)));
+        recipeMatchesFocus(item.recipe, checkIn?.focus);
     final byFocus = (matches(b) ? 1 : 0) - (matches(a) ? 1 : 0);
     if (byFocus != 0) return byFocus;
     final byMeal =

@@ -27,6 +27,7 @@ import 'package:nutri_guide/screens/main_shell.dart';
 import 'package:nutri_guide/screens/wellness/mood_picker_screen.dart';
 import 'package:nutri_guide/screens/wellness/routine_visual.dart';
 import 'package:nutri_guide/screens/wellness/routines_screen.dart';
+import 'package:nutri_guide/screens/wellness/today_screen.dart';
 import 'package:nutri_guide/services/storage_service.dart';
 import 'package:nutri_guide/services/wellness_store.dart';
 
@@ -247,7 +248,12 @@ void main() {
       await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
       await tester.pumpAndSettle();
       for (final mode in CheckInType.values) {
-        await tester.tap(find.text('Durumu değiştir'));
+        // Before the first answer Today shows a prompt card instead of the
+        // chip; afterwards the chip is the way back in.
+        final chip = find.byKey(todayCheckInKey);
+        await tester.tap(
+          chip.evaluate().isEmpty ? find.text('Başlayalım') : chip,
+        );
         await tester.pumpAndSettle();
         if ([
           CheckInType.pms,
@@ -259,6 +265,11 @@ void main() {
         }
         await tester.ensureVisible(find.text(MoodPalette.all[mode]!.tr));
         await tester.tap(find.text(MoodPalette.all[mode]!.tr));
+        await tester.pumpAndSettle();
+        // Step two of the check-in; its questions are optional.
+        expect(find.text('Günümü hazırla'), findsOneWidget);
+        await tester.ensureVisible(find.text('Şimdilik atla'));
+        await tester.tap(find.text('Şimdilik atla'));
         await tester.pumpAndSettle();
         expect(container.read(todayCheckInProvider)!.focus, mode);
         expect(
@@ -272,7 +283,7 @@ void main() {
           MoodPalette.all[mode]!.background,
         );
         await capture(tester, 'home-${mode.name}');
-        for (final tab in ['Keşfet', 'Plan', 'Gelişim', 'Profil']) {
+        for (final tab in ['Beslen', 'İyi oluş', 'Gelişim', 'Profil']) {
           await tester.tap(find.text(tab).last);
           await tester.pumpAndSettle();
           expect(tester.takeException(), isNull, reason: '${mode.name} $tab');
@@ -285,7 +296,7 @@ void main() {
           if (mode == CheckInType.lowEnergy || mode == CheckInType.bloated) {
             await capture(
               tester,
-              '${mode.name}-${['Keşfet', 'Plan', 'Gelişim', 'Profil'].indexOf(tab)}',
+              '${mode.name}-${['Beslen', 'İyi oluş', 'Gelişim', 'Profil'].indexOf(tab)}',
             );
           }
         }
@@ -299,15 +310,27 @@ void main() {
     tester,
   ) async {
     phone(tester);
+    // Low energy puts water among Today's small steps.
+    await container
+        .read(wellnessProvider.notifier)
+        .selectFocus(CheckInType.lowEnergy, container.read(wellnessNowProvider));
     await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
     await tester.pumpAndSettle();
-    await tester.tap(find.byTooltip('Nefes hakkında bilgi'));
+    await tester.tap(find.text('Profil').last);
     await tester.pumpAndSettle();
-    expect(find.byType(RoutineSessionScreen), findsNothing);
-    expect(container.read(wellnessProvider).routines, isEmpty);
+    await tester.tap(find.byTooltip('Atmosfer hakkında bilgi'));
+    await tester.pumpAndSettle();
+    expect(find.byType(MoodPickerScreen), findsNothing);
     await tester.tap(find.text('Anladım'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Su'));
+    await tester.tap(find.text('Bugün').last);
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.textContaining('Su · bugün'),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.textContaining('Su · bugün'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('+250 ml'));
     await tester.pumpAndSettle();

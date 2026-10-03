@@ -4,7 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/theme.dart';
 import '../providers/wellness_provider.dart';
 import 'wellness/today_screen.dart';
-import 'wellness/discover_screen.dart';
+import 'wellness/wellbeing_screen.dart';
+import 'wellness/nourish_screen.dart';
 import 'wellness/mood_widgets.dart';
 import 'wellness/mood_picker_screen.dart';
 import '../core/wellness_motion.dart';
@@ -73,15 +74,15 @@ class _MainShellState extends ConsumerState<MainShell>
     final p = context.palette;
     final labels = [
       context.w('Bugün', 'Today'),
-      context.w('Keşfet', 'Explore'),
-      context.w('Plan', 'Plan'),
+      context.w('Beslen', 'Nourish'),
+      context.w('İyi oluş', 'Wellbeing'),
       context.w('Gelişim', 'Progress'),
       context.w('Profil', 'Profile'),
     ];
     final pages = [
       TodayScreen(navigate: selectTab),
-      const DiscoverScreen(),
-      const DailyPlanScreen(),
+      const NourishScreen(),
+      const WellbeingScreen(),
       const ProgressScreen(),
       const WellnessProfileScreen(),
     ];
@@ -157,8 +158,8 @@ class _MainShellState extends ConsumerState<MainShell>
                                         MoodGlyph(
                                           [
                                             'sun',
+                                            'bowl',
                                             'leaf',
-                                            'calendar',
                                             'bars',
                                             'person',
                                           ][i],
@@ -171,6 +172,12 @@ class _MainShellState extends ConsumerState<MainShell>
                                         const SizedBox(height: 5),
                                         Text(
                                           labels[i],
+                                          // Two-word labels ("İyi oluş") must
+                                          // not wrap: the bar has no room
+                                          // for a second line.
+                                          maxLines: 1,
+                                          softWrap: false,
+                                          overflow: TextOverflow.fade,
                                           style: TextStyle(
                                             fontSize: 11,
                                             fontWeight: index == i

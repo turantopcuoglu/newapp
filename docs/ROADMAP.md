@@ -39,7 +39,7 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **151 test, tümü geçiyor** |
+| Test | **158 test, tümü geçiyor** |
 | `flutter analyze` | **0 sorun** |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
@@ -174,15 +174,36 @@ incelemesinden geçecek. Gezinti incelemesinde bulunanlar:
    `MealRecommendationsScreen`, `CheckInSheet`, `recommendation_list`,
    `ModeSelectionScreen`, `MyRecipesScreen`, `SectionHeader`, `WellnessPage`,
    `BreathingOrb`.
-2. **Döngüyü görünür yap**: tek check-in (iki sistemi birleştir), Bugün
-   ekranını karar ekranı olarak yeniden kur (gerekçeli öneri + 2-3 küçük
-   adım + satır içi su + **pişirdim tikli öğün listesi** — eski HomeScreen'le
-   birlikte gitti, `CookedTick` + `buildDayMealList` hazır), sağlık durumunu
-   kayıt akışına ve Profil'e taşı, kayıt akışını yeniden sırala (hedef →
-   sağlık → alerji; mutfak sonra). Malzeme adıyla tarif arama da eski ekranla
-   gitti; Beslen'deki arama yalnız tarif adına bakıyor, geri getir.
-   Görsel gerekirse prompt'ları `docs/design/<konu>/image-prompts.md`'ye yaz;
-   kullanıcı GPT ile çizdiriyor, referans görsel yolu ver.
+2. ✅ **Döngüyü görünür yap** (2026-10-03).
+   - **Tek check-in, iki adım**: mod kartı (`MoodPickerScreen`) → aynı
+     akışta `WellnessCheckInScreen` (enerji + hazırlık süresi önde; ruh
+     hali/uyku/stres açılır bölümde). İkisi zaten aynı `DailyCheckIn`
+     kaydını yazıyordu; kopukluk akıştaydı, veride değil. Eski
+     `daily_mode_provider` silindi (yalnız yazılıyordu, okunmuyordu).
+   - **Bugün** (`today_screen.dart`): check-in yoksa davet kartı → "Bugün
+     senin için" (tarif + gerekçe satırı) → moda göre 2 küçük adım (akşam
+     19:00 sonrası ikincisi akşam hazırlığı) → pişirdim tikli öğün listesi
+     + günlük toplam. Eski 4 kutucuk ve "Durumu değiştir" kalktı.
+   - **Gerekçe metni** `lib/data/focus_guidance.dart` +
+     `recommendationReason` (wellness_provider). Yalnız sıralamanın
+     uyguladığını söyler; tarife özgü her şey tarifin verisinden gelir
+     (magnezyum/demir kaynağı malzemeler `healthConditionIngredients`'tan,
+     protein/lif seviyesinden). `reviewed` alanı hekim onayı için hazır.
+   - **Sekmeler**: Bugün · Beslen · İyi oluş · Gelişim · Profil. Keşfet ve
+     Plan'daki tekrar eden kutucuklar gitti (`wellbeing_screen.dart`).
+     Beslen'de "Sağlık alanları ve dünya mutfakları" artık listenin başında.
+   - **Sağlık durumu**: kayıt akışında mutfak adımının yerine
+     (`onboarding_health_screen.dart`), Profil'de kutucuk + sayfa
+     (`health_condition_chips.dart`). Hedef sorusu eklenmedi: `goals`
+     kaydediliyor ama hiçbir yer okumuyor; okuyan kod yazılmadan sorma.
+   - Malzeme adıyla arama geri geldi (`lib/services/recipe_search.dart`).
+   - Bu fazda yeni görsel gerekmedi. Görsel gerekirse prompt'ları
+     `docs/design/<konu>/image-prompts.md`'ye yaz; kullanıcı GPT ile
+     çizdiriyor, referans görsel yolu ver.
+   - **Kalan**: ad/cinsiyet ve alerji kayıt ekranları eski tasarımda ve
+     "siz" diyor; mod listesinde stres/kaygı/uykusuzluk yok (yeni
+     `CheckInType` = tarif etiketleme işi, faz 4 ile); eski `ExploreScreen`
+     hâlâ ayrı tasarımda.
 3. **Akşam kapanışı + haftalık gözlem** ("pişirdiğin günlerde enerjin…";
    ilişki, nedensellik değil).
 4. **Uzman paketi**: hekim için inceleme tablosu (durum · kural · metin ·
@@ -300,6 +321,16 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
    Fade-through kullan (önce eski kaybolur, sonra yeni gelir). Gizli
    sekmeler `HeroMode(enabled: false)` içinde — yoksa aynı `Hero` etiketi
    iki sekmede çakışır.
+16. **Gerekçe metni doğrulamadığın sıfatı taşımasın.** "Kramp için sıcak,
+   hafif tarifler" yazdık, ilk öneri soğuk ton balıklı sandviçti: etiket
+   doğruydu, sıfatlar uydurmaydı. Tarife özgü her söz tarifin verisinden
+   türetilmeli; test (`today_flow_test.dart`) adı geçen malzemenin tarifte
+   olduğunu doğruluyor.
+17. **Ekranı gerçekten gör.** `flutter test test/wellness_ui_test.dart
+   --dart-define=CAPTURE_WELLNESS=true` gerçek fontlarla
+   `output/wellness-build/` altına PNG yazar (mod bazlı olanlar
+   `mood_experience_test.dart` → `output/mood-experience/`). Tarayıcı
+   paneli bu uygulamada çok yavaş; görsel kontrol için bunu kullan.
 
 ---
 
@@ -307,7 +338,7 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
 
 ```bash
 flutter analyze                              # 0 error
-flutter test                                 # 151+ test, tümü geçmeli
+flutter test                                 # 158+ test, tümü geçmeli
 dart run tool/data_report.dart --strict      # 0 hata, 0 sapma
 git push -u origin claude/recipe-save-ui-fixes-629z7x
 ```

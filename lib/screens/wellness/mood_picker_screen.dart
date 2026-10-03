@@ -6,6 +6,7 @@ import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/wellness_motion.dart';
 import '../../providers/wellness_provider.dart';
+import 'check_in_screen.dart';
 import 'mood_widgets.dart';
 import 'moonlit_assets.dart';
 import 'wellness_ui.dart';
@@ -28,11 +29,22 @@ class _MoodPickerState extends ConsumerState<MoodPickerScreen> {
         await notifier.update(
           (s) => s.copyWith(themeMode: mode.name, appearanceLocked: true),
         );
-      } else {
-        await notifier.selectFocus(mode, ref.read(wellnessNowProvider));
-        ref.read(wellnessRecipeChoiceProvider.notifier).state = null;
+        if (mounted) Navigator.pop(context);
+        return;
       }
-      if (mounted) Navigator.pop(context);
+      await notifier.selectFocus(mode, ref.read(wellnessNowProvider));
+      ref.read(wellnessRecipeChoiceProvider.notifier).state = null;
+      // Step two of the same check-in: energy and time shape the
+      // recommendation, so they are asked right here rather than on a
+      // separate screen the user has to find.
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute<void>(
+            builder: (_) => const WellnessCheckInScreen(),
+          ),
+        );
+      }
     } catch (_) {
       if (mounted) wellnessError(context);
     } finally {

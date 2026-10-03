@@ -213,8 +213,18 @@ class _GlyphPainter extends CustomPainter {
           line(23, 24, 28, 24);
         }
         break;
-      case 'walk':
       case 'stretch':
+        // A reach overhead, so it no longer reads as a second "walk".
+        circle(20, 7, 3.5, fill: true);
+        p.strokeWidth = 3.8;
+        final reach = pulse * 2.5;
+        line(20, 13, 20, 26);
+        line(20, 14, 11 - reach, 4 - reach);
+        line(20, 14, 29 + reach, 4 - reach);
+        line(20, 26, 13, 38);
+        line(20, 26, 27, 38);
+        break;
+      case 'walk':
         circle(22, 6, 3.5, fill: true);
         p.strokeWidth = 3.8;
         final swing = pulse * 5;

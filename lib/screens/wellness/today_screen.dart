@@ -1,45 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../components/cooked_tick.dart';
+import '../../components/meal_type_badge.dart';
+import '../../core/atmosphere_surface.dart';
+import '../../core/day_boundary.dart';
+import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/wellness_motion.dart';
-import '../../core/atmosphere_surface.dart';
-import '../../core/enums.dart';
-import '../../providers/profile_provider.dart';
+import '../../data/focus_guidance.dart';
+import '../../l10n/app_localizations.dart';
 import '../../providers/beverage_provider.dart';
+import '../../providers/cooked_provider.dart';
+import '../../providers/meal_plan_provider.dart';
+import '../../providers/profile_provider.dart';
+import '../../providers/recipe_provider.dart';
 import '../../providers/wellness_provider.dart';
+import '../../services/day_meal_list.dart';
+import '../../services/recipe_timing.dart';
 import '../beverages/beverages_screen.dart';
-import 'discover_screen.dart';
+import '../planner/planner_screen.dart';
 import 'mood_picker_screen.dart';
 import 'mood_widgets.dart';
+import 'moonlit_assets.dart';
+import 'moonlit_page.dart';
 import 'nourish_screen.dart';
 import 'routines_screen.dart';
 import 'wellness_ui.dart';
-import 'moonlit_assets.dart';
-import 'moonlit_page.dart';
 
+/// Tab index of Nourish in [MainShell]; Today hands off to it for more
+/// recipes instead of pushing a second copy of the screen.
+const int nourishTabIndex = 1;
+
+/// The check-in chip under the title; its label changes with the day's
+/// focus, so tests find it by key.
+const todayCheckInKey = ValueKey('today-check-in');
+
+/// The day in one screen: how you are, what to eat and why, two small
+/// steps, and what you have eaten so far. Each block answers "what now?";
+/// browsing lives in the other tabs.
 class TodayScreen extends ConsumerWidget {
   final ValueChanged<int> navigate;
   const TodayScreen({super.key, required this.navigate});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final p = context.palette;
     final check = ref.watch(todayCheckInProvider);
     final profile = ref.watch(profileProvider);
-    final recipes = ref.watch(wellnessRecipesProvider);
+    final now = ref.watch(wellnessNowProvider);
     final name = profile.name?.trim();
-    void choose() => Navigator.push(
+    void checkIn() => Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (_) => const MoodPickerScreen()),
     );
-    final label = check?.focus == null
+    final focus = check?.focus;
+    final label = focus == null
         ? context.w('Bugün nasılsın?', 'How are you?')
-        : context.w(
-            MoodPalette.all[check!.focus]!.tr,
-            MoodPalette.all[check.focus]!.en,
-          );
+        : context.w(MoodPalette.all[focus]!.tr, MoodPalette.all[focus]!.en);
+    final greeting = now.hour < 12
+        ? context.w('Günaydın', 'Good morning')
+        : now.hour < 18
+        ? context.w('İyi günler', 'Good afternoon')
+        : context.w('İyi akşamlar', 'Good evening');
     return MoonlitPage(
       header: MoonlitHeader(
-        minHeight: 174,
+        minHeight: 160,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,7 +74,12 @@ class TodayScreen extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('NutriGuide', style: TextStyle(fontSize: 17)),
+                      Text(
+                        name?.isNotEmpty == true
+                            ? '$greeting, $name'
+                            : greeting,
+                        style: const TextStyle(fontSize: 17),
+                      ),
                       Text(
                         context.w('Bugün', 'Today'),
                         style: TextStyle(
@@ -79,159 +109,331 @@ class TodayScreen extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
-            IntrinsicWidth(
-              child: MotionTap(
-                onTap: choose,
-                builder: (context, t) => AtmosphereSurface(
-                  radius: 28,
-                  activity: t,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 11,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        MoodGlyph(
-                          check?.focus == null
-                              ? p.icon
-                              : MoodPalette.all[check!.focus]!.icon,
-                          size: 25,
-                          progress: t,
-                        ),
-                        const SizedBox(width: 10),
-                        Flexible(
-                          child: Text(
-                            label,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: p.textPrimary,
+            // Before the day's check-in the prompt card below asks the same
+            // question, so the chip only appears once there is an answer.
+            if (check != null) ...[
+              const SizedBox(height: 12),
+              IntrinsicWidth(
+                child: MotionTap(
+                  key: todayCheckInKey,
+                  onTap: checkIn,
+                  builder: (context, t) => AtmosphereSurface(
+                    radius: 28,
+                    activity: t,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 11,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          MoodGlyph(
+                            focus == null
+                                ? p.icon
+                                : MoodPalette.all[focus]!.icon,
+                            size: 25,
+                            progress: t,
+                          ),
+                          const SizedBox(width: 10),
+                          Flexible(
+                            child: Text(
+                              label,
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: p.textPrimary,
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 7),
-                        Icon(
-                          Icons.chevron_right,
-                          size: 18,
-                          color: p.textPrimary,
-                        ),
-                      ],
+                          const SizedBox(width: 7),
+                          Icon(
+                            Icons.chevron_right,
+                            size: 18,
+                            color: p.textPrimary,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              context.w('Kendi ritminde.', 'At your own pace.'),
-              style: TextStyle(fontSize: 15, color: p.textPrimary),
-            ),
+            ],
           ],
         ),
       ),
       children: [
+        if (check == null) ...[
+          LiftIn(child: _CheckInPrompt(onStart: checkIn)),
+          const SizedBox(height: 22),
+        ],
         LiftIn(
-          child: recipes.isNotEmpty
-              ? WellnessFoodCard(
-                  scored: recipes.first,
-                  onExplore: () => Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (_) => Scaffold(
-                        appBar: AppBar(
-                          title: Text(context.w('Beslenme', 'Nourish')),
-                        ),
-                        body: const NourishScreen(),
-                      ),
+          order: 1,
+          child: _ForYou(onMore: () => navigate(nourishTabIndex)),
+        ),
+        const SizedBox(height: 26),
+        LiftIn(
+          order: 2,
+          child: _SmallSteps(focus: focus, hour: now.hour),
+        ),
+        const SizedBox(height: 26),
+        LiftIn(order: 3, child: _TodayMeals(now: now)),
+      ],
+    );
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  final String text;
+  const _SectionTitle(this.text);
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 10),
+    child: Text(
+      text,
+      style: TextStyle(
+        fontSize: 19,
+        fontWeight: FontWeight.w600,
+        color: context.palette.textPrimary,
+      ),
+    ),
+  );
+}
+
+/// Shown until the day's check-in exists. Without it the recommendation
+/// falls back to pantry order, and the card says so.
+class _CheckInPrompt extends StatelessWidget {
+  final VoidCallback onStart;
+  const _CheckInPrompt({required this.onStart});
+  @override
+  Widget build(BuildContext context) => AtmosphereSurface(
+    radius: 18,
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            context.w('Bugün nasılsın?', 'How are you today?'),
+            style: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w600,
+              color: context.palette.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            context.w(
+              'İki dokunuşluk bir kayıt. Önerdiğimiz öğünü ve küçük adımları buna göre seçeriz.',
+              'Two taps. We pick your meal and small steps from it.',
+            ),
+            style: const TextStyle(fontSize: 14, height: 1.3),
+          ),
+          const SizedBox(height: 14),
+          MoonButton(
+            label: context.w('Başlayalım', 'Let’s start'),
+            onPressed: onStart,
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+/// The day's recommendation, with the sentence that says why it came first.
+class _ForYou extends ConsumerWidget {
+  final VoidCallback onMore;
+  const _ForYou({required this.onMore});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final recipes = ref.watch(wellnessRecipesProvider);
+    final check = ref.watch(todayCheckInProvider);
+    final locale = Localizations.localeOf(context).languageCode;
+    final chosen = recipes.firstOrNull;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _SectionTitle(context.w('Bugün senin için', 'For you today')),
+        if (chosen == null)
+          Text(
+            context.w(
+              'Seçimlerinle eşleşen tarif bulamadık. Hazırlık süresini veya beslenme tercihlerini değiştirmeyi deneyebilirsin.',
+              'No recipe matches your choices. Try another preparation time or food preference.',
+            ),
+          )
+        else ...[
+          WellnessFoodCard(scored: chosen),
+          const SizedBox(height: 12),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.lightbulb_outline,
+                size: 22,
+                color: context.palette.moon,
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  [
+                    recommendationReason(chosen.recipe, check?.focus, locale),
+                    if (RecipeTiming.minutes(chosen.recipe) case final m?)
+                      context.w('Hazırlık ~$m dk.', 'About $m min to make.'),
+                  ].join(' '),
+                  style: const TextStyle(fontSize: 13, height: 1.35),
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: onMore,
+              child: Text(context.w('Başka öneriler', 'More suggestions')),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+/// Two steps chosen by the check-in. In the evening the second one becomes
+/// the wind-down, since that is what the time of day calls for.
+class _SmallSteps extends ConsumerWidget {
+  final CheckInType? focus;
+  final int hour;
+  const _SmallSteps({required this.focus, required this.hour});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final steps = [
+      ...(focusGuidance[focus]?.steps ?? const ['walk', 'breathe']),
+    ].take(2).toList();
+    if (hour >= 19) steps[steps.length - 1] = 'sleep';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _SectionTitle(context.w('Küçük adımlar', 'Small steps')),
+        for (final step in steps) _step(context, ref, step),
+      ],
+    );
+  }
+
+  Widget _step(BuildContext context, WidgetRef ref, String id) {
+    if (id == 'water') {
+      ref.watch(beverageProvider);
+      final ml = ref.read(beverageProvider.notifier).totalWaterToday();
+      return FineRow(
+        icon: Icons.water_drop_outlined,
+        title: context.w('Su · bugün $ml ml', 'Water · $ml ml today'),
+        trailing: const Icon(Icons.add_circle_outline, size: 22),
+        onTap: () => showWaterSheet(context, ref),
+      );
+    }
+    if (id == 'sleep') {
+      return FineRow(
+        icon: Icons.bedtime_outlined,
+        title: context.w('Akşam hazırlığı', 'Wind down for the night'),
+        trailing: const Icon(Icons.chevron_right, size: 22),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute<void>(builder: (_) => const SleepScreen()),
+        ),
+      );
+    }
+    final routine = routineLibrary.firstWhere((r) => r.id == id);
+    return FineRow(
+      icon: routine.icon,
+      title:
+          '${context.w(routine.tr, routine.en)} · ${durationLabel(context, routine.minutes)}',
+      trailing: const Icon(Icons.play_circle_outline, size: 24),
+      onTap: () => openRoutine(context, routine),
+    );
+  }
+}
+
+/// Planned and cooked meals for the app-day. The tick is the one way a meal
+/// counts as eaten: the plan alone never feeds the totals.
+class _TodayMeals extends ConsumerWidget {
+  final DateTime now;
+  const _TodayMeals({required this.now});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).languageCode;
+    // The app-day, so a late-night meal stays on the day it belongs to.
+    final day = DateTime.parse(DayBoundary.keyFor(now));
+    final items = buildDayMealList(
+      date: day,
+      plans: ref.watch(mealPlanProvider),
+      cooked: ref.watch(cookedProvider),
+    );
+    final recipes = ref.watch(recipeMapProvider);
+    final totals = ref.watch(consumedTodayProvider);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _SectionTitle(context.w('Bugünkü öğünlerin', 'Today’s meals')),
+        if (items.isEmpty)
+          Text(
+            context.w(
+              'Bir tarifi pişirdiğinde ya da planına eklediğinde burada görünür.',
+              'Meals appear here once you cook or plan a recipe.',
+            ),
+            style: const TextStyle(fontSize: 13),
+          ),
+        for (final item in items)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: Row(
+              children: [
+                CookedTick(
+                  isCooked: item.isCooked,
+                  size: 28,
+                  tooltip: item.isCooked
+                      ? l10n.mealListMarkNotCooked
+                      : l10n.mealListMarkCooked,
+                  onTap: recipes[item.recipeId] == null
+                      ? null
+                      : () => ref
+                            .read(cookedProvider.notifier)
+                            .toggleForDay(recipes[item.recipeId]!, day),
+                ),
+                const SizedBox(width: 10),
+                MealTypeBadge(mealType: item.mealType),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    recipes[item.recipeId]?.localizedName(locale) ??
+                        context.w('Silinmiş tarif', 'Deleted recipe'),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: context.palette.textPrimary,
                     ),
-                  ),
-                  compact: true,
-                )
-              : SizedBox(
-                  height: 168,
-                  child: FeatureTile(
-                    title: context.w('Beslenme', 'Nourish'),
-                    kind: 'bowl',
-                    info: context.w(
-                      'Tercihlerinle eşleşen tarif bulunamadı. Beslenme ayarlarını inceleyebilirsin.',
-                      'No recipes match your choices. Review your food preferences.',
-                    ),
-                    onTap: () => navigate(1),
                   ),
                 ),
-        ),
-        const SizedBox(height: 10),
-        FeatureGrid(
-          height: 136,
-          children: [
-            FeatureTile(
-              title: context.w('Nefes', 'Breathe'),
-              kind: 'wind',
-              info: context.w(
-                'İki dakikalık bir mola. Işık halkası rahat bir tempoya eşlik eder; nefesini tutman gerekmez.',
-                'A two-minute break. The light ring accompanies a comfortable pace; no breath holding needed.',
-              ),
-              onTap: () => openRoutine(context, routineLibrary[0]),
+              ],
             ),
-            FeatureTile(
-              title: context.w('Uyku', 'Sleep'),
-              kind: 'moon',
-              info: context.w(
-                'Uyku saatini seç, akşam hazırlığını düzenle ve uyku kaydını gör.',
-                'Choose a bedtime, prepare your evening and see your sleep log.',
+          ),
+        if (totals.mealCount > 0)
+          Padding(
+            padding: const EdgeInsets.only(top: 6),
+            child: Text(
+              context.w(
+                'Bugün ${totals.mealCount} öğün · ${totals.calories} kcal',
+                '${totals.mealCount} meals today · ${totals.calories} kcal',
               ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute<void>(builder: (_) => const SleepScreen()),
-              ),
+              style: TextStyle(fontSize: 13, color: context.palette.moon),
             ),
-            FeatureTile(
-              title: context.w('Hareket', 'Move'),
-              kind: 'walk',
-              info: context.w(
-                'Kısa bir yürüyüş veya esneme molası seç. Seanslar sen başlattığında çalışır.',
-                'Choose a short walk or stretch. Sessions begin when you start them.',
-              ),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute<void>(builder: (_) => const MovementScreen()),
-              ),
-            ),
-            FeatureTile(
-              title: context.w('Su', 'Water'),
-              kind: 'water',
-              info: context.w(
-                'İçtiğin suyu kaydet. Kayıt miktarını sen seçersin; tek dokunuşla geri alabilirsin.',
-                'Log the water you drink. You choose the amount and can undo a log.',
-              ),
-              onTap: () => showWaterSheet(context, ref),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        MotionTap(
-          onTap: choose,
-          builder: (context, t) => AtmosphereSurface(
-            radius: 16,
-            activity: t,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MoodGlyph('settings', size: 26, progress: t),
-                  const SizedBox(width: 12),
-                  Text(
-                    context.w('Durumu değiştir', 'Change check-in'),
-                    style: TextStyle(fontSize: 15, color: p.textPrimary),
-                  ),
-                  const Spacer(),
-                  const Icon(Icons.chevron_right, size: 20),
-                ],
-              ),
-            ),
+          ),
+        FineRow(
+          icon: Icons.calendar_month_outlined,
+          title: context.w('Öğün planım', 'My meal plan'),
+          trailing: const Icon(Icons.chevron_right, size: 20),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute<void>(builder: (_) => const PlannerScreen()),
           ),
         ),
       ],
@@ -274,7 +476,7 @@ class _WaterBreakState extends ConsumerState<_WaterBreakSheet> {
           AnimatedSwitcher(
             duration: reducedMotion(context)
                 ? Duration.zero
-                : const Duration(milliseconds: 350),
+                : const Duration(milliseconds: 250),
             child: Text(
               '$water ml',
               key: ValueKey(water),
@@ -330,96 +532,6 @@ class _WaterBreakState extends ConsumerState<_WaterBreakSheet> {
           ),
         ],
       ),
-    );
-  }
-}
-
-Future<void> showGoalPicker(BuildContext context, WidgetRef ref) async {
-  final selected = ref.read(wellnessProvider).goals.toSet();
-  final choices = [
-    (
-      'nutrition',
-      context.w('Dengeli beslenme', 'Balanced eating'),
-      Icons.restaurant_outlined,
-    ),
-    (
-      'sleep',
-      context.w('Uyku düzeni', 'Sleep routine'),
-      Icons.bedtime_outlined,
-    ),
-    (
-      'movement',
-      context.w('Günlük hareket', 'Daily movement'),
-      Icons.directions_walk,
-    ),
-    (
-      'calm',
-      context.w('Sakinleşme ve odak', 'Calm and focus'),
-      Icons.spa_outlined,
-    ),
-  ];
-  final result = await showModalBottomSheet<List<String>>(
-    context: context,
-    isScrollControlled: true,
-    builder: (sheet) => StatefulBuilder(
-      builder: (sheet, setSheet) => SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                context.w(
-                  'Neye alan açmak istersin?',
-                  'What would you like to make room for?',
-                ),
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                context.w(
-                  'En fazla üç alan seç. Sonra değiştirebilirsin.',
-                  'Choose up to three areas. You can change them later.',
-                ),
-              ),
-              ...choices.map(
-                (c) => CheckboxListTile(
-                  contentPadding: EdgeInsets.zero,
-                  secondary: Icon(c.$3, color: context.palette.mint),
-                  title: Text(c.$2),
-                  value: selected.contains(c.$1),
-                  onChanged: (on) => setSheet(() {
-                    if (on == true && selected.length < 3) {
-                      selected.add(c.$1);
-                    } else if (on == false) {
-                      selected.remove(c.$1);
-                    }
-                  }),
-                ),
-              ),
-              const SizedBox(height: 16),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  onPressed: selected.isEmpty
-                      ? null
-                      : () => Navigator.pop(sheet, selected.toList()),
-                  child: Text(context.w('Bana göre düzenle', 'Make it mine')),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
-  if (result != null && context.mounted) {
-    await saveWellness(
-      context,
-      () => ref
-          .read(wellnessProvider.notifier)
-          .update((s) => s.copyWith(goals: result, setupDone: true)),
     );
   }
 }
