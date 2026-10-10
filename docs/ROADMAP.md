@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-10-08 · Dal: `claude/recipe-save-ui-fixes-629z7x`
+> Son güncelleme: 2026-10-11 · Dal: `claude/recipe-save-ui-fixes-629z7x`
 
 ---
 
@@ -146,7 +146,7 @@ bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 > **▶ ŞU AN (2026-10-08, öğleden sonra)**
 > - Bitti: faz 1 (`5add799`), faz 2 (`fbd2498`), görsel entegrasyonu
 >   (K/S/O/B) ve **faz 3** (akşam kapanışı + haftalık gözlem, F1/F2 bağlı).
->   Ayrıntı aşağıda madde 2b ve 3. Commit atılmadı (kullanıcı istemedi).
+>   Ayrıntı aşağıda madde 2b ve 3. Commit: `4d8125a` (2026-10-11).
 > - Doğrulandı (Mac, Flutter 3.44.6, `~/development/flutter`): analyze
 >   temiz, 173 test, `data_report --strict` temiz (küçük işler sonrası da).
 > - **Faz 4 başladı (2026-10-08), kod tarafı hazır, hekim bekleniyor:**
@@ -179,7 +179,12 @@ bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 >   uykusuzluk 66 tarif). "Belirli Bir Sorun Yok" → "İyiyim" (kullanıcı
 >   kararı: iki benzer seçenek olmasın; M4 kullanılmadı). Kurallar inceleme
 >   sayfasında (131 metin). Test: `focus_rules_test.dart`.
-> - Push edilmedi.
+> - Push edildi (2026-10-11).
+> - **Disk temizliği (2026-10-11):** `tmp/` (1.4 GB eski log/kare),
+>   derleme önbellekleri (`flutter clean`, `android/.gradle`), exFAT `._*`
+>   dosyaları silindi; git yeniden paketlendi (1.4 GB → 313 MB). Tam boy
+>   GPT teslimleri (`gorsel-uretim/teslim/*.png`) ve
+>   `output/artwork-integration/` artık git dışında — yerelde kalır.
 > - **Bilgi boşlukları denetimi (2026-10-08 akşam).** Kullanıcı: pişirme
 >   adımlarında miktar yok, rutinler anlaşılmıyor. Üç paket önerildi;
 >   **1. paket bitti:**
