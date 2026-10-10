@@ -54,6 +54,31 @@ class ReferenceCrop extends StatelessWidget {
   );
 }
 
+/// Moods added after the 3×3 landscape atlas have a picture of their own.
+const Map<CheckInType, String> _singleLandscapes = {
+  CheckInType.stressed: 'assets/images/scenes/mood_stress.jpg',
+  CheckInType.anxious: 'assets/images/scenes/mood_anxious.jpg',
+  CheckInType.poorSleep: 'assets/images/scenes/mood_poorSleep.jpg',
+};
+
+/// A mood's dune landscape, wherever it is stored.
+class MoodLandscape extends StatelessWidget {
+  final CheckInType mode;
+  const MoodLandscape({super.key, required this.mode});
+  @override
+  Widget build(BuildContext context) {
+    final single = _singleLandscapes[mode];
+    return single != null
+        ? Image.asset(single, fit: BoxFit.cover, excludeFromSemantics: true)
+        : AtlasImage(
+            asset: 'assets/moods/landscapes.png',
+            columns: 3,
+            rows: 3,
+            index: mode.index,
+          );
+  }
+}
+
 class HorizonScene extends StatelessWidget {
   final bool moon;
   const HorizonScene({super.key, this.moon = true});
@@ -86,15 +111,18 @@ class HorizonScene extends StatelessWidget {
                   child: child,
                 ),
               ),
-              child: AtlasImage(
-                key: ValueKey(context.palette.mode),
-                asset: periodIndex == null
-                    ? 'assets/moods/landscapes.png'
-                    : 'assets/moods/period-reference-v2.png',
-                columns: periodIndex == null ? 3 : 1,
-                rows: 3,
-                index: periodIndex ?? context.palette.mode.index,
-              ),
+              child: periodIndex == null
+                  ? MoodLandscape(
+                      key: ValueKey(context.palette.mode),
+                      mode: context.palette.mode,
+                    )
+                  : AtlasImage(
+                      key: ValueKey(context.palette.mode),
+                      asset: 'assets/moods/period-reference-v2.png',
+                      columns: 1,
+                      rows: 3,
+                      index: periodIndex,
+                    ),
             ),
           ),
           Positioned.fill(

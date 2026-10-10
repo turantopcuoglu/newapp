@@ -3,6 +3,7 @@ import '../models/recipe.dart';
 import '../models/user_profile.dart';
 import '../data/explore_data.dart';
 import 'diet_classifier.dart';
+import 'focus_rules.dart';
 import 'preference_matcher.dart';
 import 'special_category_matcher.dart';
 
@@ -86,8 +87,8 @@ class RecommendationService {
           ? 0.0
           : available.length / recipe.ingredientIds.length;
 
-      final checkInMatch = recipe.checkInTags.any(
-        (tag) => checkInTypes.contains(tag),
+      final checkInMatch = checkInTypes.any(
+        (type) => recipeHasFocus(recipe, type),
       );
 
       // Health conditions are a standing need, not a mood: a recipe that

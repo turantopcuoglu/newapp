@@ -17,13 +17,6 @@ class IngredientQuantity {
           orElse: () => QuantityUnit.g,
         ),
       );
-
-  String formatted() {
-    final displayAmount = amount == amount.roundToDouble()
-        ? amount.toInt().toString()
-        : amount.toStringAsFixed(1);
-    return '$displayAmount ${unit.name}';
-  }
 }
 
 class MacroEstimation {

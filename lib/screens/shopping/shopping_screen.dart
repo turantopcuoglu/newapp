@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../components/empty_state_artwork.dart';
+import '../../components/ingredient_image.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/turkish_string_helper.dart';
+import '../../data/food_photo_catalog.dart';
 import '../../data/mock_ingredients.dart';
 import '../../l10n/app_localizations.dart';
-import '../../widgets/turkish_text_field.dart';
 import '../../models/ingredient.dart';
 import '../../models/shopping_item.dart';
 import '../../providers/inventory_provider.dart';
+import '../../providers/recipe_provider.dart';
 import '../../providers/shopping_provider.dart';
+import '../../widgets/turkish_text_field.dart';
 
 class ShoppingScreen extends ConsumerStatefulWidget {
   const ShoppingScreen({super.key});
@@ -247,11 +252,7 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        Icons.search_off_rounded,
-                        size: 64,
-                        color: context.palette.dividerColor,
-                      ),
+                      const EmptyStateArtwork(name: 'no_results'),
                       const SizedBox(height: 12),
                       Text(
                         l10n.recipeBookEmpty,
@@ -322,22 +323,36 @@ class _KitchenInventoryTabState extends ConsumerState<_KitchenInventoryTab> {
   ) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 4),
-      leading: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: isInInventory
-              ? context.palette.successGreen.withAlpha(20)
-              : context.palette.accentOrange.withAlpha(15),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Icon(
-          isInInventory
-              ? Icons.check_circle_rounded
-              : Icons.add_circle_outline_rounded,
-          color: isInInventory
-              ? context.palette.successGreen
-              : context.palette.accentOrange,
-          size: 22,
+      // The ingredient's photo; a check badge once it is in the kitchen.
+      leading: SizedBox.square(
+        dimension: 48,
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned.fill(
+              child: Opacity(
+                opacity: isInInventory ? 1 : .6,
+                child: IngredientImage(id: ingredient.id),
+              ),
+            ),
+            // Only "in the kitchen" gets a badge; adding is the + on the right.
+            if (isInInventory)
+              Positioned(
+                right: -4,
+                bottom: -4,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: context.palette.background,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.check_circle_rounded,
+                    color: context.palette.successGreen,
+                    size: 20,
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
       title: Text(
@@ -508,11 +523,7 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        Icons.shopping_bag_outlined,
-                        size: 64,
-                        color: context.palette.dividerColor,
-                      ),
+                      const EmptyStateArtwork(name: 'shopping'),
                       const SizedBox(height: 12),
                       Text(
                         l10n.shoppingEmpty,
@@ -558,6 +569,12 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
   ) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final photoId = _resolveIngredientId(name);
+    final recipeName = forRecipe == null
+        ? null
+        : ref
+              .watch(recipeMapProvider)[forRecipe]
+              ?.localizedName(l10n.locale.languageCode);
 
     return Dismissible(
       key: Key(id),
@@ -570,11 +587,25 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
         child: Icon(Icons.delete, color: Colors.red.shade700),
       ),
       child: ListTile(
-        leading: Checkbox(
-          value: isPurchased,
-          onChanged: (_) =>
-              ref.read(shoppingProvider.notifier).togglePurchased(id),
-          activeColor: theme.colorScheme.primary,
+        leading: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Checkbox(
+              value: isPurchased,
+              onChanged: (_) =>
+                  ref.read(shoppingProvider.notifier).togglePurchased(id),
+              activeColor: theme.colorScheme.primary,
+            ),
+            // Free-text items have no catalogue photo; they keep the box only.
+            if (FoodPhotoCatalog.ingredients.containsKey(photoId))
+              SizedBox.square(
+                dimension: 40,
+                child: Opacity(
+                  opacity: isPurchased ? .5 : 1,
+                  child: IngredientImage(id: photoId),
+                ),
+              ),
+          ],
         ),
         title: Text(
           name,
@@ -583,8 +614,10 @@ class _ShoppingListTabState extends ConsumerState<_ShoppingListTab> {
             color: isPurchased ? Colors.grey : null,
           ),
         ),
-        subtitle: forRecipe != null
-            ? Text(forRecipe, style: theme.textTheme.bodySmall)
+        // The item stores the recipe id; show the recipe's name. A deleted
+        // recipe leaves nothing worth naming, so the line is dropped.
+        subtitle: recipeName != null
+            ? Text(recipeName, style: theme.textTheme.bodySmall)
             : null,
         trailing: isPurchased
             ? WellnessIconButton(

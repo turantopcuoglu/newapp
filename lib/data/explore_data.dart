@@ -6,14 +6,12 @@ import '../core/enums.dart';
 class CuisineCategory {
   final String id;
   final Map<String, String> name;
-  final String emoji;
-  final String gradient; // gradient key for visual styling
+  final String coverImage;
 
   const CuisineCategory({
     required this.id,
     required this.name,
-    required this.emoji,
-    required this.gradient,
+    required this.coverImage,
   });
 
   String localizedName(String locale) =>
@@ -25,8 +23,7 @@ class SpecialCategory {
   final String id;
   final Map<String, String> name;
   final Map<String, String> subtitle;
-  final String emoji;
-  final String gradient;
+  final String coverImage;
   final HealthCondition? healthCondition;
   final List<CheckInType> relatedCheckInTypes;
   final List<String> relatedAllergenExclusions;
@@ -35,8 +32,7 @@ class SpecialCategory {
     required this.id,
     required this.name,
     required this.subtitle,
-    required this.emoji,
-    required this.gradient,
+    required this.coverImage,
     this.healthCondition,
     this.relatedCheckInTypes = const [],
     this.relatedAllergenExclusions = const [],
@@ -54,51 +50,43 @@ class SpecialCategory {
 const List<CuisineCategory> worldCuisines = [
   CuisineCategory(
     id: 'turkish',
+    coverImage: 'assets/images/explore/cuisine_turkish.jpg',
     name: {'en': 'Turkish', 'tr': 'Türk Mutfağı'},
-    emoji: '🇹🇷',
-    gradient: 'turkish',
   ),
   CuisineCategory(
     id: 'italian',
+    coverImage: 'assets/images/explore/cuisine_italian.jpg',
     name: {'en': 'Italian', 'tr': 'İtalyan Mutfağı'},
-    emoji: '🇮🇹',
-    gradient: 'italian',
   ),
   CuisineCategory(
     id: 'asian',
+    coverImage: 'assets/images/explore/cuisine_asian.jpg',
     name: {'en': 'Asian', 'tr': 'Asya Mutfağı'},
-    emoji: '🥢',
-    gradient: 'asian',
   ),
   CuisineCategory(
     id: 'middleEastern',
+    coverImage: 'assets/images/explore/cuisine_middleEastern.jpg',
     name: {'en': 'Middle Eastern', 'tr': 'Ortadoğu Mutfağı'},
-    emoji: '🧆',
-    gradient: 'middleEastern',
   ),
   CuisineCategory(
     id: 'mediterranean',
+    coverImage: 'assets/images/explore/cuisine_mediterranean.jpg',
     name: {'en': 'Mediterranean', 'tr': 'Akdeniz Mutfağı'},
-    emoji: '🫒',
-    gradient: 'mediterranean',
   ),
   CuisineCategory(
     id: 'american',
+    coverImage: 'assets/images/explore/cuisine_american.jpg',
     name: {'en': 'American', 'tr': 'Amerikan Mutfağı'},
-    emoji: '🍔',
-    gradient: 'american',
   ),
   CuisineCategory(
     id: 'mexican',
+    coverImage: 'assets/images/explore/cuisine_mexican.jpg',
     name: {'en': 'Mexican', 'tr': 'Meksika Mutfağı'},
-    emoji: '🌮',
-    gradient: 'mexican',
   ),
   CuisineCategory(
     id: 'international',
+    coverImage: 'assets/images/explore/cuisine_international.jpg',
     name: {'en': 'International & Fusion', 'tr': 'Dünya & Füzyon'},
-    emoji: '🌍',
-    gradient: 'international',
   ),
 ];
 
@@ -107,68 +95,64 @@ const List<CuisineCategory> worldCuisines = [
 const List<SpecialCategory> specialCategories = [
   SpecialCategory(
     id: 'pcos',
-    name: {'en': 'PCOS Friendly', 'tr': 'PCOS Dostu'},
+    coverImage: 'assets/images/explore/health_pcos.jpg',
+    // "PCOS'ta beslenme", not "for PCOS": the app supports eating, it does
+    // not treat a condition (medical-device line, roadmap phase 4).
+    name: {'en': 'Eating with PCOS', 'tr': 'PCOS\'ta Beslenme'},
     subtitle: {
-      'en': 'Low glycemic, anti-inflammatory meals',
-      'tr': 'Düşük glisemik, iltihap önleyici öğünler',
+      'en': 'Low-glycaemic meals with fibre and protein',
+      'tr': 'Lif ve protein içeren, düşük glisemik öğünler',
     },
-    emoji: '🩺',
-    gradient: 'pcos',
     healthCondition: HealthCondition.pcos,
   ),
   SpecialCategory(
     id: 'insulinResistance',
+    coverImage: 'assets/images/explore/health_insulinResistance.jpg',
     name: {'en': 'Insulin Resistance', 'tr': 'İnsülin Direnci'},
     subtitle: {
-      'en': 'Blood sugar balancing recipes',
-      'tr': 'Kan şekerini dengeleyen tarifler',
+      'en': 'Fibre and protein first',
+      'tr': 'Lif ve proteini öne çıkan tarifler',
     },
-    emoji: '🔬',
-    gradient: 'insulinResistance',
     healthCondition: HealthCondition.insulinResistance,
   ),
   SpecialCategory(
     id: 'ironDeficiency',
+    coverImage: 'assets/images/explore/health_ironDeficiency.jpg',
     name: {'en': 'Iron Deficiency', 'tr': 'Demir Eksikliği'},
     subtitle: {
-      'en': 'Iron-rich nutritious recipes',
-      'tr': 'Demir açısından zengin tarifler',
+      'en': 'Recipes with iron sources',
+      'tr': 'Demir kaynağı içeren tarifler',
     },
-    emoji: '🥩',
-    gradient: 'ironDeficiency',
     healthCondition: HealthCondition.ironDeficiency,
   ),
   SpecialCategory(
     id: 'vitaminB12',
+    coverImage: 'assets/images/explore/health_vitaminB12.jpg',
     name: {'en': 'Vitamin B12 Deficiency', 'tr': 'B12 Vitamini Eksikliği'},
     subtitle: {
-      'en': 'B12-rich meals for energy',
-      'tr': 'Enerji için B12 açısından zengin öğünler',
+      'en': 'Meals with B12 sources',
+      'tr': 'B12 kaynağı içeren öğünler',
     },
-    emoji: '💊',
-    gradient: 'vitaminB12',
     healthCondition: HealthCondition.vitaminB12Deficiency,
   ),
   SpecialCategory(
     id: 'magnesiumDeficiency',
+    coverImage: 'assets/images/explore/health_magnesiumDeficiency.jpg',
     name: {'en': 'Magnesium Deficiency', 'tr': 'Magnezyum Eksikliği'},
     subtitle: {
-      'en': 'Magnesium-rich calming recipes',
-      'tr': 'Magnezyum açısından zengin tarifler',
+      'en': 'Recipes with magnesium sources',
+      'tr': 'Magnezyum kaynağı içeren tarifler',
     },
-    emoji: '🥬',
-    gradient: 'magnesiumDeficiency',
     healthCondition: HealthCondition.magnesiumDeficiency,
   ),
   SpecialCategory(
     id: 'anemia',
+    coverImage: 'assets/images/explore/health_anemia.jpg',
     name: {'en': 'Anemia', 'tr': 'Kansızlık'},
     subtitle: {
-      'en': 'Blood-building nutritious meals',
-      'tr': 'Kan yapıcı besleyici öğünler',
+      'en': 'Iron and vitamin C on one plate',
+      'tr': 'Demir ve C vitamini bir arada',
     },
-    emoji: '❤️‍🩹',
-    gradient: 'anemia',
     healthCondition: HealthCondition.anemia,
   ),
 
@@ -178,35 +162,32 @@ const List<SpecialCategory> specialCategories = [
   // deficiency sense above.
   SpecialCategory(
     id: 'glutenFree',
+    coverImage: 'assets/images/explore/health_glutenFree.jpg',
     name: {'en': 'Gluten-Free', 'tr': 'Glutensiz'},
     subtitle: {
       'en': 'No wheat, no barley, no worry',
       'tr': 'Buğday ve arpa içermeyen tarifler',
     },
-    emoji: '🌾',
-    gradient: 'glutenFree',
     relatedAllergenExclusions: ['gluten'],
   ),
   SpecialCategory(
     id: 'lactoseFree',
+    coverImage: 'assets/images/explore/health_lactoseFree.jpg',
     name: {'en': 'Lactose-Free', 'tr': 'Laktozsuz'},
     subtitle: {
       'en': 'Dairy-free meals that still satisfy',
       'tr': 'Süt ürünü içermeyen doyurucu öğünler',
     },
-    emoji: '🥛',
-    gradient: 'lactoseFree',
     relatedAllergenExclusions: ['dairy'],
   ),
   SpecialCategory(
     id: 'periodSupport',
+    coverImage: 'assets/images/explore/health_periodSupport.jpg',
     name: {'en': 'Period Support', 'tr': 'Regl Dönemi'},
     subtitle: {
-      'en': 'Magnesium and iron for cramps and fatigue',
-      'tr': 'Kramp ve yorgunluk için magnezyum ve demir',
+      'en': 'Meals with magnesium and iron',
+      'tr': 'Magnezyum ve demir içeren öğünler',
     },
-    emoji: '🌙',
-    gradient: 'periodSupport',
     relatedCheckInTypes: [
       CheckInType.periodCramps,
       CheckInType.periodFatigue,
@@ -214,30 +195,6 @@ const List<SpecialCategory> specialCategories = [
     ],
   ),
 ];
-
-// ── Gradient Definitions ──────────────────────────────────────────────────
-
-const Map<String, List<int>> cuisineGradients = {
-  'turkish': [0xFFE53935, 0xFFFF7043],
-  'italian': [0xFF388E3C, 0xFF66BB6A],
-  'asian': [0xFFD84315, 0xFFFF8A65],
-  'middleEastern': [0xFFC2185B, 0xFFE91E63],
-  'mediterranean': [0xFF1565C0, 0xFF42A5F5],
-  'american': [0xFF1565C0, 0xFFEF5350],
-  'mexican': [0xFFE65100, 0xFFFFB74D],
-  'international': [0xFF00695C, 0xFF4DB6AC],
-  'healthy': [0xFF2E7D32, 0xFF81C784],
-  // Health condition categories
-  'pcos': [0xFF7B1FA2, 0xFFBA68C8],
-  'insulinResistance': [0xFF5C6BC0, 0xFF7986CB],
-  'ironDeficiency': [0xFFE64A19, 0xFFFF8A65],
-  'vitaminB12': [0xFFEC407A, 0xFFF48FB1],
-  'magnesiumDeficiency': [0xFF00897B, 0xFF4DB6AC],
-  'anemia': [0xFFC62828, 0xFFEF5350],
-  'glutenFree': [0xFF8D6E63, 0xFFBCAAA4],
-  'lactoseFree': [0xFF546E7A, 0xFF90A4AE],
-  'periodSupport': [0xFF8E24AA, 0xFFCE93D8],
-};
 
 // ── Health Condition Ingredient Filters ───────────────────────────────────
 // Ingredients considered beneficial for each health condition.
@@ -249,26 +206,95 @@ const Map<String, List<int>> cuisineGradients = {
 
 const Map<HealthCondition, List<String>> healthConditionIngredients = {
   HealthCondition.ironDeficiency: [
-    'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver', 'spinach',
-    'swiss_chard', 'red_lentil', 'green_lentil', 'chickpea', 'kidney_bean',
-    'white_bean', 'black_bean', 'fava_bean', 'eggs', 'dark_chocolate',
-    'quinoa', 'tofu', 'pumpkin_seeds', 'sesame_seeds', 'apricot', 'dates',
+    'ground_beef',
+    'beef_steak',
+    'veal',
+    'lamb',
+    'liver',
+    'spinach',
+    'swiss_chard',
+    'red_lentil',
+    'green_lentil',
+    'chickpea',
+    'kidney_bean',
+    'white_bean',
+    'black_bean',
+    'fava_bean',
+    'eggs',
+    'dark_chocolate',
+    'quinoa',
+    'tofu',
+    'pumpkin_seeds',
+    'sesame_seeds',
+    'apricot',
+    'dates',
   ],
   HealthCondition.vitaminB12Deficiency: [
-    'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver',
-    'chicken_breast', 'chicken_thigh', 'chicken_wing', 'turkey_breast',
-    'ground_turkey', 'salmon', 'tuna', 'cod', 'sardine', 'anchovy',
-    'sea_bass', 'sea_bream', 'mussel', 'squid', 'octopus', 'shrimp',
-    'eggs', 'milk', 'yogurt', 'greek_yogurt', 'kefir', 'cheddar_cheese',
-    'feta_cheese', 'parmesan', 'mozzarella', 'goat_cheese', 'ricotta',
+    'ground_beef',
+    'beef_steak',
+    'veal',
+    'lamb',
+    'liver',
+    'chicken_breast',
+    'chicken_thigh',
+    'chicken_wing',
+    'turkey_breast',
+    'ground_turkey',
+    'salmon',
+    'tuna',
+    'cod',
+    'sardine',
+    'anchovy',
+    'sea_bass',
+    'sea_bream',
+    'mussel',
+    'squid',
+    'octopus',
+    'shrimp',
+    'eggs',
+    'milk',
+    'yogurt',
+    'greek_yogurt',
+    'kefir',
+    'cheddar_cheese',
+    'feta_cheese',
+    'parmesan',
+    'mozzarella',
+    'goat_cheese',
+    'ricotta',
   ],
   HealthCondition.magnesiumDeficiency: [
-    'spinach', 'swiss_chard', 'kale', 'almond', 'walnut', 'cashew',
-    'hazelnut', 'pistachio', 'peanut', 'pumpkin_seeds', 'sunflower_seeds',
-    'sesame_seeds', 'chia_seeds', 'flax_seeds', 'tahini', 'banana',
-    'avocado', 'dark_chocolate', 'cocoa_powder', 'black_bean',
-    'kidney_bean', 'white_bean', 'red_lentil', 'green_lentil', 'chickpea',
-    'oats', 'quinoa', 'buckwheat', 'bulgur', 'tofu', 'edamame',
+    'spinach',
+    'swiss_chard',
+    'kale',
+    'almond',
+    'walnut',
+    'cashew',
+    'hazelnut',
+    'pistachio',
+    'peanut',
+    'pumpkin_seeds',
+    'sunflower_seeds',
+    'sesame_seeds',
+    'chia_seeds',
+    'flax_seeds',
+    'tahini',
+    'banana',
+    'avocado',
+    'dark_chocolate',
+    'cocoa_powder',
+    'black_bean',
+    'kidney_bean',
+    'white_bean',
+    'red_lentil',
+    'green_lentil',
+    'chickpea',
+    'oats',
+    'quinoa',
+    'buckwheat',
+    'bulgur',
+    'tofu',
+    'edamame',
   ],
   HealthCondition.anemia: [
     'ground_beef', 'beef_steak', 'veal', 'lamb', 'liver', 'spinach',

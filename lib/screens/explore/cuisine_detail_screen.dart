@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../components/category_cover.dart';
+import '../../components/empty_state_artwork.dart';
 import '../../components/preference_warning.dart';
 import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
@@ -31,86 +34,15 @@ class CuisineDetailScreen extends ConsumerWidget {
         .toList();
     final hasDemoted = cuisineRecipes.any((sr) => !sr.preferenceFit.fits);
 
-    final gradientColors =
-        cuisineGradients[cuisine.gradient] ?? cuisineGradients['healthy']!;
-
     return Scaffold(
       backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
-          // Header
           SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top + 8,
-                left: 20,
-                right: 20,
-                bottom: 24,
-              ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Color(gradientColors[0]), Color(gradientColors[1])],
-                ),
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(28),
-                  bottomRight: Radius.circular(28),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Back button
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withAlpha(30),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Icon(
-                        Icons.arrow_back_rounded,
-                        color: Colors.white,
-                        size: 22,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Text(cuisine.emoji, style: const TextStyle(fontSize: 40)),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              cuisine.localizedName(locale),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: -0.3,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              '${cuisineRecipes.length} ${l10n.recipeBookTotalRecipes}',
-                              style: TextStyle(
-                                color: Colors.white.withAlpha(200),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+            child: CategoryCoverHeader(
+              imagePath: cuisine.coverImage,
+              title: cuisine.localizedName(locale),
+              count: '${cuisineRecipes.length} ${l10n.recipeBookTotalRecipes}',
             ),
           ),
 
@@ -121,13 +53,19 @@ class CuisineDetailScreen extends ConsumerWidget {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(32),
-                  child: Text(
-                    l10n.recipeBookEmpty,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: context.palette.textSecondary,
-                      fontSize: 14,
-                    ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const EmptyStateArtwork(name: 'no_results'),
+                      Text(
+                        l10n.recipeBookEmpty,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: context.palette.textSecondary,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -280,18 +218,18 @@ class _RecipeCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     // Macros row
-                    Row(
+                    Wrap(
+                      spacing: 6,
+                      runSpacing: 6,
                       children: [
                         _MacroBadge(
                           label: '${recipe.macros.calories} kcal',
                           color: context.palette.accentOrange,
                         ),
-                        const SizedBox(width: 6),
                         _MacroBadge(
                           label: '${recipe.macros.proteinG}g P',
                           color: context.palette.accentTeal,
                         ),
-                        const SizedBox(width: 6),
                         if (scored.compatibilityPercent > 0)
                           _MacroBadge(
                             label:

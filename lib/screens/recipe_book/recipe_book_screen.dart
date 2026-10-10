@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../components/empty_state_artwork.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../core/turkish_string_helper.dart';
 import '../../l10n/app_localizations.dart';
-import '../../widgets/turkish_text_field.dart';
 import '../../models/recipe.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/meal_plan_provider.dart';
 import '../../providers/my_recipes_provider.dart';
 import '../../providers/recipe_provider.dart';
 import '../../services/recommendation_service.dart';
+import '../../widgets/turkish_text_field.dart';
 import '../explore/saved_recipes_screen.dart';
 import '../my_recipes/create_recipe_screen.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
@@ -178,7 +181,8 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
-              _FilterChip(icon:Icons.restaurant_menu_rounded,
+              _FilterChip(
+                icon: Icons.restaurant_menu_rounded,
                 label: l10n.recipeBookAll,
                 isSelected: _selectedMealType == null,
                 color: context.palette.accentOrange,
@@ -240,12 +244,8 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        isMyRecipesTab
-                            ? Icons.restaurant_menu
-                            : Icons.search_off,
-                        size: 64,
-                        color: context.palette.dividerColor,
+                      EmptyStateArtwork(
+                        name: isMyRecipesTab ? 'recipe_book' : 'no_results',
                       ),
                       const SizedBox(height: 12),
                       Text(
@@ -345,9 +345,7 @@ class _RecipeBookScreenState extends ConsumerState<RecipeBookScreen> {
             .map(
               (type) => SimpleDialogOption(
                 onPressed: () => Navigator.pop(ctx, type),
-                child: Text(
-                  type.name[0].toUpperCase() + type.name.substring(1),
-                ),
+                child: Text(AppLocalizations.of(context).mealTypeName(type)),
               ),
             )
             .toList(),
@@ -468,37 +466,10 @@ class _RecipeBookCard extends StatelessWidget {
     this.onDelete,
   });
 
-  Color _mealTypeColor(BuildContext context, MealType type) {
-    switch (type) {
-      case MealType.breakfast:
-        return context.palette.breakfastColor;
-      case MealType.lunch:
-        return context.palette.lunchColor;
-      case MealType.dinner:
-        return context.palette.dinnerColor;
-      case MealType.snack:
-        return context.palette.snackColor;
-    }
-  }
-
-  IconData _mealTypeIcon(MealType type) {
-    switch (type) {
-      case MealType.breakfast:
-        return Icons.free_breakfast;
-      case MealType.lunch:
-        return Icons.lunch_dining;
-      case MealType.dinner:
-        return Icons.dinner_dining;
-      case MealType.snack:
-        return Icons.cookie_outlined;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final recipe = scoredRecipe.recipe;
     final theme = Theme.of(context);
-    final mealColor = _mealTypeColor(context, recipe.mealType);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
@@ -514,18 +485,14 @@ class _RecipeBookCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Meal type icon
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      color: mealColor.withAlpha(30),
+                  // The dish itself; own recipes show one of their
+                  // ingredients, labelled as such (see RecipeVisual).
+                  SizedBox(
+                    width: 72,
+                    child: RecipeVisual(
+                      recipe: recipe,
+                      height: 72,
                       borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Icon(
-                      _mealTypeIcon(recipe.mealType),
-                      color: mealColor,
-                      size: 22,
                     ),
                   ),
                   const SizedBox(width: 12),

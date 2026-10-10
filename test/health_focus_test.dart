@@ -138,6 +138,79 @@ void main() {
       }
     });
 
+    // Until the physician signs a category off, its copy describes foods;
+    // it does not prescribe, promise or treat, and it says "sen".
+    test('category copy stays descriptive and informal', () {
+      const forbidden = [
+        'eksiklik',
+        'gider',
+        'tedavi',
+        'iyileştir',
+        'teşhis',
+        'garanti',
+        'mutlaka',
+        'kat kat',
+        'iltihap',
+        'kan yapıcı',
+        'deficien',
+        'treat',
+        'cure',
+        ' heal ',
+        ' heals ',
+        'healing',
+        'guarantee',
+        'anti-inflammatory',
+        'blood-building',
+      ];
+      const formal = [
+        'iniz',
+        'ınız',
+        'unuz',
+        'ünüz',
+        ' siz ',
+        ' size ',
+        ' sizi ',
+      ];
+      for (final category in specialCategories) {
+        final info = healthCategoryInfo[category.id]!;
+        for (final locale in ['tr', 'en']) {
+          final texts = [
+            category.localizedSubtitle(locale),
+            info.localizedSummary(locale),
+            for (final section in info.sections) ...[
+              section.localizedTitle(locale),
+              ...section.localizedItems(locale),
+            ],
+          ];
+          for (final text in texts) {
+            final lower = ' ${text.toLowerCase()} ';
+            for (final word in [...forbidden, if (locale == 'tr') ...formal]) {
+              expect(
+                lower,
+                isNot(contains(word)),
+                reason: '${category.id}: $text',
+              );
+            }
+          }
+        }
+      }
+    });
+
+    test('red flags stay off screen until the physician review', () {
+      for (final category in specialCategories) {
+        final info = healthCategoryInfo[category.id]!;
+        expect(info.redFlags['tr'], isNotEmpty, reason: category.id);
+        expect(
+          info.redFlags['tr']!.length,
+          info.redFlags['en']!.length,
+          reason: category.id,
+        );
+        if (!info.reviewed) {
+          expect(info.visibleRedFlags('tr'), isEmpty, reason: category.id);
+        }
+      }
+    });
+
     test('tile ingredients are canonical catalog ids', () {
       // Matching is an exact id comparison, so a typo would render a tile
       // that opens an empty list.

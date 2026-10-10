@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../components/onboarding_artwork_header.dart';
 import '../core/enums.dart';
 import '../core/theme.dart';
 import '../core/wellness_motion.dart';
@@ -57,9 +59,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
 
     if (mounted) {
       Navigator.of(context).push(
-        MaterialPageRoute<void>(
-          builder: (_) => const OnboardingHealthScreen(),
-        ),
+        MaterialPageRoute<void>(builder: (_) => const OnboardingHealthScreen()),
       );
     }
   }
@@ -73,57 +73,32 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [context.palette.background, context.palette.surface, context.palette.background],
+            colors: [
+              context.palette.background,
+              context.palette.surface,
+              context.palette.background,
+            ],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
+            opacity: reducedMotion(context)
+                ? const AlwaysStoppedAnimation(1.0)
+                : _fadeAnim,
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(
                 children: [
-                  SizedBox(height: size.height * 0.06),
-
-                  // Logo / Icon
-                  Container(
-                    width: 90,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      gradient: context.palette.accentGradient,
-                      borderRadius: BorderRadius.circular(28),
-                      boxShadow: [
-                        BoxShadow(
-                          color: context.palette.accentOrange.withAlpha(80),
-                          blurRadius: 30,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                    ),
-                    child:  Icon(
-                      Icons.restaurant_rounded,
-                      color: context.palette.textPrimary,
-                      size: 44,
-                    ),
+                  const SizedBox(height: 20),
+                  OnboardingArtworkHeader(
+                    name: 'welcome',
+                    title: l10n.onboardingWelcome,
                   ),
-                  const SizedBox(height: 28),
-
-                  // Welcome text
-                  Text(
-                    l10n.onboardingWelcome,
-                    style:  TextStyle(
-                      color: context.palette.textPrimary,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: -0.5,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
                   Text(
                     l10n.onboardingWelcomeSubtitle,
                     style: TextStyle(
@@ -142,7 +117,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                     decoration: BoxDecoration(
                       color: context.palette.textPrimary.withAlpha(15),
                       borderRadius: BorderRadius.circular(24),
-                      border: Border.all(color: context.palette.textPrimary.withAlpha(20)),
+                      border: Border.all(
+                        color: context.palette.textPrimary.withAlpha(20),
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,12 +141,14 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               ),
                             ),
                             const SizedBox(width: 12),
-                            Text(
-                              l10n.onboardingNameLabel,
-                              style:  TextStyle(
-                                color: context.palette.textPrimary,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
+                            Expanded(
+                              child: Text(
+                                l10n.onboardingNameLabel,
+                                style: TextStyle(
+                                  color: context.palette.textPrimary,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ],
@@ -177,7 +156,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                         const SizedBox(height: 16),
                         TurkishTextField(
                           controller: _nameController,
-                          style:  TextStyle(
+                          style: TextStyle(
                             color: context.palette.textPrimary,
                             fontSize: 16,
                           ),
@@ -187,7 +166,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                               color: context.palette.textPrimary.withAlpha(80),
                             ),
                             filled: true,
-                            fillColor: context.palette.textPrimary.withAlpha(12),
+                            fillColor: context.palette.textPrimary.withAlpha(
+                              12,
+                            ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(14),
                               borderSide: BorderSide.none,
@@ -260,7 +241,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                                 children: [
                                   Text(
                                     l10n.onboardingGenderTitle,
-                                    style:  TextStyle(
+                                    style: TextStyle(
                                       color: context.palette.textPrimary,
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
@@ -270,7 +251,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                                   Text(
                                     l10n.onboardingGenderSubtitle,
                                     style: TextStyle(
-                                      color: context.palette.textPrimary.withAlpha(120),
+                                      color: context.palette.textPrimary
+                                          .withAlpha(120),
                                       fontSize: 12,
                                     ),
                                   ),
@@ -351,6 +333,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                           borderRadius: BorderRadius.circular(18),
                         ),
                         textStyle: const TextStyle(
+                          fontFamily: 'WellnessSans',
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
                         ),
@@ -358,7 +341,12 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(l10n.onboardingContinue),
+                          Flexible(
+                            child: Text(
+                              l10n.onboardingContinue,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                           const SizedBox(width: 8),
                           const Icon(Icons.arrow_forward_rounded, size: 22),
                         ],
@@ -400,10 +388,14 @@ class _GenderCard extends StatelessWidget {
         duration: const Duration(milliseconds: 250),
         padding: const EdgeInsets.symmetric(vertical: 18),
         decoration: BoxDecoration(
-          color: isSelected ? color.withAlpha(30) : context.palette.textPrimary.withAlpha(8),
+          color: isSelected
+              ? color.withAlpha(30)
+              : context.palette.textPrimary.withAlpha(8),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isSelected ? color : context.palette.textPrimary.withAlpha(15),
+            color: isSelected
+                ? color
+                : context.palette.textPrimary.withAlpha(15),
             width: isSelected ? 2 : 1,
           ),
         ),
@@ -411,14 +403,18 @@ class _GenderCard extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: isSelected ? color : context.palette.textPrimary.withAlpha(120),
+              color: isSelected
+                  ? color
+                  : context.palette.textPrimary.withAlpha(120),
               size: 32,
             ),
             const SizedBox(height: 8),
             Text(
               label,
               style: TextStyle(
-                color: isSelected ? color : context.palette.textPrimary.withAlpha(160),
+                color: isSelected
+                    ? color
+                    : context.palette.textPrimary.withAlpha(160),
                 fontSize: 13,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
               ),

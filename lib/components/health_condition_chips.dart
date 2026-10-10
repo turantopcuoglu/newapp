@@ -5,8 +5,8 @@ import '../core/theme.dart';
 import '../data/explore_data.dart';
 import '../providers/profile_provider.dart';
 
-/// The health conditions a profile can carry, as toggle chips. Names and
-/// colours come from the matching Explore category, so the chip and the
+/// The health conditions a profile can carry, as toggle chips. Their
+/// names come from the matching Explore category, so the chip and the
 /// category page it leads to always read the same.
 class HealthConditionChips extends ConsumerWidget {
   const HealthConditionChips({super.key});
@@ -35,16 +35,11 @@ class HealthConditionChips extends ConsumerWidget {
     final category = specialCategories.firstWhere(
       (c) => c.healthCondition == condition,
     );
-    final accent = Color(
-      (cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!)[0],
-    );
+    final accent = context.palette.mint;
     return FilterChip(
       selected: isSelected,
       showCheckmark: true,
       checkmarkColor: accent,
-      avatar: isSelected
-          ? null
-          : Text(category.emoji, style: const TextStyle(fontSize: 14)),
       label: Text(category.localizedName(locale)),
       side: BorderSide(
         color: isSelected ? accent : context.palette.dividerColor,

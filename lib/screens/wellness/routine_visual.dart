@@ -83,10 +83,10 @@ class _RoutineVisualState extends State<RoutineVisual>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state != AppLifecycleState.resumed) {
-      suspended = true;
-      motion.stop();
-    }
+    // The session keeps running while the app is away, so the motion
+    // resumes with it instead of waiting for a pause/resume tap.
+    suspended = state != AppLifecycleState.resumed;
+    if (mounted) sync();
   }
 
   @override

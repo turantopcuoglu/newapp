@@ -1,0 +1,379 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-07",
+  "prompt_source": "README.md, section 4",
+  "items": [
+    {
+      "id": "K1",
+      "file": "cuisine_turkish.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Turkish home cooking\".\nSubject: a matte cream stoneware bowl of smooth red lentil soup with a thin\nswirl of paprika-infused butter and a few dried mint flakes on top, a lemon\nwedge resting on the rim; behind it and slightly to the right, partly out of\nframe, a small seasoned black cast-iron pan of menemen (soft scrambled eggs\nwith chopped tomatoes and green peppers). A torn piece of crusty village\nbread on the linen.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field, the soup bowl perfectly sharp.\nSurface: warm greige linen tablecloth with a visible fine weave.\nVessels: handmade matte stoneware in cream/oatmeal with fine dark speckles,\nslightly irregular rims.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows falling to the lower right, no harsh highlights.\nColour: true-to-life, appetising, not oversaturated.\nComposition: main bowl centred in the middle horizontal band; keep the\nbottom-left quarter calm, plain linen for overlaid text.\nStrictly no text, letters, logos, labels, hands, people, cutlery brands,\nwatermarks, frames or borders. Match the lighting and materials of the\nattached reference images exactly.",
+      "source": null,
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "preexisting_preserved",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K2",
+      "file": "cuisine_italian.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Italian\".\nSubject: a shallow matte cream speckled stoneware bowl of spaghetti in a\nfresh tomato and basil sauce, a few shavings of parmesan and two fresh basil\nleaves on top; beside it a tiny stoneware dish of golden olive oil and a\nsmall wedge of parmesan on the linen.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field, the pasta perfectly sharp.\nSurface: warm greige linen tablecloth with a visible fine weave.\nVessels: handmade matte stoneware in cream/oatmeal with fine dark speckles.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: main bowl centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-b80b58d1-2186-4624-a14f-9ca0c96b1673.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K3",
+      "file": "cuisine_asian.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Asian\".\nSubject: a deep matte cream speckled stoneware bowl of jasmine rice topped\nwith a colourful vegetable and tofu stir-fry (broccoli, red bell pepper,\nsnap peas, golden tofu cubes), sprinkled with sesame seeds and sliced spring\nonion; a pair of plain unbranded wooden chopsticks resting across the rim;\na small dish of edamame beside it.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: main bowl centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-c143e886-54a1-4b46-aa78-697d8c2996b2.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K4",
+      "file": "cuisine_middleEastern.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Middle Eastern\".\nSubject: a wide matte cream speckled stoneware plate of silky hummus with a\npool of olive oil in the centre, a dusting of paprika, a few whole chickpeas\nand chopped parsley; three warm pita wedges leaning on the plate edge; a\nsmall scattering of pomegranate seeds on the linen.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: plate centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-92d2b7d4-7a70-4fad-bcca-7f1ee0437f0c.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K5",
+      "file": "cuisine_mediterranean.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Mediterranean\".\nSubject: a grilled sea bream fillet with crisp skin on a matte cream\nspeckled stoneware plate, with a lemon half and a sprig of fresh thyme;\nbeside it a small stoneware bowl of tomato, cucumber and red onion salad\nwith a few black olives and a cube of feta.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: fish plate centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-000d090e-b2b4-4272-8493-19ed7da52ad1.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K6",
+      "file": "cuisine_american.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"American breakfast and diner classics, done lighter\".\nSubject: a stack of three fluffy whole-grain pancakes on a matte cream\nspeckled stoneware plate, topped with fresh blueberries and a thin drizzle\nof maple syrup running down the side; a small stoneware dish of thick plain\nyoghurt beside it.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: pancake stack centred in the middle horizontal band;\nbottom-left quarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-c59b8a81-0771-4a6c-a3a7-069026720c47.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K7",
+      "file": "cuisine_mexican.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"Mexican\".\nSubject: three soft corn tortilla tacos lined up on a matte cream speckled\nstoneware plate, filled with black beans, avocado slices, fresh pico de\ngallo (diced tomato, onion, coriander); two lime wedges on the plate; a\nsmall stoneware bowl of guacamole beside it.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: taco plate centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-2c4b2f53-bcdd-4589-83af-a9798fa155cf.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "K8",
+      "file": "cuisine_international.png",
+      "prompt": "Square 1024x1024 photorealistic editorial food photograph for a recipe app\ncategory cover, \"International and fusion bowls\".\nSubject: a wide matte cream speckled stoneware bowl arranged in neat\nsections: fluffy quinoa, roasted sweet potato cubes, chickpeas, sliced\navocado, baby spinach and shredded red cabbage, finished with a thin\ndrizzle of tahini dressing and a few sesame seeds.\nCamera: about 35 degrees above the table, three-quarter overhead, 50mm look,\ngentle shallow depth of field.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, appetising, not oversaturated.\nComposition: bowl centred in the middle horizontal band; bottom-left\nquarter calm, plain linen.\nStrictly no text, letters, logos, labels, hands, people, watermarks, frames\nor borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-5f20183e-9590-49a2-9d79-736360b7ea86.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S1",
+      "file": "health_pcos.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole, uncooked\ningredients for a nutrition app health-area cover.\nIngredients, each in its own small matte cream speckled stoneware dish or\nplaced directly on the linen: rolled oats, white quinoa, buckwheat groats, a\nhalved ripe avocado, a small pile of walnuts, two brown eggs, a few broccoli\nflorets.\nArrangement: a loose, natural arc across the centre of the frame, dishes at\nslightly different distances, generous breathing room, nothing touching the\nedges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen for overlaid text.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders.",
+      "source": null,
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "preexisting_preserved",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S2",
+      "file": "health_insulinResistance.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole, uncooked\ningredients for a nutrition app health-area cover.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: coarse bulgur, rolled oats, dried chickpeas, green lentils, a\nsmall head of broccoli, a handful of walnuts, a tiny stoneware jug of olive\noil.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-c992a99a-598b-4e60-abd9-9c24aa8e284a.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S3",
+      "file": "health_ironDeficiency.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole, uncooked\ningredients for a nutrition app health-area cover about iron-rich foods.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: red lentils, green lentils, a bunch of fresh spinach leaves,\npumpkin seeds, dried apricots, a few dates, and two lemon halves (vitamin C\npartner).\nNo raw red meat or liver in this image.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-56b3c8f2-7421-49fb-bc13-d662f0097287.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S4",
+      "file": "health_vitaminB12.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of fresh ingredients\nfor a nutrition app health-area cover about vitamin B12 sources.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: a fresh salmon fillet portion, three brown eggs, a bowl of thick\nplain yoghurt, a block of white feta cheese, a small glass jug of milk.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-9d6ccbc2-65b0-4458-8ae3-3ac21ef34732.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S5",
+      "file": "health_magnesiumDeficiency.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole ingredients\nfor a nutrition app health-area cover about magnesium-rich foods.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: pumpkin seeds, whole almonds, a few squares of dark chocolate,\nfresh spinach leaves, a ripe banana, a small dish of tahini with a spoon\nresting in it, black beans.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-460b8f41-b563-4f45-a547-e3b049c21ad9.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S6",
+      "file": "health_anemia.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole ingredients\nfor a nutrition app health-area cover about pairing iron sources with\nvitamin C.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: green lentils, chickpeas, fresh spinach, a split pomegranate with\nvisible seeds, a halved orange, a bunch of flat-leaf parsley, a few dried\napricots.\nNo raw red meat or liver in this image.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges. Slightly warmer, richer reds than S3 but\nthe same lighting and surface.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-ec651cd8-450d-4a36-bdff-d7e7605f718c.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S7",
+      "file": "health_glutenFree.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole, uncooked\ningredients for a nutrition app cover about naturally gluten-free staples.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: white basmati rice, brown rice, buckwheat groats, white quinoa,\na fresh corn cob with the husk pulled back, two small potatoes, a dish of\ncoarse cornmeal.\nNo bread, pasta, wheat ears or flour bags.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, hands, people, watermarks,\nframes or borders. Match the attached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-4487d031-ea71-4878-8ae5-019fca8b4a62.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S8",
+      "file": "health_lactoseFree.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life of whole ingredients\nfor a nutrition app cover about dairy-free calcium sources.\nIngredients in small matte cream speckled stoneware dishes or directly on\nthe linen: a dish of tahini, white and black sesame seeds, whole almonds, a\nsmall clear glass of almond milk, chickpeas, a few kale leaves, a small\nhead of broccoli.\nNo cow's milk, cheese, yoghurt or butter in this image.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4500K),\nsoft shadows to the lower right.\nColour: true-to-life, fresh, not oversaturated.\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, hands, people, watermarks,\nframes or borders. Match the attached reference exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-e2d22e07-f408-4270-ad1d-df91c0cc526e.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "S9",
+      "file": "health_periodSupport.png",
+      "prompt": "Square 1024x1024 photorealistic editorial still life for a nutrition app\ncover about gentle eating during the menstrual period.\nIngredients and items in small matte cream speckled stoneware dishes or\ndirectly on the linen: a few squares of dark chocolate, pumpkin seeds, a\nripe banana, fresh spinach leaves, red lentils, a knob of fresh ginger, and\na stoneware cup of steaming ginger tea with a lemon slice.\nMood: cosy and warm, slightly lower-key lighting than the other covers, but\nthe same surface, vessels and light direction.\nNo pink props, no flowers, no hot-water bottles, no body imagery.\nArrangement: a loose, natural arc across the centre, generous breathing\nroom, nothing touching the edges.\nCamera: about 35 degrees above the table, 50mm look, gentle shallow depth of\nfield.\nSurface: warm greige linen tablecloth with a visible fine weave.\nLight: soft natural window light from the upper left, warm (about 4000K).\nKeep the bottom-left quarter calm, plain linen.\nStrictly no text, letters, labels, packaging, pills, capsules, supplements,\nmedical objects, hands, people, watermarks, frames or borders. Match the\nattached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-f98f261b-5e7b-4146-9512-b043ae43fe86.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "O1",
+      "file": "onboarding_welcome.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised, for\nthe welcome screen of a calm wellness app.\nScene: layered rolling sand dunes with a very fine satin ripple texture,\nsoft sculpted folds receding to a low horizon; a dusk-to-night sky in deep\nplum (#211625 at the top fading to #39283F near the horizon) with a faint\nscattering of tiny stars; a thin honey-gold crescent moon (#FBD7B5) low in\nthe upper-right quarter, casting a narrow warm rim light along the nearest\ndune crests. A soft peach glow sits on the horizon just below the moon.\nOn the crest of the nearest dune, lower right, a single small matte cream\nspeckled stoneware bowl rests, catching the moonlight: the only object in\nthe scene, small and quiet.\nComposition: the upper two thirds of the left half is calm empty sky for a\nheadline; dunes occupy the lower 45% of the image.\nAtmosphere: quiet, premium, meditative, gentle contrast.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders. Match the colour, dune texture and lighting of the\nattached references exactly.",
+      "source": null,
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "preexisting_preserved",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "O2",
+      "file": "onboarding_health.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised, same\nworld as the attached welcome image.\nScene: the same plum dune landscape with satin ripples, but the foreground\nopens onto a perfectly still, shallow pool of water between two dunes,\nreflecting a soft, round, pale-gold moon disc (#FBD7B5) that sits low in\nthe upper-right quarter. The reflection forms a gentle vertical band of\nlight on the water. Sky deep plum (#211625 to #39283F) with very few tiny\nstars.\nFeeling: balance and calm attention, nothing clinical.\nComposition: upper two thirds of the left half is calm empty sky; dunes and\nwater occupy the lower 45%.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-98fd4883-540c-45fe-a93e-5c6d4a77d74a.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "O3",
+      "file": "onboarding_safety.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised, same\nworld as the attached images.\nScene: the plum dune landscape with satin ripples; two large dunes in the\nforeground curve towards each other and form a sheltered, softly lit hollow\nin the lower centre, like a calm cove. A thin crescent moon (#FBD7B5) in the\nupper-right quarter; its warm light gathers gently inside the hollow, which\nglows faintly. Sky deep plum (#211625 to #39283F), faint stars.\nFeeling: protected, safe, cared for. No shield shapes, icons or symbols.\nComposition: upper two thirds of the left half is calm empty sky; dunes\noccupy the lower 45%.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders. Match the attached references exactly.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-227040ad-0db6-41e5-9776-374201dc191b.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "B1",
+      "file": "empty_meals.png",
+      "prompt": "Square 1024x1024 photoreal minimal still life for an app empty state.\nA single empty matte cream speckled stoneware bowl with a small wooden spoon\nresting inside, sitting on softly folded deep plum satin fabric (#2A1D30 to\n#3B2A41). Soft warm moonlight-like glow from the upper right (#FBD7B5\nhighlight on the bowl rim), gentle shadow to the lower left.\nThe edges of the frame fall off into a near-black vignette (#1A1420) so the\nimage melts into a dark app card.\nThe bowl sits slightly below centre and occupies about 40% of the frame\nwidth. Shallow depth of field, calm, quiet, premium.\nStrictly no food, text, letters, logos, people, hands, frames or borders.",
+      "source": null,
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "preexisting_preserved",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "B2",
+      "file": "empty_progress.png",
+      "prompt": "Square 1024x1024 photoreal minimal still life for an app empty state, same\nset as the attached image.\nA tiny fresh green seedling with two round leaves growing from soil in a\nsmall matte cream speckled stoneware cup, on softly folded deep plum satin\n(#2A1D30 to #3B2A41). Soft warm moonlight-like glow from the upper right\n(#FBD7B5) catching the leaf edges.\nEdges fall off into a near-black vignette (#1A1420).\nThe cup sits slightly below centre, about 35% of the frame width. Shallow\ndepth of field, calm, hopeful, quiet.\nStrictly no text, letters, logos, people, hands, frames or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-1134360d-4fd4-4ad3-85a2-4836a45b816b.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "B3",
+      "file": "empty_shopping.png",
+      "prompt": "Square 1024x1024 photoreal minimal still life for an app empty state, same\nset as the attached image.\nA small empty hand-woven natural rattan basket with a single fresh lemon\nresting beside it, on softly folded deep plum satin (#2A1D30 to #3B2A41).\nSoft warm moonlight-like glow from the upper right (#FBD7B5).\nEdges fall off into a near-black vignette (#1A1420).\nBasket slightly below centre, about 45% of the frame width. Shallow depth of\nfield, calm, quiet.\nStrictly no text, letters, logos, labels, people, hands, frames or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-9ab8125f-4e4f-40ae-9b0a-a6b7b7fc1daa.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "B4",
+      "file": "empty_recipe_book.png",
+      "prompt": "Square 1024x1024 photoreal minimal still life for an app empty state, same\nset as the attached image.\nA closed, linen-bound notebook in warm oatmeal colour with a blank cover (no\ntitle, no letters), a small sprig of fresh thyme laid diagonally across it,\non softly folded deep plum satin (#2A1D30 to #3B2A41). Soft warm\nmoonlight-like glow from the upper right (#FBD7B5).\nEdges fall off into a near-black vignette (#1A1420).\nNotebook slightly below centre, about 45% of the frame width, angled about\n15 degrees. Shallow depth of field, calm, quiet.\nStrictly no text, letters, logos, people, hands, frames or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-59eeff8f-3f5e-4759-8aa3-adf2e2e2c152.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "B5",
+      "file": "empty_no_results.png",
+      "prompt": "Square 1024x1024 photoreal minimal still life for an app empty state, same\nset as the attached image.\nAn empty matte cream speckled stoneware plate with a neatly folded oatmeal\nlinen napkin and a plain unbranded fork beside it, on softly folded deep\nplum satin (#2A1D30 to #3B2A41). Soft warm moonlight-like glow from the\nupper right (#FBD7B5).\nEdges fall off into a near-black vignette (#1A1420).\nPlate slightly below centre, about 45% of the frame width. Shallow depth of\nfield, calm, gently inviting rather than sad.\nStrictly no food, text, letters, logos, people, hands, frames or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-e5f90b9e-6ae5-4e64-be6a-46e04301a040.png",
+      "actual_dimensions": [
+        1254,
+        1254
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "F1",
+      "file": "evening_closeout.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised, same\nworld as the attached references.\nScene: late evening over satin-rippled dunes. The sky moves from deep\nindigo-plum at the top (#1B1530) to a last thin band of warm amber light on\nthe horizon (#F3B98A), as if the day is gently closing. A thin crescent moon\n(#FBD7B5) has just risen in the upper right. The nearest dune crests hold a\nsoft warm rim light; the valleys are deep and calm.\nComposition: upper two thirds of the left half calm empty sky for a\nheadline; dunes in the lower 45%.\nFeeling: completion, rest, a quiet exhale.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-19f89918-485e-423d-a336-c78a816a3e47.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "F2",
+      "file": "weekly_insight.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised, same\nworld as the attached image.\nScene: the satin-rippled dune landscape seen from slightly higher, so seven\nsoft dune crests recede in a gentle rhythm towards the horizon, each crest\ncatching a little more moonlight than the one before it, like a quiet\nsequence of days. Deep plum night sky (#211625 to #39283F), faint stars, a\nsoft pale-gold moon disc (#FBD7B5) in the upper right.\nNo charts, lines, numbers or symbols; the rhythm comes only from the dunes.\nComposition: upper two thirds of the left half calm empty sky; dunes in the\nlower half.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-ce8d2bc8-f6d5-439a-b468-bd5d7dc4912a.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "M1",
+      "file": "mood_stress.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised,\nmatching exactly the style, dune shapes, satin ripple texture and lighting\nof the attached reference grid (copy the style of a single cell, not the\ngrid).\nPalette: slate blue night, sky #16202B fading to #26394A at the horizon,\nlight accents #B9D3E6.\nScene: layered rolling dunes; above them, a few long, soft clouds that are\nslowly parting, opening a clear calm gap where a pale cool full moon disc\n(#B9D3E6) sits low on the right. The feeling is tension easing, not storm.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nlightning, frames or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-627555a4-ef2f-41ae-ba90-27c128a9f227.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "M2",
+      "file": "mood_anxious.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised,\nmatching exactly the style of a single cell of the attached reference grid.\nPalette: misty sea-green dusk, sky #172A2C fading to #2A4446, accents\n#C6E3DA.\nScene: layered rolling dunes partly veiled by a thin, low, soft mist lying\nin the valleys; the dune crests rise clearly above the mist; a soft pale\nmint moon disc (#C6E3DA) low on the right, with a gentle reflection of\nlight in the mist. Feeling: grounding, steady footing.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-5c34430f-2055-48a4-bd59-4a98db34b4fb.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "M3",
+      "file": "mood_poorSleep.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised,\nmatching exactly the style of a single cell of the attached reference grid.\nPalette: deep indigo-violet late night, sky #120F24 fading to #241E3E,\naccents #C9C2F2.\nScene: layered rolling dunes under a deep, quiet sky with slightly more\ntiny stars than the other scenes; a very thin, low waning crescent\n(#C9C2F2) near the horizon on the right, its light faint and soft. Feeling:\nhush, softness, permission to rest.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-c5f0d7e4-6387-482a-82b0-5b57fdaa4012.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    },
+    {
+      "id": "M4",
+      "file": "mood_good.png",
+      "prompt": "Landscape 1536x1024 serene digital matte painting, photoreal-stylised,\nmatching exactly the style of a single cell of the attached reference grid.\nPalette: warm early morning, sky #2A1D14 at the top warming to #4A3222 and a\nsoft apricot glow at the horizon, accents #FFD9A8.\nScene: layered rolling dunes with long gentle shadows; a soft, warm sun disc\n(#FFD9A8) just above the horizon on the right, casting golden rim light on\nthe dune crests. Calm and bright, not exuberant; no lens flare.\nStrictly no text, letters, logos, UI, people, animals, plants, buildings,\nframes or borders.",
+      "source": "/Users/gamzesenocak/.codex/generated_images/01a1180e-f770-79c2-9a1b-44905678fd44/exec-572ee6c5-6f45-4e09-8cb0-17fb066c1a62.png",
+      "actual_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "generated",
+      "prompt_kind": "README base prompt; style-reference and constraint clarifications added during generation"
+    }
+  ]
+}

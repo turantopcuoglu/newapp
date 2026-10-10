@@ -174,3 +174,120 @@ class MetricPill extends StatelessWidget {
     ),
   );
 }
+
+/// One question with three answers, as chips. The morning check-in and the
+/// evening closeout share it so both are asked on the same scale (values
+/// 1–3 unless [values] says otherwise). Tapping the selected chip again
+/// reports `null`.
+class ScaleChoices extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final int? selected;
+  final List<String> labels;
+  final List<int>? values;
+  final ValueChanged<int?>? onChanged;
+  final bool divider;
+
+  const ScaleChoices({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.selected,
+    required this.labels,
+    required this.onChanged,
+    this.values,
+    this.divider = true,
+  });
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.only(top: 8, bottom: 8),
+    decoration: BoxDecoration(
+      border: divider
+          ? Border(
+              bottom: BorderSide(
+                color: context.palette.dividerColor.withAlpha(140),
+                width: .5,
+              ),
+            )
+          : null,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(icon, size: 21),
+            const SizedBox(width: 10),
+            Expanded(child: Text(title, style: const TextStyle(fontSize: 15))),
+          ],
+        ),
+        const SizedBox(height: 10),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final large = MediaQuery.textScalerOf(context).scale(1) > 1.2;
+            return Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: List.generate(labels.length, (i) {
+                final value = values?[i] ?? i + 1;
+                final active = selected == value;
+                return SizedBox(
+                  width: large
+                      ? constraints.maxWidth
+                      : (constraints.maxWidth - 16) / 3,
+                  child: ChoiceChip(
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 3),
+                    padding: const EdgeInsets.symmetric(vertical: 7),
+                    backgroundColor: Colors.transparent,
+                    selectedColor: context.palette.surface,
+                    side: BorderSide(
+                      color: active
+                          ? context.palette.mint
+                          : context.palette.textSecondary.withAlpha(160),
+                      width: .65,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    label: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Center(
+                          child: Text(
+                            labels[i],
+                            style: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        if (active)
+                          Positioned(
+                            right: 0,
+                            top: -5,
+                            child: Container(
+                              width: 8,
+                              height: 8,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: context.palette.mint,
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    selected: active,
+                    onSelected: onChanged == null
+                        ? null
+                        : (on) => onChanged!(on ? value : null),
+                  ),
+                );
+              }),
+            );
+          },
+        ),
+      ],
+    ),
+  );
+}

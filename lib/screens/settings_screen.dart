@@ -778,6 +778,8 @@ class _ReminderSection extends StatefulWidget {
 class _ReminderSectionState extends State<_ReminderSection> {
   static const int _checkInHour = 9;
   static const int _dinnerHour = 17;
+  // Two hours into the evening card's window (19:00), before bedtime.
+  static const int _eveningHour = 21;
 
   final _notifications = NotificationService();
   late bool _enabled = widget.ref.read(storageProvider).areRemindersEnabled();
@@ -826,6 +828,12 @@ class _ReminderSectionState extends State<_ReminderSection> {
       title: l10n.reminderDinnerTitle,
       body: l10n.reminderDinnerBody,
       hour: _dinnerHour,
+    );
+    await _notifications.scheduleDaily(
+      kind: ReminderKind.eveningCloseout,
+      title: l10n.reminderEveningTitle,
+      body: l10n.reminderEveningBody,
+      hour: _eveningHour,
     );
     await storage.setRemindersEnabled(true);
     if (mounted) {

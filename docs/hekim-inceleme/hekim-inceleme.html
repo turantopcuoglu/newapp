@@ -1,0 +1,1937 @@
+<title>NutriGuide Hekim İncelemesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout: a clinical review form — summary bar on top, one column of
+   numbered items per area, the app's text quoted large, the decision
+   strip under each quote. */
+:root {
+  --bg: #f3f5f4;
+  --paper: #ffffff;
+  --ink: #18222b;
+  --muted: #5b6770;
+  --rule: #d7dddc;
+  --accent: #1f5f8b;
+  --ok: #2f7a4d;
+  --ok-bg: #e4f2ea;
+  --fix: #9a6512;
+  --fix-bg: #fbf0dc;
+  --drop: #a33a32;
+  --drop-bg: #f9e4e1;
+  --wait-bg: #eceff0;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-quote: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111719; --paper: #1a2226; --ink: #e5ecee; --muted: #9aa8ae;
+    --rule: #2c383d; --accent: #7fb6dc; --ok: #7fcb9c; --ok-bg: #18301f;
+    --fix: #e5b45f; --fix-bg: #33280f; --drop: #ee8f86; --drop-bg: #3a1c19;
+    --wait-bg: #232c30; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111719; --paper: #1a2226; --ink: #e5ecee; --muted: #9aa8ae;
+  --rule: #2c383d; --accent: #7fb6dc; --ok: #7fcb9c; --ok-bg: #18301f;
+  --fix: #e5b45f; --fix-bg: #33280f; --drop: #ee8f86; --drop-bg: #3a1c19;
+  --wait-bg: #232c30; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font-body);
+  padding-inline: 16px; padding-block: 0 64px;
+}
+.wrap { max-width: 860px; margin: 0 auto; }
+h1, h2 { text-wrap: balance; margin: 0; }
+h1 { font-size: 1.7rem; font-weight: 600; letter-spacing: -.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.mono { font-family: var(--font-mono); font-size: .78rem; }
+
+header.intro { padding-block: 28px 18px; display: grid; gap: 12px; }
+.intro p { max-width: 68ch; }
+.rules { display: grid; gap: 6px; padding: 14px 16px; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 10px; }
+.rules strong { font-weight: 600; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--rule);
+  display: grid; gap: 8px; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  font-variant-numeric: tabular-nums; font-size: .9rem; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+.meter { height: 6px; border-radius: 3px; background: var(--wait-bg); overflow: hidden; display: flex; }
+.meter span { height: 100%; transition: width .25s ease; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.store { font-size: .82rem; }
+.store.local { color: var(--fix); }
+
+button, select, textarea { font: inherit; color: inherit; }
+.chip { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px;
+  padding: 4px 11px; font-size: .85rem; cursor: pointer; }
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.btn { border: 1px solid var(--accent); background: var(--accent); color: var(--paper);
+  border-radius: 8px; padding: 6px 12px; font-size: .88rem; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); }
+button:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+section.group { margin-top: 30px; display: grid; gap: 12px; }
+.group-head { display: grid; gap: 2px; }
+.item { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 14px 16px; display: grid; gap: 10px; border-left-width: 4px; }
+.item[data-status="approve"] { border-left-color: var(--ok); }
+.item[data-status="fix"] { border-left-color: var(--fix); }
+.item[data-status="remove"] { border-left-color: var(--drop); }
+.item-top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.kind { font-weight: 600; font-size: .86rem; }
+.tag { font-size: .74rem; padding: 1px 8px; border-radius: 999px; background: var(--wait-bg); color: var(--muted); }
+.tag.hidden { background: var(--fix-bg); color: var(--fix); }
+.tag.changed { background: var(--drop-bg); color: var(--drop); }
+blockquote { margin: 0; font-family: var(--font-quote); font-size: 1.08rem; line-height: 1.5; }
+details { font-size: .88rem; }
+details summary { cursor: pointer; color: var(--muted); }
+.en { font-family: var(--font-quote); font-style: italic; color: var(--muted); padding-top: 4px; }
+.meta { display: grid; gap: 3px; font-size: .86rem; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 500; }
+.decide { display: grid; gap: 8px; border-top: 1px dashed var(--rule); padding-top: 10px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1px solid var(--rule); background: transparent; border-radius: 8px;
+  padding: 5px 12px; cursor: pointer; font-size: .88rem; }
+.seg button[data-v="approve"][aria-pressed="true"] { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); font-weight: 600; }
+.seg button[data-v="fix"][aria-pressed="true"] { background: var(--fix-bg); border-color: var(--fix); color: var(--fix); font-weight: 600; }
+.seg button[data-v="remove"][aria-pressed="true"] { background: var(--drop-bg); border-color: var(--drop); color: var(--drop); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+select { border: 1px solid var(--rule); background: var(--paper); border-radius: 8px; padding: 4px 8px; font-size: .86rem; }
+textarea { width: 100%; min-height: 58px; border: 1px solid var(--rule); background: var(--bg);
+  border-radius: 8px; padding: 8px 10px; resize: vertical; font-size: .92rem; }
+.saved { font-size: .78rem; color: var(--muted); }
+.empty { padding: 18px; text-align: center; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .meter span { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <p class="mono muted">NutriGuide · faz 4 · <span id="gen"></span></p>
+    <h1>Sağlık metinleri hekim incelemesi</h1>
+    <p>Uygulamada sağlıkla ilgili görünen her metin aşağıda, uygulamadaki haliyle. Her biri için <b>Onay</b>, <b>Düzelt</b> ya da <b>Kaldır</b> seç; düzeltme önerini ve varsa kaynağını not alanına yaz. Kanıt düzeyini işaretlemek isteğe bağlı.</p>
+    <div class="rules">
+      <p><strong>Metinlerin uyduğu sınır.</strong> Uygulama tıbbi cihaz değil, bir iyi oluş uygulaması: besinlerin neyi <em>içerdiğini</em> söyler, ne <em>tedavi ettiğini</em> söylemez. “PCOS için” değil, “PCOS’ta beslenmeyi destekleyen”. Eksiklik, teşhis, tedavi, iyileştirir, garanti gibi ifadeler kullanılmaz; hitap “sen”.</p>
+      <p><strong>Önerilen kaynaklar</strong> başlangıç noktasıdır, doğrulanmamıştır. Uygun kaynağı not alanına yazman yeterli.</p>
+      <p><strong>Hekim adı.</strong> Uygulamada “bir hekim tarafından incelendi” ifadesi kullanılacaksa, adının yer alıp almayacağı ayrıca konuşulacak.</p>
+    </div>
+  </header>
+
+  <div class="bar" role="region" aria-label="İlerleme">
+    <div class="counts" id="counts"></div>
+    <div class="meter" id="meter" aria-hidden="true"></div>
+    <div class="tools">
+      <div class="seg" id="filters" role="group" aria-label="Göster"></div>
+      <button class="btn ghost" id="copy" type="button">Kararları kopyala</button>
+      <span class="store" id="store">Kayıt bağlanıyor…</span>
+    </div>
+  </div>
+
+  <main id="list"></main>
+</div>
+
+<script id="review-data" type="application/json">{
+ "generatedAt": "2026-10-08",
+ "groups": [
+  {
+   "id": "cat-pcos",
+   "title": "PCOS'ta Beslenme",
+   "note": "Keşfet → Sana Özel → PCOS'ta Beslenme"
+  },
+  {
+   "id": "cat-insulinResistance",
+   "title": "İnsülin Direnci",
+   "note": "Keşfet → Sana Özel → İnsülin Direnci"
+  },
+  {
+   "id": "cat-ironDeficiency",
+   "title": "Demir Eksikliği",
+   "note": "Keşfet → Sana Özel → Demir Eksikliği"
+  },
+  {
+   "id": "cat-vitaminB12",
+   "title": "B12 Vitamini Eksikliği",
+   "note": "Keşfet → Sana Özel → B12 Vitamini Eksikliği"
+  },
+  {
+   "id": "cat-magnesiumDeficiency",
+   "title": "Magnezyum Eksikliği",
+   "note": "Keşfet → Sana Özel → Magnezyum Eksikliği"
+  },
+  {
+   "id": "cat-anemia",
+   "title": "Kansızlık",
+   "note": "Keşfet → Sana Özel → Kansızlık"
+  },
+  {
+   "id": "cat-glutenFree",
+   "title": "Glutensiz",
+   "note": "Keşfet → Sana Özel → Glutensiz"
+  },
+  {
+   "id": "cat-lactoseFree",
+   "title": "Laktozsuz",
+   "note": "Keşfet → Sana Özel → Laktozsuz"
+  },
+  {
+   "id": "cat-periodSupport",
+   "title": "Regl Dönemi",
+   "note": "Keşfet → Sana Özel → Regl Dönemi"
+  },
+  {
+   "id": "focus",
+   "title": "Günün önerisi: gerekçe cümleleri",
+   "note": "Bugün sekmesi, önerilen tarifin altında. Yalnız sıralamanın yaptığını söyler."
+  },
+  {
+   "id": "rules",
+   "title": "Yeni modlar: tarif seçme kuralları",
+   "note": "Stresliyim, Kaygılıyım ve Uykusuzum seçildiğinde öne çıkan tarifler el ile değil, bu kurallarla seçilir. Kural ekranda yazmaz; gerekçe cümlesi yalnız “kafein içermeyen / hafif” der."
+  },
+  {
+   "id": "legal",
+   "title": "Yasal uyarı (yeni taslak)",
+   "note": "Kayıt sırasında ve Profil’de. Şu anki metin \"içerik hiçbir tıbbi kaynağa dayanmaz\" diyor; bu taslak onu değiştirecek."
+  }
+ ],
+ "items": [
+  {
+   "id": "cat.pcos.name",
+   "group": "cat-pcos",
+   "kind": "Kategori adı",
+   "tr": "PCOS'ta Beslenme",
+   "en": "Eating with PCOS",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.pcos.subtitle",
+   "group": "cat-pcos",
+   "kind": "Kart alt başlığı",
+   "tr": "Lif ve protein içeren, düşük glisemik öğünler",
+   "en": "Low-glycaemic meals with fibre and protein",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.pcos.summary",
+   "group": "cat-pcos",
+   "kind": "Açıklama",
+   "tr": "PCOS'ta beslenmeyi destekleyen öğünlerde kompleks karbonhidrat genellikle protein, lif ve sağlıklı yağla birlikte yer alır. Bu tür tabaklar kan şekerinin daha dengeli seyretmesine yardımcı olabilir. Beslenme planın için hekimine ya da diyetisyenine danış.",
+   "en": "Meals that support eating with PCOS usually pair complex carbohydrates with protein, fibre and healthy fat. Plates like these can help keep blood sugar steadier. Talk to your doctor or dietitian about your eating plan.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s0.i0",
+   "group": "cat-pcos",
+   "kind": "Öne çıkan besinler",
+   "tr": "Lifli tahıllar: yulaf, kinoa, karabuğday, bulgur",
+   "en": "High-fibre grains: oats, quinoa, buckwheat, bulgur",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s0.i1",
+   "group": "cat-pcos",
+   "kind": "Öne çıkan besinler",
+   "tr": "Protein: yumurta, tavuk, somon, yoğurt, baklagiller",
+   "en": "Protein: eggs, chicken, salmon, yoghurt, legumes",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s0.i2",
+   "group": "cat-pcos",
+   "kind": "Öne çıkan besinler",
+   "tr": "Sağlıklı yağlar: avokado, zeytinyağı, ceviz, badem",
+   "en": "Healthy fats: avocado, olive oil, walnuts, almonds",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s0.i3",
+   "group": "cat-pcos",
+   "kind": "Öne çıkan besinler",
+   "tr": "Sebzeler: brokoli, ıspanak, karnabahar, kabak",
+   "en": "Vegetables: broccoli, spinach, cauliflower, courgette",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s1.i0",
+   "group": "cat-pcos",
+   "kind": "Öğün kurarken",
+   "tr": "Karbonhidratın yanına bir protein ya da yağ kaynağı ekleyebilirsin.",
+   "en": "You can add a protein or fat source next to the carbohydrate.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s1.i1",
+   "group": "cat-pcos",
+   "kind": "Öğün kurarken",
+   "tr": "Rafine şeker ve beyaz un yerine tam tahılları seçebilirsin.",
+   "en": "You can choose whole grains over refined sugar and white flour.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.s1.i2",
+   "group": "cat-pcos",
+   "kind": "Öğün kurarken",
+   "tr": "Uzun aralıklar yerine düzenli, dengeli öğünler bir seçenek.",
+   "en": "Regular, balanced meals are an option instead of long gaps.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "International Evidence-based Guideline for the Assessment and Management of PCOS (2023)"
+   ]
+  },
+  {
+   "id": "cat.pcos.flag0",
+   "group": "cat-pcos",
+   "kind": "Kırmızı bayrak",
+   "tr": "Adetlerin çok düzensizse ya da hiç olmuyorsa",
+   "en": "Very irregular or absent periods",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.pcos.flag1",
+   "group": "cat-pcos",
+   "kind": "Kırmızı bayrak",
+   "tr": "Kısa sürede belirgin kilo değişimi",
+   "en": "Marked weight change over a short time",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.pcos.flag2",
+   "group": "cat-pcos",
+   "kind": "Kırmızı bayrak",
+   "tr": "Aşırı susama ya da sık idrara çıkma",
+   "en": "Excessive thirst or frequent urination",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.insulinResistance.name",
+   "group": "cat-insulinResistance",
+   "kind": "Kategori adı",
+   "tr": "İnsülin Direnci",
+   "en": "Insulin Resistance",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.insulinResistance.subtitle",
+   "group": "cat-insulinResistance",
+   "kind": "Kart alt başlığı",
+   "tr": "Lif ve proteini öne çıkan tarifler",
+   "en": "Fibre and protein first",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.insulinResistance.summary",
+   "group": "cat-insulinResistance",
+   "kind": "Açıklama",
+   "tr": "İnsülin direncinde öğüne lif ve proteinle başlayıp karbonhidrata sonra geçmek, kan şekerindeki yükselişi yavaşlatabilir. Beslenme planın için hekimine ya da diyetisyenine danış.",
+   "en": "With insulin resistance, starting a meal with fibre and protein and having the carbohydrate later can slow the rise in blood sugar. Talk to your doctor or dietitian about your eating plan.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s0.i0",
+   "group": "cat-insulinResistance",
+   "kind": "Öne çıkan besinler",
+   "tr": "Tam tahıllar: yulaf, bulgur, kinoa, karabuğday, tam buğday",
+   "en": "Whole grains: oats, bulgur, quinoa, buckwheat, whole wheat",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s0.i1",
+   "group": "cat-insulinResistance",
+   "kind": "Öne çıkan besinler",
+   "tr": "Baklagiller: mercimek, nohut, kuru fasulye",
+   "en": "Legumes: lentils, chickpeas, beans",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s0.i2",
+   "group": "cat-insulinResistance",
+   "kind": "Öne çıkan besinler",
+   "tr": "Protein ve yağ: yumurta, yoğurt, ceviz, badem, zeytinyağı",
+   "en": "Protein and fat: eggs, yoghurt, walnuts, almonds, olive oil",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s0.i3",
+   "group": "cat-insulinResistance",
+   "kind": "Öne çıkan besinler",
+   "tr": "Düşük glisemik indeksli meyveler: elma, armut, yaban mersini",
+   "en": "Low-glycaemic fruit: apple, pear, blueberries",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s1.i0",
+   "group": "cat-insulinResistance",
+   "kind": "Alışkanlıklar",
+   "tr": "Meyveyi bir avuç kuruyemişle birlikte yiyebilirsin.",
+   "en": "You can have fruit with a handful of nuts.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s1.i1",
+   "group": "cat-insulinResistance",
+   "kind": "Alışkanlıklar",
+   "tr": "Yemekten sonra 10–15 dakikalık bir yürüyüş, kan şekeri yükselişini azaltabilir.",
+   "en": "A 10–15 minute walk after a meal can reduce the rise in blood sugar.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.s1.i2",
+   "group": "cat-insulinResistance",
+   "kind": "Alışkanlıklar",
+   "tr": "Meyve suyu yerine meyvenin kendisi: lif meyvede.",
+   "en": "The fruit rather than the juice: the fibre is in the fruit.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ADA — Standards of Care in Diabetes: Facilitating Positive Health Behaviors"
+   ]
+  },
+  {
+   "id": "cat.insulinResistance.flag0",
+   "group": "cat-insulinResistance",
+   "kind": "Kırmızı bayrak",
+   "tr": "Aşırı susama, sık idrara çıkma ya da açıklanamayan kilo kaybı",
+   "en": "Excessive thirst, frequent urination or unexplained weight loss",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.insulinResistance.flag1",
+   "group": "cat-insulinResistance",
+   "kind": "Kırmızı bayrak",
+   "tr": "Bulanık görme ya da yaraların geç iyileşmesi",
+   "en": "Blurred vision or slow-healing wounds",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.ironDeficiency.name",
+   "group": "cat-ironDeficiency",
+   "kind": "Kategori adı",
+   "tr": "Demir Eksikliği",
+   "en": "Iron Deficiency",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.ironDeficiency.subtitle",
+   "group": "cat-ironDeficiency",
+   "kind": "Kart alt başlığı",
+   "tr": "Demir kaynağı içeren tarifler",
+   "en": "Recipes with iron sources",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.ironDeficiency.summary",
+   "group": "cat-ironDeficiency",
+   "kind": "Açıklama",
+   "tr": "Demir iki biçimde bulunur: et ve balıktaki hem demir daha kolay emilir; baklagil ve yeşilliklerdeki demirin emilimi ise aynı öğünde bir C vitamini kaynağıyla artar. Demir düzeyinle ilgili bir endişen varsa tanı ve takip için hekimine danış.",
+   "en": "Iron comes in two forms: heme iron in meat and fish is absorbed more easily, while iron from legumes and greens is absorbed better with a vitamin C source in the same meal. If you are concerned about your iron level, talk to your doctor for diagnosis and follow-up.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s0.i0",
+   "group": "cat-ironDeficiency",
+   "kind": "Demir içeren besinler",
+   "tr": "Hayvansal (hem demir): ciğer, kırmızı et, kıyma, kuzu eti",
+   "en": "Animal (heme iron): liver, red meat, ground beef, lamb",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s0.i1",
+   "group": "cat-ironDeficiency",
+   "kind": "Demir içeren besinler",
+   "tr": "Baklagiller: mercimek, nohut, kuru fasulye, bakla",
+   "en": "Legumes: lentils, chickpeas, white beans, fava beans",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s0.i2",
+   "group": "cat-ironDeficiency",
+   "kind": "Demir içeren besinler",
+   "tr": "Yeşillikler ve tohumlar: ıspanak, pazı, kabak çekirdeği, susam",
+   "en": "Greens and seeds: spinach, swiss chard, pumpkin seeds, sesame",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s0.i3",
+   "group": "cat-ironDeficiency",
+   "kind": "Demir içeren besinler",
+   "tr": "Kuru meyveler: kayısı, hurma",
+   "en": "Dried fruit: apricots, dates",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s1.i0",
+   "group": "cat-ironDeficiency",
+   "kind": "Emilimi etkileyenler",
+   "tr": "C vitamini: mercimeğe limon, salataya domates ya da biber eklemek bitkisel demirin emilimini artırır.",
+   "en": "Vitamin C: lemon over lentils, tomato or pepper in the salad helps absorb plant iron.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s1.i1",
+   "group": "cat-ironDeficiency",
+   "kind": "Emilimi etkileyenler",
+   "tr": "Çay ve kahve: yemekle birlikte değil, bir süre sonra içildiğinde demir emilimini daha az etkiler.",
+   "en": "Tea and coffee: they affect iron absorption less when drunk a while after the meal rather than with it.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.s1.i2",
+   "group": "cat-ironDeficiency",
+   "kind": "Emilimi etkileyenler",
+   "tr": "Kalsiyum: aynı öğündeki süt ürünleri demir emilimini azaltabilir.",
+   "en": "Calcium: dairy in the same meal can reduce iron absorption.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals",
+    "WHO — Anaemia (fact sheet)"
+   ]
+  },
+  {
+   "id": "cat.ironDeficiency.flag0",
+   "group": "cat-ironDeficiency",
+   "kind": "Kırmızı bayrak",
+   "tr": "Belirgin halsizlik, nefes darlığı, çarpıntı ya da baş dönmesi",
+   "en": "Marked tiredness, shortness of breath, palpitations or dizziness",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.ironDeficiency.flag1",
+   "group": "cat-ironDeficiency",
+   "kind": "Kırmızı bayrak",
+   "tr": "Solukluk, tırnaklarda kırılma ya da buz/toprak yeme isteği",
+   "en": "Pallor, brittle nails or cravings for ice or soil",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.ironDeficiency.flag2",
+   "group": "cat-ironDeficiency",
+   "kind": "Kırmızı bayrak",
+   "tr": "Yoğun adet kanaması",
+   "en": "Heavy periods",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.vitaminB12.name",
+   "group": "cat-vitaminB12",
+   "kind": "Kategori adı",
+   "tr": "B12 Vitamini Eksikliği",
+   "en": "Vitamin B12 Deficiency",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.vitaminB12.subtitle",
+   "group": "cat-vitaminB12",
+   "kind": "Kart alt başlığı",
+   "tr": "B12 kaynağı içeren öğünler",
+   "en": "Meals with B12 sources",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.vitaminB12.summary",
+   "group": "cat-vitaminB12",
+   "kind": "Açıklama",
+   "tr": "B12 doğal olarak yalnızca hayvansal besinlerde bulunur: et, balık, yumurta ve süt ürünleri. Bitkisel beslenenler için zenginleştirilmiş ürünler ya da takviye gerekebilir; bunu hekiminle ya da diyetisyeninle konuş.",
+   "en": "B12 occurs naturally only in animal foods: meat, fish, eggs and dairy. On a plant-based diet, fortified foods or a supplement may be needed; discuss this with your doctor or dietitian.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s0.i0",
+   "group": "cat-vitaminB12",
+   "kind": "B12 içeren besinler",
+   "tr": "Sakatat ve kırmızı et: ciğer en yoğun kaynaktır",
+   "en": "Organ and red meat: liver is the densest source",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s0.i1",
+   "group": "cat-vitaminB12",
+   "kind": "B12 içeren besinler",
+   "tr": "Deniz ürünleri: somon, ton balığı, sardalya, midye, hamsi",
+   "en": "Seafood: salmon, tuna, sardines, mussels, anchovies",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s0.i2",
+   "group": "cat-vitaminB12",
+   "kind": "B12 içeren besinler",
+   "tr": "Yumurta ve süt ürünleri: yumurta, yoğurt, kefir, peynirler",
+   "en": "Eggs and dairy: eggs, yoghurt, kefir, cheeses",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s0.i3",
+   "group": "cat-vitaminB12",
+   "kind": "B12 içeren besinler",
+   "tr": "Kümes hayvanları: tavuk, hindi",
+   "en": "Poultry: chicken, turkey",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s1.i0",
+   "group": "cat-vitaminB12",
+   "kind": "Beslenme biçimine göre",
+   "tr": "Balık ve deniz ürünleri haftalık menüde B12 kaynağı olabilir.",
+   "en": "Fish and seafood can be B12 sources in the weekly menu.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s1.i1",
+   "group": "cat-vitaminB12",
+   "kind": "Beslenme biçimine göre",
+   "tr": "Vejetaryen beslenmede yumurta ve süt ürünleri B12 kaynağıdır.",
+   "en": "On a vegetarian diet, eggs and dairy provide B12.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.s1.i2",
+   "group": "cat-vitaminB12",
+   "kind": "Beslenme biçimine göre",
+   "tr": "Vegan beslenmede B12 için zenginleştirilmiş ürün ya da takviye gerekir; miktarı hekiminle belirle.",
+   "en": "On a vegan diet, B12 has to come from fortified foods or a supplement; agree the amount with your doctor.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Vitamin B12: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.vitaminB12.flag0",
+   "group": "cat-vitaminB12",
+   "kind": "Kırmızı bayrak",
+   "tr": "Ellerde ya da ayaklarda uyuşma, karıncalanma",
+   "en": "Numbness or tingling in hands or feet",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.vitaminB12.flag1",
+   "group": "cat-vitaminB12",
+   "kind": "Kırmızı bayrak",
+   "tr": "Denge sorunu, unutkanlık ya da belirgin halsizlik",
+   "en": "Balance problems, forgetfulness or marked tiredness",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.magnesiumDeficiency.name",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Kategori adı",
+   "tr": "Magnezyum Eksikliği",
+   "en": "Magnesium Deficiency",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.magnesiumDeficiency.subtitle",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Kart alt başlığı",
+   "tr": "Magnezyum kaynağı içeren tarifler",
+   "en": "Recipes with magnesium sources",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.magnesiumDeficiency.summary",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Açıklama",
+   "tr": "Magnezyum; kabak çekirdeği, ıspanak, badem ve baklagiller gibi besinlerde bulunur. Aşağıdaki malzeme kartları bu kaynakları içeren tarifleri listeler. Magnezyum düzeyinle ilgili bir endişen varsa değerlendirme için hekimine danış.",
+   "en": "Magnesium is found in foods such as pumpkin seeds, spinach, almonds and legumes. The ingredient cards below list recipes that contain these sources. If you are concerned about your magnesium level, talk to your doctor.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s0.i0",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Magnezyum içeren besinler",
+   "tr": "Kuruyemiş ve tohumlar: kabak çekirdeği, badem, kaju, yer fıstığı",
+   "en": "Nuts and seeds: pumpkin seeds, almonds, cashews, peanuts",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s0.i1",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Magnezyum içeren besinler",
+   "tr": "Yeşil yapraklı sebzeler: ıspanak, pazı, kara lahana",
+   "en": "Leafy greens: spinach, swiss chard, kale",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s0.i2",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Magnezyum içeren besinler",
+   "tr": "Baklagiller ve tahıllar: siyah fasulye, mercimek, nohut, yulaf",
+   "en": "Legumes and grains: black beans, lentils, chickpeas, oats",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s0.i3",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Magnezyum içeren besinler",
+   "tr": "Diğerleri: avokado, muz, en az %70 kakaolu bitter çikolata",
+   "en": "Others: avocado, banana, dark chocolate (70%+)",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s1.i0",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Mutfakta",
+   "tr": "Baklagilleri pişirmeden önce suda bekletmek, mineral emilimini azaltan fitatı düşürebilir.",
+   "en": "Soaking legumes before cooking can lower phytate, which reduces mineral absorption.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s1.i1",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Mutfakta",
+   "tr": "Yeşil yaprakları uzun kaynatmak yerine kısa süre buharda pişirmek, suya geçen mineral kaybını azaltır.",
+   "en": "Steaming greens briefly instead of boiling them keeps more minerals out of the cooking water.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.s1.i2",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Mutfakta",
+   "tr": "Bu besinleri tek öğünde toplamak yerine gün içine yayabilirsin.",
+   "en": "You can spread these foods across the day rather than in one meal.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "NIH Office of Dietary Supplements — Magnesium: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.magnesiumDeficiency.flag0",
+   "group": "cat-magnesiumDeficiency",
+   "kind": "Kırmızı bayrak",
+   "tr": "Kas krampları, titreme ya da çarpıntı geçmiyorsa",
+   "en": "Muscle cramps, tremor or palpitations that do not go away",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.anemia.name",
+   "group": "cat-anemia",
+   "kind": "Kategori adı",
+   "tr": "Kansızlık",
+   "en": "Anemia",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.anemia.subtitle",
+   "group": "cat-anemia",
+   "kind": "Kart alt başlığı",
+   "tr": "Demir ve C vitamini bir arada",
+   "en": "Iron and vitamin C on one plate",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.anemia.summary",
+   "group": "cat-anemia",
+   "kind": "Açıklama",
+   "tr": "Kansızlığın birçok nedeni olabilir; tanısı ve nedeni hekim değerlendirmesiyle konur. Beslenme tarafında, demir içeren besinlerle C vitamini kaynaklarını aynı öğünde buluşturmak bitkisel demirin emilimini artırır.",
+   "en": "Anemia can have many causes; its diagnosis and cause are for your doctor to assess. On the food side, pairing iron-containing foods with a vitamin C source in the same meal helps absorb plant iron.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s0.i0",
+   "group": "cat-anemia",
+   "kind": "Tabakta bir arada",
+   "tr": "Demir içerenler: ciğer, kırmızı et, mercimek, nohut, ıspanak",
+   "en": "Iron: liver, red meat, lentils, chickpeas, spinach",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s0.i1",
+   "group": "cat-anemia",
+   "kind": "Tabakta bir arada",
+   "tr": "C vitamini içerenler: limon, portakal, domates, biber, maydanoz",
+   "en": "Vitamin C: lemon, orange, tomato, pepper, parsley",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s0.i2",
+   "group": "cat-anemia",
+   "kind": "Tabakta bir arada",
+   "tr": "Diğerleri: nar, kuru kayısı, hurma, kabak çekirdeği",
+   "en": "Others: pomegranate, dried apricots, dates, pumpkin seeds",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s1.i0",
+   "group": "cat-anemia",
+   "kind": "Pratik",
+   "tr": "Mercimek çorbasına limon sıkmak öğüne C vitamini ekler.",
+   "en": "A squeeze of lemon adds vitamin C to lentil soup.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s1.i1",
+   "group": "cat-anemia",
+   "kind": "Pratik",
+   "tr": "Salataya domates ya da kırmızı biber eklemek de aynı işi görür.",
+   "en": "Tomato or red pepper in the salad does the same.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.s1.i2",
+   "group": "cat-anemia",
+   "kind": "Pratik",
+   "tr": "Çayı yemekle birlikte değil, bir süre sonra içmeyi deneyebilirsin.",
+   "en": "You can try having tea a while after the meal rather than with it.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "WHO — Anaemia (fact sheet)",
+    "NIH Office of Dietary Supplements — Iron: Fact Sheet for Health Professionals"
+   ]
+  },
+  {
+   "id": "cat.anemia.flag0",
+   "group": "cat-anemia",
+   "kind": "Kırmızı bayrak",
+   "tr": "Nefes darlığı, çarpıntı, göğüs ağrısı ya da bayılma hissi",
+   "en": "Shortness of breath, palpitations, chest pain or feeling faint",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.anemia.flag1",
+   "group": "cat-anemia",
+   "kind": "Kırmızı bayrak",
+   "tr": "Siyah dışkı, kanlı dışkı ya da beklenmeyen kanama",
+   "en": "Black or bloody stools, or unexpected bleeding",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.anemia.flag2",
+   "group": "cat-anemia",
+   "kind": "Kırmızı bayrak",
+   "tr": "Yoğun adet kanaması",
+   "en": "Heavy periods",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.glutenFree.name",
+   "group": "cat-glutenFree",
+   "kind": "Kategori adı",
+   "tr": "Glutensiz",
+   "en": "Gluten-Free",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.glutenFree.subtitle",
+   "group": "cat-glutenFree",
+   "kind": "Kart alt başlığı",
+   "tr": "Buğday ve arpa içermeyen tarifler",
+   "en": "No wheat, no barley, no worry",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.glutenFree.summary",
+   "group": "cat-glutenFree",
+   "kind": "Açıklama",
+   "tr": "Glutensiz beslenmede buğday, arpa ve çavdar dışarıda kalır. Karabuğday, kinoa, pirinç ve mısır gibi tahıllar doğal olarak glutensizdir. Çölyak şüphen varsa glutensiz beslenmeye başlamadan önce hekimine danış.",
+   "en": "A gluten-free diet leaves out wheat, barley and rye. Buckwheat, quinoa, rice and corn are naturally gluten-free. If you suspect coeliac disease, talk to your doctor before going gluten-free.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s0.i0",
+   "group": "cat-glutenFree",
+   "kind": "Glutensiz tahıl ve nişastalar",
+   "tr": "Tahıllar: pirinç, kinoa, karabuğday, mısır unu",
+   "en": "Grains: rice, quinoa, buckwheat, cornmeal",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s0.i1",
+   "group": "cat-glutenFree",
+   "kind": "Glutensiz tahıl ve nişastalar",
+   "tr": "Nişastalı sebzeler: patates, tatlı patates, mısır",
+   "en": "Starchy vegetables: potato, sweet potato, corn",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s0.i2",
+   "group": "cat-glutenFree",
+   "kind": "Glutensiz tahıl ve nişastalar",
+   "tr": "Baklagiller: mercimek, nohut, fasulye",
+   "en": "Legumes: lentils, chickpeas, beans",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s0.i3",
+   "group": "cat-glutenFree",
+   "kind": "Glutensiz tahıl ve nişastalar",
+   "tr": "Kuruyemiş ve tohumlar: badem, ceviz, susam, tahin",
+   "en": "Nuts and seeds: almonds, walnuts, sesame, tahini",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s1.i0",
+   "group": "cat-glutenFree",
+   "kind": "Gizli gluten",
+   "tr": "Sos, çorba bazı ve hazır baharat karışımlarında un olabilir.",
+   "en": "Sauces, soup bases and spice blends can contain flour.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s1.i1",
+   "group": "cat-glutenFree",
+   "kind": "Gizli gluten",
+   "tr": "Aynı tencerede makarna haşlanmışsa çapraz bulaşma olabilir.",
+   "en": "Cross-contamination can happen if pasta was boiled in the same pot.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.s1.i2",
+   "group": "cat-glutenFree",
+   "kind": "Gizli gluten",
+   "tr": "Yulafı yalnızca \"glutensiz\" etiketliyse seç.",
+   "en": "Only use oats labelled gluten-free.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ESsCD — European guideline on coeliac disease and other gluten-related disorders (2019)"
+   ]
+  },
+  {
+   "id": "cat.glutenFree.flag0",
+   "group": "cat-glutenFree",
+   "kind": "Kırmızı bayrak",
+   "tr": "Uzun süren ishal, karın ağrısı ya da kilo kaybı",
+   "en": "Long-lasting diarrhoea, abdominal pain or weight loss",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.glutenFree.flag1",
+   "group": "cat-glutenFree",
+   "kind": "Kırmızı bayrak",
+   "tr": "Çölyak testi yapılacaksa: glutensiz beslenmeye testten önce başlamak sonucu etkileyebilir",
+   "en": "If a coeliac test is planned: going gluten-free before the test can affect the result",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.lactoseFree.name",
+   "group": "cat-lactoseFree",
+   "kind": "Kategori adı",
+   "tr": "Laktozsuz",
+   "en": "Lactose-Free",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.lactoseFree.subtitle",
+   "group": "cat-lactoseFree",
+   "kind": "Kart alt başlığı",
+   "tr": "Süt ürünü içermeyen doyurucu öğünler",
+   "en": "Dairy-free meals that still satisfy",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.lactoseFree.summary",
+   "group": "cat-lactoseFree",
+   "kind": "Açıklama",
+   "tr": "Süt ürünlerini azalttığında kalsiyum kaynaklarına dikkat etmek gerekir: tahin, susam, badem, kara lahana ve kılçığıyla yenen sardalya kalsiyum içerir.",
+   "en": "When you cut down on dairy, calcium is what needs watching: tahini, sesame, almonds, kale and bone-in sardines contain calcium.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s0.i0",
+   "group": "cat-lactoseFree",
+   "kind": "Sütsüz kalsiyum kaynakları",
+   "tr": "Tohum ve ezmeler: tahin, susam, chia, badem",
+   "en": "Seeds and pastes: tahini, sesame, chia, almonds",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s0.i1",
+   "group": "cat-lactoseFree",
+   "kind": "Sütsüz kalsiyum kaynakları",
+   "tr": "Yeşillikler: kara lahana, ıspanak, pazı, brokoli",
+   "en": "Greens: kale, spinach, swiss chard, broccoli",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s0.i2",
+   "group": "cat-lactoseFree",
+   "kind": "Sütsüz kalsiyum kaynakları",
+   "tr": "Deniz ürünleri: sardalya, hamsi",
+   "en": "Seafood: sardines, anchovies",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s0.i3",
+   "group": "cat-lactoseFree",
+   "kind": "Sütsüz kalsiyum kaynakları",
+   "tr": "Baklagiller: nohut, beyaz fasulye, tofu",
+   "en": "Legumes: chickpeas, white beans, tofu",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s1.i0",
+   "group": "cat-lactoseFree",
+   "kind": "Mutfakta değişiklikler",
+   "tr": "Kremalı soslarda süt yerine hindistan cevizi sütü kullanabilirsin.",
+   "en": "You can use coconut milk instead of dairy in creamy sauces.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s1.i1",
+   "group": "cat-lactoseFree",
+   "kind": "Mutfakta değişiklikler",
+   "tr": "Tereyağı yerine zeytinyağı ya da avokado yağı ile pişirebilirsin.",
+   "en": "You can cook with olive or avocado oil in place of butter.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.s1.i2",
+   "group": "cat-lactoseFree",
+   "kind": "Mutfakta değişiklikler",
+   "tr": "Yoğurt yerine tahin-limon sosu deneyebilirsin.",
+   "en": "You can try a tahini-lemon sauce where yoghurt would go.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "EFSA NDA Panel — Scientific Opinion on lactose thresholds in lactose intolerance (2010)"
+   ]
+  },
+  {
+   "id": "cat.lactoseFree.flag0",
+   "group": "cat-lactoseFree",
+   "kind": "Kırmızı bayrak",
+   "tr": "Süt ürünlerinden sonra şiddetli karın ağrısı, kusma ya da kanlı dışkı",
+   "en": "Severe abdominal pain, vomiting or bloody stools after dairy",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.lactoseFree.flag1",
+   "group": "cat-lactoseFree",
+   "kind": "Kırmızı bayrak",
+   "tr": "Dudak, dil ya da boğazda şişme, nefes almada zorluk (acil)",
+   "en": "Swelling of lips, tongue or throat, or difficulty breathing (emergency)",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.periodSupport.name",
+   "group": "cat-periodSupport",
+   "kind": "Kategori adı",
+   "tr": "Regl Dönemi",
+   "en": "Period Support",
+   "claim": "Kullanıcının seçtiği etiket; tıbbi iddia içermemeli.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.periodSupport.subtitle",
+   "group": "cat-periodSupport",
+   "kind": "Kart alt başlığı",
+   "tr": "Magnezyum ve demir içeren öğünler",
+   "en": "Meals with magnesium and iron",
+   "claim": "Tariflerin neyi içerdiğini söyler, ne yaptığını değil.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "cat.periodSupport.summary",
+   "group": "cat-periodSupport",
+   "kind": "Açıklama",
+   "tr": "Regl döneminde demir ve magnezyum içeren besinler öne çıkar; sıcak ve sindirimi kolay öğünler de birçok kişiye iyi gelir. Aşağıdaki kartlar bu besinleri içeren tarifleri listeler.",
+   "en": "During your period, foods with iron and magnesium come forward, and many people find warm, easy-to-digest meals comforting. The cards below list recipes that contain these foods.",
+   "claim": "Hangi besinlerde bulunduğu; gerekirse hekime yönlendirme.",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s0.i0",
+   "group": "cat-periodSupport",
+   "kind": "Öne çıkan besinler",
+   "tr": "Magnezyum içerenler: kabak çekirdeği, bitter çikolata, tahin, ıspanak",
+   "en": "Magnesium: pumpkin seeds, dark chocolate, tahini, spinach",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s0.i1",
+   "group": "cat-periodSupport",
+   "kind": "Öne çıkan besinler",
+   "tr": "Demir içerenler: ciğer, kırmızı et, mercimek, pazı",
+   "en": "Iron: liver, red meat, lentils, swiss chard",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s0.i2",
+   "group": "cat-periodSupport",
+   "kind": "Öne çıkan besinler",
+   "tr": "Sıcak ve hafif seçenekler: zencefil, nane, muz, yulaf",
+   "en": "Warm, light options: ginger, mint, banana, oats",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s0.i3",
+   "group": "cat-periodSupport",
+   "kind": "Öne çıkan besinler",
+   "tr": "Omega-3 içerenler: somon, ceviz, chia tohumu",
+   "en": "Omega-3: salmon, walnuts, chia seeds",
+   "claim": "Besin kaynağı listesi (içerik iddiası).",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s1.i0",
+   "group": "cat-periodSupport",
+   "kind": "Bu dönemde",
+   "tr": "Sıcak içecekler ve çorbalar birçok kişiye rahatlatıcı gelir.",
+   "en": "Many people find warm drinks and soups soothing.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s1.i1",
+   "group": "cat-periodSupport",
+   "kind": "Bu dönemde",
+   "tr": "Tuzu azaltmak su tutulumuna bağlı şişkinliği azaltabilir.",
+   "en": "Cutting down on salt can reduce bloating from water retention.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.s1.i2",
+   "group": "cat-periodSupport",
+   "kind": "Bu dönemde",
+   "tr": "Şekerli atıştırmalık yerine bitter çikolata ve kuruyemiş seçebilirsin.",
+   "en": "You can swap sugary snacks for dark chocolate with nuts.",
+   "claim": "Pratik öneri; kanıt düzeyi değerlendirilmeli.",
+   "shown": true,
+   "sources": [
+    "ACOG — Dysmenorrhea: Painful Periods (patient FAQ)",
+    "NIH Office of Dietary Supplements — Magnesium; Iron"
+   ]
+  },
+  {
+   "id": "cat.periodSupport.flag0",
+   "group": "cat-periodSupport",
+   "kind": "Kırmızı bayrak",
+   "tr": "Ağrı kesiciye yanıt vermeyen ya da günlük işlerini engelleyen ağrı",
+   "en": "Pain that does not respond to painkillers or stops daily activities",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.periodSupport.flag1",
+   "group": "cat-periodSupport",
+   "kind": "Kırmızı bayrak",
+   "tr": "Bir-iki saatte ped/tampon değiştirecek kadar yoğun kanama",
+   "en": "Bleeding heavy enough to change a pad or tampon every hour or two",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "cat.periodSupport.flag2",
+   "group": "cat-periodSupport",
+   "kind": "Kırmızı bayrak",
+   "tr": "Adet dışı kanama ya da adetin aniden düzensizleşmesi",
+   "en": "Bleeding between periods or a sudden change in your cycle",
+   "claim": "\"Şu durumlarda hekimine başvur\" altında listelenir. Onaylanana kadar ekranda değil.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "focus.lowEnergy",
+   "group": "focus",
+   "kind": "Mod: Düşük Enerji",
+   "tr": "Enerjin düşük dediğin için düşük enerjili günlere uygun işaretlenen tarifleri öne aldık.",
+   "en": "You said your energy is low, so recipes marked for low-energy days come first.",
+   "claim": "Sıralama kuralını anlatır. Tarifin verisi yüksek diyorsa \"Protein ve lifi yüksek.\" eklenir.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.bloated",
+   "group": "focus",
+   "kind": "Mod: Şişkinlik",
+   "tr": "Şişkinlik hissettiğin için bu durumda tercih edilmek üzere işaretlenen tarifleri öne aldık.",
+   "en": "You feel bloated, so recipes marked for days like this come first.",
+   "claim": "Sıralama kuralını anlatır.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.cravingSweets",
+   "group": "focus",
+   "kind": "Mod: Tatlı İsteği",
+   "tr": "Tatlı isteği için işaretlenen, daha dengeli tatlı seçeneklerini öne aldık.",
+   "en": "For a sweet craving, more balanced sweet options marked for it come first.",
+   "claim": "Sıralama kuralını anlatır. Tarifin verisi yüksek diyorsa \"Protein ve lifi yüksek.\" eklenir.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.cantFocus",
+   "group": "focus",
+   "kind": "Mod: Odaklanamıyorum",
+   "tr": "Odaklanmakta zorlandığın günler için işaretlenen tarifleri öne aldık.",
+   "en": "Recipes marked for days when focusing is hard come first.",
+   "claim": "Sıralama kuralını anlatır.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.pms",
+   "group": "focus",
+   "kind": "Mod: PMS",
+   "tr": "Regl öncesi dönem için işaretlenen tarifleri öne aldık.",
+   "en": "Recipes marked for the days before your period come first.",
+   "claim": "Sıralama kuralını anlatır. Tarif listesinde magnezyum kaynağı varsa adlarıyla eklenir (ör. \"Bu tarifteki magnezyum kaynakları: ıspanak ve tahin.\").",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.periodCramps",
+   "group": "focus",
+   "kind": "Mod: Regl Krampları",
+   "tr": "Regl krampı için işaretlenen tarifleri öne aldık.",
+   "en": "Recipes marked for period cramps come first.",
+   "claim": "Sıralama kuralını anlatır. Tarif listesinde magnezyum kaynağı varsa adlarıyla eklenir (ör. \"Bu tarifteki magnezyum kaynakları: ıspanak ve tahin.\").",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.periodFatigue",
+   "group": "focus",
+   "kind": "Mod: Regl Yorgunluğu",
+   "tr": "Regl yorgunluğu için işaretlenen tarifleri öne aldık.",
+   "en": "Recipes marked for period tiredness come first.",
+   "claim": "Sıralama kuralını anlatır. Tarif listesinde demir kaynağı varsa adlarıyla eklenir (ör. \"Bu tarifteki demir kaynakları: ıspanak ve tahin.\").",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.postWorkout",
+   "group": "focus",
+   "kind": "Mod: Egzersiz Sonrası",
+   "tr": "Egzersiz sonrası için işaretlenen tarifleri öne aldık.",
+   "en": "Recipes marked for after a workout come first.",
+   "claim": "Sıralama kuralını anlatır. Tarifin verisi yüksek diyorsa \"Protein ve lifi yüksek.\" eklenir.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.noSpecificIssue",
+   "group": "focus",
+   "kind": "Mod: İyiyim",
+   "tr": "İyi hissettiğin günler için işaretlenen tarifleri öne aldık.",
+   "en": "You feel good, so recipes marked for days like this come first.",
+   "claim": "Sıralama kuralını anlatır.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.stressed",
+   "group": "focus",
+   "kind": "Mod: Stresliyim",
+   "tr": "Stresli olduğunu söylediğin için kafein içermeyen, bu güne uygun işaretlenen tarifleri öne aldık.",
+   "en": "You said you are stressed, so caffeine-free recipes marked for days like this come first.",
+   "claim": "Sıralama kuralını anlatır. Tarif listesinde magnezyum kaynağı varsa adlarıyla eklenir (ör. \"Bu tarifteki magnezyum kaynakları: ıspanak ve tahin.\").",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.anxious",
+   "group": "focus",
+   "kind": "Mod: Kaygılıyım",
+   "tr": "Kaygılı hissettiğin için kafein içermeyen, dengeli olarak işaretlenen tarifleri öne aldık.",
+   "en": "You feel anxious, so caffeine-free recipes marked as balanced come first.",
+   "claim": "Sıralama kuralını anlatır. Tarifin verisi yüksek diyorsa \"Protein ve lifi yüksek.\" eklenir.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "focus.poorSleep",
+   "group": "focus",
+   "kind": "Mod: Uykusuzum",
+   "tr": "Uykusuz olduğunu söylediğin için kafein içermeyen, hafif olarak işaretlenen tarifleri öne aldık.",
+   "en": "You slept badly, so caffeine-free recipes marked as light come first.",
+   "claim": "Sıralama kuralını anlatır.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "rule.poorSleep",
+   "group": "rules",
+   "kind": "Kural: Uykusuzum",
+   "tr": "Kafein içermeyen (kakao, çikolata yok), basit şeker ağırlıklı olmayan ve porsiyonu 550 kcal'yi geçmeyen tarifler.",
+   "en": "Caffeine-free (no cocoa or chocolate), not simple-sugar based, at most 550 kcal per serving.",
+   "claim": "Bu durumda bu özellikteki tariflerin öne alınmasının uygun olduğu.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "rule.stressed",
+   "group": "rules",
+   "kind": "Kural: Stresliyim",
+   "tr": "Kafein içermeyen, basit şeker ağırlıklı olmayan, en az bir magnezyum kaynağı içeren ve lifi ya da proteini yüksek tarifler.",
+   "en": "Caffeine-free, not simple-sugar based, with at least one magnesium source and high fibre or protein.",
+   "claim": "Bu durumda bu özellikteki tariflerin öne alınmasının uygun olduğu.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "rule.anxious",
+   "group": "rules",
+   "kind": "Kural: Kaygılıyım",
+   "tr": "Kafein içermeyen, basit şeker ağırlıklı olmayan, proteini ve lifi en az orta düzeyde olan (kan şekerini dalgalandırmayan dengeli tabak) tarifler.",
+   "en": "Caffeine-free, not simple-sugar based, with at least medium protein and fibre (a balanced plate that avoids blood-sugar swings).",
+   "claim": "Bu durumda bu özellikteki tariflerin öne alınmasının uygun olduğu.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "focus.generic",
+   "group": "focus",
+   "kind": "Mod seçilmediğinde",
+   "tr": "Alerji ve beslenme tercihlerine uyan tarifler arasından, mutfağındaki malzemelere en yakın olanı öne aldık.",
+   "en": "Among recipes that fit your allergies and food preferences, the one closest to what is in your kitchen comes first.",
+   "claim": "Durum seçilmediğinde ya da etiketli tarif kalmadığında.",
+   "shown": true,
+   "sources": []
+  },
+  {
+   "id": "legal.0",
+   "group": "legal",
+   "kind": "Genel bilgilendirme",
+   "tr": "NutriGuide genel beslenme ve iyi oluş bilgisi sunar. Tanı koymaz, tedavi önermez ve bir sağlık profesyonelinin yerini tutmaz.",
+   "en": "NutriGuide offers general nutrition and wellbeing information. It does not diagnose, does not recommend treatment and does not replace a health professional.",
+   "claim": "Yasal metin; hukuki kontrol de gerekebilir.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "legal.1",
+   "group": "legal",
+   "kind": "İçerik nasıl hazırlanır",
+   "tr": "Sağlık alanlarındaki açıklamalar genel kabul gören kaynaklara dayanılarak hazırlanır ve yayından önce bir hekim tarafından incelenir. Tarif önerileri, seçtiğin duruma ve tercihlere göre yapılan bir sıralamadır; kişisel bir beslenme planı değildir.",
+   "en": "Explanations in the health areas are based on widely accepted sources and reviewed by a physician before publication. Recipe suggestions are a ranking by the state and preferences you choose, not a personal eating plan.",
+   "claim": "Yasal metin; hukuki kontrol de gerekebilir.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "legal.2",
+   "group": "legal",
+   "kind": "Alerjiler",
+   "tr": "Alerjen filtresi tariflerin malzeme listesine dayanır. Hazır ürünlerde gizli içerik ya da çapraz bulaşma olabilir; ciddi bir alerjin varsa ürün etiketlerini her zaman kontrol et.",
+   "en": "The allergen filter relies on each recipe's ingredient list. Packaged products can contain hidden ingredients or cross-contamination; if you have a serious allergy, always check product labels.",
+   "claim": "Yasal metin; hukuki kontrol de gerekebilir.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "legal.3",
+   "group": "legal",
+   "kind": "Ne zaman hekime danışmalı",
+   "tr": "Hamilelik, emzirme, kronik bir hastalık ya da düzenli ilaç kullanımı gibi durumlarda beslenmende büyük bir değişiklik yapmadan önce hekimine danış. Acil bir sağlık sorununda 112'yi ara.",
+   "en": "If you are pregnant, breastfeeding, have a chronic condition or take regular medication, talk to your doctor before making a big change to how you eat. In an emergency, call 112.",
+   "claim": "Yasal metin; hukuki kontrol de gerekebilir.",
+   "shown": false,
+   "sources": []
+  },
+  {
+   "id": "legal.infoCard",
+   "group": "legal",
+   "kind": "Sağlık kartı altı",
+   "tr": "Bu bilgiler geneldir; kişisel tıbbi tavsiye yerine geçmez.",
+   "en": "General information — not a substitute for medical advice.",
+   "claim": "Her sağlık alanı açıklamasının altında.",
+   "shown": true,
+   "sources": []
+  }
+ ]
+}</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById('review-data').textContent);
+  const LABEL = { approve: 'Onay', fix: 'Düzelt', remove: 'Kaldır' };
+  const EVIDENCE = [['', 'Kanıt düzeyi —'], ['A', 'A · güçlü'], ['B', 'B · orta'], ['C', 'C · zayıf'], ['expert', 'Uzman görüşü']];
+  const LOCAL_KEY = 'nutriguide-review-v1';
+  const decisions = {};       // id -> {status, evidence, note, tr, at}
+  let mode = 'connecting';    // 'shared' | 'local' | 'connecting'
+  let db = null, userId = null, filter = 'all';
+
+  document.getElementById('gen').textContent = 'metinler ' + DATA.generatedAt + ' tarihli koddan';
+
+  // ── Storage ────────────────────────────────────────────────────────────
+  function loadLocal() {
+    try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || '{}'); } catch { return {}; }
+  }
+  function saveLocal() {
+    try { localStorage.setItem(LOCAL_KEY, JSON.stringify(decisions)); } catch {}
+  }
+  function goLocal(reason) {
+    mode = 'local';
+    Object.assign(decisions, loadLocal(), decisions);
+    const el = document.getElementById('store');
+    el.className = 'store local';
+    el.textContent = reason + ' Kararların bu tarayıcıda saklanıyor; bitince “Kararları kopyala” ile gönder.';
+    renderAll();
+  }
+  const pending = {};
+  const typing = new Set();   // ids whose note is being typed right now
+  async function persist(id) {
+    const d = decisions[id];
+    if (mode !== 'shared') { saveLocal(); markSaved(id, 'tarayıcıda'); return; }
+    // One write at a time per document; the latest state wins.
+    if (pending[id]) { pending[id].again = true; return; }
+    pending[id] = { again: false };
+    try {
+      do {
+        pending[id].again = false;
+        const body = { ...decisions[id], by: userId || null };
+        if (body.status || body.note || body.evidence) {
+          await db.collection('decisions').doc(id).set(body);
+        } else {
+          await db.collection('decisions').doc(id).delete();
+        }
+      } while (pending[id].again);
+      markSaved(id, 'kaydedildi');
+    } catch (e) {
+      goLocal(e && e.code === 'invalid_argument' ? 'Bu sayfaya yazma iznin yok.' : 'Ortak kayda yazılamadı.');
+      saveLocal();
+    } finally {
+      delete pending[id];
+    }
+  }
+
+  // ── Rendering ──────────────────────────────────────────────────────────
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === 'text') n.textContent = v;
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+      else if (v !== false && v != null) n.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids) if (kid) n.append(kid);
+    return n;
+  };
+
+  function statusOf(item) {
+    const d = decisions[item.id];
+    return d && d.status ? d.status : 'wait';
+  }
+  function changed(item) {
+    const d = decisions[item.id];
+    return !!(d && d.status && d.tr && d.tr !== item.tr);
+  }
+
+  function renderCounts() {
+    const total = DATA.items.length;
+    const c = { approve: 0, fix: 0, remove: 0, wait: 0 };
+    for (const item of DATA.items) c[statusOf(item)]++;
+    const counts = document.getElementById('counts');
+    counts.replaceChildren(
+      el('span', { text: `${total - c.wait}/${total} karar verildi` }),
+      ...[['approve', 'var(--ok)'], ['fix', 'var(--fix)'], ['remove', 'var(--drop)'], ['wait', 'var(--muted)']].map(([k, color]) => {
+        const s = el('span');
+        const dot = el('span', { class: 'dot' }); dot.style.background = color;
+        s.append(dot, `${k === 'wait' ? 'Bekliyor' : LABEL[k]} ${c[k]}`);
+        return s;
+      }),
+    );
+    const meter = document.getElementById('meter');
+    meter.replaceChildren(...[['approve', 'var(--ok)'], ['fix', 'var(--fix)'], ['remove', 'var(--drop)']].map(([k, color]) => {
+      const s = el('span'); s.style.width = (100 * c[k] / total) + '%'; s.style.background = color; return s;
+    }));
+  }
+
+  function renderFilters() {
+    const opts = [['all', 'Tümü'], ['wait', 'Bekleyenler'], ['fix', 'Düzeltilecekler'], ['hidden', 'Ekranda olmayan taslaklar']];
+    document.getElementById('filters').replaceChildren(...opts.map(([v, label]) =>
+      el('button', { type: 'button', class: 'chip', 'aria-pressed': String(filter === v), text: label,
+        onclick: () => { filter = v; renderAll(); } })));
+  }
+
+  function visible(item) {
+    if (filter === 'wait') return statusOf(item) === 'wait' || changed(item);
+    if (filter === 'fix') return statusOf(item) === 'fix';
+    if (filter === 'hidden') return !item.shown;
+    return true;
+  }
+
+  function markSaved(id, text) {
+    const n = document.querySelector(`[data-saved="${CSS.escape(id)}"]`);
+    if (n) n.textContent = text;
+  }
+
+  function itemCard(item, number) {
+    const d = decisions[item.id] || {};
+    const card = el('article', { class: 'item', 'data-status': statusOf(item), id: 'i-' + item.id });
+    const top = el('div', { class: 'item-top' },
+      el('span', { class: 'mono muted', text: number }),
+      el('span', { class: 'kind', text: item.kind }),
+      el('span', { class: 'tag' + (item.shown ? '' : ' hidden'), text: item.shown ? 'Ekranda' : 'Taslak · ekranda değil' }),
+      changed(item) ? el('span', { class: 'tag changed', text: 'Karardan sonra metin değişti' }) : null,
+    );
+    const quote = el('blockquote', { lang: 'tr', text: item.tr });
+    const en = el('details', {}, el('summary', { text: 'İngilizce metin' }), el('p', { class: 'en', lang: 'en', text: item.en }));
+    const meta = el('div', { class: 'meta' }, el('p', {}, el('b', { text: 'Ne söylüyor: ' }), item.claim));
+    if (item.sources.length) meta.append(el('p', {}, el('b', { text: 'Önerilen kaynak: ' }), item.sources.join(' · ')));
+
+    const seg = el('div', { class: 'seg', role: 'group', 'aria-label': 'Karar' });
+    for (const v of ['approve', 'fix', 'remove']) {
+      seg.append(el('button', { type: 'button', 'data-v': v, 'aria-pressed': String(d.status === v), text: LABEL[v],
+        onclick: () => {
+          const cur = decisions[item.id] || {};
+          decisions[item.id] = { ...cur, status: cur.status === v ? '' : v, tr: item.tr, at: new Date().toISOString() };
+          persist(item.id);
+          renderCounts();
+          card.dataset.status = statusOf(item);
+          for (const b of seg.children) b.setAttribute('aria-pressed', String(decisions[item.id].status === b.dataset.v));
+          if (filter !== 'all') renderAll();
+        } }));
+    }
+    const sel = el('select', { id: 'ev-' + item.id, 'aria-label': 'Kanıt düzeyi',
+      onchange: () => {
+        decisions[item.id] = { ...(decisions[item.id] || {}), evidence: sel.value, tr: item.tr, at: new Date().toISOString() };
+        persist(item.id);
+      } });
+    for (const [v, label] of EVIDENCE) sel.append(el('option', { value: v, text: label }));
+    sel.value = d.evidence || '';
+    let timer = null;
+    const note = el('textarea', { id: 'note-' + item.id, 'aria-label': 'Not', placeholder: 'Düzeltme önerisi, kaynak ya da not',
+      oninput: () => {
+        markSaved(item.id, 'yazılıyor…');
+        typing.add(item.id);
+        decisions[item.id] = { ...(decisions[item.id] || {}), note: note.value, tr: item.tr, at: new Date().toISOString() };
+        clearTimeout(timer);
+        timer = setTimeout(() => { typing.delete(item.id); persist(item.id); }, 700);
+      } });
+    note.value = d.note || '';
+    const decide = el('div', { class: 'decide' },
+      el('div', { class: 'row' }, seg, sel, el('span', { class: 'saved', 'data-saved': item.id })),
+      note);
+    card.append(top, quote, en, meta, decide);
+    return card;
+  }
+
+  function renderAll() {
+    renderCounts();
+    renderFilters();
+    const list = document.getElementById('list');
+    // Keep whatever the reviewer is typing in place.
+    const active = document.activeElement && document.activeElement.id;
+    list.replaceChildren();
+    let shown = 0;
+    DATA.groups.forEach((g, gi) => {
+      const items = DATA.items.filter(i => i.group === g.id);
+      const vis = items.filter(visible);
+      if (!vis.length) return;
+      const sec = el('section', { class: 'group', 'aria-labelledby': 'g-' + g.id },
+        el('div', { class: 'group-head' },
+          el('h2', { id: 'g-' + g.id, text: `${gi + 1}. ${g.title}` }),
+          el('p', { class: 'muted', text: g.note })));
+      for (const item of vis) {
+        sec.append(itemCard(item, `${gi + 1}.${items.indexOf(item) + 1}`));
+        shown++;
+      }
+      list.append(sec);
+    });
+    if (!shown) list.append(el('p', { class: 'empty', text: 'Bu filtrede gösterilecek metin yok.' }));
+    if (active) { const n = document.getElementById(active); if (n) n.focus(); }
+  }
+
+  // ── Copy ───────────────────────────────────────────────────────────────
+  document.getElementById('copy').addEventListener('click', async () => {
+    const lines = [];
+    DATA.groups.forEach((g, gi) => {
+      DATA.items.filter(i => i.group === g.id).forEach((item, ii) => {
+        const d = decisions[item.id];
+        if (!d || !(d.status || d.note || d.evidence)) return;
+        lines.push(`${gi + 1}.${ii + 1} [${item.id}] ${d.status ? LABEL[d.status] : 'Karar yok'}` +
+          (d.evidence ? ` · kanıt ${d.evidence}` : '') + (d.note ? `\n   Not: ${d.note}` : ''));
+      });
+    });
+    const text = lines.length ? lines.join('\n') : 'Henüz karar yok.';
+    const btn = document.getElementById('copy');
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = 'Kopyalandı';
+    } catch {
+      // Clipboard refused: show the text selected so it can be copied by hand.
+      const ta = el('textarea', { readonly: true, 'aria-label': 'Kararlar' });
+      ta.value = text; ta.style.minHeight = '160px';
+      btn.after(ta); ta.select();
+      btn.textContent = 'Metni seçip kopyala';
+    }
+    setTimeout(() => { btn.textContent = 'Kararları kopyala'; }, 2500);
+  });
+
+  renderAll();
+
+  // ── Shared store ───────────────────────────────────────────────────────
+  (async () => {
+    const claude = window.claude;
+    if (!claude || !claude.use) { goLocal('Ortak kayıt bu görünümde yok.'); return; }
+    const [dbNs, user] = await Promise.all([claude.use('db'), claude.use('user')]);
+    if (!dbNs) { goLocal('Ortak kayıt bu görünümde yok.'); return; }
+    db = dbNs;
+    userId = user ? await user.id() : null;
+    const canWrite = user ? await user.can('data.write') : null;
+    db.collection('decisions').onSnapshot(snap => {
+      let differs = false;
+      for (const doc of snap.docs) {
+        const d = doc.data();
+        // Never overwrite what this viewer is typing or still saving.
+        if (pending[doc.id] || typing.has(doc.id)) continue;
+        const next = { status: d.status || '', evidence: d.evidence || '', note: d.note || '', tr: d.tr || '', at: d.at || '' };
+        const cur = decisions[doc.id] || {};
+        if (['status', 'evidence', 'note', 'tr'].some(k => (cur[k] || '') !== next[k])) differs = true;
+        decisions[doc.id] = next;
+      }
+      const first = mode === 'connecting';
+      if (mode !== 'local') {
+        mode = 'shared';
+        const s = document.getElementById('store');
+        s.className = 'store';
+        s.textContent = canWrite === false
+          ? 'Ortak kayda yalnız okuma iznin var.'
+          : 'Kararlar ortak kayda yazılıyor.';
+      }
+      // Re-render only for changes made elsewhere: a rebuild moves the
+      // caret of whoever is typing.
+      if (first || differs) renderAll();
+    }, err => goLocal(err && err.code === 'revoked' ? 'Erişim değişti.' : 'Ortak kayda bağlanılamadı.'));
+    if (canWrite === false) goLocal('Bu sayfaya yazma iznin yok.');
+  })();
+})();
+</script>

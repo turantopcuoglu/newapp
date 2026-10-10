@@ -34,7 +34,7 @@ void main() {
 
   test('each reminder kind keeps a distinct notification slot', () {
     // Distinct ids matter: scheduling one must not overwrite the other.
-    expect(ReminderKind.values, hasLength(2));
-    expect(ReminderKind.values.toSet(), hasLength(2));
+    expect(ReminderKind.values, hasLength(3));
+    expect(ReminderKind.values.toSet(), hasLength(3));
   });
 }

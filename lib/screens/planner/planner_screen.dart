@@ -284,9 +284,7 @@ class _PlannerScreenState extends ConsumerState<PlannerScreen> {
             .map(
               (type) => SimpleDialogOption(
                 onPressed: () => Navigator.pop(ctx, type),
-                child: Text(
-                  type.name[0].toUpperCase() + type.name.substring(1),
-                ),
+                child: Text(AppLocalizations.of(context).mealTypeName(type)),
               ),
             )
             .toList(),

@@ -242,7 +242,7 @@ void main() {
     },
   );
   testWidgets(
-    'all nine choices apply through the picker, persist, and color every tab',
+    'every choice applies through the picker, persists, and colors every tab',
     (tester) async {
       phone(tester);
       await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
@@ -264,6 +264,7 @@ void main() {
           await tester.pumpAndSettle();
         }
         await tester.ensureVisible(find.text(MoodPalette.all[mode]!.tr));
+        await tester.pumpAndSettle();
         await tester.tap(find.text(MoodPalette.all[mode]!.tr));
         await tester.pumpAndSettle();
         // Step two of the check-in; its questions are optional.
@@ -313,7 +314,10 @@ void main() {
     // Low energy puts water among Today's small steps.
     await container
         .read(wellnessProvider.notifier)
-        .selectFocus(CheckInType.lowEnergy, container.read(wellnessNowProvider));
+        .selectFocus(
+          CheckInType.lowEnergy,
+          container.read(wellnessNowProvider),
+        );
     await tester.pumpWidget(host(const MainShell(promptOnOpen: false)));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Profil').last);
@@ -379,32 +383,40 @@ void main() {
     },
   );
   testWidgets(
-    'sessions pause on background without auto-resume or completion',
+    'sessions keep counting while the screen is locked and finish on return',
     (tester) async {
+      // A walk goes in the pocket; the old Stopwatch paused on lock, so a
+      // ten-minute walk could never complete.
       phone(tester);
+      var now = DateTime(2026, 10, 8, 12);
+      final walk = routineLibrary.firstWhere((r) => r.id == 'walk');
       await tester.pumpWidget(
-        host(RoutineSessionScreen(routine: routineLibrary[0])),
+        host(RoutineSessionScreen(routine: walk, now: () => now)),
       );
       await tester.pumpAndSettle();
       await tester.ensureVisible(find.text('Başlat'));
       await tester.tap(find.text('Başlat'));
       await tester.pump(const Duration(milliseconds: 200));
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      await tester.pump();
       expect(
         tester.widget<RoutineVisual>(find.byType(RoutineVisual)).running,
         isTrue,
       );
-      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
-      await tester.pump();
-      expect(
-        tester.widget<RoutineVisual>(find.byType(RoutineVisual)).running,
-        isFalse,
-      );
+      now = now.add(const Duration(minutes: 4));
       tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
       await tester.pump();
+      expect(find.text('06 : 00'), findsOneWidget);
+      now = now.add(const Duration(minutes: 7));
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pump();
+      expect(find.text('00 : 00'), findsOneWidget);
       expect(
-        tester.widget<RoutineVisual>(find.byType(RoutineVisual)).running,
-        isFalse,
+        tester.widget<RoutineVisual>(find.byType(RoutineVisual)).completed,
+        isTrue,
       );
+      // Completion still asks before logging.
       expect(store.initial.routines, isEmpty);
       await tester.pumpWidget(const SizedBox());
     },
@@ -454,49 +466,49 @@ void main() {
   });
 
   testWidgets(
-    'cancelled presses never act; a tap acts at once and a double tap once', (
-    tester,
-  ) async {
-    phone(tester);
-    var count = 0;
-    await tester.pumpWidget(
-      host(
-        Scaffold(
-          body: Center(
-            child: SizedBox(
-              width: 140,
-              height: 70,
-              child: MotionTap(
-                onTap: () => count++,
-                builder: (_, _) => const Center(child: Text('Activate')),
+    'cancelled presses never act; a tap acts at once and a double tap once',
+    (tester) async {
+      phone(tester);
+      var count = 0;
+      await tester.pumpWidget(
+        host(
+          Scaffold(
+            body: Center(
+              child: SizedBox(
+                width: 140,
+                height: 70,
+                child: MotionTap(
+                  onTap: () => count++,
+                  builder: (_, _) => const Center(child: Text('Activate')),
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
-    await tester.pumpAndSettle();
-    final gesture = await tester.startGesture(
-      tester.getCenter(find.text('Activate')),
-    );
-    await tester.pump(const Duration(milliseconds: 120));
-    await gesture.cancel();
-    await tester.pumpAndSettle();
-    expect(count, 0);
-    // No waiting for the flourish: the action runs on the tap itself.
-    await tester.tap(find.text('Activate'));
-    expect(count, 1);
-    // A second tap right after is the same intent (e.g. pushing a page twice).
-    await tester.pump(const Duration(milliseconds: 60));
-    await tester.tap(find.text('Activate'));
-    expect(count, 1);
-    // Disposing mid-flourish neither repeats the action nor throws.
-    await tester.pump(const Duration(milliseconds: 35));
-    await tester.pumpWidget(const SizedBox());
-    await tester.pump(const Duration(seconds: 1));
-    expect(count, 1);
-    expect(tester.takeException(), isNull);
-  });
+      );
+      await tester.pumpAndSettle();
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.text('Activate')),
+      );
+      await tester.pump(const Duration(milliseconds: 120));
+      await gesture.cancel();
+      await tester.pumpAndSettle();
+      expect(count, 0);
+      // No waiting for the flourish: the action runs on the tap itself.
+      await tester.tap(find.text('Activate'));
+      expect(count, 1);
+      // A second tap right after is the same intent (e.g. pushing a page twice).
+      await tester.pump(const Duration(milliseconds: 60));
+      await tester.tap(find.text('Activate'));
+      expect(count, 1);
+      // Disposing mid-flourish neither repeats the action nor throws.
+      await tester.pump(const Duration(milliseconds: 35));
+      await tester.pumpWidget(const SizedBox());
+      await tester.pump(const Duration(seconds: 1));
+      expect(count, 1);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets(
     'changing breathing pace preserves the running session and pause',
@@ -529,7 +541,7 @@ void main() {
   );
 
   testWidgets(
-    'standalone artwork stops when backgrounded and stays paused on resume',
+    'standalone artwork stops when backgrounded and resumes with the app',
     (tester) async {
       phone(tester);
       await tester.pumpWidget(
@@ -549,8 +561,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(tester.binding.hasScheduledFrame, isFalse);
       tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
-      await tester.pumpAndSettle();
-      expect(tester.binding.hasScheduledFrame, isFalse);
+      await tester.pump();
+      expect(tester.binding.hasScheduledFrame, isTrue);
       await tester.pumpWidget(const SizedBox());
     },
   );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../components/onboarding_artwork_header.dart';
 import '../core/theme.dart';
 import '../core/wellness_motion.dart';
 import '../l10n/app_localizations.dart';
@@ -259,9 +261,7 @@ class _OnboardingAllergiesScreenState
 
   void _navigateToMoodCheck() {
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute<void>(
-        builder: (_) => const MainShell(),
-      ),
+      MaterialPageRoute<void>(builder: (_) => const MainShell()),
       (_) => false,
     );
   }
@@ -275,73 +275,45 @@ class _OnboardingAllergiesScreenState
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [context.palette.background, context.palette.surface, context.palette.background],
+            colors: [
+              context.palette.background,
+              context.palette.surface,
+              context.palette.background,
+            ],
           ),
         ),
         child: SafeArea(
           child: FadeTransition(
-            opacity: reducedMotion(context) ? const AlwaysStoppedAnimation(1.0) : _fadeAnim,
+            opacity: reducedMotion(context)
+                ? const AlwaysStoppedAnimation(1.0)
+                : _fadeAnim,
             child: Column(
               children: [
-                const SizedBox(height: 20),
-                // Header
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 64,
-                        height: 64,
-                        decoration: BoxDecoration(
-                          color: context.palette.warmCoral.withAlpha(30),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: context.palette.warmCoral.withAlpha(60),
-                          ),
-                        ),
-                        child: Icon(
-                          Icons.health_and_safety_rounded,
-                          color: context.palette.warmCoral,
-                          size: 32,
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Text(
-                        l10n.onboardingAllergiesTitle,
-                        style:  TextStyle(
-                          color: context.palette.textPrimary,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: -0.5,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        l10n.onboardingAllergiesSubtitle,
-                        style: TextStyle(
-                          color: context.palette.textPrimary.withAlpha(160),
-                          fontSize: 14,
-                          height: 1.4,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 24),
-
-                // Scrollable content
                 Expanded(
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(height: 20),
+                        OnboardingArtworkHeader(
+                          name: 'safety',
+                          title: l10n.onboardingAllergiesTitle,
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          l10n.onboardingAllergiesSubtitle,
+                          style: TextStyle(
+                            color: context.palette.textSecondary,
+                            fontSize: 14,
+                            height: 1.4,
+                          ),
+                        ),
+                        const SizedBox(height: 24),
                         // Allergens section
                         Container(
                           padding: const EdgeInsets.all(16),
@@ -371,12 +343,14 @@ class _OnboardingAllergiesScreenState
                                     ),
                                   ),
                                   const SizedBox(width: 10),
-                                  Text(
-                                    l10n.onboardingAllergensSection,
-                                    style: TextStyle(
-                                      color: context.palette.warmCoral,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
+                                  Expanded(
+                                    child: Text(
+                                      l10n.onboardingAllergensSection,
+                                      style: TextStyle(
+                                        color: context.palette.warmCoral,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -401,12 +375,14 @@ class _OnboardingAllergiesScreenState
                                       decoration: BoxDecoration(
                                         color: isSelected
                                             ? item.color.withAlpha(40)
-                                            : context.palette.textPrimary.withAlpha(8),
+                                            : context.palette.textPrimary
+                                                  .withAlpha(8),
                                         borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
                                           color: isSelected
                                               ? item.color.withAlpha(150)
-                                              : context.palette.textPrimary.withAlpha(25),
+                                              : context.palette.textPrimary
+                                                    .withAlpha(25),
                                           width: isSelected ? 1.5 : 1,
                                         ),
                                       ),
@@ -419,21 +395,27 @@ class _OnboardingAllergiesScreenState
                                                 : item.icon,
                                             color: isSelected
                                                 ? item.color
-                                                : context.palette.textPrimary.withAlpha(150),
+                                                : context.palette.textPrimary
+                                                      .withAlpha(150),
                                             size: 16,
                                           ),
                                           const SizedBox(width: 6),
-                                          Text(
-                                            item.label[locale] ??
-                                                item.label['en']!,
-                                            style: TextStyle(
-                                              color: isSelected
-                                                  ? item.color
-                                                  : context.palette.textPrimary.withAlpha(200),
-                                              fontSize: 13,
-                                              fontWeight: isSelected
-                                                  ? FontWeight.w600
-                                                  : FontWeight.w400,
+                                          Flexible(
+                                            child: Text(
+                                              item.label[locale] ??
+                                                  item.label['en']!,
+                                              style: TextStyle(
+                                                color: isSelected
+                                                    ? item.color
+                                                    : context
+                                                          .palette
+                                                          .textPrimary
+                                                          .withAlpha(200),
+                                                fontSize: 13,
+                                                fontWeight: isSelected
+                                                    ? FontWeight.w600
+                                                    : FontWeight.w400,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -476,12 +458,14 @@ class _OnboardingAllergiesScreenState
                                     ),
                                   ),
                                   const SizedBox(width: 10),
-                                  Text(
-                                    l10n.onboardingAvoidedSection,
-                                    style: TextStyle(
-                                      color: context.palette.softLavender,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
+                                  Expanded(
+                                    child: Text(
+                                      l10n.onboardingAvoidedSection,
+                                      style: TextStyle(
+                                        color: context.palette.softLavender,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -507,12 +491,14 @@ class _OnboardingAllergiesScreenState
                                       decoration: BoxDecoration(
                                         color: isSelected
                                             ? item.color.withAlpha(40)
-                                            : context.palette.textPrimary.withAlpha(8),
+                                            : context.palette.textPrimary
+                                                  .withAlpha(8),
                                         borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
                                           color: isSelected
                                               ? item.color.withAlpha(150)
-                                              : context.palette.textPrimary.withAlpha(25),
+                                              : context.palette.textPrimary
+                                                    .withAlpha(25),
                                           width: isSelected ? 1.5 : 1,
                                         ),
                                       ),
@@ -528,23 +514,27 @@ class _OnboardingAllergiesScreenState
                                           else
                                             Icon(
                                               item.icon,
-                                              color: context.palette.textPrimary.withAlpha(
-                                                150,
-                                              ),
+                                              color: context.palette.textPrimary
+                                                  .withAlpha(150),
                                               size: 16,
                                             ),
                                           const SizedBox(width: 6),
-                                          Text(
-                                            item.label[locale] ??
-                                                item.label['en']!,
-                                            style: TextStyle(
-                                              color: isSelected
-                                                  ? item.color
-                                                  : context.palette.textPrimary.withAlpha(200),
-                                              fontSize: 13,
-                                              fontWeight: isSelected
-                                                  ? FontWeight.w600
-                                                  : FontWeight.w400,
+                                          Flexible(
+                                            child: Text(
+                                              item.label[locale] ??
+                                                  item.label['en']!,
+                                              style: TextStyle(
+                                                color: isSelected
+                                                    ? item.color
+                                                    : context
+                                                          .palette
+                                                          .textPrimary
+                                                          .withAlpha(200),
+                                                fontSize: 13,
+                                                fontWeight: isSelected
+                                                    ? FontWeight.w600
+                                                    : FontWeight.w400,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -587,12 +577,14 @@ class _OnboardingAllergiesScreenState
                                     ),
                                   ),
                                   const SizedBox(width: 10),
-                                  Text(
-                                    l10n.dietPreferencesTitle,
-                                    style: TextStyle(
-                                      color: context.palette.successGreen,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
+                                  Expanded(
+                                    child: Text(
+                                      l10n.dietPreferencesTitle,
+                                      style: TextStyle(
+                                        color: context.palette.successGreen,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -627,7 +619,8 @@ class _OnboardingAllergiesScreenState
                                             color: isSelected
                                                 ? context.palette.successGreen
                                                       .withAlpha(40)
-                                                : context.palette.textPrimary.withAlpha(8),
+                                                : context.palette.textPrimary
+                                                      .withAlpha(8),
                                             borderRadius: BorderRadius.circular(
                                               12,
                                             ),
@@ -635,7 +628,8 @@ class _OnboardingAllergiesScreenState
                                               color: isSelected
                                                   ? context.palette.successGreen
                                                         .withAlpha(150)
-                                                  : context.palette.textPrimary.withAlpha(25),
+                                                  : context.palette.textPrimary
+                                                        .withAlpha(25),
                                               width: isSelected ? 1.5 : 1,
                                             ),
                                           ),
@@ -650,26 +644,30 @@ class _OnboardingAllergiesScreenState
                                                     ? context
                                                           .palette
                                                           .successGreen
-                                                    : context.palette.textPrimary.withAlpha(
-                                                        150,
-                                                      ),
+                                                    : context
+                                                          .palette
+                                                          .textPrimary
+                                                          .withAlpha(150),
                                                 size: 16,
                                               ),
                                               const SizedBox(width: 6),
-                                              Text(
-                                                entry.value,
-                                                style: TextStyle(
-                                                  color: isSelected
-                                                      ? context
-                                                            .palette
-                                                            .successGreen
-                                                      : context.palette.textPrimary.withAlpha(
-                                                          200,
-                                                        ),
-                                                  fontSize: 13,
-                                                  fontWeight: isSelected
-                                                      ? FontWeight.w600
-                                                      : FontWeight.w400,
+                                              Flexible(
+                                                child: Text(
+                                                  entry.value,
+                                                  style: TextStyle(
+                                                    color: isSelected
+                                                        ? context
+                                                              .palette
+                                                              .successGreen
+                                                        : context
+                                                              .palette
+                                                              .textPrimary
+                                                              .withAlpha(200),
+                                                    fontSize: 13,
+                                                    fontWeight: isSelected
+                                                        ? FontWeight.w600
+                                                        : FontWeight.w400,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -710,7 +708,7 @@ class _OnboardingAllergiesScreenState
           bottom: MediaQuery.of(context).padding.bottom + 16,
           top: 12,
         ),
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -745,6 +743,7 @@ class _OnboardingAllergiesScreenState
                       borderRadius: BorderRadius.circular(16),
                     ),
                     textStyle: const TextStyle(
+                      fontFamily: 'WellnessSans',
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
@@ -752,7 +751,12 @@ class _OnboardingAllergiesScreenState
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(l10n.onboardingContinue),
+                      Flexible(
+                        child: Text(
+                          l10n.onboardingContinue,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                       const SizedBox(width: 8),
                       const Icon(Icons.arrow_forward_rounded, size: 20),
                     ],

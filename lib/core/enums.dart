@@ -14,6 +14,11 @@ enum CheckInType {
   periodFatigue,
   postWorkout,
   noSpecificIssue,
+  // Added in phase 4. Stored by name, so appending keeps saved check-ins
+  // valid; recipes for these come from `focus_rules.dart`, not tags.
+  stressed,
+  anxious,
+  poorSleep,
 }
 
 enum NutrientLevel { low, medium, high }

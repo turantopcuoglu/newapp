@@ -3,7 +3,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest_all.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
-/// The two reminders the app schedules, entirely on-device — no push
+/// The reminders the app schedules, entirely on-device — no push
 /// infrastructure, so this works with no backend.
 enum ReminderKind {
   /// Morning nudge to record how you feel, which drives recommendations.
@@ -11,6 +11,9 @@ enum ReminderKind {
 
   /// Late-afternoon nudge to cook with what's already in the pantry.
   dinnerIdea,
+
+  /// Evening nudge to close the day on Today (the card opens at 19:00).
+  eveningCloseout,
 }
 
 /// Schedules daily local reminders.
@@ -20,11 +23,12 @@ enum ReminderKind {
 class NotificationService {
   static const int _checkInId = 1001;
   static const int _dinnerId = 1002;
+  static const int _eveningId = 1003;
 
   static const _androidDetails = AndroidNotificationDetails(
     'daily_reminders',
     'Daily reminders',
-    channelDescription: 'Check-in and dinner suggestion reminders',
+    channelDescription: 'Check-in, dinner and evening reminders',
     importance: Importance.defaultImportance,
     priority: Priority.defaultPriority,
   );
@@ -127,8 +131,11 @@ class NotificationService {
     }
   }
 
-  static int _idFor(ReminderKind kind) =>
-      kind == ReminderKind.checkIn ? _checkInId : _dinnerId;
+  static int _idFor(ReminderKind kind) => switch (kind) {
+    ReminderKind.checkIn => _checkInId,
+    ReminderKind.dinnerIdea => _dinnerId,
+    ReminderKind.eveningCloseout => _eveningId,
+  };
 
   /// The next time today's [hour]:[minute] occurs; tomorrow if already past.
   static tz.TZDateTime _nextOccurrence(int hour, int minute) {

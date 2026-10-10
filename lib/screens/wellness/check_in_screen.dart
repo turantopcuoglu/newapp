@@ -39,93 +39,13 @@ class _CheckInState extends ConsumerState<WellnessCheckInScreen> {
     List<String> labels,
     ValueChanged<int?> changed, {
     List<int>? values,
-  }) => Container(
-    padding: const EdgeInsets.only(top: 8, bottom: 8),
-    decoration: BoxDecoration(
-      border: Border(
-        bottom: BorderSide(
-          color: context.palette.dividerColor.withAlpha(140),
-          width: .5,
-        ),
-      ),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Icon(icon, size: 21),
-            const SizedBox(width: 10),
-            Text(title, style: const TextStyle(fontSize: 15)),
-          ],
-        ),
-        const SizedBox(height: 10),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            final large = MediaQuery.textScalerOf(context).scale(1) > 1.2;
-            return Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: List.generate(labels.length, (i) {
-                final value = values?[i] ?? i + 1;
-                final active = selected == value;
-                return SizedBox(
-                  width: large
-                      ? constraints.maxWidth
-                      : (constraints.maxWidth - 16) / 3,
-                  child: ChoiceChip(
-                    labelPadding: const EdgeInsets.symmetric(horizontal: 3),
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    backgroundColor: Colors.transparent,
-                    selectedColor: context.palette.surface,
-                    side: BorderSide(
-                      color: active
-                          ? context.palette.mint
-                          : context.palette.textSecondary.withAlpha(160),
-                      width: .65,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    label: Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        Center(
-                          child: Text(
-                            labels[i],
-                            style: const TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ),
-                        if (active)
-                          Positioned(
-                            right: 0,
-                            top: -5,
-                            child: Container(
-                              width: 8,
-                              height: 8,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: context.palette.mint,
-                              ),
-                            ),
-                          ),
-                      ],
-                    ),
-                    selected: active,
-                    onSelected: saving
-                        ? null
-                        : (on) => setState(() => changed(on ? value : null)),
-                  ),
-                );
-              }),
-            );
-          },
-        ),
-      ],
-    ),
+  }) => ScaleChoices(
+    icon: icon,
+    title: title,
+    selected: selected,
+    labels: labels,
+    values: values,
+    onChanged: saving ? null : (v) => setState(() => changed(v)),
   );
 
   Future<void> save() async {

@@ -430,7 +430,9 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             decoration: BoxDecoration(
               color: context.palette.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(16),
+              ),
             ),
             child: Row(
               children: [
@@ -649,6 +651,12 @@ class _CreateRecipeScreenState extends ConsumerState<CreateRecipeScreen> {
       description: {locale: _descController.text.trim()},
       mealType: _mealType,
       ingredientIds: _selectedIngredients.keys.toList(),
+      // The grams the user typed are the recipe; without them the detail
+      // screen has nothing to show next to each ingredient.
+      quantities: {
+        for (final entry in _selectedIngredients.entries)
+          entry.key: IngredientQuantity(amount: entry.value),
+      },
       allergenTags: allergens.toList(),
       proteinLevel: _proteinLevel,
       fiberLevel: _fiberLevel,

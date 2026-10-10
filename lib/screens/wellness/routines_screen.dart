@@ -184,18 +184,32 @@ class RoutinesScreen extends ConsumerWidget {
 
 class RoutineSessionScreen extends ConsumerStatefulWidget {
   final RoutineSpec routine;
-  const RoutineSessionScreen({super.key, required this.routine});
+
+  /// Wall clock; tests pass a fake one to step past a locked screen.
+  final DateTime Function() now;
+  const RoutineSessionScreen({
+    super.key,
+    required this.routine,
+    this.now = DateTime.now,
+  });
   @override
   ConsumerState<RoutineSessionScreen> createState() => _RoutineSessionState();
 }
 
 class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
     with WidgetsBindingObserver {
-  final Stopwatch watch = Stopwatch();
+  // Wall-clock time, not a Stopwatch: a walk goes in the pocket and the
+  // screen locks, and the session has to keep counting through that.
+  DateTime? runningSince;
+  Duration banked = Duration.zero;
   Timer? timer;
   bool started = false, finished = false, saving = false, saved = false;
   int breathCycle = 8000;
   int get total => widget.routine.minutes * 60;
+  bool get running => runningSince != null;
+  Duration get elapsed =>
+      running ? banked + widget.now().difference(runningSince!) : banked;
+
   @override
   void initState() {
     super.initState();
@@ -204,31 +218,34 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state != AppLifecycleState.resumed && watch.isRunning) {
-      watch.stop();
-      timer?.cancel();
-      timer = null;
-      setState(() {});
-    }
+    // Timers do not fire while the app is suspended; catch up on return.
+    if (state == AppLifecycleState.resumed && running) tick();
+  }
+
+  void tick() {
+    if (!mounted) return;
+    setState(() {
+      if (elapsed.inSeconds >= total) {
+        banked = Duration(seconds: total);
+        runningSince = null;
+        finished = true;
+        timer?.cancel();
+        timer = null;
+      }
+    });
   }
 
   void toggle() {
     setState(() {
       started = true;
-      watch.isRunning ? watch.stop() : watch.start();
       timer?.cancel();
       timer = null;
-      if (watch.isRunning) {
-        timer = Timer.periodic(const Duration(seconds: 1), (_) {
-          if (!mounted) return;
-          if (watch.elapsed.inSeconds >= total) {
-            watch.stop();
-            finished = true;
-            timer?.cancel();
-            timer = null;
-          }
-          setState(() {});
-        });
+      if (running) {
+        banked = elapsed;
+        runningSince = null;
+      } else {
+        runningSince = widget.now();
+        timer = Timer.periodic(const Duration(seconds: 1), (_) => tick());
       }
     });
   }
@@ -236,7 +253,6 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
   @override
   void dispose() {
     timer?.cancel();
-    watch.stop();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -244,7 +260,7 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
   @override
   Widget build(BuildContext context) {
     final r = widget.routine;
-    final remaining = (total - watch.elapsed.inSeconds).clamp(0, total);
+    final remaining = (total - elapsed.inSeconds).clamp(0, total);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -282,9 +298,9 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
               const SizedBox(height: 20),
               RoutineVisual(
                 kind: r.id,
-                running: watch.isRunning,
+                running: running,
                 completed: finished,
-                elapsedMilliseconds: watch.elapsedMilliseconds,
+                elapsedMilliseconds: elapsed.inMilliseconds,
                 cycleMilliseconds: r.id == 'breathe' ? breathCycle : null,
               ),
               const SizedBox(height: 12),
@@ -363,7 +379,7 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             TweenAnimationBuilder<double>(
-                              tween: Tween(end: watch.isRunning ? 1 : 0),
+                              tween: Tween(end: running ? 1 : 0),
                               duration: reducedMotion(context)
                                   ? Duration.zero
                                   : const Duration(milliseconds: 380),
@@ -377,7 +393,7 @@ class _RoutineSessionState extends ConsumerState<RoutineSessionScreen>
                             const SizedBox(width: 12),
                             Flexible(
                               child: Text(
-                                watch.isRunning
+                                running
                                     ? context.w('Duraklat', 'Pause')
                                     : started
                                     ? context.w('Devam et', 'Resume')

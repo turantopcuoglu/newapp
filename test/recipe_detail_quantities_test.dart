@@ -60,8 +60,8 @@ void main() {
 
     expect(find.text('40 g'), findsOneWidget);
     expect(find.text('200 ml'), findsOneWidget);
-    // Turkish short unit for tablespoon
-    expect(find.text('1 yk'), findsOneWidget);
+    // Spoons read as words, not "yk"/"tablespoon" codes
+    expect(find.text('1 yemek kaşığı'), findsOneWidget);
   });
 
   testWidgets('units follow the app locale', (tester) async {
@@ -69,7 +69,7 @@ void main() {
     await tester.pumpWidget(host(recipe, const Locale('en')));
     await tester.pumpAndSettle();
 
-    expect(find.text('1 tbsp'), findsOneWidget);
+    expect(find.text('1 tablespoon'), findsOneWidget);
     expect(find.text('40 g'), findsOneWidget);
   });
 

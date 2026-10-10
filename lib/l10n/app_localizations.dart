@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import '../core/enums.dart';
 import 'translations/en.dart';
 import 'translations/tr.dart';
 
@@ -98,6 +99,13 @@ class AppLocalizations {
   String get recipeLunch => _t('recipeLunch');
   String get recipeDinner => _t('recipeDinner');
   String get recipeSnack => _t('recipeSnack');
+  String mealTypeName(MealType type) => switch (type) {
+    MealType.breakfast => recipeBreakfast,
+    MealType.lunch => recipeLunch,
+    MealType.dinner => recipeDinner,
+    MealType.snack => recipeSnack,
+  };
+  String get recipeAddedToPlanner => _t('recipeAddedToPlanner');
   String get recipeIngredients => _t('recipeIngredients');
   String get recipeSteps => _t('recipeSteps');
   String get recipeNutrition => _t('recipeNutrition');
@@ -196,6 +204,8 @@ class AppLocalizations {
   String get reminderCheckInBody => _t('reminderCheckInBody');
   String get reminderDinnerTitle => _t('reminderDinnerTitle');
   String get reminderDinnerBody => _t('reminderDinnerBody');
+  String get reminderEveningTitle => _t('reminderEveningTitle');
+  String get reminderEveningBody => _t('reminderEveningBody');
   String get dietPreferencesTitle => _t('dietPreferencesTitle');
   String get dietPreferencesHint => _t('dietPreferencesHint');
   String get dietVegetarian => _t('dietVegetarian');
@@ -353,6 +363,9 @@ class AppLocalizations {
   String get beverageGlasses => _t('beverageGlasses');
   String get beverageNoEntries => _t('beverageNoEntries');
   String get beverageLiters => _t('beverageLiters');
+  String get beverageGoalReached => _t('beverageGoalReached');
+  String beverageRemaining(int ml) =>
+      _t('beverageRemaining').replaceFirst('{ml}', '$ml');
   String get navBeverages => _t('navBeverages');
 
   // Nutrition Stats

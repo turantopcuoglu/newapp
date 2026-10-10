@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../components/cooked_tick.dart';
+import '../../components/empty_state_artwork.dart';
 import '../../components/meal_type_badge.dart';
+import '../../components/scene_banner.dart';
 import '../../core/atmosphere_surface.dart';
 import '../../core/day_boundary.dart';
 import '../../core/enums.dart';
@@ -17,6 +21,7 @@ import '../../providers/recipe_provider.dart';
 import '../../providers/wellness_provider.dart';
 import '../../services/day_meal_list.dart';
 import '../../services/recipe_timing.dart';
+import '../../widgets/turkish_text_field.dart';
 import '../beverages/beverages_screen.dart';
 import '../planner/planner_screen.dart';
 import 'mood_picker_screen.dart';
@@ -34,6 +39,9 @@ const int nourishTabIndex = 1;
 /// The check-in chip under the title; its label changes with the day's
 /// focus, so tests find it by key.
 const todayCheckInKey = ValueKey('today-check-in');
+
+/// The evening "how did today go?" card.
+const eveningCloseoutKey = ValueKey('evening-closeout');
 
 /// The day in one screen: how you are, what to eat and why, two small
 /// steps, and what you have eaten so far. Each block answers "what now?";
@@ -162,6 +170,11 @@ class TodayScreen extends ConsumerWidget {
         ),
       ),
       children: [
+        // In the evening, closing the day is the one thing left to do.
+        if (isEveningHour(now)) ...[
+          const LiftIn(child: _EveningCloseout(key: eveningCloseoutKey)),
+          const SizedBox(height: 22),
+        ],
         if (check == null) ...[
           LiftIn(child: _CheckInPrompt(onStart: checkIn)),
           const SizedBox(height: 22),
@@ -235,6 +248,210 @@ class _CheckInPrompt extends StatelessWidget {
           ),
         ],
       ),
+    ),
+  );
+}
+
+/// "How did today go?" — energy and mood on the morning's scales, plus an
+/// optional note. Every tap saves on its own; nothing here touches the
+/// morning check-in.
+class _EveningCloseout extends ConsumerWidget {
+  const _EveningCloseout({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final evening = ref.watch(todayEveningProvider);
+    final notifier = ref.read(wellnessProvider.notifier);
+    DateTime at() => ref.read(wellnessNowProvider);
+    final answered = evening?.energy != null && evening?.mood != null;
+    return AtmosphereSurface(
+      radius: 18,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SceneBanner(
+              scene: 'evening_closeout',
+              title: context.w('Bugün nasıl geçti?', 'How did today go?'),
+              subtitle: context.w(
+                'Sabahkiyle aynı ölçek; iki dokunuş yeter.',
+                'Same scale as the morning; two taps.',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 6, 16, 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ScaleChoices(
+                    icon: Icons.bolt_outlined,
+                    title: context.w('Akşam enerjin', 'Your evening energy'),
+                    selected: evening?.energy,
+                    labels: [
+                      context.w('Düşük', 'Low'),
+                      context.w('Orta', 'Medium'),
+                      context.w('Yüksek', 'High'),
+                    ],
+                    onChanged: (v) => v == null
+                        ? null
+                        : saveWellness(
+                            context,
+                            () => notifier.saveEvening(at(), energy: v),
+                          ),
+                  ),
+                  ScaleChoices(
+                    icon: Icons.favorite_border,
+                    title: context.w('Ruh halin', 'Your mood'),
+                    selected: evening?.mood,
+                    labels: [
+                      context.w('Zorlandım', 'Struggled'),
+                      context.w('Dengeli', 'Steady'),
+                      context.w('İyi', 'Good'),
+                    ],
+                    divider: false,
+                    onChanged: (v) => v == null
+                        ? null
+                        : saveWellness(
+                            context,
+                            () => notifier.saveEvening(at(), mood: v),
+                          ),
+                  ),
+                  if (evening?.note case final note?)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text(
+                        '“$note”',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontStyle: FontStyle.italic,
+                          color: context.palette.textSecondary,
+                        ),
+                      ),
+                    ),
+                  Wrap(
+                    alignment: WrapAlignment.spaceBetween,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      if (answered)
+                        Text(
+                          context.w(
+                            'Kaydedildi · haftalık gözlem Gelişim’de',
+                            'Saved · weekly observation in Progress',
+                          ),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: context.palette.moon,
+                          ),
+                        ),
+                      TextButton.icon(
+                        icon: const Icon(Icons.edit_note, size: 20),
+                        label: Text(
+                          evening?.note == null
+                              ? context.w('Not ekle', 'Add a note')
+                              : context.w('Notu düzenle', 'Edit note'),
+                        ),
+                        onPressed: () => showModalBottomSheet<void>(
+                          context: context,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          builder: (_) => _EveningNoteSheet(
+                            initial: evening?.note ?? '',
+                            onSave: (text) => notifier.saveEvening(
+                              at(),
+                              note: text.isEmpty ? null : text,
+                              clearNote: text.isEmpty,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _EveningNoteSheet extends StatefulWidget {
+  final String initial;
+  final Future<void> Function(String) onSave;
+  const _EveningNoteSheet({required this.initial, required this.onSave});
+  @override
+  State<_EveningNoteSheet> createState() => _EveningNoteSheetState();
+}
+
+class _EveningNoteSheetState extends State<_EveningNoteSheet> {
+  late final controller = TextEditingController(text: widget.initial);
+  bool saving = false;
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> save() async {
+    setState(() => saving = true);
+    try {
+      await widget.onSave(controller.text.trim());
+      if (mounted) Navigator.pop(context);
+    } catch (_) {
+      if (mounted) wellnessError(context);
+    } finally {
+      if (mounted) setState(() => saving = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: EdgeInsets.fromLTRB(
+      24,
+      8,
+      24,
+      24 + MediaQuery.viewInsetsOf(context).bottom,
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          context.w('Bugüne dair bir not', 'A note about today'),
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+        const SizedBox(height: 6),
+        Text(
+          context.w(
+            'Yalnız sen görürsün; cihazında şifreli saklanır.',
+            'Only you see it; stored encrypted on your device.',
+          ),
+          style: const TextStyle(fontSize: 13),
+        ),
+        const SizedBox(height: 14),
+        TurkishTextField(
+          controller: controller,
+          autofocus: true,
+          maxLines: 4,
+          minLines: 2,
+          inputFormatters: [LengthLimitingTextInputFormatter(200)],
+          decoration: InputDecoration(
+            hintText: context.w(
+              'Ör. öğleden sonra yürüdüm',
+              'e.g. went for a walk after lunch',
+            ),
+            border: const OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 14),
+        MoonButton(
+          label: context.w('Kaydet', 'Save'),
+          onPressed: saving ? null : save,
+        ),
+      ],
     ),
   );
 }
@@ -373,6 +590,7 @@ class _TodayMeals extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _SectionTitle(context.w('Bugünkü öğünlerin', 'Today’s meals')),
+        if (items.isEmpty) const EmptyStateArtwork(name: 'meals'),
         if (items.isEmpty)
           Text(
             context.w(

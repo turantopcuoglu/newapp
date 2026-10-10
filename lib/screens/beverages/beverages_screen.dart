@@ -269,7 +269,9 @@ class _BeveragesScreenState extends ConsumerState<BeveragesScreen>
               ),
               decoration: BoxDecoration(
                 color: context.palette.surface,
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(28),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
@@ -703,7 +705,7 @@ class _BeverageHeader extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4),
                                 Text(
-                                  'Goal reached!',
+                                  l10n.beverageGoalReached,
                                   style: TextStyle(
                                     color: context.palette.successGreen,
                                     fontSize: 12,
@@ -715,7 +717,7 @@ class _BeverageHeader extends StatelessWidget {
                           )
                         else
                           Text(
-                            '${targetMl - waterMl}ml remaining',
+                            l10n.beverageRemaining(targetMl - waterMl),
                             style: TextStyle(
                               color: Colors.white.withAlpha(140),
                               fontSize: 13,

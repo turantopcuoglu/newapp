@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../components/empty_state_artwork.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
@@ -97,18 +98,7 @@ class _SavedRecipesBody extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: context.palette.warmCoral.withAlpha(15),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.bookmark_border_rounded,
-                  color: context.palette.warmCoral.withAlpha(120),
-                  size: 48,
-                ),
-              ),
+              const EmptyStateArtwork(name: 'recipe_book'),
               const SizedBox(height: 20),
               Text(
                 l10n.exploreSavedEmpty,

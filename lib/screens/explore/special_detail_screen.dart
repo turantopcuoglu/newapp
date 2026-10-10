@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../components/category_cover.dart';
 import '../../components/health_recipe_card.dart';
+import '../../components/ingredient_image.dart';
 import '../../components/preference_warning.dart';
 import '../../core/theme.dart';
+import '../../core/wellness_motion.dart';
 import '../../data/explore_data.dart';
 import '../../data/health_category_info.dart';
 import '../../data/ingredient_visual.dart';
@@ -57,20 +60,19 @@ class SpecialDetailScreen extends ConsumerWidget {
             ingredientFits[a]!.demotion.compareTo(ingredientFits[b]!.demotion),
       );
 
-    final gradientColors =
-        cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
+    final accent = context.palette.mint;
 
     return Scaffold(
       backgroundColor: context.palette.background,
       body: CustomScrollView(
         slivers: [
-          // Header — unchanged: emoji, name, subtitle and the recipe count.
+          // Shared photo cover and readable title.
           SliverToBoxAdapter(
-            child: _CategoryHeader(
-              category: category,
-              locale: locale,
-              recipeCount: filteredRecipes.length,
-              gradientColors: gradientColors,
+            child: CategoryCoverHeader(
+              imagePath: category.coverImage,
+              title: category.localizedName(locale),
+              subtitle: category.localizedSubtitle(locale),
+              count: l10n.healthRecipeCount(filteredRecipes.length),
             ),
           ),
 
@@ -83,12 +85,12 @@ class SpecialDetailScreen extends ConsumerWidget {
                   info: info,
                   locale: locale,
                   l10n: l10n,
-                  accent: Color(gradientColors[0]),
+                  accent: accent,
                 ),
               ),
             ),
 
-          // Ingredient tiles, in the world-cuisine card style.
+          // Ingredient tiles: photo, name, how many recipes it opens.
           if (ingredientIds.isNotEmpty) ...[
             SliverToBoxAdapter(
               child: Padding(
@@ -129,7 +131,7 @@ class SpecialDetailScreen extends ConsumerWidget {
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         minimumSize: Size.zero,
-                        foregroundColor: Color(gradientColors[0]),
+                        foregroundColor: accent,
                       ),
                       child: Text(
                         l10n.healthAllRecipes,
@@ -146,11 +148,15 @@ class SpecialDetailScreen extends ConsumerWidget {
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 100),
               sliver: SliverGrid(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 14,
                   crossAxisSpacing: 14,
-                  childAspectRatio: 1.05,
+                  // Photo plus two lines of text; the text part grows with
+                  // the user's font size instead of eating the photo.
+                  mainAxisExtent:
+                      210 +
+                      (MediaQuery.textScalerOf(context).scale(15) - 15) * 4,
                 ),
                 delegate: SliverChildBuilderDelegate((context, index) {
                   final id = ingredientIds[index];
@@ -197,115 +203,6 @@ class SpecialDetailScreen extends ConsumerWidget {
                 }, childCount: filteredRecipes.length),
               ),
             ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Header ────────────────────────────────────────────────────────────────
-
-class _CategoryHeader extends StatelessWidget {
-  final SpecialCategory category;
-  final String locale;
-  final int recipeCount;
-  final List<int> gradientColors;
-
-  const _CategoryHeader({
-    required this.category,
-    required this.locale,
-    required this.recipeCount,
-    required this.gradientColors,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-
-    return Container(
-      padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top + 8,
-        left: 20,
-        right: 20,
-        bottom: 24,
-      ),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(gradientColors[0]), Color(gradientColors[1])],
-        ),
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-          bottomRight: Radius.circular(28),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.white.withAlpha(30),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Icon(
-                Icons.arrow_back_rounded,
-                color: Colors.white,
-                size: 22,
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Row(
-            children: [
-              Text(category.emoji, style: const TextStyle(fontSize: 40)),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      category.localizedName(locale),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: -0.3,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      category.localizedSubtitle(locale),
-                      style: TextStyle(
-                        color: Colors.white.withAlpha(200),
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: Colors.white.withAlpha(30),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              '$recipeCount ${l10n.recipeBookTotalRecipes}',
-              style: TextStyle(
-                color: Colors.white.withAlpha(230),
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
         ],
       ),
     );
@@ -423,6 +320,46 @@ class _HealthInfoCard extends StatelessWidget {
                   ),
                 ),
           ],
+          // Shown only once the physician has signed the entry off.
+          if (info.visibleRedFlags(locale) case final flags
+              when flags.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: context.palette.warmCoral),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    locale == 'tr'
+                        ? 'Şu durumlarda hekimine başvur'
+                        : 'See a doctor if you have',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                      color: context.palette.textPrimary,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  for (final flag in flags)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4),
+                      child: Text(
+                        '• $flag',
+                        style: TextStyle(
+                          fontSize: 13,
+                          height: 1.4,
+                          color: context.palette.textSecondary,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ],
           const SizedBox(height: 14),
           Text(
             l10n.healthInfoDisclaimer,
@@ -458,120 +395,77 @@ class _IngredientTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = ingredientGradient(ingredientId);
     final name =
         ingredientById(ingredientId)?.localizedName(locale) ?? ingredientId;
 
-    return GestureDetector(
-      onTap: onTap,
-      child: Opacity(
-        // Still tappable, just visibly out of the way.
-        opacity: fit.fits ? 1 : 0.55,
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color(colors[0]), Color(colors[1])],
+    return Semantics(
+      button: true,
+      child: MotionTap(
+        onTap: onTap,
+        builder: (context, _) => Opacity(
+          // Still tappable, just visibly out of the way.
+          opacity: fit.fits ? 1 : 0.55,
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: context.palette.surface,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: context.palette.dividerColor),
             ),
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Color(colors[0]).withAlpha(55),
-                blurRadius: 14,
-                offset: const Offset(0, 5),
-              ),
-            ],
-          ),
-          child: Stack(
-            children: [
-              // Oversized watermark, same trick the cuisine tiles use.
-              Positioned(
-                right: -6,
-                bottom: -10,
-                child: Text(
-                  ingredientEmoji(ingredientId),
-                  style: TextStyle(
-                    fontSize: 64,
-                    color: Colors.white.withAlpha(35),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withAlpha(40),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Center(
-                            child: Text(
-                              ingredientEmoji(ingredientId),
-                              style: const TextStyle(fontSize: 22),
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        if (!fit.fits)
-                          Tooltip(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Positioned.fill(child: IngredientImage(id: ingredientId)),
+                      if (!fit.fits)
+                        Positioned(
+                          top: 6,
+                          right: 6,
+                          child: Tooltip(
                             message: preferenceReasons(fit, l10n).join(' · '),
                             child: Container(
                               padding: const EdgeInsets.all(5),
                               decoration: BoxDecoration(
-                                color: Colors.white.withAlpha(50),
+                                color: context.palette.background.withAlpha(
+                                  200,
+                                ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.info_outline_rounded,
-                                color: Colors.white,
+                                color: context.palette.textPrimary,
                                 size: 14,
                               ),
                             ),
                           ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(height: 6),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                        vertical: 3,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withAlpha(45),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Text(
-                        l10n.healthRecipeCount(recipeCount),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
                         ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                Text(
+                  name,
+                  style: TextStyle(
+                    color: context.palette.textPrimary,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    height: 1.2,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  l10n.healthRecipeCount(recipeCount),
+                  style: TextStyle(
+                    color: context.palette.textSecondary,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

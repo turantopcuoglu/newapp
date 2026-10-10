@@ -4,7 +4,7 @@
 > neden yapıldığını ve sıradaki işi anlatır. `CLAUDE.md` ise değişmez
 > kuralları içerir (veri kuralları, komutlar, mimari) — ikisini birlikte oku.
 >
-> Son güncelleme: 2026-10-03 · Dal: `claude/recipe-save-ui-fixes-629z7x`
+> Son güncelleme: 2026-10-08 · Dal: `claude/recipe-save-ui-fixes-629z7x`
 
 ---
 
@@ -143,6 +143,69 @@ bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 
 ## 3. Sıradaki iş — Wellness yeniden düzenleme (2026-10-03'te başladı)
 
+> **▶ ŞU AN (2026-10-08, öğleden sonra)**
+> - Bitti: faz 1 (`5add799`), faz 2 (`fbd2498`), görsel entegrasyonu
+>   (K/S/O/B) ve **faz 3** (akşam kapanışı + haftalık gözlem, F1/F2 bağlı).
+>   Ayrıntı aşağıda madde 2b ve 3. Commit atılmadı (kullanıcı istemedi).
+> - Doğrulandı (Mac, Flutter 3.44.6, `~/development/flutter`): analyze
+>   temiz, 173 test, `data_report --strict` temiz (küçük işler sonrası da).
+> - **Faz 4 başladı (2026-10-08), kod tarafı hazır, hekim bekleniyor:**
+>   - Sağlık kategorisi metinleri betimleyici dile çekildi (sen, "içerir",
+>     "danış"; "eksikliğini gidermek", "kat kat", "iltihap önleyici",
+>     "kan yapıcı" çıktı); alt başlıklar sadeleşti; "PCOS Dostu" →
+>     "PCOS'ta Beslenme". Test: `health_focus_test` dil + kırmızı bayrak.
+>   - `HealthCategoryInfo`'ya `redFlags` (taslak, 2–3 madde/kategori),
+>     `reviewed`, `reviewNote`. Kırmızı bayraklar onaylanınca kategori
+>     sayfasında "Şu durumlarda hekimine başvur" kutusunda görünür.
+>   - Ölü `health_tips_data.dart` silindi (kullanılmıyordu, aşırı iddialar).
+>   - **İnceleme sayfası** (125 metin: kategoriler, gerekçe cümleleri, yeni
+>     yasal uyarı taslağı): https://claude.ai/artifact/HX1Qn6FNqLGd1uLxNZidqf
+>     Kararlar sayfanın veritabanında (`decisions/<metin id>`: status,
+>     evidence, note, tr). Hekimin yazabilmesi için Turan sayfayı onunla
+>     **Editor** olarak paylaşmalı; olmazsa "Kararları kopyala" ile metin
+>     gönderir. Kaynak: `tool/health_review_export.dart` +
+>     `tool/health_review/template.html` → `docs/hekim-inceleme/`.
+>   - **Kalan:** kararları okuyup koda işlemek (ArtifactData `list
+>     decisions`), onaylananlara `reviewed: true` + tarih, yasal uyarıyı
+>     `disclaimer_screen.dart`'a taşımak, hekim adı kullanımını konuşmak;
+>     yeni modlar (stres/kaygı/uykusuzluk/iyiyim) için tarif etiketleme.
+> - Küçük işler bitti (2026-10-08): Tarif Defterim kartlarında yemek
+>   fotoğrafı (`RecipeVisual`), Mutfağım ve alışveriş listesi satırlarında
+>   malzeme fotoğrafı, `tr.dart`'taki tüm "siz" hitabı "sen"e çevrildi
+>   (yasal uyarı ve sağlık kategori metinleri hariç, faz 4).
+> - **Yeni modlar (2026-10-08):** Stresliyim, Kaygılıyım, Uykusuzum eklendi
+>   (palet + M1–M3 manzara + gerekçe + küçük adımlar). Tarifleri elle
+>   etiketlemek yerine kural: `focus_rules.dart` (stres 50, kaygı 84,
+>   uykusuzluk 66 tarif). "Belirli Bir Sorun Yok" → "İyiyim" (kullanıcı
+>   kararı: iki benzer seçenek olmasın; M4 kullanılmadı). Kurallar inceleme
+>   sayfasında (131 metin). Test: `focus_rules_test.dart`.
+> - Push edilmedi.
+> - **Bilgi boşlukları denetimi (2026-10-08 akşam).** Kullanıcı: pişirme
+>   adımlarında miktar yok, rutinler anlaşılmıyor. Üç paket önerildi;
+>   **1. paket bitti:**
+>   - Miktar biçimi tek yerde: `lib/services/quantity_format.dart`
+>     (`formatQuantity`). "1 yemek kaşığı", "½ adet", EN çoğul; g/ml
+>     sembolle. Model'deki `formatted()` silindi (TR ekranda "1 tablespoon"
+>     basıyordu). Test: `quantity_format_test.dart`.
+>   - Kendi tarifini oluştururken girilen gramlar artık `quantities`'e
+>     yazılıyor (önce atılıyordu).
+>   - Alışveriş satırında tarif kodu ("b001") yerine tarif adı.
+>   - İngilizce kalanlar: öğün türü seçim pencereleri (`l10n.mealTypeName`),
+>     "Added to planner", su hedefi metinleri.
+>   - Rutin sayacı duvar saatiyle sayıyor; ekran kilitlenince durmuyor
+>     (10 dk yürüyüş cepte tamamlanamıyordu). Eski "arka planda dur" testleri
+>     yeni davranışa çevrildi (`mood_experience_test.dart`).
+>   - **Kalan 2. paket — pişirme modu:** adım başına malzeme+miktar (adım
+>     metninden otomatik eşleşme %94, araçla JSON'a yazılacak), 316 süreli
+>     adımda zamanlayıcı, başta hazırlık listesi.
+>   - **Kalan 3. paket — rutinler:** nefeste saniye sayımı + titreşim,
+>     yürüyüşte bitiş bildirimi + `wakelock_plus` (APK derlemesi gerekir),
+>     esnemede zamanlı hareket dizisi (görsel prompt gerekir), "Akşam
+>     rutinini başlat" şu an yalnız 2 dk nefes açıyor → sıralı akış.
+>   - Küçük kalanlar: liste kartlarında süre yok (79 tarifte süre verisi
+>     yok), tarif detayında yağ/alerjen yok, plan/Bugün satırı tarifi
+>     açmıyor, Gelişim'de çıplak "2 / 3", su hedefi sabit 2000 ml.
+
 Kullanıcı Eylül'de uygulamayı wellness yönüne çevirdi (commit `c5af4db`:
 ay ışığı teması, 9 mod paleti, Bugün/Keşfet/Plan/Gelişim/Profil sekmeleri,
 rutinler, Health Connect/HealthKit). Şikâyeti: animasyonlar kötü, akış
@@ -198,19 +261,54 @@ incelemesinden geçecek. Gezinti incelemesinde bulunanlar:
      kaydediliyor ama hiçbir yer okumuyor; okuyan kod yazılmadan sorma.
    - Malzeme adıyla arama geri geldi (`lib/services/recipe_search.dart`).
    - Bu fazda yeni görsel gerekmedi. Görsel gerekirse prompt'ları
-     `docs/design/<konu>/image-prompts.md`'ye yaz; kullanıcı GPT ile
-     çizdiriyor, referans görsel yolu ver.
+     `docs/design/gorsel-uretim/README.md`'ye yaz (kullanıcı GPT ile
+     üretiyor, referans görsel yolu ver).
    - **Kalan**: ad/cinsiyet ve alerji kayıt ekranları eski tasarımda ve
      "siz" diyor; mod listesinde stres/kaygı/uykusuzluk yok (yeni
      `CheckInType` = tarif etiketleme işi, faz 4 ile); eski `ExploreScreen`
      hâlâ ayrı tasarımda.
-3. **Akşam kapanışı + haftalık gözlem** ("pişirdiğin günlerde enerjin…";
-   ilişki, nedensellik değil).
+2b. ✅ **Görsel entegrasyonu** (2026-10-08): K1–K8, S1–S9, O1–O3, B1–B5
+   bağlandı; Keşfet/sağlık sayfalarında emoji ve parlak gradyan kalmadı.
+3. ✅ **Akşam kapanışı + haftalık gözlem** (2026-10-08). Yapılan:
+   - Karar: ayrı `EveningCheckIn` (enerji, ruh hali, not). Sabah kaydına
+     dokunmaz; Gelişim grafiğinde sabah dolu nokta, akşam halka.
+   - Bugün'de 19.00–06.00 arası en üstte "Bugün nasıl geçti?" kartı
+     (F1 + `ScaleChoices`); her dokunuş ayrı kaydeder, not isteğe bağlı
+     (200 karakter, şifreli depoda).
+   - Gelişim'de haftalık gözlem kartı (F2): son 7 app-günü; 4 akşamdan
+     azsa "x/4" der. Önce pişirilen günleri, yoksa mola günlerini, yoksa
+     tüm akşamları sayar. Metin `WeeklyInsight.text` — yalnız sayılar,
+     "çünkü" yok (test zorluyor). Türkçe ek: `trLocativeSuffix`.
+   - Bildirim: 21.00'de üçüncü hatırlatma (`ReminderKind.eveningCloseout`).
+     Akşam yemeği önerisi 17.00'de kaldı (ayrı amaç). Hatırlatmalar zaten
+     açık olan kullanıcıda yeni bildirim, ayar bir kez kapatılıp açılınca
+     kurulur — açılışta yeniden planlama yok.
+   - Test: `test/evening_closeout_test.dart`, ekran yakalama
+     `test/artwork_integration_test.dart` (evening-closeout, weekly-insight).
+   Önceki taslak:
+   - 19:00 sonrası Bugün'de "Bugün nasıl geçti?" kartı: tek dokunuşla
+     enerji/ruh hali (sabahkiyle aynı ölçek) + isteğe bağlı not. Sabah
+     kaydının üzerine yazmaz; `DailyCheckIn`'e akşam alanları ya da ayrı
+     `EveningCheckIn` (karar: geçmiş grafiği iki ölçümü ayırabilmeli).
+   - Gelişim'de haftalık gözlem kartı: en az 4 günlük veri yoksa iddia yok,
+     "birkaç gün daha kayıt" der. Örnek kalıp: "Pişirdiğin 3 günün 2'sinde
+     akşam enerjin orta/yüksekti." Sayılar yalnız kayıttan; "çünkü" yok.
+   - Bildirim: akşam hatırlatması zaten var (`notification_service.dart`,
+     17:00) — saatini kapanış kartıyla hizala.
+   - Görseller: F1 `evening_closeout`, F2 `weekly_insight`
+     (`docs/design/gorsel-uretim/README.md`).
 4. **Uzman paketi**: hekim için inceleme tablosu (durum · kural · metin ·
    kaynak · kanıt düzeyi · onay), kırmızı bayrak yönlendirmeleri, güncel
    yasal uyarı. Dil: "PCOS için" değil "PCOS'ta beslenmeyi destekleyen"
    (TİTCK tıbbi cihaz sınırı); hekim adını "incelendi" diye koymadan önce
-   tanıtım kısıtlarını kontrol et.
+   tanıtım kısıtlarını kontrol et. Hekime gidecek metinler:
+   `lib/data/focus_guidance.dart` (gerekçeler), `lib/data/health_category_info.dart`
+   (kategori açıklamaları — "eksikliğini gidermek için" gibi tedavi dili ve
+   "siz" hitabı içeriyor), `lib/data/health_tips_data.dart` (`MoodFoodTip`;
+   "tatlı isteği magnezyum eksikliğini gösterir" gibi aşırı kesin
+   iddialar — şu an ekranda yok), `disclaimer_screen.dart`.
+   Yeni modlar (stres, kaygı, uykusuzluk, iyiyim) da bu fazda: tarif
+   etiketleme + `MoodPalette` + M1–M4 görselleri.
 
 ### Görev 27 — sağlık odaklı tarif partileri (faz 4 ile birlikte sürecek)
 
@@ -333,6 +431,31 @@ Yeni oturum bunları bilmeden aynı hatalara düşer:
    paneli bu uygulamada çok yavaş; görsel kontrol için bunu kullan.
 
 ---
+
+18. **Proje harici diskte (exFAT), Mac ile Windows arasında geziyor.**
+   macOS her dosyanın yanına `._*` dosyası yazar (`.gitignore`'da); bunlar
+   `build/` içinde `flutter test`'i çökertir. Mac'te test için projeyi
+   APFS'e kopyala: `rsync -a --exclude '._*' --exclude build --exclude
+   .dart_tool ./ <scratchpad>/app/` ve orada çalıştır (Flutter:
+   `~/development/flutter`). Yerinde çalıştıracaksan her `flutter test`'ten
+   *hemen önce* `find . -name '._*' -not -path './.git/*' -delete` — her
+   düzenleme yeni `._` yaratır, test koşucusu onu okumaya çalışıp asılı
+   kalır. **Android derlemesi (Mac):** `._Foo.class` jar'a girip Kotlin'i
+   çökertiyor, Gradle klasör silemiyor. Çözüm `build/`'i iç diske sembolik
+   bağlamak (2026-10-08, çalıştı; `.gitignore`'da `/build`):
+   `rm -rf build && mkdir -p ~/development/build-cache/nutri_guide && ln -s
+   ~/development/build-cache/nutri_guide build`. `flutter clean` bağı
+   silebilir — sonra aynı komutu tekrar çalıştır. **Windows'a geçince** bu
+   bağ orada bozuk bir `build` dosyası olarak görünür: önce onu sil.
+   Gradle'a `._` süpürme görevi eklemek denendi, yetmedi (bir sonraki
+   adım klasör silemedi). Windows'ta düzenlenen dosyalar CRLF'e döner;
+   commit öncesi `git diff --ignore-cr-at-eol --stat` ile gerçek değişikliği
+   gör, yalnız satır sonu değişeni LF'e geri çevir.
+
+19. **`dart format lib` çalıştırma.** Bütün klasörü biçimlendirip 16
+   ilgisiz dosyayı ve çeviri dosyalarını değiştirdi; diff gürültüsünü ayıklamak
+   gerekti. Yalnız değiştirdiğin dosyaları biçimlendir:
+   `dart format <dosya> <dosya>`.
 
 ## 6. Doğrulama listesi (her değişiklikten sonra)
 

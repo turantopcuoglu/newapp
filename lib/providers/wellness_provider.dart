@@ -10,6 +10,7 @@ import '../models/wellness.dart';
 import '../services/wellness_store.dart';
 import '../services/recipe_timing.dart';
 import 'recipe_provider.dart';
+import '../services/focus_rules.dart';
 import '../services/recommendation_service.dart';
 
 final wellnessStoreProvider = Provider<WellnessStore>(
@@ -56,6 +57,34 @@ class WellnessNotifier extends StateNotifier<WellnessData> {
       checkIns: [...s.checkIns.where((e) => e.dayKey != entry.dayKey), entry],
     );
   });
+
+  /// Merges one evening answer into the day's record. Each tap saves, so a
+  /// half-answered card is never lost; `clearNote` removes the note.
+  Future<void> saveEvening(
+    DateTime at, {
+    int? energy,
+    int? mood,
+    String? note,
+    bool clearNote = false,
+  }) => update((s) {
+    final previous = s.eveningFor(at);
+    final entry = EveningCheckIn(
+      recordedAt: at,
+      energy: energy ?? previous?.energy,
+      mood: mood ?? previous?.mood,
+      note: clearNote ? null : note ?? previous?.note,
+    );
+    return s.copyWith(
+      evenings: [...s.evenings.where((e) => e.dayKey != entry.dayKey), entry],
+    );
+  });
+
+  Future<void> deleteEvening(String dayKey) => update(
+    (s) => s.copyWith(
+      evenings: s.evenings.where((e) => e.dayKey != dayKey).toList(),
+    ),
+  );
+
   Future<void> logRoutine(String id, int seconds, {DateTime? at}) => update(
     (s) => s.copyWith(
       routines: [
@@ -103,6 +132,16 @@ final todayCheckInProvider = Provider<DailyCheckIn?>(
       ref.watch(wellnessProvider).checkInFor(ref.watch(wellnessNowProvider)),
 );
 
+final todayEveningProvider = Provider<EveningCheckIn?>(
+  (ref) =>
+      ref.watch(wellnessProvider).eveningFor(ref.watch(wellnessNowProvider)),
+);
+
+/// The closing card belongs to the end of the app-day: from 19:00 until the
+/// 06:00 reset, so a late answer still lands on the day it describes.
+bool isEveningHour(DateTime now) =>
+    now.hour >= 19 || now.hour < DayBoundary.resetHour;
+
 final moodPaletteProvider = Provider<MoodPalette>((ref) {
   final data = ref.watch(wellnessProvider);
   final mode =
@@ -118,18 +157,14 @@ final moodPaletteProvider = Provider<MoodPalette>((ref) {
 /// the PMS tag as a fallback.
 bool recipeMatchesFocus(Recipe recipe, CheckInType? focus) =>
     focus != null &&
-    (recipe.checkInTags.contains(focus) ||
+    (recipeHasFocus(recipe, focus) ||
         ((focus == CheckInType.periodCramps ||
                 focus == CheckInType.periodFatigue) &&
             recipe.checkInTags.contains(CheckInType.pms)));
 
 /// The sentence under the day's recommendation. Everything specific in it
 /// comes from the recipe's own data, never from the focus alone.
-String recommendationReason(
-  Recipe recipe,
-  CheckInType? focus,
-  String locale,
-) {
+String recommendationReason(Recipe recipe, CheckInType? focus, String locale) {
   final tr = locale == 'tr';
   final guidance = focusGuidance[focus];
   if (guidance == null || !recipeMatchesFocus(recipe, focus)) {

@@ -1,18 +1,39 @@
 # NutriGuide (nutri_guide)
 
-> **Yeni oturum:** önce `docs/ROADMAP.md` oku — projenin nerede olduğu,
-> sıradaki iş ve bu projede daha önce düşülen tuzaklar orada. Bu dosya
-> değişmez kuralları içerir, ROADMAP güncel durumu.
+## Oturum protokolü (her yeni sohbette, görev ne olursa olsun)
 
-Kişiselleştirilmiş tarif ve beslenme uygulaması: günlük mod (check-in), sağlık
-durumu, alerji/beslenme tercihi ve evdeki malzemelere göre tarif önerir;
-kalori/makro takibi yapar. Flutter + Riverpod, yerel depolama
-(SharedPreferences), TR/EN iki dilli, backend yok.
+1. **`docs/ROADMAP.md` §3'ü oku** — hangi fazdayız, sıradaki iş ne, neyin
+   bilerek yapılmadığı. §5 bu projede düşülen tuzaklar; yeni iş öncesi göz at.
+2. **Arayüze dokunacaksan `docs/DESIGN.md`'yi oku** — sekme haritası,
+   bileşenler, hareket süreleri, sağlık dili, tasarım borcu.
+3. **Görsel gerekiyorsa çizme/uydurma:**
+   `docs/design/gorsel-uretim/README.md`'ye ayrıntılı GPT prompt'u ekle
+   (aile, referans dosyalar, boyut, dosya adı, durum tablosu satırı).
+   Kullanıcı ChatGPT'de üretip `docs/design/gorsel-uretim/teslim/`'e koyar;
+   bağlama adımları aynı dosyanın §6'sında. Oturum başında `teslim/`'de
+   tabloda **U** işaretsiz dosya varsa kullanıcıya söyle.
+4. Kullanıcının verdiği görev ROADMAP'teki sırayla çelişiyorsa kullanıcının
+   görevini yap; sıranın neden öyle olduğunu tek cümleyle hatırlat.
+5. **Bir iş parçası bitince:** ROADMAP §3'te durumu güncelle (ne bitti, ne
+   kaldı, neden), gerekirse DESIGN.md / görsel tablosunu güncelle, doğrula
+   (aşağıdaki test politikası), kullanıcı isterse commit at.
+
+**Kullanıcı hakkında:** Turan; Türkçe konuşur, yanıtlar Türkçe. Eşi hekim —
+sağlıkla ilgili metinler onun incelemesinden geçecek (faz 4). Commit'i
+kullanıcı ister; push yalnız açıkça istenince. Görselleri GPT ile kendisi
+üretiyor; prompt'ta referans görsel yolu vermek tutarlılığı artırıyor.
+
+Kişisel iyi oluş + beslenme uygulaması: günlük durum (check-in), sağlık
+durumu, alerji/beslenme tercihi ve mutfaktaki malzemelere göre gerekçeli
+tarif önerir; kısa rutinler (nefes, yürüyüş, uyku), su ve "pişirdim"
+tüketim kaydı tutar. Flutter + Riverpod, yerel depolama (SharedPreferences +
+şifreli wellness deposu), TR/EN, backend yok.
 
 ## Komutlar
 
-> Bu ortamda Flutter kurulu gelmez; kurulum adımları `docs/ROADMAP.md`
-> bölüm 0'da. Sürüm 3.32.5 olmalı (3.24.x `intl` ile çakışıyor).
+> Kullanıcının Windows makinesinde Flutter **3.44.6** kurulu (pubspec
+> `>=3.38.0`). Bulut sandbox'ta kurulum: `docs/ROADMAP.md` §0. 3.24.x `intl`
+> ile çakışır.
 
 ```bash
 flutter pub get                            # bağımlılıklar
@@ -21,6 +42,9 @@ flutter test                               # tüm testler geçmeli
 dart run tool/data_report.dart             # tarif verisi bütünlük + kalori raporu
 dart run tool/data_report.dart --strict    # hata varsa non-zero exit (CI)
 dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden hesaplar
+flutter test test/wellness_ui_test.dart --dart-define=CAPTURE_WELLNESS=true  # ekran PNG'leri → output/wellness-build/
+dart run tool/health_review_export.dart     # hekim inceleme sayfası → docs/hekim-inceleme/ (sonra Artifact'e yeniden yayımla)
+powershell -ExecutionPolicy Bypass -File tool/resize_images.ps1 -Source <klasör> -Target <assets/images/...>  # teslim görselleri küçült
 ```
 
 ## Mimari
@@ -55,11 +79,31 @@ dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden he
   gevşetilmez). Sevilmeyen besin ve beslenme tercihi ise Keşfet'te yalnızca
   sıralamayı değiştirir: `preference_matcher.dart` + `browsableScoredRecipes
   Provider` uyumsuzu en alta indirir ve nedenini kart üstünde gösterir.
-- `lib/providers/` — Riverpod provider'ları; `recipe_provider.dart` merkezi.
-- `lib/screens/` — UI; `main_shell.dart` sekmeleri tanımlar.
-
-- `lib/components/recipe_visual.dart` — tarif görseli. Fotoğraf yok; mutfak
-  gradyanı + yemek emojisi çizilir. `imagePath` doluysa o kullanılır.
+- `lib/providers/` — Riverpod provider'ları; `recipe_provider.dart` (tarif
+  havuzu) ve `wellness_provider.dart` (check-in, günlük öneri sıralaması
+  `wellnessRecipesProvider`, gerekçe metni `recommendationReason`) merkezi.
+- `lib/screens/main_shell.dart` — 5 sekme: Bugün · Beslen · İyi oluş ·
+  Gelişim · Profil (`lib/screens/wellness/`). Ekran haritası ve bileşenler:
+  `docs/DESIGN.md`.
+- **Check-in tek kayıt:** `DailyCheckIn` (`lib/models/wellness.dart`) —
+  focus (mod) + enerji/süre/ruh hali/uyku/stres. Akış: `MoodPickerScreen` →
+  `WellnessCheckInScreen`. Eski `checkInProvider` yalnız testlerde varsayılan
+  olarak kalıyor; `main.dart` `activeRecipeContextProvider`'ı bugünkü
+  check-in'e bağlar. Akşam cevabı ayrı kayıt: `EveningCheckIn`
+  (`saveEvening` birleştirir, sabah kaydına dokunmaz). Haftalık gözlem
+  (`lib/services/weekly_insight.dart`) yalnız kayıtlardan sayar, 4 akşamdan
+  azsa iddia kurmaz ve neden-sonuç söylemez — testi bunu zorlar.
+- **Mod → tarif eşleşmesi tek yerde:** `lib/services/focus_rules.dart`
+  (`recipeHasFocus`). İlk dokuz mod JSON'daki `checkInTags`'i kullanır;
+  Stresliyim / Kaygılıyım / Uykusuzum tarif verisinden kuralla türetilir
+  (kafeinsiz, basit şeker değil, …) — bu üçü için JSON'a etiket yazma.
+  Kuralın sözlü hali `focusRuleText`, hekim inceleme sayfasına gider.
+  "Belirli Bir Sorun Yok" artık "İyiyim" (enum adı `noSpecificIssue`).
+- `lib/data/focus_guidance.dart` — her mod için gerekçe cümlesi ve küçük
+  adımlar; sağlık dili kuralları dosyanın başında. Hekim onayı `reviewed`.
+- `lib/components/recipe_visual.dart` — tarif fotoğrafı: önce `imagePath`,
+  yoksa atlas hücresi (`lib/data/food_photo_catalog.dart`, 144/144 tarif ve
+  233/233 malzemenin fotoğrafı var).
 
 ## Veri kuralları (tarif eklerken/düzenlerken)
 
@@ -110,8 +154,10 @@ sağlık durumu (besin profili veya faydalı malzeme), alerjen dışlama
 yerde: `lib/services/special_category_matcher.dart` — Keşfet'teki sayı ve
 açılan liste aynı fonksiyondan geçmeli, yoksa rozet yalan söyler.
 
-Kategorilere **tek giriş** Keşfet → "Sana Özel"; ana sayfada sağlık bölümü
-yok. Kategori sayfası şu sırayla: başlık → sağlık durumu açıklaması →
+Kategorilere giriş: Beslen sekmesi → "Sağlık alanları ve dünya mutfakları"
+(`ExploreScreen`) → "Sana Özel". Kullanıcının sağlık durumu kayıt akışında
+(`onboarding_health_screen.dart`) ve Profil'de seçilir; seçilen alanlar
+önde listelenir. Kategori sayfası şu sırayla: başlık → sağlık durumu açıklaması →
 malzeme kartları. Açıklama metni ve kartlardaki malzemeler
 `lib/data/health_category_info.dart` içinde (TR+EN zorunlu, malzeme ID'leri
 kanonik olmalı — rapor doğruluyor). Bir malzeme kartı yalnızca o malzemeyi
@@ -119,5 +165,7 @@ içeren VE kategoriye uyan tarifleri listeler (`matchesCategoryIngredient`).
 
 ## Git
 
-- Geliştirme dalı: `claude/recipe-app-strategy-aojpcj`; push:
-  `git push -u origin <dal>`. Başka dala izinsiz push yapma.
+- Çalışma dalı (2026-10 itibarıyla): `claude/recipe-save-ui-fixes-629z7x`
+  (önceki: `claude/recipe-app-strategy-aojpcj`). Push yalnız kullanıcı
+  isteyince: `git push -u origin <dal>`. Başka dala izinsiz push yapma.
+- Commit mesajı İngilizce, "neden"i anlatır; gövde sonunda Co-Authored-By.

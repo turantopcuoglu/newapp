@@ -16,6 +16,7 @@ import '../../providers/shopping_provider.dart';
 import '../../services/diet_classifier.dart';
 import '../../services/recommendation_service.dart';
 import '../../services/preference_matcher.dart';
+import '../../services/quantity_format.dart';
 import '../../services/recipe_timing.dart';
 import '../../providers/profile_provider.dart';
 
@@ -262,7 +263,7 @@ class RecipeDetailScreen extends ConsumerWidget {
                       name: name,
                       // Quantities are per serving and live in the recipe
                       // data; showing them is what makes a recipe cookable.
-                      quantity: _formatQuantity(recipe.quantities[id], l10n),
+                      quantity: formatQuantity(recipe.quantities[id], l10n),
                       isAvailable: inKitchen,
                     );
                   }).toList(),
@@ -420,9 +421,7 @@ class RecipeDetailScreen extends ConsumerWidget {
             .map(
               (type) => SimpleDialogOption(
                 onPressed: () => Navigator.pop(ctx, type),
-                child: Text(
-                  type.name[0].toUpperCase() + type.name.substring(1),
-                ),
+                child: Text(AppLocalizations.of(context).mealTypeName(type)),
               ),
             )
             .toList(),
@@ -438,9 +437,11 @@ class RecipeDetailScreen extends ConsumerWidget {
           mealType: mealType,
         );
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Added to planner')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(AppLocalizations.of(context).recipeAddedToPlanner),
+      ),
+    );
   }
 }
 
@@ -519,18 +520,6 @@ class _CookedButton extends ConsumerWidget {
             ),
     );
   }
-}
-
-/// Formats a per-serving quantity with a localized unit, e.g. "200 ml",
-/// "1 yemek kaşığı". Returns null when the recipe declares no amount.
-String? _formatQuantity(IngredientQuantity? quantity, AppLocalizations l10n) {
-  if (quantity == null || quantity.amount <= 0) return null;
-  final amount = quantity.amount;
-  // Whole numbers read better without a trailing ".0"; halves keep one digit.
-  final text = amount == amount.roundToDouble()
-      ? amount.toInt().toString()
-      : amount.toStringAsFixed(1);
-  return '$text ${l10n.localizedUnit(quantity.unit.name)}';
 }
 
 /// One ingredient line: name on the left, amount on the right, with a marker

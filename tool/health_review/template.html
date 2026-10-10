@@ -1,0 +1,396 @@
+<title>NutriGuide Hekim İncelemesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout: a clinical review form — summary bar on top, one column of
+   numbered items per area, the app's text quoted large, the decision
+   strip under each quote. */
+:root {
+  --bg: #f3f5f4;
+  --paper: #ffffff;
+  --ink: #18222b;
+  --muted: #5b6770;
+  --rule: #d7dddc;
+  --accent: #1f5f8b;
+  --ok: #2f7a4d;
+  --ok-bg: #e4f2ea;
+  --fix: #9a6512;
+  --fix-bg: #fbf0dc;
+  --drop: #a33a32;
+  --drop-bg: #f9e4e1;
+  --wait-bg: #eceff0;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-quote: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111719; --paper: #1a2226; --ink: #e5ecee; --muted: #9aa8ae;
+    --rule: #2c383d; --accent: #7fb6dc; --ok: #7fcb9c; --ok-bg: #18301f;
+    --fix: #e5b45f; --fix-bg: #33280f; --drop: #ee8f86; --drop-bg: #3a1c19;
+    --wait-bg: #232c30; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111719; --paper: #1a2226; --ink: #e5ecee; --muted: #9aa8ae;
+  --rule: #2c383d; --accent: #7fb6dc; --ok: #7fcb9c; --ok-bg: #18301f;
+  --fix: #e5b45f; --fix-bg: #33280f; --drop: #ee8f86; --drop-bg: #3a1c19;
+  --wait-bg: #232c30; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font-body);
+  padding-inline: 16px; padding-block: 0 64px;
+}
+.wrap { max-width: 860px; margin: 0 auto; }
+h1, h2 { text-wrap: balance; margin: 0; }
+h1 { font-size: 1.7rem; font-weight: 600; letter-spacing: -.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.mono { font-family: var(--font-mono); font-size: .78rem; }
+
+header.intro { padding-block: 28px 18px; display: grid; gap: 12px; }
+.intro p { max-width: 68ch; }
+.rules { display: grid; gap: 6px; padding: 14px 16px; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 10px; }
+.rules strong { font-weight: 600; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--rule);
+  display: grid; gap: 8px; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  font-variant-numeric: tabular-nums; font-size: .9rem; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+.meter { height: 6px; border-radius: 3px; background: var(--wait-bg); overflow: hidden; display: flex; }
+.meter span { height: 100%; transition: width .25s ease; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.store { font-size: .82rem; }
+.store.local { color: var(--fix); }
+
+button, select, textarea { font: inherit; color: inherit; }
+.chip { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px;
+  padding: 4px 11px; font-size: .85rem; cursor: pointer; }
+.chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.btn { border: 1px solid var(--accent); background: var(--accent); color: var(--paper);
+  border-radius: 8px; padding: 6px 12px; font-size: .88rem; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); }
+button:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+section.group { margin-top: 30px; display: grid; gap: 12px; }
+.group-head { display: grid; gap: 2px; }
+.item { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 14px 16px; display: grid; gap: 10px; border-left-width: 4px; }
+.item[data-status="approve"] { border-left-color: var(--ok); }
+.item[data-status="fix"] { border-left-color: var(--fix); }
+.item[data-status="remove"] { border-left-color: var(--drop); }
+.item-top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.kind { font-weight: 600; font-size: .86rem; }
+.tag { font-size: .74rem; padding: 1px 8px; border-radius: 999px; background: var(--wait-bg); color: var(--muted); }
+.tag.hidden { background: var(--fix-bg); color: var(--fix); }
+.tag.changed { background: var(--drop-bg); color: var(--drop); }
+blockquote { margin: 0; font-family: var(--font-quote); font-size: 1.08rem; line-height: 1.5; }
+details { font-size: .88rem; }
+details summary { cursor: pointer; color: var(--muted); }
+.en { font-family: var(--font-quote); font-style: italic; color: var(--muted); padding-top: 4px; }
+.meta { display: grid; gap: 3px; font-size: .86rem; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 500; }
+.decide { display: grid; gap: 8px; border-top: 1px dashed var(--rule); padding-top: 10px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1px solid var(--rule); background: transparent; border-radius: 8px;
+  padding: 5px 12px; cursor: pointer; font-size: .88rem; }
+.seg button[data-v="approve"][aria-pressed="true"] { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); font-weight: 600; }
+.seg button[data-v="fix"][aria-pressed="true"] { background: var(--fix-bg); border-color: var(--fix); color: var(--fix); font-weight: 600; }
+.seg button[data-v="remove"][aria-pressed="true"] { background: var(--drop-bg); border-color: var(--drop); color: var(--drop); font-weight: 600; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+select { border: 1px solid var(--rule); background: var(--paper); border-radius: 8px; padding: 4px 8px; font-size: .86rem; }
+textarea { width: 100%; min-height: 58px; border: 1px solid var(--rule); background: var(--bg);
+  border-radius: 8px; padding: 8px 10px; resize: vertical; font-size: .92rem; }
+.saved { font-size: .78rem; color: var(--muted); }
+.empty { padding: 18px; text-align: center; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .meter span { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <p class="mono muted">NutriGuide · faz 4 · <span id="gen"></span></p>
+    <h1>Sağlık metinleri hekim incelemesi</h1>
+    <p>Uygulamada sağlıkla ilgili görünen her metin aşağıda, uygulamadaki haliyle. Her biri için <b>Onay</b>, <b>Düzelt</b> ya da <b>Kaldır</b> seç; düzeltme önerini ve varsa kaynağını not alanına yaz. Kanıt düzeyini işaretlemek isteğe bağlı.</p>
+    <div class="rules">
+      <p><strong>Metinlerin uyduğu sınır.</strong> Uygulama tıbbi cihaz değil, bir iyi oluş uygulaması: besinlerin neyi <em>içerdiğini</em> söyler, ne <em>tedavi ettiğini</em> söylemez. “PCOS için” değil, “PCOS’ta beslenmeyi destekleyen”. Eksiklik, teşhis, tedavi, iyileştirir, garanti gibi ifadeler kullanılmaz; hitap “sen”.</p>
+      <p><strong>Önerilen kaynaklar</strong> başlangıç noktasıdır, doğrulanmamıştır. Uygun kaynağı not alanına yazman yeterli.</p>
+      <p><strong>Hekim adı.</strong> Uygulamada “bir hekim tarafından incelendi” ifadesi kullanılacaksa, adının yer alıp almayacağı ayrıca konuşulacak.</p>
+    </div>
+  </header>
+
+  <div class="bar" role="region" aria-label="İlerleme">
+    <div class="counts" id="counts"></div>
+    <div class="meter" id="meter" aria-hidden="true"></div>
+    <div class="tools">
+      <div class="seg" id="filters" role="group" aria-label="Göster"></div>
+      <button class="btn ghost" id="copy" type="button">Kararları kopyala</button>
+      <span class="store" id="store">Kayıt bağlanıyor…</span>
+    </div>
+  </div>
+
+  <main id="list"></main>
+</div>
+
+<script id="review-data" type="application/json">__REVIEW_DATA__</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById('review-data').textContent);
+  const LABEL = { approve: 'Onay', fix: 'Düzelt', remove: 'Kaldır' };
+  const EVIDENCE = [['', 'Kanıt düzeyi —'], ['A', 'A · güçlü'], ['B', 'B · orta'], ['C', 'C · zayıf'], ['expert', 'Uzman görüşü']];
+  const LOCAL_KEY = 'nutriguide-review-v1';
+  const decisions = {};       // id -> {status, evidence, note, tr, at}
+  let mode = 'connecting';    // 'shared' | 'local' | 'connecting'
+  let db = null, userId = null, filter = 'all';
+
+  document.getElementById('gen').textContent = 'metinler ' + DATA.generatedAt + ' tarihli koddan';
+
+  // ── Storage ────────────────────────────────────────────────────────────
+  function loadLocal() {
+    try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || '{}'); } catch { return {}; }
+  }
+  function saveLocal() {
+    try { localStorage.setItem(LOCAL_KEY, JSON.stringify(decisions)); } catch {}
+  }
+  function goLocal(reason) {
+    mode = 'local';
+    Object.assign(decisions, loadLocal(), decisions);
+    const el = document.getElementById('store');
+    el.className = 'store local';
+    el.textContent = reason + ' Kararların bu tarayıcıda saklanıyor; bitince “Kararları kopyala” ile gönder.';
+    renderAll();
+  }
+  const pending = {};
+  const typing = new Set();   // ids whose note is being typed right now
+  async function persist(id) {
+    const d = decisions[id];
+    if (mode !== 'shared') { saveLocal(); markSaved(id, 'tarayıcıda'); return; }
+    // One write at a time per document; the latest state wins.
+    if (pending[id]) { pending[id].again = true; return; }
+    pending[id] = { again: false };
+    try {
+      do {
+        pending[id].again = false;
+        const body = { ...decisions[id], by: userId || null };
+        if (body.status || body.note || body.evidence) {
+          await db.collection('decisions').doc(id).set(body);
+        } else {
+          await db.collection('decisions').doc(id).delete();
+        }
+      } while (pending[id].again);
+      markSaved(id, 'kaydedildi');
+    } catch (e) {
+      goLocal(e && e.code === 'invalid_argument' ? 'Bu sayfaya yazma iznin yok.' : 'Ortak kayda yazılamadı.');
+      saveLocal();
+    } finally {
+      delete pending[id];
+    }
+  }
+
+  // ── Rendering ──────────────────────────────────────────────────────────
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === 'text') n.textContent = v;
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+      else if (v !== false && v != null) n.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids) if (kid) n.append(kid);
+    return n;
+  };
+
+  function statusOf(item) {
+    const d = decisions[item.id];
+    return d && d.status ? d.status : 'wait';
+  }
+  function changed(item) {
+    const d = decisions[item.id];
+    return !!(d && d.status && d.tr && d.tr !== item.tr);
+  }
+
+  function renderCounts() {
+    const total = DATA.items.length;
+    const c = { approve: 0, fix: 0, remove: 0, wait: 0 };
+    for (const item of DATA.items) c[statusOf(item)]++;
+    const counts = document.getElementById('counts');
+    counts.replaceChildren(
+      el('span', { text: `${total - c.wait}/${total} karar verildi` }),
+      ...[['approve', 'var(--ok)'], ['fix', 'var(--fix)'], ['remove', 'var(--drop)'], ['wait', 'var(--muted)']].map(([k, color]) => {
+        const s = el('span');
+        const dot = el('span', { class: 'dot' }); dot.style.background = color;
+        s.append(dot, `${k === 'wait' ? 'Bekliyor' : LABEL[k]} ${c[k]}`);
+        return s;
+      }),
+    );
+    const meter = document.getElementById('meter');
+    meter.replaceChildren(...[['approve', 'var(--ok)'], ['fix', 'var(--fix)'], ['remove', 'var(--drop)']].map(([k, color]) => {
+      const s = el('span'); s.style.width = (100 * c[k] / total) + '%'; s.style.background = color; return s;
+    }));
+  }
+
+  function renderFilters() {
+    const opts = [['all', 'Tümü'], ['wait', 'Bekleyenler'], ['fix', 'Düzeltilecekler'], ['hidden', 'Ekranda olmayan taslaklar']];
+    document.getElementById('filters').replaceChildren(...opts.map(([v, label]) =>
+      el('button', { type: 'button', class: 'chip', 'aria-pressed': String(filter === v), text: label,
+        onclick: () => { filter = v; renderAll(); } })));
+  }
+
+  function visible(item) {
+    if (filter === 'wait') return statusOf(item) === 'wait' || changed(item);
+    if (filter === 'fix') return statusOf(item) === 'fix';
+    if (filter === 'hidden') return !item.shown;
+    return true;
+  }
+
+  function markSaved(id, text) {
+    const n = document.querySelector(`[data-saved="${CSS.escape(id)}"]`);
+    if (n) n.textContent = text;
+  }
+
+  function itemCard(item, number) {
+    const d = decisions[item.id] || {};
+    const card = el('article', { class: 'item', 'data-status': statusOf(item), id: 'i-' + item.id });
+    const top = el('div', { class: 'item-top' },
+      el('span', { class: 'mono muted', text: number }),
+      el('span', { class: 'kind', text: item.kind }),
+      el('span', { class: 'tag' + (item.shown ? '' : ' hidden'), text: item.shown ? 'Ekranda' : 'Taslak · ekranda değil' }),
+      changed(item) ? el('span', { class: 'tag changed', text: 'Karardan sonra metin değişti' }) : null,
+    );
+    const quote = el('blockquote', { lang: 'tr', text: item.tr });
+    const en = el('details', {}, el('summary', { text: 'İngilizce metin' }), el('p', { class: 'en', lang: 'en', text: item.en }));
+    const meta = el('div', { class: 'meta' }, el('p', {}, el('b', { text: 'Ne söylüyor: ' }), item.claim));
+    if (item.sources.length) meta.append(el('p', {}, el('b', { text: 'Önerilen kaynak: ' }), item.sources.join(' · ')));
+
+    const seg = el('div', { class: 'seg', role: 'group', 'aria-label': 'Karar' });
+    for (const v of ['approve', 'fix', 'remove']) {
+      seg.append(el('button', { type: 'button', 'data-v': v, 'aria-pressed': String(d.status === v), text: LABEL[v],
+        onclick: () => {
+          const cur = decisions[item.id] || {};
+          decisions[item.id] = { ...cur, status: cur.status === v ? '' : v, tr: item.tr, at: new Date().toISOString() };
+          persist(item.id);
+          renderCounts();
+          card.dataset.status = statusOf(item);
+          for (const b of seg.children) b.setAttribute('aria-pressed', String(decisions[item.id].status === b.dataset.v));
+          if (filter !== 'all') renderAll();
+        } }));
+    }
+    const sel = el('select', { id: 'ev-' + item.id, 'aria-label': 'Kanıt düzeyi',
+      onchange: () => {
+        decisions[item.id] = { ...(decisions[item.id] || {}), evidence: sel.value, tr: item.tr, at: new Date().toISOString() };
+        persist(item.id);
+      } });
+    for (const [v, label] of EVIDENCE) sel.append(el('option', { value: v, text: label }));
+    sel.value = d.evidence || '';
+    let timer = null;
+    const note = el('textarea', { id: 'note-' + item.id, 'aria-label': 'Not', placeholder: 'Düzeltme önerisi, kaynak ya da not',
+      oninput: () => {
+        markSaved(item.id, 'yazılıyor…');
+        typing.add(item.id);
+        decisions[item.id] = { ...(decisions[item.id] || {}), note: note.value, tr: item.tr, at: new Date().toISOString() };
+        clearTimeout(timer);
+        timer = setTimeout(() => { typing.delete(item.id); persist(item.id); }, 700);
+      } });
+    note.value = d.note || '';
+    const decide = el('div', { class: 'decide' },
+      el('div', { class: 'row' }, seg, sel, el('span', { class: 'saved', 'data-saved': item.id })),
+      note);
+    card.append(top, quote, en, meta, decide);
+    return card;
+  }
+
+  function renderAll() {
+    renderCounts();
+    renderFilters();
+    const list = document.getElementById('list');
+    // Keep whatever the reviewer is typing in place.
+    const active = document.activeElement && document.activeElement.id;
+    list.replaceChildren();
+    let shown = 0;
+    DATA.groups.forEach((g, gi) => {
+      const items = DATA.items.filter(i => i.group === g.id);
+      const vis = items.filter(visible);
+      if (!vis.length) return;
+      const sec = el('section', { class: 'group', 'aria-labelledby': 'g-' + g.id },
+        el('div', { class: 'group-head' },
+          el('h2', { id: 'g-' + g.id, text: `${gi + 1}. ${g.title}` }),
+          el('p', { class: 'muted', text: g.note })));
+      for (const item of vis) {
+        sec.append(itemCard(item, `${gi + 1}.${items.indexOf(item) + 1}`));
+        shown++;
+      }
+      list.append(sec);
+    });
+    if (!shown) list.append(el('p', { class: 'empty', text: 'Bu filtrede gösterilecek metin yok.' }));
+    if (active) { const n = document.getElementById(active); if (n) n.focus(); }
+  }
+
+  // ── Copy ───────────────────────────────────────────────────────────────
+  document.getElementById('copy').addEventListener('click', async () => {
+    const lines = [];
+    DATA.groups.forEach((g, gi) => {
+      DATA.items.filter(i => i.group === g.id).forEach((item, ii) => {
+        const d = decisions[item.id];
+        if (!d || !(d.status || d.note || d.evidence)) return;
+        lines.push(`${gi + 1}.${ii + 1} [${item.id}] ${d.status ? LABEL[d.status] : 'Karar yok'}` +
+          (d.evidence ? ` · kanıt ${d.evidence}` : '') + (d.note ? `\n   Not: ${d.note}` : ''));
+      });
+    });
+    const text = lines.length ? lines.join('\n') : 'Henüz karar yok.';
+    const btn = document.getElementById('copy');
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = 'Kopyalandı';
+    } catch {
+      // Clipboard refused: show the text selected so it can be copied by hand.
+      const ta = el('textarea', { readonly: true, 'aria-label': 'Kararlar' });
+      ta.value = text; ta.style.minHeight = '160px';
+      btn.after(ta); ta.select();
+      btn.textContent = 'Metni seçip kopyala';
+    }
+    setTimeout(() => { btn.textContent = 'Kararları kopyala'; }, 2500);
+  });
+
+  renderAll();
+
+  // ── Shared store ───────────────────────────────────────────────────────
+  (async () => {
+    const claude = window.claude;
+    if (!claude || !claude.use) { goLocal('Ortak kayıt bu görünümde yok.'); return; }
+    const [dbNs, user] = await Promise.all([claude.use('db'), claude.use('user')]);
+    if (!dbNs) { goLocal('Ortak kayıt bu görünümde yok.'); return; }
+    db = dbNs;
+    userId = user ? await user.id() : null;
+    const canWrite = user ? await user.can('data.write') : null;
+    db.collection('decisions').onSnapshot(snap => {
+      let differs = false;
+      for (const doc of snap.docs) {
+        const d = doc.data();
+        // Never overwrite what this viewer is typing or still saving.
+        if (pending[doc.id] || typing.has(doc.id)) continue;
+        const next = { status: d.status || '', evidence: d.evidence || '', note: d.note || '', tr: d.tr || '', at: d.at || '' };
+        const cur = decisions[doc.id] || {};
+        if (['status', 'evidence', 'note', 'tr'].some(k => (cur[k] || '') !== next[k])) differs = true;
+        decisions[doc.id] = next;
+      }
+      const first = mode === 'connecting';
+      if (mode !== 'local') {
+        mode = 'shared';
+        const s = document.getElementById('store');
+        s.className = 'store';
+        s.textContent = canWrite === false
+          ? 'Ortak kayda yalnız okuma iznin var.'
+          : 'Kararlar ortak kayda yazılıyor.';
+      }
+      // Re-render only for changes made elsewhere: a rebuild moves the
+      // caret of whoever is typing.
+      if (first || differs) renderAll();
+    }, err => goLocal(err && err.code === 'revoked' ? 'Erişim değişti.' : 'Ortak kayda bağlanılamadı.'));
+    if (canWrite === false) goLocal('Bu sayfaya yazma iznin yok.');
+  })();
+})();
+</script>

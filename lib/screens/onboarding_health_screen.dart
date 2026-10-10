@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../components/health_condition_chips.dart';
+import '../components/onboarding_artwork_header.dart';
 import '../core/theme.dart';
 import 'onboarding_allergies_screen.dart';
-import 'wellness/moonlit_assets.dart';
 import 'wellness/moonlit_page.dart';
 import 'wellness/wellness_ui.dart';
 
@@ -28,16 +29,14 @@ class OnboardingHealthScreen extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 520),
             child: ListView(
               children: [
-                MoonlitHeader(
-                  moon: false,
-                  minHeight: 150,
-                  child: Text(
-                    context.w(
-                      'Bilmemizi istediğin\nbir durum var mı?',
-                      'Anything you want\nus to know?',
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 16, 22, 20),
+                  child: OnboardingArtworkHeader(
+                    name: 'health',
+                    title: context.w(
+                      'Bilmemizi istediğin bir durum var mı?',
+                      'Anything you want us to know?',
                     ),
-                    style: Theme.of(context).textTheme.headlineLarge
-                        ?.copyWith(fontSize: 32, height: 1.1),
                   ),
                 ),
                 Padding(

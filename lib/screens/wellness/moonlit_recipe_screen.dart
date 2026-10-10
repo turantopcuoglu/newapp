@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/theme.dart';
+import '../../l10n/app_localizations.dart';
 import '../../models/recipe.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/inventory_provider.dart';
@@ -10,6 +11,7 @@ import '../../providers/shopping_provider.dart';
 import '../../providers/cooked_provider.dart';
 import '../../services/preference_matcher.dart';
 import '../../services/recommendation_service.dart';
+import '../../services/quantity_format.dart';
 import '../../services/recipe_timing.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
 import 'moonlit_assets.dart';
@@ -185,7 +187,11 @@ class MoonlitRecipeScreen extends ConsumerWidget {
                       (id) => FineRow(
                         title: foodName(id, locale, prepared: featured),
                         trailing: Text(
-                          recipe.quantities[id]?.formatted() ?? '—',
+                          formatQuantity(
+                                recipe.quantities[id],
+                                AppLocalizations.of(context),
+                              ) ??
+                              '—',
                           style: const TextStyle(fontSize: 13),
                         ),
                       ),

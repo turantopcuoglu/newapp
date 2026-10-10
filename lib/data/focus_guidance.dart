@@ -72,7 +72,8 @@ const Map<CheckInType, FocusGuidance> focusGuidance = {
     reasonTr:
         'Şişkinlik hissettiğin için bu durumda tercih edilmek üzere '
         'işaretlenen tarifleri öne aldık.',
-    reasonEn: 'You feel bloated, so recipes marked for days like this come first.',
+    reasonEn:
+        'You feel bloated, so recipes marked for days like this come first.',
     steps: ['walk', 'breathe'],
   ),
   CheckInType.cravingSweets: FocusGuidance(
@@ -129,10 +130,45 @@ const Map<CheckInType, FocusGuidance> focusGuidance = {
   ),
   CheckInType.noSpecificIssue: FocusGuidance(
     focus: CheckInType.noSpecificIssue,
+    reasonTr: 'İyi hissettiğin günler için işaretlenen tarifleri öne aldık.',
+    reasonEn: 'You feel good, so recipes marked for days like this come first.',
+    steps: ['walk', 'breathe'],
+  ),
+  // Phase 4. These recipes are chosen by the rules in `focus_rules.dart`
+  // (caffeine-free among others), not by hand tags; the sentences say only
+  // what those rules check.
+  CheckInType.stressed: FocusGuidance(
+    focus: CheckInType.stressed,
     reasonTr:
-        'Belirli bir şikâyetin olmadığı günler için işaretlenen tarifleri öne '
-        'aldık.',
-    reasonEn: 'Recipes marked for an ordinary, easy day come first.',
+        'Stresli olduğunu söylediğin için kafein içermeyen, bu güne uygun '
+        'işaretlenen tarifleri öne aldık.',
+    reasonEn:
+        'You said you are stressed, so caffeine-free recipes marked for days '
+        'like this come first.',
+    nutrientSource: HealthCondition.magnesiumDeficiency,
+    nutrientTr: 'magnezyum',
+    nutrientEn: 'magnesium',
+    steps: ['breathe', 'walk'],
+  ),
+  CheckInType.anxious: FocusGuidance(
+    focus: CheckInType.anxious,
+    reasonTr:
+        'Kaygılı hissettiğin için kafein içermeyen, dengeli olarak '
+        'işaretlenen tarifleri öne aldık.',
+    reasonEn:
+        'You feel anxious, so caffeine-free recipes marked as balanced come '
+        'first.',
+    mentionsProteinFibre: true,
+    steps: ['breathe', 'mindful'],
+  ),
+  CheckInType.poorSleep: FocusGuidance(
+    focus: CheckInType.poorSleep,
+    reasonTr:
+        'Uykusuz olduğunu söylediğin için kafein içermeyen, hafif olarak '
+        'işaretlenen tarifleri öne aldık.',
+    reasonEn:
+        'You slept badly, so caffeine-free recipes marked as light come '
+        'first.',
     steps: ['walk', 'breathe'],
   ),
 };

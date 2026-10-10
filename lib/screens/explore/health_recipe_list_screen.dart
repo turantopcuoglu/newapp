@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../components/empty_state_artwork.dart';
 import '../../components/health_recipe_card.dart';
+import '../../components/ingredient_image.dart';
 import '../../components/preference_warning.dart';
 import '../../core/theme.dart';
 import '../../data/explore_data.dart';
@@ -56,28 +58,26 @@ class HealthRecipeListScreen extends ConsumerWidget {
         ? ingredientPreferenceFit(ingredient, profile)
         : _listFitOf(recipes);
 
-    final gradientColors =
-        cuisineGradients[category.gradient] ?? cuisineGradients['healthy']!;
-
     return Scaffold(
       backgroundColor: context.palette.background,
       appBar: AppBar(
-        backgroundColor: Color(gradientColors[0]),
-        foregroundColor: Colors.white,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        backgroundColor: context.palette.background,
+        foregroundColor: context.palette.textPrimary,
+        surfaceTintColor: Colors.transparent,
+        title: Row(
           children: [
-            Row(
-              children: [
-                if (ingredientId != null) ...[
+            if (ingredientId != null) ...[
+              SizedBox.square(
+                dimension: 36,
+                child: IngredientImage(id: ingredientId!),
+              ),
+              const SizedBox(width: 10),
+            ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   Text(
-                    ingredientEmoji(ingredientId!),
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                  const SizedBox(width: 8),
-                ],
-                Flexible(
-                  child: Text(
                     title,
                     style: const TextStyle(
                       fontSize: 17,
@@ -85,16 +85,17 @@ class HealthRecipeListScreen extends ConsumerWidget {
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
-            ),
-            Text(
-              '${category.localizedName(locale)} · '
-              '${l10n.healthRecipeCount(recipes.length)}',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Colors.white.withAlpha(210),
+                  Text(
+                    '${category.localizedName(locale)} · '
+                    '${l10n.healthRecipeCount(recipes.length)}',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: context.palette.textSecondary,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
               ),
             ),
           ],
@@ -107,11 +108,7 @@ class HealthRecipeListScreen extends ConsumerWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      Icons.search_off_rounded,
-                      color: context.palette.textLight,
-                      size: 48,
-                    ),
+                    const EmptyStateArtwork(name: 'no_results'),
                     const SizedBox(height: 16),
                     Text(
                       l10n.healthIngredientEmpty,

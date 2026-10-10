@@ -95,6 +95,9 @@ void main() {
     final ingredientId = healthCategoryIngredients(magnesium, recipes).first;
     final name = ingredientById(ingredientId)!.localizedName('tr');
 
+    // Photo tiles are taller than the old emoji ones: bring it into view.
+    await tester.ensureVisible(find.text(name));
+    await tester.pumpAndSettle();
     await tester.tap(find.text(name));
     await tester.pumpAndSettle();
 

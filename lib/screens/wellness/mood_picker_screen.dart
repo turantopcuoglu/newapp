@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../components/atlas_image.dart';
 import '../../core/day_boundary.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
@@ -82,12 +81,16 @@ class _MoodPickerState extends ConsumerState<MoodPickerScreen> {
             CheckInType.bloated,
             CheckInType.cravingSweets,
             CheckInType.cantFocus,
+            CheckInType.stressed,
+            CheckInType.anxious,
+            CheckInType.poorSleep,
             CheckInType.postWorkout,
-            CheckInType.noSpecificIssue,
           ];
     final data = ref.watch(wellnessProvider);
     final scale = MediaQuery.textScalerOf(context).scale(1);
-    Widget card(CheckInType mode) {
+    // "İyiyim" is the absence of the others, so it sits apart: one wide
+    // card under the grid, laid out like the period cards.
+    Widget card(CheckInType mode, {bool wide = false}) {
       final m = MoodPalette.all[mode]!;
       final title = context.w(m.tr, m.en);
       return Theme(
@@ -106,12 +109,7 @@ class _MoodPickerState extends ConsumerState<MoodPickerScreen> {
                   Positioned.fill(
                     child: Opacity(
                       opacity: .65,
-                      child: AtlasImage(
-                        asset: 'assets/moods/landscapes.png',
-                        columns: 3,
-                        rows: 3,
-                        index: mode.index,
-                      ),
+                      child: MoodLandscape(mode: mode),
                     ),
                   ),
                   Positioned.fill(
@@ -134,11 +132,11 @@ class _MoodPickerState extends ConsumerState<MoodPickerScreen> {
                       builder: (context, t) => Padding(
                         padding: EdgeInsets.fromLTRB(
                           14,
-                          period ? 20 : 24,
+                          period || wide ? 20 : 24,
                           14,
                           16,
                         ),
-                        child: period
+                        child: period || wide
                             ? Row(
                                 children: [
                                   MoodGlyph(m.icon, size: 64, progress: t),
@@ -302,9 +300,27 @@ class _MoodPickerState extends ConsumerState<MoodPickerScreen> {
                                     )
                                     .toList(),
                               )
-                            : FeatureGrid(
-                                height: 164,
-                                children: modes.map(card).toList(),
+                            : Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  FeatureGrid(
+                                    height: 164,
+                                    children: modes
+                                        .map((m) => card(m))
+                                        .toList(),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  SizedBox(
+                                    height: 120 + (scale - 1) * 65,
+                                    child: LiftIn(
+                                      order: modes.length,
+                                      child: card(
+                                        CheckInType.noSpecificIssue,
+                                        wide: true,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                       ),
                       if (widget.appearanceOnly)

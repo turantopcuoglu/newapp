@@ -42,6 +42,40 @@ class DailyCheckIn {
   );
 }
 
+/// How the day went, answered in the evening on the same 1–3 scales as the
+/// morning check-in. A separate record, not extra fields on [DailyCheckIn]:
+/// the evening answer must never overwrite the morning one, and the history
+/// shows the two measurements side by side.
+class EveningCheckIn {
+  final DateTime recordedAt;
+  final int? energy;
+  final int? mood;
+  final String? note;
+
+  const EveningCheckIn({
+    required this.recordedAt,
+    this.energy,
+    this.mood,
+    this.note,
+  });
+
+  /// App-day, so an answer at 00:30 still closes the day before.
+  String get dayKey => DayBoundary.keyFor(recordedAt);
+
+  Map<String, dynamic> toJson() => {
+    'at': recordedAt.toIso8601String(),
+    'energy': energy,
+    'mood': mood,
+    'note': note,
+  };
+  factory EveningCheckIn.fromJson(Map<String, dynamic> j) => EveningCheckIn(
+    recordedAt: DateTime.parse(j['at'] as String),
+    energy: j['energy'] as int?,
+    mood: j['mood'] as int?,
+    note: j['note'] as String?,
+  );
+}
+
 class RoutineLog {
   final String id;
   final DateTime at;
@@ -243,6 +277,7 @@ class WellnessData {
   final bool appearanceLocked;
   final String? contextPromptDay;
   final List<DailyCheckIn> checkIns;
+  final List<EveningCheckIn> evenings;
   final List<RoutineLog> routines;
   final List<SleepLog> sleep;
   final Map<String, List<String>> eveningChecks;
@@ -261,6 +296,7 @@ class WellnessData {
     this.appearanceLocked = false,
     this.contextPromptDay,
     this.checkIns = const [],
+    this.evenings = const [],
     this.routines = const [],
     this.sleep = const [],
     this.eveningChecks = const {},
@@ -278,6 +314,8 @@ class WellnessData {
 
   DailyCheckIn? checkInFor(DateTime time) =>
       checkIns.where((c) => c.dayKey == DayBoundary.keyFor(time)).lastOrNull;
+  EveningCheckIn? eveningFor(DateTime time) =>
+      evenings.where((e) => e.dayKey == DayBoundary.keyFor(time)).lastOrNull;
   int? manualSleepMinutes(DateTime day) =>
       sleep.where((s) => s.dayKey == calendarDay(day)).lastOrNull?.minutes;
   WellnessData copyWith({
@@ -285,6 +323,7 @@ class WellnessData {
     bool? appearanceLocked,
     String? contextPromptDay,
     List<DailyCheckIn>? checkIns,
+    List<EveningCheckIn>? evenings,
     List<RoutineLog>? routines,
     List<SleepLog>? sleep,
     Map<String, List<String>>? eveningChecks,
@@ -304,6 +343,7 @@ class WellnessData {
     appearanceLocked: appearanceLocked ?? this.appearanceLocked,
     contextPromptDay: contextPromptDay ?? this.contextPromptDay,
     checkIns: checkIns ?? this.checkIns,
+    evenings: evenings ?? this.evenings,
     routines: routines ?? this.routines,
     sleep: sleep ?? this.sleep,
     eveningChecks: eveningChecks ?? this.eveningChecks,
@@ -324,6 +364,7 @@ class WellnessData {
     'appearanceLocked': appearanceLocked,
     'contextPromptDay': contextPromptDay,
     'checkIns': checkIns.map((v) => v.toJson()).toList(),
+    'evenings': evenings.map((v) => v.toJson()).toList(),
     'routines': routines.map((v) => v.toJson()).toList(),
     'sleep': sleep.map((v) => v.toJson()).toList(),
     'eveningChecks': eveningChecks,
@@ -352,6 +393,12 @@ class WellnessData {
       checkIns: (j['checkIns'] as List? ?? [])
           .map(
             (e) => DailyCheckIn.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
+          .toList(),
+      // Added after schema version 1 shipped; older snapshots have none.
+      evenings: (j['evenings'] as List? ?? [])
+          .map(
+            (e) => EveningCheckIn.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
       routines: (j['routines'] as List? ?? [])

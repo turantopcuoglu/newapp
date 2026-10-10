@@ -11,7 +11,11 @@ bool reducedMotion(BuildContext context) =>
 
 double atmosphereTempo(BuildContext context) => switch (context.palette.mode) {
   CheckInType.postWorkout => .88,
-  CheckInType.lowEnergy || CheckInType.periodFatigue || CheckInType.pms => 1.14,
+  CheckInType.lowEnergy ||
+  CheckInType.periodFatigue ||
+  CheckInType.pms ||
+  CheckInType.poorSleep ||
+  CheckInType.stressed => 1.14,
   _ => 1.0,
 };
 
@@ -97,10 +101,12 @@ class _WellnessTabSceneState extends State<WellnessTabScene>
     child: TickerMode(enabled: widget.visible, child: widget.child),
     builder: (context, child) {
       final v = widget.visible
-          ? const Interval(.35, 1, curve: Curves.easeOutCubic)
-              .transform(motion.value)
-          : const Interval(.6, 1, curve: Curves.easeIn)
-              .transform(motion.value);
+          ? const Interval(
+              .35,
+              1,
+              curve: Curves.easeOutCubic,
+            ).transform(motion.value)
+          : const Interval(.6, 1, curve: Curves.easeIn).transform(motion.value);
       return Offstage(
         offstage: !widget.visible && motion.value == 0,
         child: HeroMode(
@@ -297,8 +303,11 @@ class WellnessPageTransitions extends PageTransitionsBuilder {
       // through only briefly. No scaling: scaled text shimmers while moving.
       builder: (context, child) {
         final enter = Curves.easeOutCubic.transform(animation.value);
-        final fade = const Interval(0, .55, curve: Curves.easeOut)
-            .transform(animation.value);
+        final fade = const Interval(
+          0,
+          .55,
+          curve: Curves.easeOut,
+        ).transform(animation.value);
         final leave = Curves.easeInOutCubic.transform(secondaryAnimation.value);
         return Transform.translate(
           offset: Offset(0, (1 - enter) * 18 - leave * 6),
