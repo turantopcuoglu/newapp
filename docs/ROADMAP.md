@@ -39,7 +39,7 @@ Notlar:
 |---|---|
 | Tarif sayısı | **144** (kahvaltı 34 · öğle 30 · akşam 42 · ara öğün 38) |
 | Malzeme kataloğu | 232, **hepsinde** besin verisi var |
-| Test | **158 test, tümü geçiyor** |
+| Test | **197 test, tümü geçiyor** |
 | `flutter analyze` | **0 sorun** |
 | `data_report --strict` | **0 hata**, 0 kalori sapması |
 | Ortalama adım/tarif | 7.8 |
@@ -200,9 +200,35 @@ bildirdi, 144 tarifin tamamı taranıp aynı sınıftan ne varsa düzeltildi:
 >   - Rutin sayacı duvar saatiyle sayıyor; ekran kilitlenince durmuyor
 >     (10 dk yürüyüş cepte tamamlanamıyordu). Eski "arka planda dur" testleri
 >     yeni davranışa çevrildi (`mood_experience_test.dart`).
->   - **Kalan 2. paket — pişirme modu:** adım başına malzeme+miktar (adım
->     metninden otomatik eşleşme %94, araçla JSON'a yazılacak), 316 süreli
->     adımda zamanlayıcı, başta hazırlık listesi.
+>   - **2. paket — pişirme modu bitti (2026-10-11):**
+>     - Veri: her tarifte `stepIngredients` (adım başına malzeme ID'leri,
+>       TR/EN adımlar hizalı olduğu için tek liste). Araç
+>       `tool/step_ingredients.dart` adım metninden tahmin edip yazdı
+>       (`lib/services/step_ingredient_matcher.dart`: Türkçe ek/yumuşama,
+>       uzun ifade önce, noktalama sınırı, tüm katalogla alan kapma);
+>       yazıldıktan sonra JSON esas, elle düzeltilir (`d001` 4. adım).
+>       Rapor + `recipe_content_test` hizayı ve iki yönlü kapsamayı zorluyor.
+>     - Eşleştirme 15 gerçek veri hatası buldu, düzeltildi: 9 tarifte
+>       listedeki tuz/karabiber hiçbir adımda yoktu (adımlara eklendi);
+>       `b017` tuz, `d031`/`s030` yağ, `s005` limon listede yoktu (eklendi);
+>       `s020` sarımsak değil sarımsak tozu kullanıyordu (düzeltildi — bu
+>       onu `s036` ile kopya yaptı, kabak çekirdeğiyle gerçekten
+>       ayrıştırıldı); `b014` "sütle açın" → suyla.
+>     - Ekran: `CookingScreen` (`lib/screens/wellness/cooking_screen.dart`)
+>       — hazırlık listesi (malzeme + miktar, işaretlenir) → adım adım
+>       metin + "Bu adımda" çipleri (`StepIngredients`; birden çok adımda
+>       geçen malzemede "(toplam)") + adımdaki her süre için zamanlayıcı
+>       (`lib/services/step_timer.dart`, 316 adım; aralıkta kısa ucu
+>       sayar). Zamanlayıcı duvar saatiyle sayar, adım değişince durmaz,
+>       üstte "4. adım · 08:12" çipi; bitince titreşim + sistem sesi +
+>       SnackBar. İleri/geri düğmeleri sabit alt çubukta. Zamanlayıcı
+>       çalışırken çıkış onay ister. Eski tarif detayında da her adımın
+>       altında çipler + "Pişirme modunu aç".
+>     - **Bilerek yapılmadı:** ekran kilitliyken bitiş bildirimi ve ekranı
+>       açık tutma (`wakelock_plus`) — ikisi de yerel yapılandırma + APK
+>       doğrulaması ister, 3. paketteki yürüyüş bildirimiyle aynı altyapı;
+>       orada birlikte yapılacak. Şu an kilitliyken süre doğru sayılır ama
+>       ses telefon açılınca çalar.
 >   - **Kalan 3. paket — rutinler:** nefeste saniye sayımı + titreşim,
 >     yürüyüşte bitiş bildirimi + `wakelock_plus` (APK derlemesi gerekir),
 >     esnemede zamanlı hareket dizisi (görsel prompt gerekir), "Akşam

@@ -234,6 +234,34 @@ void main(List<String> args) {
     }
   }
 
+  // ── Step ingredients: the cooking screen's per-step amounts ────────────
+  // One list per step, only listed ingredients, and every listed ingredient
+  // used somewhere — the same two-way rule as above, kept in the data.
+  for (final recipe in allRecipes) {
+    final perStep = recipe.stepIngredients;
+    if (perStep.isEmpty) {
+      errors.add('${recipe.id}: no stepIngredients '
+          '(dart run tool/step_ingredients.dart --write)');
+      continue;
+    }
+    final stepCount = recipe.steps['tr']?.length ?? 0;
+    if (perStep.length != stepCount) {
+      errors.add('${recipe.id}: stepIngredients has ${perStep.length} '
+          'entries for $stepCount steps');
+    }
+    final listed = recipe.ingredientIds.toSet();
+    final used = perStep.expand((s) => s).toSet();
+    final stray = used.difference(listed);
+    if (stray.isNotEmpty) {
+      errors.add('${recipe.id}: stepIngredients names ${stray.join(", ")}, '
+          'which the ingredient list lacks');
+    }
+    final unused = listed.difference(used);
+    if (unused.isNotEmpty) {
+      errors.add('${recipe.id}: no step uses ${unused.join(", ")}');
+    }
+  }
+
   // ── Health category filters ────────────────────────────────────────────
   // Matching is an exact id comparison, so a stale id here hides recipes from
   // a whole category without any visible failure.

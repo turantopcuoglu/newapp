@@ -20,6 +20,7 @@ import 'package:nutri_guide/providers/wellness_provider.dart';
 import 'package:nutri_guide/providers/profile_provider.dart';
 import 'package:nutri_guide/providers/inventory_provider.dart';
 import 'package:nutri_guide/providers/cooked_provider.dart';
+import 'package:nutri_guide/screens/wellness/cooking_screen.dart';
 import 'package:nutri_guide/screens/wellness/moonlit_recipe_screen.dart';
 import 'package:nutri_guide/screens/main_shell.dart';
 import 'package:nutri_guide/screens/wellness/check_in_screen.dart';
@@ -285,19 +286,105 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     final recipe = container.read(wellnessRecipesProvider).first.recipe;
-    await tester.pumpWidget(host(MoonlitCookingScreen(recipe: recipe)));
+    await tester.pumpWidget(host(CookingScreen(recipe: recipe)));
     await tester.pumpAndSettle();
     expect(container.read(cookedProvider), isEmpty);
+    // The step buttons sit in a fixed bar, always on screen.
+    await tester.tap(find.text('Adımlara geç'));
+    await tester.pumpAndSettle();
     for (var i = 0; i < recipe.localizedSteps('tr').length - 1; i++) {
-      await tester.scrollUntilVisible(find.text('Sonraki adım'), 150);
       await tester.tap(find.text('Sonraki adım'));
       await tester.pumpAndSettle();
     }
     expect(container.read(cookedProvider), isEmpty);
-    await tester.scrollUntilVisible(find.text('Pişirdim, kaydet'), 150);
     await tester.tap(find.text('Pişirdim, kaydet'));
     await tester.pumpAndSettle();
     expect(container.read(cookedProvider), hasLength(1));
+  });
+  testWidgets('cooking mode: prep list, step amounts, timers that keep '
+      'running across steps', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    // d001: salmon roasts "12-15 dakika" in step 7; step 4 is a 10 minute
+    // head start for the vegetables.
+    final recipe = recipes.firstWhere((r) => r.id == 'd001');
+    var now = DateTime(2026, 10, 11, 18);
+    await tester.pumpWidget(
+      host(CookingScreen(recipe: recipe, now: () => now)),
+    );
+    await tester.pumpAndSettle();
+
+    // Prep list: every ingredient with its amount, before any step.
+    expect(find.text('HAZIRLIK'), findsOneWidget);
+    expect(find.text('Somon'), findsOneWidget);
+    expect(find.text('150 g'), findsOneWidget);
+    expect(find.text('½ adet'), findsOneWidget);
+    await capture(tester, '20-cooking-prep');
+    await tester.tap(find.text('Somon'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('1 / 8 hazır'), findsOneWidget);
+
+    Future<void> next(String label) async {
+      await tester.tap(find.text(label));
+      await tester.pumpAndSettle();
+    }
+
+    await next('Adımlara geç');
+    await next('Sonraki adım'); // step 2: broccoli and carrot are cut
+    expect(find.text('Bu adımda'), findsOneWidget);
+    // Broccoli comes back in step 4, so its amount reads as the total.
+    expect(
+      find.text('Brokoli · 100 g (toplam)', findRichText: true),
+      findsOneWidget,
+    );
+
+    await next('Sonraki adım');
+    await next('Sonraki adım'); // step 4: the 10 minute head start
+    expect(find.text('10 dk'), findsOneWidget);
+    await tester.ensureVisible(find.byTooltip('Başlat'));
+    await tester.tap(find.byTooltip('Başlat'));
+    await tester.pump();
+    expect(find.text('10:00'), findsOneWidget);
+
+    // Moving on does not stop the oven: the running timer follows along.
+    await next('Sonraki adım');
+    expect(find.textContaining('4. adım ·'), findsOneWidget);
+
+    // The phone locks for ten minutes; the wall clock decides, not ticks.
+    now = now.add(const Duration(minutes: 10));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('4. adım · süre doldu'), findsOneWidget);
+    expect(find.text('4. adımın süresi doldu'), findsOneWidget);
+
+    await next('Sonraki adım');
+    await next('Sonraki adım'); // step 7: a range counts the short end
+    expect(find.text('12–15 dk'), findsOneWidget);
+    expect(find.text('Kısa süreyi sayar'), findsOneWidget);
+    expect(
+      find.text('Somon · 150 g (toplam)', findRichText: true),
+      findsOneWidget,
+    );
+    await capture(tester, '21-cooking-step-timer');
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+  });
+  testWidgets('cooking mode fits a narrow phone at large text', (tester) async {
+    tester.view.physicalSize = const Size(320, 640);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final recipe = recipes.firstWhere((r) => r.id == 'd001');
+    await tester.pumpWidget(host(CookingScreen(recipe: recipe), scale: 1.6));
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+    for (var i = 0; i < 7; i++) {
+      final label = i == 0 ? 'Adımlara geç' : 'Sonraki adım';
+      await tester.tap(find.text(label));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull, reason: 'page ${i + 1}');
+    }
   });
   testWidgets('partial routine is never recorded as complete', (tester) async {
     await tester.pumpWidget(

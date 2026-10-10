@@ -66,6 +66,31 @@
         "Servis öncesi bal gezdirip tarçın serpin."
       ]
     },
+    "stepIngredients": [
+      [
+        "milk"
+      ],
+      [
+        "oats"
+      ],
+      [],
+      [
+        "milk"
+      ],
+      [],
+      [
+        "banana",
+        "walnut"
+      ],
+      [
+        "banana",
+        "walnut"
+      ],
+      [
+        "honey",
+        "cinnamon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -161,6 +186,33 @@
         "Beyaz peyniri üzerine ufalayıp hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "spinach"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "spinach"
+      ],
+      [
+        "eggs",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "eggs",
+        "spinach"
+      ],
+      [],
+      [
+        "eggs"
+      ],
+      [
+        "feta_cheese"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -254,6 +306,29 @@
         "Uzun bir bardağa döküp soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "strawberry",
+        "banana"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "strawberry",
+        "banana",
+        "honey"
+      ],
+      [],
+      [
+        "chia_seeds"
+      ],
+      [
+        "chia_seeds"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -346,6 +421,36 @@
         "Pul biber ve bir tutam tuzla tamamlayıp sıcakken yiyin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread"
+      ],
+      [
+        "avocado"
+      ],
+      [],
+      [
+        "bread",
+        "avocado",
+        "salt",
+        "lemon"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "bread",
+        "avocado",
+        "eggs"
+      ],
+      [
+        "red_pepper_flakes",
+        "salt"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -444,6 +549,33 @@
         "Katlar dağılmasın diye balı servis etmeden hemen önce gezdirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "oats"
+      ],
+      [
+        "hazelnut"
+      ],
+      [
+        "blueberry"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "blueberry",
+        "oats"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "hazelnut"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -538,6 +670,37 @@
         "Bol ekmekle, tavasıyla sıcak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bell_pepper",
+        "onion"
+      ],
+      [
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "bell_pepper"
+      ],
+      [
+        "tomato"
+      ],
+      [
+        "tomato"
+      ],
+      [
+        "salt",
+        "black_pepper",
+        "red_pepper_flakes"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "eggs"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -640,6 +803,30 @@
         "Çaprazlama ikiye bölüp hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread"
+      ],
+      [
+        "peanut"
+      ],
+      [
+        "bread"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "honey"
+      ],
+      [
+        "cinnamon"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -730,6 +917,26 @@
         "Soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "milk",
+        "honey",
+        "vanilla"
+      ],
+      [
+        "chia_seeds"
+      ],
+      [],
+      [],
+      [],
+      [
+        "mango"
+      ],
+      [
+        "mango"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -823,6 +1030,38 @@
         "Peynir daha erirken tabağa alıp servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "mushroom"
+      ],
+      [
+        "butter"
+      ],
+      [
+        "mushroom"
+      ],
+      [
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "eggs",
+        "butter"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "mushroom",
+        "cheddar_cheese"
+      ],
+      [
+        "cheddar_cheese"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -921,6 +1160,29 @@
         "Üst üste dizip akçaağaç şurubuyla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "eggs",
+        "milk",
+        "vanilla"
+      ],
+      [
+        "flour"
+      ],
+      [
+        "flour"
+      ],
+      [
+        "butter"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [
+        "maple_syrup"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1016,6 +1278,31 @@
         "Üzerine çilek ve bademi ekleyin, bal gezdirip ılık servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "quinoa"
+      ],
+      [
+        "milk"
+      ],
+      [],
+      [],
+      [
+        "almond"
+      ],
+      [
+        "strawberry"
+      ],
+      [
+        "quinoa",
+        "cinnamon"
+      ],
+      [
+        "almond",
+        "strawberry",
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1112,6 +1399,38 @@
         "Yanında bir limon dilimiyle hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread",
+        "cream"
+      ],
+      [
+        "cream",
+        "lemon",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "bread",
+        "cream",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "salmon"
+      ],
+      [
+        "salmon",
+        "lemon"
+      ],
+      [
+        "black_pepper"
+      ],
+      [],
+      [
+        "lemon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1210,6 +1529,33 @@
         "Tuz ve karabiberle tatlandırıp tavasıyla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "sweet_potato"
+      ],
+      [
+        "onion"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "sweet_potato"
+      ],
+      [
+        "onion",
+        "paprika"
+      ],
+      [],
+      [
+        "eggs"
+      ],
+      [],
+      [
+        "salt",
+        "black_pepper"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1293,7 +1639,7 @@
         "Fold in half the blueberries, keeping the rest for the morning.",
         "Seal the jar and refrigerate for at least 6 hours or overnight.",
         "The oats are ready when they have softened and the mixture is thick.",
-        "Stir well before eating and loosen with a splash of milk if it is too stiff.",
+        "Stir well before eating and loosen with a spoonful of water if it is too stiff.",
         "Top with the remaining blueberries.",
         "Eat cold, straight from the jar."
       ],
@@ -1303,11 +1649,34 @@
         "Yaban mersinlerinin yarısını harca katın, kalanını sabaha ayırın.",
         "Kavanozun kapağını kapatıp en az 6 saat ya da bir gece buzdolabında bekletin.",
         "Yulaflar yumuşayıp karışım koyulaştığında hazırdır.",
-        "Yemeden önce iyice karıştırın, çok katıysa biraz sütle açın.",
+        "Yemeden önce iyice karıştırın, çok katıysa bir kaşık suyla açın.",
         "Kalan yaban mersinlerini üzerine ekleyin.",
         "Kavanozdan, soğuk olarak yiyin."
       ]
     },
+    "stepIngredients": [
+      [
+        "oats",
+        "yogurt",
+        "flax_seeds"
+      ],
+      [
+        "oats",
+        "honey"
+      ],
+      [
+        "blueberry"
+      ],
+      [],
+      [
+        "oats"
+      ],
+      [],
+      [
+        "blueberry"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1402,6 +1771,35 @@
         "Yanlarını kapatıp sıkıca rulo yapın ve ikiye bölerek servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bell_pepper"
+      ],
+      [
+        "spinach"
+      ],
+      [
+        "bell_pepper",
+        "olive_oil"
+      ],
+      [
+        "spinach"
+      ],
+      [
+        "eggs",
+        "salt"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "tortilla_wrap"
+      ],
+      [
+        "mozzarella"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1503,6 +1901,30 @@
         "Soğukluğu ve köpüğü kaçmadan hemen için."
       ]
     },
+    "stepIngredients": [
+      [
+        "banana"
+      ],
+      [
+        "oats"
+      ],
+      [
+        "milk",
+        "yogurt"
+      ],
+      [
+        "banana",
+        "almond",
+        "honey",
+        "cinnamon"
+      ],
+      [],
+      [
+        "milk"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1558,7 +1980,8 @@
       "feta_cheese",
       "tomato",
       "cucumber",
-      "olive_oil"
+      "olive_oil",
+      "salt"
     ],
     "allergenTags": [
       "dairy",
@@ -1600,6 +2023,32 @@
         "Sandviçi kapatıp hafifçe bastırın ve çayla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread"
+      ],
+      [],
+      [
+        "tomato",
+        "cucumber"
+      ],
+      [
+        "tomato",
+        "salt"
+      ],
+      [
+        "feta_cheese"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "feta_cheese",
+        "tomato",
+        "cucumber"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1622,6 +2071,10 @@
       "olive_oil": {
         "amount": 1.0,
         "unit": "tablespoon"
+      },
+      "salt": {
+        "amount": 1.0,
+        "unit": "pinch"
       }
     }
   },
@@ -1692,6 +2145,35 @@
         "Tuz ve karabiberle tatlandırıp sıcak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "tofu"
+      ],
+      [],
+      [
+        "bell_pepper",
+        "onion"
+      ],
+      [
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "bell_pepper"
+      ],
+      [
+        "tofu",
+        "turmeric"
+      ],
+      [
+        "spinach"
+      ],
+      [
+        "bell_pepper",
+        "salt",
+        "black_pepper"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1794,6 +2276,30 @@
         "2 dakika dinlendirip ılık servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "apple"
+      ],
+      [
+        "milk"
+      ],
+      [
+        "apple",
+        "cinnamon"
+      ],
+      [
+        "oats"
+      ],
+      [],
+      [
+        "oats",
+        "apple"
+      ],
+      [
+        "maple_syrup"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1890,6 +2396,31 @@
         "İkiye bölüp sıcak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread",
+        "butter"
+      ],
+      [
+        "tomato"
+      ],
+      [
+        "eggs",
+        "salt",
+        "black_pepper"
+      ],
+      [],
+      [],
+      [
+        "eggs",
+        "cheddar_cheese"
+      ],
+      [
+        "tomato"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1986,6 +2517,30 @@
         "Bardağa döküp ayrışmadan hemen için."
       ]
     },
+    "stepIngredients": [
+      [
+        "spinach"
+      ],
+      [
+        "pineapple",
+        "banana"
+      ],
+      [
+        "coconut_oil"
+      ],
+      [
+        "spinach"
+      ],
+      [],
+      [
+        "pineapple",
+        "banana",
+        "coconut_oil",
+        "honey"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2085,6 +2640,43 @@
         "Yanında sarımsaklı yoğurtla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "eggplant",
+        "zucchini"
+      ],
+      [
+        "olive_oil",
+        "salt",
+        "eggplant"
+      ],
+      [
+        "olive_oil",
+        "eggplant",
+        "zucchini"
+      ],
+      [
+        "bell_pepper",
+        "onion",
+        "garlic"
+      ],
+      [
+        "tomato",
+        "cumin",
+        "paprika"
+      ],
+      [
+        "salt"
+      ],
+      [
+        "eggs"
+      ],
+      [],
+      [
+        "garlic",
+        "yogurt"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2204,6 +2796,34 @@
         "Bal gezdirip soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "cottage_cheese"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "walnut",
+        "flax_seeds"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "cottage_cheese"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "walnut",
+        "flax_seeds"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2294,6 +2914,29 @@
         "Kaselere paylaştırın, meyveleri ekleyip bal gezdirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "milk"
+      ],
+      [
+        "cornmeal"
+      ],
+      [],
+      [],
+      [
+        "butter"
+      ],
+      [],
+      [
+        "strawberry",
+        "blueberry"
+      ],
+      [
+        "strawberry",
+        "blueberry",
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2391,6 +3034,29 @@
         "Ilık servis edin ya da buzdolabında üç gün saklayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "olive_oil"
+      ],
+      [
+        "broccoli"
+      ],
+      [],
+      [
+        "eggs",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "eggs",
+        "broccoli",
+        "parmesan"
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2490,6 +3156,37 @@
         "Bol çayla hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "feta_cheese",
+        "butter"
+      ],
+      [
+        "tomato",
+        "cucumber"
+      ],
+      [
+        "feta_cheese",
+        "olives",
+        "tomato",
+        "cucumber"
+      ],
+      [
+        "butter"
+      ],
+      [
+        "eggs"
+      ],
+      [],
+      [
+        "eggs"
+      ],
+      [
+        "bread",
+        "honey"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2596,6 +3293,32 @@
         "Kaseye alın, bal gezdirip ceviz ve tarçınla tamamlayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "butter"
+      ],
+      [
+        "semolina"
+      ],
+      [],
+      [
+        "semolina",
+        "milk"
+      ],
+      [
+        "milk"
+      ],
+      [],
+      [],
+      [
+        "walnut"
+      ],
+      [
+        "honey",
+        "walnut",
+        "cinnamon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2694,6 +3417,30 @@
         "Tabağa alıp dilimleyerek ılık servis edin."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "parsley",
+        "dill",
+        "spring_onion"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "flour"
+      ],
+      [
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "olive_oil"
+      ],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2799,6 +3546,33 @@
         "Pideyi şeritler hâlinde kesip banmak için yanında servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "labne"
+      ],
+      [],
+      [
+        "olive_oil"
+      ],
+      [
+        "tomato",
+        "cucumber"
+      ],
+      [
+        "labne",
+        "sumac"
+      ],
+      [
+        "mint",
+        "salt"
+      ],
+      [
+        "pita_bread"
+      ],
+      [
+        "pita_bread"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2902,6 +3676,34 @@
         "Bal gezdirip taze çekilmiş karabiberle tamamlayın — asıl lezzeti karabiber verir."
       ]
     },
+    "stepIngredients": [
+      [
+        "ricotta"
+      ],
+      [
+        "lemon"
+      ],
+      [
+        "bread"
+      ],
+      [
+        "ricotta"
+      ],
+      [
+        "ricotta"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "ricotta",
+        "walnut"
+      ],
+      [
+        "honey",
+        "black_pepper"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3002,6 +3804,39 @@
         "Susam yağı, taze soğan ve susamla tamamlayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "ginger"
+      ],
+      [
+        "ginger"
+      ],
+      [
+        "oats"
+      ],
+      [
+        "soy_sauce"
+      ],
+      [
+        "oats",
+        "spinach"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "eggs"
+      ],
+      [
+        "oats",
+        "eggs"
+      ],
+      [
+        "sesame_oil",
+        "spring_onion",
+        "sesame_seeds"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3110,6 +3945,40 @@
         "Lime sıkın, kişniş serpip açık ya da katlayarak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "black_bean",
+        "paprika"
+      ],
+      [
+        "tortilla_wrap"
+      ],
+      [
+        "tomato",
+        "coriander"
+      ],
+      [
+        "eggs"
+      ],
+      [],
+      [
+        "tortilla_wrap"
+      ],
+      [
+        "tortilla_wrap",
+        "eggs",
+        "black_bean"
+      ],
+      [
+        "avocado",
+        "tomato",
+        "cheddar_cheese"
+      ],
+      [
+        "lime",
+        "coriander"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3218,6 +4087,28 @@
         "Kaseye alın, bal gezdirip çekirdek ve tarçınla tamamlayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "buckwheat"
+      ],
+      [],
+      [
+        "milk"
+      ],
+      [],
+      [
+        "apricot"
+      ],
+      [],
+      [],
+      [
+        "pumpkin_seeds"
+      ],
+      [
+        "honey",
+        "cinnamon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3300,7 +4191,7 @@
         "Preheat the oven to 190°C.",
         "Slice the onion thinly and soften it in olive oil in an ovenproof pan.",
         "Add the garlic and cook for 1 minute without browning it.",
-        "Add the chopped tomatoes and oregano and simmer for 10 minutes.",
+        "Add the chopped tomatoes, oregano, salt and pepper and simmer for 10 minutes.",
         "Cook until the sauce thickens enough to hold a channel when you drag a spoon.",
         "Make two wells in the sauce and crack an egg into each.",
         "Crumble the feta around the eggs.",
@@ -3311,7 +4202,7 @@
         "Fırını 190°C'ye ısıtın.",
         "Soğanı ince dilimleyip fırına girebilen bir tavada zeytinyağıyla yumuşatın.",
         "Sarımsağı ekleyip kavurmadan 1 dakika çevirin.",
-        "Doğranmış domatesleri ve kekiği ekleyip 10 dakika pişirin.",
+        "Doğranmış domatesleri, kekiği, tuzu ve karabiberi ekleyip 10 dakika pişirin.",
         "Kaşıkla çizdiğinizde iz kalacak kıvama gelene dek pişirin.",
         "Sosta iki yuva açıp her birine bir yumurta kırın.",
         "Beyaz peyniri yumurtaların çevresine ufalayın.",
@@ -3319,6 +4210,34 @@
         "Kızarmış ekmekle, tavasıyla servis edin."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "red_onion",
+        "olive_oil"
+      ],
+      [
+        "garlic"
+      ],
+      [
+        "tomato",
+        "oregano",
+        "salt",
+        "black_pepper"
+      ],
+      [],
+      [
+        "eggs"
+      ],
+      [
+        "eggs",
+        "feta_cheese"
+      ],
+      [],
+      [
+        "bread"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {

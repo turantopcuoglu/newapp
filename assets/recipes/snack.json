@@ -66,6 +66,28 @@
         "Ağzı kapalı kapta beş gün saklanır."
       ]
     },
+    "stepIngredients": [
+      [
+        "dates"
+      ],
+      [
+        "oats",
+        "almond"
+      ],
+      [
+        "banana",
+        "honey",
+        "cinnamon",
+        "dates"
+      ],
+      [
+        "oats"
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -156,6 +178,26 @@
         "Bardağa döküp ayrışmadan hemen için."
       ]
     },
+    "stepIngredients": [
+      [
+        "spinach"
+      ],
+      [
+        "spinach",
+        "milk"
+      ],
+      [
+        "banana",
+        "yogurt",
+        "honey"
+      ],
+      [],
+      [
+        "spinach",
+        "honey"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -245,6 +287,24 @@
         "Soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "milk",
+        "honey"
+      ],
+      [
+        "chia_seeds"
+      ],
+      [],
+      [],
+      [],
+      [
+        "strawberry",
+        "blueberry"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -338,6 +398,34 @@
         "Humusu kaseye yayın, ortasına zeytinyağı gölü açın ve çubuklarla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "chickpea"
+      ],
+      [
+        "chickpea"
+      ],
+      [
+        "chickpea",
+        "tahini",
+        "lemon",
+        "garlic"
+      ],
+      [],
+      [],
+      [
+        "lemon",
+        "salt"
+      ],
+      [
+        "carrot",
+        "cucumber",
+        "bell_pepper"
+      ],
+      [
+        "olive_oil"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -399,7 +487,8 @@
     "ingredientIds": [
       "apple",
       "peanut",
-      "cinnamon"
+      "cinnamon",
+      "lemon"
     ],
     "allergenTags": [
       "peanuts"
@@ -413,11 +502,11 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 191,
+      "calories": 193,
       "proteinG": 5,
       "carbsG": 32,
       "fatG": 8,
-      "fiberG": 8
+      "fiberG": 9
     },
     "steps": {
       "en": [
@@ -437,6 +526,24 @@
         "Elma diriliğini kaybetmeden hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "peanut"
+      ],
+      [
+        "apple"
+      ],
+      [
+        "lemon"
+      ],
+      [],
+      [
+        "cinnamon"
+      ],
+      [
+        "apple"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -451,6 +558,10 @@
       "cinnamon": {
         "amount": 1.0,
         "unit": "teaspoon"
+      },
+      "lemon": {
+        "amount": 0.25,
+        "unit": "piece"
       }
     }
   },
@@ -513,6 +624,26 @@
         "Üzerine kekik serpip soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "cucumber"
+      ],
+      [],
+      [
+        "feta_cheese"
+      ],
+      [
+        "cucumber",
+        "feta_cheese"
+      ],
+      [
+        "olive_oil",
+        "black_pepper"
+      ],
+      [
+        "oregano"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -604,6 +735,29 @@
         "Buzdolabında saklayıp bir hafta içinde tüketin."
       ]
     },
+    "stepIngredients": [
+      [
+        "oats"
+      ],
+      [
+        "walnut",
+        "peanut"
+      ],
+      [
+        "honey"
+      ],
+      [
+        "oats",
+        "walnut",
+        "peanut",
+        "honey",
+        "vanilla"
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -689,6 +843,26 @@
         "Yüzeyde kalsın diye balı servis etmeden hemen önce gezdirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "yogurt"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -766,6 +940,24 @@
         "Bardağa döküp soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "mango"
+      ],
+      [
+        "mango"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "mango",
+        "coconut",
+        "honey"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -846,6 +1038,27 @@
         "Kuruyunca parçalara ayırıp ağzı kapalı kavanozda saklayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "almond",
+        "walnut"
+      ],
+      [
+        "almond",
+        "walnut"
+      ],
+      [
+        "cocoa_powder",
+        "honey"
+      ],
+      [
+        "almond",
+        "walnut",
+        "cocoa_powder"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -933,6 +1146,28 @@
         "Üst üste dizip ılık servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "oats"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "oats",
+        "eggs",
+        "cinnamon"
+      ],
+      [
+        "oats"
+      ],
+      [
+        "coconut_oil"
+      ],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1022,6 +1257,29 @@
         "Pul biber serperek servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bread"
+      ],
+      [
+        "avocado",
+        "lemon",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "avocado",
+        "cream_cheese"
+      ],
+      [
+        "avocado",
+        "eggs",
+        "cucumber"
+      ],
+      [
+        "red_pepper_flakes"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1128,6 +1386,27 @@
         "Ağzı kapalı kapta beş gün saklanır."
       ]
     },
+    "stepIngredients": [
+      [
+        "peanut"
+      ],
+      [
+        "oats"
+      ],
+      [
+        "cocoa_powder",
+        "oats",
+        "honey",
+        "flax_seeds"
+      ],
+      [
+        "oats"
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1220,6 +1499,34 @@
         "Dipi sebze çubuklarıyla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "kale"
+      ],
+      [
+        "kale"
+      ],
+      [
+        "cashew"
+      ],
+      [
+        "kale",
+        "cashew",
+        "garlic",
+        "lemon"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "salt"
+      ],
+      [
+        "carrot",
+        "bell_pepper"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1316,6 +1623,27 @@
         "Katlar dağılmasın diye balı servis öncesi gezdirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "oats"
+      ],
+      [
+        "strawberry"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "strawberry",
+        "oats"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1402,6 +1730,27 @@
         "Tahin sosunu ılık dilimlerin üzerine gezdirip servis edin."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "sweet_potato"
+      ],
+      [
+        "olive_oil",
+        "salt",
+        "cumin"
+      ],
+      [],
+      [],
+      [],
+      [
+        "tahini",
+        "lemon"
+      ],
+      [
+        "tahini"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1491,6 +1840,24 @@
         "Bardağa döküp hemen için."
       ]
     },
+    "stepIngredients": [
+      [
+        "banana"
+      ],
+      [
+        "flax_seeds"
+      ],
+      [
+        "milk"
+      ],
+      [
+        "blueberry",
+        "flax_seeds",
+        "banana"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1570,6 +1937,25 @@
         "Oda sıcaklığında servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "green_lentil"
+      ],
+      [
+        "green_lentil",
+        "tomato",
+        "onion",
+        "olive_oil",
+        "basil",
+        "garlic"
+      ],
+      [
+        "bread",
+        "green_lentil",
+        "tomato"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1661,6 +2047,24 @@
         "Suları birbirine karışsın diye servis öncesi 15 dakika soğutun."
       ]
     },
+    "stepIngredients": [
+      [
+        "pomegranate"
+      ],
+      [],
+      [
+        "orange"
+      ],
+      [
+        "pomegranate",
+        "orange"
+      ],
+      [
+        "honey",
+        "cinnamon"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1689,8 +2093,8 @@
       "tr": "Baharatlı Çıtır Nohut"
     },
     "description": {
-      "en": "Oven-roasted chickpeas seasoned with cumin and paprika for a crunchy, protein-packed snack.",
-      "tr": "Kimyon ve kırmızı biberle tatlandırılmış, fırında kavrulmuş çıtır nohut atıştırmalığı."
+      "en": "Oven-roasted chickpeas and pumpkin seeds with cumin, paprika and garlic for a crunchy, protein-packed snack.",
+      "tr": "Kimyon, kırmızı biber ve sarımsakla fırında kavrulmuş nohut ve kabak çekirdeği; çıtır bir atıştırmalık."
     },
     "mealType": "snack",
     "cuisineIds": [
@@ -1705,7 +2109,8 @@
       "cumin",
       "paprika",
       "salt",
-      "garlic"
+      "garlic_powder",
+      "pumpkin_seeds"
     ],
     "allergenTags": [],
     "checkInTags": [
@@ -1717,26 +2122,45 @@
     "fiberLevel": "high",
     "carbType": "complex",
     "macros": {
-      "calories": 223,
-      "proteinG": 9,
+      "calories": 300,
+      "proteinG": 14,
       "carbsG": 30,
-      "fatG": 9,
-      "fiberG": 9
+      "fatG": 16,
+      "fiberG": 10
     },
     "steps": {
       "en": [
         "Drain and pat dry canned chickpeas thoroughly.",
         "Toss with olive oil, cumin, paprika, garlic powder, and salt.",
         "Spread on a baking tray and roast at 200°C for 25-30 minutes until crispy.",
+        "Add the pumpkin seeds to the tray for the last 5 minutes and roast them together.",
         "Let cool before serving for extra crunch."
       ],
       "tr": [
         "Konserve nohutları süzün ve iyice kurulayın.",
         "Zeytinyağı, kimyon, kırmızı biber, sarımsak tozu ve tuzla karıştırın.",
         "Fırın tepsisine yayın ve 200°C'de 25-30 dakika çıtır olana kadar pişirin.",
+        "Son 5 dakikada kabak çekirdeklerini tepsiye ekleyip birlikte kavurun.",
         "Ekstra çıtırlık için servis öncesi soğumaya bırakın."
       ]
     },
+    "stepIngredients": [
+      [
+        "chickpea"
+      ],
+      [
+        "olive_oil",
+        "cumin",
+        "paprika",
+        "salt",
+        "garlic_powder"
+      ],
+      [],
+      [
+        "pumpkin_seeds"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1760,9 +2184,13 @@
         "amount": 1.0,
         "unit": "pinch"
       },
-      "garlic": {
-        "amount": 2.0,
-        "unit": "clove"
+      "garlic_powder": {
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      "pumpkin_seeds": {
+        "amount": 15.0,
+        "unit": "g"
       }
     }
   },
@@ -1833,6 +2261,33 @@
         "Sebze çubuklarıyla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "almond"
+      ],
+      [
+        "avocado"
+      ],
+      [
+        "lemon"
+      ],
+      [
+        "avocado",
+        "almond",
+        "garlic",
+        "olive_oil"
+      ],
+      [
+        "lemon",
+        "salt"
+      ],
+      [
+        "celery",
+        "cucumber"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1935,6 +2390,27 @@
         "Yaptıktan sonra birkaç saat içinde, soğuk olarak tüketin."
       ]
     },
+    "stepIngredients": [
+      [
+        "tuna"
+      ],
+      [
+        "lemon",
+        "mustard",
+        "black_pepper",
+        "salt"
+      ],
+      [
+        "cucumber"
+      ],
+      [],
+      [
+        "tuna"
+      ],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2024,6 +2500,22 @@
         "Telin üzerinde tamamen soğutun — çıtırlıklarını soğurken kazanırlar."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "apple"
+      ],
+      [
+        "lemon"
+      ],
+      [],
+      [
+        "cinnamon"
+      ],
+      [],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2102,6 +2594,27 @@
         "Tuz serpip ılık servis edin, taneleri doğrudan kabuğundan çıkararak yiyin."
       ]
     },
+    "stepIngredients": [
+      [
+        "salt"
+      ],
+      [
+        "edamame"
+      ],
+      [
+        "edamame"
+      ],
+      [],
+      [
+        "soy_sauce",
+        "lemon",
+        "black_pepper"
+      ],
+      [
+        "edamame",
+        "salt"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2182,6 +2695,21 @@
         "Servis öncesi 20 dakika buzdolabında bekletin."
       ]
     },
+    "stepIngredients": [
+      [
+        "cashew",
+        "dates"
+      ],
+      [
+        "coconut",
+        "honey",
+        "vanilla"
+      ],
+      [
+        "coconut"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2265,6 +2793,29 @@
         "Çikolata çıtırlığını korusun diye ağzı kapalı kavanozda, sıcaktan uzakta saklayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "mixed_nuts"
+      ],
+      [
+        "mixed_nuts",
+        "dark_chocolate"
+      ],
+      [
+        "dark_chocolate"
+      ],
+      [
+        "dried_fruit"
+      ],
+      [
+        "mixed_nuts",
+        "dried_fruit",
+        "dark_chocolate"
+      ],
+      [
+        "dark_chocolate"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2339,6 +2890,20 @@
         "Erimeden hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "ice_cream"
+      ],
+      [
+        "ice_cream",
+        "chocolate_bar"
+      ],
+      [
+        "banana",
+        "cookies"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2418,6 +2983,22 @@
         "Banarak keyfini çıkarın!"
       ]
     },
+    "stepIngredients": [
+      [
+        "tortilla_chips",
+        "potato_chips",
+        "crackers"
+      ],
+      [
+        "tomato",
+        "onion",
+        "parsley",
+        "lemon",
+        "salt"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2511,6 +3092,23 @@
         "Meyve parçalarını sıcak çikolataya batırarak keyfini çıkarın."
       ]
     },
+    "stepIngredients": [
+      [
+        "dark_chocolate"
+      ],
+      [
+        "banana",
+        "blueberry",
+        "raspberry",
+        "dried_fruit"
+      ],
+      [
+        "dark_chocolate"
+      ],
+      [
+        "dark_chocolate"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2559,7 +3157,8 @@
       "honey",
       "crackers",
       "salt",
-      "paprika"
+      "paprika",
+      "sunflower_oil"
     ],
     "allergenTags": [
       "gluten",
@@ -2573,10 +3172,10 @@
     "fiberLevel": "medium",
     "carbType": "mixed",
     "macros": {
-      "calories": 420,
+      "calories": 464,
       "proteinG": 12,
       "carbsG": 56,
-      "fatG": 19,
+      "fatG": 24,
       "fiberG": 9
     },
     "steps": {
@@ -2593,6 +3192,25 @@
         "Bal karışımını her şeyin üzerine gezdirin ve eşit kaplanana kadar karıştırın."
       ]
     },
+    "stepIngredients": [
+      [
+        "popcorn",
+        "sunflower_oil"
+      ],
+      [
+        "honey",
+        "salt",
+        "paprika"
+      ],
+      [
+        "popcorn",
+        "mixed_nuts",
+        "crackers"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2617,6 +3235,10 @@
         "unit": "pinch"
       },
       "paprika": {
+        "amount": 1.0,
+        "unit": "teaspoon"
+      },
+      "sunflower_oil": {
         "amount": 1.0,
         "unit": "teaspoon"
       }
@@ -2680,6 +3302,23 @@
         "Katmanları tekrarlayın ve üzerine bal gezdirerek servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "greek_yogurt"
+      ],
+      [
+        "blueberry",
+        "raspberry"
+      ],
+      [
+        "blueberry",
+        "raspberry",
+        "granola_bar"
+      ],
+      [
+        "honey"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2764,6 +3403,26 @@
         "Hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "rice_cake",
+        "peanut_butter"
+      ],
+      [
+        "banana"
+      ],
+      [
+        "peanut_butter",
+        "banana"
+      ],
+      [
+        "honey"
+      ],
+      [
+        "rice_cake"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2843,6 +3502,19 @@
         "Lokma büyüklüğünde toplar halinde yuvarlayın ve servis öncesi en az 30 dakika buzdolabında bekletin."
       ]
     },
+    "stepIngredients": [
+      [
+        "dates",
+        "mixed_nuts"
+      ],
+      [],
+      [
+        "oats",
+        "dark_chocolate",
+        "honey"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2929,6 +3601,25 @@
         "Cevizleri kıyıp üzerine serpin."
       ]
     },
+    "stepIngredients": [
+      [
+        "tahini"
+      ],
+      [
+        "tahini",
+        "molasses"
+      ],
+      [],
+      [
+        "bread"
+      ],
+      [
+        "bread"
+      ],
+      [
+        "walnut"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3009,6 +3700,24 @@
         "Oda sıcaklığında servis edin; ağzı kapalı kavanozda bir hafta durur."
       ]
     },
+    "stepIngredients": [
+      [
+        "almond"
+      ],
+      [
+        "apricot"
+      ],
+      [
+        "apricot"
+      ],
+      [
+        "almond"
+      ],
+      [
+        "cinnamon"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3090,6 +3799,28 @@
         "Yumuşamamaları için tamamen soğutmadan kaba koymayın."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "chickpea"
+      ],
+      [
+        "chickpea"
+      ],
+      [
+        "olive_oil",
+        "sumac",
+        "cumin",
+        "paprika"
+      ],
+      [],
+      [],
+      [
+        "sumac",
+        "salt"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3188,6 +3919,33 @@
         "Yemeden önce 1 saat buzdolabında bekletin; beş gün dayanır."
       ]
     },
+    "stepIngredients": [
+      [
+        "dates"
+      ],
+      [
+        "oats"
+      ],
+      [
+        "dates"
+      ],
+      [
+        "tahini"
+      ],
+      [
+        "tahini",
+        "cocoa_powder",
+        "oats",
+        "honey",
+        "dates"
+      ],
+      [],
+      [],
+      [
+        "sesame_seeds"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3279,6 +4037,28 @@
         "Bir tutam tarçınla tamamlayıp serin servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "ricotta"
+      ],
+      [],
+      [
+        "lemon"
+      ],
+      [
+        "pistachio"
+      ],
+      [
+        "ricotta"
+      ],
+      [
+        "honey",
+        "pistachio"
+      ],
+      [
+        "cinnamon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {

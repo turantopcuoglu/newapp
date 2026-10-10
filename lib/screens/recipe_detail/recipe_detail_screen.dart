@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../components/meal_type_badge.dart';
 import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
+import '../../components/step_ingredients.dart';
 import '../../core/enums.dart';
 import '../../core/theme.dart';
 import '../../data/mock_ingredients.dart';
@@ -18,7 +19,9 @@ import '../../services/recommendation_service.dart';
 import '../../services/preference_matcher.dart';
 import '../../services/quantity_format.dart';
 import '../../services/recipe_timing.dart';
+import '../../services/step_ingredient_matcher.dart';
 import '../../providers/profile_provider.dart';
+import '../wellness/cooking_screen.dart';
 
 class RecipeDetailScreen extends ConsumerWidget {
   final ScoredRecipe scoredRecipe;
@@ -58,6 +61,7 @@ class RecipeDetailScreen extends ConsumerWidget {
         : 0;
 
     final ingredientMap = {for (final i in mockIngredients) i.id: i};
+    final perStep = stepIngredientsFor(recipe);
 
     return Scaffold(
       appBar: AppBar(
@@ -280,6 +284,24 @@ class RecipeDetailScreen extends ConsumerWidget {
               theme,
             ),
             const SizedBox(height: 10),
+            if (recipe.localizedSteps(locale).isNotEmpty) ...[
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.tonalIcon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (_) => CookingScreen(recipe: recipe),
+                    ),
+                  ),
+                  icon: const Icon(Icons.soup_kitchen_outlined),
+                  label: Text(
+                    locale == 'tr' ? 'Pişirme modunu aç' : 'Open cooking mode',
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
             ...recipe.localizedSteps(locale).asMap().entries.map((entry) {
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
@@ -316,12 +338,26 @@ class RecipeDetailScreen extends ConsumerWidget {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 5),
-                        child: Text(
-                          entry.value,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: context.palette.textPrimary,
-                            height: 1.5,
-                          ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              entry.value,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: context.palette.textPrimary,
+                                height: 1.5,
+                              ),
+                            ),
+                            if (entry.key < perStep.length &&
+                                perStep[entry.key].isNotEmpty) ...[
+                              const SizedBox(height: 8),
+                              StepIngredients(
+                                recipe: recipe,
+                                step: entry.key,
+                                perStep: perStep,
+                              ),
+                            ],
+                          ],
                         ),
                       ),
                     ),

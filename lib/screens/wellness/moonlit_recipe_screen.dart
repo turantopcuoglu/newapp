@@ -4,16 +4,15 @@ import '../../components/recipe_visual.dart';
 import '../../components/save_recipe_button.dart';
 import '../../core/theme.dart';
 import '../../l10n/app_localizations.dart';
-import '../../models/recipe.dart';
 import '../../providers/profile_provider.dart';
 import '../../providers/inventory_provider.dart';
 import '../../providers/shopping_provider.dart';
-import '../../providers/cooked_provider.dart';
 import '../../services/preference_matcher.dart';
 import '../../services/recommendation_service.dart';
 import '../../services/quantity_format.dart';
 import '../../services/recipe_timing.dart';
 import '../recipe_detail/recipe_detail_screen.dart';
+import 'cooking_screen.dart';
 import 'moonlit_assets.dart';
 import 'moonlit_page.dart';
 import 'nourish_screen.dart';
@@ -225,7 +224,7 @@ class MoonlitRecipeScreen extends ConsumerWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute<void>(
-                    builder: (_) => MoonlitCookingScreen(recipe: recipe),
+                    builder: (_) => CookingScreen(recipe: recipe),
                   ),
                 ),
               ),
@@ -288,97 +287,6 @@ class MoonlitRecipeScreen extends ConsumerWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class MoonlitCookingScreen extends ConsumerStatefulWidget {
-  final Recipe recipe;
-  const MoonlitCookingScreen({super.key, required this.recipe});
-  @override
-  ConsumerState<MoonlitCookingScreen> createState() => _CookingState();
-}
-
-class _CookingState extends ConsumerState<MoonlitCookingScreen> {
-  int step = 0;
-  bool saved = false;
-  @override
-  Widget build(BuildContext context) {
-    final recipe = widget.recipe;
-    final safe = !recipeHasAllergenConflict(recipe, ref.watch(profileProvider));
-    final locale = Localizations.localeOf(context).languageCode;
-    final steps = recipe.localizedSteps(locale);
-    return Scaffold(
-      appBar: AppBar(title: Text(recipe.localizedName(locale))),
-      body: ListView(
-        padding: const EdgeInsets.all(24),
-        children: [
-          Text(
-            safe
-                ? context.w(
-                    'Kendi temponda hazırla.',
-                    'Prepare at your own pace.',
-                  )
-                : context.w(
-                    'Tercihlerin değişti.',
-                    'Your preferences changed.',
-                  ),
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
-          const SizedBox(height: 30),
-          if (!safe)
-            Text(
-              context.w(
-                'Bu tarif güncel alerji veya hassasiyet seçimlerine uygun değil.',
-                'This recipe does not match your current allergy or sensitivity settings.',
-              ),
-            )
-          else if (steps.isEmpty)
-            Text(
-              context.w(
-                'Tarif adımları bulunamadı.',
-                'Recipe instructions are missing.',
-              ),
-            )
-          else ...[
-            Text(
-              context.w(
-                'ADIM ${step + 1} / ${steps.length}',
-                'STEP ${step + 1} / ${steps.length}',
-              ),
-              style: TextStyle(color: context.palette.moon),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              steps[step],
-              style: const TextStyle(fontSize: 22, height: 1.5),
-            ),
-            const SizedBox(height: 36),
-            if (step < steps.length - 1)
-              MoonButton(
-                label: context.w('Sonraki adım', 'Next step'),
-                onPressed: () => setState(() => step++),
-              )
-            else
-              MoonButton(
-                label: saved
-                    ? context.w('Pişirdiğin kaydedildi', 'Logged as cooked')
-                    : context.w('Pişirdim, kaydet', 'I cooked it, save'),
-                onPressed: saved
-                    ? null
-                    : () {
-                        ref.read(cookedProvider.notifier).markCooked(recipe);
-                        setState(() => saved = true);
-                      },
-              ),
-            if (step > 0 && !saved)
-              TextButton(
-                onPressed: () => setState(() => step--),
-                child: Text(context.w('Önceki adım', 'Previous step')),
-              ),
-          ],
-        ],
       ),
     );
   }

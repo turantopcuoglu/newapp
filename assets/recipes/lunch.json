@@ -66,6 +66,38 @@
         "Tavuğu liflerine dik dilimleyip salatanın üzerine dizin, sosu servis anında gezdirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "chicken_breast"
+      ],
+      [],
+      [
+        "olive_oil",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "chicken_breast"
+      ],
+      [],
+      [
+        "chicken_breast"
+      ],
+      [
+        "lettuce",
+        "tomato",
+        "cucumber"
+      ],
+      [
+        "lemon",
+        "olive_oil",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "chicken_breast"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -175,6 +207,40 @@
         "Limon sıkarak sıcak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "red_lentil",
+        "bulgur",
+        "white_rice"
+      ],
+      [
+        "onion",
+        "butter"
+      ],
+      [
+        "tomato_paste"
+      ],
+      [
+        "red_lentil",
+        "bulgur",
+        "white_rice"
+      ],
+      [],
+      [
+        "red_lentil"
+      ],
+      [
+        "salt"
+      ],
+      [
+        "mint",
+        "butter",
+        "red_pepper_flakes"
+      ],
+      [
+        "lemon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -290,6 +356,40 @@
         "Oda sıcaklığında ya da soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "quinoa"
+      ],
+      [
+        "salt"
+      ],
+      [],
+      [
+        "black_bean"
+      ],
+      [
+        "tomato",
+        "onion"
+      ],
+      [
+        "lemon",
+        "olive_oil",
+        "cumin",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "quinoa",
+        "black_bean",
+        "corn",
+        "tomato",
+        "onion"
+      ],
+      [
+        "avocado"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -408,6 +508,36 @@
         "Servis etmeden hemen önce üzerine limon sıkın."
       ]
     },
+    "stepIngredients": [
+      [
+        "white_rice"
+      ],
+      [
+        "salmon",
+        "sesame_oil",
+        "garlic",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "salmon"
+      ],
+      [
+        "broccoli"
+      ],
+      [
+        "soy_sauce",
+        "sesame_oil"
+      ],
+      [
+        "salmon",
+        "white_rice",
+        "broccoli"
+      ],
+      [
+        "lemon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -521,6 +651,38 @@
         "Uçlarını kapatıp sıkıca sarın ve çaprazlama ikiye bölün."
       ]
     },
+    "stepIngredients": [
+      [
+        "chicken_breast"
+      ],
+      [
+        "paprika",
+        "cumin",
+        "olive_oil",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "chicken_breast"
+      ],
+      [],
+      [
+        "tomato",
+        "lettuce",
+        "onion"
+      ],
+      [
+        "tortilla_wrap"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "chicken_breast",
+        "yogurt"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -640,6 +802,41 @@
         "5 dakika dinlendirip yanında yoğurtla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "eggplant",
+        "salt"
+      ],
+      [
+        "eggplant",
+        "olive_oil"
+      ],
+      [
+        "olive_oil",
+        "potato"
+      ],
+      [
+        "ground_beef",
+        "onion",
+        "garlic",
+        "bell_pepper"
+      ],
+      [
+        "tomato",
+        "bell_pepper",
+        "tomato_paste",
+        "salt",
+        "black_pepper",
+        "oregano"
+      ],
+      [
+        "eggplant",
+        "ground_beef"
+      ],
+      [
+        "yogurt"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -768,6 +965,39 @@
         "Hafifçe bastırıp ikiye bölün ve hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "tuna"
+      ],
+      [
+        "avocado"
+      ],
+      [
+        "avocado",
+        "lemon",
+        "salt"
+      ],
+      [
+        "tuna",
+        "onion"
+      ],
+      [
+        "tuna",
+        "avocado",
+        "olive_oil",
+        "black_pepper"
+      ],
+      [
+        "bread"
+      ],
+      [
+        "lettuce"
+      ],
+      [
+        "tuna"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -874,6 +1104,26 @@
         "Çatalla kabartın, 5 dakika dinlendirin ve servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "onion",
+        "butter"
+      ],
+      [
+        "tomato_paste",
+        "red_pepper_flakes"
+      ],
+      [
+        "chickpea"
+      ],
+      [
+        "bulgur",
+        "salt",
+        "black_pepper"
+      ],
+      [],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -966,7 +1216,7 @@
         "Cook rice noodles according to package instructions, drain and set aside.",
         "Heat vegetable oil in a wok or large pan over high heat.",
         "Add the shrimp and cook for 2 minutes per side until pink. Remove and set aside.",
-        "Stir-fry sliced bell pepper, carrot, and zucchini with garlic for 3-4 minutes.",
+        "Stir-fry sliced bell pepper, carrot, and zucchini with garlic and a pinch of salt for 3-4 minutes.",
         "Return the shrimp, add the noodles, soy sauce, and sesame oil. Toss to combine.",
         "Serve immediately while hot."
       ],
@@ -974,11 +1224,37 @@
         "Pirinç noodle'ları paket talimatlarına göre pişirip süzün.",
         "Wok veya büyük tavada bitkisel yağı yüksek ateşte ısıtın.",
         "Karidesleri ekleyip her tarafını 2 dakika pembeleşene kadar pişirin. Ayırın.",
-        "Dilimlenmiş biber, havuç ve kabağı sarımsakla 3-4 dakika soteleyin.",
+        "Dilimlenmiş biber, havuç ve kabağı sarımsak ve bir tutam tuzla 3-4 dakika soteleyin.",
         "Karidesleri geri ekleyin, noodle, soya sosu ve susam yağını ilave edip karıştırın.",
         "Sıcak olarak hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "noodle"
+      ],
+      [
+        "sesame_oil",
+        "sunflower_oil"
+      ],
+      [
+        "shrimp"
+      ],
+      [
+        "bell_pepper",
+        "carrot",
+        "zucchini",
+        "garlic",
+        "salt"
+      ],
+      [
+        "shrimp",
+        "noodle",
+        "soy_sauce",
+        "sesame_oil"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1096,6 +1372,36 @@
         "Marul yaprakları eşliğinde soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "bulgur"
+      ],
+      [
+        "bulgur"
+      ],
+      [],
+      [
+        "tomato_paste",
+        "red_pepper_flakes"
+      ],
+      [
+        "pomegranate_molasses",
+        "olive_oil"
+      ],
+      [
+        "spring_onion",
+        "parsley",
+        "cucumber"
+      ],
+      [
+        "lemon",
+        "salt"
+      ],
+      [],
+      [
+        "lettuce"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1216,6 +1522,39 @@
         "Serin olarak, isterseniz ekmekle servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "chickpea"
+      ],
+      [
+        "cucumber",
+        "tomato"
+      ],
+      [
+        "onion"
+      ],
+      [
+        "lemon",
+        "olive_oil",
+        "oregano",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "chickpea",
+        "cucumber",
+        "tomato",
+        "onion"
+      ],
+      [],
+      [
+        "chickpea"
+      ],
+      [
+        "feta_cheese"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1330,6 +1669,36 @@
         "Taze fasulyeyi 4 dakika haşlayın, bifteği dilimleyip servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "beef_steak"
+      ],
+      [],
+      [
+        "sweet_potato"
+      ],
+      [
+        "olive_oil",
+        "salt"
+      ],
+      [
+        "beef_steak",
+        "salt",
+        "black_pepper"
+      ],
+      [],
+      [
+        "garlic",
+        "butter"
+      ],
+      [
+        "beef_steak"
+      ],
+      [
+        "beef_steak",
+        "green_beans"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1437,6 +1806,42 @@
         "Bolca zeytinyağı gezdirip limonla servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "kidney_bean"
+      ],
+      [
+        "carrot",
+        "potato",
+        "tomato",
+        "onion"
+      ],
+      [
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "carrot"
+      ],
+      [
+        "tomato",
+        "tomato_paste"
+      ],
+      [
+        "kidney_bean",
+        "potato",
+        "sugar",
+        "salt"
+      ],
+      [
+        "kidney_bean"
+      ],
+      [],
+      [
+        "olive_oil",
+        "lemon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1537,7 +1942,7 @@
         "Press the tofu to remove excess moisture, then cut into cubes.",
         "Pan-fry the tofu in vegetable oil until golden and crispy on all sides. Set aside.",
         "Cook rice according to package instructions.",
-        "Stir-fry sliced broccoli, bell pepper, carrot, and mushroom with garlic for 4-5 minutes.",
+        "Stir-fry sliced broccoli, bell pepper, carrot, and mushroom with garlic and a pinch of salt for 4-5 minutes.",
         "Add the tofu back, pour in soy sauce and sesame oil, toss to coat.",
         "Serve the stir-fry over the cooked rice."
       ],
@@ -1545,11 +1950,40 @@
         "Tofunun fazla suyunu süzün ve küpler halinde kesin.",
         "Tofuyu bitkisel yağda her tarafı altın rengi ve çıtır olana kadar kızartın. Ayırın.",
         "Pirinci paket talimatlarına göre pişirin.",
-        "Dilimlenmiş brokoli, biber, havuç ve mantarı sarımsakla 4-5 dakika soteleyin.",
+        "Dilimlenmiş brokoli, biber, havuç ve mantarı sarımsak ve bir tutam tuzla 4-5 dakika soteleyin.",
         "Tofuyu geri ekleyin, soya sosu ve susam yağını döküp karıştırın.",
         "Soteyi pişmiş pirinç üzerinde servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "tofu"
+      ],
+      [
+        "tofu",
+        "sesame_oil",
+        "sunflower_oil"
+      ],
+      [
+        "white_rice"
+      ],
+      [
+        "broccoli",
+        "bell_pepper",
+        "carrot",
+        "mushroom",
+        "garlic",
+        "salt"
+      ],
+      [
+        "tofu",
+        "soy_sauce",
+        "sesame_oil"
+      ],
+      [
+        "white_rice"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1665,6 +2099,29 @@
         "30 dakika daha sebzeler yumuşayana kadar pişirip sıcak servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "lamb",
+        "butter"
+      ],
+      [
+        "onion",
+        "garlic"
+      ],
+      [
+        "tomato",
+        "tomato_paste"
+      ],
+      [],
+      [
+        "potato",
+        "carrot",
+        "salt",
+        "black_pepper",
+        "oregano"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1786,6 +2243,45 @@
         "Limon suyu ve biraz daha zeytinyağıyla tamamlayıp ılık servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "zucchini",
+        "bell_pepper",
+        "eggplant"
+      ],
+      [
+        "eggplant",
+        "olive_oil",
+        "salt"
+      ],
+      [
+        "bell_pepper",
+        "olive_oil",
+        "garlic",
+        "cumin",
+        "salt",
+        "black_pepper"
+      ],
+      [],
+      [
+        "couscous",
+        "salt"
+      ],
+      [
+        "couscous"
+      ],
+      [
+        "couscous"
+      ],
+      [
+        "couscous",
+        "tomato"
+      ],
+      [
+        "olive_oil",
+        "lemon"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -1902,6 +2398,33 @@
         "Rendelenmiş parmesan ile süsleyerek servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "pasta",
+        "salt"
+      ],
+      [
+        "ground_turkey",
+        "onion",
+        "garlic",
+        "olive_oil"
+      ],
+      [
+        "mushroom"
+      ],
+      [
+        "cream",
+        "salt",
+        "black_pepper",
+        "oregano"
+      ],
+      [
+        "pasta"
+      ],
+      [
+        "parmesan"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2020,6 +2543,38 @@
         "Üzerine ceviz ve nar tanelerini serpip servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "kale"
+      ],
+      [],
+      [
+        "kale"
+      ],
+      [
+        "lemon",
+        "olive_oil",
+        "garlic",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "kale"
+      ],
+      [
+        "kale"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "kale"
+      ],
+      [
+        "walnut",
+        "pomegranate"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2127,6 +2682,36 @@
         "Patates salatasının yanında servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "potato",
+        "salt"
+      ],
+      [],
+      [
+        "potato",
+        "mustard",
+        "white_vinegar",
+        "olive_oil",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "onion"
+      ],
+      [
+        "pork_chop",
+        "salt",
+        "black_pepper",
+        "paprika"
+      ],
+      [],
+      [],
+      [],
+      [
+        "potato"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2233,6 +2818,29 @@
         "Birkaç dakika soğutun, dilimleyin ve servis edin."
       ]
     },
+    "stepIngredients": [
+      [],
+      [
+        "bell_pepper",
+        "mushroom",
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "spinach"
+      ],
+      [
+        "eggs",
+        "bell_pepper",
+        "cheddar_cheese",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "cheddar_cheese"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2344,6 +2952,41 @@
         "Kalan sosu balığın üzerine gezdirip servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "white_bean"
+      ],
+      [
+        "sardine"
+      ],
+      [
+        "celery"
+      ],
+      [
+        "onion"
+      ],
+      [
+        "lemon",
+        "olive_oil",
+        "salt",
+        "black_pepper",
+        "red_pepper_flakes"
+      ],
+      [
+        "white_bean",
+        "celery",
+        "onion"
+      ],
+      [
+        "white_bean"
+      ],
+      [
+        "sardine"
+      ],
+      [
+        "sardine"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2458,6 +3101,41 @@
         "Şişleri servis öncesi 3 dakika dinlendirin."
       ]
     },
+    "stepIngredients": [
+      [
+        "chicken_thigh"
+      ],
+      [
+        "bell_pepper",
+        "yogurt",
+        "olive_oil",
+        "paprika",
+        "cumin",
+        "garlic",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "chicken_thigh",
+        "yogurt"
+      ],
+      [
+        "chicken_thigh",
+        "bell_pepper",
+        "onion",
+        "zucchini",
+        "tomato"
+      ],
+      [
+        "chicken_thigh"
+      ],
+      [],
+      [],
+      [
+        "chicken_thigh"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2576,6 +3254,34 @@
         "Sıcak olarak derin kaselerde servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "carrot",
+        "celery",
+        "onion",
+        "garlic"
+      ],
+      [
+        "carrot",
+        "celery",
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "garlic",
+        "tomato_paste"
+      ],
+      [
+        "green_lentil",
+        "cumin"
+      ],
+      [
+        "spinach",
+        "salt",
+        "black_pepper"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2700,6 +3406,44 @@
         "Her tortillaya lahana salatası, balık ve dilimlenmiş avokado koyup kalan sosla tamamlayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "cod"
+      ],
+      [
+        "cod",
+        "paprika",
+        "cumin",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "cabbage"
+      ],
+      [
+        "lemon",
+        "yogurt",
+        "garlic"
+      ],
+      [
+        "cabbage"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "cod"
+      ],
+      [
+        "tortilla_wrap"
+      ],
+      [
+        "cod",
+        "tortilla_wrap",
+        "cabbage",
+        "avocado"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2821,6 +3565,37 @@
         "Fasulye yemeğini pilavın üzerine dökerek servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "white_bean"
+      ],
+      [
+        "onion",
+        "garlic",
+        "butter",
+        "olive_oil"
+      ],
+      [
+        "tomato_paste",
+        "bell_pepper"
+      ],
+      [
+        "white_bean",
+        "tomato",
+        "bell_pepper",
+        "paprika",
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "white_rice",
+        "butter"
+      ],
+      [
+        "white_bean",
+        "white_rice"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -2940,6 +3715,37 @@
         "Cevizleri serpip zeytinyağıyla tamamlayın."
       ]
     },
+    "stepIngredients": [
+      [
+        "purslane"
+      ],
+      [
+        "purslane"
+      ],
+      [
+        "yogurt"
+      ],
+      [
+        "garlic",
+        "salt"
+      ],
+      [
+        "yogurt",
+        "garlic",
+        "lemon"
+      ],
+      [
+        "purslane",
+        "yogurt"
+      ],
+      [
+        "walnut"
+      ],
+      [
+        "olive_oil",
+        "walnut"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3031,7 +3837,7 @@
         "Cut the pepper, courgette and onion into chunks and toss with olive oil and salt.",
         "Roast for 25 minutes until the edges char slightly.",
         "Chop the roasted vegetables and the fresh tomato.",
-        "Fold everything together with lemon juice, sumac and parsley.",
+        "Fold everything together with lemon juice, sumac, parsley and black pepper.",
         "Serve at room temperature; it improves after 30 minutes."
       ],
       "tr": [
@@ -3042,10 +3848,39 @@
         "Biber, kabak ve soğanı iri doğrayıp zeytinyağı ve tuzla harmanlayın.",
         "Kenarları hafif kararana dek 25 dakika fırınlayın.",
         "Fırınlanmış sebzeleri ve taze domatesi doğrayın.",
-        "Limon suyu, sumak ve maydanozla hepsini harmanlayın.",
+        "Limon suyu, sumak, maydanoz ve karabiberle hepsini harmanlayın.",
         "Oda sıcaklığında servis edin; 30 dakika bekleyince lezzeti oturur."
       ]
     },
+    "stepIngredients": [
+      [
+        "barley",
+        "salt"
+      ],
+      [
+        "barley"
+      ],
+      [],
+      [],
+      [
+        "bell_pepper",
+        "zucchini",
+        "red_onion",
+        "olive_oil",
+        "salt"
+      ],
+      [],
+      [
+        "tomato"
+      ],
+      [
+        "parsley",
+        "lemon",
+        "sumac",
+        "black_pepper"
+      ],
+      []
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3162,6 +3997,33 @@
         "Bolca zeytinyağı gezdirip soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "fava_bean"
+      ],
+      [
+        "onion",
+        "olive_oil"
+      ],
+      [
+        "fava_bean",
+        "sugar",
+        "salt"
+      ],
+      [
+        "fava_bean"
+      ],
+      [],
+      [],
+      [],
+      [
+        "dill",
+        "lemon"
+      ],
+      [
+        "olive_oil"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3252,7 +4114,7 @@
         "Leave it covered for 20 minutes — the residual heat is what cooks the bulgur.",
         "Soften the tomato paste, cumin and chilli flakes in olive oil in a small pan.",
         "Add the spiced oil to the lentil mixture and knead by hand until smooth and even.",
-        "Knead in the chopped spring onion, parsley and lemon juice once the mixture has cooled.",
+        "Knead in the chopped spring onion, parsley, lemon juice and salt once the mixture has cooled.",
         "Shape into small ovals by squeezing portions in your closed fist.",
         "Serve cold in lettuce leaves with extra lemon."
       ],
@@ -3263,11 +4125,46 @@
         "20 dakika kapalı bekletin — bulguru pişiren şey bu artık ısıdır.",
         "Küçük bir tavada salça, kimyon ve pul biberi zeytinyağında kavurun.",
         "Baharatlı yağı mercimekli harca ekleyip pürüzsüz olana dek elle yoğurun.",
-        "Harç ılıyınca doğranmış taze soğan, maydanoz ve limon suyunu yedirin.",
+        "Harç ılıyınca doğranmış taze soğan, maydanoz, limon suyu ve tuzu yedirin.",
         "Avucunuzu kapatarak sıkıp küçük oval köfteler şekillendirin.",
         "Marul yapraklarında, yanında limonla soğuk servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "red_lentil"
+      ],
+      [
+        "red_lentil"
+      ],
+      [
+        "bulgur"
+      ],
+      [
+        "bulgur"
+      ],
+      [
+        "tomato_paste",
+        "cumin",
+        "olive_oil",
+        "red_pepper_flakes"
+      ],
+      [
+        "red_lentil",
+        "olive_oil"
+      ],
+      [
+        "spring_onion",
+        "parsley",
+        "lemon",
+        "salt"
+      ],
+      [],
+      [
+        "lemon",
+        "lettuce"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {
@@ -3371,7 +4268,7 @@
         "Toss the liver in flour and shake off the excess.",
         "Heat the olive oil until very hot, almost smoking.",
         "Sear the liver in a single layer for 2 minutes, turn, and cook 1-2 minutes more.",
-        "Salt only now — salting before searing draws out moisture and toughens it.",
+        "Season with salt and black pepper only now — salting before searing draws out moisture and toughens it.",
         "Serve immediately over the sumac onions with parsley and chilli flakes."
       ],
       "tr": [
@@ -3382,10 +4279,47 @@
         "Ciğerleri una bulayıp fazlasını silkeleyin.",
         "Zeytinyağını neredeyse dumanı çıkacak kadar kızdırın.",
         "Ciğerleri tek sıra hâlinde 2 dakika mühürleyin, çevirip 1-2 dakika daha pişirin.",
-        "Tuzu ancak şimdi ekleyin — önce tuzlamak suyunu çekip sertleştirir.",
+        "Tuzu ve karabiberi ancak şimdi ekleyin — önce tuzlamak suyunu çekip sertleştirir.",
         "Sumaklı soğanın üzerinde maydanoz ve pul biberle hemen servis edin."
       ]
     },
+    "stepIngredients": [
+      [
+        "liver"
+      ],
+      [
+        "liver"
+      ],
+      [
+        "red_onion",
+        "sumac",
+        "salt"
+      ],
+      [
+        "red_onion",
+        "sumac"
+      ],
+      [
+        "liver",
+        "flour"
+      ],
+      [
+        "olive_oil"
+      ],
+      [
+        "liver"
+      ],
+      [
+        "salt",
+        "black_pepper"
+      ],
+      [
+        "red_onion",
+        "sumac",
+        "parsley",
+        "red_pepper_flakes"
+      ]
+    ],
     "imagePath": null,
     "isUserCreated": false,
     "quantities": {

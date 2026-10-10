@@ -76,6 +76,10 @@ class Recipe {
   final CarbType carbType;
   final MacroEstimation macros;
   final Map<String, List<String>> steps;
+
+  /// Ingredient ids each step uses, one list per step (shared by both
+  /// languages, whose steps line up). Empty for recipes that predate it.
+  final List<List<String>> stepIngredients;
   final String? imagePath;
   final bool isUserCreated;
   final Map<String, IngredientQuantity> quantities;
@@ -97,6 +101,7 @@ class Recipe {
     this.carbType = CarbType.mixed,
     this.macros = const MacroEstimation(),
     this.steps = const {},
+    this.stepIngredients = const [],
     this.imagePath,
     this.isUserCreated = false,
     this.quantities = const {},
@@ -131,6 +136,7 @@ class Recipe {
     'carbType': carbType.name,
     'macros': macros.toJson(),
     'steps': steps,
+    if (stepIngredients.isNotEmpty) 'stepIngredients': stepIngredients,
     'imagePath': imagePath,
     'isUserCreated': isUserCreated,
     'quantities': quantities.map((k, v) => MapEntry(k, v.toJson())),
@@ -189,6 +195,10 @@ class Recipe {
         ? MacroEstimation.fromJson(json['macros'])
         : const MacroEstimation(),
     steps: _parseLocalizedSteps(json['steps']),
+    stepIngredients: [
+      for (final step in json['stepIngredients'] as List? ?? const [])
+        List<String>.from(step as List),
+    ],
     imagePath: json['imagePath'] as String?,
     isUserCreated: json['isUserCreated'] as bool? ?? false,
     quantities: _parseQuantities(json['quantities']),

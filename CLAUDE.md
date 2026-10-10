@@ -42,6 +42,7 @@ flutter test                               # tüm testler geçmeli
 dart run tool/data_report.dart             # tarif verisi bütünlük + kalori raporu
 dart run tool/data_report.dart --strict    # hata varsa non-zero exit (CI)
 dart run tool/data_report.dart --fix-macros # makroları miktarlardan yeniden hesaplar
+dart run tool/step_ingredients.dart        # adım↔malzeme denetimi; --write yeni tariflere stepIngredients yazar
 flutter test test/wellness_ui_test.dart --dart-define=CAPTURE_WELLNESS=true  # ekran PNG'leri → output/wellness-build/
 dart run tool/health_review_export.dart     # hekim inceleme sayfası → docs/hekim-inceleme/ (sonra Artifact'e yeniden yayımla)
 powershell -ExecutionPolicy Bypass -File tool/resize_images.ps1 -Source <klasör> -Target <assets/images/...>  # teslim görselleri küçült
@@ -111,6 +112,11 @@ powershell -ExecutionPolicy Bypass -File tool/resize_images.ps1 -Source <klasör
 - **Kalori/makro elle yazılmaz**: `quantities` (porsiyon başına miktar) doldurulur,
   `dart run tool/data_report.dart --fix-macros` makroları üretir. Test,
   makroların hesaplananla uyuşmasını zorlar.
+- **`stepIngredients`**: adım başına malzeme ID listesi (TR ve EN adımlar
+  aynı sırada olmalı). Yeni tarifte `dart run tool/step_ingredients.dart
+  --write` tahmini yazar, sonra elle gözden geçir; araç var olanın üstüne
+  yazmaz. Pişirme ekranı miktarları buradan gösterir. Rapor hizayı ve
+  "listedeki her malzeme bir adımda" kuralını hata sayar.
 - Zorunlu alanlar: TR+EN `name`/`description`/`steps`, ≥1 `cuisineIds`
   (geçerli kategoriler `explore_data.dart`), her malzeme için `quantities`
   girdisi, katalogda var olan `ingredientIds` (kanonik liste

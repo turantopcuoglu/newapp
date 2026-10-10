@@ -48,6 +48,30 @@ void main() {
     });
   });
 
+  group('step ingredients', () {
+    // The cooking screen shows each step's ingredients with their amounts.
+    // A missing entry hides an amount; a stray one shows an ingredient the
+    // recipe does not have.
+    test('one entry per step, only listed ingredients, none left unused', () {
+      for (final recipe in recipes) {
+        final perStep = recipe.stepIngredients;
+        expect(perStep, hasLength(recipe.localizedSteps('tr').length),
+            reason: recipe.id);
+        final used = perStep.expand((s) => s).toSet();
+        expect(recipe.ingredientIds.toSet(), containsAll(used),
+            reason: recipe.id);
+        expect(used, containsAll(recipe.ingredientIds), reason: recipe.id);
+      }
+    });
+
+    test('a timing cue ("somondan önce") does not put the salmon on that step',
+        () {
+      // "Somondan 10 dakika önce fırına verin" puts the vegetables in, not
+      // the fish — the guess said salmon and was corrected by hand.
+      expect(byId('d001').stepIngredients[3], ['broccoli', 'carrot']);
+    });
+  });
+
   group('the method matches the ingredient list', () {
     test('a recipe that rolls out dough lists something to make it from', () {
       // Mantı asked the cook to roll out a sheet of dough and listed no

@@ -2,7 +2,7 @@
 
 > Kod nasılsa öyle. `docs/design/` altındaki eski panolar ve öneriler
 > *tasarım geçmişi*dir; çelişirse **bu dosya ve kod** geçerlidir.
-> Son güncelleme: 2026-10-03.
+> Son güncelleme: 2026-10-11.
 
 ## 1. Ürün iskeleti
 
@@ -67,6 +67,8 @@ Tema, günün moduna göre bütün uygulamayı boyar (`lib/core/mood_palette.dar
 | `OnboardingArtworkHeader` | `components/onboarding_artwork_header.dart` | Kayıt akışı başlığı (C ailesi manzara + başlık) |
 | `SceneBanner(scene:)` | `components/scene_banner.dart` | Kartın üstünde C ailesi sahne (`assets/images/scenes/`) + beyaz başlık |
 | `ScaleChoices` | `wellness/wellness_ui.dart` | Üç seçenekli ölçek sorusu (1–3); sabah check-in ve akşam kapanışı aynı ölçeği kullanır |
+| `StepIngredients` | `components/step_ingredients.dart` | Bir tarif adımının malzeme + miktar çipleri; birden çok adımda geçen malzemede "(toplam)" |
+| `CookingScreen` | `wellness/cooking_screen.dart` | Pişirme modu: hazırlık listesi → adım + çipler + zamanlayıcı; eylemler sabit alt çubukta |
 | `EmptyStateArtwork(name)` | `components/empty_state_artwork.dart` | Boş liste görseli, 160 px; koyu temada kenarı yumuşak, açık temada yuvarlatılmış kare |
 
 ## 4. Hareket kuralları
